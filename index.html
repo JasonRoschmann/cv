@@ -75,8 +75,21 @@ body{overflow:hidden}
 
 /* ── HERO ── */
 .hero{background:linear-gradient(160deg,rgba(63,185,80,.06) 0%,transparent 60%);border:1px solid var(--bdr);border-radius:var(--r);padding:18px 16px;margin-bottom:12px}
+.hero-prompt{font-family:var(--ffm);font-size:11px;color:var(--grn);margin-bottom:10px;min-height:14px}
+.hero-prompt .crs{display:inline-block;width:6px;height:12px;background:var(--grn);margin-left:1px;vertical-align:middle;animation:blink 1s step-end infinite}
 .hero-h{font-size:19px;font-weight:400;font-family:var(--serif);font-style:italic;line-height:1.35;margin-bottom:8px;color:var(--txt)}
 .hero-p{font-size:13px;color:var(--mu);line-height:1.65}
+
+/* ── REVEAL-ON-VIEW + MAGNETIC TILT (respects reduced-motion) ── */
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s var(--spring),transform .5s var(--spring)}
+  .reveal.in{opacity:1;transform:none}
+  .tilt{transition:transform .15s ease-out,box-shadow .15s ease-out;will-change:transform}
+  .tilt:hover{box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+  @keyframes blink{50%{opacity:0}}
+  @keyframes msgPop{from{opacity:0;transform:scale(.96) translateY(4px)}to{opacity:1;transform:none}}
+  .msg-in{animation:msgPop .25s var(--spring) both}
+}
 .hero-p strong{color:var(--grn);font-weight:600}
 .co-hero{background:linear-gradient(160deg,rgba(88,166,255,.07) 0%,transparent 60%);border:1px solid rgba(88,166,255,.25);border-radius:var(--r);padding:16px;margin-bottom:12px;display:none}
 .co-hero.show{display:block}
@@ -389,6 +402,7 @@ body{overflow:hidden}
     <div class="co-hero-p" id="co-hero-p"></div>
   </div>
   <div class="hero">
+    <div class="hero-prompt" id="hero-prompt"></div>
     <div class="hero-h">4 Jahre Vertrieb.<br>2 Jahre Digital. 2026 KI.<br>Bereit für Zürich SaaS.</div>
     <div class="hero-p">200+ Verträge pro Monat, konstant, 4 Jahre lang. Kein Skript, kein Glück — nur Volumen und Disziplin. <strong>Jetzt bringe ich das in SaaS.</strong></div>
   </div>
@@ -607,6 +621,7 @@ body{overflow:hidden}
       <div class="chips">
         <div class="chip g">Python, 2 Jahre Praxis</div>
         <div class="chip b">Claude SDK, Multi-Agent-System live</div>
+        <div class="chip">Claude Code, täglich im Einsatz</div>
         <div class="chip">FastAPI, produktionsreif</div>
         <div class="chip">n8n, 40–65% Automation</div>
         <div class="chip">PostgreSQL</div>
@@ -881,6 +896,7 @@ function showScreen(id){
   if(id==='markt')setTimeout(animateBars,280);
   if(id==='karriere')setTimeout(animateTimeline,180);
   if(id==='skills')setTimeout(animateChips,120);
+  setTimeout(()=>{setupReveal();setupTilt()},60);
 }
 
 function fixChatHeight(){
@@ -951,7 +967,7 @@ function typewriteMsg(text){
   const wrap=document.getElementById('chat-msgs');
   const now=new Date();
   const ts=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
-  wrap.insertAdjacentHTML('beforeend','<div class="msg" id="'+id+'"><div class="msg-av jr">JR</div><div><div class="msg-body" id="'+id+'b">▋</div><div class="msg-ts">'+ts+'</div></div></div>');
+  wrap.insertAdjacentHTML('beforeend','<div class="msg msg-in" id="'+id+'"><div class="msg-av jr">JR</div><div><div class="msg-body" id="'+id+'b">▋</div><div class="msg-ts">'+ts+'</div></div></div>');
   const body=document.getElementById(id+'b');
   wrap.scrollTop=wrap.scrollHeight;
   let i=0;
@@ -992,9 +1008,11 @@ setInterval(()=>{
   phI=(phI+1)%PH.length;inp.placeholder=PH[phI];
 },3500);
 
+function typingDelay(text){return Math.min(450+(text||'').length*2.6,2100)}
 function quickQ(q){
   addMsg(q,'ceo');addTyping();
-  setTimeout(()=>{removeTyping();typewriteMsg(QA[q]||'Schreib mir direkt: jason@roschmann-digital.de')},800);
+  const a=QA[q]||'Schreib mir direkt: jason@roschmann-digital.de';
+  setTimeout(()=>{removeTyping();typewriteMsg(a)},typingDelay(a));
 }
 
 function sendChat(){
@@ -1013,7 +1031,7 @@ function sendChat(){
   else if(lq.includes('projekt')||lq.includes('system')||lq.includes('ki-projekt')||lq.includes('gebaut'))resp=QA['KI-Projekte?'];
   else if(lq.includes('englisch')||lq.includes('english')||lq.includes('sprache')||lq.includes('b1')||lq.includes('b2'))resp=QA['Englisch B1?'];
   else if(lq.includes('sdr'))resp=QA['Warum SDR?'];
-  setTimeout(()=>{removeTyping();typewriteMsg(resp)},900);
+  setTimeout(()=>{removeTyping();typewriteMsg(resp)},typingDelay(resp));
 }
 
 function addMsg(text,type){
@@ -1021,7 +1039,7 @@ function addMsg(text,type){
   const now=new Date();
   const ts=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
   const av=type==='jr'?'<div class="msg-av jr">JR</div>':'<div class="msg-av">CEO</div>';
-  wrap.insertAdjacentHTML('beforeend','<div class="msg'+(type==='ceo'?' ceo':'')+'">'+av+'<div><div class="msg-body">'+esc(text)+'</div><div class="msg-ts">'+ts+'</div></div></div>');
+  wrap.insertAdjacentHTML('beforeend','<div class="msg msg-in'+(type==='ceo'?' ceo':'')+'">'+av+'<div><div class="msg-body">'+esc(text)+'</div><div class="msg-ts">'+ts+'</div></div></div>');
   wrap.scrollTop=wrap.scrollHeight;
 }
 
@@ -1077,6 +1095,50 @@ updateClock();setInterval(updateClock,1000);
   });
 })();
 
+/* ── REVEAL-ON-VIEW ── */
+const _reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let _revealObs=null;
+function setupReveal(){
+  if(_reduceMotion)return;
+  if(!_revealObs){
+    _revealObs=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  }
+  document.querySelectorAll('.scr.act .c, .scr.act .kpi, .scr.act .tl-item').forEach((el,i)=>{
+    el.classList.remove('in');
+    el.classList.add('reveal');
+    el.style.transitionDelay=Math.min(i%8*0.06,0.42)+'s';
+    _revealObs.observe(el);
+  });
+}
+
+/* ── MAGNETIC TILT ── */
+function setupTilt(){
+  if(_reduceMotion)return;
+  document.querySelectorAll('.scr.act .c, .scr.act .kpi').forEach(el=>{
+    if(el.dataset.tiltBound)return;
+    el.dataset.tiltBound='1';
+    el.classList.add('tilt');
+    el.addEventListener('mousemove',(e)=>{
+      const r=el.getBoundingClientRect();
+      const px=(e.clientX-r.left)/r.width-0.5, py=(e.clientY-r.top)/r.height-0.5;
+      el.style.transform=`perspective(700px) rotateX(${(-py*4).toFixed(2)}deg) rotateY(${(px*4).toFixed(2)}deg) translateY(-1px)`;
+    });
+    el.addEventListener('mouseleave',()=>{el.style.transform=''});
+  });
+}
+
+/* ── TYPED HERO PROMPT ── */
+async function typeHeroPrompt(){
+  const el=document.getElementById('hero-prompt');
+  if(!el||el.dataset.typed)return;
+  el.dataset.typed='1';
+  const line='$ whoami';
+  for(const ch of line){el.textContent+=ch;await sleep(_reduceMotion?0:32)}
+  const crs=document.createElement('span');crs.className='crs';el.appendChild(crs);
+}
+
 /* ── BOOT SEQUENCE ── */
 function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
 async function bootCV(){
@@ -1107,7 +1169,7 @@ async function bootCV(){
 }
 
 showScreen('home');
-bootCV();
+bootCV().then(()=>typeHeroPrompt());
 window.addEventListener('resize',()=>{if(cur==='chat')fixChatHeight()});
 </script>
 </body>
