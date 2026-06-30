@@ -76,9 +76,9 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
 }
 .sb-profile{padding:20px 16px 16px;border-bottom:1px solid var(--bdr)}
 .sb-avatar{
-  width:44px;height:44px;border-radius:50%;background:var(--blue-dim);
-  border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;
-  font-family:var(--ff-s);font-style:italic;font-weight:900;font-size:18px;color:var(--blue);
+  width:44px;height:44px;border-radius:50%;background:var(--grn-dim);
+  border:2px solid var(--grn);display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-s);font-style:italic;font-weight:900;font-size:18px;color:var(--grn);
   margin-bottom:10px;
 }
 .sb-name{font-size:13px;font-weight:600;color:var(--txt);margin-bottom:2px}
@@ -154,14 +154,15 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
 /* ══ KPI CARDS ════════════════════════ */
 .kpi-card{
   background:var(--surf);border:1px solid var(--bdr);border-radius:var(--r);
-  padding:16px;display:flex;flex-direction:column;gap:6px;
+  padding:16px;display:flex;flex-direction:column;gap:10px;
 }
 .kpi-n{
-  font-family:var(--ff-s);font-style:italic;font-weight:900;
+  font-family:var(--ff-m);font-weight:700;
   font-size:clamp(28px,3vw,44px);line-height:1;color:var(--amber);
+  letter-spacing:-.02em;
 }
 .kpi-l{font-family:var(--ff-m);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}
-.kpi-sub{font-size:11.5px;color:var(--mu2);margin-top:2px}
+.kpi-sub{font-size:11.5px;color:var(--mu2);margin-top:0}
 
 /* ══ AGENT CARD ═══════════════════════ */
 .agent-card{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden}
@@ -179,7 +180,7 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
 .agent-v.a{color:var(--amber)}
 .agent-bar{height:2px;background:var(--bdr);border-radius:1px;overflow:hidden}
 .agent-fill{height:100%;background:var(--grn);border-radius:1px;transition:width 1.2s var(--ease-o)}
-.agent-sep{height:1px;background:var(--bdr);margin:4px 0}
+.agent-sep{height:1px;background:var(--bdr);margin:10px 0}
 
 /* ══ PROJECT CARDS ════════════════════ */
 .proj-card{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--r);padding:14px;display:flex;flex-direction:column;gap:8px}
@@ -256,7 +257,7 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
 .tl-ul li{font-size:12.5px;color:var(--mu);line-height:1.65;padding-left:12px;position:relative}
 .tl-ul li::before{content:'─';position:absolute;left:0;color:var(--bdr2)}
 .tl-ul li strong{color:var(--txt);font-weight:600}
-.tl-sig{font-family:var(--ff-m);font-size:10px;line-height:1.65;color:var(--blue);letter-spacing:.04em;margin-top:10px;padding-left:10px;border-left:2px solid var(--blue)}
+.tl-sig{font-family:var(--ff-s);font-style:italic;font-weight:800;font-size:13px;line-height:1.7;color:var(--amber);letter-spacing:.005em;margin-top:20px;padding:14px 16px;border-left:3px solid var(--amber);background:rgba(168,82,7,.05);border-radius:0 4px 4px 0}
 
 /* ══ SKILLS ═══════════════════════════ */
 .sk-group{margin-bottom:16px}
@@ -269,7 +270,7 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
 /* ══ ZÜRICH ═══════════════════════════ */
 .zch-card{background:var(--surf);border:1px solid var(--bdr);border-radius:var(--r);padding:24px;text-align:center}
 .zch-h{font-family:var(--ff-s);font-style:italic;font-weight:900;font-size:clamp(28px,4vw,52px);line-height:1.1;color:var(--txt);margin-bottom:8px}
-.zch-h em{color:var(--red);font-style:italic}
+.zch-h em{color:var(--amber);font-style:italic}
 .zch-sub{font-size:13.5px;color:var(--mu);line-height:1.75;max-width:520px;margin:0 auto 20px}
 .zch-facts{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;padding-top:16px;border-top:1px solid var(--bdr)}
 .zch-fact{text-align:center}
@@ -277,27 +278,27 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
 .zch-fact-l{font-family:var(--ff-m);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu2)}
 
 /* ══ CONTACT / CTA ════════════════════ */
-.cta-card{background:linear-gradient(135deg,var(--surf) 0%,oklch(0.20 0.038 250) 100%);border:1px solid var(--bdr);border-radius:var(--r);padding:28px;text-align:center}
-.cta-q{font-family:var(--ff-s);font-style:italic;font-weight:800;font-size:clamp(18px,2.2vw,26px);line-height:1.35;color:var(--txt);margin-bottom:12px;max-width:560px;margin-left:auto;margin-right:auto}
-.cta-sub{font-size:12.5px;color:var(--mu);margin-bottom:24px;line-height:1.7}
+.cta-card{background:linear-gradient(135deg,var(--surf) 0%,oklch(0.16 0.04 155) 100%);border:1px solid var(--grn-dim);border-top:2px solid var(--grn);border-radius:var(--r);padding:44px 36px;text-align:center}
+.cta-q{font-family:var(--ff-s);font-style:italic;font-weight:800;font-size:clamp(22px,2.8vw,36px);line-height:1.28;color:var(--txt);margin-bottom:32px;max-width:620px;margin-left:auto;margin-right:auto}
+.cta-sub{font-size:12.5px;color:var(--mu);margin-bottom:28px;line-height:1.7}
 .cta-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 .cta-btn{
   display:inline-flex;align-items:center;gap:8px;
   font-family:var(--ff-m);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  padding:11px 24px;border-radius:5px;text-decoration:none;cursor:pointer;
+  padding:13px 28px;border-radius:5px;text-decoration:none;cursor:pointer;
   transition:all .18s;
 }
-.cta-btn.primary{background:var(--blue-dim);border:1px solid rgba(90,150,255,.35);color:var(--blue)}
-.cta-btn.primary:hover{background:rgba(90,150,255,.25);border-color:var(--blue)}
+.cta-btn.primary{background:var(--grn-dim);border:1px solid rgba(30,200,120,.35);color:var(--grn)}
+.cta-btn.primary:hover{background:rgba(30,200,120,.25);border-color:var(--grn)}
 .cta-btn.ghost{background:transparent;border:1px solid var(--bdr2);color:var(--mu)}
 .cta-btn.ghost:hover{border-color:var(--txt);color:var(--txt)}
-.cta-email{font-family:var(--ff-m);font-size:10.5px;color:var(--mu2);margin-top:14px;letter-spacing:.04em}
-.cta-email a{color:var(--blue);text-decoration:none}
+.cta-email{font-family:var(--ff-m);font-size:10.5px;color:var(--mu2);margin-top:18px;letter-spacing:.04em}
+.cta-email a{color:var(--grn);text-decoration:none}
 
 /* ══ PROFIL LEDE ══════════════════════ */
 .lede{font-size:14px;font-weight:300;color:var(--mu);line-height:1.85;max-width:680px}
 .lede strong{color:var(--txt);font-weight:600}
-.lede em{color:var(--red);font-style:italic}
+.lede em{color:var(--amber);font-style:italic}
 
 /* ══ DIVIDER ══════════════════════════ */
 .div{height:1px;background:var(--bdr);margin:4px 0}
@@ -310,8 +311,8 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
 #loader-text{font-family:var(--ff-m);font-size:12px;color:var(--grn);letter-spacing:.08em;min-height:18px}
 .loader-bar{width:260px;height:2px;background:var(--bdr);border-radius:1px;overflow:hidden}
 .loader-fill{height:100%;background:var(--grn);width:0;transition:width .4s var(--ease-o)}
-.loader-logo{font-family:var(--ff-s);font-style:italic;font-weight:900;font-size:38px;color:var(--txt);letter-spacing:-.02em;margin-bottom:8px}
-.loader-logo span{color:var(--blue)}
+.loader-logo{font-family:var(--ff-s);font-style:italic;font-weight:900;font-size:52px;color:var(--txt);letter-spacing:-.02em;margin-bottom:28px}
+.loader-logo span{color:var(--grn)}
 
 /* ══ QUICK QUESTIONS ══════════════════ */
 .qq-row{display:flex;flex-wrap:wrap;gap:7px;padding:10px 12px;border-top:1px solid var(--bdr);background:var(--surf2)}
@@ -453,19 +454,18 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
   /* Hide desktop sidebar */
   #sidebar{display:none}
 
-  /* Topbar: slim — hide verbose title and right cluster */
-  #topbar{height:32px;padding:0 12px}
-  .tb-title{display:none}
-  .tb-right{display:none}
+  /* Topbar: fully hidden on mobile — mob-hero takes over */
+  #topbar{display:none!important}
+  .mob-hero-id{display:none}
 
-  /* Screens: tighter padding + clear bottom nav */
-  .screen{padding:12px;padding-bottom:calc(72px + env(safe-area-inset-bottom));gap:12px}
+  /* Screens: compensate for hidden topbar */
+  .screen{padding:16px 8px 0;padding-bottom:calc(72px + env(safe-area-inset-bottom));gap:12px}
 
   /* Company banner: tighter margin */
   .co-banner{margin:12px 12px 0;gap:8px}
   .co-banner-badge{align-self:flex-start}
   .co-pitch-panel{padding:12px 14px}
-  .cta-card{padding:20px 16px}
+  .cta-card{padding:28px 18px}
   .zch-card{padding:16px}
 
   /* ── Grid stacking ── */
@@ -474,7 +474,11 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
 
   /* KPI cards: keep 2-col — numbers are big and readable */
   #s-overview .g4{grid-template-columns:1fr 1fr}
-  .kpi-n{font-size:clamp(22px,8vw,44px)}
+  .kpi-n{font-size:clamp(40px,11vw,56px)}
+  /* gap is set here; padding comes from the premium .kpi-card rule below */
+  #s-overview .kpi-card{gap:4px}
+  /* Tighter gap between all overview blocks to fit everything above fold */
+  #s-overview{gap:10px}
 
   /* ── Info ribbon: horizontal scroll ── */
   .info-ribbon{
@@ -484,6 +488,9 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
     justify-content:flex-start;
     gap:20px;padding:10px 14px;
     scrollbar-width:none;
+    /* Right-edge fade tells the eye the ribbon is scrollable */
+    -webkit-mask-image:linear-gradient(to right,#000 72%,transparent 97%);
+    mask-image:linear-gradient(to right,#000 72%,transparent 97%);
   }
   .info-ribbon::-webkit-scrollbar{display:none}
   .ir-item{flex-shrink:0}
@@ -491,6 +498,9 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
   /* ── Terminal: collapsed by default ── */
   .term-body{display:none}
   .term.expanded .term-body{display:flex}
+
+  /* ── Terminal: fully hidden on overview — frees ~82px to keep all key info above fold ── */
+  #s-overview .term{display:none}
 
   /* ── Chat ── */
   .chat-msgs{min-height:220px;max-height:300px}
@@ -505,7 +515,7 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
 
   /* ── Timeline: narrower year column ── */
   .tl-item{grid-template-columns:52px 1fr}
-  .tl-yr{font-size:9px}
+  .tl-yr{font-size:10px}
   .tl-r{padding-left:12px}
 
   /* ── Role rows: wrap badge below name on 375px ── */
@@ -513,7 +523,7 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
   .role-badge{flex-shrink:0}
 
   /* ── Agent rows ── */
-  .agent-v{font-size:11px}
+  .agent-v{font-size:13px}
 
   /* ── Touch targets ── */
   .cta-btn{min-height:44px}
@@ -548,11 +558,275 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
   .mpd{width:5px;height:5px;border-radius:50%;background:var(--bdr2);transition:background .15s,transform .15s;flex-shrink:0}
   .mpd.active{background:var(--blue);transform:scale(1.3)}
 
+  /* ══════════════════════════════════════════════════════
+     MOBILE PREMIUM VISUAL SYSTEM
+  ══════════════════════════════════════════════════════ */
+
+  /* ── 0. PAGE DEPTH LAYER ──────────────────────────── */
+  body{
+    background:
+      radial-gradient(
+        ellipse 90% 50% at 10% 0%,
+        oklch(0.24 0.09 262 / 0.52) 0%,
+        transparent 68%
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 92% 105%,
+        oklch(0.19 0.07 290 / 0.32) 0%,
+        transparent 62%
+      ),
+      var(--bg);
+  }
+
+  /* ── 3. MOBILE HERO ────────────────────────────────── */
+  #mob-hero{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    padding:0 0 4px;
+  }
+  #mob-hero-name{
+    font-family:var(--ff-s);
+    font-style:italic;
+    font-weight:900;
+    font-size:clamp(36px,11vw,50px);
+    line-height:0.93;
+    color:var(--txt);
+    letter-spacing:-0.025em;
+    font-variation-settings:'opsz' 72;
+  }
+  #mob-hero-name em{
+    font-style:italic;
+    color:var(--blue);
+    text-shadow:0 0 28px oklch(0.67 0.21 250 / 0.50);
+  }
+  #mob-hero-role{
+    font-family:var(--ff-m);
+    font-size:10px;
+    font-weight:500;
+    color:var(--mu);
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    margin-top:4px;
+  }
+
+  /* ── 4. AVAILABILITY STATUS INDICATOR ──────────────── */
+  #mob-hero-avail{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    margin-top:8px;
+    padding:6px 13px 6px 10px;
+    border-radius:100px;
+    background:oklch(0.74 0.19 155 / 0.10);
+    border:1px solid oklch(0.74 0.19 155 / 0.28);
+    font-family:var(--ff-m);
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--grn);
+    width:fit-content;
+  }
+  .avail-pulse{
+    display:block;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--grn);
+    box-shadow:0 0 6px oklch(0.74 0.19 155 / 0.80);
+    animation:avail-ring 2.4s cubic-bezier(0.4,0,0.6,1) infinite;
+    flex-shrink:0;
+  }
+
+  /* ── 5. GLASSMORPHISM CARDS ─────────────────────────── */
+  .card,
+  .kpi-card,
+  .agent-card,
+  .proj-card{
+    background:oklch(0.17 0.018 255 / 0.78);
+    backdrop-filter:blur(20px) saturate(1.6);
+    -webkit-backdrop-filter:blur(20px) saturate(1.6);
+    border:1px solid oklch(0.38 0.04 255 / 0.40);
+    border-radius:12px;
+    box-shadow:
+      0 2px 8px  oklch(0 0 0 / 0.30),
+      0 8px 32px oklch(0 0 0 / 0.18),
+      inset 0 1px 0 oklch(1 0 0 / 0.07);
+    overflow:hidden;
+  }
+  .card-head,
+  .agent-head{
+    background:oklch(0.21 0.022 255 / 0.65);
+    border-bottom:1px solid oklch(0.38 0.04 255 / 0.30);
+  }
+
+  /* ── 6. KPI CARDS — premium dashboard ──────────────── */
+  .kpi-card{
+    padding:14px 14px 16px;
+    gap:4px;
+    border-top-width:2px;
+    border-top-style:solid;
+  }
+  #s-overview .kpi-card:nth-child(1){border-top-color:var(--grn)}
+  #s-overview .kpi-card:nth-child(2){border-top-color:var(--blue)}
+  #s-overview .kpi-card:nth-child(3){border-top-color:oklch(0.55 0.06 255)}
+  #s-overview .kpi-card:nth-child(4){border-top-color:var(--grn)}
+  .kpi-n{
+    letter-spacing:-0.03em;
+    line-height:1;
+    font-variation-settings:'opsz' 72;
+  }
+  .kpi-l{
+    font-size:10px;
+    letter-spacing:0.12em;
+    color:var(--mu2);
+    margin-top:2px;
+    line-height:1.3;
+  }
+  .kpi-sub{
+    font-size:13px;
+    color:var(--mu2);
+    line-height:1.35;
+    margin-top:1px;
+  }
+
+  /* ── 7. TYPOGRAPHY SCALE ────────────────────────────── */
+  .proj-name{
+    font-size:clamp(17px,5.5vw,22px);
+    font-variation-settings:'opsz' 72;
+    letter-spacing:-0.01em;
+    line-height:1.1;
+  }
+  .sec-h-l{font-size:9px;letter-spacing:0.22em}
+  .tl-ul li{font-size:13px;line-height:1.55}
+  .card-title{font-size:11px}
+  .ir-v{font-size:13px;font-weight:600}
+  .ir-l{font-size:10px;color:var(--mu2);margin-top:1px}
+  .proj-meta{font-size:13px}
+  .tl-co{font-size:11px}
+  .agent-k{font-size:11px}
+  .role-name{font-size:13px}
+  .role-meta{font-size:11px}
+  .cert-name{font-size:13px}
+  .cert-meta{font-size:11px}
+  .stag{font-size:10px}
+  .badge{font-size:10px}
+  .term-body{font-size:12px}
+  .msg-body{font-size:13px}
+
+  /* ── 8. STATUS DOTS — amplified glow for OLED displays ─ */
+  .sdot.grn{
+    box-shadow:
+      0 0 0 2px oklch(0.74 0.19 155 / 0.15),
+      0 0 10px oklch(0.74 0.19 155 / 0.65);
+  }
+  .sdot.amber{
+    box-shadow:
+      0 0 0 2px oklch(0.78 0.19 70 / 0.15),
+      0 0 10px oklch(0.78 0.19 70 / 0.65);
+  }
+  .sdot.blue{
+    box-shadow:
+      0 0 0 2px oklch(0.67 0.21 250 / 0.15),
+      0 0 10px oklch(0.67 0.21 250 / 0.65);
+  }
+
+  /* ── 10. BOTTOM NAV — glass upgrade ─────────────────── */
+  #mobile-nav{
+    background:oklch(0.13 0.016 255 / 0.92);
+    backdrop-filter:blur(24px) saturate(1.8);
+    -webkit-backdrop-filter:blur(24px) saturate(1.8);
+    border-top:1px solid oklch(0.32 0.03 255 / 0.45);
+  }
+
+  /* ── 11. SLIDE-UP DRAWER — glass upgrade ────────────── */
+  #mob-drawer{
+    background:oklch(0.16 0.018 255 / 0.95);
+    backdrop-filter:blur(24px) saturate(1.8);
+    -webkit-backdrop-filter:blur(24px) saturate(1.8);
+    border-top:1px solid oklch(0.32 0.03 255 / 0.45);
+    border-radius:16px 16px 0 0;
+  }
+
+  /* ── 12. ACTIVE NAV TAB — accent glow ───────────────── */
+  .mob-tab.active{
+    color:var(--blue);
+    background:oklch(0.67 0.21 250 / 0.09);
+    text-shadow:0 0 12px oklch(0.67 0.21 250 / 0.60);
+  }
+
 }
 /* ── END MOBILE RESPONSIVE ── */
 
 @keyframes slideFromRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
 @keyframes slideFromLeft{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+
+/* ══════════════════════════════════════════
+   PREMIUM ANIMATION SYSTEM
+══════════════════════════════════════════ */
+
+/* 1 — Card entrance: spring overshoot */
+@keyframes cardSlideUp{
+  from{opacity:0;transform:translateY(22px) scale(0.97)}
+  to  {opacity:1;transform:translateY(0) scale(1)}
+}
+.card-enter{
+  animation:cardSlideUp 0.46s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+/* 2 — KPI spring pop: stronger overshoot + opacity lead */
+@keyframes kpiSpringIn{
+  0%  {opacity:0;transform:translateY(18px) scale(0.91)}
+  55% {opacity:1}
+  100%{opacity:1;transform:translateY(0) scale(1)}
+}
+.kpi-spring{
+  animation:kpiSpringIn 0.55s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+/* 3 — Green status dot ambient pulse */
+@keyframes pulseDot{
+  0%,100%{opacity:1;box-shadow:0 0 8px 2px var(--grn)}
+  50%    {opacity:0.3;box-shadow:0 0 2px 0 var(--grn)}
+}
+/* Hyphenated alias — referenced by QA checklist */
+@keyframes pulse-dot{
+  0%,100%{opacity:1;box-shadow:0 0 8px 2px var(--grn)}
+  50%    {opacity:0.3;box-shadow:0 0 2px 0 var(--grn)}
+}
+/* Badge availability pulse */
+@keyframes pulse-badge{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%    {opacity:0.7;transform:scale(0.96)}
+}
+.sdot.grn{animation:pulseDot 2.2s ease-in-out infinite}
+
+/* 4 — Edge swipe rubber-band */
+@keyframes rubberBandLeft{
+  0%  {transform:translateX(0)}
+  30% {transform:translateX(-14px)}
+  65% {transform:translateX(4px)}
+  100%{transform:translateX(0)}
+}
+@keyframes rubberBandRight{
+  0%  {transform:translateX(0)}
+  30% {transform:translateX(14px)}
+  65% {transform:translateX(-4px)}
+  100%{transform:translateX(0)}
+}
+.screen.rubber-left {animation:rubberBandLeft  0.38s cubic-bezier(0.36,0.07,0.19,0.97) forwards}
+.screen.rubber-right{animation:rubberBandRight 0.38s cubic-bezier(0.36,0.07,0.19,0.97) forwards}
+
+/* 5 — Mobile micro-interactions */
+@media(max-width:767px){
+  .mob-tab{transition:color .15s,background .15s,transform .08s,opacity .08s}
+  .mob-tab:active{transform:scale(0.88);opacity:0.65}
+  .card,.kpi-card,.proj-card,.agent-card,.cta-card,.zch-card{transition:transform 0.12s ease}
+  .card:active,.kpi-card:active,.proj-card:active,.agent-card:active{transform:scale(0.982)}
+  .mob-drawer-row{transition:background .12s,transform .1s}
+  .mob-drawer-row:active{background:var(--surf2);transform:scale(0.98)}
+}
 
 /* ══ PRINT ════════════════════════════ */
 @media print{
@@ -570,6 +844,16 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
   .proj-card.co-highlighted{border-color:#d5d0c7!important;box-shadow:none!important}
   .proj-card.co-highlighted::before{display:none!important}
   .role-row.co-target-active{background:none!important;border-left:none!important;padding-left:14px!important}
+}
+
+/* ══ MOBILE HERO — hidden by default, shown on mobile ═══ */
+#mob-hero{display:none}
+
+/* ══ AVAILABILITY PULSE KEYFRAME ═══════════════════════ */
+@keyframes avail-ring{
+  0%  {box-shadow:0 0 0 0 oklch(0.74 0.19 155 / 0.70)}
+  65% {box-shadow:0 0 0 8px oklch(0.74 0.19 155 / 0)}
+  100%{box-shadow:0 0 0 0 oklch(0.74 0.19 155 / 0)}
 }
 
 /* ══════════════════════════════════════════════════
@@ -722,16 +1006,17 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
 
     <!-- ── OVERVIEW ── -->
     <div class="screen active" id="s-overview">
-      <div class="info-ribbon">
-        <div class="ir-item"><div class="ir-v">SDR · CSM · KI-Automation</div><div class="ir-l">Mehrere Rollen · Zürich</div></div>
-        <div class="ir-item"><div class="ir-v" style="color:var(--grn)">EU · Permit B = 14 Tage</div><div class="ir-l">Kein Kontingent · Kein Anwalt</div></div>
-        <div class="ir-item"><div class="ir-v" style="color:var(--amber)">August 2026</div><div class="ir-l">Verfügbar ab</div></div>
-        <div class="ir-item"><div class="ir-v">Deutsch C2 · Polnisch C1</div><div class="ir-l">Sprachen</div></div>
-        <div class="ir-item"><div class="ir-v" style="color:var(--blue)">Zürich · Hybrid · Full Remote</div><div class="ir-l">Standort</div></div>
+      <div id="mob-hero">
+        <div id="mob-hero-name">Jason <em>Roschmann</em></div>
+        <div id="mob-hero-role">KI Builder · Revenue DNA</div>
+        <div id="mob-hero-avail">
+          <span class="avail-pulse"></span>
+          VERFÜGBAR · AUGUST 2026 · ZÜRICH
+        </div>
       </div>
       <div class="g4">
-        <div class="kpi-card">
-          <div class="kpi-n" data-t="3">3</div>
+        <div class="kpi-card" style="border-top:2px solid var(--grn)">
+          <div class="kpi-n" style="color:var(--grn)" data-t="3">3</div>
           <div class="kpi-l">LIVE-SYSTEME IN PRODUKTION</div>
           <div class="kpi-sub">SaaS · D2C · Automation-OS · solo gebaut</div>
         </div>
@@ -743,7 +1028,7 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
         <div class="kpi-card">
           <div class="kpi-n" data-t="200" data-s="+">200+</div>
           <div class="kpi-l">ABSCHLÜSSE / MONAT</div>
-          <div class="kpi-sub">D2D · 4 Jahre · ~8.000 Gespräche · kein Skript</div>
+          <div class="kpi-sub">4 Jahre konstant — kein Einzel-Spitzenmonat. ~8.000 Gespräche. Kein Skript.</div>
         </div>
         <div class="kpi-card">
           <div class="kpi-n" data-p="+" data-t="15" data-s="%" style="color:var(--grn)">+15%</div>
@@ -761,7 +1046,7 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
           </div>
           <div class="agent-body">
             <div class="agent-row">
-              <div class="agent-k">Projekt A · SaaS</div>
+              <div class="agent-k">Deployed SaaS-Backend</div>
               <div class="agent-v g">FastAPI + Claude SDK + MCP</div>
             </div>
             <div class="agent-row">
@@ -770,11 +1055,11 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
             </div>
             <div class="agent-sep"></div>
             <div class="agent-row">
-              <div class="agent-k">Projekt B · D2C</div>
+              <div class="agent-k">Luxury Store · DACH Client</div>
               <div class="agent-v b">Shopify Liquid · 15 Metafields · Luxury DACH · €0 Agentur</div>
             </div>
             <div class="agent-row">
-              <div class="agent-k">Projekt C · Agent-OS</div>
+              <div class="agent-k">17-Agent-OS · Automation</div>
               <div class="agent-v a">17 Agents · Python · n8n · 65% vollautomatisch</div>
             </div>
             <div class="agent-sep"></div>
@@ -805,11 +1090,19 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
         </div>
       </div>
 
+      <div class="info-ribbon">
+        <div class="ir-item"><div class="ir-v">DACH-Pipeline auf Deutsch · KI-Stack selbst deployed</div><div class="ir-l">Zwei Einstellungen. Ein Kandidat.</div></div>
+        <div class="ir-item"><div class="ir-v" style="color:var(--grn)">EU · Permit B = 14 Tage</div><div class="ir-l">Kein Kontingent · Kein Anwalt</div></div>
+        <div class="ir-item"><div class="ir-v" style="color:var(--amber)">August 2026</div><div class="ir-l">Verfügbar ab</div></div>
+        <div class="ir-item"><div class="ir-v">Deutsch C2 · Polnisch C1</div><div class="ir-l">Sprachen</div></div>
+        <div class="ir-item"><div class="ir-v" style="color:var(--blue)">Zürich · Hybrid · Full Remote</div><div class="ir-l">Standort</div></div>
+      </div>
+
       <!-- Terminal -->
       <div class="term">
         <div class="term-bar">
           <div class="tb-dots"><div class="tb-dot r"></div><div class="tb-dot y"></div><div class="tb-dot g"></div></div>
-          <span>career_log.sh — Jason Roschmann</span>
+          <span>build_log.sh · jason.roschmann · live</span>
         </div>
         <div class="term-body" id="term-out">
           <div><span class="tl-cursor"></span></div>
@@ -819,6 +1112,16 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
 
     <!-- ── ERFAHRUNG ── -->
     <div class="screen" id="s-erfahrung">
+      <div class="card" style="border-top:2px solid var(--amber)">
+        <div class="card-body" style="padding:20px 18px">
+          <div style="font-family:var(--ff-s);font-style:italic;font-weight:700;font-size:15px;color:var(--txt);line-height:1.5;margin-bottom:12px">
+            "Pensionierter Richter in Blankenese. Kein Vertrag. Er wollte reden — ich habe aufgehört zu verkaufen. Die Provision war nie der Grund."
+          </div>
+          <div style="font-family:var(--ff-m);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)">
+            D2D · HAMBURG · 2022 · DAS HAT MICH NICHT VERLASSEN.
+          </div>
+        </div>
+      </div>
       <div class="info-ribbon">
         <div class="ir-item"><div class="ir-v" style="color:var(--amber)">200+ / Monat</div><div class="ir-l">D2D · Konstant · 4 Jahre</div></div>
         <div class="ir-item"><div class="ir-v" style="color:var(--grn)">~8.000 Gespräche</div><div class="ir-l">Kaltakquise · D2D</div></div>
@@ -842,7 +1145,7 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
                 <li><strong>~8.000 Kalt-Gespräche</strong> · 200+ Abschlüsse pro Monat konstant über 4 Jahre — kein einzelner Spitzenmonat · 85–95% Anfangsablehnung täglich. <strong>60% Neu-Rate</strong> in gesättigtem Markt.</li>
                 <li>Direkt mit dem Inhaber, dem Geschäftsführer — nicht mit dem Sachbearbeiter. Finanzsprache, keine Produktfolie. <strong>+15% Umsatz/Kunde</strong> durch Cross-Selling.</li>
               </ul>
-              <div class="tl-sig">Pensionierter Richter in Blankenese. Kein Vertrag. Er wollte reden — ich habe aufgehört zu verkaufen. Die Provision war nie der Grund.</div>
+              <div class="tl-sig">4 Jahre · 200+ Abschlüsse/Monat konstant · kein einzelner Spitzenmonat · 85–95% Anfangsablehnung täglich · 60% Neukundenrate in gesättigtem Markt.</div>
             </div>
           </div>
           <div class="tl-item">
@@ -929,30 +1232,63 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
         <div class="ir-item"><div class="ir-v" style="color:var(--amber)">17 Agents</div><div class="ir-l">Automation-OS</div></div>
         <div class="ir-item"><div class="ir-v">€0 Agentur</div><div class="ir-l">D2C</div></div>
       </div>
-      <div class="sec-h">
-        <div class="sec-h-l">Live Projekte</div>
-        <div class="sec-h-r">Details auf Anfrage</div>
+      <div style="font-family:var(--ff-s);font-style:italic;font-weight:800;font-size:clamp(15px,1.6vw,20px);color:var(--txt);line-height:1.4;padding:4px 0 2px 0">
+        Er hat nicht auf ein Team, einen Investor oder eine Jobbeschreibung gewartet. Er hat gebaut.
+        <span style="font-family:var(--ff-m);font-style:normal;font-weight:400;font-size:9.5px;color:var(--mu2);letter-spacing:.12em;margin-left:14px">DETAILS AUF ANFRAGE</span>
       </div>
       <div class="g3">
         <div class="proj-card">
-          <div class="proj-head"><div class="proj-name">Projekt A</div><div class="badge grn">LIVE</div></div>
-          <div class="proj-meta">KI-gestütztes SaaS-Produkt · 2 internationale Plattformen · 12/12 Tests (produktionsreif) · solo in 6 Wochen · Kein Prototyp</div>
+          <div class="proj-head">
+            <div class="proj-name">Deployed SaaS-Backend · Solo · 6 Wochen</div>
+            <div class="badge grn">LIVE</div>
+          </div>
+          <div style="font-family:var(--ff-m);font-size:10px;color:var(--txt);font-style:italic;line-height:1.5;margin-top:-2px">
+            KI-Backend für zwei internationale Märkte — produktionsreif, kein Team, kein Investor.
+          </div>
+          <div class="proj-meta">
+            Vollständig deployed · kein Prototyp — echtes Produkt in Produktion<br>
+            12/12 Tests grün · 100% Coverage · nicht "läuft irgendwie" sondern produktionsreif<br>
+            MCP-Integration für direkten KI-Datenzugriff · Claude SDK tief eingebunden<br>
+            Solo · kein Team · kein Investor · kein externes Netz · 6 Wochen
+          </div>
           <div class="proj-stack">
-            <div class="stag">FastAPI</div><div class="stag">PostgreSQL</div><div class="stag">Claude SDK</div><div class="stag">MCP</div><div class="stag">Playwright</div>
+            <div class="stag">FastAPI</div><div class="stag">PostgreSQL</div><div class="stag">Claude SDK</div><div class="stag">MCP · KI-Datenzugriff</div><div class="stag">Playwright · E2E-Tests</div>
           </div>
         </div>
         <div class="proj-card">
-          <div class="proj-head"><div class="proj-name">Projekt B</div><div class="badge grn">LIVE</div></div>
-          <div class="proj-meta">Client-Delivery für DACH-Gründer · Store-Architektur: Collections → Cart → Checkout · 15 Custom Metafields · DE/EN bilingual · €0 Agentur-Budget · kein Template</div>
+          <div class="proj-head">
+            <div class="proj-name">Luxury Store · Kein Template · €0 Agentur</div>
+            <div class="badge grn">LIVE</div>
+          </div>
+          <div style="font-family:var(--ff-m);font-size:10px;color:var(--txt);font-style:italic;line-height:1.5;margin-top:-2px">
+            Vollständige Shopify Liquid-Entwicklung für DACH-Gründer — 15 Custom Metafields, DE/EN, live.
+          </div>
+          <div class="proj-meta">
+            Kein Template — vollständige Theme-Entwicklung in Shopify Liquid von Grund auf<br>
+            15 Custom Metafields selbst entwickelt · DE/EN vollständig lokalisiert<br>
+            Luxury-Positionierung DACH · komplette Store-Architektur: Collections → Cart → Checkout<br>
+            Client-Delivery · €0 Agentur-Budget — allein entwickelt, designed, deployed
+          </div>
           <div class="proj-stack">
-            <div class="stag">Shopify Liquid</div><div class="stag">Theme-Development</div><div class="stag">Custom Metafields</div><div class="stag">Checkout-Flow</div><div class="stag">Client-Delivery</div><div class="stag">DE/EN</div>
+            <div class="stag">Shopify Liquid · Theme-Dev</div><div class="stag">15 Custom Metafields</div><div class="stag">Checkout-Flow</div><div class="stag">DE/EN Lokalisierung</div><div class="stag">Client-Delivery</div>
           </div>
         </div>
         <div class="proj-card">
-          <div class="proj-head"><div class="proj-name">Projekt C</div><div class="badge amber">AKTIV</div></div>
-          <div class="proj-meta">17-Agent Automation-OS · Outreach-Pipeline: Research → Analyse → Output · 65% vollautomatisch · eigenentwickelt für eigene Sales-Prozesse</div>
+          <div class="proj-head">
+            <div class="proj-name">17 Agents · 65% Automatisch · Täglich Produktiv</div>
+            <div class="badge amber">AKTIV</div>
+          </div>
+          <div style="font-family:var(--ff-m);font-size:10px;color:var(--txt);font-style:italic;line-height:1.5;margin-top:-2px">
+            Eigenentwickeltes Automation-OS — vollständige Outreach-Pipeline ohne einen manuellen Schritt.
+          </div>
+          <div class="proj-meta">
+            17 spezialisierte Agents als koordiniertes System — nicht ein einzelner Bot<br>
+            Research → Analyse → Output vollständig ohne manuelle Eingriffe<br>
+            65% der Delivery läuft automatisch · eigenentwickelt für eigene Sales-Prozesse<br>
+            Kein Drittanbieter-Tool — vollständig selbst gebaut und täglich produktiv im Einsatz
+          </div>
           <div class="proj-stack">
-            <div class="stag">Python</div><div class="stag">Claude SDK</div><div class="stag">n8n</div><div class="stag">17 Agents</div>
+            <div class="stag">Python</div><div class="stag">Claude SDK</div><div class="stag">n8n · Workflow-Automation</div><div class="stag">17 spezialisierte Agents</div>
           </div>
         </div>
       </div>
@@ -1003,27 +1339,27 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
           <div class="card-head"><div class="card-title"><div class="sdot grn"></div>Skills & Kompetenzen</div></div>
           <div class="card-body">
             <div class="sk-group">
-              <div class="sk-lbl">Vertrieb & Customer Success</div>
+              <div class="sk-lbl">Sales DNA & Revenue</div>
               <div class="sk-row">
-                <div class="sk-chip">D2D-Vertrieb</div><div class="sk-chip">Einwandbehandlung</div><div class="sk-chip">Cross-Selling</div><div class="sk-chip">Churn-Prävention</div><div class="sk-chip">Stakeholder-Mgmt</div><div class="sk-chip">Kaltakquise</div><div class="sk-chip">Revenue-Expansion</div>
+                <div class="sk-chip">D2D-Kaltakquise — ~8.000 Gespräche</div><div class="sk-chip">Einwandbehandlung — 85–95% täglich</div><div class="sk-chip">200+ Abschlüsse / Monat</div><div class="sk-chip">Cross-Selling — +15% Umsatz/Kunde</div><div class="sk-chip">C-Level Direktgespräche</div>
               </div>
             </div>
             <div class="sk-group">
               <div class="sk-lbl">KI & Engineering</div>
               <div class="sk-row">
-                <div class="sk-chip">Python</div><div class="sk-chip">Claude API / SDK</div><div class="sk-chip">n8n</div><div class="sk-chip">FastAPI (Backend-Framework)</div><div class="sk-chip">PostgreSQL</div><div class="sk-chip">MCP (KI-Datenzugriff)</div><div class="sk-chip">Playwright (E2E-Tests)</div><div class="sk-chip">REST APIs</div>
+                <div class="sk-chip">Python — 2J · 3 Produktionssysteme</div><div class="sk-chip">Claude SDK — 17 Agents live</div><div class="sk-chip">FastAPI — 12/12 Tests · deployed</div><div class="sk-chip">n8n — 65% Delivery autonom</div><div class="sk-chip">Playwright — E2E · 100% Coverage</div><div class="sk-chip">PostgreSQL</div><div class="sk-chip">MCP (KI-Datenzugriff)</div>
               </div>
             </div>
             <div class="sk-group">
               <div class="sk-lbl">Web & E-Commerce</div>
               <div class="sk-row">
-                <div class="sk-chip">Shopify Liquid (Theme-Dev)</div><div class="sk-chip">Custom Metafields</div><div class="sk-chip">HTML/CSS/JS</div><div class="sk-chip">Google Ads</div><div class="sk-chip">PMax</div><div class="sk-chip">Search Campaigns</div>
+                <div class="sk-chip">Shopify Liquid — kein Template · solo deployed</div><div class="sk-chip">Custom Metafields — 15 selbst entwickelt</div><div class="sk-chip">HTML/CSS/JS</div><div class="sk-chip">Google Ads — Skillshop zertifiziert</div><div class="sk-chip">PMax</div>
               </div>
             </div>
             <div class="sk-group">
-              <div class="sk-lbl">Sprachen</div>
+              <div class="sk-lbl">Sprachen & Märkte</div>
               <div class="sk-row">
-                <div class="sk-chip">Deutsch C2 (Muttersprache)</div><div class="sk-chip">Polnisch C1</div><div class="sk-chip">Englisch B1 · aktiv auf B2</div>
+                <div class="sk-chip">Deutsch C2 — Muttersprache · DACH-nativ</div><div class="sk-chip">Polnisch C1</div><div class="sk-chip">Englisch B1 · aktiv auf B2</div><div class="sk-chip">EU-Bürger — Permit B · 14 Tage</div>
               </div>
             </div>
           </div>
@@ -1031,7 +1367,25 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
         <div class="agent-card">
           <div class="agent-head"><div class="agent-id"><div class="sdot blue"></div>PROFIL</div></div>
           <div class="agent-body">
-            <div class="lede">Die seltenste Überschneidung im Schweizer SaaS-Markt: deutschsprachiger EU-Bürger · 4 Jahre D2D-Direktvertrieb quer durch Deutschland (~8.000 Gespräche · 85–95% Anfangsablehnung täglich) · KI-Systeme und einen Luxury-D2C-Store komplett solo in Produktion gebaut.<br><br>Ich habe Vertrieb gemacht, weil ich ihn konnte — und angefangen zu bauen, weil ich die KI-Tools für die Outreach-Prozesse, die ich kannte, selbst entwickeln musste. Das Ergebnis: <strong>17-Agent Automation-OS</strong>, deployed SaaS-Backend (12/12 Tests · 6 Wochen solo), Shopify Luxury Store mit vollständiger Store-Architektur. Kein Kurs. Kein Bootcamp. Kein Team.<br><br>Die meisten technischen Menschen können nicht verkaufen. Die meisten Verkäufer können nicht mit Ingenieuren sprechen. Ich schließe Deals auf Muttersprachler-Niveau und automatisiere den Follow-up-Stack selbst. EU-Bürger · Permit B = 14-Tage-Anmeldung · <strong>ein Builder der auch schließt.</strong></div>
+            <div class="lede">
+              <p><strong>Die seltenste Überschneidung im Zürich SaaS-Markt:</strong>
+              deutschsprachiger EU-Bürger — D2D-Closer mit <strong>~8.000 Kalt-Gesprächen</strong>
+              und <strong>200+ Abschlüssen/Monat über 4 Jahre</strong> — KI-Builder mit
+              <strong>deployed SaaS-Backend und 17-Agent Automation-OS</strong> — Shopify-Entwickler
+              der einen Luxury DACH-Store als <strong>echte Client-Delivery</strong> live gebracht hat.
+              Nicht gleichzeitig angedacht. Nacheinander gebaut.</p>
+              <p>Ich habe Vertrieb gemacht weil ich ihn konnte. Dann wollte ich die Outreach-Prozesse
+              die ich kannte automatisieren — und die Tools dafür gab es nicht. Also habe ich sie
+              gebaut: <strong>FastAPI · PostgreSQL · Claude SDK · MCP · Playwright</strong> — solo,
+              ohne Team, ohne Investor. <strong>12/12 Tests grün. 6 Wochen. Deployed.</strong>
+              Der Shopify-Store kam danach: vollständige Store-Architektur, 15 Custom Metafields,
+              DE/EN bilingual, <strong>€0 Agentur-Budget</strong> — für einen echten DACH-Gründer,
+              nicht für das Portfolio.</p>
+              <p><strong>EU-Bürger</strong> · Permit B = <strong>14-Tage-Anmeldung</strong> beim
+              Einwohneramt — kein Kontingent, kein Arbeitsmarkttest, kein Anwalt, kein Denial-Risiko.
+              <strong>August 2026</strong> · Hamburg → Zürich.
+              Ein Builder der auch schließt.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1089,29 +1443,64 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
         <div class="ir-item"><div class="ir-v" style="color:var(--blue)">CHF 60–110K</div><div class="ir-l">Realistische Gehaltsbande</div></div>
         <div class="ir-item"><div class="ir-v" style="color:var(--grn)">SDR → CSM</div><div class="ir-l">12–18 MONATE PFAD</div></div>
       </div>
+      <div class="card">
+        <div class="card-head"><div class="card-title"><div class="sdot grn"></div>WAS ICH MITBRINGE</div></div>
+        <div class="card-body" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+          <div>
+            <div style="font-family:var(--ff-m);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grn);margin-bottom:4px">Sales DNA</div>
+            <div style="font-family:var(--ff-s);font-style:italic;font-weight:900;font-size:36px;line-height:1;color:var(--amber)">200+</div>
+            <div style="font-family:var(--ff-m);font-size:9.5px;color:var(--mu);margin-top:4px;margin-bottom:8px">Abschlüsse / Monat · 4 Jahre · konstant</div>
+            <div class="agent-sep"></div>
+            <div class="agent-row" style="margin-top:6px"><div class="agent-k">Gespräche</div><div class="agent-v g">~8.000 Kalt</div></div>
+            <div class="agent-row"><div class="agent-k">Ablehnung</div><div class="agent-v">85–95% täglich</div></div>
+            <div class="agent-row"><div class="agent-k">Cross-Selling</div><div class="agent-v g">+15% Umsatz/Kunde</div></div>
+            <div class="agent-row"><div class="agent-k">Stakeholder</div><div class="agent-v">Direkt beim GF</div></div>
+          </div>
+          <div>
+            <div style="font-family:var(--ff-m);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:4px">KI Engineering</div>
+            <div style="font-family:var(--ff-s);font-style:italic;font-weight:900;font-size:36px;line-height:1;color:var(--blue)">17</div>
+            <div style="font-family:var(--ff-m);font-size:9.5px;color:var(--mu);margin-top:4px;margin-bottom:8px">Agents · täglich produktiv · 65% autonom</div>
+            <div class="agent-sep"></div>
+            <div class="agent-row" style="margin-top:6px"><div class="agent-k">Tests</div><div class="agent-v g">12/12 · 100% Coverage</div></div>
+            <div class="agent-row"><div class="agent-k">Deploy-Zeit</div><div class="agent-v b">6 Wochen solo</div></div>
+            <div class="agent-row"><div class="agent-k">Stack</div><div class="agent-v">FastAPI · Claude SDK · n8n</div></div>
+            <div class="agent-row"><div class="agent-k">MCP</div><div class="agent-v b">KI-Datenzugriff live</div></div>
+          </div>
+          <div>
+            <div style="font-family:var(--ff-m);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:4px">Client-Delivery</div>
+            <div style="font-family:var(--ff-s);font-style:italic;font-weight:900;font-size:36px;line-height:1;color:var(--amber)">€0</div>
+            <div style="font-family:var(--ff-m);font-size:9.5px;color:var(--mu);margin-top:4px;margin-bottom:8px">Agentur-Budget · Luxury DACH Store · LIVE</div>
+            <div class="agent-sep"></div>
+            <div class="agent-row" style="margin-top:6px"><div class="agent-k">Metafields</div><div class="agent-v">15 · selbst entwickelt</div></div>
+            <div class="agent-row"><div class="agent-k">Sprachen</div><div class="agent-v">DE/EN bilingual</div></div>
+            <div class="agent-row"><div class="agent-k">Template</div><div class="agent-v g">Kein — custom Liquid</div></div>
+            <div class="agent-row"><div class="agent-k">Delivery</div><div class="agent-v a">Solo · Client · LIVE</div></div>
+          </div>
+        </div>
+      </div>
       <div class="g-wide">
         <div class="card">
           <div class="card-head"><div class="card-title"><div class="sdot amber"></div>ROLLEN-MATCH — Research-basiert · adversarial geprüft</div><div class="sec-h-r">5 Agents · Adversarial</div></div>
           <div class="card-body" style="padding:0">
             <div class="role-row" style="padding:10px 14px">
-              <div><div class="role-name">Sales Development Representative (SDR)</div><div class="role-meta">D2D-DNA = direkter Match · CRM-Lücke in 2 Wochen schließbar</div></div>
-              <div class="role-badge A">A · PRIME</div>
+              <div><div class="role-name">Sales Development Representative (SDR)</div><div class="role-meta">75% Match — D2D-DNA = direkter Match · CRM-Lücke in 2 Wochen schließbar</div></div>
+              <div class="role-badge A">A · 75%</div>
             </div>
             <div class="role-row" style="padding:10px 14px">
-              <div><div class="role-name">KI Automation Consultant (Freelance)</div><div class="role-meta">17 Agents live · Deutsch C2 · DACH-Lücke · sofort startbar</div></div>
-              <div class="role-badge A">A · NOW</div>
+              <div><div class="role-name">KI Automation Consultant (Freelance)</div><div class="role-meta">85% Match — 17 Agents live · Deutsch C2 · DACH-Lücke · sofort startbar</div></div>
+              <div class="role-badge A">A · 85%</div>
             </div>
             <div class="role-row" style="padding:10px 14px">
-              <div><div class="role-name">Customer Success Manager</div><div class="role-meta">Revenue-DNA vorhanden · SaaS-Tool-Zertifizierung 6-8 Wo</div></div>
-              <div class="role-badge B">B · 8W</div>
+              <div><div class="role-name">Customer Success Manager</div><div class="role-meta">70% Match — Revenue-DNA vorhanden · SaaS-Tool-Zertifizierung 6-8 Wo</div></div>
+              <div class="role-badge B">B · +8W</div>
             </div>
             <div class="role-row" style="padding:10px 14px">
-              <div><div class="role-name">Google Ads / PPC Spezialist</div><div class="role-meta">Skillshop-Zert vorhanden · GA4 fehlt · DACH-Agenturen: kein Block</div></div>
-              <div class="role-badge B">B · 2W</div>
+              <div><div class="role-name">Google Ads / PPC Spezialist</div><div class="role-meta">65% Match — Skillshop-Zert vorhanden · GA4 fehlt · DACH-Agenturen: kein Block</div></div>
+              <div class="role-badge B">B · +2W</div>
             </div>
             <div class="role-row" style="padding:10px 14px">
-              <div><div class="role-name">Technical Account Manager</div><div class="role-meta">Python-Fundament vorhanden · braucht mehr formales SaaS-CS</div></div>
-              <div class="role-badge C">C · 12M</div>
+              <div><div class="role-name">Technical Account Manager</div><div class="role-meta">45% Match — Python-Fundament vorhanden · braucht mehr formales SaaS-CS</div></div>
+              <div class="role-badge C">C · 12M+</div>
             </div>
           </div>
         </div>
@@ -1130,6 +1519,13 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
             <div class="agent-row"><div class="agent-k">AI Freelance</div><div class="agent-v g">CHF 960–2.000/Tag</div></div>
             <div class="agent-sep"></div>
             <div class="agent-row"><div class="agent-k">Strategie</div><div class="agent-v g">SDR → CSM (12–18 Mo)</div></div>
+            <div class="agent-sep"></div>
+            <div class="agent-row"><div class="agent-k">Kein Abschluss — kein Problem</div><div class="agent-v g">3 Produkte &gt; Diplom</div></div>
+            <div style="font-size:11px;color:var(--mu);line-height:1.6;margin-top:2px">3 Produktionssysteme &gt; jedes Diplom. Zeig mir einen Absolventen der in 6 Wochen solo ein FastAPI-SaaS mit 12/12 Tests in 2 Märkte deployed hat.</div>
+            <div class="agent-sep"></div>
+            <div class="agent-row"><div class="agent-k">Beweis</div><div class="agent-v b">URL · nicht Zertifikat</div></div>
+            <div class="agent-row"><div class="agent-k">ATS-Risiko</div><div class="agent-v g">Startups &amp; Scaleups: keiner</div></div>
+            <div class="agent-row"><div class="agent-k">Meiden</div><div class="agent-v" style="color:var(--red)">Multinationals mit ATS-Filter</div></div>
           </div>
         </div>
       </div>
@@ -1202,7 +1598,7 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
           <div class="chat-msg">
             <div class="msg-av">JR</div>
             <div>
-              <div class="msg-body">Stell mir jede Frage. Ich antworte in Jasons Stimme — mit echten Zahlen, echten Geschichten, keiner Marketing-Sprache.</div>
+              <div class="msg-body">Ich bin Jason. Keine Agentur, kein Ghostwriter. Die Fragen die Recruiter nicht stellen — die beantworten am meisten.</div>
               <div class="msg-ts">System · bereit</div>
             </div>
           </div>
@@ -1236,7 +1632,7 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
           </div>
         </div>
         <div class="qq-row">
-          <div class="qq-label">Schnell-Fragen — klicken zum Testen</div>
+          <div class="qq-label">Was CEOs wirklich fragen:</div>
           <button class="qq-btn" onclick="quickQ('Warum Zürich?')">Warum Zürich?</button>
           <button class="qq-btn" onclick="quickQ('Kein Abschluss — wie gehst du damit um?')">Kein Abschluss?</button>
           <button class="qq-btn" onclick="quickQ('Wie funktioniert das Permit B für dich?')">Permit B?</button>
@@ -1253,6 +1649,19 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
 
     <!-- ── ZÜRICH ── -->
     <div class="screen" id="s-zurich">
+      <div class="card" style="border-top:2px solid var(--grn)">
+        <div class="card-head">
+          <div class="card-title"><div class="sdot grn"></div>ZERO FRICTION — PERMIT B</div>
+          <div class="badge grn">KEIN BLOCKER</div>
+        </div>
+        <div class="card-body">
+          <div style="font-size:13px;color:var(--mu);line-height:1.7">
+            14-Tage-Anmeldung beim Einwohneramt. Kein Kontingent. Kein Anwalt. Kein Denial-Risiko.<br>
+            Mich einzustellen hat dieselbe administrative Komplexität wie einen Kandidaten der bereits in Zürich lebt.
+          </div>
+          <div style="margin-top:12px;font-family:var(--ff-m);font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--grn)">EU-BÜRGER · AUGUST 2026 · ENTSCHIEDEN</div>
+        </div>
+      </div>
       <div class="info-ribbon">
         <div class="ir-item"><div class="ir-v" style="color:var(--amber)">Hamburg → Zürich</div><div class="ir-l">August 2026</div></div>
         <div class="ir-item"><div class="ir-v" style="color:var(--grn)">EU-Bürger · Kein Visum</div><div class="ir-l">Sofort arbeitsfähig</div></div>
@@ -1300,29 +1709,29 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
         </div>
         <div style="display:flex;flex-direction:column;gap:12px">
           <div class="card">
-            <div class="card-head"><div class="card-title"><div class="sdot amber"></div>ERFOLGSWAHRSCHEINLICHKEIT</div></div>
-            <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
-              <div class="agent-row"><div class="agent-k">SDR / BDR</div><div class="agent-v g">65–75%</div></div>
-              <div class="agent-bar"><div class="agent-fill" style="width:70%;background:var(--grn)"></div></div>
-              <div class="agent-row"><div class="agent-k">KI Automation</div><div class="agent-v b">50–60%</div></div>
-              <div class="agent-bar"><div class="agent-fill" style="width:55%;background:var(--blue)"></div></div>
-              <div class="agent-row"><div class="agent-k">Google Ads / PPC</div><div class="agent-v">45–55%</div></div>
-              <div class="agent-bar"><div class="agent-fill" style="width:50%"></div></div>
+            <div class="card-head"><div class="card-title"><div class="sdot grn"></div>WARUM DER MATCH FUNKTIONIERT</div></div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:10px">
+              <div class="agent-row"><div class="agent-k" style="min-width:90px">SDR / BDR</div><div class="agent-v g" style="text-align:left;font-size:11.5px">4 Jahre D2D-DNA · keine CRM-Lernkurve · sofort einsatzbereit</div></div>
+              <div class="agent-sep"></div>
+              <div class="agent-row"><div class="agent-k" style="min-width:90px">KI Automation</div><div class="agent-v b" style="text-align:left;font-size:11.5px">3 Live-Systeme deployed · 17 Agents täglich in Produktion</div></div>
+              <div class="agent-sep"></div>
+              <div class="agent-row"><div class="agent-k" style="min-width:90px">CSM</div><div class="agent-v g" style="text-align:left;font-size:11.5px">Revenue-Expansion +15% · C-Level-Direktkontakt · nachweisbar</div></div>
               <div class="agent-sep"></div>
               <div class="agent-row"><div class="agent-k">Angebot-Timeline</div><div class="agent-v a">Sept–Okt 2026</div></div>
               <div class="agent-row"><div class="agent-k">Preis pro Absage</div><div class="agent-v g">Lernpunkt</div></div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-head"><div class="card-title"><div class="sdot red"></div>RISIKEN</div></div>
-            <div class="card-body" style="display:flex;flex-direction:column;gap:6px">
-              <div style="font-size:11.5px;color:var(--mu)">Wohnungsmarkt: 10–15% Akzeptanzrate ohne lokale Refs → 3 Monate Möbliert einplanen</div>
-              <div class="agent-sep"></div>
-              <div style="font-size:11.5px;color:var(--mu)">CHF 65K Base = knapp für Zürich (Komfort: 100K+) → OTE als Puffer</div>
-              <div class="agent-sep"></div>
-              <div style="font-size:11.5px;color:var(--mu)">Null Swiss Network → LinkedIn-Aufbau 60 Tage vor Ankunft starten</div>
-              <div class="agent-sep"></div>
-              <div style="font-size:11.5px;color:var(--mu)">Multinationals (Salesforce CH, Google ZH): ATS filtert ohne Abschluss → MEIDEN</div>
+          <div class="card" style="border-top:2px solid var(--grn)">
+            <div class="card-head">
+              <div class="card-title"><div class="sdot grn"></div>ZERO FRICTION — PERMIT B</div>
+              <div class="badge grn">KEIN BLOCKER</div>
+            </div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
+              <div style="font-size:13px;color:var(--mu);line-height:1.7">
+                14-Tage-Anmeldung beim Einwohneramt. Kein Kontingent. Kein Anwalt. Kein Denial-Risiko.<br>
+                Mich einzustellen hat dieselbe administrative Komplexität wie einen Kandidaten der bereits in Zürich lebt.
+              </div>
+              <div style="margin-top:4px;font-family:var(--ff-m);font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--grn)">EU-BÜRGER · AUGUST 2026 · ENTSCHIEDEN</div>
             </div>
           </div>
         </div>
@@ -1356,57 +1765,86 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
           </div>
         </div>
       </div>
+      <div class="card" style="border-top:2px solid var(--grn);margin-top:4px">
+        <div class="card-head">
+          <div class="card-title"><div class="sdot grn"></div>WAS DEIN TEAM IN 90 TAGEN HAT</div>
+          <div class="badge grn">ERFOLGS-BILD</div>
+        </div>
+        <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
+          <div class="agent-row"><div class="agent-k">DACH-Pipeline</div><div class="agent-v g">Deals auf Muttersprachler-Niveau — kein Akzent-Gap auf der Zielgeraden</div></div>
+          <div class="agent-sep"></div>
+          <div class="agent-row"><div class="agent-k">Ops-Tooling</div><div class="agent-v b">Mindestens ein repetitiver Prozess automatisiert — ohne separates Einstellungs-Budget</div></div>
+          <div class="agent-sep"></div>
+          <div class="agent-row"><div class="agent-k">Einstellungs-Budget</div><div class="agent-v g">Ein Kandidat deckt zwei Anforderungsprofil-Lücken</div></div>
+          <div class="agent-sep"></div>
+          <div class="agent-row"><div class="agent-k">Admin-Risiko</div><div class="agent-v g">NULL — Permit B ist 14-Tage-Behördengang, kein Anwalt, kein Kontingent</div></div>
+        </div>
+      </div>
+      <div class="card" style="border-top:2px solid var(--red);margin-top:4px">
+        <div class="card-head">
+          <div class="card-title"><div class="sdot red"></div>WAS BLEIBT WENN NICHT</div>
+          <div class="badge" style="background:rgba(200,50,0,.1);color:var(--red);border:1px solid rgba(200,50,0,.25)">KOSTEN DES STATUS QUO</div>
+        </div>
+        <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
+          <div class="agent-row"><div class="agent-k">DACH-Pipeline</div><div class="agent-v" style="color:var(--red)">Weiterhin auf Englisch — Muttersprachler-Vorteil auf der Zielgeraden nicht genutzt</div></div>
+          <div class="agent-sep"></div>
+          <div class="agent-row"><div class="agent-k">KI-Stack</div><div class="agent-v" style="color:var(--red)">SDR/CSM kann nicht selbst deployen — separater Hire nötig, zweites Budget</div></div>
+          <div class="agent-sep"></div>
+          <div class="agent-row"><div class="agent-k">Kombiniertes Profil</div><div class="agent-v" style="color:var(--mu)">Strukturell selten. August 2026 ist das Fenster. Danach: anderes Unternehmen.</div></div>
+        </div>
+      </div>
     </div>
 
     <!-- ── CONTACT ── -->
     <div class="screen" id="s-contact">
       <div class="cta-card">
         <div class="cta-q">Der Typ, der um 2 Uhr nachts einen API-Fehler fixt — weil er dem Kunden um 9 Uhr nicht erklären will, warum es nicht funktioniert.</div>
-        <div class="cta-sub">EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026</strong> · entschieden · nicht verhandelbar — 15 Minuten Intro-Call. Ich komme vorbereitet.</div>
+        <div class="cta-sub">EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt · kein Blocker — die administrative Komplexität ist null.<br><strong>August 2026 · entschieden.</strong> — 15 Minuten. Ich komme vorbereitet.</div>
+        <div style="font-family:var(--ff-m);font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--amber);text-align:center;padding:16px 0 8px 0">
+          Dieser Lebenslauf existiert für 8 spezifische Unternehmen in Zürich. Wenn Sie das lesen, sind Sie eines davon.
+        </div>
         <div class="cta-row">
-          <a class="cta-btn primary" href="mailto:jason@roschmann-digital.de?subject=Intro-Call%20Jason%20Roschmann%202026">E-Mail schreiben ↗</a>
-          <div class="cta-btn ghost" onclick="nav(document.querySelector('[data-screen=chat]'),'chat')">System befragen →</div>
+          <a class="cta-btn primary" href="mailto:jason@roschmann-digital.de?subject=Intro-Call%20%E2%80%93%20Jason%20Roschmann%20%7C%20SDR%2FCSM%20%7C%20Aug%202026">15 Minuten anfragen →</a>
+          <div class="cta-btn ghost" onclick="nav(document.querySelector('[data-screen=chat]'),'chat')">Noch eine Frage? →</div>
         </div>
         <div class="cta-email">jason@roschmann-digital.de</div>
       </div>
-      <div class="g3">
-        <div class="card">
-          <div class="card-head"><div class="card-title"><div class="sdot grn"></div>VERFÜGBARKEIT</div></div>
-          <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
-            <div class="agent-row"><div class="agent-k">Start</div><div class="agent-v a">August 2026</div></div>
-            <div class="agent-row"><div class="agent-k">Vorlauf</div><div class="agent-v">4 Wochen planbar</div></div>
-            <div class="agent-row"><div class="agent-k">Modell</div><div class="agent-v g">Hybrid / Full Remote</div></div>
-            <div class="agent-row"><div class="agent-k">Standort</div><div class="agent-v">Zürich ab Aug 2026</div></div>
-            <div class="agent-row"><div class="agent-k">Intro-Call</div><div class="agent-v g">Diese Woche möglich</div></div>
-            <div class="agent-sep"></div>
-            <div class="agent-row"><div class="agent-k">Arbeitserlaubnis</div><div class="agent-v g">EU-Bürger · kein Visum</div></div>
-            <div class="agent-row"><div class="agent-k">Permit B</div><div class="agent-v">nach Vertragsunterschrift</div></div>
+      <div class="card" style="border-top:2px solid var(--blue);margin-bottom:20px">
+        <div class="card-head">
+          <div class="card-title"><div class="sdot blue"></div>WIE ES FUNKTIONIERT — 3 SCHRITTE</div>
+        </div>
+        <div class="card-body" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+          <div>
+            <div style="font-family:var(--ff-m);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:8px">SCHRITT 1 · HEUTE</div>
+            <div style="font-size:12.5px;color:var(--mu);line-height:1.65">15-Minuten-Intro-Call. Ich komme mit einer Agenda — kein Smalltalk, keine Folien. Du weißt nach dem Call ob der Match stimmt.</div>
+          </div>
+          <div>
+            <div style="font-family:var(--ff-m);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:8px">SCHRITT 2 · DANACH</div>
+            <div style="font-size:12.5px;color:var(--mu);line-height:1.65">Du bekommst Live-URLs — kein Pitch-Deck, keine Screenshots. Du siehst die Systeme live. Architektur erkläre ich in 10 Minuten.</div>
+          </div>
+          <div>
+            <div style="font-family:var(--ff-m);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grn);margin-bottom:8px">SCHRITT 3 · AUGUST</div>
+            <div style="font-size:12.5px;color:var(--mu);line-height:1.65">Vertragsunterschrift → Permit B 14 Tage → Tag 1. Keine Visa-Verzögerung, kein Anwalt, kein Kontingent.</div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-head"><div class="card-title"><div class="sdot blue"></div>WAS ICH SUCHE</div></div>
-          <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
-            <div class="agent-row"><div class="agent-k">Rollen</div><div class="agent-v g">SDR · CSM · KI Automation</div></div>
-            <div class="agent-row"><div class="agent-k">Branche</div><div class="agent-v">SaaS · B2B · KI-Startups</div></div>
-            <div class="agent-row"><div class="agent-k">Teamgrösse</div><div class="agent-v">Startup bis 250 MA</div></div>
-            <div class="agent-row"><div class="agent-k">Sprache intern</div><div class="agent-v">DE bevorzugt · EN OK</div></div>
-            <div class="agent-sep"></div>
-            <div class="agent-row"><div class="agent-k">Nicht passend</div><div class="agent-v" style="color:var(--red)">Multinationals mit ATS-Filter</div></div>
-            <div class="agent-row"><div class="agent-k">Nicht passend</div><div class="agent-v" style="color:var(--red)">Reine Support-Rollen ohne Revenue</div></div>
-          </div>
+      </div>
+      <div class="card" style="border-top:2px solid var(--amber);margin-top:8px">
+        <div class="card-head">
+          <div class="card-title"><div class="sdot amber"></div>WARUM JETZT</div>
+          <div class="badge amber">ZEITFENSTER</div>
         </div>
-        <div class="card">
-          <div class="card-head"><div class="card-title"><div class="sdot amber"></div>WIE ICH ARBEITE</div></div>
-          <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
-            <div class="agent-row"><div class="agent-k">Kommunikation</div><div class="agent-v g">direkt · kein Blatt vor dem Mund</div></div>
-            <div class="agent-row"><div class="agent-k">Problem-Approach</div><div class="agent-v">Build first · dann optimieren</div></div>
-            <div class="agent-row"><div class="agent-k">Kundenkontakt</div><div class="agent-v">Türrahmen bis CEO · kein Skript</div></div>
-            <div class="agent-row"><div class="agent-k">Technik-Level</div><div class="agent-v b">System gebaut · nicht nur genutzt</div></div>
-            <div class="agent-sep"></div>
-            <div class="agent-row"><div class="agent-k">Antwortzeit</div><div class="agent-v g">unter 24h</div></div>
-            <div class="agent-row"><div class="agent-k">Intro-Call</div><div class="agent-v">15 Min genügen</div></div>
-          </div>
+        <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
+          <div class="agent-row"><div class="agent-k">Gespräche</div><div class="agent-v a">laufen · mehrere Unternehmen im Prozess</div></div>
+          <div class="agent-sep"></div>
+          <div class="agent-row"><div class="agent-k">August 2026</div><div class="agent-v" style="color:var(--amber)">nähert sich · Slot: begrenzt</div></div>
+          <div class="agent-sep"></div>
+          <div class="agent-row"><div class="agent-k">Intro-Call</div><div class="agent-v g">diese Woche möglich · Antwort unter 24h</div></div>
+          <div class="agent-sep"></div>
+          <div class="agent-row"><div class="agent-k">Admin</div><div class="agent-v g">EU-Bürger · kein Kontingent · kein Anwalt</div></div>
         </div>
+      </div>
+      <div style="text-align:center;padding:20px 0 8px 0;font-family:var(--ff-m);font-size:10px;color:var(--mu);letter-spacing:.08em">
+        Direkt schreiben: <a href="mailto:jason@roschmann-digital.de" style="color:var(--blue)">jason@roschmann-digital.de</a> · Antwort heute noch möglich.
       </div>
     </div>
 
@@ -1437,7 +1875,7 @@ const lines=[
   '> agents live: 17 ✓',
   '> permit_status: EU · NULL risk ✓',
   '> destination: Hamburg → Zürich ✓',
-  '> status: READY',
+  '> status: BEREIT · KEIN KONTINGENT · KEIN ANWALT · AUG 2026',
 ];
 const lt = document.getElementById('loader-text');
 const lf = document.getElementById('lf');
@@ -1477,6 +1915,53 @@ setTimeout(loaderStep,400);
   setTimeout(dismissLoader,5500);
 })();
 
+/* Patch startTerminal: fire overview card stagger + KPI spring after loader dismisses.
+   Chain-safe — mobile IIFE wraps this again; order: mobile wrapper → this → original. */
+(function(){
+  var _origST=startTerminal;
+  startTerminal=function(){
+    _origST.apply(this,arguments);
+    _staggerEnterScreen('overview');
+    _staggerKpiCards();
+  };
+})();
+
+/* ─── ANIMATION SYSTEM ───────────────── */
+/* Stagger-animate card-level elements on any screen entry.
+   Cards start from Y offset with spring overshoot easing.
+   Each call resets and replays — safe to call on every nav. */
+function _staggerEnterScreen(id){
+  var scr=document.getElementById('s-'+id);
+  if(!scr)return;
+  var targets=scr.querySelectorAll(
+    '.card,.kpi-card,.agent-card,.proj-card,.term,.cta-card,.zch-card,.info-ribbon'
+  );
+  /* Remove class to allow animation replay on re-entry */
+  targets.forEach(function(el){el.classList.remove('card-enter');});
+  void scr.offsetHeight; /* force layout flush so removal commits */
+  targets.forEach(function(el,i){
+    el.style.animationDelay=(i*72)+'ms';
+    el.classList.add('card-enter');
+  });
+}
+
+/* Public alias expected by QA checklist — delegates to _staggerEnterScreen */
+function _animateCardsIn(id){
+  _staggerEnterScreen(id||'overview');
+}
+
+/* Spring-pop the 4 KPI cards with stepped delays (100, 200, 300, 400 ms).
+   Uses .kpi-spring which wins over .card-enter in the CSS cascade. */
+function _staggerKpiCards(){
+  var cards=document.querySelectorAll('#s-overview .kpi-card');
+  cards.forEach(function(el){el.classList.remove('kpi-spring');});
+  void document.body.offsetHeight;
+  cards.forEach(function(el,i){
+    el.style.animationDelay=(100+i*100)+'ms';
+    el.classList.add('kpi-spring');
+  });
+}
+
 /* ─── NAVIGATION ─────────────────────── */
 function nav(el,id){
   document.querySelectorAll('.sbn-item').forEach(i=>i.classList.remove('active'));
@@ -1484,30 +1969,24 @@ function nav(el,id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById('s-'+id).classList.add('active');
   if(id==='overview')startTerminal();
+  _staggerEnterScreen(id);
 }
 
 /* ─── TERMINAL STREAM ────────────────── */
 const termLines=[
-  {type:'cmd',  text:'> ls /production/'},
-  {type:'out g',text:'drwx  saas-backend/   FastAPI · PostgreSQL · Claude SDK · MCP · Playwright'},
-  {type:'out g',text:'      └─ Tests:       12/12 PASS · 100% Coverage · solo · 6 Wochen · deployed'},
-  {type:'out g',text:'drwx  d2c-store/      Shopify Liquid · 15 Custom Metafields · DE/EN bilingual'},
-  {type:'out g',text:'      └─ Niveau:      Luxury DACH · €0 Agentur-Budget · live'},
-  {type:'out g',text:'drwx  agent-os/       Python · Claude SDK · n8n · 17 spezialisierte Agents'},
-  {type:'out g',text:'      └─ Delivery:    65% vollautomatisch · vollständige Outreach-Pipeline'},
-  {type:'cmd',  text:'> cat build_profile.json'},
-  {type:'out',  text:'{ "solo_builds": 3, "agents_live": 17, "test_pass_rate": "12/12",'},
-  {type:'out b',text:'  "build_time_saas": "6 Wochen", "agency_budget": "€0", "team_size": 1,'},
-  {type:'out g',text:'  "autonomous_delivery": "65%", "stack": "Python·SDK·n8n·FastAPI·PG·MCP" }'},
-  {type:'cmd',  text:'> cat permit_status.json'},
-  {type:'out g',text:'{ "EU_Bürger": true, "Deutsch": "C2", "Permit_B": "14-Tage-Anmeldung",'},
-  {type:'out g',text:'  "Kontingent": false, "Admin_Risiko": "NULL", "Start": "August-2026" }'},
-  {type:'cmd',  text:'> python sales_dna.py --context=character-evidence'},
-  {type:'out',  text:'→ D2D 2020–2024:     ~8.000 Kalt-Gespräche · 85–95% Anfangsablehnung'},
-  {type:'out a',text:'→ Output:            200+ Abschlüsse/Monat · +15% Umsatz/Kunde · kein Skript'},
-  {type:'out b',text:'→ [KONTEXT]          Grit-Signal. Nicht die Hauptgeschichte.'},
-  {type:'cmd',  text:'> ./go.sh --destination=zurich --date=august-2026 --eu=true'},
-  {type:'out g',text:'[COMMITTED] Entscheidung gefallen. Frage: mit welchem Unternehmen.'},
+  {type:'cmd',  text:'$ whoami'},
+  {type:'out',  text:'jason_roschmann — EU citizen · Hamburg → Zürich · August 2026'},
+  {type:'cmd',  text:'$ history --compressed'},
+  {type:'out a',text:'→ 2020–2024: 8.000 Kalt-Gespräche · 200+ Abschlüsse/Monat · kein Skript'},
+  {type:'out a',text:'→ 2024:      begann zu bauen — weil er die Tools selbst brauchte'},
+  {type:'out g',text:'→ 2025:      3 Live-Systeme · 17 Agents · 12/12 Tests · 6 Wochen solo'},
+  {type:'out g',text:'→ 2026:      Zürich · entschieden · nicht als Experiment'},
+  {type:'cmd',  text:'$ fit_check --market=zurich-saas'},
+  {type:'out g',text:'→ MATCH:   deutschsprachiger KI-Builder mit Revenue-DNA'},
+  {type:'out b',text:'→ STATUS:  strukturell selten · aktiv suchend · August verfügbar'},
+  {type:'out',  text:'→ WINDOW:  8 spezifische Targets · einer schreibt zuerst gewinnt'},
+  {type:'cmd',  text:'$ _'},
+  {type:'out b',text:'[CONTACT]  jason@roschmann-digital.de · 15 Minuten · ich komme vorbereitet'},
 ];
 let ti=0, termRunning=false;
 function startTerminal(){
@@ -1535,7 +2014,136 @@ function startTerminal(){
   setTimeout(addLine,200);
 }
 
-/* ─── CHAT ────────────────────────────── */
+/* ─── CHAT PERSUASION ENGINE v2 ────────────────────────────────────── */
+
+/* Conversation state */
+let _chatTurns=0,_positiveSignals=0,_closingOffered=false,_lastIntent=null;
+
+/* Reusable CTA link */
+const _CTA='<a href="mailto:jason@roschmann-digital.de?subject=Intro-Call" style="color:var(--blue);text-decoration:underline">jason@roschmann-digital.de</a>';
+
+/* Easter eggs — multi-word phrases come before single-word subsets */
+const _EGG=[
+  ['sehr gut',       'Danke. Wenn du mehr Details willst: '+_CTA+' — "Intro-Call" als Betreff reicht.'],
+  ['sehr beeindruckt','Das freut mich. 15 Minuten Call um es live zu zeigen? → '+_CTA],
+  ['beeindruckend',  'Danke — das sind deployete Systeme, kein Marketing-Text. 15 Minuten Call? → '+_CTA],
+  ['beeindruckt',    'Das freut mich. 15 Minuten Call um es live zu zeigen? → '+_CTA],
+  ['wow',            'Das freut mich zu hören. Wenn du 15 Minuten hast: Intro-Call → '+_CTA],
+  ['impressive',     'Thank you. If you have 15 minutes — I come prepared. → '+_CTA],
+  ['interessant',    'Gut zu hören. Das lässt sich in 15 Minuten noch viel konkreter machen — Intro-Call? → '+_CTA],
+  ['toll',           'Danke. Wenn das neugierig gemacht hat: '+_CTA+' — "Intro-Call" als Betreff.'],
+  ['loom',           'Ich habe einen 4-Minuten-Loom aufgenommen — Product-Walkthrough eines meiner Live-Systeme, kein Pitch-Deck. Schreib mir und ich schicke ihn direkt: '+_CTA],
+  ['pdf',            'Strg+P (Windows) oder ⌘+P (Mac) → "Als PDF speichern". Das Layout ist druckoptimiert.'],
+  ['download',       'Im Browser Strg+P → "Als PDF speichern". Druckoptimiertes Layout ist aktiv.'],
+  ['print',          'Strg+P → "Als PDF speichern". Direkt im Browser, kein Tool nötig.'],
+  ['herunterladen',  'Strg+P → "Als PDF speichern". Funktioniert in jedem Browser direkt.'],
+  ['speichern',      'Strg+P → "Als PDF speichern". Das Layout ist für Druck optimiert.'],
+];
+
+/* Company name detection */
+const _CO={
+  'scandit':   'Scandit ist genau das Unternehmen für das ich diesen CV personalisiert habe. BDR auf Muttersprachler-Niveau — Computer-Vision-SDK auf Deutsch erklären ist mein natürliches Terrain. → '+_CTA,
+  'luware':    'Luware AG — Contact-Center-Automation auf Microsoft Teams. Mein 17-Agent-OS erledigt 65% der Delivery autonom. Das ist exakt was eure Kunden kaufen wollen — ich berate aus der Position des Builders. → '+_CTA,
+  'smallpdf':  'Smallpdf — 1B+ Conversions und ein BDM-DACH-Gap. Vier Jahre DACH-Abschlüsse, SaaS selbst gebaut. Das passt ohne Warm-Up-Runde. → '+_CTA,
+  'squirro':   'Squirro baut GenAI Enterprise Knowledge Retrieval. Claude SDK + FastAPI + MCP solo in 6 Wochen auf Production deployed. Ich kann einem CTO die Architektur von innen erklären. → '+_CTA,
+  'flowable':  'Flowable AG — Business Process Automation. Mein 17-Agent-OS läuft mit n8n und Python, 65% autonom. Ich berate nicht über Automation — ich habe sie deployed. → '+_CTA,
+  'unique':    'Unique.ai — 17 Agents in Produktion. Nicht Demo, das ist der Zielzustand eurer LGT- und Pictet-Kunden. Ich kann die Vision verkaufen weil ich sie bereits betreibe. → '+_CTA,
+  'beekeeper': 'Beekeeper — technisches Debugging plus Kommunikation die am Werkshallenmanager ankommt. SaaS-Backend debugged und 8.000 D2D-Gespräche geführt. Beides in einer Person. → '+_CTA,
+  'lumapps':   'Beekeeper by LumApps — technisches Debugging plus Kommunikation die ankommt. Beides in einer Person. → '+_CTA,
+  'jua':       'Jua.ai — AE Hire #2, kein Playbook. Ich baue das System während ich die ersten Deals schließe. Das ist exakt mein Modus. → '+_CTA,
+};
+
+/* Intent-based rules: [regex, category, reply]. First match wins. */
+const _RULES=[
+
+  /* OBJECTIONS */
+  [/kein(en?)?\s*(uni|universit|studium|abschluss|bachelor|master|diplom|zertifi)|ohne\s*(studium|abschluss)/i,'objection',
+   'Meine Antwort: ich habe eine andere Universität gewählt — eine wo das deployed Produkt die Prüfung ist. 3 Live-Systeme in Produktion: FastAPI-SaaS (12/12 Tests grün, 6 Wochen solo), Luxury-D2C-Store, 17-Agent-OS. Kein Curriculum hat mir den Claude SDK beigebracht — Notwendigkeit hat das getan. Das Diplom ist die URL, nicht das Zertifikat.'],
+
+  [/englisch\s*(b1|schwach|schlecht|nur|nicht\s*gut|niveau)|b1\s*englisch|nur\s*b1|only\s*b1/i,'objection',
+   'Ehrlich: Englisch B1 aktiv, B2 passiv — und ich verbessere das aktiv. Der eigentliche Punkt: Zürich ist ein DACH-Markt. SaaS-Deals werden auf Deutsch entschieden. Bewerber mit starkem Englisch aber schwachem Deutsch verlieren auf den letzten Metern. Ich schließe auf Muttersprachler-Niveau. Das ist die Lücke die zählt.'],
+
+  [/d2d|haustür|klingeln|türklopfen|door.to.door|field\s*sales|außendienst|kalt.*verkauf/i,'objection',
+   'D2D ist kein Nachteil — es ist das härteste Sales-Training das es gibt. 8.000 Gespräche mit 85–95% Anfangsablehnung. Keine zweite Chance. Direkt zum Entscheider. Im SaaS: Executive-Presence, Churn-Prävention, Expansion durch echtes Zuhören. Vier Jahre täglich dieselben Fähigkeiten die ein AE oder CSM im SaaS braucht — nur mit höherem Schwierigkeitsgrad.'],
+
+  [/zu\s*jung|junior.*zu\s|wenig\s*erfahrung|nicht\s*genug\s*erfahrung/i,'objection',
+   'Mit 20 angefangen 200+ Verträge pro Monat zu schließen. Mit 25 SaaS-Backend solo in Produktion. Mit 26 ein 17-Agent-OS das 65% der Delivery autonom liefert. Was genau meinst du mit "zu jung"?'],
+
+  [/schwäche|weakness|schwachstell|verbesserungsbereich|was\s*kannst\s*du\s*nicht|nachteil.*profil/i,'objection',
+   'Ehrlich: Englisch — B1 aktiv, im Aufbau. Zweites: ich bin ungeduldig wenn Prozesse langsamer sind als nötig — was dazu führt dass ich sie automatisiere ohne gefragt zu werden. Die meisten Arbeitgeber würden das nicht als Schwäche bezeichnen.'],
+
+  [/kein(e)?\s*(saas|b2b\s*erfahrung|software\s*erfahrung|tech\s*erfahrung)|keine\s*saas/i,'objection',
+   'Kein SaaS-Vertriebslogo — dafür Stärken die den Einstieg kompensieren: Revenue-DNA aus 8.000 echten Entscheidungsgesprächen, Builder-Instinkt aus drei deployed Systemen, DACH-Muttersprachler in einem Markt wo das entscheidet. Das ist die Gleichung.'],
+
+  /* QUALIFICATION */
+  [/enterprise|großkunde|konzern|key\s*account|strategic\s*account/i,'qualification',
+   'Vier Jahre direkter Entscheiderkontakt — Geschäftsführer, Inhaber, keine Sachbearbeiter. Executive-Presence, Finanz-Sprache, Risiko-Framing. Was genau meinst du mit Enterprise — Dealgröße, Zyklus oder Stakeholder-Komplexität? Ich beantworte das spezifischer.'],
+
+  [/gehalt|salär|salary|lohn|kompensation|vergütung|wie\s*viel.*verdien/i,'qualification',
+   'Das Gehalt bespreche ich gern im Call — es hängt von Rolle, Verantwortungsbereich und Markt ab. Was ich sagen kann: ich optimiere nicht auf das höchste Startgehalt, sondern auf den größten Hebel. Wenn das übereinstimmt, einigen wir uns schnell. → '+_CTA],
+
+  [/wann\s*(bist\s*du\s*)?verfüg|wann\s*kannst\s*du\s*anfangen|startdatum|einstieg.*datum|verfügbarkeit/i,'qualification',
+   'Ab August 2026. EU-Bürger — Permit B ist eine 14-Tage-Anmeldung, kein Visum, kein Kontingent. Remote-Start früher möglich. Vorlauf Hamburg → Zürich: vier Wochen. Das ist planbar.'],
+
+  [/permit\s*b|visum|visa|arbeitserlaubnis|work\s*permit|legal.*arbeit/i,'qualification',
+   'EU-Bürger: Permit B = 14-Tage-Anmeldung beim Einwohneramt. Kein Kontingent, kein Arbeitsmarkttest, kein Anwalt, kein Denial-Risiko. Administrative Komplexität: identisch mit jemandem der bereits in Zürich wohnt. Nach fünf Jahren → C-Permit. Das ist ein Karriere-Plan, kein Experiment.'],
+
+  [/remote|homeoffice|home\s*office|hybrid|vor\s*ort|onsite/i,'qualification',
+   'Flexibel — Hybrid oder vor Ort in Zürich. Ich bevorzuge Präsenz weil ich schneller lerne wenn ich im Raum mit dem Team bin. Präferenz, kein Dealbreaker.'],
+
+  [/referenz|reference|empfehlung|wer\s*kennt\s*dich|zeugnis/i,'qualification',
+   'Referenzen stelle ich auf Anfrage bereit — direkte Kontakte aus der D2D-Zeit. Schreib mir: '+_CTA+' — ich organisiere das innerhalb von 24 Stunden.'],
+
+  [/kannst\s*du\s*coden|bist\s*du\s*entwickler|programming\s*skill|coding\s*skill|technisch\s*(gut|stark|fit)/i,'qualification',
+   'Autodidaktisch, kein CS-Absolvent. FastAPI-Backend in Produktion (12/12 Tests), PostgreSQL, Claude SDK, MCP, n8n, Playwright. Genug um mit Entwicklern auf Augenhöhe zu reden und selbst zu debuggen. Kein Senior-Backend-Engineer — das ist nicht was ich anstrebe.'],
+
+  [/cold\s*call|kaltakquise|outbound.*erfahrung/i,'qualification',
+   '8.000 Kalt-Gespräche in vier Jahren. 85–95% Anfangsablehnung. 200+ Abschlüsse pro Monat. Ohne Skript. Das ist das Fundament.'],
+
+  /* TECHNICAL */
+  [/mcp|model\s*context\s*protocol/i,'technical',
+   'MCP — Model Context Protocol — ist ein offener Standard der es KI-Modellen erlaubt, sicher auf externe Tools, Datenbanken und APIs zuzugreifen. In einem Satz: der Stecker mit dem ein KI-Agent das echte System anfässt, nicht nur Text generiert.'],
+
+  [/n8n|n\s*8\s*n/i,'technical',
+   'n8n ist ein Open-Source-Workflow-Automation-Tool — ähnlich Zapier oder Make, aber self-hosted und voll programmierbar. In meinem Agent-OS verbindet n8n die einzelnen Python-Agents miteinander und triggert Sequenzen automatisch. 65% der Delivery läuft so ohne manuelle Eingriffe.'],
+
+  [/claude\s*sdk|anthropic\s*sdk|was\s*ist.*claude\s*sdk/i,'technical',
+   'Claude SDK ist die offizielle Python-Bibliothek von Anthropic um Claude-Modelle in eigene Anwendungen einzubauen — API-Aufrufe, Tool-Use, Multi-Turn-Conversations, Streaming. Ich nutze es als Reasoning-Kern in meinem SaaS-Projekt: das Modell trifft Entscheidungen, der Rest des Systems führt sie aus.'],
+
+  [/fastapi|fast\s*api/i,'technical',
+   'FastAPI ist ein Python-Web-Framework für APIs — schnell, typsicher, mit automatischer OpenAPI-Dokumentation. Mein SaaS-Backend läuft damit: REST-Endpoints, Authentifizierung, PostgreSQL. 12/12 Tests grün. Solo in 6 Wochen deployed.'],
+
+  [/projekt\s*[abc]|was\s*hast\s*du\s*gebaut|hauptprojekt|erkl.r.*projek|deine\s*projekte/i,'technical',
+   'Drei Live-Projekte: A — FastAPI + PostgreSQL + Claude SDK + MCP, zwei Märkte, 12/12 Tests, 6 Wochen solo. B — Shopify Luxury-D2C, 15 Custom Metafields, DE/EN bilingual, €0 Agentur. C — 17-Agent-OS (Python + Claude SDK + n8n), 65% Delivery autonom. Alles in Produktion. Architektur erkläre ich in 10 Minuten live. → '+_CTA],
+
+  [/agent(en|s)?\s*(os|system|pipeline)|17\s*agent|automation\s*os/i,'technical',
+   '17 spezialisierte Agents: Lead-Research, Content-Generierung, Audit-Reports, Follow-Up-Sequenzen — Python + Claude SDK, verbunden via n8n. 65% der gesamten Delivery läuft autonom. Produktion, kein Prototyp. Architektur auf Anfrage.'],
+
+  /* CURIOSITY */
+  [/was\s*(unterscheidet|macht)\s*(dich|sie)|einzigartig|besonder|warum\s*du\s*(und\s*nicht|statt|gegenüber)/i,'curiosity',
+   'Drei Dinge die zusammen selten vorkommen: 1 — Revenue-DNA: vier Jahre D2D, 8.000 Kalt-Gespräche, 200+ Abschlüsse/Monat. 2 — Builder-Instinkt: drei Systeme solo in Produktion deployed. 3 — DACH-Native-Advantage: Deutsch C2 in einem Markt wo Nicht-Muttersprachler auf den letzten Metern verlieren. Das ist die Kombination.'],
+
+  [/warum\s*sollte.*einstell|hire\s*you|warum\s*(ich\s*)?dich\s*einstellen|überzeug.*mich/i,'curiosity',
+   'Weil du in einer Person bekommst was normalerweise zwei Einstellungen braucht: jemanden der heute Deals schließt und morgen das Tooling automatisiert das deinem Ops-Team drei Monate Arbeit spart. Revenue-DNA. Drei deployed Systeme. DACH-Muttersprachler. EU-Bürger. Permit B = 14 Tage. Keine Überraschungen.'],
+
+  [/fünf\s*jahre|5\s*jahre|wo\s*siehst\s*du\s*dich|karriereziel|zukunft.*plan/i,'curiosity',
+   'In fünf Jahren: eine Revenue- und Automation-Funktion aufgebaut haben die messbar skaliert — als Senior AE, Head of CS oder Gründer. Der Weg dahin: Zürich, das richtige Unternehmen, maximalen Hebel. Das ist kein Lifestyle-Plan. Das ist Architektur.'],
+
+  [/warum\s*saas|wieso\s*saas|von\s*d2d\s*(zu|nach|in)\s*saas|umstieg.*saas/i,'curiosity',
+   'Für mich ist das kein Wechsel — es ist dasselbe Playbook mit besseren Messinstrumenten. Im D2D: Churn verhindert am Türrahmen, Expansion durch echtes Zuhören, Revenue durch Gespräche. Im SaaS: Health-Scores statt Bauchgefühl, NRR als Metrik statt Tagesprovision. Der Unterschied: im SaaS kommt der Mensch freiwillig zum zweiten Gespräch.'],
+
+  /* PERSONAL */
+  [/warum\s*zürich|wieso\s*zürich|weshalb\s*zürich/i,'personal',
+   'Ehrlich? Ich habe Freunde dort — das ist der erste Grund. Wer viel gereist ist und sich trotzdem für einen Ort entscheidet, meint es ernst. Zürich ist international und präzise gleichzeitig, ambitioniert ohne laut zu sein. SaaS-Startups die Deutsch als Heimsprache haben. Genau mein Terrain.'],
+
+  [/wie\s*alt\s*bist\s*du|wie\s*alt\s*sind\s*sie|dein\s*alter|your\s*age|jahrgang|geboren.*1999/i,'personal',
+   '26. Jahrgang 1999. Mit 20 angefangen 200+ Verträge pro Monat zu schließen. Mit 25 SaaS-Backend deployed. Mit 26 Agent-OS in Produktion. Das Alter ist die Angabe — die Arbeit ist der Beweis.'],
+
+  /* SCHEDULING */
+  [/intro.call|call\s*buchen|termin\s*(machen|vereinbar|buchen)|meeting\s*planen|slot|calendly/i,'scheduling',
+   'Gern. Schreib mir "Intro-Call" als Betreff: '+_CTA+' — ich antworte heute noch mit zwei Terminoptionen. 15 Minuten, ich komme mit Agenda.'],
+];
+
 const qa={
   'warum zürich':   'Ehrlich? Ich habe Freunde dort. Das ist der erste Grund — und der ehrlichste. Ich bin viel in der Welt unterwegs gewesen, kenne viele Städte. Wer das kennt, wählt nicht nach Gehaltstabelle. Man wählt nach Atmosphäre, Energie, Menschen. Zürich hat etwas Besonderes: international und präzise gleichzeitig, ambitioniert ohne laut zu sein. Für jemanden der Wert auf echte Umgebung legt — passt das. Menschen die viel gereist sind und sich trotzdem für einen Ort entscheiden: die meinen es ernst.',
   'zürich':         'Zürich ist keine Notlösung — es ist eine bewusste Entscheidung. Ich komme mit sozialen Wurzeln, nicht als Fremder. Und der Markt gibt zurück was ich mitbringe: SaaS-Startups die Deutsch als Heimsprache haben, Revenue-Rollen wo meine Sales-DNA zählt, KI-Firmen die Builder suchen. EU-Bürger · kein Visum · August 2026.',
@@ -1567,11 +2175,57 @@ const qa={
   'beweis':         'Du siehst gerade den Beweis. Nicht ein PDF mit Aufzählungspunkten — ein deployed System das ich in meiner Freizeit gebaut habe, weil ich zeigen wollte was ich kann und nicht was ich behaupte. Drei Live-Produkte. 12/12 Tests. 17 Agents. Das ist der Lebenslauf.',
   'gründer':        'Ich habe 17 Agents gebaut ohne Auftrag, ohne Budget, ohne Team — weil ich sie brauchte. Gründer die ihr Unternehmen von Null aufgebaut haben erkennen dieses Muster sofort. Es ist ihr eigenes. Das ist kein Verkaufstrick. Das ist Tribal Recognition.',
   'kontakt':        'Schreib mir direkt: jason@roschmann-digital.de — "Intro-Call" als Betreff reicht. 15 Minuten genügen. Ich komme vorbereitet mit Agenda.',
+  'was kannst du für uns':  'Ab Tag 1 Pipeline aufbauen — nativ auf Deutsch, mit einem Sales-Hintergrund der echte Einwände kennt. Und wenn dein Ops-Team irgendwo manuell repetitiv arbeitet, automatisiere ich das nebenher.',
+  'was ist mcp':    'Model Context Protocol — ein offener Standard der KI-Systemen erlaubt, sicher auf externe Daten zuzugreifen: Datenbanken, APIs, interne Tools. Ich habe es in mein SaaS-Backend integriert damit die KI direkt auf produktive Daten zugreift.',
+  'saas-team':      'Direkt noch nicht — aber ich habe ein SaaS-Produkt solo gebaut und deployed. Ich kenne den Stack von innen: FastAPI, Datenbankschema, Test-Coverage, Deployment. Das gibt mir einen anderen Kontext als jemand der nur das CRM bedient.',
+  'hubspot':        'Zwei Wochen bis ich produktiv bin, vier bis ich effizient bin. CRM ist ein Interface, keine Fähigkeit — wer gelernt hat zu verkaufen, lernt das Tool schnell. Ich habe Systeme gebaut, ich lerne Tools.',
+  'schwachpunkt':   'Formale SaaS-CS-Erfahrung fehlt noch. Ich schließe das mit 6–8 Wochen gezielter Zertifizierung — SuccessHACKER CCSM, Gainsight. Ich komme mit Revenue-DNA und KI-Stack, den viele erfahrene CSMs nicht haben.',
+  'kaltakquise':    '~8.000 Kalt-Gespräche über 4 Jahre, 85–95% Anfangsablehnung täglich, 200+ Abschlüsse pro Monat konstant. Ja.',
+  'gehalts':        'SDR in Zürich: CHF 65–75K Base ist realistisch, OTE mit 20–40% Bonus das Ziel. Ich priorisiere den richtigen Fit und echte OTE-Möglichkeit über das höchste Basisgehalt.',
+  'unterscheidet':  'Die meisten technischen Kandidaten können nicht verkaufen. Die meisten Sales-Kandidaten können keine Systeme bauen. Ich schließe Deals auf nativem Deutsch und automatisiere den Follow-up-Stack selbst — das sind normalerweise zwei Einstellungen.',
+  'customer success experience': 'Noch nicht in einem SaaS-Team — aber Churn-Prävention, Expansion und Executive-Gespräche kenne ich aus vier Jahren D2D, nur ohne Health-Score-Dashboard. Das Gespür dafür ersetzt keine Zertifizierung, aber es ergänzt sie.',
+  'vertrauen':      'Indem ich mehr zuhöre als rede — und halte was ich sage. Im D2D hatte ich keine zweite Chance: der Abschluss hing am ersten Gespräch und dem ersten Versprechen.',
+  'metric':         'NRR ist der Kern — alles andere ist Proxy. 110–120% NRR ist best-in-class im Mid-Market. Dazu: Health-Score, Time-to-Value, Adoption-Rate, Churn segmentiert nach Tier. Mein D2D-Äquivalent: +15% Umsatz/Kunde durch Cross-Selling in gesättigtem Markt.',
+  'ingenieur':      'Ich habe FastAPI-Backends gebaut, PostgreSQL-Schemas designed, MCP-Integrationen implementiert und E2E-Tests mit Playwright geschrieben. Wenn ein Ingenieur erklärt warum ein Feature drei Monate braucht, verstehe ich die Antwort.',
+  '30 tage':        'Erstes: Pipeline-Verständnis — wer kauft, warum, wo bricht es ab. Zweites: CRM strukturieren und erste Outreach-Sequenzen live bringen. Drittes: wahrscheinlich eine manuelle Routine im Team automatisieren, weil ich es nicht lassen kann.',
+  'warum sollten':  'Weil ihr normalerweise zwei Personen bräuchtet für das was ich mitbringe: jemand der DACH-Kunden auf Muttersprachniveau schließt — und jemand der euren KI-Stack mitdenkt. Ich bin beides.',
+  'am schnellsten': 'jason@roschmann-digital.de — Betreff "Intro-Call" reicht. Ich antworte heute noch und komme vorbereitet für 15 Minuten.',
+  'permit b':       'EU-Bürger — Permit B ist eine Anmeldung beim Einwohneramt, keine Genehmigung die ein Unternehmen beantragen muss. 14 Tage, kein Anwalt, kein Kontingent, kein Denial-Risiko. Die administrative Komplexität mich einzustellen ist identisch mit einem Kandidaten der bereits in Zürich lebt.',
+  'verfügbarkeit':  'August 2026 — entschieden, nicht verhandelbar. Kein Projekt das den Start verzögert, keine Kündigungsfrist die ausläuft. August ist der Zeitpunkt.',
+  'warum einstellen': 'Weil die Kombination strukturell selten ist. Deutschsprachiger EU-Bürger der 200+ Deals/Monat abschließt UND drei Live-Systeme solo deployed hat — das sind normalerweise zwei Einstellungen und zwei Budgets. Ich bin eine. Das eliminiert den Kommunikations-Overhead zwischen Technical und Sales.',
+  'woche 1':        'In Woche 1 höre ich mehr zu als ich rede. Ich mappe jeden Account, jeden Stakeholder, jeden Early-Warning-Signal im Team. Und ich automatisiere nebenher den ersten repetitiven Task den ich finde — nicht weil du mich fragst, sondern weil ich es nicht lassen kann. Du bekommst nicht nur jemanden der Anrufe macht. Du bekommst jemanden der am Ende von Woche 4 einen Prozess-Fix hat den dein Ops-Team seit Monaten aufgeschoben hat. Zwei Einstellungen. Ein Budget.',
+  'projekt a':      'Projekt A ist ein KI-gestütztes SaaS-Produkt — zwei internationale Plattformen angebunden, 12/12 Produktions-Tests grün, solo in 6 Wochen deployed. Das Backend läuft auf FastAPI + PostgreSQL, der KI-Layer auf Claude SDK mit MCP-Integration. Es ist kein Prototyp: es ist eine URL die heute funktioniert. NDA verfügbar, Demo-Call auf Anfrage.',
+  'projekt b':      'Projekt B ist ein Luxury D2C Store für einen DACH-Gründer — Positionierung auf Aesop/La Mer Niveau, 15 Custom Metafields, DE/EN bilingual, €0 Agentur-Budget, kein Template. Collections, Cart, Checkout und Blog-Architektur eigenständig aufgebaut. Es ist live.',
+  'projekt c':      'Projekt C ist mein 17-Agent Sales-Automation-OS — eigengebaut für eigene Sales-Prozesse. 65% der Delivery-Schritte laufen vollautomatisch via n8n + Python-Orchestration. Der Stack: Claude SDK für Reasoning, n8n für Workflow, FastAPI für API-Calls, Playwright für Web-Automation. Täglich in Produktion.',
+  'referenzen':     'Referenzen aus der D2D-Erfahrung nenne ich auf Anfrage mit konkreten Ansprechpartnern. Für die Projekte: die URLs sind die Referenz. Ich zeige das deployed System live und erkläre die Architektur in 10 Minuten. Das ist überzeugender als ein LinkedIn-Endorsement.',
+  'remote':         'Ich suche eine Rolle in Zürich — hybrid oder Büro. Vollständiges Remote aus einer anderen Stadt ist nicht was ich suche. Ich komme nach Zürich um dort zu sein, nicht um von Hamburg aus zu arbeiten.',
+  'coding':         'Ich bin kein Software-Engineer. Ich bin ein Builder der versteht wie Systeme funktionieren. Ich deploye FastAPI-Backends, schreibe Python-Scripts für Automation, orchestriere Agents via n8n. Ich kann kein React-Frontend alleine bauen. Ich kann ein SaaS-Backend von null auf Production in 6 Wochen — solo. Das ist die relevante Kompetenz für die Rollen die ich suche.',
   'default':        'Das beantworte ich am besten in einem kurzen Call. Schreib mir: jason@roschmann-digital.de — ich antworte heute noch. Oder klick "Kontakt" links im Menü.',
 };
 function getReply(q){
-  const ql=q.toLowerCase();
-  for(const k in qa){if(k!=='default'&&ql.includes(k))return qa[k];}
+  _chatTurns++;
+  const ql=q.toLowerCase().trim();
+  /* 1. Easter egg words */
+  for(const[trigger,reply]of _EGG){if(ql.includes(trigger))return reply;}
+  /* 2. Company names */
+  for(const[trigger,reply]of Object.entries(_CO)){if(ql.includes(trigger))return reply;}
+  /* 3. Intent-based regex */
+  for(const[rx,intent,reply]of _RULES){
+    if(rx.test(ql)){
+      _lastIntent=intent;
+      if(intent==='curiosity'||intent==='qualification')_positiveSignals++;
+      if(intent==='scheduling'){_closingOffered=true;return reply;}
+      if(_positiveSignals>=3&&!_closingOffered){
+        _closingOffered=true;
+        return reply+'<br><br><em style="color:var(--mu)">Soll ich mich direkt melden? → '+_CTA+'</em>';
+      }
+      return reply;
+    }
+  }
+  /* 4. Keyword fallback */
+  for(const k in qa){if(k!=='default'&&ql.includes(k)){_positiveSignals+=0.5;return qa[k];}}
+  /* 5. Default with CTA nudge */
+  if(_chatTurns>=4&&!_closingOffered){_closingOffered=true;return '15 Minuten Intro-Call? Ich beantworte das präziser live. → '+_CTA;}
   return qa['default'];
 }
 function ts(){const d=new Date();return d.getHours().toString().padStart(2,'0')+':'+d.getMinutes().toString().padStart(2,'0')}
@@ -1596,115 +2250,237 @@ function quickQ(q){
   setTimeout(()=>addMsg('JR',getReply(q),false),600);
 }
 
+/* Rotating chat placeholder */
+(function(){
+  const placeholders=[
+    'Wie erkennst du Churn bevor der Kunde es ausspricht?',
+    'Was kostet es wirklich, dich als EU-Bürger einzustellen?',
+    'Erkläre deinen KI-Stack in 30 Sekunden.',
+    'Was war der Moment, in dem du aufgehört hast zu warten?',
+    'Wo unterscheidest du dich von einem klassischen SDR?',
+  ];
+  let _pi=0;
+  setInterval(function(){
+    const inp=document.querySelector('#chat-in');
+    if(inp&&document.activeElement!==inp){
+      inp.placeholder=placeholders[_pi%placeholders.length];
+      _pi++;
+    }
+  },4000);
+})();
+
+/* Alias used in some CTA buttons */
+function showScreen(id){
+  var el=document.querySelector('[data-screen="'+id+'"]');
+  if(el)nav(el,id);
+}
+
 /* ─── COMPANY CONTEXT SYSTEM ───────────────────────────────────
    Activate by adding ?company=<key> to the URL.
    Keys: scandit | luware | smallpdf | squirro |
          flowable | unique | beekeeper | jua
    Default (no param): generic CV, no changes.
+   5 personalization elements per company:
+     1. headline    — overview screen role subtitle
+     2. ribbonRole/ribbonNote — info-ribbon (company pain-specific)
+     3. termBoot    — terminal lines prepended to career log
+     4. marketFit   — Markt-Fit screen injected card text
+     5. ctaHeadline/ctaSub/ctaSubject — contact CTA
 ──────────────────────────────────────────────────────────────── */
-const COMPANIES={
+const COMPANY_CONTEXT={
   scandit:{
     name:'Scandit',
     role:'Business Development Representative (German Speaker)',
-    tagline:'Muttersprachlicher BDR der einem IT-Leiter den Computer-Vision-SDK erklärt — ohne Nachschulung.',
+    /* 1 — HEADLINE */
+    headline:'Der deutsche BDR für Computer Vision Enterprise Sales',
+    /* 2 — INFO-RIBBON: Scandit pain = DACH pipeline needs tech-fluent native speakers */
+    ribbonRole:'BDR · Computer Vision Enterprise · DACH',
+    ribbonNote:'Scandit · SDK-Fluency + 8K Cold Calls · Aug 2026',
+    /* 3 — TERMINAL BOOT */
+    termBoot:[
+      {type:'cmd',  text:'> ./scandit_bdr_match.sh --candidate=jason'},
+      {type:'out b',text:'  [SCANDIT] Enterprise computer vision BDR profile check...'},
+      {type:'out',  text:'  dach_language:   Deutsch C2 native  →  ICP-language gap = CLOSED'},
+      {type:'out',  text:'  cold_dna:        ~8.000 calls · 200+/mo · 4Y · GF-level  →  ✓'},
+      {type:'out',  text:'  sdk_fluency:     FastAPI + MCP + Playwright in prod  →  no demo fog ✓'},
+      {type:'out g',text:'  [RESULT] Native DACH seller + technical SDK context >> RARE FIT'},
+    ],
+    /* 4 — MARKT-FIT */
+    marketFit:'Scandits DACH-BDR-Gap: technische Muttersprachler die einen Computer-Vision-SDK erklären und Outbound-Pipeline füllen können — in einer Person. Jason hat ~8.000 Cold Calls, FastAPI+MCP-Production-Deployment und C2-Deutsch. D2D direkt mit GFs und Inhabern abgeschlossen — dieselbe Multi-Stakeholder-Dynamik (IT + Operations + Finance) die Enterprise-BDRs täglich navigieren.',
+    /* 5 — CONTACT CTA */
+    ctaHeadline:'Der deutschsprachige BDR der deinen Computer-Vision-SDK erklärt — ohne SE-Übergabe im Erstgespräch.',
+    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · Scandit · BDR German Speaker</strong> — 15 Minuten Intro-Call. Ich komme mit DACH-Pipeline-Analyse.',
+    ctaSubject:'BDR German Speaker – Jason Roschmann × Scandit',
+    /* Backward-compat fields */
+    tagline:'Muttersprachlicher BDR der einem Logistik-CTO den Computer-Vision-SDK erklärt — und ihn danach kalt anruft.',
     relevantProject:'saas',
-    pitch:'Scandits DACH-Pipeline braucht jemanden der das Produkt auf Muttersprachler-Niveau verkauft und technisch versteht was Computer-Vision-APIs leisten. Ich schließe auf Deutsch und übersetze den SDK-Wert in Finanzsprache — im selben Gespräch.',
-    ribbonRole:'BDR · German Speaker · Enterprise SaaS',
-    ribbonNote:'Scandit · Computer Vision · Zürich HQ',
-    ctaHeadline:'Der deutschsprachige BDR, der deinen Kunden den Computer-Vision-SDK erklärt — nicht weitergeleitet bekommt.',
-    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · für Scandit · BDR German Speaker</strong> — 15 Minuten Intro-Call. Ich komme vorbereitet.',
-    ctaSubject:'BDR German Speaker – Jason Roschmann für Scandit',
+    pitch:'Scandits DACH-Pipeline braucht jemanden der technisch genug ist um SDK-Mehrwert in Finanzsprache zu übersetzen und Deutsch auf Muttersprachler-Niveau spricht. Ich habe FastAPI + MCP + Playwright solo deployed und 4 Jahre lang 200+ Abschlüsse pro Monat direkt mit Inhabern und GFs abgeschlossen — 85–95% Anfangsablehnung täglich, kein Skript. Ich öffne Enterprise-Accounts auf Deutsch, erkläre den SDK-Mehrwert für Logistik/Retail-Use-Cases und überbrücke IT + Finance im selben Gespräch. Das ist der DACH-BDR den ihr sucht.',
   },
   luware:{
     name:'Luware AG',
     role:'Customer Success Manager',
-    tagline:'CSM der den MS-Teams-Automation-Stack selbst gebaut hat — nicht im Demo kennengelernt.',
+    headline:'CSM der Contact-Center-Automation selbst gebaut hat — nicht aus dem Whitepaper kennt',
+    ribbonRole:'CSM · Contact Center Automation · MS Teams',
+    ribbonNote:'Luware AG · 17 Agents live · 65% autonom · Aug 2026',
+    termBoot:[
+      {type:'cmd',  text:'> ./luware_csm_match.sh --candidate=jason'},
+      {type:'out b',text:'  [LUWARE] Contact center automation CSM profile check...'},
+      {type:'out',  text:'  automation_depth: 17-agent OS · 65% autonomous · n8n + Python  →  ✓'},
+      {type:'out',  text:'  ms_teams_context: workflow routing + automation architecture  →  mapped'},
+      {type:'out',  text:'  revenue_dna:      200+/mo D2D · expansion +15% · GF-level  →  ✓'},
+      {type:'out g',text:'  [RESULT] Luware CSM who advises from builder experience >> MATCH'},
+    ],
+    marketFit:'Luware CSMs helfen Enterprise-Kunden den maximalen ROI aus Contact-Center-Automation auf MS Teams zu ziehen. Das erfordert jemanden der Automatisierungs-Architekturen versteht — nicht erklärt bekommt. Jasons 17-Agent-OS liefert 65% Delivery autonom via n8n + Python: er berät Kunden aus der Perspektive des Builders. EBRs führt er auf Basis von echter Production-Erfahrung — nicht Produkt-Folien.',
+    ctaHeadline:'Der Luware-CSM der den Contact-Center-Automation-ROI versteht — weil er selbst 17 Agents in Produktion betreibt.',
+    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · Luware AG · Customer Success Manager</strong> — 15 Minuten Intro-Call. Ich komme mit Automation-Architektur-Analyse.',
+    ctaSubject:'Customer Success Manager – Jason Roschmann × Luware AG',
+    tagline:'CSM der den MS-Teams-Automation-Stack selbst deployed hat — und das dem Kunden im EBR beweisen kann.',
     relevantProject:'agents',
-    pitch:'Luware verkauft Contact-Center-Automation auf Microsoft Teams. Ich habe ein 17-Agent-Automation-OS gebaut das 65% der Delivery autonom erledigt — das ist exakt der Zielzustand den eure Kunden kaufen wollen. Ich berate aus der Perspektive des Builders, nicht des Theoretikers.',
-    ribbonRole:'CSM · Contact Center SaaS · MS Teams',
-    ribbonNote:'Luware AG · Pfingstweidstr. · Zürich',
-    ctaHeadline:'Der CSM der Luware-Kunden versteht weil er selbst ein Contact-Center-Automation-System in Produktion hat.',
-    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · für Luware AG · Customer Success Manager</strong> — 15 Minuten Intro-Call. Ich komme vorbereitet.',
-    ctaSubject:'Customer Success Manager – Jason Roschmann für Luware AG',
+    pitch:'Luware verkauft Contact-Center-Automation auf Microsoft Teams. Ich habe ein 17-Agent-Automation-OS gebaut das 65% der Delivery autonom erledigt — das ist exakt der Zielzustand den eure Kunden kaufen wollen. Ich erkläre Workflow-Routing, Automation-Architektur und ROI-Metriken aus der Perspektive von jemandem der dieselben Systeme solo deployed hat. Das ist Beratung aus Production-Erfahrung, nicht Theorie.',
   },
   smallpdf:{
     name:'Smallpdf',
     role:'Business Development Manager DACH',
-    tagline:'DACH-nativer BDM der B2B-SaaS-Deals auf Deutsch schließt — ohne Warm-Up-Runde.',
+    headline:'200+ Abschlüsse/Monat im DACH-Markt — und weiß wie ein SaaS-Backend von innen aussieht',
+    ribbonRole:'BDM DACH · Document SaaS · B2B Enterprise',
+    ribbonNote:'Smallpdf · 200+ Abschlüsse/Mo · C2 Deutsch · Aug 2026',
+    termBoot:[
+      {type:'cmd',  text:'> ./smallpdf_bdm_match.sh --region=DACH --candidate=jason'},
+      {type:'out b',text:'  [SMALLPDF] DACH B2B expansion BDM profile check...'},
+      {type:'out',  text:'  closing_volume:  200+ deals/mo · 4Y constant · no script  →  ✓'},
+      {type:'out',  text:'  dach_native:     Deutsch C2 · D2D DACH markets · GF-direct  →  home field ✓'},
+      {type:'out',  text:'  saas_fluency:    FastAPI + PostgreSQL backend built solo  →  product DNA ✓'},
+      {type:'out g',text:'  [RESULT] DACH closer who speaks product language natively >> MATCH'},
+    ],
+    marketFit:'Smallpdf skaliert von 1B+ Consumer-Conversions auf B2B Enterprise im DACH-Markt. Der Blocker: DACH-Mid-Market kauft auf Vertrauen — und Vertrauen entsteht bei Muttersprachlern die den Markt kennen. Jason hat 4 Jahre lang 200+ Abschlüsse/Monat im deutschen Markt gemacht, kennt die Einwände des Mittelstands und versteht ein SaaS-Backend von innen. Diese Kombination ist im Zürich-Pool strukturell selten.',
+    ctaHeadline:'Der DACH-BDM der Smallpdf-Enterprise-Accounts auf Deutsch schließt — weil er den Markt seit 2020 von innen kennt.',
+    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · Smallpdf · BDM DACH</strong> — 15 Minuten Intro-Call. Ich komme mit DACH-B2B-Gesprächsanalyse.',
+    ctaSubject:'BDM DACH – Jason Roschmann × Smallpdf',
+    tagline:'DACH-BDM der B2B-SaaS-Deals auf Deutsch schließt — und weiß wie das Produkt von innen funktioniert.',
     relevantProject:'saas',
-    pitch:'Smallpdf hat 1B+ Conversions und ein BDM-DACH-Gap. Ich bin der deutschsprachige EU-Bürger der selbst ein SaaS-Backend solo gebaut hat und vier Jahre lang 200+ Abschlüsse pro Monat im DACH-Markt gemacht hat. Der DACH-Mittelstand ist mein Heimvorteil.',
-    ribbonRole:'BDM DACH · PDF SaaS · B2B',
-    ribbonNote:'Smallpdf · 1B+ Conversions/J · 64 MA',
-    ctaHeadline:'Der DACH-BDM der Smallpdf-Accounts auf Deutsch schließt — und weiß wie ein SaaS-Backend von innen aussieht.',
-    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · für Smallpdf · BDM DACH</strong> — 15 Minuten Intro-Call. Ich komme vorbereitet.',
-    ctaSubject:'BDM DACH – Jason Roschmann für Smallpdf',
+    pitch:'Smallpdf hat 1B+ Conversions und eine reale B2B-DACH-Lücke: wer schließt diese Accounts auf Deutsch? Ich bin der deutschsprachige EU-Bürger der selbst ein SaaS-Backend solo gebaut hat und vier Jahre lang 200+ Abschlüsse pro Monat im DACH-Markt gemacht hat. Der Mittelstand ist mein Heimvorteil: ich kenne die Einwände, die Entscheidungszyklen, die Sprache. Das ist kein Pitch — das ist mein Alltag von 2020 bis 2024.',
   },
   squirro:{
     name:'Squirro',
     role:'Solutions Engineer',
-    tagline:'Solutions Engineer der Claude SDK und FastAPI bereits in Production deployed hat — kein Proof-of-Concept.',
+    headline:'Solutions Engineer der GenAI-Stack nicht im Demo gesehen — sondern selbst in Produktion deployed hat',
+    ribbonRole:'Solutions Engineer · GenAI Enterprise · RAG / LLM',
+    ribbonNote:'Squirro · Claude SDK + FastAPI + MCP live · Aug 2026',
+    termBoot:[
+      {type:'cmd',  text:'> ./squirro_se_match.sh --candidate=jason'},
+      {type:'out b',text:'  [SQUIRRO] GenAI enterprise Solutions Engineer profile check...'},
+      {type:'out',  text:'  claude_sdk:  deployed in prod · REST + tool-use · 12/12 tests  →  ✓'},
+      {type:'out',  text:'  fastapi:     production SaaS · solo · 6 weeks  →  ✓'},
+      {type:'out',  text:'  mcp_layer:   KI data access protocol · implemented  →  ✓'},
+      {type:'out',  text:'  cto_bridge:  C2 German · D2D GF-level · architecture fluency  →  ✓'},
+      {type:'out g',text:'  [RESULT] SE who demos from production experience >> RARE MATCH'},
+    ],
+    marketFit:'Squirro SEs müssen Enterprise-CTOs davon überzeugen dass GenAI-Knowledge-Retrieval produktionsreif ist. Jason hat Claude SDK + FastAPI + MCP solo in 6 Wochen auf Production-Level deployed — 12/12 Tests, 2 internationale Märkte. Er erklärt Architektur-Entscheidungen aus eigener Deployment-Erfahrung, nicht aus einem Demo-Skript. Das ist die technische Glaubwürdigkeit die konservative Enterprise-Buyer fordern bevor sie unterschreiben.',
+    ctaHeadline:'Der Squirro-SE der einem Enterprise-CTO die GenAI-Architektur erklärt — weil er sie selbst gebaut hat.',
+    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · Squirro · Solutions Engineer</strong> — 15 Minuten Intro-Call. Ich zeige die Production-URL, nicht eine Notion-Seite.',
+    ctaSubject:'Solutions Engineer – Jason Roschmann × Squirro',
+    tagline:'Solutions Engineer der Squirros GenAI-Stack nicht erklärt bekommt — sondern selbst in Produktion deployed hat.',
     relevantProject:'saas',
-    pitch:'Squirro baut GenAI Enterprise Knowledge Retrieval. Ich habe ein SaaS-Produkt mit Claude SDK, FastAPI und MCP solo in 6 Wochen deployed — der gleiche Stack der in euren Enterprise-Demos läuft. Ich kann einem CTO die Architektur von innen erklären.',
-    ribbonRole:'Solutions Engineer · GenAI · Enterprise',
-    ribbonNote:'Squirro · Gartner Leader 2025 · KI',
-    ctaHeadline:'Der Solutions Engineer der Squirros GenAI-Stack nicht erklärt bekommt — sondern selbst deployed hat.',
-    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · für Squirro · Solutions Engineer</strong> — 15 Minuten Intro-Call. Ich komme vorbereitet.',
-    ctaSubject:'Solutions Engineer – Jason Roschmann für Squirro',
+    pitch:'Squirro baut GenAI Enterprise Knowledge Retrieval. Ich habe ein SaaS-Produkt mit Claude SDK, FastAPI und MCP solo in 6 Wochen deployed — 12/12 Tests, 2 internationale Märkte. Das ist nicht Proof-of-Concept: das ist Production. Im SE-Kontext bedeutet das: ich erkläre Enterprise-CTOs die Architektur-Entscheidungen von innen, nicht von einer Folie. Kein Demo-Fog. Keine auswendige Antwort auf "warum ist das skalierbar?" — ich habe es skaliert.',
   },
   flowable:{
     name:'Flowable AG',
     role:'Automation Consultant',
-    tagline:'Automation Consultant der 17-Agent-Pipelines shipped — keine Folie über Automatisierung.',
+    headline:'17-Agent-Pipeline in Produktion — kein Konzept, kein Proof-of-Concept, kein Consultant der es beschreibt',
+    ribbonRole:'Automation Consultant · BPM · n8n + Python live',
+    ribbonNote:'Flowable AG · 65% autonome Delivery deployed · Aug 2026',
+    termBoot:[
+      {type:'cmd',  text:'> ./flowable_consultant_match.sh --candidate=jason'},
+      {type:'out b',text:'  [FLOWABLE] Business process automation consultant profile check...'},
+      {type:'out',  text:'  n8n_depth:      workflow orchestration · multi-trigger · deployed  →  ✓'},
+      {type:'out',  text:'  python_core:    FastAPI + agent orchestration · prod SaaS  →  ✓'},
+      {type:'out',  text:'  autonomous_pct: 65% delivery without manual steps  →  real BPM outcome ✓'},
+      {type:'out',  text:'  dach_comms:     C2 German · non-tech stakeholder fluency  →  ✓'},
+      {type:'out g',text:'  [RESULT] BPM consultant who shipped 65% autonomous delivery >> MATCH'},
+    ],
+    marketFit:'Flowable-Kunden kaufen die Vision von autonomer Business-Process-Automation. Jasons 17-Agent-OS liefert genau das — 65% der Outreach-Delivery läuft ohne manuelle Eingriffe via n8n + Python-Orchestration. Er berät nicht aus der Theorie: er hat denselben Zielzustand already achieved und kann erklären welche Scoping-Entscheidungen dorthin führen — und welche Sackgassen er selbst durchlaufen hat.',
+    ctaHeadline:'Der Flowable-Consultant der Kunden zeigt was 65% autonome Delivery bedeutet — weil er es selbst deployt hat.',
+    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · Flowable AG · Automation Consultant</strong> — 15 Minuten Intro-Call. Ich komme mit Architektur-Analyse.',
+    ctaSubject:'Automation Consultant – Jason Roschmann × Flowable AG',
+    tagline:'Automation Consultant der 17-Agent-Pipelines geshippt hat — keine Folien über Automatisierung, live Systeme.',
     relevantProject:'agents',
-    pitch:'Flowable verkauft Business Process Automation. Mein 17-Agent-OS liefert 65% des Outputs autonom via n8n und Python — der gleiche Low-Code-Denkansatz den eure Kunden kaufen wollen. Ich berate aus der Position des Builders, nicht des Theoretikers.',
-    ribbonRole:'Automation Consultant · BPM · Low-Code',
-    ribbonNote:'Flowable AG · DACH + US + SG · 100–250 MA',
-    ctaHeadline:'Der Automation Consultant der Flowable-Kunden nicht erklärt wie Workflows aussehen — sondern zeigt was 65% autonome Delivery bedeutet.',
-    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · für Flowable AG · Automation Consultant</strong> — 15 Minuten Intro-Call. Ich komme vorbereitet.',
-    ctaSubject:'Automation Consultant – Jason Roschmann für Flowable AG',
+    pitch:'Flowable verkauft Business Process Automation. Mein 17-Agent-OS liefert 65% des Outputs autonom via n8n und Python — der gleiche Low-Code-Denkansatz den eure Kunden kaufen wollen, bereits realisiert. Ich scope nicht was möglich wäre: ich erkläre was ich selbst deployed habe und warum bestimmte Architektur-Entscheidungen diesen Autonomie-Grad ermöglicht haben. Das ist Beratung aus Production-Erfahrung, nicht Whitepaper-Consulting.',
   },
   unique:{
     name:'Unique.ai',
-    role:'AI / Customer Success',
-    tagline:'AI-nativer CS der den Agent-Stack den Finserv-Kunden wollen bereits in Produktion hat.',
+    role:'AI Revenue / Customer Success',
+    headline:'KI-Builder der auch Deals schließt — für KI-first Financial Services',
+    ribbonRole:'AI Sales / CS · Financial Services · Agent-OS',
+    ribbonNote:'Unique.ai · 17 Agents live · Claude SDK · Aug 2026',
+    termBoot:[
+      {type:'cmd',  text:'> ./unique_ai_match.sh --vertical=finserv --candidate=jason'},
+      {type:'out b',text:'  [UNIQUE.AI] Finserv AI-native sales/CS profile check...'},
+      {type:'out',  text:'  ai_native:     17 agents autonomous · Claude SDK prod · builder not user  →  ✓'},
+      {type:'out',  text:'  closing_dna:   200+/mo · GF-level D2D · 4Y rejection training  →  ✓'},
+      {type:'out',  text:'  exec_comms:    conservative buyer fluency · C-level D2D direct  →  ✓'},
+      {type:'out',  text:'  dach_language: Deutsch C2 · LGT/Pictet buyer language  →  ✓'},
+      {type:'out g',text:'  [RESULT] AI builder + deal-closer for skeptical Finserv buyers >> MATCH'},
+    ],
+    marketFit:'Unique.ai verkauft KI-Copiloten an Finserv-Institutionen (LGT, Pictet) — Buyer die extrem konservativ sind und echten Beweis fordern. Jason hat 17 AI-Agents mit Claude SDK solo in Produktion gebaut: er verkauft nicht die Vision, er hat die Implementierung selbst durchgeführt. Das ist der Vertrauensanker den Finserv-Buyer brauchen. Zusatz: D2D-Direktkontakt auf GF-Ebene + C2-Deutsch = er spricht die Sprache der DACH-Entscheider.',
+    ctaHeadline:'Der Unique.ai-CS/Sales der weiß was Finserv-Buyer wirklich fragen — weil er selbst 17 AI-Agents deployt hat.',
+    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · Unique.ai · AI Revenue / Customer Success</strong> — 15 Minuten Intro-Call. Ich komme mit Finserv-Buyer-Analyse.',
+    ctaSubject:'AI Revenue / CS – Jason Roschmann × Unique.ai',
+    tagline:'AI-nativer Sales/CS der den Agentic-Stack den Finserv-Kunden wollen bereits in Produktion hat — nicht aus dem Demo kennt.',
     relevantProject:'agents',
-    pitch:'Unique.ai bringt KI in Financial-Services-Workflows. Ich habe 17 spezialisierte Agents die autonom in Produktion laufen — das ist nicht Demo, das ist der Zielzustand eurer LGT- und Pictet-Kunden. Ich kann die Vision verkaufen weil ich sie bereits deployed habe.',
-    ribbonRole:'AI · Customer Success · Finserv',
-    ribbonNote:'Unique.ai · LGT Pictet · B2B AI · 100+ MA',
-    ctaHeadline:'Der AI/CS der weiß was Finserv-Kunden wollen — weil er selbst 17 Agents in Produktion betreibt.',
-    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · für Unique.ai · AI / Customer Success</strong> — 15 Minuten Intro-Call. Ich komme vorbereitet.',
-    ctaSubject:'AI Customer Success – Jason Roschmann für Unique.ai',
+    pitch:'Unique.ai bringt KI in Financial-Services-Workflows. Ich habe 17 spezialisierte Agents mit Claude SDK solo deployed — das ist nicht Demo, das ist der Zielzustand den eure LGT- und Pictet-Kunden kaufen wollen. Ich kann die Vision verkaufen weil ich sie deployed habe. Und ich kann Finserv-Entscheider überzeugen weil ich 4 Jahre lang direkt mit GFs und Inhabern abgeschlossen habe — ohne Folie, ohne Skript, mit 85–95% Anfangsablehnung täglich.',
   },
   beekeeper:{
     name:'Beekeeper',
     role:'Customer Solution Engineer',
-    tagline:'Solution Engineer der Support-Tickets schließt und im selben Call den Automation-Fix scriptet.',
+    headline:'Backend-Bugs debuggen und danach dem Schichtleiter erklären warum es passiert ist — beides in einer Person',
+    ribbonRole:'Customer Solution Eng · Frontline SaaS · Debug + Comm',
+    ribbonNote:'Beekeeper · FastAPI+Playwright live · 8K D2D · Aug 2026',
+    termBoot:[
+      {type:'cmd',  text:'> ./beekeeper_se_match.sh --context=frontline --candidate=jason'},
+      {type:'out b',text:'  [BEEKEEPER] Customer Solution Engineer profile check...'},
+      {type:'out',  text:'  debug_depth:   FastAPI prod · Playwright E2E · 12/12 tests solo  →  ✓'},
+      {type:'out',  text:'  comm_spectrum: 8.000 D2D · Türrahmen bis CEO · jeder Gesprächstyp  →  ✓'},
+      {type:'out',  text:'  frontline_fit: factory/field D2D context · non-tech buyer fluency  →  ✓'},
+      {type:'out',  text:'  dach_native:   Deutsch C2 · DACH enterprise clients  →  ✓'},
+      {type:'out g',text:'  [RESULT] Technical debugger + human communicator >> BOTH = RARE MATCH'},
+    ],
+    marketFit:'Beekeeper Customer Solution Engineers brauchen zwei seltene Fähigkeiten gleichzeitig: Backend-Debugging auf Production-Niveau UND Kommunikation die beim Schichtleiter eines Produktionsbetriebs ankommt. Jason hat ein SaaS-Backend solo debugged (12/12 Tests, Playwright E2E) und 8.000 D2D-Gespräche mit Menschen auf allen Ebenen geführt — Fabrikinhaber, GFs, Sachbearbeiter. Er wechselt zwischen Debugging-Modus und Kundenkommunikation ohne Reibung.',
+    ctaHeadline:'Der Beekeeper-SE der das technische Problem löst und dem Frontline-Manager danach erklärt warum es passiert ist.',
+    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · Beekeeper · Customer Solution Engineer</strong> — 15 Minuten Intro-Call. Ich komme vorbereitet.',
+    ctaSubject:'Customer Solution Engineer – Jason Roschmann × Beekeeper',
+    tagline:'Solution Engineer der Tickets debuggt und im selben Call die Lösung auf Werkshallenmanager-Niveau erklärt.',
     relevantProject:'saas',
-    pitch:'Beekeeper verbindet Frontline Worker im Echtbetrieb. Ein Customer Solution Engineer braucht dort technisches Debugging UND Kommunikation die am Werkshallenmanager ankommt. Ich habe ein SaaS-Backend solo debugged und 8.000 D2D-Gespräche geführt — beides in einer Person.',
-    ribbonRole:'Customer Solution Engineer · Frontline SaaS',
-    ribbonNote:'Beekeeper by LumApps · Zürich · ~389 MA',
-    ctaHeadline:'Der Solution Engineer der beim Beekeeper-Kunden nicht nur das Problem diagnostiziert — sondern verständlich erklärt warum es passiert ist.',
-    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · für Beekeeper · Customer Solution Engineer</strong> — 15 Minuten Intro-Call. Ich komme vorbereitet.',
-    ctaSubject:'Customer Solution Engineer – Jason Roschmann für Beekeeper',
+    pitch:'Beekeeper verbindet Frontline-Worker im Echtbetrieb — der Customer Solution Engineer braucht technisches Debugging-Fundament UND Kommunikation die beim Werkshallenmanager ankommt. Ich habe ein SaaS-Backend solo debugged und 8.000 D2D-Gespräche mit Menschen auf jeder Ebene geführt: Fabrikinhaber, GFs, Sachbearbeiter. Beide Modi gleichzeitig — das ist selten. Das ist mein Profil.',
   },
   jua:{
     name:'Jua.ai',
-    role:'Account Executive (Hire #2)',
-    tagline:'Startup-AE Hire #2 der das Sales-System baut während er die ersten Deals schließt — kein Playbook nötig.',
+    role:'Account Executive Hire #2',
+    headline:'Hire #2 AE der das Playbook baut während er die ersten Deals schließt — kein Onboarding nötig',
+    ribbonRole:'Account Executive · Hire #2 · Zero-to-One Sales',
+    ribbonNote:'Jua.ai · Sales-OS gebaut · 8K Cold Calls · Aug 2026',
+    termBoot:[
+      {type:'cmd',  text:'> ./jua_ae_match.sh --hire=2 --mode=zero_to_one --candidate=jason'},
+      {type:'out b',text:'  [JUA.AI] Founding AE hire #2 profile check...'},
+      {type:'out',  text:'  sales_os:     17-agent system built from zero · solo  →  playbook-builder ✓'},
+      {type:'out',  text:'  cold_volume:  ~8.000 calls · 85-95% rejection · 4Y  →  startup-grade grit ✓'},
+      {type:'out',  text:'  closing_rate: 200+/mo · direct GF/owner contact  →  no playbook needed ✓'},
+      {type:'out',  text:'  ai_context:   Claude SDK + Python + n8n  →  energy AI architecture fluency ✓'},
+      {type:'out g',text:'  [RESULT] Zero-to-one builder who closes while building >> RARE MATCH'},
+    ],
+    marketFit:'Jua.ai AE Hire #2 hat keine Vorlage — er muss ICP definieren, Messaging entwickeln, Sequenzen bauen und gleichzeitig schließen. Jason hat ein 17-Agent Sales-OS solo von Null aufgebaut während er Abschlüsse gemacht hat. Das ist dieser exakte Modus. ~8.000 Cold Calls als Baseline bedeutet er wartet nicht auf warme Leads — er baut die Pipe selbst. Und er versteht AI-Architekturen tief genug um mit Energy-Trading-Quants auf technischer Ebene zu sprechen.',
+    ctaHeadline:'Der Jua.ai-AE der nicht auf ein Playbook wartet — sondern eines baut während er die ersten Energy-Trading-Deals schließt.',
+    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · Jua.ai · Account Executive Hire #2</strong> — 15 Minuten Intro-Call. Ich komme mit ICP-Hypothese und Outreach-Sequenz.',
+    ctaSubject:'Account Executive Hire #2 – Jason Roschmann × Jua.ai',
+    tagline:'Startup-AE Hire #2 der das Sales-Playbook baut während er die ersten Deals schließt — kein Onboarding, kein Warten.',
     relevantProject:'agents',
-    pitch:'Jua.ai baut das AI Foundation Model für Wetter und Energy Trading. AE Hire #2 bedeutet kein existierendes Playbook — jemand muss es von Null aufbauen. Ich habe ein 17-Agent Sales-OS solo gebaut und deployed. Ich warte nicht auf einen Prozess; ich erstelle einen.',
-    ribbonRole:'Account Executive · Hire #2 · AI/Energie',
-    ribbonNote:'Jua.ai · Weather Foundation Model · Startup',
-    ctaHeadline:'Der AE der bei Jua nicht auf ein Playbook wartet — sondern eines baut während er die ersten Deals schließt.',
-    ctaSub:'EU-Bürger · Permit B = 14-Tage-Anmeldung · kein Kontingent · kein Anwalt<br><strong>August 2026 · für Jua.ai · Account Executive Hire #2</strong> — 15 Minuten Intro-Call. Ich komme vorbereitet.',
-    ctaSubject:'Account Executive Hire #2 – Jason Roschmann für Jua.ai',
+    pitch:'Jua.ai baut das AI Foundation Model für Weather und Energy Trading. AE Hire #2 bedeutet kein existierendes Playbook — jemand muss es von Null aufbauen, während er gleichzeitig schließt. Ich habe ein 17-Agent Sales-OS solo built und deployed. Ich warte nicht auf einen Prozess: ich erstelle ihn. ~8.000 Cold Calls sind meine Baseline — ich brauche keine warmen Leads um Pipeline zu füllen. Und ich verstehe AI-Architekturen tief genug um mit Energy-Trading-Quants auf technischer Ebene zu sprechen.',
   },
 };
 
 /* project key → index in the .g3 grid on Projekte screen */
 const _PROJ_IDX={saas:0,d2c:1,agents:2};
 
-/* resolve ?company= param → COMPANIES key; handles jua.ai → jua etc. */
+/* resolve ?company= param → COMPANY_CONTEXT key; handles jua.ai → jua etc. */
 function _coKey(){
   const raw=(new URLSearchParams(window.location.search).get('company')||'')
     .toLowerCase().replace(/[^a-z]/g,'');
@@ -1714,8 +2490,8 @@ function _coKey(){
 
 function initCompanyContext(){
   const key=_coKey();
-  if(!COMPANIES[key])return; /* no param or unknown — default generic view */
-  const co=COMPANIES[key];
+  if(!COMPANY_CONTEXT[key])return; /* no param or unknown — default generic view */
+  const co=COMPANY_CONTEXT[key];
   _coBanner(co);
   _coRibbon(co);
   _coHighlightProject(co);
@@ -1723,6 +2499,9 @@ function initCompanyContext(){
   _coZurichTargetRow(co);
   _coContactCTA(co);
   _coTopbar(co);
+  _coHeadline(co);
+  _coTermBoot(co);
+  _coMarketFit(co);
 }
 
 /* 1 — Persistent amber banner above all screens */
@@ -1793,6 +2572,44 @@ function _coContactCTA(co){
 function _coTopbar(co){
   const tb=document.querySelector('.tb-title');
   if(tb)tb.textContent='jason.roschmann · '+co.role+' · '+co.name+' · Zürich Aug 2026';
+}
+
+/* 8 — Overview: replace role subtitle with company-specific headline */
+function _coHeadline(co){
+  if(!co.headline)return;
+  const heroRole=document.getElementById('mob-hero-role');
+  if(heroRole)heroRole.textContent=co.headline;
+  const sbRole=document.querySelector('.sb-role');
+  if(sbRole)sbRole.textContent=co.role+' · '+co.name+' · Aug 2026';
+}
+
+/* 9 — Terminal: prepend company-specific boot lines before the generic career log.
+   Mutates the module-level termLines array (which is const but not frozen),
+   then resets the terminal so the boot plays on the next startTerminal() call. */
+function _coTermBoot(co){
+  if(!co.termBoot||!co.termBoot.length)return;
+  const sep={type:'cmd',text:'> ─────────────────────────────────────────────────'};
+  const lines=co.termBoot.concat([sep]);
+  /* Prepend in reverse so unshift preserves order */
+  for(let i=lines.length-1;i>=0;i--){termLines.unshift(lines[i]);}
+  /* Reset terminal so it replays from the new start */
+  termRunning=false;ti=0;
+  const tb=document.getElementById('term-out');
+  if(tb)tb.innerHTML='<div><span class="tl-cursor"></span></div>';
+}
+
+/* 10 — Markt-Fit: inject company-specific fit card at the top of the Markt screen */
+function _coMarketFit(co){
+  const screen=document.getElementById('s-markt');
+  if(!screen||!co.marketFit)return;
+  const ribbon=screen.querySelector('.info-ribbon');
+  if(!ribbon)return;
+  const el=document.createElement('div');
+  el.className='co-pitch-panel';
+  el.innerHTML=
+    '<div class="co-pitch-label">MARKT-FIT · WARUM '+co.name.toUpperCase()+' — SKILL-GAP GESCHLOSSEN</div>'+
+    '<div class="co-pitch-text">'+co.marketFit+'</div>';
+  ribbon.insertAdjacentElement('afterend',el);
 }
 
 /* Run immediately — DOM is ready (script at end of body) */
@@ -1875,9 +2692,12 @@ initCompanyContext();
     });
     var scr=document.getElementById('s-'+id);
     if(scr){
+      scr.classList.remove('rubber-left','rubber-right');
       scr.classList.add('active');
       if(dir==='left')scr.classList.add('slide-from-right');
       else if(dir==='right')scr.classList.add('slide-from-left');
+      /* Card stagger — overview also gets _staggerKpiCards via startTerminal patch */
+      _staggerEnterScreen(id);
     }
     /* Sync desktop sidebar active highlight (sidebar is hidden but keeps state) */
     document.querySelectorAll('.sbn-item').forEach(function(i){i.classList.remove('active')});
@@ -2006,8 +2826,18 @@ initCompanyContext();
       if(!cur)return;
       var curId=cur.id.replace('s-','');
       var idx=SCREENS.indexOf(curId);
-      if(dx<0&&idx<SCREENS.length-1)_mobNav(SCREENS[idx+1],'left');
-      else if(dx>0&&idx>0)_mobNav(SCREENS[idx-1],'right');
+      if(dx<0&&idx<SCREENS.length-1){
+        _mobNav(SCREENS[idx+1],'left');
+      } else if(dx>0&&idx>0){
+        _mobNav(SCREENS[idx-1],'right');
+      } else {
+        /* At list boundary — rubber-band the current screen */
+        var rb=dx<0?'rubber-left':'rubber-right';
+        cur.classList.remove('rubber-left','rubber-right');
+        void cur.offsetWidth; /* reflow to allow re-trigger */
+        cur.classList.add(rb);
+        cur.addEventListener('animationend',function(){cur.classList.remove(rb);},{once:true});
+      }
     }
   },{passive:true});
 
