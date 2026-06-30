@@ -1,0 +1,19 @@
+{
+  "name": "Jason Roschmann · KI Builder · Zürich",
+  "short_name": "Jason R.",
+  "description": "CV — KI Builder · Revenue DNA · Zürich Aug 2026",
+  "start_url": "./Jason_Roschmann_CV_V6.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1a1f2e",
+  "theme_color": "#1a1f2e",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' fill='%231a1f2e'/%3E%3Ctext x='96' y='130' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-weight='900' font-size='96' fill='%23f0ece4'%3EJR%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
