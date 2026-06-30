@@ -502,8 +502,10 @@ body:has(a:hover,button:hover) #cur{width:22px;height:22px;background:transparen
   /* ── Terminal: fully hidden on overview — frees ~82px to keep all key info above fold ── */
   #s-overview .term{display:none}
 
-  /* ── Chat ── */
-  .chat-msgs{min-height:220px;max-height:300px}
+  /* ── Chat: fill viewport height, no dead space ── */
+  #s-chat{height:100%;overflow:hidden;min-height:initial}
+  #s-chat .card#chat-box{flex:1;min-height:0}
+  .chat-msgs{flex:1;min-height:0;max-height:none;overflow-y:auto}
   #chat-in{font-size:16px} /* prevent iOS auto-zoom on focus */
   #chat-send{min-height:44px;min-width:44px;padding:0 14px}
   .qq-btn{min-height:36px;font-size:10px}
