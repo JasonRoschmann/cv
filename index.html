@@ -46,7 +46,7 @@ body{overflow:hidden}
 #main::-webkit-scrollbar-thumb{background:var(--bdr)}
 
 /* ── SCREENS ── */
-.scr{display:none;flex-direction:column;padding:14px 14px calc(80px + env(safe-area-inset-bottom));opacity:0;transform:scale(.99);transition:opacity .2s ease,transform .28s var(--spring)}
+.scr{display:none;flex-direction:column;padding:14px 14px calc(104px + env(safe-area-inset-bottom));opacity:0;transform:scale(.99);transition:opacity .2s ease,transform .28s var(--spring)}
 .scr.act{display:flex}
 .scr.vis{opacity:1;transform:scale(1)}
 
@@ -135,8 +135,9 @@ body{overflow:hidden}
 .nein-ratio-wrap{margin-top:11px}
 .nein-ratio-bar{display:flex;height:5px;border-radius:3px;overflow:hidden;margin-bottom:6px;background:var(--bdr2)}
 .nein-ja{background:var(--grn);border-radius:3px 0 0 3px;width:0;transition:width 1.4s cubic-bezier(.25,1,.5,1)}
-.nein-ratio-labels{display:flex;justify-content:space-between;font-size:9px;font-family:var(--ffm);letter-spacing:.04em;color:var(--mu2)}
+.nein-ratio-labels{display:flex;justify-content:space-between;font-size:9px;font-family:var(--ffm);letter-spacing:.04em}
 .nein-ratio-labels .ja-lbl{color:var(--grn)}
+.nein-ratio-labels .no-lbl{color:var(--mu2)}
 
 /* ── CHIPS ── */
 .chips{display:flex;flex-wrap:wrap;gap:7px}
@@ -186,7 +187,7 @@ body{overflow:hidden}
 .cert-sub{font-size:11px;color:var(--mu);margin-top:3px;line-height:1.5}
 
 /* ── CHAT ── */
-#s-chat.act{padding:0;overflow:hidden}
+#s-chat.act{padding:0;overflow:hidden;height:100%}
 .chat-head{padding:11px 14px 9px;border-bottom:1px solid var(--bdr2);background:var(--s1);flex-shrink:0}
 .chat-head-t{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mu)}
 .chat-head-s{font-size:11px;color:var(--mu2);margin-top:2px}
@@ -231,7 +232,7 @@ body{overflow:hidden}
 .step-s{font-size:12px;color:var(--mu);margin-top:2px;line-height:1.5}
 
 /* ── FLOAT CTA ── */
-#float-cta{position:fixed;bottom:calc(68px + env(safe-area-inset-bottom));right:14px;z-index:50;display:none}
+#float-cta{position:fixed;bottom:calc(72px + env(safe-area-inset-bottom));right:12px;z-index:50;display:none;max-width:calc(100vw - 24px)}
 @keyframes ring-pulse{0%{box-shadow:0 4px 14px rgba(63,185,80,.35),0 0 0 0 rgba(63,185,80,.45)}70%{box-shadow:0 4px 14px rgba(63,185,80,.35),0 0 0 14px rgba(63,185,80,0)}100%{box-shadow:0 4px 14px rgba(63,185,80,.35),0 0 0 0 rgba(63,185,80,0)}}
 #float-cta a{display:flex;align-items:center;gap:6px;background:var(--grn);color:#000;font-size:12px;font-weight:700;padding:9px 14px;border-radius:30px;text-decoration:none;animation:ring-pulse 2.5s ease-out infinite;transition:transform .15s;white-space:nowrap}
 #float-cta a:hover{transform:translateY(-1px);animation:none;box-shadow:0 6px 20px rgba(63,185,80,.45)}
@@ -244,9 +245,9 @@ body{overflow:hidden}
 .nav-icon{width:20px;height:20px;stroke-width:1.5}
 #mehr-bg{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.65);max-width:430px;margin:0 auto;left:50%;transform:translateX(-50%);width:100%}
 #mehr-panel{position:absolute;bottom:0;left:0;right:0;background:var(--s1);border-radius:16px 16px 0 0;padding:18px 14px calc(18px + env(safe-area-inset-bottom));border-top:1px solid var(--bdr)}
-.mehr-btn{display:flex;align-items:center;gap:12px;width:100%;padding:13px 10px;background:none;border:none;color:var(--txt);font-size:14px;font-weight:500;cursor:pointer;border-radius:8px;-webkit-tap-highlight-color:transparent;transition:.12s;font-family:var(--ff)}
+.mehr-btn{display:flex;align-items:center;gap:14px;width:100%;padding:14px 10px;background:none;border:none;color:var(--txt);font-size:14px;font-weight:500;cursor:pointer;border-radius:8px;-webkit-tap-highlight-color:transparent;transition:.12s;font-family:var(--ff)}
 .mehr-btn:active,.mehr-btn:hover{background:var(--s2)}
-.mehr-icon{width:18px;height:18px;flex-shrink:0;color:var(--mu)}
+.mehr-icon{width:18px;height:18px;flex-shrink:0;color:var(--txt);opacity:.7}
 .body-s{font-size:13px;color:var(--mu);line-height:1.65}
 
 /* ── DESKTOP 768px+ ── */
@@ -277,9 +278,11 @@ body{overflow:hidden}
   #float-cta{display:none!important}
   #nav{display:none}
   #mehr-bg{display:none!important}
-  .scr{padding:22px 28px 40px}
-  #s-chat.act{padding:0;overflow:hidden}
-  .kpi-n{font-size:36px}
+  .scr{padding:28px 36px 48px}
+  #s-chat.act{padding:0;overflow:hidden;height:100%}
+  .kpi-grid{grid-template-columns:1fr 1fr 1fr 1fr}
+  .kpi-n{font-size:32px}
+  .kpi{padding:14px 12px}
 }
 
 @media print{
@@ -392,7 +395,7 @@ body{overflow:hidden}
     <div class="insight-text">Im D2D bekommt man täglich <strong>85–95% Ablehnung</strong>. Wer das 4 Jahre durchhält, hat etwas gelernt das kein Kurs lehren kann: <strong>die Pipeline zu füllen, egal was kommt.</strong> Das ist die Kernkompetenz eines SDR.</div>
     <div class="nein-ratio-wrap">
       <div class="nein-ratio-bar"><div class="nein-ja" id="nein-ja"></div></div>
-      <div class="nein-ratio-labels"><span class="ja-lbl">~8% Interesse / Termin</span><span>~92% sofort Nein</span></div>
+      <div class="nein-ratio-labels"><span class="ja-lbl">~8% Interesse / Termin</span><span class="no-lbl">~92% Nein</span></div>
     </div>
   </div>
   <div class="c">
