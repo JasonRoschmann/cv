@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Jason Roschmann — SDR / CSM / KI Automation. 4 Jahre D2D Vertrieb, 200+ Abschlüsse/Monat. Zürich August 2026.">
 <title>Jason Roschmann — SDR / CSM / KI Automation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital@1&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.6}
@@ -15,10 +18,18 @@ html,body{height:100%;background:#0d1117;color:#e6edf3;font-family:-apple-system
   --grn:#3fb950;--blue:#58a6ff;--amr:#e3b341;
   --ff:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   --ffm:'SF Mono','Cascadia Mono','Fira Code',monospace;
+  --serif:'IBM Plex Serif',Georgia,serif;
   --r:10px;--sidebar:240px;
   --spring:cubic-bezier(0.34,1.56,0.64,1);
 }
 body{overflow:hidden}
+
+/* ── CUSTOM CURSOR (desktop/pointer:fine only) ── */
+@media(pointer:fine) and (min-width:768px){
+  *{cursor:none!important}
+  #cur-dot{width:5px;height:5px;background:var(--grn);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:background .15s}
+  #cur-ring{width:28px;height:28px;border:1.5px solid rgba(63,185,80,.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s var(--spring),height .2s var(--spring),border-color .2s}
+}
 
 /* ── BOOT ── */
 #boot{position:fixed;inset:0;z-index:999;background:#0d1117;display:flex;align-items:center;justify-content:center;padding:32px;transition:opacity .35s ease}
@@ -26,6 +37,7 @@ body{overflow:hidden}
 #boot-text{font-family:var(--ffm);font-size:13px;color:var(--grn);white-space:pre;line-height:1.9;max-width:300px}
 
 /* ── LAYOUT ── */
+@keyframes mac-open{0%{opacity:0;transform:scale(.94)}100%{opacity:1;transform:scale(1)}}
 #app{display:flex;height:100vh;max-width:430px;margin:0 auto;flex-direction:column;background:var(--bg);position:relative}
 #sidebar{display:none}
 #co-bar{display:none;background:rgba(63,185,80,.06);border-bottom:1px solid rgba(63,185,80,.2);padding:7px 16px;font-size:11px;color:var(--grn);text-align:center;font-weight:600;flex-shrink:0}
@@ -43,7 +55,7 @@ body{overflow:hidden}
 .snb-d.a{background:var(--grn)}
 #main{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-height:0}
 #main::-webkit-scrollbar{width:2px}
-#main::-webkit-scrollbar-thumb{background:var(--bdr)}
+#main::-webkit-scrollbar-thumb{background:rgba(63,185,80,.35)}
 
 /* ── SCREENS ── */
 .scr{display:none;flex-direction:column;padding:14px 14px calc(104px + env(safe-area-inset-bottom));opacity:0;transform:scale(.99);transition:opacity .2s ease,transform .28s var(--spring)}
@@ -51,7 +63,7 @@ body{overflow:hidden}
 .scr.vis{opacity:1;transform:scale(1)}
 
 /* ── CARDS ── */
-.c{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:12px;overflow:hidden;transition:transform .2s var(--spring),border-color .15s}
+.c{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:12px;overflow:hidden;transition:transform .2s var(--spring),border-color .15s,box-shadow .2s}
 .c:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.07)}
 .ch{padding:12px 14px 8px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
 .ct{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu)}
@@ -63,7 +75,7 @@ body{overflow:hidden}
 
 /* ── HERO ── */
 .hero{background:linear-gradient(160deg,rgba(63,185,80,.06) 0%,transparent 60%);border:1px solid var(--bdr);border-radius:var(--r);padding:18px 16px;margin-bottom:12px}
-.hero-h{font-size:17px;font-weight:700;line-height:1.35;margin-bottom:8px}
+.hero-h{font-size:19px;font-weight:400;font-family:var(--serif);font-style:italic;line-height:1.35;margin-bottom:8px;color:var(--txt)}
 .hero-p{font-size:13px;color:var(--mu);line-height:1.65}
 .hero-p strong{color:var(--grn);font-weight:600}
 .co-hero{background:linear-gradient(160deg,rgba(88,166,255,.07) 0%,transparent 60%);border:1px solid rgba(88,166,255,.25);border-radius:var(--r);padding:16px;margin-bottom:12px;display:none}
@@ -83,8 +95,10 @@ body{overflow:hidden}
 
 /* ── KPI ── */
 .kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-.kpi{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);padding:16px 14px;transition:.2s}
-.kpi:hover{border-color:var(--bdr2);background:var(--s2)}
+.kpi{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);padding:16px 14px;transition:border-color .2s,box-shadow .2s,background .15s}
+.kpi[data-accent="g"]:hover{border-color:rgba(63,185,80,.45);box-shadow:0 0 0 1px rgba(63,185,80,.12),0 4px 20px rgba(63,185,80,.1)}
+.kpi[data-accent="b"]:hover{border-color:rgba(88,166,255,.45);box-shadow:0 0 0 1px rgba(88,166,255,.12),0 4px 20px rgba(88,166,255,.1)}
+.kpi[data-accent="a"]:hover{border-color:rgba(227,179,65,.45);box-shadow:0 0 0 1px rgba(227,179,65,.12),0 4px 20px rgba(227,179,65,.1)}
 .kpi-n{font-family:var(--ffm);font-size:clamp(28px,7vw,38px);font-weight:700;line-height:1;letter-spacing:-.02em}
 @keyframes kglow{0%,100%{text-shadow:none}50%{text-shadow:0 0 20px currentColor,0 0 40px currentColor}}
 .kglow{animation:kglow .8s ease 2}
@@ -126,7 +140,8 @@ body{overflow:hidden}
 .tl-pt.star::before{background:var(--grn)}
 
 /* ── INSIGHT ── */
-.insight{background:rgba(63,185,80,.04);border:1px solid rgba(63,185,80,.15);border-left:3px solid var(--grn);border-radius:0 var(--r) var(--r) 0;padding:12px 14px;margin-bottom:12px}
+@keyframes breath{0%,100%{border-left-color:rgba(63,185,80,.4)}50%{border-left-color:var(--grn)}}
+.insight{background:rgba(63,185,80,.04);border:1px solid rgba(63,185,80,.15);border-left:3px solid var(--grn);border-radius:0 var(--r) var(--r) 0;padding:12px 14px;margin-bottom:12px;animation:breath 3.5s ease-in-out infinite}
 .insight-label{font-family:var(--ffm);font-size:9px;font-weight:700;letter-spacing:.08em;color:var(--grn);margin-bottom:5px;text-transform:uppercase}
 .insight-text{font-size:13px;color:var(--mu);line-height:1.65}
 .insight-text strong{color:var(--txt)}
@@ -240,8 +255,9 @@ body{overflow:hidden}
 
 /* ── NAV ── */
 #nav{display:flex;background:var(--s1);border-top:1px solid var(--bdr);flex-shrink:0;padding-bottom:env(safe-area-inset-bottom)}
-.nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 2px;cursor:pointer;color:var(--mu);font-size:9px;font-weight:600;letter-spacing:.04em;background:none;border:none;transition:.12s;-webkit-tap-highlight-color:transparent;font-family:var(--ff)}
+.nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 2px;cursor:pointer;color:var(--mu);font-size:9px;font-weight:600;letter-spacing:.04em;background:none;border:none;transition:.12s;-webkit-tap-highlight-color:transparent;font-family:var(--ff);position:relative}
 .nav-btn.a{color:var(--grn)}
+.nav-btn.a::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:18px;height:2px;background:var(--grn);border-radius:0 0 2px 2px}
 .nav-icon{width:20px;height:20px;stroke-width:1.5}
 #mehr-bg{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.65);max-width:430px;margin:0 auto;left:50%;transform:translateX(-50%);width:100%}
 #mehr-panel{position:absolute;bottom:0;left:0;right:0;background:var(--s1);border-radius:16px 16px 0 0;padding:18px 14px calc(18px + env(safe-area-inset-bottom));border-top:1px solid var(--bdr)}
@@ -250,13 +266,23 @@ body{overflow:hidden}
 .mehr-icon{width:18px;height:18px;flex-shrink:0;color:var(--txt);opacity:.7}
 .body-s{font-size:13px;color:var(--mu);line-height:1.65}
 
+/* ── macOS BAR ── */
+#mac-bar{display:none}
+
 /* ── DESKTOP 768px+ ── */
 @media(min-width:768px){
   body{overflow:auto}
-  #app{max-width:1080px;flex-direction:row;height:100vh;overflow:hidden;box-shadow:0 0 0 1px var(--bdr)}
+  #app{max-width:1080px;flex-direction:row;height:100vh;overflow:hidden;box-shadow:0 0 0 1px var(--bdr);animation:mac-open .45s cubic-bezier(0.34,1.2,0.64,1) both}
   #sidebar{display:flex;flex-direction:column;width:var(--sidebar);flex-shrink:0;background:var(--s1);border-right:1px solid var(--bdr);overflow-y:auto}
   #sidebar::-webkit-scrollbar{width:0}
-  .sb-profile{padding:22px 20px 18px;border-bottom:1px solid var(--bdr2)}
+  #mac-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 16px 6px;flex-shrink:0;border-bottom:1px solid var(--bdr2)}
+  .mac-dots{display:flex;gap:6px}
+  .mac-d{width:11px;height:11px;border-radius:50%}
+  .mac-d.red{background:#ff5f57}
+  .mac-d.yel{background:#febc2e}
+  .mac-d.grn{background:#28c840}
+  #mac-clock{font-family:var(--ffm);font-size:11px;color:var(--mu);letter-spacing:.04em}
+  .sb-profile{padding:14px 20px 18px;border-bottom:1px solid var(--bdr2)}
   .sb-av{width:44px;height:44px;border-radius:50%;background:var(--grn);color:#000;font-family:var(--ffm);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
   .sb-name{font-size:14px;font-weight:700;margin-bottom:2px}
   .sb-sub{font-size:11px;color:var(--mu);line-height:1.5}
@@ -300,6 +326,10 @@ body{overflow:hidden}
 </head>
 <body>
 
+<!-- CUSTOM CURSOR -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
 <!-- BOOT OVERLAY -->
 <div id="boot"><div id="boot-text"></div></div>
 
@@ -307,6 +337,14 @@ body{overflow:hidden}
 
 <!-- SIDEBAR desktop -->
 <div id="sidebar">
+  <div id="mac-bar">
+    <div class="mac-dots">
+      <div class="mac-d red"></div>
+      <div class="mac-d yel"></div>
+      <div class="mac-d grn"></div>
+    </div>
+    <div id="mac-clock">--:--</div>
+  </div>
   <div class="sb-profile">
     <div class="sb-av">JR</div>
     <div class="sb-name">Jason Roschmann</div>
@@ -369,22 +407,22 @@ body{overflow:hidden}
     <div class="js now"><div class="js-y">2026</div><div class="js-l">KI / Automation</div></div>
   </div>
   <div class="kpi-grid">
-    <div class="kpi" style="border-top:2px solid var(--grn)">
+    <div class="kpi" data-accent="g" style="border-top:2px solid var(--grn)">
       <div class="kpi-n" style="color:var(--grn)" data-count="200" data-suffix="+">200+</div>
       <div class="kpi-l">Abschlüsse / Monat</div>
       <div class="kpi-s">Konstant, 4 Jahre lang</div>
     </div>
-    <div class="kpi">
+    <div class="kpi" data-accent="b">
       <div class="kpi-n" style="color:var(--blue)" data-count="8000" data-suffix="+">8.000+</div>
       <div class="kpi-l">Kaltgespräche</div>
       <div class="kpi-s">D2D, bundesweit</div>
     </div>
-    <div class="kpi">
+    <div class="kpi" data-accent="g">
       <div class="kpi-n" data-count="3" data-suffix="">3</div>
       <div class="kpi-l">Live-Systeme</div>
       <div class="kpi-s">SaaS, E-Commerce, Automation</div>
     </div>
-    <div class="kpi">
+    <div class="kpi" data-accent="a">
       <div class="kpi-n" style="color:var(--amr)" data-count="17" data-suffix="">17</div>
       <div class="kpi-l">KI-Agents</div>
       <div class="kpi-s">65% vollautomatisch</div>
@@ -727,6 +765,10 @@ body{overflow:hidden}
       <button class="qq-btn" onclick="quickQ('DACH-Vorteil?')">DACH-Vorteil?</button>
       <button class="qq-btn" onclick="quickQ('8.000 Nein?')">8.000 Nein?</button>
       <button class="qq-btn" onclick="quickQ('Warum SDR?')">Warum SDR?</button>
+      <button class="qq-btn" onclick="quickQ('Gehalt?')">Gehalt?</button>
+      <button class="qq-btn" onclick="quickQ('Cold Call?')">Cold Call?</button>
+      <button class="qq-btn" onclick="quickQ('KI-Projekte?')">KI-Projekte?</button>
+      <button class="qq-btn" onclick="quickQ('Englisch B1?')">Englisch B1?</button>
     </div>
   </div>
   <div class="chat-in-row">
@@ -742,6 +784,17 @@ body{overflow:hidden}
   <a class="cta-btn-p" href="mailto:jason@roschmann-digital.de?subject=15-Minuten-Call — Jason Roschmann SDR/CSM August 2026">15 Minuten anfragen</a>
   <a class="cta-btn-g" href="#" onclick="showScreen('chat');return false">Noch eine Frage stellen</a>
   <div class="cta-email">jason@roschmann-digital.de</div>
+  <div class="c" style="border-top:2px solid var(--blue)">
+    <div class="ch"><div class="ct">Gehaltsvorstellung</div><div class="b bb">CHF</div></div>
+    <div class="cb">
+      <div class="tbl">
+        <div class="tr"><div class="tk">Fixgehalt</div><div class="tv g">CHF 75.000 / Jahr</div></div>
+        <div class="tr"><div class="tk">OTE</div><div class="tv">CHF 105.000–110.000 (Fix + Variable)</div></div>
+        <div class="tr"><div class="tk">Orientierung</div><div class="tv">Zürcher Markt, SDR-Einstieg mit 4 Jahren Vertriebserfahrung</div></div>
+        <div class="tr"><div class="tk">Permit B</div><div class="tv g">EU-Bürger — 14-Tage-Anmeldung, kein Kontingent, kein Anwalt</div></div>
+      </div>
+    </div>
+  </div>
   <div class="c">
     <div class="ch"><div class="ct">So läuft es ab</div></div>
     <div class="cb">
@@ -908,7 +961,26 @@ function animateChips(){
   });
 }
 
-/* ── CHAT ── */
+/* ── TYPEWRITER CHAT ── */
+let twN=0;
+function typewriteMsg(text){
+  const id='tw'+(++twN);
+  const wrap=document.getElementById('chat-msgs');
+  const now=new Date();
+  const ts=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
+  wrap.insertAdjacentHTML('beforeend','<div class="msg" id="'+id+'"><div class="msg-av jr">JR</div><div><div class="msg-body" id="'+id+'b">▋</div><div class="msg-ts">'+ts+'</div></div></div>');
+  const body=document.getElementById(id+'b');
+  wrap.scrollTop=wrap.scrollHeight;
+  let i=0;
+  const iv=setInterval(()=>{
+    body.textContent=text.slice(0,i)+(i<text.length?'▋':'');
+    i++;
+    if(i%4===0)wrap.scrollTop=wrap.scrollHeight;
+    if(i>text.length)clearInterval(iv);
+  },16);
+}
+
+/* ── CHAT QA ── */
 function addTyping(){
   const wrap=document.getElementById('chat-msgs');
   wrap.insertAdjacentHTML('beforeend','<div class="msg" id="typing-msg"><div class="msg-av jr">JR</div><div><div class="msg-body" style="padding:10px 12px"><div class="td"><span></span><span></span><span></span></div></div></div></div>');
@@ -918,12 +990,17 @@ function removeTyping(){const t=document.getElementById('typing-msg');if(t)t.rem
 
 const QA={
   'Warum Zürich?':'Zürich ist kein Wunschdenken — es ist ein konkreter Plan. Die DACH-SaaS-Dichte ist einzigartig: Scandit, Smallpdf, Flowable, Unique.ai, Beekeeper. Alle in einer Stadt. August 2026 ist mein Zeitfenster — entschieden.',
-  'Kein Abschluss?':'Ich habe keinen Uni-Abschluss — das stimmt. Was ich habe: 4 Jahre echten Verkaufsdruck, 3 Live-Systeme in Produktion, 12 von 12 Tests grün. Im SDR-Bereich ist Output wichtiger als Papier.',
+  'Kein Abschluss?':'Ich habe keinen Uni-Abschluss — das stimmt. Was ich habe: 4 Jahre echten Verkaufsdruck, 3 Live-Systeme in Produktion, 12 von 12 Tests grün. Im SDR-Bereich ist Output wichtiger als Papier. SDRs werden trainiert — coachable ist das wichtigste Signal, und ich lerne schneller als jeder, den ich kenne.',
   'Permit B?':'EU-Bürger aus Deutschland. Permit B bedeutet 14-Tage-Anmeldung beim Einwohneramt — kein Kontingent, kein Anwalt, kein Ablehnungsrisiko. Dieselbe administrative Komplexität wie jemanden einzustellen, der bereits in Zürich lebt.',
   'DACH-Vorteil?':'Deutsch auf C2-Niveau, Muttersprache, DACH-nativ. Ich spreche mit Geschäftsführern aus Hamburg, Wien, Zürich und Bern auf Augenhöhe. Keine Übersetzung, keine kulturelle Distanz — das ist im Enterprise-Vertrieb ein echter Unterschied.',
   '8.000 Nein?':'Im D2D bekommt man täglich 85 bis 95 Prozent Absagen. 8.000 Kaltgespräche über 4 Jahre. Das trainiert etwas, das man nicht aus einem Kurs lernt: Ablehnung zu verarbeiten und trotzdem das nächste Gespräch mit voller Energie zu führen.',
   'Warum SDR?':'SDR ist der natürliche Einstieg, weil ich die Kernkompetenz bereits habe: Kaltakquise, Einwandbehandlung, Pipeline aufbauen. Was mir fehlt ist SaaS-CRM-Erfahrung — die schliesse ich in 2 bis 4 Wochen.',
+  'Gehalt?':'Ich orientiere mich am Zürcher Markt für diese Rolle. CHF 75.000 Fixgehalt — bei SDR-Standard mit 4 Jahren echtem Vertriebsdruck halte ich das für realistisch. OTE CHF 105.000 bis 110.000. Kein Verhandlungs-Poker, das ist meine ehrliche Zahl.',
+  'Cold Call?':'Die ersten acht Sekunden entscheiden alles. Ich nenne meinen Namen, warum ich anrufe, und stelle sofort eine Relevanz-Frage — keine Smalltalk-Floskel. Wenn das Timing nicht passt, frage ich wann besser. Das habe ich 8.000 mal gemacht.',
+  'KI-Projekte?':'Ich habe drei Systeme live: ein SaaS-Backend mit FastAPI und Claude SDK — 12/12 Tests grün, solo in 6 Wochen. Zwei Shopify-Stores für DACH-Gründer ohne Agentur-Budget. Und ein 17-Agent-Automation-OS das 65% meiner Sales-Prozesse automatisiert. Alle drei laufen täglich in Produktion.',
+  'Englisch B1?':'Mein Englisch ist B1. Das heisst: Meetings, E-Mails, Team-Alltag — das funktioniert. Wo es haken kann: hochspezifischer Fachjargon in technischen Verhandlungen. Ich arbeite aktiv daran. Für DACH-fokussierte Rollen ist das kein Blocker.',
 };
+
 const PH=['Was war dein grösster Vertriebserfolg?','Wie schnell kannst du anfangen?','Erkläre dein KI-Automation-System.','Was unterscheidet dich von anderen SDR-Kandidaten?'];
 let phI=0;
 setInterval(()=>{
@@ -931,10 +1008,12 @@ setInterval(()=>{
   if(!inp||document.activeElement===inp)return;
   phI=(phI+1)%PH.length;inp.placeholder=PH[phI];
 },3500);
+
 function quickQ(q){
   addMsg(q,'ceo');addTyping();
-  setTimeout(()=>{removeTyping();addMsg(QA[q]||'Schreib mir direkt: jason@roschmann-digital.de','jr')},1000);
+  setTimeout(()=>{removeTyping();typewriteMsg(QA[q]||'Schreib mir direkt: jason@roschmann-digital.de')},800);
 }
+
 function sendChat(){
   const inp=document.getElementById('chat-in');const q=inp.value.trim();if(!q)return;
   inp.value='';addMsg(q,'ceo');addTyping();
@@ -945,14 +1024,19 @@ function sendChat(){
   else if(lq.includes('permit')||lq.includes('visum'))resp=QA['Permit B?'];
   else if(lq.includes('dach')||lq.includes('deutsch'))resp=QA['DACH-Vorteil?'];
   else if(lq.includes('nein')||lq.includes('ablehnung'))resp=QA['8.000 Nein?'];
+  else if(lq.includes('warum sdr')||lq.includes('wieso sdr')||lq.includes('sdr wech'))resp=QA['Warum SDR?'];
+  else if(lq.includes('gehalt')||lq.includes('chf')||lq.includes('lohn')||lq.includes('salary'))resp=QA['Gehalt?'];
+  else if(lq.includes('cold call')||lq.includes('telefon')||lq.includes('kaltakquise')||lq.includes('anruf'))resp=QA['Cold Call?'];
+  else if(lq.includes('projekt')||lq.includes('system')||lq.includes('ki-projekt')||lq.includes('gebaut'))resp=QA['KI-Projekte?'];
+  else if(lq.includes('englisch')||lq.includes('english')||lq.includes('sprache')||lq.includes('b1')||lq.includes('b2'))resp=QA['Englisch B1?'];
   else if(lq.includes('sdr'))resp=QA['Warum SDR?'];
-  else if(lq.includes('englisch')||lq.includes('english'))resp='Mein Englisch ist konversationsfähig — B1 bis B2. Team-Calls, E-Mails und Alltag sind kein Problem. Bei technischen Verhandlungen kann manchmal Fachvokabular fehlen — das ist ehrlich. Für DACH-fokussierte Rollen ist das kein Blocker.';
-  setTimeout(()=>{removeTyping();addMsg(resp,'jr')},1100);
+  setTimeout(()=>{removeTyping();typewriteMsg(resp)},900);
 }
+
 function addMsg(text,type){
   const wrap=document.getElementById('chat-msgs');
   const now=new Date();
-  const ts=now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
+  const ts=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
   const av=type==='jr'?'<div class="msg-av jr">JR</div>':'<div class="msg-av">CEO</div>';
   wrap.insertAdjacentHTML('beforeend','<div class="msg'+(type==='ceo'?' ceo':'')+'">'+av+'<div><div class="msg-body">'+esc(text)+'</div><div class="msg-ts">'+ts+'</div></div></div>');
   wrap.scrollTop=wrap.scrollHeight;
@@ -982,6 +1066,33 @@ if(ck&&CO[ck]){
   document.getElementById('co-hero-h').textContent=co.h;
   document.getElementById('co-hero-p').textContent=co.p;
 }
+
+/* ── macOS CLOCK ── */
+function updateClock(){
+  const el=document.getElementById('mac-clock');
+  if(!el)return;
+  const n=new Date();
+  el.textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0')+':'+String(n.getSeconds()).padStart(2,'0');
+}
+updateClock();setInterval(updateClock,1000);
+
+/* ── CUSTOM CURSOR ── */
+(function(){
+  if(!window.matchMedia('(pointer:fine) and (min-width:768px)').matches)return;
+  const dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-ring');
+  if(!dot||!ring)return;
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+  function lerp(a,b,t){return a+(b-a)*t}
+  function loop(){rx=lerp(rx,mx,.12);ry=lerp(ry,my,.12);ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)}
+  loop();
+  document.addEventListener('mousedown',()=>{ring.style.transform='translate(-50%,-50%) scale(.65)'});
+  document.addEventListener('mouseup',()=>{ring.style.transform='translate(-50%,-50%) scale(1)'});
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{ring.style.width='42px';ring.style.height='42px';ring.style.borderColor='rgba(63,185,80,.9)'});
+    el.addEventListener('mouseleave',()=>{ring.style.width='28px';ring.style.height='28px';ring.style.borderColor='rgba(63,185,80,.5)'});
+  });
+})();
 
 /* ── BOOT SEQUENCE ── */
 function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
