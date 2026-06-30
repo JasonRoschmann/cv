@@ -146,14 +146,6 @@ body{overflow:hidden}
 .insight-text{font-size:13px;color:var(--mu);line-height:1.65}
 .insight-text strong{color:var(--txt)}
 
-/* ── NEIN RATIO ── */
-.nein-ratio-wrap{margin-top:11px}
-.nein-ratio-bar{display:flex;height:5px;border-radius:3px;overflow:hidden;margin-bottom:6px;background:var(--bdr2)}
-.nein-ja{background:var(--grn);border-radius:3px 0 0 3px;width:0;transition:width 1.4s cubic-bezier(.25,1,.5,1)}
-.nein-ratio-labels{display:flex;justify-content:space-between;font-size:9px;font-family:var(--ffm);letter-spacing:.04em}
-.nein-ratio-labels .ja-lbl{color:var(--grn)}
-.nein-ratio-labels .no-lbl{color:var(--mu2)}
-
 /* ── CHIPS ── */
 .chips{display:flex;flex-wrap:wrap;gap:7px}
 .chip{font-size:12px;padding:5px 11px;border-radius:6px;background:var(--s2);border:1px solid var(--bdr);color:var(--mu);line-height:1.4;transition:border-color .15s,color .15s}
@@ -413,8 +405,8 @@ body{overflow:hidden}
       <div class="kpi-s">Konstant, 4 Jahre lang</div>
     </div>
     <div class="kpi" data-accent="b">
-      <div class="kpi-n" style="color:var(--blue)" data-count="8000" data-suffix="+">8.000+</div>
-      <div class="kpi-l">Kaltgespräche</div>
+      <div class="kpi-n" style="color:var(--blue);font-size:22px">Hoch</div>
+      <div class="kpi-l">Kaltakquise-Volumen</div>
       <div class="kpi-s">D2D, bundesweit</div>
     </div>
     <div class="kpi" data-accent="g">
@@ -423,25 +415,21 @@ body{overflow:hidden}
       <div class="kpi-s">SaaS, E-Commerce (+1 in Bau)</div>
     </div>
     <div class="kpi" data-accent="a">
-      <div class="kpi-n" style="color:var(--amr)" data-count="17" data-suffix="">17</div>
-      <div class="kpi-l">KI-Agents</div>
-      <div class="kpi-s">65% vollautomatisch</div>
+      <div class="kpi-n" style="color:var(--amr);font-size:18px">Multi-Agent</div>
+      <div class="kpi-l">Automation-System</div>
+      <div class="kpi-s">40–65% automatisierte Delivery</div>
     </div>
   </div>
   <div class="insight">
-    <div class="insight-label">Das 8.000-Nein-Prinzip</div>
-    <div class="insight-text">Im D2D bekommt man täglich <strong>85–95% Ablehnung</strong>. Wer das 4 Jahre durchhält, hat etwas gelernt das kein Kurs lehren kann: <strong>die Pipeline zu füllen, egal was kommt.</strong> Das ist die Kernkompetenz eines SDR.</div>
-    <div class="nein-ratio-wrap">
-      <div class="nein-ratio-bar"><div class="nein-ja" id="nein-ja"></div></div>
-      <div class="nein-ratio-labels"><span class="ja-lbl">~8% Interesse / Termin</span><span class="no-lbl">~92% Nein</span></div>
-    </div>
+    <div class="insight-label">Das Kaltakquise-Prinzip</div>
+    <div class="insight-text">Im D2D gehört eine <strong>hohe Ablehnungsquote</strong> zum Alltag. Wer das 4 Jahre durchhält, hat etwas gelernt das kein Kurs lehren kann: <strong>die Pipeline zu füllen, egal was kommt.</strong> Das ist die Kernkompetenz eines SDR.</div>
   </div>
   <div class="c">
     <div class="ch"><div class="ct">Vertriebs-DNA</div><div class="b ba">4 JAHRE</div></div>
     <div class="cb">
       <div class="tbl">
         <div class="tr"><div class="tk">Output</div><div class="tv g">200+ Abschlüsse pro Monat — konstant über 4 Jahre, kein einzelner Ausreisser</div></div>
-        <div class="tr"><div class="tk">Volumen</div><div class="tv">ca. 8.000 Kaltgespräche, täglich 85–95% Ablehnung</div></div>
+        <div class="tr"><div class="tk">Volumen</div><div class="tv">Hohes Kaltakquise-Volumen, hohe Ablehnungsquote im Alltag</div></div>
         <div class="tr"><div class="tk">Expansion</div><div class="tv g">+15% Umsatz pro Bestandskunde durch Cross-Selling</div></div>
         <div class="tr"><div class="tk">Zielgruppe</div><div class="tv">Direktgespräch mit Inhabern und Geschäftsführern</div></div>
         <div class="tr"><div class="tk">Gebiete</div><div class="tv">Bundesweit — Hamburg (1. Jahr), Kiel, Osnabrück</div></div>
@@ -454,7 +442,7 @@ body{overflow:hidden}
       <div class="tbl">
         <div class="tr"><div class="tk">SaaS Backend</div><div class="tv">FastAPI, Claude SDK, MCP, PostgreSQL — 12/12 Tests grün, solo in 6 Wochen deployed</div></div>
         <div class="tr"><div class="tk">2 Shopify Stores</div><div class="tv">Custom Liquid Theme, 15 Metafields — Duftkumpels live, AtopicV in Entwicklung</div></div>
-        <div class="tr"><div class="tk">17-Agent OS</div><div class="tv">Python, n8n, Claude SDK — 65% vollautomatische Delivery</div></div>
+        <div class="tr"><div class="tk">Multi-Agent-System</div><div class="tv">Python, n8n, Claude SDK — 40–65% automatisierte Delivery</div></div>
       </div>
     </div>
   </div>
@@ -478,7 +466,7 @@ body{overflow:hidden}
             <div class="tl-co">EWE TEL und Ranger Marketing, bundesweit</div>
             <div class="tl-pts">
               <div class="tl-pt star">200+ Abschlüsse pro Monat, konstant über 4 Jahre</div>
-              <div class="tl-pt star">ca. 8.000 Kaltgespräche — 85–95% Ablehnung täglich</div>
+              <div class="tl-pt star">Hohes Kaltakquise-Volumen — hohe Ablehnungsquote im Alltag</div>
               <div class="tl-pt">Cross-Selling: +15% Umsatz pro Bestandskunde</div>
               <div class="tl-pt">Direktgespräch mit Inhabern und Geschäftsführern</div>
               <div class="tl-pt">Gebiete: Hamburg (1. Jahr), dann Kiel, Osnabrück, bundesweit</div>
@@ -520,7 +508,7 @@ body{overflow:hidden}
             <div class="tl-co">Selbstständig, aktiv</div>
             <div class="tl-pts">
               <div class="tl-pt star">FastAPI, PostgreSQL, Claude SDK, MCP, n8n, Playwright</div>
-              <div class="tl-pt star">Multi-Agent-Automation-Stack, 65% vollautomatische Delivery</div>
+              <div class="tl-pt star">Multi-Agent-Automation-Stack, 40–65% automatisierte Delivery</div>
               <div class="tl-pt">SaaS Backend: 12/12 Tests grün, live im DACH-Markt</div>
               <div class="tl-pt">Autodidaktisch seit 2024 — täglich in Produktion</div>
             </div>
@@ -584,12 +572,12 @@ body{overflow:hidden}
     </div>
   </div>
   <div class="c" style="border-top:2px solid var(--amr)">
-    <div class="ch"><div><div class="ct">Projekt C</div><div style="font-size:15px;font-weight:700;margin-top:3px">17-Agent Automation-OS</div></div><div class="b bg">LIVE</div></div>
+    <div class="ch"><div><div class="ct">Projekt C</div><div style="font-size:15px;font-weight:700;margin-top:3px">Multi-Agent-Automation-System</div></div><div class="b bg">LIVE</div></div>
     <div class="cb">
       <div class="body-s" style="margin-bottom:12px">Eigenentwickeltes Multi-Agent-System für eigene Sales-Prozesse. Ich habe für mich gebaut, was andere kaufen würden — und es läuft täglich.</div>
       <div class="tbl">
-        <div class="tr"><div class="tk">Stack</div><div class="tv">Python, Claude SDK, n8n — 17 spezialisierte Agents</div></div>
-        <div class="tr"><div class="tk">Automatisierung</div><div class="tv g">65% vollautomatische Delivery ohne manuellen Eingriff</div></div>
+        <div class="tr"><div class="tk">Stack</div><div class="tv">Python, Claude SDK, n8n — mehrere spezialisierte Agents</div></div>
+        <div class="tr"><div class="tk">Automatisierung</div><div class="tv g">40–65% automatisierte Delivery ohne manuellen Eingriff</div></div>
         <div class="tr"><div class="tk">Pipeline</div><div class="tv">Research → Analyse → Output — komplett durchgängig</div></div>
       </div>
     </div>
@@ -608,7 +596,7 @@ body{overflow:hidden}
         <div class="chip">C-Level Direktkontakt</div>
         <div class="chip">Cross-Selling +15%</div>
         <div class="chip">CRM und Pipeline-Management</div>
-        <div class="chip">ca. 8.000 Kaltgespräche</div>
+        <div class="chip">Hohes Kaltakquise-Volumen</div>
         <div class="chip">Inhaber und GF direkt</div>
       </div>
     </div>
@@ -618,9 +606,9 @@ body{overflow:hidden}
     <div class="cb">
       <div class="chips">
         <div class="chip g">Python, 2 Jahre Praxis</div>
-        <div class="chip b">Claude SDK, 17 Agents live</div>
+        <div class="chip b">Claude SDK, Multi-Agent-System live</div>
         <div class="chip">FastAPI, produktionsreif</div>
-        <div class="chip">n8n, 65% Automation</div>
+        <div class="chip">n8n, 40–65% Automation</div>
         <div class="chip">PostgreSQL</div>
         <div class="chip">Playwright E2E</div>
         <div class="chip">MCP, KI-Datenzugriff</div>
@@ -673,7 +661,7 @@ body{overflow:hidden}
       <div class="role-item">
         <div class="role-top"><div class="role-name">KI Automation Consultant (Freelance)</div><div class="role-pct A">85%</div></div>
         <div class="role-bar"><div class="role-fill A" data-w="85%"></div></div>
-        <div class="role-detail">17 Agents live, Deutsch C2, DACH-Lücke am Markt. Sofort startbereit — kein Onboarding nötig.</div>
+        <div class="role-detail">Multi-Agent-System live, Deutsch C2, DACH-Lücke am Markt. Sofort startbereit — kein Onboarding nötig.</div>
         <span class="role-tag A">Sofort einsatzbereit</span>
       </div>
       <div class="role-item">
@@ -763,7 +751,7 @@ body{overflow:hidden}
       <button class="qq-btn" onclick="quickQ('Kein Abschluss?')">Kein Abschluss?</button>
       <button class="qq-btn" onclick="quickQ('Permit B?')">Permit B?</button>
       <button class="qq-btn" onclick="quickQ('DACH-Vorteil?')">DACH-Vorteil?</button>
-      <button class="qq-btn" onclick="quickQ('8.000 Nein?')">8.000 Nein?</button>
+      <button class="qq-btn" onclick="quickQ('Ablehnung im Alltag?')">Ablehnung im Alltag?</button>
       <button class="qq-btn" onclick="quickQ('Warum SDR?')">Warum SDR?</button>
       <button class="qq-btn" onclick="quickQ('Gehalt?')">Gehalt?</button>
       <button class="qq-btn" onclick="quickQ('Cold Call?')">Cold Call?</button>
@@ -788,8 +776,7 @@ body{overflow:hidden}
     <div class="ch"><div class="ct">Gehaltsvorstellung</div><div class="b bb">CHF</div></div>
     <div class="cb">
       <div class="tbl">
-        <div class="tr"><div class="tk">Fixgehalt</div><div class="tv g">CHF 75.000 / Jahr</div></div>
-        <div class="tr"><div class="tk">OTE</div><div class="tv">CHF 105.000–110.000 (Fix + Variable)</div></div>
+        <div class="tr"><div class="tk">Gehalt</div><div class="tv g">Marktüblich, verhandelbar</div></div>
         <div class="tr"><div class="tk">Orientierung</div><div class="tv">Zürcher Markt, SDR-Einstieg mit 4 Jahren Vertriebserfahrung</div></div>
         <div class="tr"><div class="tk">Permit B</div><div class="tv g">EU-Bürger — 14-Tage-Anmeldung, kein Kontingent, kein Anwalt</div></div>
       </div>
@@ -894,10 +881,6 @@ function showScreen(id){
   if(id==='markt')setTimeout(animateBars,280);
   if(id==='karriere')setTimeout(animateTimeline,180);
   if(id==='skills')setTimeout(animateChips,120);
-  if(id==='home'){
-    const ja=document.getElementById('nein-ja');
-    if(ja){ja.style.width='0';requestAnimationFrame(()=>requestAnimationFrame(()=>{ja.style.width='7.5%'}))}
-  }
 }
 
 function fixChatHeight(){
@@ -993,11 +976,11 @@ const QA={
   'Kein Abschluss?':'Ich habe keinen Uni-Abschluss — das stimmt. Was ich habe: 4 Jahre echten Verkaufsdruck, 2 Live-Systeme in Produktion (ein drittes im Bau), 12 von 12 Tests grün. Im SDR-Bereich ist Output wichtiger als Papier. SDRs werden trainiert — coachable ist das wichtigste Signal, und ich lerne schneller als jeder, den ich kenne.',
   'Permit B?':'EU-Bürger aus Deutschland. Permit B bedeutet 14-Tage-Anmeldung beim Einwohneramt — kein Kontingent, kein Anwalt, kein Ablehnungsrisiko. Dieselbe administrative Komplexität wie jemanden einzustellen, der bereits in Zürich lebt.',
   'DACH-Vorteil?':'Deutsch auf C2-Niveau, Muttersprache, DACH-nativ. Ich spreche mit Geschäftsführern aus Hamburg, Wien, Zürich und Bern auf Augenhöhe. Keine Übersetzung, keine kulturelle Distanz — das ist im Enterprise-Vertrieb ein echter Unterschied.',
-  '8.000 Nein?':'Im D2D bekommt man täglich 85 bis 95 Prozent Absagen. 8.000 Kaltgespräche über 4 Jahre. Das trainiert etwas, das man nicht aus einem Kurs lernt: Ablehnung zu verarbeiten und trotzdem das nächste Gespräch mit voller Energie zu führen.',
+  'Ablehnung im Alltag?':'Im D2D gehört eine hohe Ablehnungsquote zum Alltag — über 4 Jahre hinweg. Das trainiert etwas, das man nicht aus einem Kurs lernt: Ablehnung zu verarbeiten und trotzdem das nächste Gespräch mit voller Energie zu führen.',
   'Warum SDR?':'SDR ist der natürliche Einstieg, weil ich die Kernkompetenz bereits habe: Kaltakquise, Einwandbehandlung, Pipeline aufbauen. Was mir fehlt ist SaaS-CRM-Erfahrung — die schliesse ich in 2 bis 4 Wochen.',
-  'Gehalt?':'Ich orientiere mich am Zürcher Markt für diese Rolle. CHF 75.000 Fixgehalt — bei SDR-Standard mit 4 Jahren echtem Vertriebsdruck halte ich das für realistisch. OTE CHF 105.000 bis 110.000. Kein Verhandlungs-Poker, das ist meine ehrliche Zahl.',
-  'Cold Call?':'Die ersten acht Sekunden entscheiden alles. Ich nenne meinen Namen, warum ich anrufe, und stelle sofort eine Relevanz-Frage — keine Smalltalk-Floskel. Wenn das Timing nicht passt, frage ich wann besser. Das habe ich 8.000 mal gemacht.',
-  'KI-Projekte?':'Ich habe mehrere Systeme: ein SaaS-Backend mit FastAPI und Claude SDK — 12/12 Tests grün, solo in 6 Wochen, live. Zwei Shopify-Stores für DACH-Gründer ohne Agentur-Budget — Duftkumpels live, AtopicV aktuell in Entwicklung. Und ein 17-Agent-Automation-OS das 65% meiner Sales-Prozesse automatisiert, läuft täglich in Produktion.',
+  'Gehalt?':'Ich orientiere mich am Zürcher Markt für diese Rolle — marktüblich und verhandelbar, je nach Rolle und Paket. Bei SDR-Standard mit 4 Jahren echtem Vertriebsdruck sehe ich mich im oberen Bereich der Einstiegsspanne. Kein Verhandlungs-Poker, das bespreche ich offen im Gespräch.',
+  'Cold Call?':'Die ersten acht Sekunden entscheiden alles. Ich nenne meinen Namen, warum ich anrufe, und stelle sofort eine Relevanz-Frage — keine Smalltalk-Floskel. Wenn das Timing nicht passt, frage ich wann besser. Das habe ich über 4 Jahre hinweg immer wieder gemacht.',
+  'KI-Projekte?':'Ich habe mehrere Systeme: ein SaaS-Backend mit FastAPI und Claude SDK — 12/12 Tests grün, solo in 6 Wochen, live. Zwei Shopify-Stores für DACH-Gründer ohne Agentur-Budget — Duftkumpels live, AtopicV aktuell in Entwicklung. Und ein Multi-Agent-Automation-System das einen erheblichen Teil meiner Sales-Prozesse automatisiert, läuft täglich in Produktion.',
   'Englisch B1?':'Mein Englisch ist B1. Das heisst: Meetings, E-Mails, Team-Alltag — das funktioniert. Wo es haken kann: hochspezifischer Fachjargon in technischen Verhandlungen. Ich arbeite aktiv daran. Für DACH-fokussierte Rollen ist das kein Blocker.',
 };
 
@@ -1023,7 +1006,7 @@ function sendChat(){
   else if(lq.includes('abschluss')||lq.includes('studium')||lq.includes('uni'))resp=QA['Kein Abschluss?'];
   else if(lq.includes('permit')||lq.includes('visum'))resp=QA['Permit B?'];
   else if(lq.includes('dach')||lq.includes('deutsch'))resp=QA['DACH-Vorteil?'];
-  else if(lq.includes('nein')||lq.includes('ablehnung'))resp=QA['8.000 Nein?'];
+  else if(lq.includes('nein')||lq.includes('ablehnung'))resp=QA['Ablehnung im Alltag?'];
   else if(lq.includes('warum sdr')||lq.includes('wieso sdr')||lq.includes('sdr wech'))resp=QA['Warum SDR?'];
   else if(lq.includes('gehalt')||lq.includes('chf')||lq.includes('lohn')||lq.includes('salary'))resp=QA['Gehalt?'];
   else if(lq.includes('cold call')||lq.includes('telefon')||lq.includes('kaltakquise')||lq.includes('anruf'))resp=QA['Cold Call?'];
@@ -1047,10 +1030,10 @@ const CO={
   scandit:{name:'Scandit',role:'BDR (German Speaker)',h:'Scandit sucht einen BDR der kalt akquiriert und Deutsch auf Muttersprachniveau spricht.',p:'Das ist genau das was ich 4 Jahre gemacht habe — 200+ Abschlüsse pro Monat, Direktgespräch mit Inhabern, bundesweit.'},
   luware:{name:'Luware AG',role:'Customer Success',h:'Luware sucht Customer Success mit Revenue-DNA und Microsoft-Ökosystem-Verständnis.',p:'4 Jahre Bestandskunden-Entwicklung, +15% Cross-Selling. SaaS-Tool-Onboarding in 6 Wochen.'},
   smallpdf:{name:'Smallpdf',role:'BDM DACH',h:'Smallpdf sucht einen BDM der DACH wirklich kennt — nicht nur als Karte.',p:'C2 Deutsch, bundesweit im Aussendienst, Inhaber-Gespräche täglich. DACH ist kein Markt für mich — es ist mein Zuhause.'},
-  squirro:{name:'Squirro',role:'Solutions Engineer',h:'Squirro sucht technisches Profil mit Sales-Energie.',p:'Python, FastAPI, Claude SDK, 17 Agents live. Ich spreche mit Technikern und schliesse trotzdem ab.'},
-  flowable:{name:'Flowable AG',role:'Automation Specialist',h:'Flowable sucht jemanden der Automation nicht nur verkauft sondern versteht.',p:'17-Agent-System live, n8n, Python, 65% vollautomatische Delivery. Ich habe für mich gebaut was andere kaufen würden.'},
-  unique:{name:'Unique.ai',role:'Account Executive',h:'Unique.ai sucht AE mit KI-Verständnis und Sales-DNA.',p:'Claude SDK, 17 Agents, FastAPI. Und 200+ Abschlüsse pro Monat über 4 Jahre. Beides.'},
-  beekeeper:{name:'Beekeeper',role:'Customer Solution Engineer',h:'Beekeeper sucht jemanden der Technik und Kunden gleich gut versteht.',p:'Python/FastAPI auf der einen Seite, 8.000 Kaltgespräche auf der anderen. Das ist selten.'},
+  squirro:{name:'Squirro',role:'Solutions Engineer',h:'Squirro sucht technisches Profil mit Sales-Energie.',p:'Python, FastAPI, Claude SDK, Multi-Agent-System live. Ich spreche mit Technikern und schliesse trotzdem ab.'},
+  flowable:{name:'Flowable AG',role:'Automation Specialist',h:'Flowable sucht jemanden der Automation nicht nur verkauft sondern versteht.',p:'Multi-Agent-System live, n8n, Python, 40–65% automatisierte Delivery. Ich habe für mich gebaut was andere kaufen würden.'},
+  unique:{name:'Unique.ai',role:'Account Executive',h:'Unique.ai sucht AE mit KI-Verständnis und Sales-DNA.',p:'Claude SDK, Multi-Agent-System, FastAPI. Und 200+ Abschlüsse pro Monat über 4 Jahre. Beides.'},
+  beekeeper:{name:'Beekeeper',role:'Customer Solution Engineer',h:'Beekeeper sucht jemanden der Technik und Kunden gleich gut versteht.',p:'Python/FastAPI auf der einen Seite, hohes Kaltakquise-Volumen auf der anderen. Das ist selten.'},
   jua:{name:'Jua.ai',role:'Account Executive Nr. 2',h:'Jua.ai sucht Account Executive Nr. 2 — jemanden der das Playbook aufbaut.',p:'4 Jahre D2D ohne Playbook. Ich bin der Typ der sich das Playbook selbst schreibt.'},
 };
 const p=new URLSearchParams(location.search);
@@ -1100,7 +1083,6 @@ async function bootCV(){
   if(sessionStorage.getItem('cv_boot')){
     const b=document.getElementById('boot');if(b)b.remove();
     runCounters();
-    const ja=document.getElementById('nein-ja');if(ja)setTimeout(()=>{ja.style.width='7.5%'},300);
     return;
   }
   const el=document.getElementById('boot-text');
@@ -1121,7 +1103,6 @@ async function bootCV(){
   await sleep(400);
   boot.remove();
   runCounters();
-  const ja=document.getElementById('nein-ja');if(ja)setTimeout(()=>{ja.style.width='7.5%'},300);
   sessionStorage.setItem('cv_boot','1');
 }
 
