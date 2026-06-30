@@ -1109,7 +1109,8 @@ function setupReveal(){
     },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   }
   document.querySelectorAll('.scr.act .c, .scr.act .kpi, .scr.act .tl-item').forEach((el,i)=>{
-    el.classList.remove('in');
+    if(el.dataset.revealed)return;
+    el.dataset.revealed='1';
     el.classList.add('reveal');
     el.style.transitionDelay=Math.min(i%8*0.06,0.42)+'s';
     _revealObs.observe(el);
@@ -1130,6 +1131,31 @@ function setupTilt(){
     });
     el.addEventListener('mouseleave',()=>{el.style.transform=''});
   });
+}
+
+/* ── SWIPE NAVIGATION (mobile only) ── */
+function setupSwipe(){
+  const main=document.getElementById('main');
+  if(!main||main.dataset.swipeBound)return;
+  main.dataset.swipeBound='1';
+  let sx=0,sy=0,st=0,tracking=false;
+  main.addEventListener('touchstart',(e)=>{
+    if(!window.matchMedia('(max-width:767px)').matches)return;
+    const mehr=document.getElementById('mehr-bg');
+    if(mehr&&mehr.style.display==='block')return;
+    if(e.target.closest('input,textarea,button,a,.qq-chips'))return;
+    const t=e.touches[0];sx=t.clientX;sy=t.clientY;st=Date.now();tracking=true;
+  },{passive:true});
+  main.addEventListener('touchend',(e)=>{
+    if(!tracking)return;tracking=false;
+    const t=e.changedTouches[0];
+    const dx=t.clientX-sx, dy=t.clientY-sy, dt=Date.now()-st;
+    if(dt>650||Math.abs(dx)<55||Math.abs(dx)<Math.abs(dy)*1.8)return;
+    const idx=SCREENS.indexOf(cur);
+    if(idx===-1)return;
+    if(dx<0&&idx<SCREENS.length-1)showScreen(SCREENS[idx+1]);
+    else if(dx>0&&idx>0)showScreen(SCREENS[idx-1]);
+  },{passive:true});
 }
 
 /* ── TYPED HERO PROMPT ── */
@@ -1172,6 +1198,7 @@ async function bootCV(){
 }
 
 showScreen('home');
+setupSwipe();
 bootCV().then(()=>typeHeroPrompt());
 window.addEventListener('resize',()=>{if(cur==='chat')fixChatHeight()});
 </script>
