@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Jason Roschmann — SDR / CSM / KI Automation. 4 Jahre D2D Vertrieb, 200+ Abschlüsse/Monat. Zürich August 2026.">
-<meta property="og:title" content="Jason Roschmann — SDR Zürich August 2026">
-<meta property="og:description" content="4 Jahre D2D. 8.000 Kaltgespräche. 3 Live-Systeme. Bereit für SaaS.">
 <title>Jason Roschmann — SDR / CSM / KI Automation</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -18,8 +16,16 @@ html,body{height:100%;background:#0d1117;color:#e6edf3;font-family:-apple-system
   --ff:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   --ffm:'SF Mono','Cascadia Mono','Fira Code',monospace;
   --r:10px;--sidebar:240px;
+  --spring:cubic-bezier(0.34,1.56,0.64,1);
 }
 body{overflow:hidden}
+
+/* ── BOOT ── */
+#boot{position:fixed;inset:0;z-index:999;background:#0d1117;display:flex;align-items:center;justify-content:center;padding:32px;transition:opacity .35s ease}
+#boot.out{opacity:0;pointer-events:none}
+#boot-text{font-family:var(--ffm);font-size:13px;color:var(--grn);white-space:pre;line-height:1.9;max-width:300px}
+
+/* ── LAYOUT ── */
 #app{display:flex;height:100vh;max-width:430px;margin:0 auto;flex-direction:column;background:var(--bg);position:relative}
 #sidebar{display:none}
 #co-bar{display:none;background:rgba(63,185,80,.06);border-bottom:1px solid rgba(63,185,80,.2);padding:7px 16px;font-size:11px;color:var(--grn);text-align:center;font-weight:600;flex-shrink:0}
@@ -38,10 +44,15 @@ body{overflow:hidden}
 #main{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;min-height:0}
 #main::-webkit-scrollbar{width:2px}
 #main::-webkit-scrollbar-thumb{background:var(--bdr)}
-.scr{display:none;flex-direction:column;padding:14px 14px calc(80px + env(safe-area-inset-bottom));opacity:0;transition:opacity .18s ease}
+
+/* ── SCREENS ── */
+.scr{display:none;flex-direction:column;padding:14px 14px calc(80px + env(safe-area-inset-bottom));opacity:0;transform:scale(.99);transition:opacity .2s ease,transform .28s var(--spring)}
 .scr.act{display:flex}
-.scr.vis{opacity:1}
-.c{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:12px;overflow:hidden}
+.scr.vis{opacity:1;transform:scale(1)}
+
+/* ── CARDS ── */
+.c{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:12px;overflow:hidden;transition:transform .2s var(--spring),border-color .15s}
+.c:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.07)}
 .ch{padding:12px 14px 8px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
 .ct{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu)}
 .cb{padding:0 14px 14px}
@@ -49,6 +60,8 @@ body{overflow:hidden}
 .bg{color:var(--grn);background:rgba(63,185,80,.08);border:1px solid rgba(63,185,80,.25)}
 .bb{color:var(--blue);background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.25)}
 .ba{color:var(--amr);background:rgba(227,179,65,.08);border:1px solid rgba(227,179,65,.25)}
+
+/* ── HERO ── */
 .hero{background:linear-gradient(160deg,rgba(63,185,80,.06) 0%,transparent 60%);border:1px solid var(--bdr);border-radius:var(--r);padding:18px 16px;margin-bottom:12px}
 .hero-h{font-size:17px;font-weight:700;line-height:1.35;margin-bottom:8px}
 .hero-p{font-size:13px;color:var(--mu);line-height:1.65}
@@ -58,6 +71,8 @@ body{overflow:hidden}
 .co-hero-label{font-family:var(--ffm);font-size:9px;font-weight:700;letter-spacing:.08em;color:var(--blue);margin-bottom:8px;text-transform:uppercase}
 .co-hero-h{font-size:14px;font-weight:700;line-height:1.4;color:var(--txt)}
 .co-hero-p{font-size:12px;color:var(--mu);margin-top:6px;line-height:1.6}
+
+/* ── JOURNEY ── */
 .journey{display:flex;background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:12px;overflow:hidden}
 .js{flex:1;padding:10px 6px;text-align:center;border-right:1px solid var(--bdr)}
 .js:last-child{border-right:none}
@@ -65,12 +80,18 @@ body{overflow:hidden}
 .js-l{font-size:10px;font-weight:700;margin-top:2px;line-height:1.3}
 .js.now .js-l{color:var(--grn)}
 .js.now .js-y{color:rgba(63,185,80,.7)}
+
+/* ── KPI ── */
 .kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
 .kpi{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);padding:16px 14px;transition:.2s}
 .kpi:hover{border-color:var(--bdr2);background:var(--s2)}
 .kpi-n{font-family:var(--ffm);font-size:clamp(28px,7vw,38px);font-weight:700;line-height:1;letter-spacing:-.02em}
+@keyframes kglow{0%,100%{text-shadow:none}50%{text-shadow:0 0 20px currentColor,0 0 40px currentColor}}
+.kglow{animation:kglow .8s ease 2}
 .kpi-l{font-size:9px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--mu);margin-top:5px}
 .kpi-s{font-size:11px;color:var(--mu2);margin-top:4px;line-height:1.4}
+
+/* ── TABLE ── */
 .tbl{display:flex;flex-direction:column}
 .tr{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--bdr2)}
 .tr:last-child{border-bottom:none}
@@ -79,6 +100,8 @@ body{overflow:hidden}
 .tv.g{color:var(--grn)}
 .tv.b{color:var(--blue)}
 .tv.a{color:var(--amr)}
+
+/* ── TIMELINE ── */
 .tl{display:flex;flex-direction:column}
 .tl-item{display:flex;gap:14px;padding-bottom:22px;position:relative}
 .tl-item:last-child{padding-bottom:0}
@@ -101,15 +124,28 @@ body{overflow:hidden}
 .tl-pt::before{content:'';position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--bdr2)}
 .tl-pt.star{color:var(--txt)}
 .tl-pt.star::before{background:var(--grn)}
+
+/* ── INSIGHT ── */
 .insight{background:rgba(63,185,80,.04);border:1px solid rgba(63,185,80,.15);border-left:3px solid var(--grn);border-radius:0 var(--r) var(--r) 0;padding:12px 14px;margin-bottom:12px}
 .insight-label{font-family:var(--ffm);font-size:9px;font-weight:700;letter-spacing:.08em;color:var(--grn);margin-bottom:5px;text-transform:uppercase}
 .insight-text{font-size:13px;color:var(--mu);line-height:1.65}
 .insight-text strong{color:var(--txt)}
+
+/* ── NEIN RATIO ── */
+.nein-ratio-wrap{margin-top:11px}
+.nein-ratio-bar{display:flex;height:5px;border-radius:3px;overflow:hidden;margin-bottom:6px;background:var(--bdr2)}
+.nein-ja{background:var(--grn);border-radius:3px 0 0 3px;width:0;transition:width 1.4s cubic-bezier(.25,1,.5,1)}
+.nein-ratio-labels{display:flex;justify-content:space-between;font-size:9px;font-family:var(--ffm);letter-spacing:.04em;color:var(--mu2)}
+.nein-ratio-labels .ja-lbl{color:var(--grn)}
+
+/* ── CHIPS ── */
 .chips{display:flex;flex-wrap:wrap;gap:7px}
-.chip{font-size:12px;padding:5px 11px;border-radius:6px;background:var(--s2);border:1px solid var(--bdr);color:var(--mu);line-height:1.4;transition:.15s}
+.chip{font-size:12px;padding:5px 11px;border-radius:6px;background:var(--s2);border:1px solid var(--bdr);color:var(--mu);line-height:1.4;transition:border-color .15s,color .15s}
 .chip:hover{border-color:var(--bdr);color:var(--txt)}
 .chip.g{color:var(--grn);border-color:rgba(63,185,80,.3);background:rgba(63,185,80,.05)}
 .chip.b{color:var(--blue);border-color:rgba(88,166,255,.3);background:rgba(88,166,255,.05)}
+
+/* ── ROLE MATCH ── */
 .role-item{padding:13px 0;border-bottom:1px solid var(--bdr2)}
 .role-item:last-child{border-bottom:none}
 .role-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:4px}
@@ -118,8 +154,9 @@ body{overflow:hidden}
 .role-pct.A{color:var(--grn)}
 .role-pct.B{color:var(--blue)}
 .role-pct.C{color:var(--mu)}
-.role-bar{height:3px;background:var(--bdr2);border-radius:2px;margin:6px 0}
-.role-fill{height:100%;border-radius:2px;width:0;transition:width 1s ease}
+.role-bar{height:4px;background:var(--bdr2);border-radius:2px;margin:7px 0;overflow:hidden}
+.role-fill{height:100%;border-radius:2px;width:0;transition:width 1.1s cubic-bezier(.25,1,.5,1);position:relative}
+.role-fill::after{content:'';position:absolute;top:0;right:0;width:30px;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35));border-radius:2px}
 .role-fill.A{background:var(--grn)}
 .role-fill.B{background:var(--blue)}
 .role-fill.C{background:var(--mu)}
@@ -128,6 +165,8 @@ body{overflow:hidden}
 .role-tag.A{background:rgba(63,185,80,.1);color:var(--grn)}
 .role-tag.B{background:rgba(88,166,255,.1);color:var(--blue)}
 .role-tag.C{background:rgba(142,68,173,.1);color:#a06aff}
+
+/* ── COMPANIES ── */
 .co-item{display:flex;align-items:flex-start;gap:10px;padding:12px 0;border-bottom:1px solid var(--bdr2)}
 .co-item:last-child{border-bottom:none}
 .co-fit{font-family:var(--ffm);font-size:9px;font-weight:700;padding:3px 7px;border-radius:4px;flex-shrink:0;margin-top:2px}
@@ -135,6 +174,8 @@ body{overflow:hidden}
 .co-fit.B{background:rgba(88,166,255,.1);color:var(--blue);border:1px solid rgba(88,166,255,.3)}
 .co-name{font-size:13px;font-weight:600}
 .co-desc{font-size:11px;color:var(--mu);margin-top:3px;line-height:1.5}
+
+/* ── CERTS ── */
 .cert{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--bdr2)}
 .cert:last-child{border-bottom:none}
 .cert-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px}
@@ -143,6 +184,8 @@ body{overflow:hidden}
 .cert-dot.a{background:var(--amr)}
 .cert-name{font-size:13px;font-weight:600}
 .cert-sub{font-size:11px;color:var(--mu);margin-top:3px;line-height:1.5}
+
+/* ── CHAT ── */
 #s-chat.act{padding:0;overflow:hidden}
 .chat-head{padding:11px 14px 9px;border-bottom:1px solid var(--bdr2);background:var(--s1);flex-shrink:0}
 .chat-head-t{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mu)}
@@ -155,6 +198,11 @@ body{overflow:hidden}
 .msg-body{background:var(--s2);border:1px solid var(--bdr);border-radius:var(--r);padding:9px 12px;font-size:13px;line-height:1.6}
 .msg.ceo .msg-body{background:var(--s1);color:var(--mu)}
 .msg-ts{font-size:9px;color:var(--mu2);margin-top:3px;padding-left:2px}
+.td{display:flex;gap:4px;align-items:center;padding:2px 0}
+.td span{width:7px;height:7px;background:var(--mu);border-radius:50%;animation:td-b 1.2s infinite}
+.td span:nth-child(2){animation-delay:.18s}
+.td span:nth-child(3){animation-delay:.36s}
+@keyframes td-b{0%,60%,100%{transform:translateY(0);opacity:.45}30%{transform:translateY(-7px);opacity:1}}
 .qq-wrap{padding:9px 14px;border-top:1px solid var(--bdr2);background:var(--s1);flex-shrink:0}
 .qq-label{font-size:10px;color:var(--mu);font-weight:600;letter-spacing:.04em;margin-bottom:7px}
 .qq-chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -164,11 +212,15 @@ body{overflow:hidden}
 #chat-in{flex:1;background:var(--s1);border:1px solid var(--bdr);border-radius:8px;padding:10px 12px;color:var(--txt);font-size:16px;font-family:var(--ff);outline:none;-webkit-appearance:none}
 #chat-in:focus{border-color:var(--grn)}
 #chat-send{background:var(--grn);color:#000;border:none;border-radius:8px;padding:10px 16px;font-size:13px;font-weight:700;cursor:pointer;flex-shrink:0;font-family:var(--ff)}
+
+/* ── KONTAKT ── */
 .cta-hero{font-size:clamp(14px,4vw,18px);font-weight:700;line-height:1.45;text-align:center;padding:18px 4px 14px;font-style:italic;color:var(--mu)}
 .cta-hero strong{color:var(--txt);font-style:normal}
 .scarcity{background:rgba(63,185,80,.04);border:1px solid rgba(63,185,80,.18);border-radius:var(--r);padding:13px 14px;text-align:center;font-size:13px;line-height:1.6;color:var(--amr);font-weight:600;margin-bottom:14px}
-.cta-btn-p{display:block;text-align:center;padding:16px;border-radius:var(--r);font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;background:var(--grn);color:#000;margin-bottom:9px;letter-spacing:.01em;transition:.15s}
-.cta-btn-p:hover{background:#4ec95e}
+.cta-btn-p{display:block;text-align:center;padding:16px;border-radius:var(--r);font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;background:var(--grn);color:#000;margin-bottom:9px;letter-spacing:.01em;position:relative;overflow:hidden;transition:background .15s,transform .15s}
+.cta-btn-p::after{content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-15deg);transition:left .55s ease;pointer-events:none}
+.cta-btn-p:hover{background:#4ec95e;transform:translateY(-1px)}
+.cta-btn-p:hover::after{left:140%}
 .cta-btn-g{display:block;text-align:center;padding:14px;border-radius:var(--r);font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;background:transparent;color:var(--txt);border:1px solid var(--bdr);margin-bottom:14px;transition:.15s}
 .cta-btn-g:hover{border-color:var(--mu)}
 .cta-email{text-align:center;font-size:12px;color:var(--mu);margin-bottom:16px}
@@ -177,10 +229,15 @@ body{overflow:hidden}
 .step-n{font-family:var(--ffm);font-size:11px;font-weight:700;color:var(--grn);background:rgba(63,185,80,.1);border:1px solid rgba(63,185,80,.3);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .step-t{font-size:13px;font-weight:600}
 .step-s{font-size:12px;color:var(--mu);margin-top:2px;line-height:1.5}
+
+/* ── FLOAT CTA ── */
 #float-cta{position:fixed;bottom:calc(68px + env(safe-area-inset-bottom));right:14px;z-index:50;display:none}
-#float-cta a{display:flex;align-items:center;gap:6px;background:var(--grn);color:#000;font-size:12px;font-weight:700;padding:9px 14px;border-radius:30px;text-decoration:none;box-shadow:0 4px 16px rgba(63,185,80,.3);transition:.2s;white-space:nowrap}
-#float-cta a:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(63,185,80,.4)}
+@keyframes ring-pulse{0%{box-shadow:0 4px 14px rgba(63,185,80,.35),0 0 0 0 rgba(63,185,80,.45)}70%{box-shadow:0 4px 14px rgba(63,185,80,.35),0 0 0 14px rgba(63,185,80,0)}100%{box-shadow:0 4px 14px rgba(63,185,80,.35),0 0 0 0 rgba(63,185,80,0)}}
+#float-cta a{display:flex;align-items:center;gap:6px;background:var(--grn);color:#000;font-size:12px;font-weight:700;padding:9px 14px;border-radius:30px;text-decoration:none;animation:ring-pulse 2.5s ease-out infinite;transition:transform .15s;white-space:nowrap}
+#float-cta a:hover{transform:translateY(-1px);animation:none;box-shadow:0 6px 20px rgba(63,185,80,.45)}
 #float-cta.show{display:block}
+
+/* ── NAV ── */
 #nav{display:flex;background:var(--s1);border-top:1px solid var(--bdr);flex-shrink:0;padding-bottom:env(safe-area-inset-bottom)}
 .nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 2px;cursor:pointer;color:var(--mu);font-size:9px;font-weight:600;letter-spacing:.04em;background:none;border:none;transition:.12s;-webkit-tap-highlight-color:transparent;font-family:var(--ff)}
 .nav-btn.a{color:var(--grn)}
@@ -210,8 +267,10 @@ body{overflow:hidden}
   .sb-btn svg{width:15px;height:15px;flex-shrink:0;opacity:.6}
   .sb-btn.a svg{opacity:1}
   .sb-cta{padding:14px 20px;border-top:1px solid var(--bdr2)}
-  .sb-cta a{display:block;text-align:center;padding:10px;border-radius:8px;background:var(--grn);color:#000;font-size:12px;font-weight:700;text-decoration:none;transition:.15s}
+  .sb-cta a{display:block;text-align:center;padding:10px;border-radius:8px;background:var(--grn);color:#000;font-size:12px;font-weight:700;text-decoration:none;transition:.15s;position:relative;overflow:hidden}
+  .sb-cta a::after{content:'';position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-15deg);transition:left .5s}
   .sb-cta a:hover{background:#4ec95e}
+  .sb-cta a:hover::after{left:140%}
   #right{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
   #hd{display:none}
   #snb{display:none}
@@ -225,18 +284,22 @@ body{overflow:hidden}
 
 @media print{
   html,body{overflow:visible!important;height:auto!important;background:#fff!important;color:#000!important}
+  #boot,#nav,#mehr-bg,#float-cta,#sidebar,#hd,#snb{display:none!important}
   #app{max-width:100%;height:auto;flex-direction:column;background:#fff}
-  #nav,#mehr-bg,#float-cta,#sidebar,#hd,#snb{display:none!important}
   #main{overflow:visible!important}
-  .scr{display:flex!important;padding:16px;opacity:1!important}
+  .scr{display:flex!important;padding:16px;opacity:1!important;transform:none!important}
   #s-chat.act{height:auto!important;overflow:visible!important}
   .c,.kpi,.hero{background:#f9f9f9!important;border-color:#ddd!important}
   .hero-h,.tl-role,.role-name,.co-name,.cert-name,.step-t,.kpi-n{color:#000!important}
-  .hero-p,.body-s,.tl-pt,.tl-co,.role-detail,.co-desc,.cert-sub,.step-s,.mu{color:#555!important}
+  .hero-p,.body-s,.tl-pt,.tl-co,.role-detail,.co-desc,.cert-sub,.step-s{color:#555!important}
 }
 </style>
 </head>
 <body>
+
+<!-- BOOT OVERLAY -->
+<div id="boot"><div id="boot-text"></div></div>
+
 <div id="app">
 
 <!-- SIDEBAR desktop -->
@@ -262,7 +325,7 @@ body{overflow:hidden}
   </div>
 </div>
 
-<!-- RIGHT column -->
+<!-- RIGHT COLUMN -->
 <div id="right" style="display:flex;flex-direction:column;flex:1;overflow:hidden;min-width:0">
 
 <div id="co-bar"></div>
@@ -298,9 +361,9 @@ body{overflow:hidden}
   </div>
   <div class="journey">
     <div class="js"><div class="js-y">2020–2024</div><div class="js-l">D2D Vertrieb</div></div>
-    <div class="js"><div class="js-y">2024</div><div class="js-l">Web Dev</div></div>
+    <div class="js"><div class="js-y">2024</div><div class="js-l">Webentwickler</div></div>
     <div class="js"><div class="js-y">2025</div><div class="js-l">Google Ads</div></div>
-    <div class="js now"><div class="js-y">2026</div><div class="js-l">KI / AI</div></div>
+    <div class="js now"><div class="js-y">2026</div><div class="js-l">KI / Automation</div></div>
   </div>
   <div class="kpi-grid">
     <div class="kpi" style="border-top:2px solid var(--grn)">
@@ -316,7 +379,7 @@ body{overflow:hidden}
     <div class="kpi">
       <div class="kpi-n" data-count="3" data-suffix="">3</div>
       <div class="kpi-l">Live-Systeme</div>
-      <div class="kpi-s">SaaS, D2C, Automation</div>
+      <div class="kpi-s">SaaS, E-Commerce, Automation</div>
     </div>
     <div class="kpi">
       <div class="kpi-n" style="color:var(--amr)" data-count="17" data-suffix="">17</div>
@@ -326,17 +389,21 @@ body{overflow:hidden}
   </div>
   <div class="insight">
     <div class="insight-label">Das 8.000-Nein-Prinzip</div>
-    <div class="insight-text">Im D2D bekommt man täglich <strong>85–95% Ablehnung</strong>. Wer das 4 Jahre durchhält, hat etwas gelernt das man nicht aus einem Kurs lernt: <strong>Pipeline unabhängig vom Resultat zu füllen.</strong> Das ist die Kernkompetenz eines SDR.</div>
+    <div class="insight-text">Im D2D bekommt man täglich <strong>85–95% Ablehnung</strong>. Wer das 4 Jahre durchhält, hat etwas gelernt das kein Kurs lehren kann: <strong>die Pipeline zu füllen, egal was kommt.</strong> Das ist die Kernkompetenz eines SDR.</div>
+    <div class="nein-ratio-wrap">
+      <div class="nein-ratio-bar"><div class="nein-ja" id="nein-ja"></div></div>
+      <div class="nein-ratio-labels"><span class="ja-lbl">~8% Interesse / Termin</span><span>~92% sofort Nein</span></div>
+    </div>
   </div>
   <div class="c">
     <div class="ch"><div class="ct">Vertriebs-DNA</div><div class="b ba">4 JAHRE</div></div>
     <div class="cb">
       <div class="tbl">
-        <div class="tr"><div class="tk">Output</div><div class="tv g">200+ Abschlüsse pro Monat — konstant, kein einzelner Spitzenmonat</div></div>
+        <div class="tr"><div class="tk">Output</div><div class="tv g">200+ Abschlüsse pro Monat — konstant über 4 Jahre, kein einzelner Ausreisser</div></div>
         <div class="tr"><div class="tk">Volumen</div><div class="tv">ca. 8.000 Kaltgespräche, täglich 85–95% Ablehnung</div></div>
         <div class="tr"><div class="tk">Expansion</div><div class="tv g">+15% Umsatz pro Bestandskunde durch Cross-Selling</div></div>
         <div class="tr"><div class="tk">Zielgruppe</div><div class="tv">Direktgespräch mit Inhabern und Geschäftsführern</div></div>
-        <div class="tr"><div class="tk">Gebiete</div><div class="tv">Hamburg, Kiel, Osnabrück, bundesweit</div></div>
+        <div class="tr"><div class="tk">Gebiete</div><div class="tv">Bundesweit — Hamburg (1. Jahr), Kiel, Osnabrück</div></div>
       </div>
     </div>
   </div>
@@ -344,9 +411,9 @@ body{overflow:hidden}
     <div class="ch"><div class="ct">Live-Projekte</div><div class="b bg">3 LIVE</div></div>
     <div class="cb">
       <div class="tbl">
-        <div class="tr"><div class="tk">SaaS Backend</div><div class="tv">FastAPI, Claude SDK, MCP, PostgreSQL. 12/12 Tests grün. Solo in 6 Wochen deployed.</div></div>
-        <div class="tr"><div class="tk">2 Shopify Stores</div><div class="tv">Custom Liquid Theme, 15 Metafields, DACH Premium, beide live.</div></div>
-        <div class="tr"><div class="tk">17-Agent OS</div><div class="tv">Python, n8n, Claude SDK. 65% vollautomatische Delivery.</div></div>
+        <div class="tr"><div class="tk">SaaS Backend</div><div class="tv">FastAPI, Claude SDK, MCP, PostgreSQL — 12/12 Tests grün, solo in 6 Wochen deployed</div></div>
+        <div class="tr"><div class="tk">2 Shopify Stores</div><div class="tv">Custom Liquid Theme, 15 Metafields, DACH Premium, beide live in Produktion</div></div>
+        <div class="tr"><div class="tk">17-Agent OS</div><div class="tv">Python, n8n, Claude SDK — 65% vollautomatische Delivery</div></div>
       </div>
     </div>
   </div>
@@ -370,10 +437,10 @@ body{overflow:hidden}
             <div class="tl-co">Deutsche Telekom und EWE Tel, bundesweit</div>
             <div class="tl-pts">
               <div class="tl-pt star">200+ Abschlüsse pro Monat, konstant über 4 Jahre</div>
-              <div class="tl-pt star">ca. 8.000 Kaltgespräche, 85–95% Ablehnung täglich</div>
-              <div class="tl-pt">Cross-Selling +15% Umsatz pro Bestandskunde</div>
+              <div class="tl-pt star">ca. 8.000 Kaltgespräche — 85–95% Ablehnung täglich</div>
+              <div class="tl-pt">Cross-Selling: +15% Umsatz pro Bestandskunde</div>
               <div class="tl-pt">Direktgespräch mit Inhabern und Geschäftsführern</div>
-              <div class="tl-pt">Gebiete: Hamburg 1J, Kiel, Osnabrück, bundesweit</div>
+              <div class="tl-pt">Gebiete: Hamburg (1. Jahr), dann Kiel, Osnabrück, bundesweit</div>
             </div>
           </div>
         </div>
@@ -395,11 +462,11 @@ body{overflow:hidden}
           <div class="tl-left"><div class="tl-dot a"></div><div class="tl-line"></div></div>
           <div class="tl-body">
             <div class="tl-year">2025 · bis Ende 2025</div>
-            <div class="tl-role">Google Ads</div>
-            <div class="tl-co">Selbstständig, Performance Marketing</div>
+            <div class="tl-role">Performance Marketing</div>
+            <div class="tl-co">Selbstständig, Google Ads</div>
             <div class="tl-pts">
               <div class="tl-pt">Search, PMax und AI-Powered Ads für DACH-Kunden</div>
-              <div class="tl-pt">Google Ads Skillshop zertifiziert, Januar 2026</div>
+              <div class="tl-pt">Google Ads Skillshop zertifiziert, abgeschlossen Januar 2026</div>
               <div class="tl-pt">ROI-getriebenes Denken, messbare Kampagnen-Performance</div>
             </div>
           </div>
@@ -413,8 +480,8 @@ body{overflow:hidden}
             <div class="tl-pts">
               <div class="tl-pt star">FastAPI, PostgreSQL, Claude SDK, MCP, n8n, Playwright</div>
               <div class="tl-pt star">17 spezialisierte Agents, 65% vollautomatische Delivery</div>
-              <div class="tl-pt">SaaS Backend: 12/12 Tests grün, 2 internationale Märkte</div>
-              <div class="tl-pt">Autodidaktisch seit 2024, täglich in Produktion</div>
+              <div class="tl-pt">SaaS Backend: 12/12 Tests grün, live in 2 Märkten</div>
+              <div class="tl-pt">Autodidaktisch seit 2024 — täglich in Produktion</div>
             </div>
           </div>
         </div>
@@ -424,9 +491,9 @@ body{overflow:hidden}
   <div class="c">
     <div class="ch"><div class="ct">Ausbildung und Zertifikate</div></div>
     <div class="cb">
-      <div class="cert"><div class="cert-dot g"></div><div><div class="cert-name">Google Ads Skillshop</div><div class="cert-sub">Search, PMax, AI-Powered Ads. Abgeschlossen Januar 2026. Aktiv.</div></div></div>
-      <div class="cert"><div class="cert-dot b"></div><div><div class="cert-name">Webentwicklung, formale Weiterbildung</div><div class="cert-sub">6 Monate, HTML, CSS, JavaScript, 2024</div></div></div>
-      <div class="cert"><div class="cert-dot a"></div><div><div class="cert-name">KI Engineering, autodidaktisch</div><div class="cert-sub">Claude SDK, Python, FastAPI, n8n, MCP, PostgreSQL, Playwright. Laufend seit 2024.</div></div></div>
+      <div class="cert"><div class="cert-dot g"></div><div><div class="cert-name">Google Ads Skillshop</div><div class="cert-sub">Search, PMax, AI-Powered Ads — abgeschlossen Januar 2026, aktiv</div></div></div>
+      <div class="cert"><div class="cert-dot b"></div><div><div class="cert-name">Webentwicklung — formale Weiterbildung</div><div class="cert-sub">6 Monate, 2024 — HTML, CSS, JavaScript</div></div></div>
+      <div class="cert"><div class="cert-dot a"></div><div><div class="cert-name">KI Engineering — autodidaktisch</div><div class="cert-sub">Laufend seit 2024 — Claude SDK, Python, FastAPI, n8n, MCP, PostgreSQL, Playwright, Shopify Liquid</div></div></div>
     </div>
   </div>
   <div class="c">
@@ -434,12 +501,12 @@ body{overflow:hidden}
     <div class="cb">
       <div class="tbl">
         <div class="tr"><div class="tk">Geburtsjahr</div><div class="tv">1997, 28 Jahre</div></div>
-        <div class="tr"><div class="tk">Nationalität</div><div class="tv g">EU-Bürger, Deutschland — kein Visum nötig</div></div>
-        <div class="tr"><div class="tk">Umzug</div><div class="tv b">Hamburg nach Zürich, August 2026, entschieden</div></div>
+        <div class="tr"><div class="tk">Nationalität</div><div class="tv g">EU-Bürger, Deutschland — kein Visum, kein Kontingent</div></div>
+        <div class="tr"><div class="tk">Umzug</div><div class="tv b">Hamburg → Zürich, August 2026, entschieden</div></div>
         <div class="tr"><div class="tk">Deutsch</div><div class="tv g">C2, Muttersprache</div></div>
-        <div class="tr"><div class="tk">Polnisch</div><div class="tv">Small Talk, alles verstehen</div></div>
-        <div class="tr"><div class="tk">Englisch</div><div class="tv">B1–B2, konversationsfähig, Fachsprache im Aufbau</div></div>
-        <div class="tr"><div class="tk">Modell</div><div class="tv b">Remote und Hybrid</div></div>
+        <div class="tr"><div class="tk">Polnisch</div><div class="tv">Small Talk sprechen, alles verstehen</div></div>
+        <div class="tr"><div class="tk">Englisch</div><div class="tv">B1–B2 — Alltag und Team-Calls problemlos, Fachvokabular im Aufbau</div></div>
+        <div class="tr"><div class="tk">Arbeitsform</div><div class="tv b">Remote oder Hybrid möglich</div></div>
       </div>
     </div>
   </div>
@@ -452,37 +519,37 @@ body{overflow:hidden}
     <div class="hero-p">Drei Systeme. Alle solo entwickelt. Alle live in Produktion. Kein Team, kein Investor, keine Agentur.</div>
   </div>
   <div class="c" style="border-top:2px solid var(--grn)">
-    <div class="ch"><div><div class="ct">Projekt A</div><div style="font-size:15px;font-weight:700;margin-top:3px">SaaS Backend, solo deployed</div></div><div class="b bg">LIVE</div></div>
+    <div class="ch"><div><div class="ct">Projekt A</div><div style="font-size:15px;font-weight:700;margin-top:3px">SaaS Backend — solo deployed</div></div><div class="b bg">LIVE</div></div>
     <div class="cb">
-      <div class="body-s" style="margin-bottom:12px">Produktionsreifes KI-Backend für zwei internationale Märkte. Gebaut und deployed in 6 Wochen, alleine, ohne externes Netz.</div>
+      <div class="body-s" style="margin-bottom:12px">KI-Backend für zwei internationale Märkte — von der Architektur bis zum Deployment, alleine, in 6 Wochen. Kein Prototyp: live in Produktion.</div>
       <div class="tbl">
         <div class="tr"><div class="tk">Stack</div><div class="tv">FastAPI, PostgreSQL, Claude SDK, MCP, Playwright E2E</div></div>
-        <div class="tr"><div class="tk">Tests</div><div class="tv g">12 von 12 grün — nicht "läuft irgendwie"</div></div>
+        <div class="tr"><div class="tk">Tests</div><div class="tv g">12 von 12 grün — nicht "läuft irgendwie", sondern verifiziert</div></div>
         <div class="tr"><div class="tk">Zeitrahmen</div><div class="tv">6 Wochen, Solo</div></div>
-        <div class="tr"><div class="tk">Märkte</div><div class="tv g">Live, 2 internationale Märkte</div></div>
+        <div class="tr"><div class="tk">Status</div><div class="tv g">Live, 2 internationale Märkte</div></div>
       </div>
     </div>
   </div>
   <div class="c" style="border-top:2px solid var(--blue)">
-    <div class="ch"><div><div class="ct">Projekt B</div><div style="font-size:15px;font-weight:700;margin-top:3px">2 Shopify Stores, kein Template</div></div><div class="b bg">LIVE</div></div>
+    <div class="ch"><div><div class="ct">Projekt B</div><div style="font-size:15px;font-weight:700;margin-top:3px">2 Shopify Stores — kein Template</div></div><div class="b bg">LIVE</div></div>
     <div class="cb">
-      <div class="body-s" style="margin-bottom:12px">Zwei vollständige DACH Stores für Gründer aufgebaut. Kein Template, kein Agentur-Budget, alles selbst entwickelt.</div>
+      <div class="body-s" style="margin-bottom:12px">Zwei vollständige DACH-Stores für Gründer aufgebaut. Kein Template, kein Agentur-Budget — alles selbst entwickelt und live ausgeliefert.</div>
       <div class="tbl">
-        <div class="tr"><div class="tk">Store 1</div><div class="tv">Premium Skincare DACH, Custom Liquid Theme</div></div>
-        <div class="tr"><div class="tk">Store 2</div><div class="tv">Hochwertiges Hautpflege-Produkt, medizinischer Fokus</div></div>
-        <div class="tr"><div class="tk">Technik</div><div class="tv">Shopify Liquid, 15 Custom Metafields, DE/EN</div></div>
-        <div class="tr"><div class="tk">Budget</div><div class="tv g">0 Euro Agentur, vollständig solo</div></div>
+        <div class="tr"><div class="tk">Store 1</div><div class="tv">Premium Skincare DACH — Custom Liquid Theme, vollständig</div></div>
+        <div class="tr"><div class="tk">Store 2</div><div class="tv">Hochwertiges Hautpflege-Produkt, DACH Premium Fokus</div></div>
+        <div class="tr"><div class="tk">Technik</div><div class="tv">Shopify Liquid, 15 Custom Metafields, DE/EN bilingual</div></div>
+        <div class="tr"><div class="tk">Budget</div><div class="tv g">0 Euro Agentur — vollständig selbst entwickelt und geliefert</div></div>
       </div>
     </div>
   </div>
   <div class="c" style="border-top:2px solid var(--amr)">
-    <div class="ch"><div><div class="ct">Projekt C</div><div style="font-size:15px;font-weight:700;margin-top:3px">17-Agent Automation OS</div></div><div class="b bg">LIVE</div></div>
+    <div class="ch"><div><div class="ct">Projekt C</div><div style="font-size:15px;font-weight:700;margin-top:3px">17-Agent Automation-OS</div></div><div class="b bg">LIVE</div></div>
     <div class="cb">
-      <div class="body-s" style="margin-bottom:12px">Eigenentwickeltes Multi-Agent-System für eigene Sales-Prozesse. Ich habe für mich gebaut, was andere kaufen würden.</div>
+      <div class="body-s" style="margin-bottom:12px">Eigenentwickeltes Multi-Agent-System für eigene Sales-Prozesse. Ich habe für mich gebaut, was andere kaufen würden — und es läuft täglich.</div>
       <div class="tbl">
-        <div class="tr"><div class="tk">Stack</div><div class="tv">Python, Claude SDK, n8n, 17 spezialisierte Agents</div></div>
-        <div class="tr"><div class="tk">Automation</div><div class="tv g">65% vollautomatische Delivery</div></div>
-        <div class="tr"><div class="tk">Pipeline</div><div class="tv">Research, Analyse, Output ohne manuellen Schritt</div></div>
+        <div class="tr"><div class="tk">Stack</div><div class="tv">Python, Claude SDK, n8n — 17 spezialisierte Agents</div></div>
+        <div class="tr"><div class="tk">Automatisierung</div><div class="tv g">65% vollautomatische Delivery ohne manuellen Eingriff</div></div>
+        <div class="tr"><div class="tk">Pipeline</div><div class="tv">Research → Analyse → Output — komplett durchgängig</div></div>
       </div>
     </div>
   </div>
@@ -535,15 +602,15 @@ body{overflow:hidden}
     <div class="ch"><div class="ct">Sprachen</div></div>
     <div class="cb">
       <div class="tbl">
-        <div class="tr"><div class="tk">Deutsch</div><div class="tv g">C2, Muttersprache, DACH-nativ</div></div>
-        <div class="tr"><div class="tk">Polnisch</div><div class="tv">Small Talk, alles verstehen</div></div>
-        <div class="tr"><div class="tk">Englisch</div><div class="tv">B1–B2, konversationsfähig, Fachsprache im Aufbau</div></div>
+        <div class="tr"><div class="tk">Deutsch</div><div class="tv g">C2 — Muttersprache, DACH-nativ</div></div>
+        <div class="tr"><div class="tk">Englisch</div><div class="tv">B1–B2 — Alltag und Team-Calls problemlos, Fachvokabular im Aufbau</div></div>
+        <div class="tr"><div class="tk">Polnisch</div><div class="tv">Small Talk sprechen, alles verstehen</div></div>
       </div>
     </div>
   </div>
   <div class="insight">
-    <div class="insight-label">Was fehlt — und warum es kein Blocker ist</div>
-    <div class="insight-text">Kein Uni-Abschluss, Englisch noch nicht C1. <strong>SDR-Rollen bewerten Output, nicht Papier.</strong> Die Lernkurve für CRM-Tools schliesse ich in 2 Wochen. Das ist kein Versprechen — das ist wie ich die letzten 2 Jahre gearbeitet habe.</div>
+    <div class="insight-label">Was noch fehlt — und warum es kein Blocker ist</div>
+    <div class="insight-text">Kein Uni-Abschluss, Englisch noch nicht auf C1. <strong>SDR-Rollen bewerten Output, nicht Papier.</strong> Die Lernkurve für CRM-Tools schliesse ich in 2 Wochen — das ist kein Versprechen, das ist wie ich die letzten 2 Jahre gearbeitet habe.</div>
   </div>
 </div>
 
@@ -551,7 +618,7 @@ body{overflow:hidden}
 <div class="scr" id="s-markt" data-idx="4">
   <div class="hero">
     <div class="hero-h">Wo der Match am stärksten ist.</div>
-    <div class="hero-p">Research-basiert, adversarial geprüft. Kein Wunschdenken, keine Übertreibung.</div>
+    <div class="hero-p">Selbstkritisch analysiert, ohne Wunschdenken. Jede Prozentzahl hat eine ehrliche Begründung.</div>
   </div>
   <div class="c">
     <div class="ch"><div class="ct">Rollen-Match</div><div class="b bg">5 Rollen analysiert</div></div>
@@ -559,31 +626,31 @@ body{overflow:hidden}
       <div class="role-item">
         <div class="role-top"><div class="role-name">Sales Development Representative (SDR)</div><div class="role-pct A">75%</div></div>
         <div class="role-bar"><div class="role-fill A" data-w="75%"></div></div>
-        <div class="role-detail">D2D-DNA ist direkter Match. Kalt-Akquise, Einwandbehandlung, Volumen. CRM-Lernkurve in 2 Wochen schliessbar.</div>
+        <div class="role-detail">D2D-DNA ist direkter Match: Kaltakquise, Einwandbehandlung, Volumen. CRM-Lernkurve in 2 Wochen schliessbar.</div>
         <span class="role-tag A">Einstieg 3–4 Wochen</span>
       </div>
       <div class="role-item">
         <div class="role-top"><div class="role-name">KI Automation Consultant (Freelance)</div><div class="role-pct A">85%</div></div>
         <div class="role-bar"><div class="role-fill A" data-w="85%"></div></div>
-        <div class="role-detail">17 Agents live. Deutsch C2. DACH-Lücke am Markt. Sofort startbereit.</div>
+        <div class="role-detail">17 Agents live, Deutsch C2, DACH-Lücke am Markt. Sofort startbereit — kein Onboarding nötig.</div>
         <span class="role-tag A">Sofort einsatzbereit</span>
       </div>
       <div class="role-item">
         <div class="role-top"><div class="role-name">Customer Success Manager</div><div class="role-pct B">70%</div></div>
         <div class="role-bar"><div class="role-fill B" data-w="70%"></div></div>
-        <div class="role-detail">Revenue-DNA vorhanden. SaaS-Tool-Zertifizierung in 6–8 Wochen nachholen.</div>
+        <div class="role-detail">Revenue-DNA vorhanden. SaaS-Zertifizierungen (Gainsight, ChurnZero) in 6–8 Wochen nachholen.</div>
         <span class="role-tag B">Einstieg 6–8 Wochen</span>
       </div>
       <div class="role-item">
         <div class="role-top"><div class="role-name">Google Ads / PPC Spezialist</div><div class="role-pct B">65%</div></div>
         <div class="role-bar"><div class="role-fill B" data-w="65%"></div></div>
-        <div class="role-detail">Skillshop-Zertifikat vorhanden. GA4 fehlt, kein harter Blocker.</div>
+        <div class="role-detail">Skillshop-Zertifikat vorhanden. GA4 fehlt noch, kein harter Blocker für die meisten Stellen.</div>
         <span class="role-tag B">Einstieg 2–4 Wochen</span>
       </div>
       <div class="role-item">
-        <div class="role-top"><div class="role-name">Technical Account Manager</div><div class="role-pct C">45%</div></div>
+        <div class="role-top"><div class="role-name">Technical Account Manager (TAM)</div><div class="role-pct C">45%</div></div>
         <div class="role-bar"><div class="role-fill C" data-w="45%"></div></div>
-        <div class="role-detail">Python-Fundament vorhanden. Braucht mehr formales SaaS-CS, ca. 12 Monate.</div>
+        <div class="role-detail">Python-Fundament vorhanden. Braucht mehr formales SaaS-CS — realistisch in ca. 12 Monaten erreichbar.</div>
         <span class="role-tag C">Einstieg ab 12 Monaten</span>
       </div>
     </div>
@@ -592,10 +659,10 @@ body{overflow:hidden}
     <div class="ch"><div class="ct">Ehrlicher Realitäts-Check</div></div>
     <div class="cb">
       <div class="tbl">
-        <div class="tr"><div class="tk">Kein Abschluss</div><div class="tv g">kein Blocker für SDR — Output zählt</div></div>
-        <div class="tr"><div class="tk">Englisch B1–B2</div><div class="tv b">Team-Calls möglich, Verhandlungs-CH auf Deutsch</div></div>
-        <div class="tr"><div class="tk">SDR ready</div><div class="tv g">3–4 Wochen Onboarding</div></div>
-        <div class="tr"><div class="tk">KI Freelance</div><div class="tv g">sofort einsatzbereit</div></div>
+        <div class="tr"><div class="tk">Kein Abschluss</div><div class="tv g">Kein Blocker für SDR — Output zählt, nicht Papier</div></div>
+        <div class="tr"><div class="tk">Englisch B1–B2</div><div class="tv b">Team-Calls möglich — Verhandlungen auf Deutsch stärker</div></div>
+        <div class="tr"><div class="tk">SDR ready</div><div class="tv g">3–4 Wochen Onboarding genügen</div></div>
+        <div class="tr"><div class="tk">KI Freelance</div><div class="tv g">Sofort einsatzbereit</div></div>
       </div>
     </div>
   </div>
@@ -604,26 +671,26 @@ body{overflow:hidden}
 <!-- ZÜRICH -->
 <div class="scr" id="s-zurich" data-idx="5">
   <div class="hero">
-    <div class="hero-h">8 Unternehmen. Researched, verifiziert, match-geprüft.</div>
+    <div class="hero-h">8 Unternehmen. Recherchiert, verifiziert, match-geprüft.</div>
     <div class="hero-p">Wenn Sie das lesen, sind Sie eines davon. Permit B: 14-Tage-Anmeldung, kein Kontingent, kein Anwalt.</div>
   </div>
   <div class="c" style="border-top:2px solid var(--grn)">
-    <div class="ch"><div class="ct">Permit B, Zero Friction</div><div class="b bg">KEIN BLOCKER</div></div>
+    <div class="ch"><div class="ct">Permit B — Zero Friction</div><div class="b bg">KEIN BLOCKER</div></div>
     <div class="cb">
-      <div class="body-s">EU-Bürger, Deutschland. Permit B bedeutet: 14-Tage-Anmeldung beim Einwohneramt. Kein Kontingent, kein Anwalt, kein Denial-Risiko. Mich einzustellen hat dieselbe administrative Komplexität wie jemanden der bereits in Zürich lebt. Umzug August 2026, entschieden.</div>
+      <div class="body-s">EU-Bürger aus Deutschland. Permit B bedeutet: 14-Tage-Anmeldung beim Einwohneramt — kein Kontingent, kein Anwalt, kein Ablehnungsrisiko. Mich einzustellen hat dieselbe administrative Komplexität wie jemanden, der bereits in Zürich lebt. Umzug August 2026, entschieden.</div>
     </div>
   </div>
   <div class="c">
     <div class="ch"><div class="ct">Ziel-Unternehmen Zürich</div><div class="b ba">8 BESTÄTIGT</div></div>
     <div class="cb" style="padding-top:4px">
-      <div class="co-item"><div class="co-fit A">SDR</div><div><div class="co-name">Scandit</div><div class="co-desc">Enterprise Computer Vision SaaS, BDR German Speaker, Zürich HQ, 500+ Mitarbeiter</div></div></div>
-      <div class="co-item"><div class="co-fit A">CSM</div><div><div class="co-name">Luware AG</div><div class="co-desc">Microsoft Teams Contact Center SaaS, Customer Success, 80 Mitarbeiter</div></div></div>
-      <div class="co-item"><div class="co-fit A">BDM</div><div><div class="co-name">Smallpdf</div><div class="co-desc">PDF SaaS, 1 Milliarde Conversions jährlich, BDM DACH, 64 Mitarbeiter</div></div></div>
-      <div class="co-item"><div class="co-fit B">AI</div><div><div class="co-name">Squirro</div><div class="co-desc">GenAI Enterprise, Gartner Leader 2025, Solutions Engineer</div></div></div>
-      <div class="co-item"><div class="co-fit B">AUTO</div><div><div class="co-name">Flowable AG</div><div class="co-desc">Business Process Automation SaaS, Low-Code, 100–250 Mitarbeiter</div></div></div>
-      <div class="co-item"><div class="co-fit B">AI</div><div><div class="co-name">Unique.ai</div><div class="co-desc">B2B AI Finserv, LGT Pictet Group, 100+ Mitarbeiter</div></div></div>
-      <div class="co-item"><div class="co-fit B">CS</div><div><div class="co-name">Beekeeper (by LumApps)</div><div class="co-desc">Frontline SaaS, Customer Solution Engineer, ca. 389 Mitarbeiter</div></div></div>
-      <div class="co-item" style="border-bottom:none"><div class="co-fit B">AE</div><div><div class="co-name">Jua.ai</div><div class="co-desc">AI Weather Foundation Model, Energy Trading, Account Executive Nr. 2</div></div></div>
+      <div class="co-item"><div class="co-fit A">SDR</div><div><div class="co-name">Scandit</div><div class="co-desc">Enterprise Computer Vision SaaS — BDR German Speaker, Zürich HQ, 500+ Mitarbeiter</div></div></div>
+      <div class="co-item"><div class="co-fit A">CSM</div><div><div class="co-name">Luware AG</div><div class="co-desc">Microsoft Teams Contact Center SaaS — Customer Success, 80 Mitarbeiter</div></div></div>
+      <div class="co-item"><div class="co-fit A">BDM</div><div><div class="co-name">Smallpdf</div><div class="co-desc">PDF SaaS, 1 Milliarde Conversions jährlich — BDM DACH, 64 Mitarbeiter</div></div></div>
+      <div class="co-item"><div class="co-fit B">AI</div><div><div class="co-name">Squirro</div><div class="co-desc">GenAI Enterprise, Gartner Leader 2025 — Solutions Engineer</div></div></div>
+      <div class="co-item"><div class="co-fit B">AUTO</div><div><div class="co-name">Flowable AG</div><div class="co-desc">Business Process Automation SaaS, Low-Code — 100–250 Mitarbeiter</div></div></div>
+      <div class="co-item"><div class="co-fit B">AI</div><div><div class="co-name">Unique.ai</div><div class="co-desc">B2B AI für Finanzdienstleister — LGT, Pictet Group, 100+ Mitarbeiter</div></div></div>
+      <div class="co-item"><div class="co-fit B">CS</div><div><div class="co-name">Beekeeper (by LumApps)</div><div class="co-desc">Frontline SaaS — Customer Solution Engineer, ca. 389 Mitarbeiter</div></div></div>
+      <div class="co-item" style="border-bottom:none"><div class="co-fit B">AE</div><div><div class="co-name">Jua.ai</div><div class="co-desc">KI-Wettermodell für Energiehandel — Account Executive, Position Nr. 2</div></div></div>
     </div>
   </div>
 </div>
@@ -631,13 +698,13 @@ body{overflow:hidden}
 <!-- CHAT -->
 <div class="scr" id="s-chat" data-idx="6">
   <div class="chat-head">
-    <div class="chat-head-t">Direkt fragen — Jason antwortet in seiner Stimme</div>
-    <div class="chat-head-s">Keine Agentur, kein Ghostwriter</div>
+    <div class="chat-head-t">Direkt fragen — Jason antwortet persönlich</div>
+    <div class="chat-head-s">Keine Agentur, kein Ghostwriter — echte Antworten</div>
   </div>
   <div class="chat-scroll" id="chat-msgs">
     <div class="msg">
       <div class="msg-av jr">JR</div>
-      <div><div class="msg-body">Ich bin Jason. Keine Agentur, kein Ghostwriter. Die Fragen die Recruiter nicht stellen, beantworten am meisten.</div><div class="msg-ts">System bereit</div></div>
+      <div><div class="msg-body">Ich bin Jason. Keine Agentur, kein Ghostwriter. Die Fragen die Recruiter nicht stellen, beantworten oft am meisten.</div><div class="msg-ts">System bereit</div></div>
     </div>
     <div class="msg ceo">
       <div class="msg-av">CEO</div>
@@ -649,7 +716,7 @@ body{overflow:hidden}
     </div>
   </div>
   <div class="qq-wrap">
-    <div class="qq-label">Was CEOs wirklich fragen</div>
+    <div class="qq-label">Häufige Recruiter-Fragen</div>
     <div class="qq-chips">
       <button class="qq-btn" onclick="quickQ('Warum Zürich?')">Warum Zürich?</button>
       <button class="qq-btn" onclick="quickQ('Kein Abschluss?')">Kein Abschluss?</button>
@@ -673,11 +740,11 @@ body{overflow:hidden}
   <a class="cta-btn-g" href="#" onclick="showScreen('chat');return false">Noch eine Frage stellen</a>
   <div class="cta-email">jason@roschmann-digital.de</div>
   <div class="c">
-    <div class="ch"><div class="ct">Wie es funktioniert</div></div>
+    <div class="ch"><div class="ct">So läuft es ab</div></div>
     <div class="cb">
       <div class="steps">
         <div class="step"><div class="step-n">1</div><div><div class="step-t">15 Minuten anfragen</div><div class="step-s">E-Mail genügt. Kein Formular, kein Portal, keine Wartezeit.</div></div></div>
-        <div class="step"><div class="step-n">2</div><div><div class="step-t">Kurzes Gespräch</div><div class="step-s">Ich erkläre in 15 Minuten ob und wie ich den Match sehe. Direktantwort, kein Verkaufsgespräch.</div></div></div>
+        <div class="step"><div class="step-n">2</div><div><div class="step-t">Kurzes Gespräch</div><div class="step-s">Ich erkläre in 15 Minuten ob und wie ich den Match sehe. Direkte Antwort — kein Verkaufsgespräch.</div></div></div>
         <div class="step"><div class="step-n">3</div><div><div class="step-t">Entscheidung</div><div class="step-s">August 2026, Zürich, entschieden. Ich komme vorbereitet.</div></div></div>
       </div>
     </div>
@@ -685,7 +752,7 @@ body{overflow:hidden}
   <div class="c" style="border-top:2px solid var(--amr)">
     <div class="ch"><div class="ct">Warum jetzt</div><div class="b ba">ZEITFENSTER</div></div>
     <div class="cb">
-      <div class="body-s" style="margin-bottom:10px">Das Zeitfenster für Zürich ist August 2026. Ich evaluiere derzeit 8 Unternehmen parallel. Frühzeitige Gespräche werden bevorzugt behandelt.</div>
+      <div class="body-s" style="margin-bottom:10px">Das Zeitfenster für Zürich ist August 2026. Ich evaluiere derzeit 8 Unternehmen parallel. Frühzeitige Gespräche werden bevorzugt — danach bin ich entweder vergeben oder weg.</div>
       <div style="font-size:12px;color:var(--grn);font-weight:600">Direkt schreiben: jason@roschmann-digital.de — Antwort heute noch möglich.</div>
     </div>
   </div>
@@ -693,7 +760,7 @@ body{overflow:hidden}
 
 </div><!-- /main -->
 
-<!-- FLOATING CTA (mobile only, hidden on desktop via CSS) -->
+<!-- FLOATING CTA -->
 <div id="float-cta">
   <a href="mailto:jason@roschmann-digital.de?subject=15-Minuten-Call">
     <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -701,7 +768,7 @@ body{overflow:hidden}
   </a>
 </div>
 
-<!-- BOTTOM NAV (mobile) -->
+<!-- BOTTOM NAV -->
 <div id="nav">
   <button class="nav-btn a" onclick="showScreen('home')" data-s="home">
     <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
@@ -744,10 +811,12 @@ const SCREENS=['home','karriere','projekte','skills','markt','zurich','chat','ko
 const NAMES=['Home','Karriere','Projekte','Skills','Markt','Zürich','Chat','Kontakt'];
 let cur='home';
 
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+
 function showScreen(id){
   if(id==='mehr'){openMehr();return;}
   const prev=document.getElementById('s-'+cur);
-  if(prev&&cur!==id){prev.classList.remove('vis');setTimeout(()=>prev.classList.remove('act'),180)}
+  if(prev&&cur!==id){prev.classList.remove('vis');setTimeout(()=>prev.classList.remove('act'),220)}
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('a'));
   document.querySelectorAll('.sb-btn').forEach(b=>b.classList.remove('a'));
   const scr=document.getElementById('s-'+id);
@@ -766,18 +835,24 @@ function showScreen(id){
   const fc=document.getElementById('float-cta');
   if(fc)fc.classList.toggle('show',id!=='kontakt'&&id!=='chat');
   if(id==='chat')fixChatHeight();
-  if(id==='markt')setTimeout(animateBars,300);
+  if(id==='markt')setTimeout(animateBars,280);
+  if(id==='karriere')setTimeout(animateTimeline,180);
+  if(id==='skills')setTimeout(animateChips,120);
+  if(id==='home'){
+    const ja=document.getElementById('nein-ja');
+    if(ja){ja.style.width='0';requestAnimationFrame(()=>requestAnimationFrame(()=>{ja.style.width='7.5%'}))}
+  }
 }
 
 function fixChatHeight(){
-  const s=document.getElementById('s-chat');
-  const m=document.getElementById('main');
+  const s=document.getElementById('s-chat');const m=document.getElementById('main');
   if(s&&m)s.style.height=m.clientHeight+'px';
 }
 
 function openMehr(){document.getElementById('mehr-bg').style.display='block';document.getElementById('nav-mehr').classList.add('a')}
 function closeMehr(){document.getElementById('mehr-bg').style.display='none';const nb=document.querySelector('[data-s="'+cur+'"]');if(nb)nb.classList.add('a');document.getElementById('nav-mehr').classList.remove('a')}
 
+/* ── COUNTERS ── */
 function animateCounter(el,target,suffix,duration){
   const start=Date.now();
   const tick=()=>{
@@ -785,44 +860,81 @@ function animateCounter(el,target,suffix,duration){
     const ease=1-Math.pow(1-p,3);
     const val=Math.round(ease*target);
     el.textContent=(target>=1000?val.toLocaleString('de-DE'):val)+(suffix||'');
-    if(p<1)requestAnimationFrame(tick);
+    if(p<1){requestAnimationFrame(tick)}
+    else{el.classList.add('kglow');setTimeout(()=>el.classList.remove('kglow'),1600)}
   };
   tick();
 }
 function runCounters(){
-  document.querySelectorAll('[data-count]').forEach(el=>{
-    animateCounter(el,parseInt(el.dataset.count),el.dataset.suffix||'',1400);
-  });
-}
-function animateBars(){
-  document.querySelectorAll('.role-fill[data-w]').forEach(el=>{
-    el.style.width=el.dataset.w;
+  document.querySelectorAll('[data-count]').forEach((el,i)=>{
+    setTimeout(()=>animateCounter(el,parseInt(el.dataset.count),el.dataset.suffix||'',1300),i*80);
   });
 }
 
+/* ── BARS ── */
+function animateBars(){
+  document.querySelectorAll('.role-fill[data-w]').forEach((el,i)=>{
+    el.style.width='0';
+    setTimeout(()=>{el.style.width=el.dataset.w},i*90);
+  });
+}
+
+/* ── TIMELINE STAGGER ── */
+function animateTimeline(){
+  const items=document.querySelectorAll('#s-karriere .tl-item');
+  items.forEach(el=>{el.style.transition='none';el.style.opacity='0';el.style.transform='translateX(-14px)'});
+  if(items[0])items[0].offsetHeight;
+  items.forEach((el,i)=>{
+    setTimeout(()=>{
+      el.style.transition='opacity .38s ease,transform .45s cubic-bezier(0.34,1.56,0.64,1)';
+      el.style.opacity='1';el.style.transform='translateX(0)';
+    },60+i*95);
+  });
+}
+
+/* ── CHIP WAVE ── */
+function animateChips(){
+  const chips=document.querySelectorAll('#s-skills .chip');
+  chips.forEach(el=>{el.style.transition='none';el.style.opacity='0';el.style.transform='scale(0.8)'});
+  if(chips[0])chips[0].offsetHeight;
+  chips.forEach((el,i)=>{
+    setTimeout(()=>{
+      el.style.transition='opacity .22s ease,transform .3s cubic-bezier(0.34,1.56,0.64,1)';
+      el.style.opacity='1';el.style.transform='scale(1)';
+    },40+i*30);
+  });
+}
+
+/* ── CHAT ── */
+function addTyping(){
+  const wrap=document.getElementById('chat-msgs');
+  wrap.insertAdjacentHTML('beforeend','<div class="msg" id="typing-msg"><div class="msg-av jr">JR</div><div><div class="msg-body" style="padding:10px 12px"><div class="td"><span></span><span></span><span></span></div></div></div></div>');
+  wrap.scrollTop=wrap.scrollHeight;
+}
+function removeTyping(){const t=document.getElementById('typing-msg');if(t)t.remove()}
+
 const QA={
-  'Warum Zürich?':'Zürich ist kein Wunschdenken — es ist ein konkreter Plan. Die DACH-SaaS-Dichte ist einzigartig: Scandit, Smallpdf, Flowable, Unique.ai, Beekeeper. Alle in einer Stadt. August 2026 ist mein Zeitfenster, entschieden.',
-  'Kein Abschluss?':'Ich habe keinen Uni-Abschluss — das stimmt. Was ich habe: 4 Jahre echten Verkaufsdruck, 3 Live-Systeme, 12/12 Tests grün. Im SDR-Bereich ist Output wichtiger als Papier.',
-  'Permit B?':'EU-Bürger, Deutschland. Permit B: 14-Tage-Anmeldung beim Einwohneramt. Kein Kontingent, kein Anwalt, kein Denial-Risiko. Dieselbe administrative Komplexität wie jemanden der bereits in Zürich lebt.',
-  'DACH-Vorteil?':'Deutsch auf C2-Niveau, Muttersprache, DACH-nativ. Ich spreche mit Geschäftsführern aus Hamburg, Wien, Zürich und Bern auf Augenhöhe. Keine Übersetzung, keine kulturelle Distanz.',
-  '8.000 Nein?':'Im D2D bekommt man täglich 85 bis 95 Prozent Absagen. 8.000 Kaltgespräche über 4 Jahre. Das trainiert etwas das man nicht aus einem Kurs lernt: Ablehnung zu verarbeiten und trotzdem das nächste Gespräch mit voller Energie zu führen.',
-  'Warum SDR?':'SDR ist der natürliche Einstieg weil ich die Kernkompetenz bereits habe: Kalt-Akquise, Einwandbehandlung, Pipeline aufbauen. Was mir fehlt ist SaaS-CRM-Erfahrung — die schliesse ich in 2 bis 4 Wochen.',
+  'Warum Zürich?':'Zürich ist kein Wunschdenken — es ist ein konkreter Plan. Die DACH-SaaS-Dichte ist einzigartig: Scandit, Smallpdf, Flowable, Unique.ai, Beekeeper. Alle in einer Stadt. August 2026 ist mein Zeitfenster — entschieden.',
+  'Kein Abschluss?':'Ich habe keinen Uni-Abschluss — das stimmt. Was ich habe: 4 Jahre echten Verkaufsdruck, 3 Live-Systeme in Produktion, 12 von 12 Tests grün. Im SDR-Bereich ist Output wichtiger als Papier.',
+  'Permit B?':'EU-Bürger aus Deutschland. Permit B bedeutet 14-Tage-Anmeldung beim Einwohneramt — kein Kontingent, kein Anwalt, kein Ablehnungsrisiko. Dieselbe administrative Komplexität wie jemanden einzustellen, der bereits in Zürich lebt.',
+  'DACH-Vorteil?':'Deutsch auf C2-Niveau, Muttersprache, DACH-nativ. Ich spreche mit Geschäftsführern aus Hamburg, Wien, Zürich und Bern auf Augenhöhe. Keine Übersetzung, keine kulturelle Distanz — das ist im Enterprise-Vertrieb ein echter Unterschied.',
+  '8.000 Nein?':'Im D2D bekommt man täglich 85 bis 95 Prozent Absagen. 8.000 Kaltgespräche über 4 Jahre. Das trainiert etwas, das man nicht aus einem Kurs lernt: Ablehnung zu verarbeiten und trotzdem das nächste Gespräch mit voller Energie zu führen.',
+  'Warum SDR?':'SDR ist der natürliche Einstieg, weil ich die Kernkompetenz bereits habe: Kaltakquise, Einwandbehandlung, Pipeline aufbauen. Was mir fehlt ist SaaS-CRM-Erfahrung — die schliesse ich in 2 bis 4 Wochen.',
 };
 const PH=['Was war dein grösster Vertriebserfolg?','Wie schnell kannst du anfangen?','Erkläre dein KI-Automation-System.','Was unterscheidet dich von anderen SDR-Kandidaten?'];
 let phI=0;
 setInterval(()=>{
   const inp=document.getElementById('chat-in');
   if(!inp||document.activeElement===inp)return;
-  phI=(phI+1)%PH.length;
-  inp.placeholder=PH[phI];
+  phI=(phI+1)%PH.length;inp.placeholder=PH[phI];
 },3500);
-function quickQ(q){addMsg(q,'ceo');setTimeout(()=>addMsg(QA[q]||'Schreib mir direkt: jason@roschmann-digital.de','jr'),600)}
+function quickQ(q){
+  addMsg(q,'ceo');addTyping();
+  setTimeout(()=>{removeTyping();addMsg(QA[q]||'Schreib mir direkt: jason@roschmann-digital.de','jr')},1000);
+}
 function sendChat(){
-  const inp=document.getElementById('chat-in');
-  const q=inp.value.trim();
-  if(!q)return;
-  inp.value='';
-  addMsg(q,'ceo');
+  const inp=document.getElementById('chat-in');const q=inp.value.trim();if(!q)return;
+  inp.value='';addMsg(q,'ceo');addTyping();
   const lq=q.toLowerCase();
   let resp='Gute Frage — am schnellsten beantworte ich das direkt: jason@roschmann-digital.de';
   if(lq.includes('zürich')||lq.includes('zurich'))resp=QA['Warum Zürich?'];
@@ -831,18 +943,19 @@ function sendChat(){
   else if(lq.includes('dach')||lq.includes('deutsch'))resp=QA['DACH-Vorteil?'];
   else if(lq.includes('nein')||lq.includes('ablehnung'))resp=QA['8.000 Nein?'];
   else if(lq.includes('sdr'))resp=QA['Warum SDR?'];
-  else if(lq.includes('englisch')||lq.includes('english'))resp='Mein Englisch ist konversationsfähig, B1 bis B2. Team-Calls sind kein Problem. Bei technischen Verhandlungen kann manchmal Fachvokabular fehlen — das ist ehrlich. Für DACH-fokussierte Rollen kein Blocker.';
-  setTimeout(()=>addMsg(resp,'jr'),600);
+  else if(lq.includes('englisch')||lq.includes('english'))resp='Mein Englisch ist konversationsfähig — B1 bis B2. Team-Calls, E-Mails und Alltag sind kein Problem. Bei technischen Verhandlungen kann manchmal Fachvokabular fehlen — das ist ehrlich. Für DACH-fokussierte Rollen ist das kein Blocker.';
+  setTimeout(()=>{removeTyping();addMsg(resp,'jr')},1100);
 }
 function addMsg(text,type){
   const wrap=document.getElementById('chat-msgs');
   const now=new Date();
   const ts=now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
   const av=type==='jr'?'<div class="msg-av jr">JR</div>':'<div class="msg-av">CEO</div>';
-  wrap.insertAdjacentHTML('beforeend',`<div class="msg${type==='ceo'?' ceo':''}">${av}<div><div class="msg-body">${text}</div><div class="msg-ts">${ts}</div></div></div>`);
+  wrap.insertAdjacentHTML('beforeend','<div class="msg'+(type==='ceo'?' ceo':'')+'">'+av+'<div><div class="msg-body">'+esc(text)+'</div><div class="msg-ts">'+ts+'</div></div></div>');
   wrap.scrollTop=wrap.scrollHeight;
 }
 
+/* ── COMPANY PERSONALIZATION ── */
 const CO={
   scandit:{name:'Scandit',role:'BDR (German Speaker)',h:'Scandit sucht einen BDR der kalt akquiriert und Deutsch auf Muttersprachniveau spricht.',p:'Das ist genau das was ich 4 Jahre gemacht habe — 200+ Abschlüsse pro Monat, Direktgespräch mit Inhabern, bundesweit.'},
   luware:{name:'Luware AG',role:'Customer Success',h:'Luware sucht Customer Success mit Revenue-DNA und Microsoft-Ökosystem-Verständnis.',p:'4 Jahre Bestandskunden-Entwicklung, +15% Cross-Selling. SaaS-Tool-Onboarding in 6 Wochen.'},
@@ -867,8 +980,39 @@ if(ck&&CO[ck]){
   document.getElementById('co-hero-p').textContent=co.p;
 }
 
+/* ── BOOT SEQUENCE ── */
+function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
+async function bootCV(){
+  if(sessionStorage.getItem('cv_boot')){
+    const b=document.getElementById('boot');if(b)b.remove();
+    runCounters();
+    const ja=document.getElementById('nein-ja');if(ja)setTimeout(()=>{ja.style.width='7.5%'},300);
+    return;
+  }
+  const el=document.getElementById('boot-text');
+  const seq=[
+    {t:'> jason.roschmann --cv\n',s:11},
+    {t:'loading sales_dna ',s:6},{t:'....... ✓\n',s:25},
+    {t:'loading ki_stack  ',s:6},{t:'....... ✓\n',s:25},
+    {t:'loading zurich_2026 ',s:6},{t:'...... ✓\n',s:25},
+    {t:'\nBEREIT.\n',s:35,pre:100},
+  ];
+  for(const item of seq){
+    if(item.pre)await sleep(item.pre);
+    for(const ch of item.t){el.textContent+=ch;await sleep(item.s)}
+  }
+  await sleep(380);
+  const boot=document.getElementById('boot');
+  boot.classList.add('out');
+  await sleep(400);
+  boot.remove();
+  runCounters();
+  const ja=document.getElementById('nein-ja');if(ja)setTimeout(()=>{ja.style.width='7.5%'},300);
+  sessionStorage.setItem('cv_boot','1');
+}
+
 showScreen('home');
-setTimeout(runCounters,400);
+bootCV();
 window.addEventListener('resize',()=>{if(cur==='chat')fixChatHeight()});
 </script>
 </body>
