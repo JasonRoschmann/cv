@@ -11,6 +11,16 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.6}
+body{
+  background-image:
+    radial-gradient(ellipse 900px 500px at 15% -5%,rgba(63,185,80,.05),transparent 55%),
+    radial-gradient(ellipse 700px 500px at 105% 15%,rgba(88,166,255,.04),transparent 55%),
+    radial-gradient(circle,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:auto,auto,22px 22px;
+  background-position:0 0,0 0,0 0;
+  background-repeat:no-repeat,no-repeat,repeat;
+  background-attachment:fixed;
+}
 :root{
   --bg:#0d1117;--s1:#161b22;--s2:#1c2129;
   --bdr:#30363d;--bdr2:#21262d;
@@ -74,7 +84,9 @@ body{overflow:hidden}
 .ba{color:var(--amr);background:rgba(227,179,65,.08);border:1px solid rgba(227,179,65,.25)}
 
 /* ── HERO ── */
-.hero{background:linear-gradient(160deg,rgba(63,185,80,.06) 0%,transparent 60%);border:1px solid var(--bdr);border-radius:var(--r);padding:18px 16px;margin-bottom:12px}
+.hero{background:linear-gradient(160deg,rgba(63,185,80,.06) 0%,transparent 60%);border:1px solid var(--bdr);border-radius:var(--r);padding:18px 16px;margin-bottom:12px;position:relative;overflow:hidden}
+.hero-ghost{position:absolute;right:-10px;bottom:-28px;font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(90px,26vw,150px);line-height:1;color:rgba(63,185,80,.05);pointer-events:none;user-select:none;z-index:0}
+.hero>*{position:relative;z-index:1}
 .hero-prompt{font-family:var(--ffm);font-size:11px;color:var(--grn);margin-bottom:10px;min-height:14px}
 .hero-prompt .crs{display:inline-block;width:6px;height:12px;background:var(--grn);margin-left:1px;vertical-align:middle;animation:blink 1s step-end infinite}
 .hero-h{font-size:19px;font-weight:400;font-family:var(--serif);font-style:italic;line-height:1.35;margin-bottom:8px;color:var(--txt)}
@@ -271,6 +283,25 @@ body{overflow:hidden}
 .mehr-icon{width:18px;height:18px;flex-shrink:0;color:var(--txt);opacity:.7}
 .body-s{font-size:13px;color:var(--mu);line-height:1.65}
 
+/* ── COMMAND PALETTE (desktop, Cmd/Ctrl+K) ── */
+#cmdk-bg{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.55);backdrop-filter:blur(2px);align-items:flex-start;justify-content:center;padding-top:14vh}
+#cmdk-bg.show{display:flex}
+#cmdk-panel{width:100%;max-width:480px;background:var(--s1);border:1px solid var(--bdr);border-radius:12px;box-shadow:0 20px 60px -10px rgba(0,0,0,.6);overflow:hidden;margin:0 20px}
+#cmdk-in{width:100%;background:none;border:none;border-bottom:1px solid var(--bdr2);padding:16px 18px;color:var(--txt);font-size:15px;font-family:var(--ff);outline:none}
+#cmdk-in::placeholder{color:var(--mu2)}
+#cmdk-list{max-height:320px;overflow-y:auto;padding:6px}
+.cmdk-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;cursor:pointer;font-size:13px;color:var(--mu)}
+.cmdk-item .cmdk-k{margin-left:auto;font-family:var(--ffm);font-size:10px;color:var(--mu2);border:1px solid var(--bdr);border-radius:4px;padding:1px 5px}
+.cmdk-item.sel{background:rgba(63,185,80,.1);color:var(--txt)}
+.cmdk-item.sel .cmdk-k{border-color:var(--grn);color:var(--grn)}
+.cmdk-hint{padding:8px 14px;border-top:1px solid var(--bdr2);font-size:10px;color:var(--mu2);font-family:var(--ffm)}
+#cmdk-trigger{display:none}
+@media(min-width:768px){
+  #cmdk-trigger{display:flex;align-items:center;gap:6px;margin:0 20px 14px;padding:7px 10px;border:1px solid var(--bdr);border-radius:7px;color:var(--mu2);font-size:11px;cursor:pointer;transition:.12s}
+  #cmdk-trigger:hover{border-color:var(--bdr2);color:var(--mu)}
+  #cmdk-trigger kbd{margin-left:auto;font-family:var(--ffm);font-size:9px;border:1px solid var(--bdr);border-radius:4px;padding:1px 5px}
+}
+
 /* ── macOS BAR ── */
 #mac-bar{display:none}
 
@@ -314,6 +345,8 @@ body{overflow:hidden}
   .kpi-grid{grid-template-columns:1fr 1fr 1fr 1fr}
   .kpi-n{font-size:32px}
   .kpi{padding:14px 12px}
+  .bento-projects{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+  .bento-projects .bento-hero{grid-column:1/-1}
 }
 
 @media print{
@@ -355,6 +388,11 @@ body{overflow:hidden}
     <div class="sb-name">Jason Roschmann</div>
     <div class="sb-sub">KI Automation · Technical Sales<br>Zürich August 2026</div>
     <div class="sb-badge"><div class="hd-dot"></div>VERFÜGBAR</div>
+  </div>
+  <div id="cmdk-trigger" onclick="openCmdk()">
+    <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M21 21l-4.3-4.3"/></svg>
+    Sprung zu…
+    <kbd>⌘K</kbd>
   </div>
   <div class="sb-nav">
     <button class="sb-btn a" onclick="showScreen('home')" data-s="home"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>Home</button>
@@ -402,6 +440,7 @@ body{overflow:hidden}
     <div class="co-hero-p" id="co-hero-p"></div>
   </div>
   <div class="hero">
+    <div class="hero-ghost" aria-hidden="true">200+</div>
     <div class="hero-prompt" id="hero-prompt"></div>
     <div class="hero-h">4 Jahre Vertrieb.<br>2 Jahre Digital. 2026 KI.<br>Bereit für Zürich SaaS.</div>
     <div class="hero-p">200+ Verträge pro Monat, konstant, 4 Jahre lang. Kein Skript, kein Glück — nur Volumen und Disziplin. <strong>Jetzt bringe ich das in SaaS.</strong></div>
@@ -561,7 +600,8 @@ body{overflow:hidden}
     <div class="hero-h">Er hat nicht auf ein Team gewartet.<br>Er hat gebaut.</div>
     <div class="hero-p">Drei Systeme. Zwei live in Produktion, eines aktuell im Bau. Kein Team, kein Investor, keine Agentur. <strong>Methode:</strong> Ich spezifiziere, architekturiere und teste — Claude Code schreibt den Code. Kein klassischer Entwickler, aber jemand, der mit KI tatsächlich Dinge in Produktion bringt, nicht nur darüber redet.</div>
   </div>
-  <div class="c" style="border-top:2px solid var(--grn)">
+  <div class="bento-projects">
+  <div class="c bento-hero" style="border-top:2px solid var(--grn)">
     <div class="ch"><div><div class="ct">Projekt A</div><div style="font-size:15px;font-weight:700;margin-top:3px">SaaS Backend — solo deployed</div></div><div class="b bg">LIVE</div></div>
     <div class="cb">
       <div class="body-s" style="margin-bottom:12px">KI-Backend im DACH-Markt — von der Architektur bis zum Deployment, alleine, in 6 Wochen. Kein Prototyp: live in Produktion.</div>
@@ -595,6 +635,7 @@ body{overflow:hidden}
         <div class="tr"><div class="tk">Pipeline</div><div class="tv">Research → Analyse → Output — komplett durchgängig</div></div>
       </div>
     </div>
+  </div>
   </div>
 </div>
 
@@ -865,6 +906,14 @@ body{overflow:hidden}
 </div><!-- /right -->
 </div><!-- /app -->
 
+<div id="cmdk-bg" onclick="if(event.target===this)closeCmdk()">
+  <div id="cmdk-panel" onclick="event.stopPropagation()">
+    <input id="cmdk-in" type="text" placeholder="Zu einem Bereich springen…" autocomplete="off" spellcheck="false">
+    <div id="cmdk-list"></div>
+    <div class="cmdk-hint">↑↓ navigieren · ↵ öffnen · esc schliessen</div>
+  </div>
+</div>
+
 <script>
 const SCREENS=['home','karriere','projekte','skills','markt','zurich','chat','kontakt'];
 const NAMES=['Home','Karriere','Projekte','Skills','Markt','Zürich','Chat','Kontakt'];
@@ -1116,6 +1165,52 @@ function setupReveal(){
     _revealObs.observe(el);
   });
 }
+
+/* ── COMMAND PALETTE ── */
+let cmdkSel=0,cmdkItems=[];
+function cmdkRender(filter){
+  const q=(filter||'').toLowerCase().trim();
+  cmdkItems=SCREENS.map((id,i)=>({id,name:NAMES[i]})).filter(s=>!q||s.name.toLowerCase().includes(q));
+  const list=document.getElementById('cmdk-list');
+  if(!cmdkItems.length){list.innerHTML='<div class="cmdk-item" style="opacity:.5;cursor:default">Keine Treffer</div>';return}
+  cmdkSel=Math.min(cmdkSel,cmdkItems.length-1);
+  list.innerHTML=cmdkItems.map((s,i)=>
+    `<div class="cmdk-item${i===cmdkSel?' sel':''}" data-i="${i}" onclick="cmdkGo(${i})"><span>${s.name}</span><span class="cmdk-k">↵</span></div>`
+  ).join('');
+}
+function cmdkGo(i){
+  const s=cmdkItems[i];
+  if(!s)return;
+  closeCmdk();
+  showScreen(s.id);
+}
+function openCmdk(){
+  const bg=document.getElementById('cmdk-bg');
+  bg.classList.add('show');
+  cmdkSel=0;
+  const inp=document.getElementById('cmdk-in');
+  inp.value='';
+  cmdkRender('');
+  setTimeout(()=>inp.focus(),10);
+}
+function closeCmdk(){document.getElementById('cmdk-bg').classList.remove('show')}
+document.addEventListener('keydown',(e)=>{
+  if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){
+    e.preventDefault();
+    const bg=document.getElementById('cmdk-bg');
+    bg.classList.contains('show')?closeCmdk():openCmdk();
+    return;
+  }
+  const bg=document.getElementById('cmdk-bg');
+  if(!bg.classList.contains('show'))return;
+  if(e.key==='Escape'){closeCmdk();return}
+  if(e.key==='ArrowDown'){e.preventDefault();cmdkSel=Math.min(cmdkSel+1,cmdkItems.length-1);cmdkRender(document.getElementById('cmdk-in').value)}
+  else if(e.key==='ArrowUp'){e.preventDefault();cmdkSel=Math.max(cmdkSel-1,0);cmdkRender(document.getElementById('cmdk-in').value)}
+  else if(e.key==='Enter'){e.preventDefault();cmdkGo(cmdkSel)}
+});
+document.addEventListener('input',(e)=>{
+  if(e.target.id==='cmdk-in'){cmdkSel=0;cmdkRender(e.target.value)}
+});
 
 /* ── MAGNETIC TILT ── */
 function setupTilt(){
