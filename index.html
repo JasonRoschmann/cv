@@ -154,6 +154,7 @@ body{overflow:hidden}
 .tl-line{flex:1;width:1px;background:var(--bdr2);margin-top:4px}
 .tl-item:last-child .tl-line{display:none}
 .tl-body{flex:1}
+.tl-item.tl-now .tl-body{background:rgba(63,185,80,.05);border:1px solid rgba(63,185,80,.2);border-radius:var(--r);padding:11px 13px;margin:-4px 0}
 .tl-year{font-family:var(--ffm);font-size:10px;color:var(--mu);font-weight:600;margin-bottom:3px}
 .tl-role{font-size:14px;font-weight:700;line-height:1.3}
 .tl-role.g{color:var(--grn)}
@@ -206,6 +207,7 @@ body{overflow:hidden}
 
 /* ── COMPANIES ── */
 .co-item{display:flex;align-items:flex-start;gap:10px;padding:12px 0;border-bottom:1px solid var(--bdr2)}
+.co-item.co-target{background:rgba(63,185,80,.06);margin:0 -14px;padding:12px 14px;border-radius:8px;border-bottom-color:transparent;border:1px solid rgba(63,185,80,.25)}
 .co-item:last-child{border-bottom:none}
 .co-fit{font-family:var(--ffm);font-size:9px;font-weight:700;padding:3px 7px;border-radius:4px;flex-shrink:0;margin-top:2px}
 .co-fit.A{background:rgba(63,185,80,.1);color:var(--grn);border:1px solid rgba(63,185,80,.3)}
@@ -506,7 +508,7 @@ body{overflow:hidden}
     <div class="ch"><div class="ct">Karriere-Timeline</div></div>
     <div class="cb" style="padding-top:8px">
       <div class="tl">
-        <div class="tl-item">
+        <div class="tl-item tl-now">
           <div class="tl-left"><div class="tl-dot g pulse"></div><div class="tl-line"></div></div>
           <div class="tl-body">
             <div class="tl-year">2026 — aktuell</div>
@@ -769,14 +771,14 @@ body{overflow:hidden}
   <div class="c">
     <div class="ch"><div class="ct">Ziel-Unternehmen Zürich</div><div class="b ba">RECHERCHIERT</div></div>
     <div class="cb" style="padding-top:4px">
-      <div class="co-item"><div class="co-fit A">SDR</div><div><div class="co-name">Scandit</div><div class="co-desc">Enterprise Computer Vision SaaS — BDR German Speaker, Zürich HQ, 500+ Mitarbeiter</div></div></div>
-      <div class="co-item"><div class="co-fit A">CSM</div><div><div class="co-name">Luware AG</div><div class="co-desc">Microsoft Teams Contact Center SaaS — Customer Success, 80 Mitarbeiter</div></div></div>
-      <div class="co-item"><div class="co-fit A">BDM</div><div><div class="co-name">Smallpdf</div><div class="co-desc">PDF SaaS, 1 Milliarde Conversions jährlich — BDM DACH, 64 Mitarbeiter</div></div></div>
-      <div class="co-item"><div class="co-fit B">AI</div><div><div class="co-name">Squirro</div><div class="co-desc">GenAI Enterprise, Gartner Leader 2025 — Solutions Engineer</div></div></div>
-      <div class="co-item"><div class="co-fit B">AUTO</div><div><div class="co-name">Flowable AG</div><div class="co-desc">Business Process Automation SaaS, Low-Code — 100–250 Mitarbeiter</div></div></div>
-      <div class="co-item"><div class="co-fit B">AI</div><div><div class="co-name">Unique.ai</div><div class="co-desc">B2B AI für Finanzdienstleister — LGT, Pictet Group, 100+ Mitarbeiter</div></div></div>
-      <div class="co-item"><div class="co-fit B">CS</div><div><div class="co-name">Beekeeper (by LumApps)</div><div class="co-desc">Frontline SaaS — Customer Solution Engineer, ca. 389 Mitarbeiter</div></div></div>
-      <div class="co-item" style="border-bottom:none"><div class="co-fit B">AE</div><div><div class="co-name">Jua.ai</div><div class="co-desc">KI-Wettermodell für Energiehandel — Account Executive, Position Nr. 2</div></div></div>
+      <div class="co-item" data-co="scandit"><div class="co-fit A">SDR</div><div><div class="co-name">Scandit</div><div class="co-desc">Enterprise Computer Vision SaaS — BDR German Speaker, Zürich HQ, 500+ Mitarbeiter</div></div></div>
+      <div class="co-item" data-co="luware"><div class="co-fit A">CSM</div><div><div class="co-name">Luware AG</div><div class="co-desc">Microsoft Teams Contact Center SaaS — Customer Success, 80 Mitarbeiter</div></div></div>
+      <div class="co-item" data-co="smallpdf"><div class="co-fit A">BDM</div><div><div class="co-name">Smallpdf</div><div class="co-desc">PDF SaaS, 1 Milliarde Conversions jährlich — BDM DACH, 64 Mitarbeiter</div></div></div>
+      <div class="co-item" data-co="squirro"><div class="co-fit B">AI</div><div><div class="co-name">Squirro</div><div class="co-desc">GenAI Enterprise, Gartner Leader 2025 — Solutions Engineer</div></div></div>
+      <div class="co-item" data-co="flowable"><div class="co-fit B">AUTO</div><div><div class="co-name">Flowable AG</div><div class="co-desc">Business Process Automation SaaS, Low-Code — 100–250 Mitarbeiter</div></div></div>
+      <div class="co-item" data-co="unique"><div class="co-fit B">AI</div><div><div class="co-name">Unique.ai</div><div class="co-desc">B2B AI für Finanzdienstleister — LGT, Pictet Group, 100+ Mitarbeiter</div></div></div>
+      <div class="co-item" data-co="beekeeper"><div class="co-fit B">CS</div><div><div class="co-name">Beekeeper (by LumApps)</div><div class="co-desc">Frontline SaaS — Customer Solution Engineer, ca. 389 Mitarbeiter</div></div></div>
+      <div class="co-item" data-co="jua" style="border-bottom:none"><div class="co-fit B">AE</div><div><div class="co-name">Jua.ai</div><div class="co-desc">KI-Wettermodell für Energiehandel — Account Executive, Position Nr. 2</div></div></div>
     </div>
   </div>
 </div>
@@ -1174,6 +1176,8 @@ if(ck&&CO[ck]){
   document.getElementById('co-hero-label').textContent='Persönlich für '+co.name;
   document.getElementById('co-hero-h').textContent=co.h;
   document.getElementById('co-hero-p').textContent=co.p;
+  const targetRow=document.querySelector('.co-item[data-co="'+ck+'"]');
+  if(targetRow)targetRow.classList.add('co-target');
 }
 
 /* ── macOS CLOCK ── */
