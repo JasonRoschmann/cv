@@ -794,20 +794,20 @@ body{overflow:hidden}
 <div class="scr" id="s-chat" data-idx="6">
   <div class="chat-head">
     <div class="chat-head-t">Direkt fragen — Jason antwortet persönlich</div>
-    <div class="chat-head-s">Keine Agentur, kein Ghostwriter — echte Antworten</div>
+    <div class="chat-head-s">Beispiel-Austausch unten · alle Antworten von Jason selbst geschrieben, keine KI-Antworten, kein Ghostwriter</div>
   </div>
   <div class="chat-scroll" id="chat-msgs">
     <div class="msg">
       <div class="msg-av jr">JR</div>
-      <div><div class="msg-body">Ich bin Jason. Keine Agentur, kein Ghostwriter. Die Fragen die Recruiter nicht stellen, beantworten oft am meisten.</div><div class="msg-ts">System bereit</div></div>
+      <div><div class="msg-body">Ich bin Jason. Keine Agentur, kein Ghostwriter. Die Fragen die Recruiter nicht stellen, beantworten oft am meisten. Frag mich unten etwas — oder probier eine typische Frage aus dem Beispiel:</div><div class="msg-ts">System bereit</div></div>
     </div>
     <div class="msg ceo">
       <div class="msg-av">CEO</div>
-      <div><div class="msg-body">Codest du das eigentlich selbst, oder macht das die KI?</div><div class="msg-ts">09:14</div></div>
+      <div><div class="msg-body">Codest du das eigentlich selbst, oder macht das die KI?</div><div class="msg-ts">Beispielfrage</div></div>
     </div>
     <div class="msg">
       <div class="msg-av jr">JR</div>
-      <div><div class="msg-body">Ehrlich: Claude Code schreibt den Code, nicht ich. Ich spezifiziere, architekturiere und teste — bevor irgendwas live geht, prüfe ich, ob es wirklich hält. Im D2D habe ich 200+ Verträge pro Monat abgeschlossen: Einwände lösen, Vertrauen aufbauen unter Druck. Genau diese Disziplin bringe ich jetzt in KI-orchestriertes Bauen — ich weiß, was ich will, und steuere die KI zuverlässig dorthin.</div><div class="msg-ts">14:22</div></div>
+      <div><div class="msg-body">Ehrlich: Claude Code schreibt den Code, nicht ich. Ich spezifiziere, architekturiere und teste — bevor irgendwas live geht, prüfe ich, ob es wirklich hält. Im D2D habe ich 200+ Verträge pro Monat abgeschlossen: Einwände lösen, Vertrauen aufbauen unter Druck. Genau diese Disziplin bringe ich jetzt in KI-orchestriertes Bauen — ich weiß, was ich will, und steuere die KI zuverlässig dorthin.</div><div class="msg-ts">Jasons echte Antwort</div></div>
     </div>
   </div>
   <div class="qq-wrap">
@@ -824,6 +824,11 @@ body{overflow:hidden}
       <button class="qq-btn" onclick="quickQ('KI-Projekte?')">KI-Projekte?</button>
       <button class="qq-btn" onclick="quickQ('Codest du selbst?')">Codest du selbst?</button>
       <button class="qq-btn" onclick="quickQ('Englisch B1?')">Englisch B1?</button>
+      <button class="qq-btn" onclick="quickQ('Was ist schiefgegangen?')">Was ist schiefgegangen?</button>
+      <button class="qq-btn" onclick="quickQ('Warum der Wechsel?')">Warum der Wechsel?</button>
+      <button class="qq-btn" onclick="quickQ('Warum alles solo?')">Warum alles solo?</button>
+      <button class="qq-btn" onclick="quickQ('Was unterscheidet dich?')">Was unterscheidet dich?</button>
+      <button class="qq-btn" onclick="quickQ('Wie schnell verfügbar?')">Wie schnell verfügbar?</button>
     </div>
   </div>
   <div class="chat-in-row">
@@ -1074,6 +1079,11 @@ const QA={
   'KI-Projekte?':'Ich habe mehrere Systeme gebaut — wichtig dabei: ich code nicht selbst, ich spezifiziere, architekturiere und teste, Claude Code schreibt den Code. Ein SaaS-Backend mit FastAPI und Claude SDK — 12/12 Tests grün, solo in 6 Wochen, live. Zwei Shopify-Stores für DACH-Gründer ohne Agentur-Budget — Duftkumpels live, AtopicV aktuell in Entwicklung. Und ein Multi-Agent-Automation-System das einen erheblichen Teil meiner Sales-Prozesse automatisiert, läuft täglich in Produktion.',
   'Englisch B1?':'Mein Englisch ist B1. Das heisst: Meetings, E-Mails, Team-Alltag — das funktioniert. Wo es haken kann: hochspezifischer Fachjargon in technischen Verhandlungen. Ich arbeite aktiv daran. Für DACH-fokussierte Rollen ist das kein Blocker.',
   'Codest du selbst?':'Ehrlich: nein, nicht klassisch von Hand. Ich spezifiziere, was gebaut werden soll, treffe die Architektur-Entscheidungen, und Claude Code schreibt den Code. Ich teste und validiere jedes Ergebnis, bevor es live geht — das SaaS-Backend hat 12/12 Tests grün, nicht weil ich sie geschrieben habe, sondern weil ich geprüft habe, dass sie wirklich grün sind. Das ist eine andere Fähigkeit als klassisches Programmieren — aber eine echte: zu wissen, was man bauen will, und KI zuverlässig dorthin zu steuern.',
+  'Was ist schiefgegangen?':'Ein konkretes Beispiel: ich hatte eine Scroll-Animation gebaut, die Karten beim Sichtbarwerden einblendet — mit der IntersectionObserver-API des Browsers. Der Bug: meldet man ein Element, das bereits beobachtet wird, nochmal beim selben Observer an, passiert laut Spezifikation nichts. Karten, die einmal unsichtbar gemacht wurden, blieben für immer unsichtbar, wenn man zum Screen zurückkehrte. Kein Zufalls-Bug, sondern ein spezifisches Verhalten der Browser-API, das ich verstehen musste, um die Lösung zu finden. Genau das meine ich mit KI-orchestriertem Bauen: ich muss verstehen WARUM etwas kaputt ist, um Claude Code die richtige Anweisung zu geben.',
+  'Warum der Wechsel?':'Vier Jahre D2D haben mir beigebracht, unter Ablehnung ruhig zu bleiben und trotzdem abzuschliessen — 200+ Verträge pro Monat, konstant. 2024 kam mein erster eigener Web-Auftrag über mein Netzwerk, 2025 Google Ads. Dieses Jahr der Wechsel zu Claude Code: seitdem baue ich nicht mehr im Chat-Fenster, sondern orchestriert — spezifizieren, Architektur entscheiden, testen, KI schreibt den Code. Der Wechsel ist keine Kehrtwende, sondern die logische Fortsetzung: ich habe vier Jahre lang Dinge zum Abschluss gebracht, jetzt bringe ich Systeme in Produktion.',
+  'Warum alles solo?':'Kein Team, kein Investor, keine Agentur war nie eine Ideologie — sondern der einzige Weg, in kurzer Zeit selbst zu lernen, was funktioniert und was nicht. Jede Architektur-Entscheidung, jeden Bug, jeden Deploy-Fehler musste ich selbst verstehen, weil niemand sonst da war, der es für mich reparieren konnte. Genau das macht mich im Team wertvoll: ich weiss, wie ein System von Anfang bis Ende zusammenhängt, nicht nur meinen eigenen Teil davon.',
+  'Was unterscheidet dich?':'Die meisten technischen Menschen können nicht verkaufen. Die meisten Verkäufer können nicht mit Ingenieuren sprechen. Ich habe vier Jahre beides entwickelt — bis es sich zusammengefügt hat. Ein Informatik-Absolvent kennt Algorithmen, aber nicht den Moment, in dem ein Kunde am Telefon auflegen will. Ich bringe beides: technisches Verständnis durch KI-orchestriertes Bauen, und die Disziplin, unter Ablehnung trotzdem abzuschliessen.',
+  'Wie schnell verfügbar?':'Ich arbeite aktuell selbstständig — dadurch habe ich keine vertragliche Kündigungsfrist bei einem Arbeitgeber. Den Start kann ich flexibel mit dem Unternehmen abstimmen, realistisch kurzfristig nach Zusage, mit Blick auf den Umzug nach Zürich im August 2026.',
 };
 
 const PH=['Was war dein grösster Vertriebserfolg?','Wie schnell kannst du anfangen?','Erkläre dein KI-Automation-System.','Was unterscheidet dich von anderen SDR-Kandidaten?'];
@@ -1091,23 +1101,32 @@ function quickQ(q){
   setTimeout(()=>{removeTyping();typewriteMsg(a)},typingDelay(a));
 }
 
+const CHAT_RULES=[
+  {kw:['permit','visum','arbeitserlaubnis','bewilligung','papiere'],a:'Permit B?'},
+  {kw:['gehalt','chf','lohn','salary','verdien','vergütung'],a:'Gehalt?'},
+  {kw:['zürich','zurich','warum diese stadt','warum in die schweiz'],a:'Warum Zürich?'},
+  {kw:['abschluss','studium','uni','diplom','bachelor','master','ausbildung fehlt'],a:'Kein Abschluss?'},
+  {kw:['dach','deutsch spricht','muttersprache'],a:'DACH-Vorteil?'},
+  {kw:['ablehnung','nein sagen','zurückgewiesen','rejection'],a:'Ablehnung im Alltag?'},
+  {kw:['cold call','telefon','kaltakquise','anruf','türklingel','klingeln'],a:'Cold Call?'},
+  {kw:['ki-projekt','projekt erklär','system erklär','was hast du gebaut','erzähl von deinen projekten','was baust du'],a:'KI-Projekte?'},
+  {kw:['englisch','english','sprache lernen','b1','b2','fluent'],a:'Englisch B1?'},
+  {kw:['codest du','coden','programmier','selbst schreib','schreibst du den code','kannst du programmieren'],a:'Codest du selbst?'},
+  {kw:['schiefgegangen','fehler','bug','was ist kaputt','gescheitert','misslungen'],a:'Was ist schiefgegangen?'},
+  {kw:['warum wechsel','warum vertrieb zu','vertrieb zu ki','warum ki','wieso ki','karriere-wechsel'],a:'Warum der Wechsel?'},
+  {kw:['solo','allein gebaut','warum kein team','kein team','ohne team'],a:'Warum alles solo?'},
+  {kw:['unterscheidet dich','anders als andere','warum dich','was macht dich besonders','informatik-absolvent'],a:'Was unterscheidet dich?'},
+  {kw:['wie schnell','kündigungsfrist','verfügbar','wann kannst du anfangen','startdatum'],a:'Wie schnell verfügbar?'},
+  {kw:['warum sdr','wieso sdr','sdr wech'],a:'Warum SDR?'},
+  {kw:['sdr'],a:'Warum SDR?'},
+];
 function sendChat(){
   const inp=document.getElementById('chat-in');const q=inp.value.trim();if(!q)return;
   inp.value='';addMsg(q,'ceo');addTyping();
   const lq=q.toLowerCase();
   let resp='Gute Frage — am schnellsten beantworte ich das direkt: jason@roschmann-digital.de';
-  if(lq.includes('zürich')||lq.includes('zurich'))resp=QA['Warum Zürich?'];
-  else if(lq.includes('abschluss')||lq.includes('studium')||lq.includes('uni'))resp=QA['Kein Abschluss?'];
-  else if(lq.includes('permit')||lq.includes('visum'))resp=QA['Permit B?'];
-  else if(lq.includes('dach')||lq.includes('deutsch'))resp=QA['DACH-Vorteil?'];
-  else if(lq.includes('nein')||lq.includes('ablehnung'))resp=QA['Ablehnung im Alltag?'];
-  else if(lq.includes('warum sdr')||lq.includes('wieso sdr')||lq.includes('sdr wech'))resp=QA['Warum SDR?'];
-  else if(lq.includes('gehalt')||lq.includes('chf')||lq.includes('lohn')||lq.includes('salary'))resp=QA['Gehalt?'];
-  else if(lq.includes('cold call')||lq.includes('telefon')||lq.includes('kaltakquise')||lq.includes('anruf'))resp=QA['Cold Call?'];
-  else if(lq.includes('projekt')||lq.includes('system')||lq.includes('ki-projekt')||lq.includes('gebaut'))resp=QA['KI-Projekte?'];
-  else if(lq.includes('englisch')||lq.includes('english')||lq.includes('sprache')||lq.includes('b1')||lq.includes('b2'))resp=QA['Englisch B1?'];
-  else if(lq.includes('code')||lq.includes('coden')||lq.includes('programmier')||lq.includes('selbst schreib'))resp=QA['Codest du selbst?'];
-  else if(lq.includes('sdr'))resp=QA['Warum SDR?'];
+  const hit=CHAT_RULES.find(r=>r.kw.some(k=>lq.includes(k)));
+  if(hit)resp=QA[hit.a];
   setTimeout(()=>{removeTyping();typewriteMsg(resp)},typingDelay(resp));
 }
 
