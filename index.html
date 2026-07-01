@@ -241,10 +241,12 @@ body{overflow:hidden}
 .td span:nth-child(2){animation-delay:.18s}
 .td span:nth-child(3){animation-delay:.36s}
 @keyframes td-b{0%,60%,100%{transform:translateY(0);opacity:.45}30%{transform:translateY(-7px);opacity:1}}
-.qq-wrap{padding:9px 14px;border-top:1px solid var(--bdr2);background:var(--s1);flex-shrink:0}
-.qq-label{font-size:10px;color:var(--mu);font-weight:600;letter-spacing:.04em;margin-bottom:7px}
-.qq-chips{display:flex;flex-wrap:wrap;gap:6px}
-.qq-btn{font-size:11px;padding:5px 11px;border-radius:6px;background:var(--s2);border:1px solid var(--bdr);color:var(--mu);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:.12s;font-family:var(--ff)}
+.qq-wrap{padding:8px 0 8px 14px;border-top:1px solid var(--bdr2);background:var(--s1);flex-shrink:0;position:relative}
+.qq-wrap::after{content:'';position:absolute;top:26px;bottom:2px;right:0;width:28px;background:linear-gradient(90deg,transparent,var(--s1));pointer-events:none}
+.qq-label{font-size:10px;color:var(--mu);font-weight:600;letter-spacing:.04em;margin-bottom:6px;padding-right:14px}
+.qq-chips{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;padding-bottom:2px;padding-right:14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.qq-chips::-webkit-scrollbar{display:none}
+.qq-btn{font-size:11px;padding:5px 11px;border-radius:6px;background:var(--s2);border:1px solid var(--bdr);color:var(--mu);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:.12s;font-family:var(--ff);flex-shrink:0;white-space:nowrap}
 .qq-btn:active,.qq-btn:hover{background:var(--bdr);color:var(--txt)}
 .chat-in-row{padding:9px 14px calc(9px + env(safe-area-inset-bottom));border-top:1px solid var(--bdr);background:var(--bg);display:flex;gap:8px;flex-shrink:0}
 #chat-in{flex:1;background:var(--s1);border:1px solid var(--bdr);border-radius:8px;padding:10px 12px;color:var(--txt);font-size:16px;font-family:var(--ff);outline:none;-webkit-appearance:none}
