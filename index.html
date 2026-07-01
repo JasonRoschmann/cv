@@ -830,6 +830,8 @@ body{overflow:hidden}
       <button class="qq-btn" onclick="quickQ('Warum alles solo?')">Warum alles solo?</button>
       <button class="qq-btn" onclick="quickQ('Was unterscheidet dich?')">Was unterscheidet dich?</button>
       <button class="qq-btn" onclick="quickQ('Wie schnell verfügbar?')">Wie schnell verfügbar?</button>
+      <button class="qq-btn" onclick="quickQ('Warum du statt lokal?')">Warum du statt lokal?</button>
+      <button class="qq-btn" onclick="quickQ('Auch andere Städte?')">Auch andere Städte?</button>
     </div>
   </div>
   <div class="chat-in-row">
@@ -1085,6 +1087,8 @@ const QA={
   'Warum alles solo?':'Kein Team, kein Investor, keine Agentur war nie eine Ideologie — sondern der einzige Weg, in kurzer Zeit selbst zu lernen, was funktioniert und was nicht. Jede Architektur-Entscheidung, jeden Bug, jeden Deploy-Fehler musste ich selbst verstehen, weil niemand sonst da war, der es für mich reparieren konnte. Genau das macht mich im Team wertvoll: ich weiss, wie ein System von Anfang bis Ende zusammenhängt, nicht nur meinen eigenen Teil davon.',
   'Was unterscheidet dich?':'Die meisten technischen Menschen können nicht verkaufen. Die meisten Verkäufer können nicht mit Ingenieuren sprechen. Ich habe vier Jahre beides entwickelt — bis es sich zusammengefügt hat. Ein Informatik-Absolvent kennt Algorithmen, aber nicht den Moment, in dem ein Kunde am Telefon auflegen will. Ich bringe beides: technisches Verständnis durch KI-orchestriertes Bauen, und die Disziplin, unter Ablehnung trotzdem abzuschliessen.',
   'Wie schnell verfügbar?':'Ich arbeite aktuell selbstständig — dadurch habe ich keine vertragliche Kündigungsfrist bei einem Arbeitgeber. Den Start kann ich flexibel mit dem Unternehmen abstimmen, realistisch kurzfristig nach Zusage, mit Blick auf den Umzug nach Zürich im August 2026.',
+  'Auch andere Städte?':'Zürich ist mein Hauptziel — höchste SaaS-Dichte im DACH-Raum, das ist kein Zufall. Geografisch bin ich aber flexibel: Zug, Basel und Bern kommen für mich genauso infrage, und ich bin auch für Remote-Rollen offen. Entscheidend ist die Rolle, nicht die exakte Postleitzahl.',
+  'Warum du statt lokal?':'Ehrliche Antwort: administrativ macht es keinen Unterschied. Als EU-Bürger ist Permit B eine 14-Tage-Anmeldung — kein Kontingent, kein Anwalt, kein Sponsor. Der eigentliche Unterschied ist nicht der Wohnort, sondern das Profil: die meisten lokalen Kandidaten haben entweder Vertrieb oder Technik. Ich bringe vier Jahre knallharten D2D-Vertrieb UND KI-orchestriertes Bauen in Produktion — diese Kombination ist selten, unabhängig davon wo der Kandidat gerade wohnt.',
 };
 
 const PH=['Was war dein grösster Vertriebserfolg?','Wie schnell kannst du anfangen?','Erkläre dein KI-Automation-System.','Was unterscheidet dich von anderen SDR-Kandidaten?'];
@@ -1103,21 +1107,23 @@ function quickQ(q){
 }
 
 const CHAT_RULES=[
-  {kw:['permit','visum','arbeitserlaubnis','bewilligung','papiere'],a:'Permit B?'},
+  {kw:['permit b','visum','arbeitserlaubnis','bewilligung','papiere brauch','kontingent'],a:'Permit B?'},
   {kw:['gehalt','chf','lohn','salary','verdien','vergütung'],a:'Gehalt?'},
-  {kw:['zürich','zurich','warum diese stadt','warum in die schweiz'],a:'Warum Zürich?'},
-  {kw:['abschluss','studium','uni','diplom','bachelor','master','ausbildung fehlt'],a:'Kein Abschluss?'},
+  {kw:['schon in zürich wohnt','lokalen kandidat','kandidat der schon da','warum nicht jemand der schon','statt einen kandidaten','warum dich statt','warum sollten wir dich'],a:'Warum du statt lokal?'},
+  {kw:['basel','bern','zug','andere stadt','andere städte','auch remote','flexibel bei ort'],a:'Auch andere Städte?'},
+  {kw:['warum zürich','warum nach zürich','warum diese stadt','warum in die schweiz','warum schweiz','warum dort hin','in die schweiz ziehen','schweiz bleiben','deutschland bleiben'],a:'Warum Zürich?'},
+  {kw:['abschluss','studium fehlt','ohne uni','diplom','bachelor','master','ausbildung fehlt','kein studium'],a:'Kein Abschluss?'},
   {kw:['dach','deutsch spricht','muttersprache'],a:'DACH-Vorteil?'},
   {kw:['ablehnung','nein sagen','zurückgewiesen','rejection'],a:'Ablehnung im Alltag?'},
   {kw:['cold call','telefon','kaltakquise','anruf','türklingel','klingeln'],a:'Cold Call?'},
-  {kw:['ki-projekt','projekt erklär','system erklär','was hast du gebaut','erzähl von deinen projekten','was baust du'],a:'KI-Projekte?'},
+  {kw:['größte projekt','größtes projekt','alleine auf die beine','komplett alleine gebaut','ki-projekt','projekt erklär','system erklär','was hast du gebaut','erzähl von deinen projekten','was baust du'],a:'KI-Projekte?'},
   {kw:['englisch','english','sprache lernen','b1','b2','fluent'],a:'Englisch B1?'},
   {kw:['codest du','coden','programmier','selbst schreib','schreibst du den code','kannst du programmieren'],a:'Codest du selbst?'},
-  {kw:['schiefgegangen','fehler','bug','was ist kaputt','gescheitert','misslungen'],a:'Was ist schiefgegangen?'},
+  {kw:['schiefgegangen','fehler gemacht','größter fehler','bug','was ist kaputt','gescheitert','misslungen'],a:'Was ist schiefgegangen?'},
   {kw:['warum wechsel','warum vertrieb zu','vertrieb zu ki','warum ki','wieso ki','karriere-wechsel'],a:'Warum der Wechsel?'},
-  {kw:['solo','allein gebaut','warum kein team','kein team','ohne team'],a:'Warum alles solo?'},
-  {kw:['unterscheidet dich','anders als andere','warum dich','was macht dich besonders','informatik-absolvent'],a:'Was unterscheidet dich?'},
-  {kw:['wie schnell','kündigungsfrist','verfügbar','wann kannst du anfangen','startdatum'],a:'Wie schnell verfügbar?'},
+  {kw:['ganz alleine gebaut','allein gebaut','warum kein team','kein team','ohne team','warum solo'],a:'Warum alles solo?'},
+  {kw:['unterscheidet dich','anders als andere','was macht dich besonders','informatik-absolvent'],a:'Was unterscheidet dich?'},
+  {kw:['wie schnell kannst','kündigungsfrist','wann verfügbar','wann kannst du anfangen','startdatum'],a:'Wie schnell verfügbar?'},
   {kw:['warum sdr','wieso sdr','sdr wech'],a:'Warum SDR?'},
   {kw:['sdr'],a:'Warum SDR?'},
 ];
@@ -1126,8 +1132,12 @@ function sendChat(){
   inp.value='';addMsg(q,'ceo');addTyping();
   const lq=q.toLowerCase();
   let resp='Gute Frage — am schnellsten beantworte ich das direkt: jason@roschmann-digital.de';
-  const hit=CHAT_RULES.find(r=>r.kw.some(k=>lq.includes(k)));
-  if(hit)resp=QA[hit.a];
+  let best=null,bestScore=0;
+  CHAT_RULES.forEach(r=>{
+    const score=r.kw.reduce((s,k)=>lq.includes(k)?s+k.length:s,0);
+    if(score>bestScore){bestScore=score;best=r;}
+  });
+  if(best)resp=QA[best.a];
   setTimeout(()=>{removeTyping();typewriteMsg(resp)},typingDelay(resp));
 }
 
