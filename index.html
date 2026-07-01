@@ -137,7 +137,7 @@ body{overflow:hidden}
 .tk{font-size:11px;color:var(--mu);min-width:90px;flex-shrink:0;line-height:1.5;padding-top:1px}
 .tv{font-size:12px;line-height:1.55;flex:1}
 .tv.g{color:var(--grn)}
-.tv.b{color:var(--blue)}
+.tv.b{color:var(--blue);white-space:normal}
 .tv.a{color:var(--amr)}
 
 /* ── TIMELINE ── */
@@ -939,13 +939,27 @@ function showScreen(id){
   if(snbn)snbn.textContent=NAMES[idx]||id;
   document.querySelectorAll('.snb-d').forEach((d,i)=>d.classList.toggle('a',i===idx));
   cur=id;
-  const fc=document.getElementById('float-cta');
-  if(fc)fc.classList.toggle('show',id!=='kontakt'&&id!=='chat');
+  ctaAllowed=id!=='kontakt'&&id!=='chat';
+  updateCtaVisibility();
   if(id==='chat')fixChatHeight();
   if(id==='markt')setTimeout(animateBars,280);
   if(id==='karriere')setTimeout(animateTimeline,180);
   if(id==='skills')setTimeout(animateChips,120);
   setTimeout(()=>{setupReveal();setupTilt()},60);
+}
+
+let ctaAllowed=true;
+function updateCtaVisibility(){
+  const fc=document.getElementById('float-cta');
+  const main=document.getElementById('main');
+  if(!fc||!main)return;
+  fc.classList.toggle('show',ctaAllowed&&main.scrollTop>24);
+}
+function setupCtaScroll(){
+  const main=document.getElementById('main');
+  if(!main||main.dataset.ctaScrollBound)return;
+  main.dataset.ctaScrollBound='1';
+  main.addEventListener('scroll',updateCtaVisibility,{passive:true});
 }
 
 function fixChatHeight(){
@@ -1293,6 +1307,7 @@ async function bootCV(){
 
 showScreen('home');
 setupSwipe();
+setupCtaScroll();
 bootCV().then(()=>typeHeroPrompt());
 window.addEventListener('resize',()=>{if(cur==='chat')fixChatHeight()});
 </script>
