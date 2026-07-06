@@ -1107,7 +1107,7 @@ function addTyping(){
 function removeTyping(){const t=document.getElementById('typing-msg');if(t)t.remove()}
 
 const QA={
-  'Warum Zürich?':'Zürich ist kein Wunschdenken — es ist ein konkreter Plan. Die DACH-SaaS-Dichte ist einzigartig: Scandit, Smallpdf, Flowable, Unique.ai, Beekeeper. Alle in einer Stadt. August 2026 ist mein Zeitfenster — entschieden.',
+  'Warum Zürich?':'Zürich ist kein Wunschdenken, sondern ein konkreter Plan. Nirgends im deutschsprachigen Raum ist die Dichte an KI- und SaaS-Firmen so hoch, ETH-Ökosystem, internationale Tech-Firmen, wachsende Startup-Szene. Genau der Markt, der KI-Leute sucht, und meine Muttersprache. August 2026 ist mein Zeitfenster, entschieden.',
   'Kein Abschluss?':'Ich habe keinen Uni-Abschluss — das stimmt. Was ich habe: 4 Jahre echten Verkaufsdruck, 2 Live-Systeme in Produktion (ein drittes im Bau), 35 von 35 Tests grün. Im SDR-Bereich ist Output wichtiger als Papier. SDRs werden trainiert — coachable ist das wichtigste Signal, und ich lerne schneller als jeder, den ich kenne.',
   'Permit B?':'EU-Bürger aus Deutschland. Permit B bedeutet 14-Tage-Anmeldung beim Einwohneramt — kein Kontingent, kein Anwalt, kein Ablehnungsrisiko. Dieselbe administrative Komplexität wie jemanden einzustellen, der bereits in Zürich lebt.',
   'DACH-Vorteil?':'Deutsch auf C2-Niveau, Muttersprache, DACH-nativ. Ich spreche mit Geschäftsführern aus Hamburg, Wien, Zürich und Bern auf Augenhöhe. Keine Übersetzung, keine kulturelle Distanz — das ist im Enterprise-Vertrieb ein echter Unterschied.',
@@ -1197,29 +1197,20 @@ function addMsg(text,type){
   wrap.scrollTop=wrap.scrollHeight;
 }
 
-/* ── COMPANY PERSONALIZATION ── */
-const CO={
-  blp:{name:'BLP Digital',role:'Commercial SDR',h:'BLP Digital sucht einen SDR, der kalt akquiriert — für ein Produkt, das aus KI-Agenten besteht.',p:'Ich habe 4 Jahre kalt akquiriert, 200+ Abschlüsse pro Monat. Und ich baue selbst Multi-Agent-Systeme mit Claude. Euer Produkt muss mir niemand erklären — ich baue in derselben Kategorie.'},
-  ewhoefe:{name:'EW Höfe',role:'Fachspezialist Digitalisierung & Applikationen',h:'EW Höfe sucht jemanden, der die n8n-Automationsplattform betreibt und Fachabteilungen mitnimmt.',p:'Ich betreibe n8n produktiv in meinem eigenen Multi-Agent-System. Und 4 Jahre Vertrieb heissen: ich kann mit Menschen reden, die keine Technik-Sprache sprechen.'},
-  academicwork:{name:'Academic Work',role:'Junior Sales Development Representative',h:'Academic Work sucht Junior SDRs mit Biss — Training inklusive.',p:'4 Jahre D2D, 200+ Abschlüsse pro Monat, 85–95% Ablehnung täglich. Ich bringe das Volumen-Gen mit und will euer strukturiertes Training als Beschleuniger nutzen.'},
-  farner:{name:'Farner Consulting',role:'SEO/GEO & Content Trainee',h:'Farner sucht Trainees für GEO — Sichtbarkeit in KI-Antworten statt klassischem SEO.',p:'Genau dafür habe ich selbst ein Analyse-Tool gebaut und deployed (Projekt A). GEO ist für mich kein Buzzword, sondern ein System, das ich von innen kenne.'},
-  bvk:{name:'BVK',role:'Spezialist Digital Engagement, CRM & Automation',h:'Die BVK sucht Marketing-Automation mit KI-Affinität — auf Deutsch.',p:'Automatisierte Journeys, A/B-Denken, KI-Anwendungen: das ist mein Alltag in eigenen Systemen. Deutsch ist meine Muttersprache, Zürich mein Ziel.'},
-  localsearch:{name:'localsearch',role:'Praktikum Digital Business & AI',h:'localsearch sucht jemanden, der bei KI- und Automatisierungsthemen mitwirkt.',p:'Ich bringe laufende KI-Systeme mit statt Theorie — und aus 4 Jahren Vertrieb das Gespür dafür, was Kunden wirklich brauchen.'},
-  alpinum:{name:'Alpinum Accounting',role:'Software Engineer Automation & AI',h:'Alpinum nennt Claude-API-Integrationen direkt im Inserat — mein tägliches Werkzeug.',p:'Ich orchestriere Claude Code täglich: SaaS-Backend mit 35/35 grünen Tests, Multi-Agent-System live. Kein EFZ, dafür laufende Systeme — euer Probearbeitstag ist genau mein Format.'},
-  unique:{name:'Unique',role:'Initiativbewerbung',h:'Unique baut B2B-KI für Finanzdienstleister — und nimmt CVs auch ohne offene Stelle.',p:'Claude SDK, Multi-Agent-System live, plus 4 Jahre Sales-DNA. Ich bewerbe mich initiativ, weil euer Produkt exakt die Überschneidung ist, aus der ich komme.'},
-};
+/* ── COMPANY PERSONALIZATION (URL-getrieben — bewusst KEINE Firmennamen im Quelltext,
+   damit die Bewerbungs-Pipeline nicht über View-Source sichtbar wird) ── */
 const p=new URLSearchParams(location.search);
-const ck=(p.get('company')||p.get('co')||'').toLowerCase();
-if(ck&&CO[ck]){
-  const co=CO[ck];
+const coName=(p.get('co')||p.get('company')||'').trim();
+const coRole=(p.get('role')||'').trim();
+if(coName){
   const bar=document.getElementById('co-bar');
-  bar.textContent='Personalisiert für '+co.name+' — Rolle: '+co.role;
+  bar.textContent='Persönlich für '+coName+(coRole?' — '+coRole:'');
   bar.classList.add('show');
-  document.getElementById('hd-sub').textContent=co.role+' bei '+co.name+' — Aug 2026';
+  document.getElementById('hd-sub').textContent=(coRole?coRole+' bei ':'')+coName+' — Aug 2026';
   document.getElementById('co-hero').classList.add('show');
-  document.getElementById('co-hero-label').textContent='Persönlich für '+co.name;
-  document.getElementById('co-hero-h').textContent=co.h;
-  document.getElementById('co-hero-p').textContent=co.p;
+  document.getElementById('co-hero-label').textContent='Persönlich für '+coName;
+  document.getElementById('co-hero-h').textContent=coRole?('Sie suchen '+coRole+'. Ich bin vorbereitet.'):('Ich habe mir '+coName+' gezielt ausgesucht.');
+  document.getElementById('co-hero-p').textContent='Kein Copy-paste: Ich habe mir '+coName+' bewusst ausgesucht. Vier Jahre Vertriebsdruck, neun selbst gebaute Systeme, Deutsch als Muttersprache — und der Wille, mich in Ihr Playbook einzuarbeiten wie in alles, was ich mir selbst beigebracht habe.';
 }
 
 /* ── macOS CLOCK ── */
