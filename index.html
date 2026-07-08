@@ -538,5 +538,15 @@
   }
 })();
 </script>
+<script>
+/* career-factory CV-Beacon: meldet Aufruf + Klicks an deine eigene Tracking-Domain */
+(function(){try{
+var T="https://audit.roschmann-systems.de/t/v";
+var ref=(new URLSearchParams(location.search).get("ref"))||"direct";
+function b(e,s){var i=new Image();i.src=T+"?ref="+encodeURIComponent(ref)+"&e="+e+(s?("&s="+encodeURIComponent(s)):"")+"&_="+Date.now();}
+b("view","");
+document.addEventListener("click",function(ev){var el=ev.target.closest&&ev.target.closest("a,button,[data-track]");if(!el)return;var lbl=el.getAttribute("data-track")||(el.textContent||"").trim().slice(0,60);if(lbl)b("click",lbl);},true);
+}catch(e){}})();
+</script>
 </body>
 </html>
