@@ -205,7 +205,9 @@
   .tl .item::before{content:"";position:absolute;left:-31px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--grn);box-shadow:0 0 0 4px var(--win),0 0 12px var(--grn)}
   .tl .item.amb::before{background:var(--amb);box-shadow:0 0 0 4px var(--win),0 0 12px var(--amb)}
   .tl .yr{font-family:var(--fm);font-size:12px;color:var(--grn)} .tl .item.amb .yr{color:var(--amb)}
-  .tl h4{font-family:var(--fd);font-weight:600;font-size:1.3rem;margin:3px 0 2px}
+  .tl .acth{font-family:var(--fd);font-weight:600;font-size:clamp(1.5rem,4.6vw,2.2rem);line-height:1.08;letter-spacing:-.01em;margin:7px 0 10px;color:#fff}
+  .tl .acth em{font-style:italic}
+  .tl h4{font-family:var(--fd);font-weight:600;font-size:1.05rem;margin:3px 0 2px;color:var(--ink2)}
   .tl .org{font-size:13px;color:var(--mut);margin-bottom:10px}
   .tl ul{list-style:none;display:flex;flex-direction:column;gap:7px}
   .tl li{position:relative;padding-left:18px;color:var(--ink2);font-size:14px}
@@ -218,6 +220,8 @@
   .sk h4{font-family:var(--fd);font-weight:600;font-size:1.1rem;margin-bottom:8px}
   .sk h4 .d{color:var(--grn)} .sk.amb h4 .d{color:var(--amb)}
   .sk p{color:var(--ink2);font-size:13.5px}
+  .sk .use{font-family:var(--fm);font-size:10.5px;color:var(--grn);margin-top:13px;letter-spacing:.04em;border-top:1px solid var(--line);padding-top:10px}
+  .sk.amb .use{color:var(--amb)}
 
   .info{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
   @media(max-width:720px){.info{grid-template-columns:1fr}}
@@ -664,6 +668,7 @@
         <div class="tl rv">
           <div class="item">
             <div class="yr">2024 – heute</div>
+            <div class="acth">Neun Systeme. <em class="g it">Eine Hand.</em></div>
             <h4>Automation-Builder, selbstständig</h4>
             <div class="org">Remote · Kunden und Projekte im DACH-Raum</div>
             <ul>
@@ -674,6 +679,7 @@
           </div>
           <div class="item amb">
             <div class="yr">2019 – 2023</div>
+            <div class="acth">8.000 Türen. <em class="a it">Täglich Nein. Trotzdem hin.</em></div>
             <h4>B2B-Direktvertrieb (Door-to-Door)</h4>
             <div class="org">EWE TEL und Ranger Marketing (Vertrieb für Deutsche Telekom) · Außendienst bundesweit</div>
             <ul>
@@ -683,6 +689,7 @@
           </div>
           <div class="item">
             <div class="yr">Ausbildung &amp; Weiterbildung</div>
+            <div class="acth">Lernen <em class="g it">durchs Bauen.</em></div>
             <h4>Berufsausbildung + laufende Weiterbildung</h4>
             <div class="org">Google Ads Skillshop (2026) · Web-Entwicklung (2024, 6 Mte) · autodidaktisch, laufend seit 2024</div>
             <ul><li>Ich lerne durchs Bauen, nicht durch Kurse. Mein Nachweis sind Systeme, die überprüfbar in Produktion laufen.</li></ul>
@@ -696,11 +703,11 @@
         <h2 class="display h-xl rv" style="margin-top:14px">Womit ich baue.</h2>
         <p class="body rv" style="margin-top:12px;max-width:62ch">Ein breiter, aktueller KI- und Automations-Stack. Keine Buzzword-Liste, sondern täglich im Einsatz und über eine eigene Steuerungs-Ebene orchestriert.</p>
         <div class="skgrid rv">
-          <div class="sk"><h4><span class="d">▸</span> KI-Orchestrierung, der Kern</h4><div class="stack"><span class="chip">Claude Code</span><span class="chip">Claude SDK · Opus/Sonnet/Haiku</span><span class="chip">MCP</span><span class="chip">Multi-Agenten-Systeme</span><span class="chip">Prompt-Design</span><span class="chip">spec-driven build &amp; test</span></div></div>
-          <div class="sk"><h4><span class="d">▸</span> Creative AI &amp; Media</h4><div class="stack"><span class="chip">Higgsfield · Image/Video</span><span class="chip">ElevenLabs · Voice</span><span class="chip">Google Vertex AI / Imagen</span><span class="chip">fal</span><span class="chip">GSAP · Motion</span><span class="chip">Figma</span><span class="chip">Canva</span></div></div>
-          <div class="sk"><h4><span class="d">▸</span> Automation &amp; Daten</h4><div class="stack"><span class="chip">n8n</span><span class="chip">Graphiti + FalkorDB</span><span class="chip">PostgreSQL</span><span class="chip">Firecrawl</span><span class="chip">Apify</span><span class="chip">Playwright</span></div></div>
-          <div class="sk"><h4><span class="d">▸</span> Web, Code &amp; Infra</h4><div class="stack"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Shopify Liquid</span><span class="chip">Stripe · Payments</span><span class="chip">Resend · Mail</span><span class="chip">PWA</span><span class="chip">Hetzner · Server/DevOps</span><span class="chip">GitHub</span></div></div>
-          <div class="sk amb" style="grid-column:1 / -1"><h4><span class="d">▸</span> Marketing &amp; Vertrieb, die DNA darunter</h4><div class="stack"><span class="chip">Google Ads · Search/PMax/AI-Powered</span><span class="chip">GEO &amp; SEO</span><span class="chip">B2B-Direktvertrieb</span><span class="chip">Kaltakquise → Abschluss</span><span class="chip">Pipeline &amp; KPI</span></div></div>
+          <div class="sk"><h4><span class="d">▸</span> KI-Orchestrierung, der Kern</h4><div class="stack"><span class="chip">Claude Code</span><span class="chip">Claude SDK · Opus/Sonnet/Haiku</span><span class="chip">MCP</span><span class="chip">Multi-Agenten-Systeme</span><span class="chip">Prompt-Design</span><span class="chip">spec-driven build &amp; test</span></div><p class="use">im Einsatz: Ultra Nexus OS · Career Factory · dieses CV</p></div>
+          <div class="sk"><h4><span class="d">▸</span> Creative AI &amp; Media</h4><div class="stack"><span class="chip">Higgsfield · Image/Video</span><span class="chip">ElevenLabs · Voice</span><span class="chip">Google Vertex AI / Imagen</span><span class="chip">fal</span><span class="chip">GSAP · Motion</span><span class="chip">Figma</span><span class="chip">Canva</span></div><p class="use">im Einsatz: KI-Video-Pipeline · Visuals für 2 D2C-Stores</p></div>
+          <div class="sk"><h4><span class="d">▸</span> Automation &amp; Daten</h4><div class="stack"><span class="chip">n8n</span><span class="chip">Graphiti + FalkorDB</span><span class="chip">PostgreSQL</span><span class="chip">Firecrawl</span><span class="chip">Apify</span><span class="chip">Playwright</span></div><p class="use">im Einsatz: bi-temporaler Wissens-Graph · Recherche-Scraper</p></div>
+          <div class="sk"><h4><span class="d">▸</span> Web, Code &amp; Infra</h4><div class="stack"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Shopify Liquid</span><span class="chip">Stripe · Payments</span><span class="chip">Resend · Mail</span><span class="chip">PWA</span><span class="chip">Hetzner · Server/DevOps</span><span class="chip">GitHub</span></div><p class="use">im Einsatz: 2 Shopify-Stores live · Game-Server-Infra · diese PWA</p></div>
+          <div class="sk amb" style="grid-column:1 / -1"><h4><span class="d">▸</span> Marketing &amp; Vertrieb, die DNA darunter</h4><div class="stack"><span class="chip">Google Ads · Search/PMax/AI-Powered</span><span class="chip">GEO &amp; SEO</span><span class="chip">B2B-Direktvertrieb</span><span class="chip">Kaltakquise → Abschluss</span><span class="chip">Pipeline &amp; KPI</span></div><p class="use">Fundament: 4 Jahre Straße · Google Ads zertifiziert (2026)</p></div>
         </div>
       </div></section>
 
@@ -839,6 +846,7 @@
     {q:"Warum von Vertrieb zu KI?",feat:1,k:["vertrieb","sales","wechsel","quereinst","warum ki","von sales","dna"],a:"Im Vertrieb habe ich vier Jahre lang gesehen, wo Firmen Zeit und Umsatz verlieren. Irgendwann habe ich angefangen, genau das mit KI zu automatisieren, statt es nur zu verkaufen. Die Systeme liefen, also mache ich es jetzt hauptberuflich. Der Vertrieb ist kein Bruch, sondern der Grund, warum ich Automation baue, die im echten Geschäft genutzt wird."},
     {q:"Was könntest du bei uns bauen?",feat:1,k:["bei uns","30 tage","erste","was könntest","für uns","anfangen"],a:"Gib mir einen echten, nervigen Prozess bei euch, und ich baue in den ersten Wochen einen lauffähigen Prototyp, der ihn automatisiert, getestet und mit Freigabe-Gate. Ich fange lieber mit einem konkreten Schmerz an als mit einer Roadmap."},
     {q:"Warum Zürich?",feat:1,k:["warum zürich","warum zurich","umzug","ziel"],a:"Zürich ist mein klares Ziel. Dort passiert im KI- und Automations-Umfeld gerade das Spannendste im deutschsprachigen Raum. Für die richtige Rolle ziehe ich um, das Timing halte ich flexibel."},
+    {q:"Wie stellst du Qualität sicher?",k:["qualität","gates","sicher","fehler","test","prüf","kontrolle","verantwort"],a:"Gate-everything: Kein Agent und kein System von mir sendet, publiziert oder deployt ohne Prüfung. Meine automatische Prüf-Schicht hat ein echtes Leck eines Zahlungs-Tokens und fehlerhafte Deploys abgefangen, bevor sie live gingen. KI liefert mir Tempo, aber die Verantwortung bleibt bei mir — deshalb teste ich gegen echte Endpunkte, nicht gegen Attrappen."},
     {q:"Wie aufwändig ist es, dich einzustellen?",k:["kosten","bewilligung","permit","visum","einstellen","aufwand","aufwändig"],a:"Als EU-Bürger mit Anspruch auf Bewilligung B: kein Kontingent, kein Anwalt, keine Sonderhürde. So einfach wie jemanden einzustellen, der schon in Zürich wohnt."},
     {q:"Kein Studium?",k:["studium","ausbildung","degree","abschluss","informatik"],a:"Mein Beweis ist, was ich baue: Systeme, die ich allein in Produktion gebracht habe, jedes anklickbar. In der Schweiz zählt Berufsausbildung plus Weiterbildung als gleichwertiger Weg. Ich lerne durchs Bauen."},
     {q:"Wie gut ist dein Englisch?",k:["englisch","english"],a:"Deutsch ist meine Muttersprache, mein Englisch ist B1 und im Aufbau Richtung B2, im Gespräch belastbar. Ich arbeite täglich in englischsprachigem Tooling."}
