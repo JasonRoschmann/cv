@@ -17,7 +17,6 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Jason CV">
-<link rel="preload" href="portrait_cut.webp" as="image" media="(max-width:820px)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -340,12 +339,11 @@
     body.booted .l-clockwrap{animation:clockrise 1.1s var(--spg2) backwards .15s}
     @keyframes clockrise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
     /* Das Subjekt tritt aus dem Schwarz */
-    .l-cut{position:absolute;left:50%;bottom:13vh;z-index:2;width:min(94vw,56vh * .746);max-width:none;transform:translateX(-50%);
-      filter:brightness(1.07) contrast(1.02) saturate(1.06) sepia(.1) drop-shadow(0 -16px 60px rgba(229,164,78,.16)) drop-shadow(0 -24px 90px rgba(63,220,132,.18));
-      -webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 92%);mask-image:linear-gradient(180deg,#000 62%,transparent 92%);
-      pointer-events:none}
-    body.booted .l-cut{animation:subjectrise 1.3s cubic-bezier(.16,1,.3,1) backwards .1s}
-    @keyframes subjectrise{from{opacity:0;transform:translateX(-50%) translateY(4.5%) scale(1.035)}to{opacity:1;transform:translateX(-50%)}}
+    .l-net{position:absolute;inset:0;z-index:2;width:100%;height:100%;pointer-events:none;
+      -webkit-mask-image:linear-gradient(180deg,transparent 3%,#000 18%,#000 68%,transparent 88%);
+      mask-image:linear-gradient(180deg,transparent 3%,#000 18%,#000 68%,transparent 88%)}
+    body.booted .l-net{animation:netin 2s ease backwards .3s}
+    @keyframes netin{from{opacity:0}to{opacity:1}}
     .l-low{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;flex-direction:column;align-items:center;gap:10px;
       padding:0 20px calc(env(safe-area-inset-bottom) + 22px);
       background:linear-gradient(180deg,transparent,rgba(3,3,4,.55) 26%,rgba(3,3,4,.8) 48%)}
@@ -521,7 +519,7 @@
         <div class="l-clock" id="lclock">09:41</div>
         <div class="l-date" id="ldate">Mittwoch, 23. Juli</div>
       </div>
-      <img class="l-cut" src="portrait_cut.webp" alt="Jason Roschmann" width="600" height="804">
+      <canvas class="l-net" id="lnet" aria-hidden="true"></canvas>
       <div class="l-low">
         <div class="l-id"><b>Jason Roschmann</b> · KI-Automation-Builder</div>
         <div class="l-notifs">
@@ -952,19 +950,68 @@
   lock.addEventListener('touchstart',function(e){ startY=e.touches[0].clientY; },{passive:true});
   lock.addEventListener('touchmove',function(e){ if(startY!==null && startY-e.touches[0].clientY>36){ startY=null; unlock(); } },{passive:true});
 
-  // ---- Gyro-Parallax auf dem Lockscreen (Tiefe zwischen Uhr und Subjekt) ----
+  // ---- Gyro-Parallax auf dem Lockscreen (Tiefe zwischen Uhr und Konstellation) ----
   if(!reduce){
-    var cut=document.querySelector('.l-cut'), cw=document.querySelector('.l-clockwrap'), aura=document.querySelector('.l-aura');
+    var net=document.querySelector('.l-net'), cw=document.querySelector('.l-clockwrap'), aura=document.querySelector('.l-aura');
     var pxT=0, pxC=0, tgT=0;
     window.addEventListener('deviceorientation',function(e){ if(e.gamma==null) return; tgT=Math.max(-1,Math.min(1,e.gamma/28)); },{passive:true});
     lock.addEventListener('pointermove',function(e){ tgT=(e.clientX/window.innerWidth-.5)*2; },{passive:true});
     (function plx(){ pxT+=(tgT-pxT)*.07; if(Math.abs(pxT-pxC)>.002){ pxC=pxT;
-        if(cut) cut.style.translate=(pxC*10)+'px 0';
-        if(cw) cw.style.translate=(pxC*-7)+'px 0';
-        if(aura) aura.style.translate=(pxC*-12)+'px 0'; }
+        if(net) net.style.translate=(pxC*12)+'px 0';
+        if(cw) cw.style.translate=(pxC*-6)+'px 0';
+        if(aura) aura.style.translate=(pxC*-10)+'px 0'; }
       if(!body.classList.contains('unlocked')) requestAnimationFrame(plx); else {
-        if(cut)cut.style.translate=''; if(cw)cw.style.translate=''; if(aura)aura.style.translate=''; }
+        if(net)net.style.translate=''; if(cw)cw.style.translate=''; if(aura)aura.style.translate=''; }
     })();
+  }
+
+  // ---- System-Konstellation: lebender Graph als Lockscreen-Kunst ----
+  var cnv=document.getElementById('lnet');
+  if(cnv){
+    var nctx=cnv.getContext('2d'), DPR=Math.min(2,window.devicePixelRatio||1), NW=0, NH=0;
+    function csize(){ NW=cnv.clientWidth||window.innerWidth; NH=cnv.clientHeight||window.innerHeight;
+      cnv.width=NW*DPR; cnv.height=NH*DPR; nctx.setTransform(DPR,0,0,DPR,0,0); }
+    csize(); window.addEventListener('resize',csize);
+    var NN=Math.max(26,Math.round(NW*NH/9500)), LINK=Math.min(150,NW*.38), TAU=6.2832;
+    var nodes=[], pulses=[];
+    for(var ni=0;ni<NN;ni++){ nodes.push({x:Math.random()*NW,y:Math.random()*NH,
+      vx:(Math.random()-.5)*.16,vy:(Math.random()-.5)*.16,
+      r:Math.random()*1.5+.9, hub:Math.random()<.12, warm:Math.random()<.08}); }
+    function drawNet(){
+      nctx.clearRect(0,0,NW,NH);
+      for(var i=0;i<NN;i++){ var a=nodes[i];
+        for(var j=i+1;j<NN;j++){ var b=nodes[j], dx=a.x-b.x, dy=a.y-b.y, d2=dx*dx+dy*dy;
+          if(d2<LINK*LINK){ var t=1-Math.sqrt(d2)/LINK;
+            nctx.strokeStyle='rgba(63,220,132,'+(t*.17).toFixed(3)+')'; nctx.lineWidth=1;
+            nctx.beginPath(); nctx.moveTo(a.x,a.y); nctx.lineTo(b.x,b.y); nctx.stroke(); } } }
+      for(i=0;i<NN;i++){ var n=nodes[i];
+        nctx.fillStyle = n.warm ? 'rgba(229,164,78,.85)' : n.hub ? 'rgba(140,255,190,.95)' : 'rgba(63,220,132,.55)';
+        nctx.beginPath(); nctx.arc(n.x,n.y,n.hub?n.r+.8:n.r,0,TAU); nctx.fill();
+        if(n.hub){ nctx.fillStyle='rgba(63,220,132,.09)'; nctx.beginPath(); nctx.arc(n.x,n.y,n.r+8,0,TAU); nctx.fill(); } }
+      for(i=pulses.length-1;i>=0;i--){ var p=pulses[i]; p.t+=.013;
+        if(p.t>=1){ pulses.splice(i,1); continue; }
+        var px=p.a.x+(p.b.x-p.a.x)*p.t, py=p.a.y+(p.b.y-p.a.y)*p.t;
+        nctx.fillStyle='rgba(210,255,230,'+(Math.sin(p.t*3.1416)*.9).toFixed(3)+')';
+        nctx.beginPath(); nctx.arc(px,py,1.9,0,TAU); nctx.fill(); }
+    }
+    function stepNet(){
+      for(var i=0;i<NN;i++){ var n=nodes[i]; n.x+=n.vx; n.y+=n.vy;
+        if(n.x<-9)n.x=NW+9; else if(n.x>NW+9)n.x=-9;
+        if(n.y<-9)n.y=NH+9; else if(n.y>NH+9)n.y=-9; }
+      drawNet();
+      if(!body.classList.contains('unlocked')) requestAnimationFrame(stepNet);
+    }
+    if(reduce){ drawNet(); }
+    else{
+      stepNet();
+      setInterval(function(){
+        if(body.classList.contains('unlocked')||pulses.length>3) return;
+        var a=nodes[(Math.random()*NN)|0], best=null, bd=LINK*LINK;
+        for(var j=0;j<NN;j++){ var b=nodes[j]; if(b===a) continue;
+          var dx=a.x-b.x, dy=a.y-b.y, d=dx*dx+dy*dy; if(d<bd){ bd=d; best=b; } }
+        if(best) pulses.push({a:a,b:best,t:0});
+      },900);
+    }
   }
 
   // ---- apps ----
