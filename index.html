@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <title>Jason Roschmann – KI-Automation-Builder · Web & E-Commerce</title>
-<meta name="description" content="Jason Roschmann – KI-Automation-Builder. 9 KI-/Automations-Systeme solo gebaut und in Produktion, dazu echte Shopify-Stores mit eigenen Themes. Ziel: Zürich, Umzug flexibel.">
+<meta name="description" content="Jason Roschmann – KI-Automation-Builder. KI-Systeme und E-Commerce solo gebaut und in Produktion — Live-Beispiel: duftkumpels.shop. Ziel: Zürich, Umzug flexibel.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jason Roschmann – KI-Automation-Builder · Web & E-Commerce">
-<meta property="og:description" content="Interaktives CV als Operator-Konsole: 9 KI-/Automations-Systeme solo gebaut & deployed, dazu echte Shopify-Stores. Ziel: Zürich, Umzug flexibel.">
+<meta property="og:description" content="Interaktives CV als eigenes Betriebssystem: KI-Automation und E-Commerce, solo gebaut und live — Beispiel: duftkumpels.shop. Ziel: Zürich, Umzug flexibel.">
 <meta property="og:image" content="og.png">
 <meta name="theme-color" content="#070809">
 <link rel="manifest" href="manifest.json">
@@ -390,7 +390,7 @@
     .h-net{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none}
     body.unlocked .home>*:not(.h-net){animation:popin .7s var(--spg) backwards}
     body.unlocked .home>.widget{animation-delay:.1s}
-    body.unlocked .home>.w2{animation-delay:.18s}
+    body.unlocked .home>.wdk{animation-delay:.18s}
     body.unlocked .home>.agrid{animation-delay:.26s}
     body.unlocked .home>.dock{animation-delay:.42s}
     body.unlocked .agrid .ai:nth-child(1){animation:popin .65s var(--spg) backwards .3s}
@@ -410,13 +410,17 @@
     .widget .wt em{display:flex;align-items:center;gap:6px;font-style:normal;font-family:var(--fm);font-size:10.5px;color:var(--grn);margin-top:7px}
     .widget .wt em .d{width:6px;height:6px;border-radius:50%;background:var(--grn);animation:blink 1.8s infinite}
     .widget .go{margin-left:auto;color:rgba(255,255,255,.5);font-size:22px;flex-shrink:0}
-    .w2{border-radius:22px;padding:13px 16px 10px}
-    .w2 .w2h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
-    .w2 h5{font-family:var(--fm);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#9aa0a8}
-    .w2 .w2v{font-family:var(--fm);font-size:10.5px;color:var(--grn)}
-    .w2 svg{width:100%;height:34px;margin-top:6px;opacity:.95}
-    .w2 polyline{fill:none;stroke:var(--grn);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round;filter:drop-shadow(0 0 5px var(--grnglow))}
-    .w2 polygon{fill:rgba(63,220,132,.13)}
+    .wdk{display:flex;align-items:center;gap:13px;border-radius:24px;padding:14px 16px;text-align:left;color:var(--ink);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 0 0 1px rgba(63,220,132,.2),0 22px 54px -22px rgba(63,220,132,.35),0 18px 44px -18px rgba(0,0,0,.85);
+      transition:transform .25s var(--spg)}
+    .wdk:active{transform:scale(.96)}
+    .wdkt{min-width:0}
+    .wdkb{display:flex;align-items:center;gap:7px;font-family:var(--fm);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grn)}
+    .wdkb .d{width:6px;height:6px;border-radius:50%;background:var(--grn);animation:blink 1.8s infinite;flex-shrink:0}
+    .wdk b{display:block;font-family:var(--fd);font-weight:600;font-size:18.5px;color:#fff;margin-top:5px;line-height:1.1}
+    .wdks{display:block;font-size:11.5px;color:#c3c7cd;margin-top:4px}
+    .wdka{margin-left:auto;flex-shrink:0;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+      background:rgba(63,220,132,.14);border:1px solid rgba(63,220,132,.4);color:var(--grn);font-size:17px}
 
     /* Terminal-Live-Widget — die Konsole aufs Handy geholt */
     .term-w{display:block;width:100%;text-align:left;border:0;cursor:pointer;color:var(--ink);font-family:var(--fm);
@@ -528,7 +532,7 @@
       <div class="l-low">
         <div class="l-id"><b>Jason Roschmann</b> · KI-Automation-Builder</div>
         <div class="l-notifs">
-          <div class="l-notif lq" data-goto="projekte"><span class="ic">⚙️</span><div><b>ultra-nexus-os</b><span>9 Systeme online · Deploy-Gate hält ✋</span></div></div>
+          <div class="l-notif lq" data-href="https://duftkumpels.shop"><span class="ic">🛍️</span><div><b>duftkumpels.shop</b><span>Mein offenes E-Commerce-Beispiel · live ansehen →</span></div></div>
           <div class="l-notif lq" data-goto="kontakt"><span class="ic">💬</span><div><b>Jason ist verfügbar</b><span>Ziel Zürich · 15 Minuten reichen →</span></div></div>
         </div>
         <div class="l-unlock"><span class="chev"></span>Nach oben wischen</div>
@@ -543,10 +547,14 @@
       <div class="wt"><b>Jason Roschmann</b><span>KI-Automation · Web &amp; Commerce</span><em><i class="d"></i>Verfügbar · Ziel: Zürich</em></div>
       <span class="go">›</span>
     </button>
-    <div class="w2 lq" aria-hidden="true">
-      <div class="w2h"><h5>Systeme · live</h5><span class="w2v">9 online · gated</span></div>
-      <svg id="pspark" viewBox="0 0 300 30" preserveAspectRatio="none"><polygon points=""></polygon><polyline points=""></polyline></svg>
-    </div>
+    <a class="wdk lq" href="https://duftkumpels.shop" target="_blank" rel="noopener">
+      <div class="wdkt">
+        <span class="wdkb"><i class="d"></i>Live-Beispiel · E-Commerce</span>
+        <b>duftkumpels.shop</b>
+        <span class="wdks">Eigenes Shopify-Theme · DE/EN · Kundenshops bleiben vertraulich</span>
+      </div>
+      <span class="wdka">↗</span>
+    </a>
     <div class="agrid">
       <button class="ai g" data-app="projekte"><span class="tile"><svg viewBox="0 0 24 24"><path d="M4 5h16v6H4z"/><path d="M4 15h16v4H4z"/></svg></span><span class="lbl">Projekte</span></button>
       <button class="ai am" data-app="werdegang"><span class="tile"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M7 8h10M7 16h10"/></svg></span><span class="lbl">Werdegang</span></button>
@@ -579,7 +587,7 @@
     <div class="lights"><i class="r"></i><i class="y"></i><i class="gr"></i></div>
     <span class="ttl">jason@roschmann-digital.de — ultra-nexus-os · ~/karriere</span>
     <div class="right">
-      <span class="pill hideS"><span class="d"></span>9 systems online</span>
+      <a class="pill hideS" href="https://duftkumpels.shop" target="_blank" rel="noopener"><span class="d"></span>live-beispiel: duftkumpels.shop ↗</a>
       <span class="pill hideS mono" id="tick">agents: 24/7 · gated</span>
       <span class="pill mono" id="clock">--:--:--</span>
     </div>
@@ -627,7 +635,7 @@
           <div class="hero-copy">
             <div class="term rv">$ whoami<span class="caret"></span></div>
             <h1 class="display h-hero rv">Ich baue KI-Automation,<br>die in Produktion läuft.<br><span class="g it">Und Shops, die verkaufen.</span></h1>
-            <p class="lead rv" style="margin-top:22px">Neun Systeme, allein auf die Beine gestellt und in Produktion gebracht, vom SaaS-Backend bis zur eigenen Server-Infrastruktur. Von der Idee über die Architektur bis zum Deployment orchestriere ich KI wie ein kleines Team und prüfe jedes Ergebnis selbst.</p>
+            <p class="lead rv" style="margin-top:22px">Vom SaaS-Backend über E-Commerce bis zur eigenen Server-Infrastruktur: alles allein auf die Beine gestellt und in Produktion gebracht. Von der Idee über die Architektur bis zum Deployment orchestriere ich KI wie ein kleines Team und prüfe jedes Ergebnis selbst.</p>
             <div class="proofrow rv">
               <div class="pf"><b>In Produktion</b><span>nicht im Prototyp-Stadium stecken geblieben</span></div>
               <div class="pf"><b>Getestet gegen die Realität</b><span>echte Endpunkte, keine Attrappen</span></div>
@@ -654,9 +662,9 @@
         </div>
         <p class="eyebrow rv" style="margin-top:30px;color:var(--mut)">Drei Angebote, jedes mit gebautem Beweis</p>
         <div class="sysgrid rv" style="margin-top:14px">
-          <div class="card"><div class="ct"><h4>Web Studio · Hamburg</h4><span class="tag">Web &amp; Shopify</span></div><p>Websites und Shopify-Stores für den DACH-Raum. Eigene Liquid-Themes statt Vorlagen, zweisprachig, auf Conversion gebaut.</p><div class="stack"><span class="chip">Shopify Liquid</span><span class="chip">Custom Theme</span><span class="chip">Metafields</span><span class="chip">DE/EN</span></div><p class="proof">D2C-Store <b>live</b> seit Ende 2025, ein Kundenprojekt in Entwicklung.</p></div>
+          <div class="card" style="border-color:rgba(63,220,132,.3)"><div class="ct"><h4>E-Commerce &amp; Web</h4><span class="tag live">Referenz live</span></div><p>Shops und Websites für den DACH-Raum. Eigene Liquid-Themes statt Vorlagen, zweisprachig, auf Conversion gebaut — bis zum Checkout.</p><div class="stack"><span class="chip">Shopify Liquid</span><span class="chip">Custom Theme</span><span class="chip">Stripe Checkout</span><span class="chip">DE/EN</span></div><p class="proof">Offenes Beispiel: <a href="https://duftkumpels.shop" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">duftkumpels.shop ↗</a> — komplett selbst gebaut, <b>live</b>. Weitere Shops entstehen für Kunden und bleiben vertraulich.</p></div>
           <div class="card"><div class="ct"><h4>GEO &amp; SEO</h4><span class="tag">Sichtbarkeit</span></div><p>Gefunden werden in KI-Antworten (ChatGPT, Perplexity) und bei Google. Die neue Sichtbarkeit, für die es noch kein etabliertes SEO gibt.</p><div class="stack"><span class="chip">FastAPI</span><span class="chip">Claude SDK</span><span class="chip">MCP</span></div><p class="proof">Ein GEO-Scanner-Modul entstand dabei <b>in wenigen Tagen</b> von der ersten Zeile bis zum getesteten System. Tempo-Beleg, kein Hero-Projekt.</p></div>
-          <div class="card" style="grid-column:1 / -1"><div class="ct"><h4>KI-Automation &amp; Systeme <span class="mut" style="font-size:.7em;font-weight:400">– der Kern</span></h4><span class="tag live">Ende zu Ende</span></div><p>Maßgeschneiderte Automation und Software, Ende zu Ende gebaut und in Produktion gebracht. Architektur, Tests und Qualität in meiner Hand, KI-orchestriert umgesetzt. So liefere ich allein das Tempo eines kleinen Teams.</p><div class="stack"><span class="chip">Career Factory · Multi-Agent</span><span class="chip">Game-Server-Infra (Hetzner)</span><span class="chip">KI-Video-Pipeline</span><span class="chip">PIM-Engine</span></div><p class="proof"><b>Die Career Factory läuft auf Ultra Nexus OS:</b> 40–65% automatisierte Auslieferung, jede Faktenzeile gegen eine Wahrheits-Quelle geprüft.</p></div>
+          <div class="card" style="grid-column:1 / -1"><div class="ct"><h4>KI-Automation &amp; Systeme <span class="mut" style="font-size:.7em;font-weight:400">– der Kern</span></h4><span class="tag live">Ende zu Ende</span></div><p>Maßgeschneiderte Automation und Software, Ende zu Ende gebaut und in Produktion gebracht. Architektur, Tests und Qualität in meiner Hand, KI-orchestriert umgesetzt. So liefere ich allein das Tempo eines kleinen Teams.</p><div class="stack"><span class="chip">Career Factory · Multi-Agent</span><span class="chip">Autonome Website-Fabrik · 24/7</span><span class="chip">Game-Server-Infra (Hetzner)</span><span class="chip">KI-Video-Pipeline</span><span class="chip">PIM-Engine</span><span class="chip">Self-Serve-Checkout · Stripe</span></div><p class="proof"><b>Alles läuft auf Ultra Nexus OS und eigener Server-Infrastruktur:</b> Multi-Agenten-Systeme mit 40–65% automatisierter Auslieferung — und jede Faktenzeile wird gegen eine Wahrheits-Quelle geprüft, bevor sie rausgeht.</p></div>
           <div class="card" style="grid-column:1 / -1;border-color:rgba(63,220,132,.35)"><div class="ct"><h4>◆ Live-Beweis: dieses CV</h4><span class="tag live">Du bist gerade drin</span></div><p>Diese Seite ist selbst eines meiner Systeme: am Handy ein eigenes Phone-OS — als App installierbar, mit echter Glas-Refraktion (SVG-Displacement-Filter), einem lebenden Canvas-Graphen, Federphysik und App-Gesten. Eine einzige HTML-Datei, kein Framework, kein Template.</p><div class="stack"><span class="chip">PWA · installierbar</span><span class="chip">Liquid-Glass-Engine</span><span class="chip">Canvas-Graph</span><span class="chip">CSS-Spring-Physik</span></div><p class="proof">Öffne es am Handy: Boot, Lockscreen, App-Zoom — alles handgebaut. <b>Genau diese Sorgfalt bekommt auch dein Projekt.</b></p></div>
         </div>
       </div></section>
@@ -668,7 +676,7 @@
         <div class="tl rv">
           <div class="item">
             <div class="yr">2024 – heute</div>
-            <div class="acth">Neun Systeme. <em class="g it">Eine Hand.</em></div>
+            <div class="acth">Alles in Produktion. <em class="g it">Eine Hand.</em></div>
             <h4>Automation-Builder, selbstständig</h4>
             <div class="org">Remote · Kunden und Projekte im DACH-Raum</div>
             <ul>
@@ -846,6 +854,7 @@
     {q:"Warum von Vertrieb zu KI?",feat:1,k:["vertrieb","sales","wechsel","quereinst","warum ki","von sales","dna"],a:"Im Vertrieb habe ich vier Jahre lang gesehen, wo Firmen Zeit und Umsatz verlieren. Irgendwann habe ich angefangen, genau das mit KI zu automatisieren, statt es nur zu verkaufen. Die Systeme liefen, also mache ich es jetzt hauptberuflich. Der Vertrieb ist kein Bruch, sondern der Grund, warum ich Automation baue, die im echten Geschäft genutzt wird."},
     {q:"Was könntest du bei uns bauen?",feat:1,k:["bei uns","30 tage","erste","was könntest","für uns","anfangen"],a:"Gib mir einen echten, nervigen Prozess bei euch, und ich baue in den ersten Wochen einen lauffähigen Prototyp, der ihn automatisiert, getestet und mit Freigabe-Gate. Ich fange lieber mit einem konkreten Schmerz an als mit einer Roadmap."},
     {q:"Warum Zürich?",feat:1,k:["warum zürich","warum zurich","umzug","ziel"],a:"Zürich ist mein klares Ziel. Dort passiert im KI- und Automations-Umfeld gerade das Spannendste im deutschsprachigen Raum. Für die richtige Rolle ziehe ich um, das Timing halte ich flexibel."},
+    {q:"Baust du auch Shops?",feat:1,k:["shop","store","commerce","duftkumpels","liquid","theme","verkauf"],a:"Ja, E-Commerce ist eine meiner Kernstärken. Mein offenes Beispiel: duftkumpels.shop — komplett selbst gebaut, eigenes Shopify-Liquid-Theme, zweisprachig, live. Kundenshops zeige ich aus Vertraulichkeit nicht öffentlich, im Gespräch gern."},
     {q:"Wie stellst du Qualität sicher?",k:["qualität","gates","sicher","fehler","test","prüf","kontrolle","verantwort"],a:"Gate-everything: Kein Agent und kein System von mir sendet, publiziert oder deployt ohne Prüfung. Meine automatische Prüf-Schicht hat ein echtes Leck eines Zahlungs-Tokens und fehlerhafte Deploys abgefangen, bevor sie live gingen. KI liefert mir Tempo, aber die Verantwortung bleibt bei mir — deshalb teste ich gegen echte Endpunkte, nicht gegen Attrappen."},
     {q:"Wie aufwändig ist es, dich einzustellen?",k:["kosten","bewilligung","permit","visum","einstellen","aufwand","aufwändig"],a:"Als EU-Bürger mit Anspruch auf Bewilligung B: kein Kontingent, kein Anwalt, keine Sonderhürde. So einfach wie jemanden einzustellen, der schon in Zürich wohnt."},
     {q:"Kein Studium?",k:["studium","ausbildung","degree","abschluss","informatik"],a:"Mein Beweis ist, was ich baue: Systeme, die ich allein in Produktion gebracht habe, jedes anklickbar. In der Schweiz zählt Berufsausbildung plus Weiterbildung als gleichwertiger Weg. Ich lerne durchs Bauen."},
@@ -1056,10 +1065,13 @@
   document.getElementById('backbtn').addEventListener('click',closeApp);
   document.getElementById('hindic').addEventListener('click',closeApp);
 
-  // Lockscreen-Notifications öffnen ihre App (Unlock läuft via Bubble mit)
+  // Lockscreen-Notifications öffnen ihre App bzw. ihren Link (Unlock läuft via Bubble mit)
   [].slice.call(document.querySelectorAll('.l-notif[data-goto]')).forEach(function(n){
     n.addEventListener('click',function(){ var v=n.getAttribute('data-goto');
       setTimeout(function(){ openApp(v,null); },620); });
+  });
+  [].slice.call(document.querySelectorAll('.l-notif[data-href]')).forEach(function(n){
+    n.addEventListener('click',function(){ window.open(n.getAttribute('data-href'),'_blank','noopener'); });
   });
 
   // ---- App-Gesten: Edge-Swipe zurück + Swipe-up zum Homescreen ----
