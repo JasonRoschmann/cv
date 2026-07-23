@@ -340,9 +340,9 @@
     body.booted .l-clockwrap{animation:clockrise 1.1s var(--spg2) backwards .15s}
     @keyframes clockrise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
     /* Das Subjekt tritt aus dem Schwarz */
-    .l-cut{position:absolute;left:50%;bottom:-1%;z-index:2;width:min(110vw,65vh * .746);max-width:none;transform:translateX(-50%);
-      filter:brightness(1.05) contrast(1.02) saturate(1.04) sepia(.05) drop-shadow(0 -20px 80px rgba(63,220,132,.20));
-      -webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 97%);mask-image:linear-gradient(180deg,#000 72%,transparent 97%);
+    .l-cut{position:absolute;left:50%;bottom:13vh;z-index:2;width:min(94vw,56vh * .746);max-width:none;transform:translateX(-50%);
+      filter:brightness(1.07) contrast(1.02) saturate(1.06) sepia(.1) drop-shadow(0 -16px 60px rgba(229,164,78,.16)) drop-shadow(0 -24px 90px rgba(63,220,132,.18));
+      -webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 92%);mask-image:linear-gradient(180deg,#000 62%,transparent 92%);
       pointer-events:none}
     body.booted .l-cut{animation:subjectrise 1.3s cubic-bezier(.16,1,.3,1) backwards .1s}
     @keyframes subjectrise{from{opacity:0;transform:translateX(-50%) translateY(4.5%) scale(1.035)}to{opacity:1;transform:translateX(-50%)}}
