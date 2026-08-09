@@ -1,0 +1,47 @@
+name: Proof of Work
+
+# Aktualisiert proof.json (GitHub-Contribution-Heatmap + kuratierter Ship-Feed)
+# taeglich automatisch. Der Bot-Commit zaehlt NICHT auf Jasons Contribution-Graph
+# (Attribution: github-actions[bot]) -> keine gefaketen Zahlen.
+
+on:
+  schedule:
+    - cron: '17 5 * * *'        # taeglich 05:17 UTC
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/build_proof.py'
+      - '.github/workflows/proof.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: proof
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build proof.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: JasonRoschmann
+        run: python scripts/build_proof.py
+      - name: Commit wenn geaendert
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add proof.json
+          if git diff --cached --quiet; then
+            echo "proof.json unveraendert - kein Commit"
+          else
+            git commit -m "chore: refresh proof.json [skip ci]"
+            git push
+          fi
