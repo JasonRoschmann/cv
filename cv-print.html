@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Jason Roschmann — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --desk:#080a0d; --panel:#0e1116; --elev:#141922;
+    --ink:#eceae3; --ink2:#c4c6cc; --mut:#8a909a; --dim:#5b616b;
+    --grn:#3fdc84; --grn2:#2fae66; --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.16);
+    --fd:'Fraunces',Georgia,serif; --fb:'Inter',system-ui,sans-serif; --fm:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  @page{ size:A4; margin:0 }
+  html,body{ background:var(--desk); color:var(--ink); font-family:var(--fb); font-size:9.6px; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; -webkit-font-smoothing:antialiased }
+  .page{ width:210mm; min-height:297mm; background:var(--desk); padding:15mm 15mm 13mm; position:relative; overflow:hidden }
+  .page + .page{ page-break-before:always }
+  a{ color:inherit; text-decoration:none }
+  .mono{ font-family:var(--fm) }
+  .g{ color:var(--grn) }
+  .it{ font-style:italic }
+
+  /* Kopf */
+  .top{ display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:12px; border-bottom:1px solid var(--line2); position:relative }
+  .top::after{ content:""; position:absolute; left:0; bottom:-1px; width:96px; height:2px; background:var(--grn); box-shadow:0 0 10px -1px rgba(63,220,132,.5) }
+  h1{ font-family:var(--fd); font-weight:600; font-size:30px; line-height:1; letter-spacing:-.02em }
+  .role{ font-family:var(--fm); font-size:10px; color:var(--grn); letter-spacing:.06em; margin-top:8px }
+  .tagline{ color:var(--ink2); font-size:10px; margin-top:7px; max-width:105mm }
+  .contact{ text-align:right; font-family:var(--fm); font-size:9px; color:var(--ink2); line-height:1.85; white-space:nowrap }
+  .contact .lb{ color:var(--dim) }
+  .contact a.g{ color:var(--grn) }
+
+  /* Sektionen */
+  section{ margin-top:15px }
+  .h{ font-family:var(--fm); font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:var(--grn); display:flex; align-items:center; gap:9px; margin-bottom:11px }
+  .h::before{ content:""; width:16px; height:1px; background:var(--grn2) }
+
+  .profil{ color:var(--ink2); font-size:10.5px; line-height:1.6; max-width:170mm }
+  .profil b{ color:var(--ink); font-weight:600 }
+
+  /* Systeme */
+  .sys{ display:grid; gap:9px }
+  .crown{ border:1px solid var(--line); border-left:2px solid var(--grn); border-radius:8px; background:linear-gradient(160deg,var(--elev),var(--panel)); padding:11px 13px }
+  .sysgrid{ display:grid; grid-template-columns:1fr 1fr; gap:9px }
+  .card{ border:1px solid var(--line); border-radius:8px; background:var(--panel); padding:10px 12px; position:relative }
+  .card::before{ content:""; position:absolute; inset:0 0 auto 0; height:1px; background:linear-gradient(90deg,transparent,rgba(63,220,132,.35),transparent) }
+  .ct{ display:flex; justify-content:space-between; align-items:baseline; gap:10px }
+  .ct h3{ font-family:var(--fd); font-weight:600; font-size:14px; letter-spacing:-.01em }
+  .crown .ct h3{ font-size:16px }
+  .tag{ font-family:var(--fm); font-size:7.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--grn); border:1px solid rgba(63,220,132,.3); border-radius:20px; padding:2px 7px; white-space:nowrap }
+  .card p, .crown p{ color:var(--ink2); font-size:9.4px; margin-top:5px; line-height:1.5 }
+  .proof{ margin-top:6px; padding-left:9px; border-left:2px solid var(--grn2); color:var(--ink2); font-size:9px }
+  .proof b{ color:var(--ink) }
+  .stackline{ font-family:var(--fm); font-size:8px; color:var(--mut); margin-top:6px; letter-spacing:.01em }
+
+  /* Erfahrung / Ausbildung */
+  .xp{ display:grid; grid-template-columns:28mm 1fr; gap:8px 14px; align-items:start }
+  .xp .yr{ font-family:var(--fm); font-size:8.5px; color:var(--grn); padding-top:2px }
+  .xp .yr.amb{ color:#e5a44e }
+  .xp h4{ font-family:var(--fd); font-weight:600; font-size:13px }
+  .xp .org{ color:var(--mut); font-size:8.6px; font-family:var(--fm); margin:2px 0 5px }
+  .xp ul{ list-style:none; display:grid; gap:3px }
+  .xp li{ position:relative; padding-left:12px; color:var(--ink2); font-size:9.4px; line-height:1.45 }
+  .xp li::before{ content:"▸"; position:absolute; left:0; color:var(--grn2); font-size:8px }
+  .xp li b{ color:var(--ink) }
+  .xp .blk{ margin-bottom:11px }
+
+  /* Skills + Fakten in zwei Spalten */
+  .cols{ display:grid; grid-template-columns:1.35fr 1fr; gap:16px; align-items:start }
+  .skgrp{ margin-bottom:9px }
+  .skgrp .k{ font-family:var(--fm); font-size:8px; letter-spacing:.06em; text-transform:uppercase; color:var(--mut); margin-bottom:5px }
+  .chips{ display:flex; flex-wrap:wrap; gap:4px }
+  .chip{ font-family:var(--fm); font-size:8px; color:var(--ink2); border:1px solid var(--line); border-radius:20px; padding:2px 8px }
+  .facts{ border:1px solid var(--line); border-radius:8px; background:var(--panel); padding:12px 14px }
+  .frow{ display:flex; justify-content:space-between; gap:10px; padding:5px 0; border-top:1px solid var(--line); font-size:9.4px }
+  .frow:first-child{ border-top:0 }
+  .frow span{ color:var(--mut) } .frow b{ color:var(--ink); font-weight:600; text-align:right }
+  .frow b .g{ color:var(--grn) }
+
+  .foot{ position:absolute; left:15mm; right:15mm; bottom:8mm; display:flex; justify-content:space-between; align-items:center;
+    font-family:var(--fm); font-size:8px; color:var(--dim); border-top:1px solid var(--line); padding-top:7px }
+  .foot .g{ color:var(--grn2) }
+</style>
+</head>
+<body>
+
+<!-- ============ SEITE 1 ============ -->
+<div class="page">
+  <div class="top">
+    <div>
+      <h1>Jason Roschmann</h1>
+      <div class="role">KI-Automation-Builder · Web &amp; E-Commerce</div>
+      <div class="tagline">Zusammenhängende KI-/Automations-Systeme, allein gebaut und in Produktion — vom SaaS-Backend bis zur eigenen Server-Infrastruktur. Ziel: Zürich.</div>
+    </div>
+    <div class="contact">
+      <div><span class="lb">✉</span> jason@roschmann-digital.de</div>
+      <div><span class="lb">☎</span> +49 155 612 953 91</div>
+      <div><span class="lb">⌂</span> Hamburg → Zürich</div>
+      <div><a class="g" href="https://github.com/JasonRoschmann">github.com/JasonRoschmann</a></div>
+      <div><a href="https://www.linkedin.com/in/jason-roschmann-1091512b2">linkedin.com/in/jason-roschmann</a></div>
+      <div><a class="g" href="https://jasonroschmann.github.io/cv">jasonroschmann.github.io/cv</a></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="h">Profil</div>
+    <p class="profil">Ich baue <b>vollständige KI- und Automations-Systeme, die in Produktion laufen</b> — nicht im Prototyp-Stadium stecken bleiben. Von der Architektur über die Implementierung bis zum Deployment orchestriere ich KI wie ein kleines Team und <b>prüfe jedes Ergebnis selbst gegen echte Endpunkte</b>. Dazu betreibe ich eigene Shopify-Stores mit selbst gebauten Themes. Meine vier Jahre B2B-Direktvertrieb haben mir das Wichtigste beigebracht, das kein Kurs kann: <b>Dinge zu Ende bringen, bis sie live und verifiziert sind.</b></p>
+  </section>
+
+  <section>
+    <div class="h">Ausgewählte Systeme — live oder in Produktion</div>
+    <div class="sys">
+      <div class="crown">
+        <div class="ct"><h3>Ultra Nexus OS</h3><span class="tag">Meta-System · Kronjuwel</span></div>
+        <p>Die Schicht über allem: ein Kommandozentrum, das meine Arbeit über alle Projekte hinweg orchestriert und automatisiert — bi-temporaler Wissens-Graph als geteiltes Gedächtnis, harte Freigabe-Gates („gate-everything", nichts sendet oder deployt ohne Prüfung). Deshalb liefere ich als Einzelner das Tempo eines kleinen Teams.</p>
+        <div class="stackline">Multi-Agenten-Orchestrierung · Graphiti/FalkorDB · eigene Server-Infrastruktur</div>
+      </div>
+      <div class="sysgrid">
+        <div class="card">
+          <div class="ct"><h3>flowki-club.de</h3><span class="tag">Live</span></div>
+          <p>Deutschsprachiges KI-Security-Magazin mit Discord-Community und Pro-Tier. Next.js, selbst auf eigener Infrastruktur gehostet, Newsroom-Design.</p>
+          <div class="proof"><b>Live</b>, mit echter Marktanalyse und psychologisch gebautem Funnel.</div>
+        </div>
+        <div class="card">
+          <div class="ct"><h3>Self-Serve Website-Fabrik</h3><span class="tag">Autonom · WaaS</span></div>
+          <p>Die Maschine baut aus echten Firmendaten eine fertige Vorschau und schaltet per Stripe live — kein Mensch dazwischen.</p>
+          <div class="proof">Ende zu Ende <b>live bewiesen</b>: Abo aktiv, Rechnung bezahlt, Seite automatisch bereitgestellt.</div>
+        </div>
+        <div class="card">
+          <div class="ct"><h3>Bewerbungs-Fabrik</h3><span class="tag">24/7 · Multi-Agent</span></div>
+          <p>Findet passende Stellen, analysiert die Anforderungen, schreibt jede Bewerbung, prüft jede Faktenzeile fail-closed gegen die Quelle und reicht autonom über Portale und E-Mail ein.</p>
+          <div class="proof">Dieselbe Bauweise wie meine anderen Systeme: <b>gate-everything</b>, nichts geht ungeprüft raus.</div>
+        </div>
+        <div class="card">
+          <div class="ct"><h3>DK · Attar</h3><span class="tag">Luxus-E-Comm</span></div>
+          <p>Shopify-Store für Nischen-Parfum mit kinoreifer Web-Experience, eigenem Theme und reference-locked Produkt-Renderings.</p>
+          <div class="proof">Eigener Store, eigenes Theme, <b>live</b> — Design bis Deployment aus einer Hand.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span>Jason Roschmann · KI-Automation-Builder</span>
+    <span><span class="g">▸</span> interaktives CV &amp; Live-Beweise: jasonroschmann.github.io/cv</span>
+  </div>
+</div>
+
+<!-- ============ SEITE 2 ============ -->
+<div class="page">
+  <section style="margin-top:0">
+    <div class="h">Erfahrung</div>
+    <div class="xp">
+      <div class="yr">2024 — heute</div>
+      <div class="blk">
+        <h4>Automation-Builder · selbstständig</h4>
+        <div class="org">Remote · Kunden und Projekte im DACH-Raum</div>
+        <ul>
+          <li><b>Automations- und Software-Systeme eigenständig entworfen und in Produktion gebracht</b>, von SaaS bis Server-Infrastruktur. Kein Team, kein Agentur-Budget.</li>
+          <li><b>KI-orchestrierte Entwicklung:</b> Architektur, Tests und Qualität führe ich selbst und setze KI-orchestriert um, wofür sonst ein kleines Team nötig wäre.</li>
+          <li>Kunden-Deliveries für DACH-Gründer, von der ersten Anforderung bis zum Go-live.</li>
+        </ul>
+      </div>
+      <div class="yr amb">2019 — 2023</div>
+      <div class="blk">
+        <h4>B2B-Direktvertrieb (Door-to-Door)</h4>
+        <div class="org">EWE TEL und Ranger Marketing (Vertrieb für Deutsche Telekom) · Außendienst bundesweit</div>
+        <ul>
+          <li><b>Tägliche Kaltakquise mit Entscheidern</b>, Monat für Monat vorn bei den Abschlüssen, Absagen im Minutentakt. Resilienz, die kein Kurs lehrt.</li>
+          <li>Gespräche direkt mit Inhabern und Geschäftsführern — erst das echte Problem verstehen, dann bauen: der Grund, warum meine Software im Betrieb wirklich genutzt wird.</li>
+        </ul>
+      </div>
+      <div class="yr">seit 2024</div>
+      <div class="blk">
+        <h4>Berufsausbildung + laufende Weiterbildung</h4>
+        <div class="org">Google Ads Skillshop (2026) · Web-Entwicklung (2024) · autodidaktisch, laufend</div>
+        <ul>
+          <li>Ich lerne durchs Bauen, nicht durch Kurse. Mein Nachweis sind Systeme, die überprüfbar in Produktion laufen.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="h">Stack &amp; Verfügbarkeit</div>
+    <div class="cols">
+      <div>
+        <div class="skgrp">
+          <div class="k">KI-Orchestrierung, der Kern</div>
+          <div class="chips"><span class="chip">Claude Code</span><span class="chip">Claude SDK · Opus/Sonnet/Haiku</span><span class="chip">MCP</span><span class="chip">Multi-Agenten-Systeme</span><span class="chip">Prompt-Design</span><span class="chip">spec-driven build &amp; test</span></div>
+        </div>
+        <div class="skgrp">
+          <div class="k">Automation &amp; Daten</div>
+          <div class="chips"><span class="chip">n8n</span><span class="chip">Graphiti + FalkorDB</span><span class="chip">PostgreSQL</span><span class="chip">Firecrawl</span><span class="chip">Playwright</span></div>
+        </div>
+        <div class="skgrp">
+          <div class="k">Web, Code &amp; Infra</div>
+          <div class="chips"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Next.js</span><span class="chip">Shopify Liquid</span><span class="chip">Hetzner · Server/DevOps</span><span class="chip">GitHub</span></div>
+        </div>
+        <div class="skgrp">
+          <div class="k">Creative AI &amp; Media</div>
+          <div class="chips"><span class="chip">Higgsfield · Image/Video</span><span class="chip">Google Vertex AI</span><span class="chip">ElevenLabs · Voice</span><span class="chip">Figma</span></div>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="frow"><span>Ziel</span><b>Zürich</b></div>
+        <div class="frow"><span>Umzug</span><b>für die richtige Rolle, flexibel</b></div>
+        <div class="frow"><span>Bewilligung</span><b>B · <span class="g">EU-Bürger</span></b></div>
+        <div class="frow"><span>Einstellung</span><b>kein Kontingent, kein Anwalt</b></div>
+        <div class="frow"><span>Deutsch</span><b>Muttersprache</b></div>
+        <div class="frow"><span>Englisch</span><b>B1, wachsend</b></div>
+        <div class="frow"><span>Arbeitsweise</span><b>Beweis statt Behauptung</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span>Jason Roschmann · jason@roschmann-digital.de · +49 155 612 953 91</span>
+    <span><span class="g">⚙</span> Live-GitHub-Beweis im interaktiven CV</span>
+  </div>
+</div>
+
+</body>
+</html>
