@@ -2,7 +2,7 @@
 
 AI Automation Engineer · Junior / Career Changer
 
-Email: jason@roschmann-systems.de | Phone: +49 155 612 953 91\
+Email: jason@roschmann-digital.de | Phone: +49 155 612 953 91\
 LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | Web CV: jasonroschmann.github.io/cv\
 Location: Hamburg, Germany | Open to remote, Hamburg, or relocation for the right role (Zürich included)\
 EU citizen — for a Swiss role, the B permit is a 14-day registration: no quota, no permit procedure for the employer

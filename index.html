@@ -624,7 +624,7 @@
       <div class="tw-head"><span class="dot"></span>ultra-nexus-os — live<span class="go">›</span></div>
       <div class="tw-body" id="twbody" aria-hidden="true"></div>
     </button>
-    <a class="cta lq" href="mailto:jason@roschmann-systems.de?subject=15%20Minuten%20%E2%80%93%20Z%C3%BCrich">
+    <a class="cta lq" href="mailto:jason@roschmann-digital.de?subject=15%20Minuten%20%E2%80%93%20Z%C3%BCrich">
       <span class="ctat"><b>15 Minuten reichen.</b><span>Ich zeige meine Systeme live am Code.</span></span>
       <span class="ctab">→</span>
     </a>
@@ -644,7 +644,7 @@
 <div class="win">
   <div class="chrome">
     <div class="lights"><i class="r"></i><i class="y"></i><i class="gr"></i></div>
-    <span class="ttl">jason@roschmann-systems.de — ultra-nexus-os · ~/karriere</span>
+    <span class="ttl">jason@roschmann-digital.de — ultra-nexus-os · ~/karriere</span>
     <div class="right">
       <a class="pill hideS" href="https://duftkumpels.shop" target="_blank" rel="noopener"><span class="d"></span>live-beispiel: duftkumpels.shop ↗</a>
       <span class="pill hideS mono" id="tick">agents: gated · geprüft</span>
@@ -682,7 +682,7 @@
         <svg class="spark" id="spark" viewBox="0 0 220 34" preserveAspectRatio="none"><polyline points=""></polyline></svg>
       </div>
       <div class="sfoot">
-        <a class="btn btn-p" href="mailto:jason@roschmann-systems.de?subject=15%20Minuten%20%E2%80%93%20Z%C3%BCrich">15 Minuten anfragen →</a>
+        <a class="btn btn-p" href="mailto:jason@roschmann-digital.de?subject=15%20Minuten%20%E2%80%93%20Z%C3%BCrich">15 Minuten anfragen →</a>
         <a class="btn btn-s" href="Jason_Roschmann_CV.pdf" download>↓ CV als PDF</a>
       </div>
     </aside>
@@ -893,13 +893,13 @@
         <h2 class="display h-hero rv" style="margin-top:12px">Fünfzehn <span class="it">Minuten.</span></h2>
         <p class="lead rv" style="margin-top:18px">Hier als Beweis, nicht als Behauptung. Ich zeige meine Systeme am liebsten live am Code.</p>
         <div class="ctabtns rv">
-          <a class="big-btn p" href="mailto:jason@roschmann-systems.de?subject=15%20Minuten%20%E2%80%93%20Z%C3%BCrich">15 Minuten anfragen →</a>
+          <a class="big-btn p" href="mailto:jason@roschmann-digital.de?subject=15%20Minuten%20%E2%80%93%20Z%C3%BCrich">15 Minuten anfragen →</a>
           <a class="big-btn s" href="Jason_Roschmann_CV.pdf" download>↓ CV als PDF</a>
           <a class="big-btn s" href="https://github.com/JasonRoschmann" target="_blank" rel="noopener">GitHub ↗</a>
           <a class="big-btn s" href="https://www.linkedin.com/in/jason-roschmann-1091512b2" target="_blank" rel="noopener">LinkedIn</a>
           <a class="big-btn s" href="jason.vcf" download>＋ Zu Kontakten</a>
         </div>
-        <p class="mono muted rv" style="margin-top:26px;font-size:13px">jason@roschmann-systems.de · +49 155 612 953 91</p>
+        <p class="mono muted rv" style="margin-top:26px;font-size:13px">jason@roschmann-digital.de · +49 155 612 953 91</p>
       </div></section>
 
     </main>
@@ -923,7 +923,7 @@
   function show(v){
     viewEls.forEach(function(s){ s.classList.toggle('on', s.getAttribute('data-view')===v); });
     navEls.forEach(function(n){ n.classList.toggle('on', n.getAttribute('data-view')===v); });
-    if(ttl) ttl.textContent = 'jason@roschmann-systems.de — ultra-nexus-os · ~/'+v;
+    if(ttl) ttl.textContent = 'jason@roschmann-digital.de — ultra-nexus-os · ~/'+v;
     if(v==='home') countUp();
     var vEl = document.querySelector('.view[data-view="'+v+'"]'); if(vEl) vEl.scrollTop=0;
   }
@@ -1003,7 +1003,7 @@
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function addMsg(who,txt,type){ var m=document.createElement('div'); m.className='msg '+type; var w=document.createElement('div'); w.className='who'; w.textContent=who; var t=document.createElement('div'); m.appendChild(w); m.appendChild(t); clog.appendChild(m); if(type==='bot'&&!reduce){ typewrite(t,txt); } else { t.textContent=txt; } clog.scrollTop=clog.scrollHeight; }
   function typewrite(el,txt){ var i=0; (function step(){ if(i<=txt.length){ el.textContent=txt.slice(0,i); i+=2; clog.scrollTop=clog.scrollHeight; setTimeout(step,12);} })(); }
-  function answer(q){ var lo=q.toLowerCase().trim(), best=null; QA.forEach(function(it){ if(it.q.toLowerCase()===lo) best=it; }); if(!best){ QA.forEach(function(it){ if(!best && it.k.some(function(kw){return lo.indexOf(kw.trim())>=0;})) best=it; }); } return best? best.a : "Gute Frage. Die beantworte ich dir am liebsten direkt, 15 Minuten reichen: jason@roschmann-systems.de"; }
+  function answer(q){ var lo=q.toLowerCase().trim(), best=null; QA.forEach(function(it){ if(it.q.toLowerCase()===lo) best=it; }); if(!best){ QA.forEach(function(it){ if(!best && it.k.some(function(kw){return lo.indexOf(kw.trim())>=0;})) best=it; }); } return best? best.a : "Gute Frage. Die beantworte ich dir am liebsten direkt, 15 Minuten reichen: jason@roschmann-digital.de"; }
   function typing(){ var m=document.createElement('div'); m.className='msg bot tI';
     m.innerHTML='<span class="td"></span><span class="td"></span><span class="td"></span>';
     clog.appendChild(m); clog.scrollTop=clog.scrollHeight; return m; }

@@ -2,7 +2,7 @@
 
 KI-Automation-Engineer · Junior / Quereinstieg
 
-E-Mail: jason@roschmann-systems.de | Telefon: +49 155 612 953 91\
+E-Mail: jason@roschmann-digital.de | Telefon: +49 155 612 953 91\
 LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | Web-CV: jasonroschmann.github.io/cv\
 Wohnort: Hamburg, Deutschland | Gesucht: remote oder Hamburg; für die richtige Rolle Umzug möglich (auch Zürich)\
 EU-Bürger — für eine Anstellung in der Schweiz ist die Aufenthaltsbewilligung B eine 14-Tage-Anmeldung, ohne Kontingent und ohne Verfahren für den Arbeitgeber
