@@ -1,53 +1,57 @@
 # Jason Roschmann
 
-KI-Automation-Engineer
+KI-Automation-Engineer · Junior / Quereinstieg
 
-E-Mail: jason@roschmann-digital.de | Telefon: +49 155 612 953 91\
-LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | GitHub: github.com/JasonRoschmann | Web-CV: jasonroschmann.github.io/cv\
-Wohnort: Hamburg, Deutschland | Zielregion: Zürich, Schweiz\
-EU-Bürger, Aufenthaltsbewilligung B – kein Kontingent, kein Bewilligungsverfahren für den Arbeitgeber erforderlich
+E-Mail: jason@roschmann-systems.de | Telefon: +49 155 612 953 91\
+LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | Web-CV: jasonroschmann.github.io/cv\
+Wohnort: Hamburg, Deutschland | Gesucht: remote oder Hamburg; für die richtige Rolle Umzug möglich (auch Zürich)\
+EU-Bürger — für eine Anstellung in der Schweiz ist die Aufenthaltsbewilligung B eine 14-Tage-Anmeldung, ohne Kontingent und ohne Verfahren für den Arbeitgeber
 
 ## Profil
 
-Seit 2024 konzipiere und baue ich eigenständig KI-gestützte Automatisierungs- und Softwaresysteme und betreibe sie produktiv – vom SaaS-Backend bis zur eigenen Serverinfrastruktur. Ich verantworte Architektur, Tests und Deployment selbst; wo sinnvoll, orchestriere ich die Implementierung über Claude Code. Alle Systeme laufen im Dauerbetrieb, nicht nur als Prototyp. Vier Jahre B2B-Vertrieb davor geben mir ein Gespür dafür, welche Probleme im echten Geschäftsbetrieb tatsächlich gelöst werden müssen. Ich suche eine technische Rolle in Zürich, in der ich Automatisierungs- und KI-Systeme baue und betreibe.
+Seit 2024 konzipiere und baue ich eigenständig KI-gestützte Automatisierungs- und Softwaresysteme — vom FastAPI-Backend mit eigener Testabdeckung bis zur Server-Infrastruktur auf Hetzner. Ich verantworte Spezifikation, Architektur, Tests und Deployment selbst; die Implementierung orchestriere ich über Claude Code. Das Urteil bleibt bei mir. Vier Jahre B2B-Direktvertrieb davor sind der Grund, warum ich zuerst das echte Problem verstehe und dann baue. Ich suche eine technische Einstiegs- oder Junior-Rolle, in der ich Automatisierungs- und KI-Systeme baue und mich fachlich weiterentwickle — die Junior-Stufe ist bewusst gewählt.
 
-## Berufserfahrung
+## Eigenständig gebaute Systeme
 
 ### KI-Automation-Builder, selbstständig
-**2024 – heute | Remote, Kunden und Projekte im DACH-Raum**
+**2024 – heute | Hamburg, remote**
 
-- Automatisierungs- und Softwaresysteme eigenständig konzipiert, entwickelt, getestet und in Produktion gebracht – von Live-SaaS-Produkten bis zur eigenen Serverinfrastruktur, ohne Team und ohne Agenturbudget. KI-orchestrierte Entwicklung: Implementierung über Claude Code / Claude SDK gesteuert, Architektur und QA selbst verantwortet.
-- Live und öffentlich einsehbar: Shopify-D2C-Store mit eigenem Liquid-Theme, Custom-Metafields und Stripe-Checkout, zweisprachig Deutsch/Englisch, komplett selbst gebaut – duftkumpels.shop; dahinter über 40 eigenständig entwickelte Shopify-Features (Cart-Upsell, Fragrance-Quiz, Checkout-Trust-Signale, Schema-Markup, Hreflang u. a.).
-- Persönliche Orchestrierungs-Plattform entwickelt (intern „Ultra Nexus OS"), die Automatisierungen über mehrere Projekte koordiniert: bi-temporaler Wissensgraph (Graphiti/FalkorDB), harte Freigabe-Gates vor jedem Versand oder Deployment. Die eigene Prüf-Schicht hat bereits ein reales Secret-Leck und fehlerhafte Deployments abgefangen, bevor sie live gingen.
-- KI-gestützter Discord-Community-Bot im aktiven Aufbau für eine wachsende Community (Next.js, PostgreSQL, Remotion), mit automatisiertem Social-Media-Scheduling und Video-Rendering – kontinuierlich weiterentwickelt, 0 offene npm-audit-Findings.
-- Interaktives Web-CV als eigenständige Progressive Web App gebaut: installierbar, eigene Rendering-Engine (SVG-Displacement-Filter für Glasoptik), interaktiver Canvas-Graph, physikbasierte Animationen sowie eine echte GPU-Fluidsimulation (Navier-Stokes/WebGL) – eine einzige HTML-Datei, kein Framework: jasonroschmann.github.io/cv.
-- Weitere Systeme: GEO-Analyse-Tool mit eigener WebGL-Agentur-Landingpage (Partikel-Szene, refraktiver Glas-Effekt, FastAPI/Next.js) in wenigen Tagen von der ersten Zeile bis zum getesteten System gebaut; Multi-Agenten-System für automatisierte Recherche und Content-Erstellung (Python, Claude SDK, n8n) im Dauerbetrieb; Game-Server-Infrastruktur auf Hetzner mit Deploy-Pipeline und Monitoring, seit über 6 Monaten im Dauerbetrieb.
+- **pim-engine** — Produktdaten-Service für Shopify (Python, FastAPI, Shopify Admin API): 21 von 21 Commits von mir, 66 Tests laufen in unter einer Sekunde grün, CI eingerichtet. Leitidee der Architektur: ein LLM darf niemals ein LLM benoten — bewertet wird gegen hinterlegte Fakten, nicht gegen eine zweite Modellmeinung.
+- **NarutoIdle** — Spiel-Engine als TypeScript-Monorepo: 378 von 378 Commits von mir, 858 Tests grün in 157 Sekunden, CI läuft ohne ein einziges Secret. Entstanden mit Claude Code als Pair-Programmer, bei durchgehend eigener Architektur- und QA-Verantwortung.
+- **hermes-brett** — Werkzeug zur Arbeitsorganisation: 39 von 39 Commits von mir, Selbsttest mit 383 Zusicherungen, läuft ohne npm install und ohne Build-Schritt.
+- **Multi-Agenten-Anlagen** auf eigener Linux-Infrastruktur (Hetzner): mehrere spezialisierte Agenten-Rollen für Recherche, Faktenprüfung und Inhalte, mit Freigabe-Gates vor jeder Außenwirkung, Heartbeats, Fehler-Alarmen und Kill-Switch. Die eigene Prüf-Schicht hat ein reales Secret-Leck und fehlerhafte Deployments abgefangen, bevor sie live gingen. Agentische Systeme scheitern selten am Happy Path, sondern an der Kontrolle.
+- **Web- und Commerce-Arbeit:** duftkumpels.shop ist live — Theme-Anpassung, Automatisierung und Optimierung auf gekaufter Theme-Basis (Prestige), zweisprachig DE/EN, Custom-Metafields, Conversion- und SEO-Arbeit. Search Console über 28 Tage: 545 statt 505 Klicks, 16.768 statt 14.193 Impressionen — das ist Sichtbarkeit, kein Umsatzbeleg.
+- **nk247store.de** — bezahltes Kundenprojekt, live, Startseite antwortet in rund 0,2 Sekunden. Das Repository bleibt privat, es ist Eigentum des Kunden.
+- **Interaktives Web-CV** als installierbare Progressive Web App, eine einzige HTML-Datei ohne Framework: SVG-Displacement-Filter, interaktiver Canvas-Graph und eine WebGL-Fluidsimulation, portiert aus PavelDoGreat/WebGL-Fluid-Simulation (MIT) und auf eigene Brand-Logik umgebaut.
+
+Code-Einblick zu den privaten Repositories gerne auf Anfrage oder direkt im Gespräch am Bildschirm.
 
 ### B2B-Direktvertrieb (Door-to-Door)
-**2019 – 2023 | EWE TEL und Ranger Marketing (Vertriebspartner Deutsche Telekom), bundesweiter Außendienst**
+**2019 – 2023 | EWE TEL und Ranger Marketing (Vertriebspartner), bundesweiter Außendienst**
 
 - Tägliche Kaltakquise bei Entscheidern, über 200 Vertragsabschlüsse pro Monat.
-- 60 % Neukundenanteil, +15 % Umsatzsteigerung pro Bestandskunde durch Cross- und Upselling.
-- Verhandlungen direkt mit Inhabern und Geschäftsführern auf Entscheiderebene.
+- Verhandlungen direkt mit Inhabern und Geschäftsführern.
+- Absagen im Minutentakt — daher ein realistischer Umgang mit Widerstand und ein Gespür dafür, welche Probleme im Betrieb wirklich gelöst werden müssen.
 
 ## Kompetenzen
 
-**KI & Automatisierung:** Claude SDK, Claude Code, MCP, n8n, Multi-Agenten-Systeme, Graphiti/FalkorDB, Prompt-Design, spezifikationsgetriebene Entwicklung
+**KI & Automatisierung:** Claude Code / Claude SDK, MCP, Multi-Agenten-Architekturen, Freigabe-Gates und Verifikations-Schichten, spezifikationsgetriebene Entwicklung, Prompt-Design, n8n
 
-**Technischer Stack:** Python, FastAPI, TypeScript/Next.js, PostgreSQL, Playwright, Docker, WebGL/GSAP (Frontend-Effekte)
+**Technischer Stack:** Python, FastAPI, TypeScript, Next.js, PostgreSQL, Playwright, Docker, Linux-Server (Hetzner), Git/CI
 
-**E-Commerce & Marketing:** Shopify Liquid & Theme-Entwicklung, Google Ads (Search, Performance Max, KI-gestützt), Conversion-Optimierung (Grundlagen)
+**E-Commerce:** Shopify Liquid und Theme-Anpassung, Custom-Metafields, technisches SEO, Conversion-Optimierung, Google Ads (Search, Performance Max)
 
-**Vertrieb (Hintergrund):** Kaltakquise, Bedarfsanalyse, Einwandbehandlung, Abschlusstechnik, Cross- und Upselling, Pipeline- und KPI-Steuerung, Verhandlung auf Entscheiderebene
+**Aus dem Vertrieb:** Kundengespräche auf Entscheiderebene, Bedarfsanalyse, Einwandbehandlung — hier als Kommunikationsstärke, nicht als Zielrolle
 
 ## Ausbildung & Weiterbildung
 
+- Kein Hochschulabschluss und keine abgeschlossene Berufsausbildung. Der Nachweis meiner Arbeit sind die oben genannten Systeme.
 - Weiterbildung Webentwicklung, 2024 (6 Monate): HTML, CSS, JavaScript, Web-Architektur
-- Google Ads Skillshop-Zertifizierung, Januar 2026: Search, Performance Max, KI-gestützte Anzeigen
+- Google Ads Skillshop, Januar 2026: Search, Performance Max
 - Autodidaktische Weiterbildung, laufend seit 2024: Python, KI-Systeme, Softwarearchitektur
 
 ## Sprachen
 
-- Deutsch: Muttersprache (C2)
-- Englisch: B1
+- Deutsch: Muttersprache
+- Englisch: B1, im Ausbau Richtung B2 — im technischen Alltag arbeite ich auf Englisch
 - Polnisch: Alltagssicher (mündlich)
