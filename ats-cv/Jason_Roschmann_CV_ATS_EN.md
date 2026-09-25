@@ -1,0 +1,57 @@
+# Jason Roschmann
+
+AI Automation Engineer · Junior / Career Changer
+
+Email: jason@roschmann-digital.de | Phone: +49 155 612 953 91\
+LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | Web CV: jasonroschmann.github.io/cv\
+Location: Hamburg, Germany | Open to remote, Hamburg, or relocation for the right role (Zürich included)\
+EU citizen — for a Swiss role, the B permit is a 14-day registration: no quota, no permit procedure for the employer
+
+## Profile
+
+Since 2024 I have independently designed and built AI-driven automation and software systems — from FastAPI backends with their own test coverage to Linux server infrastructure on Hetzner. I own the specification, the architecture, the tests and the deployment; implementation I orchestrate through Claude Code, but the judgment stays with me. Four years of B2B direct sales before that are the reason I understand the real problem first and build second. I am looking for an entry-level or junior engineering role where I build automation and AI systems and grow technically — the junior level is a deliberate choice.
+
+## Systems I Built Myself
+
+### AI Automation Builder, self-employed
+**2024 – present | Hamburg, remote**
+
+- **pim-engine** — product-data service for Shopify (Python, FastAPI, Shopify Admin API): 21 of 21 commits mine, 66 tests green in under one second, CI in place. Core design rule: an LLM must never grade an LLM — output is checked against stored ground-truth facts, not against a second model opinion.
+- **NarutoIdle** — game engine as a TypeScript monorepo: 378 of 378 commits mine, 858 tests green in 157 seconds, CI runs without a single secret. Built with Claude Code as pair programmer, with architecture and QA owned throughout.
+- **hermes-brett** — work-organisation tool: 39 of 39 commits mine, self-test with 383 assertions, runs without npm install and without a build step.
+- **Multi-agent systems** on my own Linux infrastructure (Hetzner): specialised agent roles for research, fact-checking and content, with approval gates before anything reaches the outside world, plus heartbeats, error alerts and a kill switch. My own review layer caught a real credential leak and faulty deployments before they went live. Agentic systems rarely fail on the happy path; they fail on control.
+- **Web and commerce work:** duftkumpels.shop is live — theme customisation, automation and optimisation on a purchased theme base (Prestige), bilingual DE/EN, custom metafields, conversion and SEO work. Search Console over 28 days: 545 clicks up from 505, 16,768 impressions up from 14,193 — that is visibility, not a revenue claim.
+- **nk247store.de** — paid client project, live, home page responds in roughly 0.2 seconds. The repository stays private; it belongs to the client.
+- **Interactive web CV** as an installable Progressive Web App, a single HTML file with no framework: SVG displacement filters, an interactive canvas graph, and a WebGL fluid simulation ported from PavelDoGreat/WebGL-Fluid-Simulation (MIT) and rebuilt around my own brand logic.
+
+Happy to walk through the private repositories on request, or live at the screen in an interview.
+
+### B2B Direct Sales (door-to-door)
+**2019 – 2023 | EWE TEL and Ranger Marketing (sales partner), nationwide field sales**
+
+- Daily cold outreach to decision-makers, 200+ closed contracts per month.
+- Negotiated directly with owners and managing directors.
+- Rejection by the minute — which is where a realistic relationship with resistance comes from, and a sense for which problems a business actually needs solved.
+
+## Skills
+
+**AI & automation:** Claude Code / Claude SDK, MCP, multi-agent architectures, approval gates and verification layers, specification-driven development, prompt design, n8n
+
+**Technical stack:** Python, FastAPI, TypeScript, Next.js, PostgreSQL, Playwright, Docker, Linux servers (Hetzner), Git/CI
+
+**E-commerce:** Shopify Liquid and theme customisation, custom metafields, technical SEO, conversion optimisation, Google Ads (Search, Performance Max)
+
+**From sales:** decision-maker conversations, needs analysis, objection handling — listed as communication strength, not as a target role
+
+## Education
+
+- No university degree and no completed vocational qualification. The evidence for my work is the systems listed above.
+- Web development training, 2024 (6 months): HTML, CSS, JavaScript, web architecture
+- Google Ads Skillshop, January 2026: Search, Performance Max
+- Self-taught, ongoing since 2024: Python, AI systems, software architecture
+
+## Languages
+
+- German: native
+- English: B1, working towards B2 — my day-to-day technical work is in English
+- Polish: conversational (spoken)

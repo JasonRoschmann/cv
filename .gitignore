@@ -1,0 +1,9 @@
+
+# Zwischenspeicher der Foto-Einbettung, gehoert nicht ins Repo
+ats-cv/foto.b64.txt
+ats-cv/.photo_b64_cache.txt
+index.html.bak-*
+
+# Laufzeit-Logs, gehoeren nicht ins Repo (22.09.2026)
+.claude/runtime/
+.gstack/
