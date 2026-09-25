@@ -7,3 +7,12 @@ index.html.bak-*
 # Laufzeit-Logs, gehoeren nicht ins Repo (22.09.2026)
 .claude/runtime/
 .gstack/
+
+# Lokale Agenten-Konfiguration (SessionStart-Hook), gehoert nicht auf die
+# oeffentliche CV-Seite (25.09.2026: CLAUDE.md/AGENTS.md waren abrufbar)
+CLAUDE.md
+AGENTS.md
+.claude/
+.mcp.json
+docs/standards/
+scripts/claude/
