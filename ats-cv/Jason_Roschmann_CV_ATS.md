@@ -1,50 +1,61 @@
 # Jason Roschmann
 
-KI-Automation & Softwareentwicklung · Junior / Quereinstieg · Python · TypeScript
+Junior Softwareentwickler / Software Engineer · KI-Automation
+
+Ich entwickle KI-Automationen – und mache ihr Verhalten überprüfbar.
 
 E-Mail: jason@roschmann-digital.de | Telefon: +49 155 612 953 91\
 LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | GitHub: github.com/JasonRoschmann | Web-CV: jasonroschmann.github.io/cv\
 Wohnort: Hamburg, Deutschland | Gesucht: Hamburg oder remote; Umzug nach Zürich für eine passende Rolle möglich | Start nach Absprache
 
+Kernstack: Python, FastAPI, TypeScript, React/Next.js, PostgreSQL, Docker
+
 ## Profil
 
-Ich baue KI-gestützte Automationen und Webanwendungen mit Python und TypeScript — in eigenen Projekten und im Team, vom Datenmodell bis zum Deployment. Am meisten interessieren mich die Fehlerfälle: doppelte Aktionen, hängende Jobs, stille Datenverluste, halbe Rollouts — und Tests, die genau diese Fälle festhalten. KI-Agenten sind mein Entwicklungswerkzeug; Anforderungen, Architekturentscheidungen und Abnahme liegen bei mir, und jeden Beitrag erkläre ich am Code. Vier Jahre B2B-Vertrieb haben mir beigebracht, zuerst das Problem zu verstehen. Ich suche eine Junior-Rolle in einem Entwicklungsteam.
+Ich entwickle KI-Automationen und Webanwendungen mit Python und TypeScript, eigenständig und im Team. Meine Praxis umfasst API-Integration, Hintergrundjobs und gezielte Tests gegen doppelte Aktionen und Datenverlust. KI-Agenten nutze ich für die Umsetzung; Anforderungen und Abnahme meiner Beiträge verantworte ich selbst. Ich suche eine Junior-Rolle in KI-Automation oder Backend-/Fullstack-Entwicklung.
 
 ## Projekte
 
 ### Flowki Studio — Clip-Studio (Teamprojekt, Aug–Sep 2026)
 
-Internes Social-Media-Studio (Trends, Plattform-Playbooks, KI-Content-Pipeline). Mein Schwerpunkt: Clip-Verarbeitung, die aus Langvideos Shorts macht. 64 Pull Requests in Flowki Studio, davon 50 gemergt.
+Zweck: Internes Social-Media-Studio mit Trends, Plattform-Playbooks und KI-Content-Pipeline. Das Clip-Studio macht aus Langvideos Shorts — mein Schwerpunkt. 64 Pull Requests in Flowki Studio, davon 50 gemergt.
 
-- Speaker-Reframe: Gesichtsmessung an mehreren Zeitpunkten statt einmal, geglättet zu stückweise konstanten 9:16-Keyframes — der Ausschnitt folgt der sprechenden Person.
-- Deterministischer Neu-Render nach Korrekturen: append-only Planversionen, jede Änderung entwertet eine erteilte Freigabe; Render asynchron über Celery, ohne Modellkosten.
+- Speaker-Reframe: Gesichtsposition an mehreren Zeitpunkten gemessen statt einmal, geglättet zu stückweise konstanten 9:16-Keyframes — der Ausschnitt folgt der sprechenden Person.
+- Deterministischer Neu-Render nach Korrekturen: append-only Planversionen, jede Planänderung entwertet eine erteilte Freigabe; Render asynchron über Celery, ohne Modellkosten.
 - Bis zu drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint); Fixes für hängende Jobs und eine doppelt ausgelöste Produktion.
 - Stack: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, MinIO, Next.js
 
-### Bewerbungs-Automation (Eigenprojekt, seit Juli 2026)
+### Fallbeispiel Fehlersuche — hermes-studio (Beitrag zu fremdem Projekt, Sep 2026)
 
-Python-Pipeline auf eigenem Linux-Server: Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Analyse, Anschreiben, Endkontrolle, Mailversand, Antwort-Erkennung per IMAP. 93 Python-Dateien, davon 55 Tests.
+- Ursache: 21 rote Tests, zwei Ursachen — 20× ein nie geschlossenes SQLite-Handle, das unter Windows das Aufräumen sperrt; 1× ein veralteter Test gegen eine Sicherheitsregel.
+- Korrektur: Handle geschlossen, Sicherheitsregel behalten, Test korrigiert; dazu einen stillen Datenverlust im Task-Store behoben.
+- Nachweis: Mutationsprobe — wird die Regel absichtlich gebrochen, schlägt der korrigierte Test an. Test-Suite von 177 auf 199 grüne Tests.
+- So arbeite ich mit KI-Agenten: Fehler zuerst als roter Test, Agent setzt um, ein zweites Modell prüft zusätzlich als Reviewer, Rollout mit Prüfsummen und automatischem Rückbau.
+
+### KI-gestützte Bewerbungsverwaltung (Eigenprojekt, seit Juli 2026)
+
+Zweck: Python-Pipeline für Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Anschreiben, Prüfungen, Versand und Antwortzuordnung. Schwerpunkt: nachvollziehbare Aktionen. 94 Python-Dateien, davon 56 Tests.
 
 - Gemeinsames Hauptbuch aller Außenaktionen mit Reservierung: keine Doppelbewerbung über Mail und Portal, höchstens eine Bewerbung je Firma in 14 Tagen.
-- Nebenläufigkeit: gemeinsame Dateisperre (flock) für sechs Queue-Schreiber, unter Linux mit parallelen Prozessen geprüft. Rollout-Skripte halten alle 18 Cron-Locks, prüfen Prüfsummen, testen vor und nach dem Tausch und bauen bei abgefangenen Fehlern automatisch zurück.
-- Fail-closed: Prüfer blockieren bei unbrauchbarer Modellantwort; Modell-Kaskade (Claude, Gemini, Groq) mit Sperrzeiten; ein Wächter meldet Stillstand.
-- Arbeitsweise: jeder Fehler zuerst als roter Test, Review durch ein zweites Modell (Codex).
+- Blockierende Prüfungen vor dem Versand: unbrauchbare Modellantworten stoppen den Lauf; Modell-Kaskade (Claude, Gemini, Groq) mit Sperrzeiten.
+- LLM-Bewertungen gegen blinde Referenzurteile geprüft; eine überarbeitete Analyse nach unvollständiger Messung ohne belegte Verbesserung nicht ausgerollt.
+- Rollouts mit Prüfsummen, Tests vor und nach dem Tausch und automatischem Rückbau.
 
-### duftkumpels.shop (Shopify, seit Juni 2026)
+## Web- & Shop-Entwicklung für Kunden
 
-Shop einer Hamburger Nischen-Parfümerie: gekauftes Prestige-Theme, in Liquid, CSS und JavaScript umgebaut. Eigene Design-Schicht im Live-Theme, dreisprachig (DE/EN/FR), Produktdaten über Metafields, wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions.
+Websites und Shops für Kunden umgesetzt — von Gestaltung und Interaktion über Mehrsprachigkeit und rechtliche Vorgaben bis zu CI und Auslieferung.
 
-### Werkzeuge für KI-Agenten — hermes-brett und hermes-studio (Sep 2026)
+- Frontend & Interaktion: Next.js, React, TypeScript, GSAP — Hero als Frame-Sequenz, die sich mit dem Mauszeiger dreht (auf dem Handy per Geräteneigung); Vollbild-Kapitel mit eigener Mobile-Bedienung (nk247store.de).
+- Shop & Inhalte: gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, dreisprachig (DE/EN/FR), Produktdaten über Metafields (duftkumpels.shop).
+- Qualität & Auslieferung: CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright (nk247store.de); wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions (duftkumpels.shop).
+- Performance: versionierte Assets, Lade-Fallback, Performance-Runden gegen Ruckeln (nk247store.de).
+- Recht & Inhalte: Tabakwerbung nach § 19 TabakerzG aus allen Motiven entfernt (nk247store.de).
+- KI-Werkzeuge: Design-Brief geschrieben, KI-Website-Builder gesteuert und selbst nachgearbeitet — Kamerafahrten aus echten Fotos, Farbkorrektur, Übergänge (Redesign-Entwurf für ein Hamburger Izakaya).
+- Referenzen: duftkumpels.shop — live, seit Juni 2026; nk247store.de — Kundenprojekt im Team, meine Überarbeitung noch nicht veröffentlicht.
 
-- hermes-brett: Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt; ein Kosten-Gate verhindert versehentliche bezahlte Agentenläufe; Deploy mit Rollback; Selbsttest nur mit node:assert.
-- hermes-studio (Beitrag zu einem fremden Projekt): 21 rote Tests auf die Ursache zurückgeführt — 20× ein nie geschlossenes SQLite-Handle, das unter Windows das Aufräumen sperrt; 1× ein veralteter Test gegen eine Sicherheitsregel: Code behalten, Test korrigiert, per Mutationsprobe abgesichert. Stillen Datenverlust im Task-Store behoben. Test-Suite von 177 auf 199 grüne Tests.
+## Weitere Projekte
 
-### nk247store.de — interaktive Überarbeitung (Kundenprojekt im Team, Aug–Sep 2026)
-
-Website für einen 24/7-Automaten-Store (Next.js, GSAP). Live ist die erste Fassung des Teams; mein Teil ist eine interaktive Überarbeitung auf eigenem Branch, noch nicht veröffentlicht: Hero als Frame-Sequenz (Kopf dreht sich über 180° mit dem Mauszeiger, auf dem Handy per Geräteneigung), Vollbild-Kapitel mit eigener Mobile-Bedienung, Tabakwerbung nach § 19 TabakerzG entfernt. CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright.
-
-### Weitere Projekte
-
+- hermes-brett: Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt; ein Kosten-Gate verhindert, dass das Brett versehentlich einen bezahlten Agentenlauf startet; Deploy mit Rollback; Selbsttest nur mit node:assert.
 - Shinobi: Ember Accord — mobiles Idle-RPG (React Native, Skia, Supabase, pgTAP). Agenten-orchestriert: ein KI-Agent arbeitet im Lead-Modus 50 Rollen ab, die Produktentscheidungen treffe ich.
 - Interaktives Web-CV — installierbare PWA ohne Framework: SVG-Displacement, Canvas-Graph, WebGL-Fluidsimulation (adaptiert von PavelDoGreat, MIT).
 
@@ -61,16 +72,16 @@ Website für einen 24/7-Automaten-Store (Next.js, GSAP). Live ist die erste Fass
 - Kaltakquise und Bedarfsgespräche direkt mit Inhabern und Geschäftsführern, Verhandlung und Abschluss vor Ort.
 - Täglicher Umgang mit Absagen — und der Blick dafür, welche Probleme ein Betrieb wirklich hat.
 
-## Weiterbildung
+## Weiterbildung und Projektpraxis
 
 - Weiterbildung Webentwicklung, 2024 (6 Monate): HTML, CSS, JavaScript, Web-Architektur
 - Google Ads Skillshop, Januar 2026: Search, Performance Max
-- Kein Hochschulabschluss, keine abgeschlossene Berufsausbildung — Quereinstieg über Projektpraxis, laufend autodidaktisch
+- Laufende autodidaktische Weiterbildung anhand eigener und gemeinsamer Softwareprojekte
 
 ## Kenntnisse (in Projekten eingesetzt)
 
 - Entwicklung: Python, FastAPI, TypeScript, React, Next.js, React Native
-- KI & Agenten: Claude Code, Modell-APIs (Claude, Gemini, Groq), MCP, Agenten-Orchestrierung, n8n
+- KI & Agenten: Claude Code, LLM-APIs (Claude, Gemini, Groq), MCP, Agenten-Orchestrierung, n8n
 - Daten & Jobs: PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase
 - Qualität: pytest, Vitest, Playwright, GitHub Actions, Lighthouse-CI
 - Betrieb: Linux-Server, Docker Compose, Cron, flock, SMTP/IMAP, SPF/DKIM
@@ -78,6 +89,4 @@ Website für einen 24/7-Automaten-Store (Next.js, GSAP). Live ist die erste Fass
 
 ## Sprachen
 
-- Deutsch: Muttersprache
-- Englisch: B1, Richtung B2
-- Polnisch: mündlich
+- Deutsch: Muttersprache · Englisch: B1, Richtung B2 · Polnisch: mündlich

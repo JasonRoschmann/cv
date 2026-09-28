@@ -1,50 +1,61 @@
 # Jason Roschmann
 
-AI Automation & Software Development · Junior / Career Changer · Python · TypeScript
+Junior Software Engineer · AI Automation
+
+I build AI automations – and make their behaviour verifiable.
 
 Email: jason@roschmann-digital.de | Phone: +49 155 612 953 91\
 LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | GitHub: github.com/JasonRoschmann | Web CV: jasonroschmann.github.io/cv\
 Location: Hamburg, Germany | Looking for: Hamburg or remote; relocation to Zurich possible for the right role | Start date by arrangement
 
+Core stack: Python, FastAPI, TypeScript, React/Next.js, PostgreSQL, Docker
+
 ## Profile
 
-I build AI-assisted automations and web applications with Python and TypeScript — in my own projects and in a team, from the data model to deployment. What interests me most are the failure cases: duplicate actions, stuck jobs, silent data loss, half-finished rollouts — and tests that pin down exactly those cases. AI agents are my development tool; requirements, architecture decisions and acceptance stay with me, and I can explain every contribution in the code. Four years of B2B sales taught me to understand the problem first. I am looking for a junior role in a development team.
+I build AI automations and web applications with Python and TypeScript, on my own and in a team. My practice covers API integration, background jobs and targeted tests against duplicate actions and data loss. I use AI agents for implementation; I own the requirements and the acceptance of my contributions. I am looking for a junior role in AI automation or backend/full-stack development.
 
 ## Projects
 
 ### Flowki Studio — Clip Studio (team project, Aug–Sep 2026)
 
-Internal social media studio (trends, platform playbooks, AI content pipeline). My focus: the clip pipeline that turns long videos into shorts. 64 pull requests in Flowki Studio, 50 of them merged.
+Purpose: internal social media studio with trends, platform playbooks and an AI content pipeline. The clip studio turns long videos into shorts — my focus. 64 pull requests in Flowki Studio, 50 of them merged.
 
 - Speaker reframe: face position measured at several points in time instead of once, smoothed into piecewise-constant 9:16 keyframes — the crop follows the person speaking.
-- Deterministic re-render after corrections: append-only plan versions, every change invalidates a previously granted approval; rendering runs asynchronously on Celery, without model costs.
+- Deterministic re-render after corrections: append-only plan versions, every plan change invalidates a previously granted approval; rendering runs asynchronously on Celery, without model costs.
 - Up to three cut variants per clip, at most one per target account (database constraint); fixes for stuck jobs and a production that was triggered twice.
 - Stack: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, MinIO, Next.js
 
-### Job Application Automation (own project, since July 2026)
+### Debugging case study — hermes-studio (contribution to a third-party project, Sep 2026)
 
-Python pipeline on my own Linux server: job search via job board APIs (including the German Federal Employment Agency, Greenhouse, Lever), analysis, cover letters, final checks, email sending, reply detection via IMAP. 93 Python files, 55 of them tests.
+- Cause: 21 failing tests, two root causes — 20× an SQLite handle that was never closed and blocks cleanup on Windows; 1× an outdated test against a security rule.
+- Fix: handle closed, security rule kept, test corrected; also fixed silent data loss in the task store.
+- Evidence: mutation probe — if the rule is broken on purpose, the corrected test fails. Test suite from 177 to 199 passing tests.
+- How I work with AI agents: every bug first as a failing test, the agent implements, a second model reviews as an additional reviewer, rollout with checksums and automatic rollback.
+
+### AI-assisted application management (own project, since July 2026)
+
+Purpose: Python pipeline for job search via job board APIs (including the German Federal Employment Agency, Greenhouse, Lever), cover letters, checks, sending and reply matching. Focus: traceable actions. 94 Python files, 56 of them tests.
 
 - Shared ledger of all outbound actions with reservations: no duplicate application across email and portal, at most one application per company within 14 days.
-- Concurrency: one shared file lock (flock) for six queue writers, verified on Linux with parallel processes. Rollout scripts hold all 18 cron locks, verify checksums, run tests before and after the swap and roll back automatically on caught errors.
-- Fail-closed: checkers block on unusable model output; model cascade (Claude, Gemini, Groq) with cool-down periods; a watchdog reports stalls.
-- Way of working: every bug first reproduced as a failing test, review by a second model (Codex).
+- Blocking checks before sending: unusable model output stops the run; model cascade (Claude, Gemini, Groq) with cool-down periods.
+- Checked LLM ratings against blind reference judgements; did not roll out a revised analysis after an incomplete measurement showed no proven improvement.
+- Rollouts with checksums, tests before and after the swap, and automatic rollback.
 
-### duftkumpels.shop (Shopify, since June 2026)
+## Web & shop development for clients
 
-Shop of a Hamburg niche perfumery: purchased Prestige theme, reworked in Liquid, CSS and JavaScript. Own design layer in the live theme, three languages (DE/EN/FR), product data via metafields, weekly Lighthouse checks against the live shop via GitHub Actions.
+Built websites and shops for clients — from design and interaction to multilingual content, legal requirements, CI and delivery.
 
-### Tools for AI agents — hermes-brett and hermes-studio (Sep 2026)
+- Frontend & interaction: Next.js, React, TypeScript, GSAP — hero as a frame sequence that turns with the mouse pointer (on phones via device tilt); full-screen chapters with dedicated mobile controls (nk247store.de).
+- Shop & content: reworked a purchased Shopify theme in Liquid, CSS and JavaScript; own design layer in the live theme, three languages (DE/EN/FR), product data via metafields (duftkumpels.shop).
+- Quality & delivery: CI with TypeScript check, ESLint, Vitest, build and Playwright (nk247store.de); weekly Lighthouse checks against the live shop via GitHub Actions (duftkumpels.shop).
+- Performance: versioned assets, loading fallback, performance passes against jank (nk247store.de).
+- Legal & content: tobacco advertising removed from all visuals per German law, § 19 TabakerzG (nk247store.de).
+- AI tools: wrote the design brief, steered an AI website builder and refined the result myself — camera moves from real photos, colour grading, transitions (redesign draft for a Hamburg izakaya).
+- References: duftkumpels.shop — live since June 2026; nk247store.de — client project in a team, my redesign not yet published.
 
-- hermes-brett: task board plugin for Hermes Agent without a build step; a cost gate prevents accidental paid agent runs; deploy with rollback; self-test using only node:assert.
-- hermes-studio (contribution to a third-party project): traced 21 failing tests to their root causes — 20× an SQLite handle that was never closed and blocks cleanup on Windows; 1× an outdated test against a security rule: kept the code, fixed the test, verified with a mutation probe. Fixed silent data loss in the task store. Test suite from 177 to 199 passing tests.
+## Further projects
 
-### nk247store.de — interactive redesign (client project in a team, Aug–Sep 2026)
-
-Website for a 24/7 vending store (Next.js, GSAP). The live site is the team's first version; my part is an interactive redesign on a separate branch, not yet published: hero as a frame sequence (the courier's head turns through 180° with the mouse pointer, on phones via device tilt), full-screen chapters with dedicated mobile controls, tobacco advertising removed per German law (§ 19 TabakerzG). CI with TypeScript check, ESLint, Vitest, build and Playwright.
-
-### Further projects
-
+- hermes-brett: task board plugin for Hermes Agent without a build step; a cost gate prevents the board from accidentally starting a paid agent run; deploy with rollback; self-test using only node:assert.
 - Shinobi: Ember Accord — mobile idle RPG (React Native, Skia, Supabase, pgTAP). Agent-orchestrated: an AI agent works through 50 roles in lead mode, I make the product decisions.
 - Interactive web CV — installable PWA without a framework: SVG displacement, canvas graph, WebGL fluid simulation (adapted from PavelDoGreat, MIT).
 
@@ -61,16 +72,16 @@ Website for a 24/7 vending store (Next.js, GSAP). The live site is the team's fi
 - Cold acquisition and needs assessment directly with owners and managing directors, negotiation and closing on site.
 - Handling rejection every day — and an eye for the problems a business really has.
 
-## Training
+## Training and project practice
 
 - Web development course, 2024 (6 months): HTML, CSS, JavaScript, web architecture
 - Google Ads Skillshop, January 2026: Search, Performance Max
-- No university degree, no completed vocational training — career change through project practice, continuous self-study
+- Ongoing self-directed learning through own and shared software projects
 
 ## Skills (used in projects)
 
 - Development: Python, FastAPI, TypeScript, React, Next.js, React Native
-- AI & agents: Claude Code, model APIs (Claude, Gemini, Groq), MCP, agent orchestration, n8n
+- AI & agents: Claude Code, LLM APIs (Claude, Gemini, Groq), MCP, agent orchestration, n8n
 - Data & jobs: PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase
 - Quality: pytest, Vitest, Playwright, GitHub Actions, Lighthouse CI
 - Operations: Linux servers, Docker Compose, cron, flock, SMTP/IMAP, SPF/DKIM
@@ -78,6 +89,4 @@ Website for a 24/7 vending store (Next.js, GSAP). The live site is the team's fi
 
 ## Languages
 
-- German: native
-- English: B1, working towards B2
-- Polish: spoken
+- German: native · English: B1, working towards B2 · Polish: spoken
