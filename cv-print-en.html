@@ -57,7 +57,7 @@
         <ul class="b">
           <li><b>Speaker reframe:</b> face position measured at several points in time instead of once, smoothed into piecewise-constant 9:16 keyframes — the crop follows the person speaking.</li>
           <li><b>Deterministic re-render</b> after corrections: append-only plan versions, every plan change invalidates a previously granted approval; rendering runs asynchronously on Celery, without model costs.</li>
-          <li><b>Up to three cut variants per clip,</b> at most one per target account (database constraint); fixes for stuck jobs and a production that was triggered twice.</li>
+          <li><b>Up to three cut variants per clip,</b> at most one per target account (database constraint); publishing rights re-checked immediately before sending.</li>
         </ul>
         <div class="proof"><span class="ok">✓ 64 PRs in Flowki Studio, 50 merged</span><span>Python · FastAPI · Celery · SQLAlchemy · PostgreSQL · Redis · MinIO</span></div>
       </div>

@@ -22,7 +22,7 @@ Purpose: internal social media studio with trends, platform playbooks and an AI 
 
 - Speaker reframe: face position measured at several points in time instead of once, smoothed into piecewise-constant 9:16 keyframes — the crop follows the person speaking.
 - Deterministic re-render after corrections: append-only plan versions, every plan change invalidates a previously granted approval; rendering runs asynchronously on Celery, without model costs.
-- Up to three cut variants per clip, at most one per target account (database constraint); fixes for stuck jobs and a production that was triggered twice.
+- Up to three cut variants per clip, at most one per target account (database constraint); publishing rights re-checked immediately before sending.
 - Stack: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, MinIO, Next.js
 
 ### Debugging case study — hermes-studio (contribution to a third-party project, Sep 2026)
@@ -47,7 +47,7 @@ Websites and shops for clients — design, multilingual content, legal requireme
 
 - Frontend & interaction: Next.js, React, TypeScript, GSAP — hero as a frame sequence that turns with the mouse pointer (on phones via device tilt); full-screen chapters with dedicated mobile controls (nk247store.de).
 - Shop & content: reworked a purchased Shopify theme in Liquid, CSS and JavaScript; own design layer in the live theme, product data via metafields (duftkumpels.shop).
-- SEO & email: Automated a Search Console analysis of search queries and adjusted titles and metadata accordingly; checked the indexing status of 700 URLs; fixed a Klaviyo abandonment email to link to a recoverable checkout. (duftkumpels.shop)
+- SEO & email: Automated a Search Console analysis of search queries and adjusted titles and metadata accordingly; checked the indexing status of 700 URLs; fixed a Klaviyo abandonment email to link to a recoverable checkout (duftkumpels.shop).
 - Quality & delivery: CI with TypeScript check, ESLint, Vitest, build and Playwright (nk247store.de); weekly Lighthouse checks against the live shop via GitHub Actions (duftkumpels.shop).
 - Multilingual: built a DE/EN/FR translation pipeline with HTML extraction, structure checks and import via CSV or GraphQL; localised product names and collection copy (duftkumpels.shop).
 - Legal & content: tobacco advertising removed from all visuals per German law, § 19 TabakerzG (nk247store.de).

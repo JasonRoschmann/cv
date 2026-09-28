@@ -22,7 +22,7 @@ Zweck: Internes Social-Media-Studio mit Trends, Plattform-Playbooks und KI-Conte
 
 - Speaker-Reframe: Gesichtsposition an mehreren Zeitpunkten gemessen statt einmal, geglättet zu stückweise konstanten 9:16-Keyframes — der Ausschnitt folgt der sprechenden Person.
 - Deterministischer Neu-Render nach Korrekturen: append-only Planversionen, jede Planänderung entwertet eine erteilte Freigabe; Render asynchron über Celery, ohne Modellkosten.
-- Bis zu drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint); Fixes für hängende Jobs und eine doppelt ausgelöste Produktion.
+- Bis zu drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint); Publikationsrechte unmittelbar vor dem Versand erneut geprüft.
 - Stack: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, MinIO, Next.js
 
 ### Fallbeispiel Fehlersuche — hermes-studio (Beitrag zu fremdem Projekt, Sep 2026)
@@ -45,9 +45,9 @@ Zweck: Python-Pipeline für Stellensuche über Job-APIs (u. a. Bundesagentur fü
 
 Websites und Shops für Kunden — Gestaltung, Mehrsprachigkeit, rechtliche Vorgaben, CI und Auslieferung.
 
-- Frontend & Interaktion: Next.js, React, TypeScript, GSAP — Hero als Frame-Sequenz, die sich mit dem Mauszeiger dreht (auf dem Handy per Geräteneigung); Vollbild-Kapitel mit eigener Mobile-Bedienung (nk247store.de).
+- Frontend & Interaktion: Next.js, React, TypeScript, GSAP — Hero als Frame-Sequenz, die sich mit dem Mauszeiger dreht (mobil per Geräteneigung); Vollbild-Kapitel mit Mobile-Bedienung (nk247store.de).
 - Shop & Inhalte: gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, Produktdaten über Metafields (duftkumpels.shop).
-- SEO & E-Mail: Search-Console-Auswertung automatisiert, Titel und Metadaten angepasst; Indexierungsstatus von 700 URLs geprüft; Klaviyo-Abbruchmail auf wiederherstellbaren Checkout-Link korrigiert. (duftkumpels.shop)
+- SEO & E-Mail: Search-Console-Auswertung automatisiert, Titel und Metadaten angepasst; 700 URLs auf Indexierung geprüft; Klaviyo-Abbruchmail auf wiederherstellbaren Checkout-Link korrigiert (duftkumpels.shop).
 - Qualität & Auslieferung: CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright (nk247store.de); wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions (duftkumpels.shop).
 - Mehrsprachigkeit: Übersetzungs-Pipeline für DE/EN/FR mit HTML-Extraktion, Strukturprüfung und Import per CSV bzw. GraphQL; Produktnamen und Kollektionstexte lokalisiert (duftkumpels.shop).
 - Recht & Inhalte: Tabakwerbung nach § 19 TabakerzG aus allen Motiven entfernt (nk247store.de).
@@ -58,7 +58,7 @@ Websites und Shops für Kunden — Gestaltung, Mehrsprachigkeit, rechtliche Vorg
 
 - hermes-brett: Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt; ein Kosten-Gate verhindert, dass das Brett versehentlich einen bezahlten Agentenlauf startet; Deploy mit Rollback; Selbsttest nur mit node:assert.
 - Shinobi: Ember Accord — mobiles Idle-RPG (React Native, Skia, Supabase, pgTAP). Agenten-orchestriert: ein KI-Agent arbeitet im Lead-Modus 50 Rollen ab, die Produktentscheidungen treffe ich.
-- Interaktives Web-CV — installierbare PWA ohne Framework: SVG-Displacement, Canvas-Graph, WebGL-Fluidsimulation (adaptiert von PavelDoGreat, MIT).
+- Interaktives Web-CV — installierbare PWA ohne Framework: SVG-Displacement, Canvas, WebGL-Fluidsimulation (adaptiert, MIT-Lizenz).
 
 ## Berufserfahrung
 
@@ -70,7 +70,7 @@ Websites und Shops für Kunden — Gestaltung, Mehrsprachigkeit, rechtliche Vorg
 ### B2B-Direktvertrieb (Door-to-Door)
 **2019 – 2023 | EWE TEL, Ranger Marketing | Außendienst bundesweit**
 
-- Kaltakquise und Bedarfsgespräche direkt mit Inhabern und Geschäftsführern, Verhandlung und Abschluss vor Ort.
+- Kaltakquise und Bedarfsgespräche mit Inhabern und Geschäftsführern, Verhandlung und Abschluss vor Ort.
 - Täglicher Umgang mit Absagen — und der Blick dafür, welche Probleme ein Betrieb wirklich hat.
 
 ## Weiterbildung und Projektpraxis
