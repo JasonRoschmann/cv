@@ -224,6 +224,35 @@
 
   .sysgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
   @media(max-width:720px){.sysgrid{grid-template-columns:1fr}}
+  /* Fallstudien: je drei Schritte, Nummer als Wasserzeichen */
+  .fs-grid{display:grid;gap:16px;margin-top:18px}
+  .fs{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2.4vw,26px);
+      background:linear-gradient(160deg,var(--elev),var(--panel));box-shadow:0 1px 0 rgba(255,255,255,.03) inset,0 18px 40px -30px rgba(0,0,0,.9)}
+  .fs-no{position:absolute;right:20px;top:4px;font-family:var(--fd);font-style:italic;font-weight:600;font-size:clamp(3.6rem,7vw,5.4rem);line-height:1;color:rgba(63,220,132,.10);pointer-events:none}
+  .fs-tag{font-family:var(--fm);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+  .fs h3{font-family:var(--fd);font-weight:600;font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.2;letter-spacing:-.01em;margin-top:8px;max-width:32ch;position:relative}
+  .fs-steps{display:grid;grid-template-columns:repeat(3,1fr);margin-top:16px;border-top:1px solid var(--line)}
+  .fs-steps>div{padding:14px 18px 2px 0;color:var(--ink2);font-size:14px;line-height:1.55}
+  .fs-steps>div+div{padding-left:18px;border-left:1px solid var(--line)}
+  .fs-steps .k{display:block;font-family:var(--fm);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grn);margin-bottom:6px}
+  .fs-note{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line2);font-size:13px;color:var(--mut)}
+  .fs-note b{color:var(--ink2);font-weight:600}
+  @media(max-width:720px){.fs-steps{grid-template-columns:1fr}.fs-steps>div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+  /* MAE-Balken: niedriger ist besser, gestrichelte Linie = Rollout-Tor 10 (Skala 0-12) */
+  .mae{display:grid;gap:8px;margin-top:16px;max-width:560px}
+  .mae-row{display:grid;grid-template-columns:118px 1fr 40px;gap:12px;align-items:center;font-family:var(--fm);font-size:11.5px;color:var(--mut)}
+  .mae-row i{position:relative;height:10px;border-radius:5px;background:rgba(255,255,255,.05)}
+  .mae-row i::before{content:"";position:absolute;inset:0 auto 0 0;width:calc(var(--v) / 12 * 100%);border-radius:5px;background:var(--dim)}
+  .mae-row.neu i::before{background:var(--amb)}
+  .mae-row i::after{content:"";position:absolute;top:-5px;bottom:-5px;left:calc(10 / 12 * 100%);border-left:1.5px dashed var(--grn)}
+  .mae-row b{color:var(--ink);font-weight:600;text-align:right}
+  .mae-cap{font-family:var(--fm);font-size:11px;color:var(--mut)}
+  .mae-cap span{color:var(--grn)}
+  .card .urow{padding:10px 0}
+  /* nur breit: sonst schlägt die spezifischere Regel die Handy-Regel .urow{1fr} */
+  @media(min-width:641px){.card .urow{grid-template-columns:170px 1fr;gap:16px}}
+  @media(max-width:720px){.card .ct{flex-wrap:wrap}}
+  .card .urow .v{font-size:14px}
   .card{background:linear-gradient(160deg,var(--elev),var(--panel));border:1px solid var(--line);border-radius:14px;padding:22px;transition:transform .3s cubic-bezier(.16,1,.3,1),border-color .3s}
   /* --- Material-Politur (additiv) --- */
   .card{position:relative;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,.03) inset,0 18px 40px -30px rgba(0,0,0,.9)}
@@ -676,7 +705,7 @@
         <h5>Projekte · Stand 09/2026</h5>
         <div class="trow"><span class="d on"></span>Flowki Studio <span class="v g">team</span></div>
         <div class="trow"><span class="d on"></span>duftkumpels.shop <span class="v g">live</span></div>
-        <div class="trow"><span class="d"></span>Bewerbungs-Automation <span class="v">eigen</span></div>
+        <div class="trow"><span class="d"></span>Bewerbungsverwaltung <span class="v">eigen</span></div>
         <div class="trow"><span class="d"></span>hermes-brett <span class="v">plugin</span></div>
         <div class="trow"><span class="d"></span>nk247 · Überarbeitung <span class="v">branch</span></div>
         <svg class="spark" id="spark" viewBox="0 0 220 34" preserveAspectRatio="none"><polyline points=""></polyline></svg>
@@ -780,12 +809,62 @@
           <div class="urow"><div class="k">Varianten</div><div class="v">Bis zu drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint) — keine Variante ohne Empfänger.</div></div>
           <div class="urow j"><div class="k">Fehlerfälle</div><div class="v">Fixes für Jobs, die nach verschwundenem Worker für immer „läuft“ zeigten, und für eine Produktion, die ein Statusfehler doppelt auslöste.</div></div>
         </div>
-        <p class="eyebrow rv" style="margin-top:30px;color:var(--mut)">Eigene, Team- und Kundenprojekte</p>
+        <p class="eyebrow rv" style="margin-top:34px">Fallstudien</p>
+        <h3 class="display h-l rv" style="margin-top:12px;max-width:24ch">Drei Fälle, in denen der erste Eindruck <span class="g it">täuschte.</span></h3>
+        <p class="body rv" style="margin-top:10px">Jeweils: was auffiel, was ich geändert habe — und woran man sieht, dass es stimmt.</p>
+        <div class="fs-grid rv">
+          <article class="fs">
+            <span class="fs-no" aria-hidden="true">01</span>
+            <div class="fs-tag">Beitrag zu fremdem Projekt · hermes-studio · Sep 2026</div>
+            <h3>21 rote Tests — zwei Ursachen, kein Test abgeschaltet.</h3>
+            <div class="fs-steps">
+              <div><span class="k">Ursache</span>20× ein nie geschlossenes SQLite-Handle, das unter Windows das Aufräumen sperrt; 1× ein veralteter Test, der einer Sicherheitsregel widersprach.</div>
+              <div><span class="k">Korrektur</span>Handle geschlossen. Die Sicherheitsregel behalten und den Test korrigiert — nicht umgekehrt.</div>
+              <div><span class="k">Nachweis</span>Mutationsprobe: Eine gezielte Abschwächung der Sicherheitsregel ließ den korrigierten Test scheitern. Suite 177 → 199 grün.</div>
+            </div>
+            <p class="fs-note"><b>Separat beigetragen:</b> stillen Datenverlust im Task-Store behoben, mit fünf neuen Tests.</p>
+          </article>
+          <article class="fs">
+            <span class="fs-no" aria-hidden="true">02</span>
+            <div class="fs-tag">Eigenprojekt · Antwortzuordnung per IMAP · Sep 2026</div>
+            <h3>Grüne Tests, falsches Verhalten: Die Attrappe war netter als die Bibliothek.</h3>
+            <div class="fs-steps">
+              <div><span class="k">Befund</span>Im Review vor dem Rollout fand ein zweites Modell: <span class="mono">imaplib.response()</span> verbraucht den gelesenen Wert. Mein Code las die UIDVALIDITY für jede gespeicherte Antwort neu — die Testattrappe lieferte sie jedes Mal, die echte Bibliothek nur beim ersten. Bei mehreren Antworten wäre nicht die jüngste gewählt worden.</div>
+              <div><span class="k">Korrektur</span>Erst die Attrappe an das echte Verhalten angepasst: Test rot. Dann den Wert genau einmal pro Abruf gelesen: grün.</div>
+              <div><span class="k">Nachweis</span>Proben mit verbrauchender Semantik: jüngste Antwort, neue UID-Nummerierung und Zeitvergleich korrekt. Generalprobe gegen einen simulierten Mailserver, auch mit abgelehnter Suche.</div>
+            </div>
+            <p class="fs-note"><b>Im selben Review gefunden:</b> Ein Antwortentwurf hätte die noreply-Adresse eines Portals angeschrieben statt der Person, die geantwortet hatte. Jetzt gilt der Absender derselben Nachricht.</p>
+          </article>
+          <article class="fs">
+            <span class="fs-no" aria-hidden="true">03</span>
+            <div class="fs-tag">Eigenprojekt · LLM-Bewertung · Sep 2026</div>
+            <h3>Eine Verbesserung, die ich nicht ausgerollt habe.</h3>
+            <div class="fs-steps">
+              <div><span class="k">Vorgabe</span>Eine überarbeitete LLM-Analyse sollte die Passung zu Stellen genauer schätzen. Vorab festgelegtes Rollout-Tor: mittlere absolute Abweichung (MAE) ≤ 10 Punkte gegenüber blinden Referenzurteilen, auf mindestens 30 ungesehenen Stellen.</div>
+              <div><span class="k">Messung</span>Das Gratis-Kontingent reichte nur für 18 von 30 Stellen. Auf diesen 18 lag die neue Fassung bei 11,0, die alte bei 9,5 — und eine konstante Vergleichsschätzung bei 9,2.</div>
+              <div><span class="k">Entscheidung</span>Nicht ausgerollt: Tor verfehlt, Messung unvollständig. Die alte Fassung bleibt, bis eine vollständige Messung etwas anderes belegt.</div>
+            </div>
+            <div class="mae" role="img" aria-label="Mittlere absolute Abweichung auf 18 Stellen, niedriger ist besser: neue Fassung 11,0, alte Fassung 9,5, konstante Vergleichsschätzung 9,2; Rollout-Tor 10">
+              <div class="mae-row neu"><span>neue Fassung</span><i style="--v:11"></i><b>11,0</b></div>
+              <div class="mae-row"><span>alte Fassung</span><i style="--v:9.5"></i><b>9,5</b></div>
+              <div class="mae-row"><span>Konstante</span><i style="--v:9.2"></i><b>9,2</b></div>
+              <div class="mae-cap">MAE auf 18 Stellen, niedriger ist besser · <span>┆ Rollout-Tor 10</span></div>
+            </div>
+            <p class="fs-note">Die Referenzurteile sind modellgestützt, keine echten Einstellungsentscheidungen von Arbeitgebern.</p>
+          </article>
+        </div>
+        <p class="eyebrow rv" style="margin-top:34px;color:var(--mut)">Eigene, Team- und Kundenprojekte</p>
         <div class="sysgrid rv" style="margin-top:14px">
-          <div class="card" style="grid-column:1 / -1;border-color:rgba(63,220,132,.3)"><div class="ct"><h4>Bewerbungs-Automation</h4><span class="tag">Eigenprojekt · seit Juli 2026</span></div><p>Python-Pipeline auf eigenem Linux-Server: Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Analyse, Anschreiben, Endkontrolle, Mailversand, Antwort-Erkennung per IMAP. Ein gemeinsames Hauptbuch aller Außenaktionen verhindert Doppelbewerbungen über Mail und Portal; sechs Queue-Schreiber teilen sich eine Dateisperre, unter Linux mit parallelen Prozessen geprüft; Rollout-Skripte halten alle 18 Cron-Locks, testen vor und nach dem Tausch und bauen bei abgefangenen Fehlern automatisch zurück.</p><div class="stack"><span class="chip">Python</span><span class="chip">Cron · flock</span><span class="chip">SMTP/IMAP</span><span class="chip">Claude · Gemini · Groq</span></div><p class="proof">93 Python-Dateien, davon 55 Tests — jeder Fehler zuerst als roter Test, Review durch ein zweites Modell.</p></div>
-          <div class="card"><div class="ct"><h4>duftkumpels.shop</h4><span class="tag live">live</span></div><p>Shop einer Hamburger Nischen-Parfümerie: gekauftes Prestige-Theme, in Liquid, CSS und JavaScript umgebaut. Eigene Design-Schicht im Live-Theme, dreisprachig, Produktdaten über Metafields.</p><div class="stack"><span class="chip">Shopify Liquid</span><span class="chip">DE/EN/FR</span><span class="chip">GitHub Actions</span></div><p class="proof">Wöchentliche Lighthouse-Prüfung gegen den <a href="https://duftkumpels.shop" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">Live-Shop</a>.</p></div>
-          <div class="card"><div class="ct"><h4>Werkzeuge für KI-Agenten</h4><span class="tag">Plugin · Fork-Beitrag</span></div><p><b>hermes-brett:</b> Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt, mit Kosten-Gate gegen versehentliche bezahlte Agentenläufe. <b>hermes-studio:</b> 21 rote Tests bis zur Ursache verfolgt — ein nie geschlossenes SQLite-Handle und ein veralteter Test gegen eine Sicherheitsregel; stillen Datenverlust im Task-Store behoben.</p><div class="stack"><span class="chip">TypeScript</span><span class="chip">Vitest</span><span class="chip">node:assert</span></div><p class="proof">Test-Suite von 177 auf 199 grüne Tests, Sicherheitsregel per Mutationsprobe abgesichert.</p></div>
-          <div class="card"><div class="ct"><h4>nk247store.de — Überarbeitung</h4><span class="tag">Kundenprojekt im Team</span></div><p>Interaktive Überarbeitung einer Website für einen 24/7-Automaten-Store: der Kopf des Kuriers dreht sich als Frame-Sequenz mit dem Mauszeiger, auf dem Handy per Neigung. Liegt auf eigenem Branch, live ist die erste Fassung des Teams.</p><div class="stack"><span class="chip">Next.js</span><span class="chip">GSAP</span><span class="chip">Playwright</span></div><p class="proof">CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright.</p></div>
+          <div class="card" style="grid-column:1 / -1;border-color:rgba(63,220,132,.3)"><div class="ct"><h4>KI-gestützte Bewerbungsverwaltung</h4><span class="tag">Eigenprojekt · seit Juli 2026</span></div><p>Python-Pipeline für Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Anschreiben, Prüfungen, Versand und Antwortzuordnung. Schwerpunkt: nachvollziehbare Aktionen. Ein gemeinsames Hauptbuch aller Außenaktionen mit Reservierung verhindert Doppelbewerbungen über Mail und Portal — höchstens eine Bewerbung je Firma in 14 Tagen. Blockierende Prüfungen vor dem Versand: unbrauchbare Modellantworten stoppen den Lauf; Modell-Kaskade mit Sperrzeiten. Rollouts mit Prüfsummen, Tests vor und nach dem Tausch und automatischem Rückbau.</p><div class="stack"><span class="chip">Python</span><span class="chip">Cron · flock</span><span class="chip">SMTP/IMAP</span><span class="chip">Claude · Gemini · Groq</span></div><p class="proof">94 Python-Dateien, davon 56 Testdateien — Fallstudien 02 und 03 stammen aus diesem Projekt.</p></div>
+          <div class="card" style="grid-column:1 / -1"><div class="ct"><h4>Web- &amp; Shop-Entwicklung für Kunden</h4><span class="tag live">Kunden- und Teamprojekte</span></div><p>Websites und Shops für Kunden umgesetzt — von Gestaltung und Interaktion über Mehrsprachigkeit und rechtliche Vorgaben bis zu CI und Auslieferung.</p>
+            <div class="urow"><div class="k">Interaktion</div><div class="v">Next.js, React, TypeScript, GSAP: Hero als Frame-Sequenz — der Kopf des Kuriers dreht sich mit dem Mauszeiger, auf dem Handy per Geräteneigung; Vollbild-Kapitel mit eigener Mobile-Bedienung. <span class="muted">nk247store.de</span></div></div>
+            <div class="urow"><div class="k">Shop &amp; Inhalte</div><div class="v">Gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, dreisprachig (DE/EN/FR), Produktdaten über Metafields. <span class="muted">duftkumpels.shop</span></div></div>
+            <div class="urow"><div class="k">Qualität</div><div class="v">CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright <span class="muted">nk247store.de</span>; wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions <span class="muted">duftkumpels.shop</span></div></div>
+            <div class="urow"><div class="k">Performance</div><div class="v">Versionierte Assets, Lade-Fallback, Performance-Runden gegen Ruckeln. <span class="muted">nk247store.de</span></div></div>
+            <div class="urow"><div class="k">Recht</div><div class="v">Tabakwerbung nach § 19 TabakerzG aus allen Motiven entfernt. <span class="muted">nk247store.de</span></div></div>
+            <div class="urow"><div class="k">KI-Werkzeuge</div><div class="v">Design-Brief geschrieben, KI-Website-Builder gesteuert und selbst nachgearbeitet: Kamerafahrten aus echten Fotos, Farbkorrektur, Übergänge. <span class="muted">Redesign-Entwurf für ein Hamburger Izakaya</span></div></div>
+            <p class="proof"><a href="https://duftkumpels.shop" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">duftkumpels.shop</a> — Projektarbeit seit Juni 2026, Anpassungen im Live-Theme · nk247store.de — Kundenprojekt im Team; meine Überarbeitung liegt auf eigenem Branch, live ist die erste Fassung des Teams.</p></div>
+          <div class="card"><div class="ct"><h4>Werkzeuge für KI-Agenten</h4><span class="tag">Plugin · Fork-Beitrag</span></div><p><b>hermes-brett:</b> Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt, mit Kosten-Gate gegen versehentliche bezahlte Agentenläufe. <b>hermes-studio:</b> Beitrag zu einem fremden Projekt — siehe Fallstudie 01.</p><div class="stack"><span class="chip">TypeScript</span><span class="chip">Vitest</span><span class="chip">node:assert</span></div><p class="proof">hermes-brett: Deploy mit Rollback, Selbsttest nur mit node:assert.</p></div>
           <div class="card"><div class="ct"><h4>Shinobi: Ember Accord</h4><span class="tag">Agenten-Experiment</span></div><p>Mobiles Idle-RPG mit React Native, Skia und Supabase. Agenten-orchestriert: ein KI-Agent arbeitet im Lead-Modus 50 Rollen ab, die Produktentscheidungen treffe ich.</p><div class="stack"><span class="chip">React Native</span><span class="chip">Supabase · pgTAP</span><span class="chip">Deno Edge</span></div><p class="proof">Dokumentiert in einem Agenten-Ledger, mit getrennten App- und Datenbanktests.</p></div>
           <div class="card" style="grid-column:1 / -1;border-color:rgba(63,220,132,.35)"><div class="ct"><h4>◆ Dieses Web-CV</h4><span class="tag live">Du bist gerade drin</span></div><p>Am Handy ein eigenes Phone-UI — als App installierbar, mit Glas-Refraktion über SVG-Displacement-Filter, einem Canvas-Graphen, Federphysik und App-Gesten. HTML, CSS und JavaScript ohne Framework; die Fluid-Simulation ist von PavelDoGreat (MIT) adaptiert.</p><div class="stack"><span class="chip">PWA · installierbar</span><span class="chip">SVG-Displacement</span><span class="chip">Canvas</span><span class="chip">WebGL</span></div><p class="proof">Öffne es am Handy: Boot, Lockscreen, App-Zoom.</p></div>
         </div>
@@ -802,7 +881,7 @@
             <h4>KI-Automation &amp; Webentwicklung</h4>
             <div class="org">Eigene Projekte, Team- und Kundenprojekte · Hamburg / remote</div>
             <ul>
-              <li><b>Python-Backends, Next.js-Frontends und Shopify-Themes</b> entwickelt, getestet und auf Linux-Servern betrieben (Docker Compose, Cron, Deployment mit Rollback).</li>
+              <li><b>Python-Backends und Next.js-Frontends</b> entwickelt, getestet und auf Linux-Servern betrieben (Docker Compose, Cron, Deployment mit Rollback); Shopify-Themes angepasst.</li>
               <li><b>Im Team</b> über Branches, Pull Requests und gemeinsame Test-Suites — 50 gemergte PRs in Flowki Studio, Schwerpunkt Clip-Studio.</li>
               <li><b>KI-gestützte Entwicklung:</b> Agenten setzen um, Anforderungen, Architektur und Abnahme liegen bei mir.</li>
             </ul>
@@ -822,7 +901,7 @@
             <div class="acth">Lernen <em class="g it">durchs Bauen.</em></div>
             <h4>Weiterbildung &amp; Autodidaktik</h4>
             <div class="org">Google Ads Skillshop (2026) · Web-Entwicklung (2024, 6 Mte) · autodidaktisch, laufend seit 2024</div>
-            <ul><li>Kein Hochschulabschluss, keine abgeschlossene Berufsausbildung — Quereinstieg über Projektpraxis. Im Gespräch zeige ich den Code und erkläre meine Entscheidungen.</li></ul>
+            <ul><li>Laufende autodidaktische Weiterbildung anhand eigener und gemeinsamer Softwareprojekte. Im Gespräch zeige ich den Code und erkläre meine Entscheidungen.</li></ul>
           </div>
         </div>
       </div></section>
@@ -833,11 +912,11 @@
         <h2 class="display h-xl rv" style="margin-top:14px">Womit ich baue.</h2>
         <p class="body rv" style="margin-top:12px;max-width:62ch">Nur, was ich in Projekten eingesetzt habe — mit dem Projekt, in dem es steckt.</p>
         <div class="skgrid rv">
-          <div class="sk"><h4><span class="d">▸</span> Entwicklung</h4><div class="stack"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">React Native</span></div><p class="use">in: Flowki Studio · Bewerbungs-Automation · nk247 · Shinobi</p></div>
-          <div class="sk"><h4><span class="d">▸</span> KI &amp; Agenten</h4><div class="stack"><span class="chip">Claude Code</span><span class="chip">Modell-APIs: Claude · Gemini · Groq</span><span class="chip">MCP</span><span class="chip">Agenten-Orchestrierung</span><span class="chip">n8n</span></div><p class="use">in: Bewerbungs-Automation · Shinobi · hermes-brett · n8n: Content-Engine OBSIDAIRE</p></div>
+          <div class="sk"><h4><span class="d">▸</span> Entwicklung</h4><div class="stack"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">React Native</span></div><p class="use">in: Flowki Studio · Bewerbungsverwaltung · nk247 · Shinobi</p></div>
+          <div class="sk"><h4><span class="d">▸</span> KI &amp; Agenten</h4><div class="stack"><span class="chip">Claude Code</span><span class="chip">Modell-APIs: Claude · Gemini · Groq</span><span class="chip">MCP</span><span class="chip">Agenten-Orchestrierung</span><span class="chip">n8n</span></div><p class="use">in: Bewerbungsverwaltung · Shinobi · hermes-brett · n8n: Content-Engine OBSIDAIRE</p></div>
           <div class="sk"><h4><span class="d">▸</span> Daten &amp; Hintergrundjobs</h4><div class="stack"><span class="chip">PostgreSQL</span><span class="chip">SQLAlchemy/Alembic</span><span class="chip">Celery</span><span class="chip">Redis</span><span class="chip">Supabase</span></div><p class="use">in: Flowki Studio · Shinobi</p></div>
-          <div class="sk"><h4><span class="d">▸</span> Qualität</h4><div class="stack"><span class="chip">pytest</span><span class="chip">Vitest</span><span class="chip">Playwright</span><span class="chip">GitHub Actions</span><span class="chip">Lighthouse-CI</span></div><p class="use">in: Bewerbungs-Automation · hermes-studio · nk247 · duftkumpels</p></div>
-          <div class="sk"><h4><span class="d">▸</span> Betrieb</h4><div class="stack"><span class="chip">Linux-Server</span><span class="chip">Docker Compose</span><span class="chip">Cron · flock</span><span class="chip">SMTP/IMAP</span><span class="chip">SPF/DKIM</span></div><p class="use">in: Bewerbungs-Automation · Flowki Studio · hermes-brett</p></div>
+          <div class="sk"><h4><span class="d">▸</span> Qualität</h4><div class="stack"><span class="chip">pytest</span><span class="chip">Vitest</span><span class="chip">Playwright</span><span class="chip">GitHub Actions</span><span class="chip">Lighthouse-CI</span></div><p class="use">in: Bewerbungsverwaltung · hermes-studio · nk247 · duftkumpels</p></div>
+          <div class="sk"><h4><span class="d">▸</span> Betrieb</h4><div class="stack"><span class="chip">Linux-Server</span><span class="chip">Docker Compose</span><span class="chip">Cron · flock</span><span class="chip">SMTP/IMAP</span><span class="chip">SPF/DKIM</span></div><p class="use">in: Bewerbungsverwaltung · Flowki Studio · hermes-brett</p></div>
           <div class="sk"><h4><span class="d">▸</span> Web &amp; Commerce</h4><div class="stack"><span class="chip">Shopify Liquid</span><span class="chip">Tailwind</span><span class="chip">GSAP</span><span class="chip">PWA</span><span class="chip">Canvas/WebGL</span></div><p class="use">in: duftkumpels · nk247 · dieses CV</p></div>
           <div class="sk amb" style="grid-column:1 / -1"><h4><span class="d">▸</span> Aus dem Vertrieb</h4><div class="stack"><span class="chip">B2B-Direktvertrieb</span><span class="chip">Bedarfsanalyse</span><span class="chip">Verhandlung</span><span class="chip">Google Ads Skillshop (2026)</span></div><p class="use">Fundament: 4 Jahre Außendienst mit Inhabern und Geschäftsführern</p></div>
         </div>
@@ -896,6 +975,7 @@
         <div class="ctabtns rv">
           <a class="big-btn p" href="mailto:jason@roschmann-digital.de?subject=15%20Minuten%20%E2%80%93%20Kennenlernen">15 Minuten anfragen →</a>
           <a class="big-btn s" href="Jason_Roschmann_CV.pdf" download>↓ CV als PDF</a>
+          <a class="big-btn s" href="Jason_Roschmann_CV_EN.pdf" download hreflang="en">↓ CV in English</a>
           <a class="big-btn s" href="https://github.com/JasonRoschmann" target="_blank" rel="noopener">GitHub ↗</a>
           <a class="big-btn s" href="https://www.linkedin.com/in/jason-roschmann-1091512b2" target="_blank" rel="noopener">LinkedIn</a>
           <a class="big-btn s" href="jason.vcf" download>＋ Zu Kontakten</a>
@@ -994,8 +1074,8 @@
     {q:"Warum von Vertrieb zu KI?",feat:1,k:["vertrieb","sales","wechsel","quereinst","warum ki","von sales","dna"],a:"Im Vertrieb habe ich vier Jahre direkt mit Inhabern gesprochen und gesehen, wo Betriebe Zeit verlieren. Seit 2024 baue ich Software und Automationen — in eigenen Projekten, im Team und für Kunden. Jetzt suche ich eine Junior-Rolle in einem Entwicklungsteam, um das professionell zu vertiefen."},
     {q:"Was könntest du bei uns bauen?",feat:1,k:["bei uns","30 tage","erste","was könntest","für uns","anfangen"],a:"Zum Einstieg würde ich mit dem Team einen geeigneten Prozess eingrenzen und einen testbaren Prototyp entwickeln — mit den Fehlerfällen zuerst: doppelte Ausführung, abgebrochene Jobs, halbe Rollouts."},
     {q:"Wo willst du arbeiten?",feat:1,k:["zürich","zurich","umzug","ziel","hamburg","remote","standort"],a:"In Hamburg, wo ich wohne, oder remote. Für eine passende Rolle ziehe ich auch nach Zürich — das Timing stimmen wir gemeinsam ab."},
-    {q:"Baust du auch Shops?",feat:1,k:["shop","store","commerce","duftkumpels","liquid","theme","verkauf"],a:"Ja. duftkumpels.shop: gekauftes Prestige-Theme, in Liquid, CSS und JavaScript umgebaut, dreisprachig und live, mit wöchentlicher Lighthouse-Prüfung per GitHub Actions."},
-    {q:"Wie stellst du Qualität sicher?",k:["qualität","gates","sicher","fehler","test","prüf","kontrolle","verantwort"],a:"Ich teste zuerst die Fehlerfälle. In hermes-studio habe ich 21 rote Tests bis zur Ursache verfolgt: 20 davon ein nie geschlossenes Datenbank-Handle, einer ein veralteter Test gegen eine Sicherheitsregel. Den Code habe ich behalten, den Test korrigiert und per Mutationsprobe abgesichert."},
+    {q:"Baust du auch Shops?",feat:1,k:["shop","store","commerce","duftkumpels","liquid","theme","verkauf"],a:"Ja, Websites und Shops für Kunden: duftkumpels.shop — gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut, dreisprachig, mit wöchentlicher Lighthouse-Prüfung per GitHub Actions. Im Team die Überarbeitung von nk247store.de mit Next.js, GSAP und CI bis Playwright. Details unter Projekte."},
+    {q:"Wie stellst du Qualität sicher?",k:["qualität","gates","sicher","fehler","test","prüf","kontrolle","verantwort"],a:"Ich teste zuerst die Fehlerfälle. In hermes-studio habe ich 21 rote Tests bis zur Ursache verfolgt: 20 davon ein nie geschlossenes Datenbank-Handle, einer ein veralteter Test gegen eine Sicherheitsregel. Die Sicherheitsregel habe ich behalten und den Test korrigiert; eine gezielte Abschwächung der Regel lässt ihn jetzt scheitern. Mehr in den Fallstudien unter Projekte."},
     {q:"Wie aufwändig ist es, dich einzustellen?",k:["kosten","bewilligung","permit","visum","einstellen","aufwand","aufwändig"],a:"Ich bin EU-Bürger und wohne in Hamburg. Für eine Stelle in der Schweiz melde ich mich nach Vertragsschluss selbst an."},
     {q:"Kein Studium?",k:["studium","ausbildung","degree","abschluss","informatik"],a:"Richtig: kein Studium, keine abgeschlossene Berufsausbildung. Ich bin Quereinsteiger und lerne über Projekte — im Gespräch zeige ich den Code und erkläre meine Entscheidungen."},
     {q:"Wie gut ist dein Englisch?",k:["englisch","english"],a:"Deutsch ist meine Muttersprache, mein Englisch ist B1 und im Aufbau Richtung B2. Dokumentation und Tooling nutze ich täglich auf Englisch."}
