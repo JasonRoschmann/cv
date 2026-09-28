@@ -12,7 +12,7 @@ Schwerpunkte: Technisches SEO, strukturierte Daten (JSON-LD), GEO/AEO, Google Se
 
 ## Profil
 
-Ich entwickle und verbessere Shopify-Shops mit Schwerpunkt auf technischem SEO, mehrsprachigen Inhalten und Marketing-Automation. Bei duftkumpels habe ich unter anderem Suchdaten ausgewertet, Themenverknüpfungen aufgebaut, Übersetzungsabläufe implementiert und einen fehlerhaften Klaviyo-Checkout-Link korrigiert. KI nutze ich für Recherche, Umsetzung und Content-Workflows; Befunde prüfe ich anhand von Quelldaten, Tests und Gegenmessungen. Vier Jahre B2B-Direktvertrieb haben mir gezeigt, woran Kaufentscheidungen hängen.
+Ich entwickle und verbessere Shopify-Shops mit Schwerpunkt auf technischem SEO, mehrsprachigen Inhalten und Marketing-Automation. KI nutze ich für Recherche, Umsetzung und Content-Workflows; Befunde prüfe ich anhand von Quelldaten, Tests und Gegenmessungen. Vier Jahre B2B-Direktvertrieb haben mir gezeigt, woran Kaufentscheidungen hängen.
 
 ## Fallstudie E-Commerce & SEO
 
@@ -22,12 +22,13 @@ Hamburger Nischen-Parfümerie. Mein Teil: Theme, SEO, Mehrsprachigkeit, Produktd
 
 Gefunden werden:
 
-- Search-Console-Auswertung der Suchfragen in DE/EN/FR automatisiert; Titel und Metadaten danach angepasst.
+- Suchdaten: Search-Console-Auswertung der Suchfragen in DE/EN/FR automatisiert; Titel und Metadaten danach angepasst.
 - Indexierungsstatus von 700 URLs geprüft, Bearbeitung priorisiert.
 - Themenindex für 128 Artikel aufgebaut; Artikel und 60 Produkte über Metafelder verknüpft.
 - Canonical-Ziele für 19 thematisch überlappende Blogartikel gesetzt.
 - Artikel-, Blog-, Listen-, Person- und Organisationsdaten in JSON-LD ergänzt und automatisiert geprüft.
 - GEO/AEO: Seiten anhand von zehn Käuferfragen auf direkt auffindbare Antworten geprüft und Inhaltslücken dokumentiert; bestehende llms.txt-Ausgabe um aktuelle Kataloginformationen erweitert.
+- Historische Produkt-URLs ermittelt und Weiterleitungen für nicht mehr erreichbare Produkte eingerichtet.
 
 In mehreren Sprachen:
 
@@ -38,7 +39,7 @@ In mehreren Sprachen:
 
 Kaufen und nachfassen:
 
-- Klaviyo-Abbruchmail auf wiederherstellbaren Checkout-Link umgestellt; fehlendes Onsite-Embed diagnostiziert, aktiviert.
+- Checkout-Link: Klaviyo-Abbruchmail auf wiederherstellbaren Link umgestellt; fehlendes Onsite-Embed diagnostiziert, aktiviert.
 - Merchant-Center-Probleme analysiert, Kategorien und Zuordnung korrigiert; Microsoft- und Pinterest-Kanal angebunden.
 - Nicht lieferbare Produkte auf Wissensseiten gekennzeichnet, verfügbare Alternativen eingeblendet.
 - GA4-Kaufzahlen mit Shopify-Bestellungen abgeglichen.
@@ -51,10 +52,10 @@ Gegenprüfung statt Annahme: SEO-Verfügbarkeitsaussagen automatisch mit kaufbar
 ### FlowKI Club — Magazin & KI-Community (Teamprojekt, Juli–Aug 2026)
 
 - Newsletter mit Double-Opt-In und Plausible-Events für Anmeldung, Bestätigung und CTAs implementiert.
-- Social-Distribution: plattformgerechte Social-Post-Pakete aus Artikeln erzeugt; Übergabe an pendpost mit Qualitätsprüfung und Markenregeln aufgebaut; UTM-Konvention und Link-in-Bio-Seite umgesetzt.
+- Social-Distribution: Social-Post-Pakete aus Artikeln erzeugt; Übergabe an das Veröffentlichungssystem mit Qualitätsprüfung und Markenregeln; UTM-Konvention und Link-in-Bio-Seite.
 - Autorenprofile sowie optionale FAQ- und HowTo-Daten in die Artikelausgabe integriert; Referral-Programm.
 
-### Flowki Studio — Clip-Studio (Teamprojekt, 50 gemergte Pull Requests)
+### Flowki Studio — Clip-Studio (Teamprojekt, 50 eigene PRs in Flowki Studio gemergt)
 
 - Aus Langvideos werden Shorts: Ausschnitt folgt der sprechenden Person; bis zu drei Schnittvarianten je Clip.
 - Freigaben: offene Clip-Prüfungen und Blind-Reviews im Dashboard angeschlossen, Freigabeoberflächen verbessert und Publikationsrechte unmittelbar vor dem Versand erneut geprüft.
@@ -72,7 +73,7 @@ Gegenprüfung statt Annahme: SEO-Verfügbarkeitsaussagen automatisch mit kaufbar
 ### E-Commerce, Webentwicklung & KI-Automation
 **2024 – heute | Eigene Projekte, Team- und Kundenprojekte | Hamburg / remote**
 
-- Shopify-Shop technisch und im Marketing betreut: Theme, SEO, Sprachen, Produktdaten, E-Mail-Flows, Messung.
+- Shopify-Shop technisch und im Marketing betreut: Theme, SEO, Sprachen, Produktdaten, E-Mail, Messung.
 - Python-Backends und Next.js-Frontends entwickelt und auf Linux-Servern betrieben; im Team über Branches, Pull Requests und gemeinsame Test-Suites.
 
 ### B2B-Direktvertrieb (Door-to-Door)
@@ -88,10 +89,10 @@ Gegenprüfung statt Annahme: SEO-Verfügbarkeitsaussagen automatisch mit kaufbar
 
 ## Kenntnisse (in Projekten eingesetzt)
 
-- SEO & Auffindbarkeit: Google Search Console, Bing Webmaster Tools, strukturierte Daten (JSON-LD), Canonicals, Weiterleitungen, IndexNow, interne Verlinkung, Entitäten, llms.txt
-- Shop & Kunden: Shopify (Liquid, Metafields, Theme, GraphQL-Admin-API), Klaviyo, Google Merchant Center, Microsoft- und Pinterest-Kanal, Google Ads (Search-zertifiziert)
+- SEO & Auffindbarkeit: Google Search Console, Bing Webmaster Tools (API-Datenauswertung), strukturierte Daten (JSON-LD), Canonicals, Weiterleitungen, IndexNow, interne Verlinkung, Entitäten, llms.txt
+- Shop & Kunden: Shopify (Liquid, Metafields, Theme, GraphQL-Admin-API), Klaviyo, Google Merchant Center, Microsoft- und Pinterest-Kanal
 - Daten & Automation: GA4, Plausible, Lighthouse, Python, n8n, KI-Agenten (Claude Code), GitHub Actions
-- Gestaltung & Qualität: HTML, CSS, JavaScript, TypeScript, Next.js, GSAP, WebGL, Oberflächentests, KI-Bild und -Video
+- Gestaltung & Qualität: HTML, CSS, JavaScript, TypeScript, Next.js, GSAP, WebGL, Oberflächentests, KI-Bild/Video
 
 ## Sprachen
 

@@ -81,7 +81,7 @@ def ats(md: Path) -> None:
             break
         time.sleep(3)
     else:
-        raise RuntimeError("docx bleibt gesperrt: %s" % md.with_suffix(".docx").name)
+        raise RuntimeError("DOCX-Erzeugung nach drei Versuchen fehlgeschlagen: %s" % md.with_suffix(".docx").name)
     with tempfile.TemporaryDirectory(prefix="cv_ats_") as tmp:
         html, stil = Path(tmp) / (md.stem + ".html"), Path(tmp) / "stil.html"
         # pandocs Vorlage druckt mit 12pt und schmaler Spalte -> 4 Seiten; schlicht und dicht bleibt es ATS-lesbar
