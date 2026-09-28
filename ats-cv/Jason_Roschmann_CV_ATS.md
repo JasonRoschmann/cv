@@ -75,7 +75,7 @@ Websites und Shops für Kunden umgesetzt — von Gestaltung und Interaktion übe
 ## Weiterbildung und Projektpraxis
 
 - Weiterbildung Webentwicklung, 2024 (6 Monate): HTML, CSS, JavaScript, Web-Architektur
-- Google Ads Skillshop, Januar 2026: Search, Performance Max
+- Google Ads Search Certification (Skillshop), Dezember 2025, gültig bis Dezember 2026 – verifizierbar: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
 - Laufende autodidaktische Weiterbildung anhand eigener und gemeinsamer Softwareprojekte
 
 ## Kenntnisse (in Projekten eingesetzt)
