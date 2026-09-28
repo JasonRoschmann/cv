@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-27T10:32Z",
+  "updated": "2026-09-28T11:40Z",
   "user": "JasonRoschmann",
   "weeks": [
     [
@@ -102,11 +102,26 @@
       0
     ],
     [
-      0
+      0,
+      1
     ]
   ],
-  "total": 148,
+  "total": 149,
   "ships": [
+    {
+      "repo": "JasonRoschmann/cv",
+      "when": "2026-09-28",
+      "kind": "pr",
+      "n": 1,
+      "label": "cv"
+    },
+    {
+      "repo": "JasonRoschmann/cv",
+      "when": "2026-09-28",
+      "kind": "create",
+      "n": 1,
+      "label": "cv"
+    },
     {
       "repo": "JasonRoschmann/cv",
       "when": "2026-09-25",
@@ -139,20 +154,6 @@
       "repo": "JasonRoschmann/cv",
       "when": "2026-09-22",
       "kind": "create",
-      "n": 1,
-      "label": "cv"
-    },
-    {
-      "repo": "JasonRoschmann/cv",
-      "when": "2026-09-22",
-      "kind": "push",
-      "n": 2,
-      "label": "cv"
-    },
-    {
-      "repo": "JasonRoschmann/cv",
-      "when": "2026-09-22",
-      "kind": "pr",
       "n": 1,
       "label": "cv"
     }
