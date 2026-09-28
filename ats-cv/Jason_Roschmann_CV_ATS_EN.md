@@ -47,6 +47,7 @@ Built websites and shops for clients — from design and interaction to multilin
 
 - Frontend & interaction: Next.js, React, TypeScript, GSAP — hero as a frame sequence that turns with the mouse pointer (on phones via device tilt); full-screen chapters with dedicated mobile controls (nk247store.de).
 - Shop & content: reworked a purchased Shopify theme in Liquid, CSS and JavaScript; own design layer in the live theme, three languages (DE/EN/FR), product data via metafields (duftkumpels.shop).
+- SEO & email: Automated a Search Console analysis of search queries in DE/EN/FR, adjusted titles and metadata accordingly; fixed a Klaviyo abandonment email to link to a recoverable checkout. (duftkumpels.shop)
 - Quality & delivery: CI with TypeScript check, ESLint, Vitest, build and Playwright (nk247store.de); weekly Lighthouse checks against the live shop via GitHub Actions (duftkumpels.shop).
 - Performance: versioned assets, loading fallback, performance tuning to address stuttering (nk247store.de).
 - Legal & content: tobacco advertising removed from all visuals per German law, § 19 TabakerzG (nk247store.de).

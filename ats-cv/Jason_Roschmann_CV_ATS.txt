@@ -90,6 +90,10 @@ Auslieferung.
 - Shop & Inhalte: gekauftes Shopify-Theme in Liquid, CSS und JavaScript
   umgebaut; eigene Design-Schicht im Live-Theme, dreisprachig
   (DE/EN/FR), Produktdaten über Metafields (duftkumpels.shop).
+- SEO & E-Mail: Search-Console-Auswertung der Suchfragen in DE/EN/FR
+  automatisiert, Titel und Metadaten danach angepasst;
+  Klaviyo-Abbruchmail auf einen wiederherstellbaren Checkout-Link
+  korrigiert. (duftkumpels.shop)
 - Qualität & Auslieferung: CI mit TypeScript-Check, ESLint, Vitest,
   Build und Playwright (nk247store.de); wöchentliche Lighthouse-Prüfung
   gegen den Live-Shop per GitHub Actions (duftkumpels.shop).

@@ -47,6 +47,7 @@ Websites und Shops für Kunden umgesetzt — von Gestaltung und Interaktion übe
 
 - Frontend & Interaktion: Next.js, React, TypeScript, GSAP — Hero als Frame-Sequenz, die sich mit dem Mauszeiger dreht (auf dem Handy per Geräteneigung); Vollbild-Kapitel mit eigener Mobile-Bedienung (nk247store.de).
 - Shop & Inhalte: gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, dreisprachig (DE/EN/FR), Produktdaten über Metafields (duftkumpels.shop).
+- SEO & E-Mail: Search-Console-Auswertung der Suchfragen in DE/EN/FR automatisiert, Titel und Metadaten danach angepasst; Klaviyo-Abbruchmail auf einen wiederherstellbaren Checkout-Link korrigiert. (duftkumpels.shop)
 - Qualität & Auslieferung: CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright (nk247store.de); wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions (duftkumpels.shop).
 - Performance: versionierte Assets, Lade-Fallback, Performance-Runden gegen Ruckeln (nk247store.de).
 - Recht & Inhalte: Tabakwerbung nach § 19 TabakerzG aus allen Motiven entfernt (nk247store.de).

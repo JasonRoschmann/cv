@@ -87,6 +87,10 @@ multilingual content, legal requirements, CI and delivery.
 - Shop & content: reworked a purchased Shopify theme in Liquid, CSS and
   JavaScript; own design layer in the live theme, three languages
   (DE/EN/FR), product data via metafields (duftkumpels.shop).
+- SEO & email: Automated a Search Console analysis of search queries in
+  DE/EN/FR, adjusted titles and metadata accordingly; fixed a Klaviyo
+  abandonment email to link to a recoverable checkout.
+  (duftkumpels.shop)
 - Quality & delivery: CI with TypeScript check, ESLint, Vitest, build
   and Playwright (nk247store.de); weekly Lighthouse checks against the
   live shop via GitHub Actions (duftkumpels.shop).
