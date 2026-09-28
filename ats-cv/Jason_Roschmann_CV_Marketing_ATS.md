@@ -36,7 +36,7 @@ Zweck: Shopify-Shop einer Hamburger Nischen-Parfümerie, dreisprachig (DE/EN/FR)
 Zweck: Deutschsprachiges KI-Magazin mit Discord-Community.
 
 - Newsletter mit Double-Opt-In und Plausible-Events für Anmeldung, Bestätigung und zentrale CTAs implementiert.
-- Social-Distribution automatisiert: aus Artikeln entstehen plattformgerechte Post-Pakete; ein Marken-Prüfschritt läuft vor der Veröffentlichung; UTM-Konvention und Link-Bio-Seite.
+- Social-Distribution automatisiert: plattformgerechte Social-Post-Pakete aus Artikeln erzeugt; Übergabe an pendpost mit Qualitätsprüfung und Markenregeln aufgebaut; UTM-Konvention und Link-in-Bio-Seite umgesetzt.
 - Autoren-, FAQ- und HowTo-Markup für Artikel; Referral-Programm mit Codes und Stufen.
 
 ## Weitere Projekte
@@ -62,7 +62,7 @@ Zweck: Deutschsprachiges KI-Magazin mit Discord-Community.
 
 ## Zertifikat, Weiterbildung und Projektpraxis
 
-- Google Ads Search Certification (Skillshop), Dezember 2025, gültig bis Dezember 2026 – verifizierbar: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
+- Google Ads Search Certification (Skillshop), Dezember 2025, gültig bis 03.12.2026 – verifizierbar: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
 - Weiterbildung Webentwicklung, 2024 (6 Monate): HTML, CSS, JavaScript, Web-Architektur
 - Laufende autodidaktische Weiterbildung anhand eigener und gemeinsamer Projekte
 

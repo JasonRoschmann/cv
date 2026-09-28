@@ -76,7 +76,7 @@ Built websites and shops for clients — from design and interaction to multilin
 ## Training and project practice
 
 - Web development course, 2024 (6 months): HTML, CSS, JavaScript, web architecture
-- Google Ads Search Certification (Skillshop), December 2025, valid until December 2026 – verifiable: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
+- Google Ads Search Certification (Skillshop), December 2025, valid until 3 December 2026 – verifiable: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
 - Ongoing self-directed learning through own and shared software projects
 
 ## Skills (used in projects)
