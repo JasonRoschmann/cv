@@ -120,7 +120,7 @@
   <div class="stats">
     <div class="stat"><div class="n">50<i>✓</i></div><div class="l">gemergte Pull Requests im Teamprojekt Flowki Studio</div></div>
     <div class="stat"><div class="n">21 → <i>0</i></div><div class="l">rote Tests im Fork-Beitrag hermes-studio auf Ursache zurückgeführt</div></div>
-    <div class="stat"><div class="n">18</div><div class="l">Cron-Locks hält jeder Rollout der Bewerbungs-Automation — Rückbau bei jedem Fehler</div></div>
+    <div class="stat"><div class="n">18</div><div class="l">Cron-Locks hält das Rollout-Skript — Rückbau bei abgefangenen Fehlern</div></div>
     <div class="stat"><div class="n">4 J.</div><div class="l">B2B-Vertrieb mit Inhabern und Geschäftsführern</div></div>
   </div>
 
@@ -139,9 +139,9 @@
         <ul>
           <li><b>Speaker-Reframe:</b> der Planer misst das Gesicht an mehreren Zeitpunkten statt einmal, glättet die Reihe und liefert stückweise konstante 9:16-Keyframes — der Ausschnitt folgt der sprechenden Person.</li>
           <li><b>Deterministischer Neu-Render</b> nach Korrekturen: append-only Planversionen, jede Änderung entwertet eine erteilte Freigabe; Render asynchron über Celery, ohne Modellkosten.</li>
-          <li><b>Drei Schnittvarianten je Clip,</b> höchstens eine je Zielkonto (Datenbank-Constraint) — dazu Fixes für hängende Jobs und eine doppelt ausgelöste Produktion.</li>
+          <li><b>Bis zu drei Schnittvarianten je Clip,</b> höchstens eine je Zielkonto (Datenbank-Constraint) — dazu Fixes für hängende Jobs und eine doppelt ausgelöste Produktion.</li>
         </ul>
-        <div class="proof"><span class="ok">✓ 64 PRs, 50 gemergt</span><span>Python · FastAPI · Celery · SQLAlchemy/Alembic · PostgreSQL · Redis · MinIO · Next.js</span></div>
+        <div class="proof"><span class="ok">✓ 64 PRs in Flowki Studio, 50 gemergt</span><span>Python · FastAPI · Celery · SQLAlchemy · PostgreSQL · Redis · MinIO</span></div>
       </div>
 
       <div class="proj">
@@ -149,10 +149,10 @@
         <div class="what">Python-Pipeline auf eigenem Linux-Server: Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Analyse, Anschreiben, Endkontrolle, Mailversand, Antwort-Erkennung per IMAP.</div>
         <ul>
           <li><b>Gemeinsames Hauptbuch aller Außenaktionen</b> mit Reservierung: keine Doppelbewerbung über Mail und Portal, höchstens eine Bewerbung je Firma in 14 Tagen.</li>
-          <li><b>Nebenläufigkeit:</b> sechs Queue-Schreiber unter einer gemeinsamen Dateisperre (flock). Rollouts halten alle 18 Cron-Locks, prüfen Prüfsummen, testen vor und nach dem Tausch und bauen bei jedem Fehler automatisch zurück.</li>
+          <li><b>Nebenläufigkeit:</b> gemeinsame Dateisperre (flock) für sechs Queue-Schreiber, unter Linux parallel geprüft. Rollout-Skripte halten alle 18 Cron-Locks, prüfen Prüfsummen, testen vor und nach dem Tausch, bauen bei abgefangenen Fehlern zurück.</li>
           <li><b>Fail-closed:</b> Prüfer blockieren bei unbrauchbarer Modellantwort; Modell-Kaskade (Claude, Gemini, Groq) mit Sperrzeiten; ein Wächter meldet Stillstand.</li>
         </ul>
-        <div class="proof"><span class="ok">✓ 93 Python-Module · 55 Testdateien</span><span>Fehler zuerst als roter Test · Review durch ein zweites Modell (Codex)</span></div>
+        <div class="proof"><span class="ok">✓ 93 Python-Dateien, davon 55 Tests</span><span>Fehler zuerst als roter Test · Review durch ein zweites Modell (Codex)</span></div>
       </div>
 
 

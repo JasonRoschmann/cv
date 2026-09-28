@@ -14,19 +14,19 @@ Ich baue KI-gestützte Automationen und Webanwendungen mit Python und TypeScript
 
 ### Flowki Studio — Clip-Studio (Teamprojekt, Aug–Sep 2026)
 
-Internes Social-Media-Studio (Trends, Plattform-Playbooks, KI-Content-Pipeline). Mein Schwerpunkt: Clip-Verarbeitung, die aus Langvideos Shorts macht. 64 Pull Requests, davon 50 gemergt.
+Internes Social-Media-Studio (Trends, Plattform-Playbooks, KI-Content-Pipeline). Mein Schwerpunkt: Clip-Verarbeitung, die aus Langvideos Shorts macht. 64 Pull Requests in Flowki Studio, davon 50 gemergt.
 
 - Speaker-Reframe: Gesichtsmessung an mehreren Zeitpunkten statt einmal, geglättet zu stückweise konstanten 9:16-Keyframes — der Ausschnitt folgt der sprechenden Person.
 - Deterministischer Neu-Render nach Korrekturen: append-only Planversionen, jede Änderung entwertet eine erteilte Freigabe; Render asynchron über Celery, ohne Modellkosten.
-- Drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint); Fixes für hängende Jobs und eine doppelt ausgelöste Produktion.
+- Bis zu drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint); Fixes für hängende Jobs und eine doppelt ausgelöste Produktion.
 - Stack: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, MinIO, Next.js
 
 ### Bewerbungs-Automation (Eigenprojekt, seit Juli 2026)
 
-Python-Pipeline auf eigenem Linux-Server: Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Analyse, Anschreiben, Endkontrolle, Mailversand, Antwort-Erkennung per IMAP. 93 Python-Module, 55 Testdateien.
+Python-Pipeline auf eigenem Linux-Server: Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Analyse, Anschreiben, Endkontrolle, Mailversand, Antwort-Erkennung per IMAP. 93 Python-Dateien, davon 55 Tests.
 
 - Gemeinsames Hauptbuch aller Außenaktionen mit Reservierung: keine Doppelbewerbung über Mail und Portal, höchstens eine Bewerbung je Firma in 14 Tagen.
-- Nebenläufigkeit: sechs Queue-Schreiber unter einer gemeinsamen Dateisperre (flock). Rollouts halten alle 18 Cron-Locks, prüfen Prüfsummen, testen vor und nach dem Tausch und bauen bei jedem Fehler automatisch zurück.
+- Nebenläufigkeit: gemeinsame Dateisperre (flock) für sechs Queue-Schreiber, unter Linux mit parallelen Prozessen geprüft. Rollout-Skripte halten alle 18 Cron-Locks, prüfen Prüfsummen, testen vor und nach dem Tausch und bauen bei abgefangenen Fehlern automatisch zurück.
 - Fail-closed: Prüfer blockieren bei unbrauchbarer Modellantwort; Modell-Kaskade (Claude, Gemini, Groq) mit Sperrzeiten; ein Wächter meldet Stillstand.
 - Arbeitsweise: jeder Fehler zuerst als roter Test, Review durch ein zweites Modell (Codex).
 

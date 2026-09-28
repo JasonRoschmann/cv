@@ -698,7 +698,7 @@
             <h1 class="display h-hero rv">Ich baue <span style="white-space:nowrap">KI-Automation</span> —<br>und teste zuerst,<br><span class="g it">was schiefgehen kann.</span></h1>
             <p class="lead rv" style="margin-top:22px">Python und TypeScript, in eigenen Projekten und im Team: vom Clip-Studio, das Langvideos zu Shorts schneidet, bis zur Pipeline, die keine Aktion doppelt ausführt. KI-Agenten sind mein Werkzeug — Anforderungen, Architektur und Abnahme liegen bei mir.</p>
             <div class="proofrow rv">
-              <div class="pf"><b>50 PRs gemergt</b><span>Clip-Studio im Teamprojekt Flowki Studio</span></div>
+              <div class="pf"><b>50 PRs gemergt</b><span>in Flowki Studio (Team), Schwerpunkt Clip-Studio</span></div>
               <div class="pf"><b>21 → 0 rote Tests</b><span>Ursachen gefunden, keine Tests abgeschaltet</span></div>
               <div class="pf"><b>Junior-Rolle gesucht</b><span>Hamburg · remote · Zürich möglich</span></div>
             </div>
@@ -719,8 +719,8 @@
             <div class="lw">
               <div class="lw-url"><span class="dot"></span>Flowki Studio · Teamprojekt</div>
               <h4>Clip-Studio</h4>
-              <p>Aus Langvideos werden Shorts: Speaker-Reframe mit geglätteten 9:16-Keyframes, deterministischer Neu-Render, drei Varianten je Clip.</p>
-              <div class="lw-tags"><span>Python</span><span>Celery</span><span>50 PRs gemergt</span></div>
+              <p>Aus Langvideos werden Shorts: Speaker-Reframe mit geglätteten 9:16-Keyframes, deterministischer Neu-Render, bis zu drei Varianten je Clip.</p>
+              <div class="lw-tags"><span>Python</span><span>Celery</span><span>FastAPI</span></div>
               <div class="lw-cta">&#9654; Demo im Gespräch</div>
             </div>
           </div>
@@ -777,12 +777,12 @@
           <p class="body" style="margin-top:8px;max-width:64ch">Internes Social-Media-Studio für Trends, Plattform-Playbooks und eine KI-Content-Pipeline. Mein Schwerpunkt ist die Clip-Verarbeitung: aus Langvideos werden Shorts.</p>
           <div class="urow"><div class="k">Reframe</div><div class="v">Der Planer misst das Gesicht an mehreren Zeitpunkten statt einmal, glättet die Reihe und liefert stückweise konstante 9:16-Keyframes — der Ausschnitt folgt der sprechenden Person.</div></div>
           <div class="urow"><div class="k">Neu-Render</div><div class="v">Korrekturen erzeugen append-only Planversionen; jede Änderung entwertet eine erteilte Freigabe. Der Render läuft deterministisch und asynchron über Celery, ohne Modellkosten.</div></div>
-          <div class="urow"><div class="k">Varianten</div><div class="v">Drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint) — keine Variante ohne Empfänger.</div></div>
+          <div class="urow"><div class="k">Varianten</div><div class="v">Bis zu drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint) — keine Variante ohne Empfänger.</div></div>
           <div class="urow j"><div class="k">Fehlerfälle</div><div class="v">Fixes für Jobs, die nach verschwundenem Worker für immer „läuft“ zeigten, und für eine Produktion, die ein Statusfehler doppelt auslöste.</div></div>
         </div>
         <p class="eyebrow rv" style="margin-top:30px;color:var(--mut)">Eigene, Team- und Kundenprojekte</p>
         <div class="sysgrid rv" style="margin-top:14px">
-          <div class="card" style="grid-column:1 / -1;border-color:rgba(63,220,132,.3)"><div class="ct"><h4>Bewerbungs-Automation</h4><span class="tag">Eigenprojekt · seit Juli 2026</span></div><p>Python-Pipeline auf eigenem Linux-Server: Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Analyse, Anschreiben, Endkontrolle, Mailversand, Antwort-Erkennung per IMAP. Ein gemeinsames Hauptbuch aller Außenaktionen verhindert Doppelbewerbungen über Mail und Portal; sechs Queue-Schreiber teilen sich eine Dateisperre; Rollouts halten alle 18 Cron-Locks, testen vor und nach dem Tausch und bauen bei jedem Fehler automatisch zurück.</p><div class="stack"><span class="chip">Python</span><span class="chip">Cron · flock</span><span class="chip">SMTP/IMAP</span><span class="chip">Claude · Gemini · Groq</span></div><p class="proof">93 Python-Module, 55 Testdateien — jeder Fehler zuerst als roter Test, Review durch ein zweites Modell.</p></div>
+          <div class="card" style="grid-column:1 / -1;border-color:rgba(63,220,132,.3)"><div class="ct"><h4>Bewerbungs-Automation</h4><span class="tag">Eigenprojekt · seit Juli 2026</span></div><p>Python-Pipeline auf eigenem Linux-Server: Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Analyse, Anschreiben, Endkontrolle, Mailversand, Antwort-Erkennung per IMAP. Ein gemeinsames Hauptbuch aller Außenaktionen verhindert Doppelbewerbungen über Mail und Portal; sechs Queue-Schreiber teilen sich eine Dateisperre, unter Linux mit parallelen Prozessen geprüft; Rollout-Skripte halten alle 18 Cron-Locks, testen vor und nach dem Tausch und bauen bei abgefangenen Fehlern automatisch zurück.</p><div class="stack"><span class="chip">Python</span><span class="chip">Cron · flock</span><span class="chip">SMTP/IMAP</span><span class="chip">Claude · Gemini · Groq</span></div><p class="proof">93 Python-Dateien, davon 55 Tests — jeder Fehler zuerst als roter Test, Review durch ein zweites Modell.</p></div>
           <div class="card"><div class="ct"><h4>duftkumpels.shop</h4><span class="tag live">live</span></div><p>Shop einer Hamburger Nischen-Parfümerie: gekauftes Prestige-Theme, in Liquid, CSS und JavaScript umgebaut. Eigene Design-Schicht im Live-Theme, dreisprachig, Produktdaten über Metafields.</p><div class="stack"><span class="chip">Shopify Liquid</span><span class="chip">DE/EN/FR</span><span class="chip">GitHub Actions</span></div><p class="proof">Wöchentliche Lighthouse-Prüfung gegen den <a href="https://duftkumpels.shop" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">Live-Shop</a>.</p></div>
           <div class="card"><div class="ct"><h4>Werkzeuge für KI-Agenten</h4><span class="tag">Plugin · Fork-Beitrag</span></div><p><b>hermes-brett:</b> Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt, mit Kosten-Gate gegen versehentliche bezahlte Agentenläufe. <b>hermes-studio:</b> 21 rote Tests bis zur Ursache verfolgt — ein nie geschlossenes SQLite-Handle und ein veralteter Test gegen eine Sicherheitsregel; stillen Datenverlust im Task-Store behoben.</p><div class="stack"><span class="chip">TypeScript</span><span class="chip">Vitest</span><span class="chip">node:assert</span></div><p class="proof">Test-Suite von 177 auf 199 grüne Tests, Sicherheitsregel per Mutationsprobe abgesichert.</p></div>
           <div class="card"><div class="ct"><h4>nk247store.de — Überarbeitung</h4><span class="tag">Kundenprojekt im Team</span></div><p>Interaktive Überarbeitung einer Website für einen 24/7-Automaten-Store: der Kopf des Kuriers dreht sich als Frame-Sequenz mit dem Mauszeiger, auf dem Handy per Neigung. Liegt auf eigenem Branch, live ist die erste Fassung des Teams.</p><div class="stack"><span class="chip">Next.js</span><span class="chip">GSAP</span><span class="chip">Playwright</span></div><p class="proof">CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright.</p></div>
@@ -803,7 +803,7 @@
             <div class="org">Eigene Projekte, Team- und Kundenprojekte · Hamburg / remote</div>
             <ul>
               <li><b>Python-Backends, Next.js-Frontends und Shopify-Themes</b> entwickelt, getestet und auf Linux-Servern betrieben (Docker Compose, Cron, Deployment mit Rollback).</li>
-              <li><b>Im Team</b> über Branches, Pull Requests und gemeinsame Test-Suites — 50 gemergte PRs im Clip-Studio von Flowki Studio.</li>
+              <li><b>Im Team</b> über Branches, Pull Requests und gemeinsame Test-Suites — 50 gemergte PRs in Flowki Studio, Schwerpunkt Clip-Studio.</li>
               <li><b>KI-gestützte Entwicklung:</b> Agenten setzen um, Anforderungen, Architektur und Abnahme liegen bei mir.</li>
             </ul>
           </div>
@@ -834,7 +834,7 @@
         <p class="body rv" style="margin-top:12px;max-width:62ch">Nur, was ich in Projekten eingesetzt habe — mit dem Projekt, in dem es steckt.</p>
         <div class="skgrid rv">
           <div class="sk"><h4><span class="d">▸</span> Entwicklung</h4><div class="stack"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">React Native</span></div><p class="use">in: Flowki Studio · Bewerbungs-Automation · nk247 · Shinobi</p></div>
-          <div class="sk"><h4><span class="d">▸</span> KI &amp; Agenten</h4><div class="stack"><span class="chip">Claude Code</span><span class="chip">Modell-APIs: Claude · Gemini · Groq</span><span class="chip">MCP</span><span class="chip">Agenten-Orchestrierung</span><span class="chip">n8n</span></div><p class="use">in: Bewerbungs-Automation · Shinobi · hermes-brett</p></div>
+          <div class="sk"><h4><span class="d">▸</span> KI &amp; Agenten</h4><div class="stack"><span class="chip">Claude Code</span><span class="chip">Modell-APIs: Claude · Gemini · Groq</span><span class="chip">MCP</span><span class="chip">Agenten-Orchestrierung</span><span class="chip">n8n</span></div><p class="use">in: Bewerbungs-Automation · Shinobi · hermes-brett · n8n: Content-Engine OBSIDAIRE</p></div>
           <div class="sk"><h4><span class="d">▸</span> Daten &amp; Hintergrundjobs</h4><div class="stack"><span class="chip">PostgreSQL</span><span class="chip">SQLAlchemy/Alembic</span><span class="chip">Celery</span><span class="chip">Redis</span><span class="chip">Supabase</span></div><p class="use">in: Flowki Studio · Shinobi</p></div>
           <div class="sk"><h4><span class="d">▸</span> Qualität</h4><div class="stack"><span class="chip">pytest</span><span class="chip">Vitest</span><span class="chip">Playwright</span><span class="chip">GitHub Actions</span><span class="chip">Lighthouse-CI</span></div><p class="use">in: Bewerbungs-Automation · hermes-studio · nk247 · duftkumpels</p></div>
           <div class="sk"><h4><span class="d">▸</span> Betrieb</h4><div class="stack"><span class="chip">Linux-Server</span><span class="chip">Docker Compose</span><span class="chip">Cron · flock</span><span class="chip">SMTP/IMAP</span><span class="chip">SPF/DKIM</span></div><p class="use">in: Bewerbungs-Automation · Flowki Studio · hermes-brett</p></div>
@@ -989,7 +989,7 @@
   // ---- scripted chat (safe on static hosting, no API key) ----
   var QA=[
     {q:"Wie ist dieses CV gebaut?",feat:1,k:["dieses cv","diese seite","wie ist das","phone","app-style"," os ","installier"],a:"Du benutzt es gerade: ein Web-CV als installierbare PWA, gebaut mit HTML, CSS und JavaScript ohne Framework — Glas-Refraktion über SVG-Displacement-Filter, ein Canvas-Graph, Federphysik per CSS, App-Gesten. Die Fluid-Simulation ist von PavelDoGreats WebGL-Fluid-Simulation (MIT) adaptiert."},
-    {q:"Was hast du gebaut?",feat:1,k:["gebaut","projekte","systeme","portfolio","beeindruck","zeig"],a:"Im Team das Clip-Studio von Flowki Studio: aus Langvideos werden Shorts, mit Speaker-Reframe und deterministischem Neu-Render — 50 gemergte Pull Requests. Allein eine Python-Pipeline für Bewerbungen, bei der ein gemeinsames Hauptbuch Doppelaktionen verhindert und Rollouts bei jedem Fehler zurückbauen. Dazu Werkzeuge für KI-Agenten und den Shopify-Umbau von duftkumpels.shop. Details unter Projekte."},
+    {q:"Was hast du gebaut?",feat:1,k:["gebaut","projekte","systeme","portfolio","beeindruck","zeig"],a:"Im Team Flowki Studio (50 gemergte Pull Requests), mein Schwerpunkt ist das Clip-Studio: aus Langvideos werden Shorts, mit Speaker-Reframe und deterministischem Neu-Render. Allein eine Python-Pipeline für Bewerbungen, bei der ein gemeinsames Hauptbuch Doppelaktionen verhindert; Rollout-Skripte bauen bei abgefangenen Fehlern zurück. Dazu Werkzeuge für KI-Agenten und den Shopify-Umbau von duftkumpels.shop. Details unter Projekte."},
     {q:"Wie arbeitest du mit KI-Agenten?",feat:1,k:["agent","claude","wie arbeitest","ki-tool","codex"],a:"Agenten sind mein Entwicklungswerkzeug. Anforderungen, Architektur und Abnahme liegen bei mir: jeder Fehler wird zuerst als roter Test festgehalten, größere Änderungen prüft ein zweites Modell. Bei Shinobi: Ember Accord habe ich ausprobiert, wie weit ein Agent im Lead-Modus kommt — die Produktentscheidungen blieben bei mir."},
     {q:"Warum von Vertrieb zu KI?",feat:1,k:["vertrieb","sales","wechsel","quereinst","warum ki","von sales","dna"],a:"Im Vertrieb habe ich vier Jahre direkt mit Inhabern gesprochen und gesehen, wo Betriebe Zeit verlieren. Seit 2024 baue ich Software und Automationen — in eigenen Projekten, im Team und für Kunden. Jetzt suche ich eine Junior-Rolle in einem Entwicklungsteam, um das professionell zu vertiefen."},
     {q:"Was könntest du bei uns bauen?",feat:1,k:["bei uns","30 tage","erste","was könntest","für uns","anfangen"],a:"Zum Einstieg würde ich mit dem Team einen geeigneten Prozess eingrenzen und einen testbaren Prototyp entwickeln — mit den Fehlerfällen zuerst: doppelte Ausführung, abgebrochene Jobs, halbe Rollouts."},
@@ -2797,7 +2797,7 @@
     var tlines=[
       '<span class="p">$</span> flowki-studio … <span class="ok">50 PRs gemergt</span>',
       '<span class="p">$</span> hermes-studio … <span class="ok">21 → 0 rote tests</span>',
-      '<span class="p">$</span> rollout-check … <span class="ok">18 locks gehalten</span>',
+      '<span class="p">$</span> rollout-skript … <span class="ok">18 locks</span>',
       '<span class="p">$</span> lighthouse-ci … <span class="ok">wöchentlich</span>',
       '<span class="p">$</span> kosten-gate … <span class="hold">✋ hält</span>'
     ];

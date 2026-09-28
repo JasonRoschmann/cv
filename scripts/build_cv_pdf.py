@@ -28,7 +28,7 @@ ATS_STIL = """<style>
 html, body { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; line-height: 1.38; max-width: none; padding: 0; margin: 0 }
 @media print { body { font-size: 10pt } }
 h1 { font-size: 19pt; margin: 0 0 3pt } h2 { font-size: 12.5pt; margin: 11pt 0 3pt; padding-bottom: 2pt; border-bottom: 1px solid #999 }
-h3 { font-size: 10.5pt; margin: 8pt 0 2pt } p, li { margin: 2pt 0 } ul { padding-left: 15pt; margin: 2pt 0 }
+h3 { font-size: 10.5pt; margin: 8pt 0 2pt; break-after: avoid } p, li { margin: 2pt 0; break-inside: avoid } ul { padding-left: 15pt; margin: 2pt 0 }
 </style>
 """
 PORT = 8913
