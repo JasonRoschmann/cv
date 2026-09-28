@@ -829,11 +829,10 @@
             <div class="fs-tag">Eigenprojekt · Antwortzuordnung per IMAP · Sep 2026</div>
             <h3>Grüne Tests, falsches Verhalten: Die Attrappe war netter als die Bibliothek.</h3>
             <div class="fs-steps">
-              <div><span class="k">Befund</span>Im Review vor dem Rollout fand ein zweites Modell: <span class="mono">imaplib.response()</span> verbraucht den gelesenen Wert. Mein Code las die UIDVALIDITY für jede gespeicherte Antwort neu — die Testattrappe lieferte sie jedes Mal, die echte Bibliothek nur beim ersten. Bei mehreren Antworten wäre nicht die jüngste gewählt worden.</div>
+              <div><span class="k">Befund</span>Im Review vor dem Rollout fand ein zweites Modell: Die Tests waren grün, obwohl die Antwortauswahl fehlerhaft war. <span class="mono">imaplib.response()</span> liefert einen gespeicherten Wert nur einmal, meine Attrappe bei jedem Aufruf. Dadurch konnte eine ältere Antwort gewählt werden oder die Auswahl leer bleiben.</div>
               <div><span class="k">Korrektur</span>Erst die Attrappe an das echte Verhalten angepasst: Test rot. Dann den Wert genau einmal pro Abruf gelesen: grün.</div>
-              <div><span class="k">Nachweis</span>Proben mit verbrauchender Semantik: jüngste Antwort, neue UID-Nummerierung und Zeitvergleich korrekt. Generalprobe gegen einen simulierten Mailserver, auch mit abgelehnter Suche.</div>
+              <div><span class="k">Nachweis</span>Proben mit verbrauchender Semantik: jüngste Antwort, neue UID-Nummerierung und Zeitvergleich korrekt. Rollout-Generalprobe mit IMAP-Attrappe, einschließlich abgelehnter Suche und abgelehntem Kopfzeilenabruf.</div>
             </div>
-            <p class="fs-note"><b>Im selben Review gefunden:</b> Ein Antwortentwurf hätte die noreply-Adresse eines Portals angeschrieben statt der Person, die geantwortet hatte. Jetzt gilt der Absender derselben Nachricht.</p>
           </article>
           <article class="fs">
             <span class="fs-no" aria-hidden="true">03</span>
