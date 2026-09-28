@@ -36,20 +36,20 @@ Purpose: internal social media studio with trends, platform playbooks and an AI 
 
 Purpose: Python pipeline for job search via job board APIs (including the German Federal Employment Agency, Greenhouse, Lever), cover letters, checks, sending and reply matching. Focus: traceable actions. 94 Python files, 56 of them test files.
 
-- Shared ledger of all outbound actions with reservations: no duplicate application across email and portal, at most one application per company within 14 days.
+- Cross-channel ledger for first applications with reservations: no duplicate application across email and portal, at most one application per company within 14 days.
 - Blocking checks before sending: unusable model output stops the run; model cascade (Claude, Gemini, Groq) with cool-down periods.
 - Checked LLM ratings against blind reference judgements; did not roll out a revised analysis after an incomplete measurement showed no proven improvement.
 - Rollouts with checksums, tests before and after the swap, and automatic rollback.
 
 ## Web & shop development for clients
 
-Built websites and shops for clients — from design and interaction to multilingual content, legal requirements, CI and delivery.
+Websites and shops for clients — design, multilingual content, legal requirements, CI and delivery.
 
 - Frontend & interaction: Next.js, React, TypeScript, GSAP — hero as a frame sequence that turns with the mouse pointer (on phones via device tilt); full-screen chapters with dedicated mobile controls (nk247store.de).
-- Shop & content: reworked a purchased Shopify theme in Liquid, CSS and JavaScript; own design layer in the live theme, three languages (DE/EN/FR), product data via metafields (duftkumpels.shop).
-- SEO & email: Automated a Search Console analysis of search queries in DE/EN/FR, adjusted titles and metadata accordingly; fixed a Klaviyo abandonment email to link to a recoverable checkout. (duftkumpels.shop)
+- Shop & content: reworked a purchased Shopify theme in Liquid, CSS and JavaScript; own design layer in the live theme, product data via metafields (duftkumpels.shop).
+- SEO & email: Automated a Search Console analysis of search queries and adjusted titles and metadata accordingly; checked the indexing status of 700 URLs; fixed a Klaviyo abandonment email to link to a recoverable checkout. (duftkumpels.shop)
 - Quality & delivery: CI with TypeScript check, ESLint, Vitest, build and Playwright (nk247store.de); weekly Lighthouse checks against the live shop via GitHub Actions (duftkumpels.shop).
-- Performance: versioned assets, loading fallback, performance tuning to address stuttering (nk247store.de).
+- Multilingual: built a DE/EN/FR translation pipeline with HTML extraction, structure checks and import via CSV or GraphQL; localised product names and collection copy (duftkumpels.shop).
 - Legal & content: tobacco advertising removed from all visuals per German law, § 19 TabakerzG (nk247store.de).
 - AI tools: wrote the design brief, steered an AI website builder and refined the result myself — camera moves from real photos, colour grading, transitions (redesign draft for a Hamburg izakaya).
 - References: duftkumpels.shop — project work since June 2026, changes in the live theme; nk247store.de — client project in a team, my redesign not yet published.
@@ -77,7 +77,6 @@ Built websites and shops for clients — from design and interaction to multilin
 
 - Web development course, 2024 (6 months): HTML, CSS, JavaScript, web architecture
 - Google Ads Search Certification (Skillshop), December 2025, valid until 3 December 2026 – verifiable: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
-- Ongoing self-directed learning through own and shared software projects
 
 ## Skills (used in projects)
 

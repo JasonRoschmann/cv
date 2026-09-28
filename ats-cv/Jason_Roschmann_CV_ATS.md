@@ -36,20 +36,20 @@ Zweck: Internes Social-Media-Studio mit Trends, Plattform-Playbooks und KI-Conte
 
 Zweck: Python-Pipeline für Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Anschreiben, Prüfungen, Versand und Antwortzuordnung. Schwerpunkt: nachvollziehbare Aktionen. 94 Python-Dateien, davon 56 Testdateien.
 
-- Gemeinsames Hauptbuch aller Außenaktionen mit Reservierung: keine Doppelbewerbung über Mail und Portal, höchstens eine Bewerbung je Firma in 14 Tagen.
+- Kanalübergreifendes Hauptbuch für Erstbewerbungen mit Reservierung: keine Doppelbewerbung über Mail und Portal, höchstens eine Bewerbung je Firma in 14 Tagen.
 - Blockierende Prüfungen vor dem Versand: unbrauchbare Modellantworten stoppen den Lauf; Modell-Kaskade (Claude, Gemini, Groq) mit Sperrzeiten.
 - LLM-Bewertungen gegen blinde Referenzurteile geprüft; eine überarbeitete Analyse nach unvollständiger Messung ohne belegte Verbesserung nicht ausgerollt.
 - Rollouts mit Prüfsummen, Tests vor und nach dem Tausch und automatischem Rückbau.
 
 ## Web- & Shop-Entwicklung für Kunden
 
-Websites und Shops für Kunden umgesetzt — von Gestaltung und Interaktion über Mehrsprachigkeit und rechtliche Vorgaben bis zu CI und Auslieferung.
+Websites und Shops für Kunden — Gestaltung, Mehrsprachigkeit, rechtliche Vorgaben, CI und Auslieferung.
 
 - Frontend & Interaktion: Next.js, React, TypeScript, GSAP — Hero als Frame-Sequenz, die sich mit dem Mauszeiger dreht (auf dem Handy per Geräteneigung); Vollbild-Kapitel mit eigener Mobile-Bedienung (nk247store.de).
-- Shop & Inhalte: gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, dreisprachig (DE/EN/FR), Produktdaten über Metafields (duftkumpels.shop).
-- SEO & E-Mail: Search-Console-Auswertung der Suchfragen in DE/EN/FR automatisiert, Titel und Metadaten danach angepasst; Klaviyo-Abbruchmail auf einen wiederherstellbaren Checkout-Link korrigiert. (duftkumpels.shop)
+- Shop & Inhalte: gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, Produktdaten über Metafields (duftkumpels.shop).
+- SEO & E-Mail: Search-Console-Auswertung automatisiert, Titel und Metadaten angepasst; Indexierungsstatus von 700 URLs geprüft; Klaviyo-Abbruchmail auf wiederherstellbaren Checkout-Link korrigiert. (duftkumpels.shop)
 - Qualität & Auslieferung: CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright (nk247store.de); wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions (duftkumpels.shop).
-- Performance: versionierte Assets, Lade-Fallback, Performance-Runden gegen Ruckeln (nk247store.de).
+- Mehrsprachigkeit: Übersetzungs-Pipeline für DE/EN/FR mit HTML-Extraktion, Strukturprüfung und Import per CSV bzw. GraphQL; Produktnamen und Kollektionstexte lokalisiert (duftkumpels.shop).
 - Recht & Inhalte: Tabakwerbung nach § 19 TabakerzG aus allen Motiven entfernt (nk247store.de).
 - KI-Werkzeuge: Design-Brief geschrieben, KI-Website-Builder gesteuert und selbst nachgearbeitet — Kamerafahrten aus echten Fotos, Farbkorrektur, Übergänge (Redesign-Entwurf für ein Hamburger Izakaya).
 - Referenzen: duftkumpels.shop — Projektarbeit seit Juni 2026, Anpassungen im Live-Theme; nk247store.de — Kundenprojekt im Team, meine Überarbeitung noch nicht veröffentlicht.
@@ -77,7 +77,6 @@ Websites und Shops für Kunden umgesetzt — von Gestaltung und Interaktion übe
 
 - Weiterbildung Webentwicklung, 2024 (6 Monate): HTML, CSS, JavaScript, Web-Architektur
 - Google Ads Search Certification (Skillshop), Dezember 2025, gültig bis 03.12.2026 – verifizierbar: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
-- Laufende autodidaktische Weiterbildung anhand eigener und gemeinsamer Softwareprojekte
 
 ## Kenntnisse (in Projekten eingesetzt)
 
