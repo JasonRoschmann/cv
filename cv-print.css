@@ -70,9 +70,14 @@ ul.b li::before{ content:"▸"; position:absolute; left:0; top:0; color:var(--ac
 .case{ background:var(--tint); border-left:3px solid var(--acc2); border-radius:0 8px 8px 0; padding:7px 12px 8px; margin-bottom:8px }
 .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:6px }
 .steps div{ font-size:11px; color:var(--ink2); line-height:1.42 }
-.steps span{ display:block; font-family:var(--fm); font-size:9.2px; letter-spacing:.12em; text-transform:uppercase; color:var(--acc); margin-bottom:2px }
+.steps > div > span{ display:block; font-family:var(--fm); font-size:9.2px; letter-spacing:.12em; text-transform:uppercase; color:var(--acc); margin-bottom:2px }
 .how{ margin-top:7px; padding-top:6px; border-top:1px dashed #cfe3d5; font-size:10.8px; color:var(--ink2) }
 .how b{ color:var(--acc) }
+/* Listen in den Fallstudien-Spalten (Marketing-Fassung) */
+.steps ul.b{ margin-top:1px; gap:3px }
+.steps ul.b li{ font-size:10.7px; line-height:1.4 }
+/* Marker in Textgröße: sonst liegt er auf eigener Grundlinie und Poppler reiht die ersten Zeilen hinter die Spalten */
+.steps ul.b li::before{ font-size:inherit }
 
 /* Kenntnisse / Fähigkeiten: Beschriftung läuft in den Inhalt ein (ein Textabsatz -> ATS-Reihenfolge stimmt) */
 .sk{ display:grid; gap:3px; font-size:11.4px; color:var(--ink2) }
@@ -107,3 +112,5 @@ ul.b li::before{ content:"▸"; position:absolute; left:0; top:0; color:var(--ac
 .foot{ position:absolute; left:15mm; right:15mm; bottom:7mm; display:flex; justify-content:space-between;
   font-family:var(--fm); font-size:9.4px; color:var(--mut); border-top:1px solid var(--line); padding-top:6px }
 .foot a{ color:var(--acc) }
+/* Bindestrich-Komposita nicht am Zeilenende trennen: Poppler zieht sie sonst zusammen (E-MailFlows) */
+.nw{ white-space:nowrap }

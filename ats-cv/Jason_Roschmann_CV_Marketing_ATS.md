@@ -1,79 +1,97 @@
 # Jason Roschmann
 
-Junior E-Commerce & Online-Marketing · Technisches SEO · Shopify · Marketing-Automation
+Junior E-Commerce & Technical SEO · Shopify · Marketing-Automation
 
-Ich verbinde Shopify, SEO-Daten und Marketing-Automationen – und prüfe die Messung dahinter.
+Ich verbinde Suchdaten, Shop-Entwicklung und Automatisierung – und prüfe die Änderungen am tatsächlichen System.
 
 E-Mail: jason@roschmann-digital.de | Telefon: +49 155 612 953 91\
 LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | GitHub: github.com/JasonRoschmann | Web-CV: jasonroschmann.github.io/cv\
 Wohnort: Hamburg, Deutschland | Gesucht: Hamburg oder remote; Umzug nach Zürich für eine passende Rolle möglich | Start nach Absprache
 
-Schwerpunkte: Google Search Console, GA4, Plausible, strukturierte Daten, Shopify, Google Merchant Center, Klaviyo, Python, n8n
+Schwerpunkte: Technisches SEO, strukturierte Daten (JSON-LD), GEO/AEO, Google Search Console, GA4, Shopify (Liquid, Metafields), Klaviyo, Google Merchant Center, Python, n8n
 
 ## Profil
 
-Ich arbeite an der Schnittstelle von Shop, SEO-Daten und Marketing-Automation: Search-Console-Auswertungen, strukturierte Daten, Produktfeeds und E-Mail-Flows in Shopify — bis in Code und Templates. Vier Jahre B2B-Direktvertrieb haben mir gezeigt, woran Kaufentscheidungen hängen. Wiederkehrende Auswertungen automatisiere ich mit Python und KI-Agenten, und bevor ich aus Zahlen Schlüsse ziehe, prüfe ich die Messung. Ich suche eine Junior-Rolle in E-Commerce, technischem SEO oder Marketing-Automation.
+Ich entwickle und verbessere Shopify-Shops mit Schwerpunkt auf technischem SEO, mehrsprachigen Inhalten und Marketing-Automation. Bei duftkumpels habe ich unter anderem Suchdaten ausgewertet, Themenverknüpfungen aufgebaut, Übersetzungsabläufe implementiert und einen fehlerhaften Klaviyo-Checkout-Link korrigiert. KI nutze ich für Recherche, Umsetzung und Content-Workflows; Befunde prüfe ich anhand von Quelldaten, Tests und Gegenmessungen. Vier Jahre B2B-Direktvertrieb haben mir gezeigt, woran Kaufentscheidungen hängen.
 
-## E-Commerce & SEO in der Praxis
+## Fallstudie E-Commerce & SEO
 
-### duftkumpels.shop (Kundenprojekt, seit Juni 2026)
+### duftkumpels.shop — Shopify, DE/EN/FR (Kundenprojekt, Projektarbeit seit Juni 2026)
 
-Zweck: Shopify-Shop einer Hamburger Nischen-Parfümerie, dreisprachig (DE/EN/FR). Mein Teil: Theme, SEO, Produktdaten, E-Mail-Flows und Messung.
+Hamburger Nischen-Parfümerie. Mein Teil: Theme, SEO, Mehrsprachigkeit, Produktdaten, E-Mail-Flows und Messung.
 
-- Messen: Search-Console-Auswertung für Suchfragen in DE/EN/FR automatisiert; Indexierungsstatus von 700 URLs geprüft und eine priorisierte Bearbeitungsliste erstellt.
-- Ändern: Titel und Metadaten anhand der Suchdaten angepasst; Artikel-, Blog- und Organization-Markup ergänzt; Bildladeprioritäten auf Kollektions- und Produktseiten korrigiert.
-- Gegenprüfen: Vorwerte gesichert, live gegengelesen, per IndexNow gemeldet; einen CSS-Preload-Patch nach ungünstigen Messläufen zurückgerollt.
-- Wahrheitsprüfung: Ein automatischer Abgleich von SEO-Verfügbarkeitsaussagen mit kaufbaren Varianten fand zwei falsche Aussagen — beide korrigiert.
-- E-Mail-Automation: Fehlerhaften Rückkehrlink einer Klaviyo-Abbruchmail durch einen wiederherstellbaren Checkout-Link ersetzt; fehlende Trackingparameter ergänzt.
-- Feeds & Kanäle: Merchant-Center-Probleme auf Produktebene analysiert, Produktkategorien und Kanalzuordnung korrigiert; Microsoft- und Pinterest-Kanal angebunden.
-- Messung: GA4-Kaufzahlen mit Shopify-Bestellungen abgeglichen; wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions.
-- Shop & Theme: Gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, Produktdaten über Metafields.
+Gefunden werden:
 
-## Marketing-Automation im Team
+- Search-Console-Auswertung der Suchfragen in DE/EN/FR automatisiert; Titel und Metadaten danach angepasst.
+- Indexierungsstatus von 700 URLs geprüft, Bearbeitung priorisiert.
+- Themenindex für 128 Artikel aufgebaut; Artikel und 60 Produkte über Metafelder verknüpft.
+- Canonical-Ziele für 19 thematisch überlappende Blogartikel gesetzt.
+- Artikel-, Blog-, Listen-, Person- und Organisationsdaten in JSON-LD ergänzt und automatisiert geprüft.
+- GEO/AEO: Seiten anhand von zehn Käuferfragen auf direkt auffindbare Antworten geprüft und Inhaltslücken dokumentiert; bestehende llms.txt-Ausgabe um aktuelle Kataloginformationen erweitert.
+
+In mehreren Sprachen:
+
+- Übersetzungs-Pipeline aufgebaut: HTML-Extraktion, Strukturprüfung, Shopify-Import über CSV bzw. GraphQL.
+- EN/FR-Artikel anhand vorhandener Suchimpressionen priorisiert und eingespielt.
+- Produktnamen sprachübergreifend vereinheitlicht; Produkttypen, Kollektionstitel und Hero-Texte lokalisiert.
+- Fehlerhafte EN/FR-Sprachweiterleitungen reproduziert und auf das Shopify-Routing eingegrenzt.
+
+Kaufen und nachfassen:
+
+- Klaviyo-Abbruchmail auf wiederherstellbaren Checkout-Link umgestellt; fehlendes Onsite-Embed diagnostiziert, aktiviert.
+- Merchant-Center-Probleme analysiert, Kategorien und Zuordnung korrigiert; Microsoft- und Pinterest-Kanal angebunden.
+- Nicht lieferbare Produkte auf Wissensseiten gekennzeichnet, verfügbare Alternativen eingeblendet.
+- GA4-Kaufzahlen mit Shopify-Bestellungen abgeglichen.
+- Gekauftes Theme in Liquid, CSS und JavaScript umgebaut; Bildladeprioritäten korrigiert; wöchentliche Lighthouse-Prüfung per GitHub Actions.
+
+Gegenprüfung statt Annahme: SEO-Verfügbarkeitsaussagen automatisch mit kaufbaren Varianten abgeglichen — zwei falsche korrigiert; einen CSS-Preload-Patch nach ungünstigen Messläufen zurückgerollt; einen KI-Auditbefund zu angeblich fehlenden Grundpreisen anhand von Produktdaten und gerenderter Ausgabe widerlegt.
+
+## Marketing-Automation & Content im Team
 
 ### FlowKI Club — Magazin & KI-Community (Teamprojekt, Juli–Aug 2026)
 
-Zweck: Deutschsprachiges KI-Magazin mit Discord-Community.
+- Newsletter mit Double-Opt-In und Plausible-Events für Anmeldung, Bestätigung und CTAs implementiert.
+- Social-Distribution: plattformgerechte Social-Post-Pakete aus Artikeln erzeugt; Übergabe an pendpost mit Qualitätsprüfung und Markenregeln aufgebaut; UTM-Konvention und Link-in-Bio-Seite umgesetzt.
+- Autorenprofile sowie optionale FAQ- und HowTo-Daten in die Artikelausgabe integriert; Referral-Programm.
 
-- Newsletter mit Double-Opt-In und Plausible-Events für Anmeldung, Bestätigung und zentrale CTAs implementiert.
-- Social-Distribution automatisiert: plattformgerechte Social-Post-Pakete aus Artikeln erzeugt; Übergabe an pendpost mit Qualitätsprüfung und Markenregeln aufgebaut; UTM-Konvention und Link-in-Bio-Seite umgesetzt.
-- Autoren-, FAQ- und HowTo-Markup für Artikel; Referral-Programm mit Codes und Stufen.
+### Flowki Studio — Clip-Studio (Teamprojekt, 50 gemergte Pull Requests)
 
-## Weitere Projekte
+- Aus Langvideos werden Shorts: Ausschnitt folgt der sprechenden Person; bis zu drei Schnittvarianten je Clip.
+- Freigaben: offene Clip-Prüfungen und Blind-Reviews im Dashboard angeschlossen, Freigabeoberflächen verbessert und Publikationsrechte unmittelbar vor dem Versand erneut geprüft.
 
+## Webdesign, Kreativ-KI & Werkzeuge
+
+- AtopicV — Shopify-Theme auf Horizon-Basis gestaltet: Produktgeschichte in Kapiteln, bearbeitete Produktmotive, mobile Kaufleiste, besserer Tastaturfokus und Touch-Ziele. Unveröffentlichter Entwurf.
 - nk247store.de — Kundenprojekt im Team: interaktive Überarbeitung mit Next.js und GSAP; Tabakwerbung nach § 19 TabakerzG aus allen Motiven entfernt. Meine Überarbeitung ist noch nicht veröffentlicht.
-- Flowki Studio — Clip-Studio (Teamprojekt): internes Social-Media-Studio mit Trends, Plattform-Playbooks und KI-Content-Pipeline; mein Schwerpunkt: aus Langvideos werden Shorts. 50 gemergte Pull Requests.
-- Redesign-Entwurf für ein Hamburger Izakaya: Design-Brief geschrieben, KI-Website-Builder gesteuert und selbst nachgearbeitet — Kamerafahrten aus echten Fotos, Farbkorrektur, Übergänge.
-- KI-gestützte Bewerbungsverwaltung (Eigenprojekt): Python-Pipeline von der Stellensuche bis zur Antwortzuordnung. Eine überarbeitete LLM-Analyse habe ich nach unvollständiger Messung ohne belegte Verbesserung nicht ausgerollt.
+- GEO-Landingpage — WebGL-Hero, animierter Einstieg und leichte Mobil-/Reduced-Motion-Variante; Oberflächentests und Referenz-Screenshots angelegt. Nicht veröffentlicht.
+- Kreativ-KI — Redesign-Entwurf für ein Hamburger Izakaya mit KI-Website-Builder, selbst nachgearbeitet; Vergleichsworkflow für vier KI-Videomodelle mit gemeinsamem Ausgangsprompt.
+- SEO-Dashboard (Prototyp) — Python-Werkzeug, das Search-Console-, GA4- und Bing-Daten zusammenführt und regelbasierte Hinweise erzeugt.
 
 ## Berufserfahrung
 
 ### E-Commerce, Webentwicklung & KI-Automation
 **2024 – heute | Eigene Projekte, Team- und Kundenprojekte | Hamburg / remote**
 
-- Shopify-Shop technisch und im Marketing betreut: Theme, SEO, Produktdaten, E-Mail-Flows, Messung.
+- Shopify-Shop technisch und im Marketing betreut: Theme, SEO, Sprachen, Produktdaten, E-Mail-Flows, Messung.
 - Python-Backends und Next.js-Frontends entwickelt und auf Linux-Servern betrieben; im Team über Branches, Pull Requests und gemeinsame Test-Suites.
 
 ### B2B-Direktvertrieb (Door-to-Door)
 **2019 – 2023 | EWE TEL, Ranger Marketing | Außendienst bundesweit**
 
-- Kaltakquise und Bedarfsgespräche direkt mit Inhabern und Geschäftsführern, Verhandlung und Abschluss vor Ort.
+- Kaltakquise und Bedarfsgespräche mit Inhabern und Geschäftsführern, Verhandlung und Abschluss vor Ort.
 - Täglicher Umgang mit Absagen — und der Blick dafür, welche Probleme ein Betrieb wirklich hat.
 
-## Zertifikat, Weiterbildung und Projektpraxis
+## Zertifikat & Weiterbildung
 
 - Google Ads Search Certification (Skillshop), Dezember 2025, gültig bis 03.12.2026 – verifizierbar: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
 - Weiterbildung Webentwicklung, 2024 (6 Monate): HTML, CSS, JavaScript, Web-Architektur
-- Laufende autodidaktische Weiterbildung anhand eigener und gemeinsamer Projekte
 
 ## Kenntnisse (in Projekten eingesetzt)
 
-- SEO & Analyse: Google Search Console, GA4, Plausible, strukturierte Daten (schema.org), IndexNow, Lighthouse
-- E-Commerce: Shopify (Liquid, Metafields, Theme), Google Merchant Center, Microsoft- und Pinterest-Kanal
-- CRM & E-Mail: Klaviyo-Flows, Newsletter mit Double-Opt-In
-- SEA: Google Ads (Search-Zertifizierung)
-- Automation: Python, n8n, KI-Agenten (Claude Code), GitHub Actions
-- Web: HTML, CSS, JavaScript, TypeScript, Next.js, GSAP
+- SEO & Auffindbarkeit: Google Search Console, Bing Webmaster Tools, strukturierte Daten (JSON-LD), Canonicals, Weiterleitungen, IndexNow, interne Verlinkung, Entitäten, llms.txt
+- Shop & Kunden: Shopify (Liquid, Metafields, Theme, GraphQL-Admin-API), Klaviyo, Google Merchant Center, Microsoft- und Pinterest-Kanal, Google Ads (Search-zertifiziert)
+- Daten & Automation: GA4, Plausible, Lighthouse, Python, n8n, KI-Agenten (Claude Code), GitHub Actions
+- Gestaltung & Qualität: HTML, CSS, JavaScript, TypeScript, Next.js, GSAP, WebGL, Oberflächentests, KI-Bild und -Video
 
 ## Sprachen
 

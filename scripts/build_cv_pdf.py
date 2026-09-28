@@ -17,6 +17,7 @@ import subprocess
 import sys
 import tempfile
 import threading
+import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -74,7 +75,13 @@ def ats(md: Path) -> None:
     """md -> txt, docx und (ueber HTML) pdf daneben, gleicher Dateiname."""
     pandoc = ["pandoc", str(md), "--from", "markdown"]
     subprocess.run(pandoc + ["-t", "plain", "-o", str(md.with_suffix(".txt"))], check=True)
-    subprocess.run(pandoc + ["-o", str(md.with_suffix(".docx"))], check=True)
+    # Eine gerade geschriebene .docx haelt Windows (Scanner/Indexer) kurz offen; Ueberschreiben scheitert dann sporadisch.
+    for _ in range(3):
+        if subprocess.run(pandoc + ["-o", str(md.with_suffix(".docx"))]).returncode == 0:
+            break
+        time.sleep(3)
+    else:
+        raise RuntimeError("docx bleibt gesperrt: %s" % md.with_suffix(".docx").name)
     with tempfile.TemporaryDirectory(prefix="cv_ats_") as tmp:
         html, stil = Path(tmp) / (md.stem + ".html"), Path(tmp) / "stil.html"
         # pandocs Vorlage druckt mit 12pt und schmaler Spalte -> 4 Seiten; schlicht und dicht bleibt es ATS-lesbar
