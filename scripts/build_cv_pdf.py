@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Erzeugt Jason_Roschmann_CV.pdf aus cv-print.html und die ATS-Fassungen
+"""Erzeugt Jason_Roschmann_CV.pdf (DE) und _EN.pdf aus cv-print*.html und die ATS-Fassungen
 (txt, docx, pdf) aus ats-cv/*.md.
 
 Warum es das gibt: Am 22.09.2026 war das zum Download verlinkte PDF Monate
@@ -20,8 +20,7 @@ import threading
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-QUELLE = "cv-print.html"
-ZIEL = REPO / "Jason_Roschmann_CV.pdf"
+DRUCK = [("cv-print.html", REPO / "Jason_Roschmann_CV.pdf"), ("cv-print-en.html", REPO / "Jason_Roschmann_CV_EN.pdf")]
 ATS = [REPO / "ats-cv" / "Jason_Roschmann_CV_ATS.md", REPO / "ats-cv" / "Jason_Roschmann_CV_ATS_EN.md"]
 ATS_STIL = """<style>
 @page { size: A4; margin: 12mm 15mm }
@@ -63,7 +62,8 @@ def druck_cv() -> None:
     threading.Thread(target=server.serve_forever, daemon=True).start()
     try:
         # Ueber HTTP statt file://, damit Schriften und Bilder wirklich laden.
-        drucke("http://127.0.0.1:%d/%s" % (PORT, QUELLE), ZIEL, 20_000)
+        for quelle, ziel in DRUCK:
+            drucke("http://127.0.0.1:%d/%s" % (PORT, quelle), ziel, 20_000)
     finally:
         server.shutdown()
 
@@ -83,7 +83,7 @@ def ats(md: Path) -> None:
 
 
 def main() -> int:
-    for pfad in [REPO / QUELLE] + ATS:
+    for pfad in [REPO / q for q, _ in DRUCK] + [REPO / "cv-print.css"] + ATS:
         if not pfad.exists():
             print("FEHLER:", pfad.name, "fehlt"); return 1
     try:

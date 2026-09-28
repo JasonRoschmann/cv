@@ -28,13 +28,13 @@ Zweck: Internes Social-Media-Studio mit Trends, Plattform-Playbooks und KI-Conte
 ### Fallbeispiel Fehlersuche — hermes-studio (Beitrag zu fremdem Projekt, Sep 2026)
 
 - Ursache: 21 rote Tests, zwei Ursachen — 20× ein nie geschlossenes SQLite-Handle, das unter Windows das Aufräumen sperrt; 1× ein veralteter Test gegen eine Sicherheitsregel.
-- Korrektur: Handle geschlossen, Sicherheitsregel behalten, Test korrigiert; dazu einen stillen Datenverlust im Task-Store behoben.
-- Nachweis: Mutationsprobe — wird die Regel absichtlich gebrochen, schlägt der korrigierte Test an. Test-Suite von 177 auf 199 grüne Tests.
+- Korrektur: Handle geschlossen, Sicherheitsregel behalten, Test korrigiert. Zusätzlich, als eigener Beitrag: stillen Datenverlust im Task-Store behoben, mit fünf neuen Tests.
+- Nachweis: Mutationsprobe — eine gezielte Abschwächung der Sicherheitsregel ließ den korrigierten Test scheitern. Test-Suite von 177 auf 199 grüne Tests.
 - So arbeite ich mit KI-Agenten: Fehler zuerst als roter Test, Agent setzt um, ein zweites Modell prüft zusätzlich als Reviewer, Rollout mit Prüfsummen und automatischem Rückbau.
 
 ### KI-gestützte Bewerbungsverwaltung (Eigenprojekt, seit Juli 2026)
 
-Zweck: Python-Pipeline für Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Anschreiben, Prüfungen, Versand und Antwortzuordnung. Schwerpunkt: nachvollziehbare Aktionen. 94 Python-Dateien, davon 56 Tests.
+Zweck: Python-Pipeline für Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Anschreiben, Prüfungen, Versand und Antwortzuordnung. Schwerpunkt: nachvollziehbare Aktionen. 94 Python-Dateien, davon 56 Testdateien.
 
 - Gemeinsames Hauptbuch aller Außenaktionen mit Reservierung: keine Doppelbewerbung über Mail und Portal, höchstens eine Bewerbung je Firma in 14 Tagen.
 - Blockierende Prüfungen vor dem Versand: unbrauchbare Modellantworten stoppen den Lauf; Modell-Kaskade (Claude, Gemini, Groq) mit Sperrzeiten.
@@ -51,7 +51,7 @@ Websites und Shops für Kunden umgesetzt — von Gestaltung und Interaktion übe
 - Performance: versionierte Assets, Lade-Fallback, Performance-Runden gegen Ruckeln (nk247store.de).
 - Recht & Inhalte: Tabakwerbung nach § 19 TabakerzG aus allen Motiven entfernt (nk247store.de).
 - KI-Werkzeuge: Design-Brief geschrieben, KI-Website-Builder gesteuert und selbst nachgearbeitet — Kamerafahrten aus echten Fotos, Farbkorrektur, Übergänge (Redesign-Entwurf für ein Hamburger Izakaya).
-- Referenzen: duftkumpels.shop — live, seit Juni 2026; nk247store.de — Kundenprojekt im Team, meine Überarbeitung noch nicht veröffentlicht.
+- Referenzen: duftkumpels.shop — Projektarbeit seit Juni 2026, Anpassungen im Live-Theme; nk247store.de — Kundenprojekt im Team, meine Überarbeitung noch nicht veröffentlicht.
 
 ## Weitere Projekte
 

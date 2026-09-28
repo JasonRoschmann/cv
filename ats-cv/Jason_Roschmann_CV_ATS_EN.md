@@ -28,13 +28,13 @@ Purpose: internal social media studio with trends, platform playbooks and an AI 
 ### Debugging case study — hermes-studio (contribution to a third-party project, Sep 2026)
 
 - Cause: 21 failing tests, two root causes — 20× an SQLite handle that was never closed and blocks cleanup on Windows; 1× an outdated test against a security rule.
-- Fix: handle closed, security rule kept, test corrected; also fixed silent data loss in the task store.
-- Evidence: mutation probe — if the rule is broken on purpose, the corrected test fails. Test suite from 177 to 199 passing tests.
+- Fix: handle closed, security rule kept, test corrected. Separately, as its own contribution: fixed silent data loss in the task store, with five new tests.
+- Evidence: mutation probe — deliberately weakening the security rule made the corrected test fail. Test suite from 177 to 199 passing tests.
 - How I work with AI agents: every bug first as a failing test, the agent implements, a second model reviews as an additional reviewer, rollout with checksums and automatic rollback.
 
 ### AI-assisted application management (own project, since July 2026)
 
-Purpose: Python pipeline for job search via job board APIs (including the German Federal Employment Agency, Greenhouse, Lever), cover letters, checks, sending and reply matching. Focus: traceable actions. 94 Python files, 56 of them tests.
+Purpose: Python pipeline for job search via job board APIs (including the German Federal Employment Agency, Greenhouse, Lever), cover letters, checks, sending and reply matching. Focus: traceable actions. 94 Python files, 56 of them test files.
 
 - Shared ledger of all outbound actions with reservations: no duplicate application across email and portal, at most one application per company within 14 days.
 - Blocking checks before sending: unusable model output stops the run; model cascade (Claude, Gemini, Groq) with cool-down periods.
@@ -51,7 +51,7 @@ Built websites and shops for clients — from design and interaction to multilin
 - Performance: versioned assets, loading fallback, performance passes against jank (nk247store.de).
 - Legal & content: tobacco advertising removed from all visuals per German law, § 19 TabakerzG (nk247store.de).
 - AI tools: wrote the design brief, steered an AI website builder and refined the result myself — camera moves from real photos, colour grading, transitions (redesign draft for a Hamburg izakaya).
-- References: duftkumpels.shop — live since June 2026; nk247store.de — client project in a team, my redesign not yet published.
+- References: duftkumpels.shop — project work since June 2026, changes in the live theme; nk247store.de — client project in a team, my redesign not yet published.
 
 ## Further projects
 

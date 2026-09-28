@@ -6,117 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --night:#0b0e12; --night2:#121820; --glow:#3fdc84;
-    --paper:#fbfaf6; --card:#ffffff; --ink:#15181d; --ink2:#3a3f48; --mut:#6c717b; --line:#e4e1d8;
-    --acc:#16894f; --acc2:#1fae66; --tint:#eef6f0; --amb:#b86a12;
-    --fd:'Fraunces',Georgia,serif; --fb:'Inter',system-ui,sans-serif; --fm:'JetBrains Mono',monospace;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  @page{ size:A4; margin:0 }
-  html,body{ background:var(--paper); color:var(--ink); font-family:var(--fb); font-size:12px; line-height:1.48;
-    -webkit-print-color-adjust:exact; print-color-adjust:exact; -webkit-font-smoothing:antialiased }
-  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden }
-  .page + .page{ page-break-before:always }
-  .inner{ padding:0 15mm }
-  a{ color:inherit; text-decoration:none }
-  b{ font-weight:600; color:var(--ink) }
-
-  /* Kopf: dunkles Band, kompakt */
-  .hero{ background:
-      radial-gradient(ellipse 520px 300px at 88% 0%, rgba(63,220,132,.20), transparent 62%),
-      radial-gradient(ellipse 420px 260px at 0% 110%, rgba(63,220,132,.08), transparent 60%),
-      linear-gradient(160deg,var(--night2),var(--night));
-    color:#eceae3; padding:9mm 15mm 8mm; display:grid; grid-template-columns:1fr 29mm; gap:8mm; align-items:center }
-  .kicker{ font-family:var(--fm); font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--glow) }
-  h1{ font-family:var(--fd); font-weight:700; font-size:40px; line-height:1; letter-spacing:-.025em; margin-top:5px }
-  .title{ font-family:var(--fb); font-weight:600; font-size:13.5px; margin-top:7px; color:#fff; letter-spacing:.01em }
-  .title span{ color:var(--glow) }
-  .lead{ font-family:var(--fd); font-style:italic; font-weight:500; font-size:15.5px; margin-top:5px; color:#dfe9e2; white-space:nowrap }
-  .contact{ margin-top:9px; display:flex; flex-wrap:wrap; gap:3px 14px; font-family:var(--fm); font-size:9.9px; color:#c9ccd2 }
-  .contact a{ color:#eceae3; border-bottom:1px solid rgba(63,220,132,.45) }
-  .contact .d{ color:#6f7682 }
-  .photo{ width:29mm; height:36mm; border-radius:9px; overflow:hidden; border:1px solid rgba(255,255,255,.14);
-    box-shadow:0 0 0 3px rgba(63,220,132,.35), 0 12px 30px rgba(0,0,0,.45) }
-  .photo img{ width:100%; height:100%; object-fit:cover; object-position:50% 18% }
-
-  /* Kernstack + zwei Belege */
-  .snap{ display:grid; grid-template-columns:1fr 62mm; background:var(--card); border-bottom:1px solid var(--line) }
-  .core{ padding:7px 10px 7px 15mm; display:grid; gap:2px }
-  .row{ display:grid; grid-template-columns:25mm 1fr; gap:8px; font-size:11.2px; color:var(--ink2) }
-  .row b{ font-weight:600 }
-  .lbl{ font-family:var(--fm); font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--mut); padding-top:2px }
-  .proofs{ border-left:1px solid var(--line); padding:6px 15mm 6px 11px; display:grid; gap:3px; align-content:center }
-  .pf{ display:flex; align-items:baseline; gap:8px }
-  .pf .n{ font-family:var(--fd); font-weight:700; font-size:19px; line-height:1.1; min-width:17mm; white-space:nowrap }
-  .pf .n i{ font-style:normal; color:var(--acc) }
-  .pf .t{ font-size:10px; color:var(--mut); line-height:1.25 }
-
-  /* Abschnitte */
-  section{ margin-top:10px }
-  .h{ font-family:var(--fm); font-size:10px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--acc);
-    display:flex; align-items:center; gap:10px; margin-bottom:7px }
-  .h::after{ content:""; flex:1; height:1px; background:var(--line) }
-  .profil{ font-size:12.3px; color:var(--ink2); line-height:1.58 }
-
-  /* Projekte: Haarlinien statt Karten */
-  .proj{ padding:0 0 8px; margin-bottom:8px; border-bottom:1px solid var(--line) }
-  .proj:last-child{ border-bottom:0; margin-bottom:0 }
-  .pt{ display:flex; justify-content:space-between; align-items:baseline; gap:12px }
-  .pt h3{ font-family:var(--fd); font-weight:600; font-size:16px; letter-spacing:-.01em }
-  .pt h3 a{ border-bottom:1px solid rgba(22,137,79,.4) }
-  .tag{ font-family:var(--fm); font-size:9.3px; letter-spacing:.06em; text-transform:uppercase; color:var(--mut); white-space:nowrap }
-  .what{ color:var(--ink2); margin-top:2px; font-size:11.7px }
-  .what em{ font-style:normal; font-family:var(--fm); font-size:9.4px; letter-spacing:.08em; text-transform:uppercase; color:var(--acc); margin-right:5px }
-  ul.b{ list-style:none; margin-top:4px; display:grid; gap:2px }
-  ul.b li{ position:relative; padding-left:13px; color:var(--ink2); font-size:11.4px; line-height:1.42 }
-  ul.b li::before{ content:"▸"; position:absolute; left:0; top:0; color:var(--acc2); font-size:10px }
-  .proof{ margin-top:5px; display:flex; flex-wrap:wrap; gap:3px 14px; font-family:var(--fm); font-size:9.9px; color:var(--mut) }
-  .proof .ok{ color:var(--acc); font-weight:600 }
-
-  /* Fallbeispiel: das eine hervorgehobene Element */
-  .case{ background:var(--tint); border-left:3px solid var(--acc2); border-radius:0 8px 8px 0; padding:7px 12px 8px; margin-bottom:8px }
-  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:6px }
-  .steps div{ font-size:11px; color:var(--ink2); line-height:1.42 }
-  .steps span{ display:block; font-family:var(--fm); font-size:9.2px; letter-spacing:.12em; text-transform:uppercase; color:var(--acc); margin-bottom:2px }
-  .how{ margin-top:7px; padding-top:6px; border-top:1px dashed #cfe3d5; font-size:10.8px; color:var(--ink2) }
-  .how b{ color:var(--acc) }
-
-  /* Kenntnisse / Fähigkeiten: Beschriftung + Inhalt */
-  .sk{ display:grid; grid-template-columns:31mm 1fr; gap:3px 10px; font-size:11.4px }
-  .sk .k{ font-family:var(--fm); font-size:9.6px; letter-spacing:.04em; text-transform:uppercase; color:var(--mut); padding-top:2px }
-  .sk .v{ color:var(--ink2) }
-  .sk .v i{ font-style:normal; color:var(--mut) }
-  .cap{ gap:5px 10px }
-  .refs{ margin-top:7px; font-family:var(--fm); font-size:9.8px; color:var(--mut); display:flex; flex-wrap:wrap; gap:3px 16px }
-  .refs b{ color:var(--acc); font-weight:600 }
-
-  /* Seite 2 */
-  .more{ display:grid; gap:5px }
-  .more div{ color:var(--ink2); font-size:11.4px; padding-left:13px; position:relative }
-  .more div::before{ content:"◆"; position:absolute; left:0; top:1px; color:var(--acc2); font-size:8px }
-  .xp{ display:grid; grid-template-columns:27mm 1fr; gap:6px 12px }
-  .yr{ font-family:var(--fm); font-size:10.4px; color:var(--acc); padding-top:3px }
-  .yr.amb{ color:var(--amb) }
-  .xp h4{ font-family:var(--fd); font-weight:600; font-size:14.5px }
-  .org{ font-family:var(--fm); font-size:10px; color:var(--mut); margin:1px 0 3px }
-  .xp ul{ list-style:none; display:grid; gap:1px; margin-bottom:4px }
-  .xp li{ position:relative; padding-left:13px; color:var(--ink2); font-size:11.4px }
-  .xp li::before{ content:"▸"; position:absolute; left:0; color:var(--acc2); font-size:10px }
-  .end{ display:grid; grid-template-columns:1fr 30mm; gap:8mm; align-items:center }
-  .facts{ display:grid; grid-template-columns:repeat(6,1fr); background:var(--card); border:1px solid var(--line); border-radius:8px }
-  .facts div{ padding:6px 8px; border-left:1px solid var(--line); font-size:10.8px; line-height:1.3; white-space:nowrap }
-  .facts div:first-child{ border-left:0 }
-  .facts span{ display:block; font-family:var(--fm); font-size:9px; letter-spacing:.05em; text-transform:uppercase; color:var(--mut); margin-bottom:2px }
-  .qr{ text-align:center; font-family:var(--fm); font-size:9px; color:var(--mut); line-height:1.35 }
-  .qr img{ width:24mm; height:24mm; display:block; margin:0 auto 4px }
-  .qr b{ color:var(--acc); font-weight:600 }
-
-  .foot{ position:absolute; left:15mm; right:15mm; bottom:7mm; display:flex; justify-content:space-between;
-    font-family:var(--fm); font-size:9.4px; color:var(--mut); border-top:1px solid var(--line); padding-top:6px }
-  .foot a{ color:var(--acc) }
-</style>
+<link rel="stylesheet" href="cv-print.css">
 </head>
 <body>
 
@@ -176,8 +66,8 @@
         <div class="pt"><h3>Fallbeispiel Fehlersuche — hermes-studio</h3><span class="tag">Beitrag zu fremdem Projekt · Sep 2026</span></div>
         <div class="steps">
           <div><span>1 · Ursache</span>21 rote Tests, zwei Ursachen: 20× ein nie geschlossenes SQLite-Handle, das unter Windows das Aufräumen sperrt; 1× ein veralteter Test gegen eine Sicherheitsregel.</div>
-          <div><span>2 · Korrektur</span>Handle geschlossen, Sicherheitsregel behalten, Test korrigiert; dazu einen stillen Datenverlust im Task-Store behoben.</div>
-          <div><span>3 · Nachweis</span>Mutationsprobe: Wird die Regel absichtlich gebrochen, schlägt der korrigierte Test an. Suite 177 → 199 grün.</div>
+          <div><span>2 · Korrektur</span>Handle geschlossen, Sicherheitsregel behalten, Test korrigiert. Zusätzlich, als eigener Beitrag: stillen Datenverlust im Task-Store behoben, mit fünf neuen Tests.</div>
+          <div><span>3 · Nachweis</span>Mutationsprobe: Eine gezielte Abschwächung der Sicherheitsregel ließ den korrigierten Test scheitern. Suite 177 → 199 grün.</div>
         </div>
         <div class="how"><b>So arbeite ich mit KI-Agenten:</b> Fehler zuerst als roter Test · Agent setzt um · ein zweites Modell prüft zusätzlich als Reviewer · Rollout mit Prüfsummen und automatischem Rückbau.</div>
       </div>
@@ -190,7 +80,7 @@
           <li><b>Blockierende Prüfungen vor dem Versand:</b> unbrauchbare Modellantworten stoppen den Lauf; Modell-Kaskade (Claude, Gemini, Groq) mit Sperrzeiten.</li>
           <li><b>LLM-Bewertungen gegen blinde Referenzurteile geprüft;</b> eine überarbeitete Analyse nach unvollständiger Messung ohne belegte Verbesserung nicht ausgerollt.</li>
         </ul>
-        <div class="proof"><span class="ok">✓ 94 Python-Dateien, davon 56 Tests</span><span>Rollouts mit Prüfsummen, Tests vor und nach dem Tausch, automatischem Rückbau</span></div>
+        <div class="proof"><span class="ok">✓ 94 Python-Dateien, davon 56 Testdateien</span><span>Rollouts mit Prüfsummen, Tests vor/nach Tausch, automatischer Rückbau</span></div>
       </div>
     </section>
 
@@ -209,14 +99,14 @@
       <div class="h">Web- &amp; Shop-Entwicklung für Kunden</div>
       <p class="profil" style="margin-bottom:7px">Websites und Shops für Kunden umgesetzt — von Gestaltung und Interaktion über Mehrsprachigkeit und rechtliche Vorgaben bis zu CI und Auslieferung.</p>
       <div class="sk cap">
-        <div class="k">Frontend &amp; Interaktion</div><div class="v">Next.js, React, TypeScript, GSAP: Hero als Frame-Sequenz, die sich mit dem Mauszeiger dreht (auf dem Handy per Geräteneigung); Vollbild-Kapitel mit eigener Mobile-Bedienung. <i>nk247store.de</i></div>
-        <div class="k">Shop &amp; Inhalte</div><div class="v">Gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, dreisprachig (DE/EN/FR), Produktdaten über Metafields. <i>duftkumpels.shop</i></div>
-        <div class="k">Qualität &amp; Auslieferung</div><div class="v">CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright <i>nk247store.de</i>; wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions <i>duftkumpels.shop</i></div>
-        <div class="k">Performance</div><div class="v">Versionierte Assets, Lade-Fallback, Performance-Runden gegen Ruckeln. <i>nk247store.de</i></div>
-        <div class="k">Recht &amp; Inhalte</div><div class="v">Tabakwerbung nach §&nbsp;19&nbsp;TabakerzG aus allen Motiven entfernt. <i>nk247store.de</i></div>
-        <div class="k">KI-Werkzeuge</div><div class="v">Design-Brief geschrieben, KI-Website-Builder gesteuert und selbst nachgearbeitet: Kamerafahrten aus echten Fotos, Farbkorrektur, Übergänge. <i>Redesign-Entwurf für ein Hamburger Izakaya</i></div>
+        <div><span class="k">Frontend &amp; Interaktion</span> Next.js, React, TypeScript, GSAP: Hero als Frame-Sequenz, die sich mit dem Mauszeiger dreht (auf dem Handy per Geräteneigung); Vollbild-Kapitel mit eigener Mobile-Bedienung. <i>nk247store.de</i></div>
+        <div><span class="k">Shop &amp; Inhalte</span> Gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, dreisprachig (DE/EN/FR), Produktdaten über Metafields. <i>duftkumpels.shop</i></div>
+        <div><span class="k">Qualität &amp; Auslieferung</span> CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright <i>nk247store.de</i>; wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions <i>duftkumpels.shop</i></div>
+        <div><span class="k">Performance</span> Versionierte Assets, Lade-Fallback, Performance-Runden gegen Ruckeln. <i>nk247store.de</i></div>
+        <div><span class="k">Recht &amp; Inhalte</span> Tabakwerbung nach §&nbsp;19&nbsp;TabakerzG aus allen Motiven entfernt. <i>nk247store.de</i></div>
+        <div><span class="k">KI-Werkzeuge</span> Design-Brief geschrieben, KI-Website-Builder gesteuert und selbst nachgearbeitet: Kamerafahrten aus echten Fotos, Farbkorrektur, Übergänge. <i>Redesign-Entwurf für ein Hamburger Izakaya</i></div>
       </div>
-      <div class="refs"><span><b>duftkumpels.shop</b> — live, seit Juni 2026</span><span><b>nk247store.de</b> — Kundenprojekt im Team, meine Überarbeitung noch nicht veröffentlicht</span></div>
+      <div class="refs"><span><b>duftkumpels.shop</b> — Projektarbeit seit Juni 2026; Anpassungen im Live-Theme</span><span><b>nk247store.de</b> — Kundenprojekt im Team, meine Überarbeitung noch nicht veröffentlicht</span></div>
     </section>
 
     <section>
@@ -269,14 +159,14 @@
       <div class="h">Kenntnisse — in Projekten eingesetzt</div>
       <div class="end">
         <div class="sk">
-          <div class="k">Entwicklung</div><div class="v">Python, FastAPI · TypeScript, React, Next.js · React Native</div>
-          <div class="k">KI &amp; Agenten</div><div class="v">Claude Code, LLM-APIs (Claude, Gemini, Groq), MCP, Agenten-Orchestrierung, n8n</div>
-          <div class="k">Daten &amp; Jobs</div><div class="v">PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase</div>
-          <div class="k">Qualität</div><div class="v">pytest, Vitest, Playwright, GitHub Actions, Lighthouse-CI</div>
-          <div class="k">Betrieb</div><div class="v">Linux-Server, Docker Compose, Cron, flock, SMTP/IMAP, SPF/DKIM</div>
-          <div class="k">Web &amp; Commerce</div><div class="v">Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL</div>
+          <div><span class="k">Entwicklung</span> Python, FastAPI · TypeScript, React, Next.js · React Native</div>
+          <div><span class="k">KI &amp; Agenten</span> Claude Code, LLM-APIs (Claude, Gemini, Groq), MCP, Agenten-Orchestrierung, n8n</div>
+          <div><span class="k">Daten &amp; Jobs</span> PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase</div>
+          <div><span class="k">Qualität</span> pytest, Vitest, Playwright, GitHub Actions, Lighthouse-CI</div>
+          <div><span class="k">Betrieb</span> Linux-Server, Docker Compose, Cron, flock, SMTP/IMAP, SPF/DKIM</div>
+          <div><span class="k">Web &amp; Commerce</span> Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL</div>
         </div>
-        <div class="qr"><img src="qr-cv.svg" alt="QR-Code zum interaktiven Lebenslauf"><b>Interaktive Fassung</b><br>mit Fallstudien</div>
+        <div class="qr"><img src="qr-cv.svg" alt="QR-Code zum interaktiven Lebenslauf"><b>Interaktive Fassung</b></div>
       </div>
     </section>
 
