@@ -289,15 +289,32 @@
   .tl li{position:relative;padding-left:18px;color:var(--ink2);font-size:14px}
   .tl li::before{content:"▸";position:absolute;left:0;color:var(--grn)}
 
-  /* ---------- skills ---------- */
-  .skgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
-  @media(max-width:720px){.skgrid{grid-template-columns:1fr}}
-  .sk{background:linear-gradient(160deg,var(--elev),var(--panel));border:1px solid var(--line);border-radius:14px;padding:20px}
-  .sk h4{font-family:var(--fd);font-weight:600;font-size:1.1rem;margin-bottom:8px}
-  .sk h4 .d{color:var(--grn)} .sk.amb h4 .d{color:var(--amb)}
-  .sk p{color:var(--ink2);font-size:13.5px}
-  .sk .use{font-family:var(--fm);font-size:10.5px;color:var(--grn);margin-top:13px;letter-spacing:.04em;border-top:1px solid var(--line);padding-top:10px}
-  .sk.amb .use{color:var(--amb)}
+  /* ---------- kompetenz-atlas ---------- */
+  .atf{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .atf button{font:500 12px var(--fm);letter-spacing:.04em;color:var(--mut);background:var(--elev);border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
+  .atf button:hover{color:var(--ink2);border-color:var(--line2)}
+  .atf button[aria-pressed="true"]{color:#04120a;background:var(--grn);border-color:var(--grn)}
+  .atf button:focus-visible{outline:2px solid var(--grn);outline-offset:2px}
+  .atleg{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:14px;font-size:12px;color:var(--mut)}
+  .atgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;align-items:start}
+  @media(max-width:720px){.atgrid{grid-template-columns:1fr}}
+  .atg{background:linear-gradient(160deg,var(--elev),var(--panel));border:1px solid var(--line);border-radius:14px;padding:18px 18px 6px}
+  .atg h4{font-family:var(--fd);font-weight:600;font-size:1.1rem;margin-bottom:2px}
+  .atg h4 .d{color:var(--grn)} .atg.amb h4 .d{color:var(--amb)}
+  .at{padding:12px 0;border-top:1px solid var(--line)}
+  .atg h4 + .at{border-top:0}
+  .at-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .at-h b{font-size:14px;color:var(--ink);font-weight:600}
+  .at p{color:var(--ink2);font-size:13.5px;margin-top:3px}
+  .at-m{display:flex;flex-wrap:wrap;gap:3px 12px;margin-top:6px;font-family:var(--fm);font-size:10.5px;color:var(--mut);letter-spacing:.03em}
+  .at .at-g{font-size:12.5px;color:var(--mut)}
+  .at-g span{font-family:var(--fm);font-size:10.5px;color:var(--amb);letter-spacing:.04em;margin-right:6px}
+  .st{flex:none;font-family:var(--fm);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;border:1px solid}
+  .st.ok{color:var(--grn);border-color:rgba(63,220,132,.4)}
+  .st.um{color:var(--cool);border-color:rgba(106,163,255,.4)}
+  .st.pr{color:var(--amb);border-color:rgba(229,164,78,.4)}
+  .st.en{color:var(--mut);border-color:var(--line2)}
+  .at[hidden],.atg[hidden]{display:none}
 
   .info{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
   @media(max-width:720px){.info{grid-template-columns:1fr}}
@@ -645,7 +662,7 @@
     <div class="agrid">
       <button class="ai g" data-app="projekte"><span class="tile"><svg viewBox="0 0 24 24"><path d="M4 5h16v6H4z"/><path d="M4 15h16v4H4z"/></svg></span><span class="lbl">Projekte</span></button>
       <button class="ai am" data-app="werdegang"><span class="tile"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M7 8h10M7 16h10"/></svg></span><span class="lbl">Werdegang</span></button>
-      <button class="ai c" data-app="skills"><span class="tile"><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .5-5.5 4.5L18 21l-6-4-6 4 1.5-7L2 9.5 9 9z"/></svg></span><span class="lbl">Skills</span></button>
+      <button class="ai c" data-app="skills"><span class="tile"><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .5-5.5 4.5L18 21l-6-4-6 4 1.5-7L2 9.5 9 9z"/></svg></span><span class="lbl">Kompetenzen</span></button>
       <button class="ai r" data-app="zuerich"><span class="tile"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="lbl">Standort</span></button>
       <button class="ai v" data-app="nexus"><span class="tile"><svg viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 01-12 0c0-4 6-11 6-11z"/></svg></span><span class="lbl">Fluid</span></button>
     </div>
@@ -695,7 +712,7 @@
         <div class="nav on" data-view="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</div>
         <div class="nav" data-view="projekte"><svg viewBox="0 0 24 24"><path d="M4 5h16v6H4z"/><path d="M4 15h16v4H4z"/></svg>Projekte</div>
         <div class="nav" data-view="werdegang"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M7 8h10M7 16h10"/></svg>Werdegang</div>
-        <div class="nav" data-view="skills"><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .5-5.5 4.5L18 21l-6-4-6 4 1.5-7L2 9.5 9 9z"/></svg>Skills</div>
+        <div class="nav" data-view="skills"><svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .5-5.5 4.5L18 21l-6-4-6 4 1.5-7L2 9.5 9 9z"/></svg>Kompetenzen</div>
         <div class="nav" data-view="zuerich"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Standort</div>
         <div class="nav" data-view="nexus"><svg viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 01-12 0c0-4 6-11 6-11z"/></svg>Fluid</div>
         <div class="nav" data-view="chat"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>Fragen</div>
@@ -908,17 +925,62 @@
 
       <!-- SKILLS -->
       <section class="view" data-view="skills"><div class="inner">
-        <p class="eyebrow rv">Kenntnisse</p>
-        <h2 class="display h-xl rv" style="margin-top:14px">Womit ich baue.</h2>
-        <p class="body rv" style="margin-top:12px;max-width:62ch">Nur, was ich in Projekten eingesetzt habe — mit dem Projekt, in dem es steckt.</p>
-        <div class="skgrid rv">
-          <div class="sk"><h4><span class="d">▸</span> Entwicklung</h4><div class="stack"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">React Native</span></div><p class="use">in: Flowki Studio · Bewerbungsverwaltung · nk247 · Shinobi</p></div>
-          <div class="sk"><h4><span class="d">▸</span> KI &amp; Agenten</h4><div class="stack"><span class="chip">Claude Code</span><span class="chip">Modell-APIs: Claude · Gemini · Groq</span><span class="chip">MCP</span><span class="chip">Agenten-Orchestrierung</span><span class="chip">n8n</span></div><p class="use">in: Bewerbungsverwaltung · Shinobi · hermes-brett · n8n: Content-Engine OBSIDAIRE</p></div>
-          <div class="sk"><h4><span class="d">▸</span> Daten &amp; Hintergrundjobs</h4><div class="stack"><span class="chip">PostgreSQL</span><span class="chip">SQLAlchemy/Alembic</span><span class="chip">Celery</span><span class="chip">Redis</span><span class="chip">Supabase</span></div><p class="use">in: Flowki Studio · Shinobi</p></div>
-          <div class="sk"><h4><span class="d">▸</span> Qualität</h4><div class="stack"><span class="chip">pytest</span><span class="chip">Vitest</span><span class="chip">Playwright</span><span class="chip">GitHub Actions</span><span class="chip">Lighthouse-CI</span></div><p class="use">in: Bewerbungsverwaltung · hermes-studio · nk247 · duftkumpels</p></div>
-          <div class="sk"><h4><span class="d">▸</span> Betrieb</h4><div class="stack"><span class="chip">Linux-Server</span><span class="chip">Docker Compose</span><span class="chip">Cron · flock</span><span class="chip">SMTP/IMAP</span><span class="chip">SPF/DKIM</span></div><p class="use">in: Bewerbungsverwaltung · Flowki Studio · hermes-brett</p></div>
-          <div class="sk"><h4><span class="d">▸</span> Web &amp; Commerce</h4><div class="stack"><span class="chip">Shopify Liquid</span><span class="chip">Tailwind</span><span class="chip">GSAP</span><span class="chip">PWA</span><span class="chip">Canvas/WebGL</span></div><p class="use">in: duftkumpels · nk247 · dieses CV</p></div>
-          <div class="sk amb" style="grid-column:1 / -1"><h4><span class="d">▸</span> Aus dem Vertrieb</h4><div class="stack"><span class="chip">B2B-Direktvertrieb</span><span class="chip">Bedarfsanalyse</span><span class="chip">Verhandlung</span><span class="chip">Google Ads Search · zertifiziert 12/2025</span></div><p class="use">Fundament: 4 Jahre Außendienst mit Inhabern und Geschäftsführern</p></div>
+        <p class="eyebrow rv">Kompetenz-Atlas</p>
+        <h2 class="display h-xl rv" style="margin-top:14px">Was ich kann — <span class="g it">und wo es steht.</span></h2>
+        <p class="body rv" style="margin-top:12px;max-width:66ch">Jede Fähigkeit mit Projekt, Rolle, Status und Zeitraum — und mit ihrer Grenze. Die Repositories sind privat; bereinigte Auszüge zeige ich gern im Gespräch.</p>
+        <div class="atf rv" role="group" aria-label="Kompetenzen filtern">
+          <button type="button" data-f="alle" aria-pressed="true">Alle</button>
+          <button type="button" data-f="ecom" aria-pressed="false">E-Commerce &amp; SEO</button>
+          <button type="button" data-f="dev" aria-pressed="false">Entwicklung &amp; KI</button>
+        </div>
+        <div class="atleg rv"><span><span class="st ok">eingesetzt</span> im echten Betrieb genutzt</span><span><span class="st um">umgesetzt</span> im Repository umgesetzt, Livebetrieb nicht behauptet</span><span><span class="st pr">Prototyp</span> lauffähig, nicht produktiv</span><span><span class="st en">Entwurf</span> unveröffentlicht</span></div>
+        <div class="atgrid rv">
+        <div class="atg"><h4><span class="d">▸</span> SEO &amp; Auffindbarkeit</h4>
+          <div class="at" data-f="ecom"><div class="at-h"><b>Suchdaten auswerten</b><span class="st ok">eingesetzt</span></div><p>Search-Console-Auswertung der Suchfragen in DE/EN/FR automatisiert; Titel und Metadaten danach angepasst.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Sep 2026</span></div><p class="at-g"><span>Grenze</span>Wirkung auf Rankings und Klicks noch nicht ausgewertet.</p></div>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>Indexierung prüfen</b><span class="st ok">eingesetzt</span></div><p>Indexierungsstatus von 700 URLs geprüft, Bearbeitung priorisiert.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug 2026</span></div><p class="at-g"><span>Grenze</span>Bestandsaufnahme und Priorisierung, keine Aussage über eine spätere Indexquote.</p></div>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>Themenstruktur &amp; interne Verlinkung</b><span class="st ok">eingesetzt</span></div><p>Themenindex für 128 Artikel aufgebaut; Artikel und 60 Produkte über Metafelder verknüpft; Canonical-Ziele für 19 thematisch überlappende Blogartikel gesetzt.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug 2026</span></div><p class="at-g"><span>Grenze</span>Ranking-Wirkung nicht gemessen.</p></div>
+          <div class="at" data-f="ecom"><div class="at-h"><b>Strukturierte Daten &amp; Entitäten</b><span class="st ok">eingesetzt</span></div><p>Artikel-, Blog-, Listen-, Person- und Organisationsdaten in JSON-LD ergänzt und automatisiert geprüft; externe Markenauftritte abgeglichen.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug 2026</span></div><p class="at-g"><span>Grenze</span>Ob Google Rich Results anzeigt, entscheidet Google.</p></div>
+          <div class="at" data-f="ecom"><div class="at-h"><b>GEO / AEO</b><span class="st ok">eingesetzt</span></div><p>Seiten anhand von zehn Käuferfragen auf direkt auffindbare Antworten geprüft und Inhaltslücken dokumentiert; bestehende llms.txt-Ausgabe um aktuelle Kataloginformationen erweitert.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug–Sep 2026</span></div><p class="at-g"><span>Grenze</span>Zitierungen in KI-Suchen nicht gemessen.</p></div>
+          <div class="at" data-f="ecom"><div class="at-h"><b>Alte URLs weiterleiten</b><span class="st ok">eingesetzt</span></div><p>Historische Produkt-URLs aus Webarchiv und Katalog ermittelt und für nicht mehr erreichbare Produkte Weiterleitungen eingerichtet.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug 2026</span></div><p class="at-g"><span>Grenze</span>Nur Produkt-URLs, keine vollständige Backlink-Analyse.</p></div>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>SEO-Dashboard</b><span class="st pr">Prototyp</span></div><p>Python-Werkzeug, das Search-Console-, GA4- und Bing-Daten zusammenführt und regelbasierte Hinweise erzeugt.</p><div class="at-m"><span>eigen</span><span>Aug 2026</span></div><p class="at-g"><span>Grenze</span>Prototyp; PageSpeed- und CrUX-Anbindung lieferten noch keine Daten.</p></div>
+        </div>
+        <div class="atg"><h4><span class="d">▸</span> Shop &amp; Kundenprozesse</h4>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>Shopify-Theme umbauen</b><span class="st ok">eingesetzt</span></div><p>Gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, Produktdaten über Metafields.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>seit Juni 2026</span></div><p class="at-g"><span>Grenze</span>Umbau eines gekauften Themes, keine Neuentwicklung.</p></div>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>Mehrsprachigkeit</b><span class="st ok">eingesetzt</span></div><p>Übersetzungs-Pipeline mit HTML-Extraktion, Strukturprüfung und Import per CSV bzw. GraphQL; EN/FR-Artikel nach Suchimpressionen priorisiert; Produktnamen vereinheitlicht, Kollektionstitel und Hero-Texte lokalisiert.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug 2026</span></div><p class="at-g"><span>Grenze</span>Fehlerhafte Sprachweiterleitungen auf EN/FR-Produktseiten nur reproduziert und auf das Shopify-Routing eingegrenzt.</p></div>
+          <div class="at" data-f="ecom"><div class="at-h"><b>E-Mail &amp; CRM</b><span class="st ok">eingesetzt</span></div><p>Klaviyo-Abbruchmail auf einen wiederherstellbaren Checkout-Link umgestellt; fehlendes Onsite-Embed diagnostiziert und im Theme aktiviert.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug–Sep 2026</span></div><p class="at-g"><span>Grenze</span>Weitere Aktivierungsschritte dokumentiert; vollständige Wiederinbetriebnahme des Browse-Flows nicht belegt.</p></div>
+          <div class="at" data-f="ecom"><div class="at-h"><b>Feeds &amp; Kanäle</b><span class="st ok">eingesetzt</span></div><p>Merchant-Center-Probleme analysiert, Kategorien und Kanalzuordnung korrigiert; Microsoft- und Pinterest-Kanal angebunden.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Sep 2026</span></div><p class="at-g"><span>Grenze</span>Keine bezahlten Kampagnen betreut.</p></div>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>Verfügbarkeit ehrlich halten</b><span class="st ok">eingesetzt</span></div><p>SEO-Verfügbarkeitsaussagen automatisch mit kaufbaren Varianten abgeglichen, zwei falsche korrigiert; nicht lieferbare Produkte auf Wissensseiten gekennzeichnet und Alternativen eingeblendet.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug–Sep 2026</span></div><p class="at-g"><span>Grenze</span>Wirkung auf Käufe nicht gemessen.</p></div>
+          <div class="at" data-f="ecom"><div class="at-h"><b>Messung &amp; Gegenprobe</b><span class="st ok">eingesetzt</span></div><p>GA4-Kaufzahlen mit Shopify-Bestellungen abgeglichen; wöchentliche Lighthouse-Prüfung per GitHub Actions; einen CSS-Preload-Patch nach ungünstigen Messläufen zurückgerollt; einen KI-Auditbefund zu Grundpreisen anhand der Produktdaten widerlegt.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug–Sep 2026</span></div><p class="at-g"><span>Grenze</span>Abgleich auf kleiner Bestellbasis.</p></div>
+        </div>
+        <div class="atg"><h4><span class="d">▸</span> Marketing-Automation &amp; Content</h4>
+          <div class="at" data-f="ecom"><div class="at-h"><b>Newsletter &amp; Tracking</b><span class="st um">umgesetzt</span></div><p>Newsletter mit Double-Opt-In und Plausible-Events für Anmeldung, Bestätigung und zentrale CTAs implementiert.</p><div class="at-m"><span>Team</span><span>FlowKI Club</span><span>Juli–Aug 2026</span></div><p class="at-g"><span>Grenze</span>Keine Aussage zu Anmeldezahlen.</p></div>
+          <div class="at" data-f="ecom"><div class="at-h"><b>Social-Distribution</b><span class="st um">umgesetzt</span></div><p>Social-Post-Pakete aus Artikeln erzeugt; Übergabe an das Veröffentlichungssystem mit Qualitätsprüfung und Markenregeln; UTM-Konvention und Link-in-Bio-Seite.</p><div class="at-m"><span>Team</span><span>FlowKI Club</span><span>Juli–Aug 2026</span></div><p class="at-g"><span>Grenze</span>Reichweite und Klicks nicht ausgewertet.</p></div>
+          <div class="at" data-f="ecom"><div class="at-h"><b>Autorenprofile &amp; Artikeldaten</b><span class="st um">umgesetzt</span></div><p>Autorenprofile sowie optionale FAQ- und HowTo-Daten in die Artikelausgabe integriert; Referral-Programm mit Codes und Stufen.</p><div class="at-m"><span>Team</span><span>FlowKI Club</span><span>Juli–Aug 2026</span></div><p class="at-g"><span>Grenze</span>Teamprojekt; mein Anteil sind die genannten Teile.</p></div>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>Freigaben vor dem Versand</b><span class="st um">umgesetzt</span></div><p>Offene Clip-Prüfungen und Blind-Reviews im Dashboard angeschlossen, Freigabeoberflächen verbessert und Publikationsrechte unmittelbar vor dem Versand erneut geprüft.</p><div class="at-m"><span>Team</span><span>Flowki Studio</span><span>Aug–Sep 2026</span></div><p class="at-g"><span>Grenze</span>Internes Werkzeug ohne öffentlichen Zugang.</p></div>
+        </div>
+        <div class="atg"><h4><span class="d">▸</span> Backend &amp; KI-Automation</h4>
+          <div class="at" data-f="dev"><div class="at-h"><b>Pipeline mit Hauptbuch</b><span class="st ok">eingesetzt</span></div><p>Python-Pipeline von der Stellensuche über Job-APIs bis zur Antwortzuordnung; gemeinsames Hauptbuch aller Außenaktionen mit Reservierung, blockierende Prüfungen vor dem Versand, Modell-Kaskade mit Sperrzeiten.</p><div class="at-m"><span>eigen</span><span>Bewerbungsverwaltung</span><span>seit Juli 2026</span></div><p class="at-g"><span>Grenze</span>Einzelnutzer-System; eine überarbeitete LLM-Analyse ohne belegte Verbesserung nicht ausgerollt.</p></div>
+          <div class="at" data-f="dev"><div class="at-h"><b>Video-Pipeline im Team</b><span class="st um">umgesetzt</span></div><p>Speaker-Reframe: der Ausschnitt folgt der sprechenden Person; deterministischer Neu-Render über Celery; bis zu drei Schnittvarianten je Clip, abgesichert per Datenbank-Constraint.</p><div class="at-m"><span>Team</span><span>Flowki Studio</span><span>Aug–Sep 2026</span><span>64 PRs, 50 gemergt</span></div><p class="at-g"><span>Grenze</span>Mein Schwerpunkt ist das Clip-Studio, nicht das gesamte Studio.</p></div>
+          <div class="at" data-f="dev"><div class="at-h"><b>Agenten-Plugin mit Kosten-Gate</b><span class="st um">umgesetzt</span></div><p>Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt; ein Kosten-Gate verhindert versehentliche bezahlte Agentenläufe; Deploy mit Rollback.</p><div class="at-m"><span>eigen</span><span>hermes-brett</span><span>Sep 2026</span></div><p class="at-g"><span>Grenze</span>Selbsttest nur mit node:assert, keine volle Testsuite.</p></div>
+          <div class="at" data-f="dev"><div class="at-h"><b>Agenten-orchestrierte App</b><span class="st pr">Prototyp</span></div><p>Mobiles Idle-RPG mit React Native, Skia und Supabase; ein KI-Agent arbeitet im Lead-Modus Rollen ab, die Produktentscheidungen treffe ich.</p><div class="at-m"><span>eigen</span><span>Shinobi: Ember Accord</span></div><p class="at-g"><span>Grenze</span>Prototyp, nicht veröffentlicht.</p></div>
+        </div>
+        <div class="atg"><h4><span class="d">▸</span> Qualität &amp; Betrieb</h4>
+          <div class="at" data-f="dev"><div class="at-h"><b>Fehlersuche mit Nachweis</b><span class="st um">umgesetzt</span></div><p>21 rote Tests auf zwei Ursachen zurückgeführt und behoben; zusätzlich stillen Datenverlust im Task-Store mit fünf neuen Tests behoben; Mutationsprobe; Suite 177 → 199 grün.</p><div class="at-m"><span>Beitrag</span><span>hermes-studio</span><span>Sep 2026</span></div><p class="at-g"><span>Grenze</span>Beitrag zu einem fremden Projekt; die Übernahme entscheidet der Maintainer.</p></div>
+          <div class="at" data-f="dev"><div class="at-h"><b>Betrieb auf Linux-Servern</b><span class="st ok">eingesetzt</span></div><p>Docker Compose, Cron mit flock, Rollouts mit Prüfsummen, Tests vor und nach dem Tausch, automatischer Rückbau; Mailversand mit SPF/DKIM.</p><div class="at-m"><span>eigen</span><span>Bewerbungsverwaltung</span></div><p class="at-g"><span>Grenze</span>Einzelserver, kein Cluster-Betrieb.</p></div>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>Oberflächen testen</b><span class="st ok">eingesetzt</span></div><p>CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright; Lighthouse-Prüfung gegen einen Live-Shop.</p><div class="at-m"><span>Team / eigen</span><span>nk247store.de · duftkumpels.shop</span></div><p class="at-g"><span>Grenze</span>Keine Lasttests.</p></div>
+          <div class="at" data-f="dev"><div class="at-h"><b>Arbeiten mit KI-Agenten</b><span class="st ok">eingesetzt</span></div><p>Fehler zuerst als roter Test, der Agent setzt um, ein zweites Modell prüft zusätzlich als Reviewer; KI-Befunde prüfe ich am tatsächlichen Aufrufpfad nach.</p><div class="at-m"><span>eigen</span><span>alle Projekte</span></div><p class="at-g"><span>Grenze</span>Agenten schreiben einen großen Teil des Codes; Anforderungen, Tests und Abnahme verantworte ich.</p></div>
+        </div>
+        <div class="atg"><h4><span class="d">▸</span> Gestaltung &amp; Kreativ-KI</h4>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>Shopify-Theme gestalten</b><span class="st en">Entwurf</span></div><p>Shopify-Theme auf Horizon-Basis: Produktgeschichte in Kapiteln, bearbeitete Produktmotive, mobile Kaufleiste sowie Verbesserungen an Tastaturfokus und Touch-Zielen.</p><div class="at-m"><span>eigen</span><span>AtopicV</span><span>Juni–Sep 2026</span></div><p class="at-g"><span>Grenze</span>Unveröffentlichter Entwurf.</p></div>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>Interaktion mit GSAP</b><span class="st en">Entwurf</span></div><p>Hero als Frame-Sequenz, die sich mit dem Mauszeiger dreht (auf dem Handy per Geräteneigung); Tabakwerbung nach §&nbsp;19&nbsp;TabakerzG aus allen Motiven entfernt.</p><div class="at-m"><span>Team</span><span>nk247store.de</span></div><p class="at-g"><span>Grenze</span>Meine Überarbeitung ist noch nicht veröffentlicht.</p></div>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>WebGL-Landingpage</b><span class="st en">Entwurf</span></div><p>GEO-Landingpage mit WebGL-Hero, animiertem Einstieg und leichter Mobil- bzw. Reduced-Motion-Variante; Oberflächentests und Referenz-Screenshots angelegt.</p><div class="at-m"><span>eigen</span><span>Juni 2026</span></div><p class="at-g"><span>Grenze</span>Nicht veröffentlicht; Formular nicht gegen ein echtes Backend geprüft.</p></div>
+          <div class="at" data-f="ecom"><div class="at-h"><b>Kreativ-KI</b><span class="st pr">Prototyp</span></div><p>Redesign-Entwurf für ein Hamburger Izakaya mit KI-Website-Builder, selbst nachgearbeitet; Vergleichsworkflow für vier KI-Videomodelle mit gemeinsamem Ausgangsprompt.</p><div class="at-m"><span>eigen</span><span>Juni 2026</span></div><p class="at-g"><span>Grenze</span>Videovergleich auf zwei dokumentierten Läufen, keine Serienmessung.</p></div>
+          <div class="at" data-f="dev"><div class="at-h"><b>Dieses Web-CV</b><span class="st ok">eingesetzt</span></div><p>Installierbare PWA ohne Framework: SVG-Displacement, Canvas-Graph, WebGL-Fluidsimulation.</p><div class="at-m"><span>eigen</span><span>live</span></div><p class="at-g"><span>Grenze</span>Die Fluidsimulation ist adaptiert (PavelDoGreat, MIT), nicht selbst entwickelt.</p></div>
+        </div>
+          <div class="atg amb" style="grid-column:1 / -1"><h4><span class="d">▸</span> Aus dem Vertrieb</h4>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>B2B-Direktvertrieb</b><span class="st ok">eingesetzt</span></div><p>Kaltakquise und Bedarfsgespräche mit Inhabern und Geschäftsführern, Verhandlung und Abschluss vor Ort.</p><div class="at-m"><span>eigen</span><span>EWE TEL · Ranger Marketing</span><span>2019–2023</span></div><p class="at-g"><span>Grenze</span>Direktvertrieb, kein Key-Account-Management.</p></div>
+          <div class="at" data-f="ecom"><div class="at-h"><b>Google Ads Search</b><span class="st ok">zertifiziert</span></div><p>Google Ads Search Certification (Skillshop), Dezember 2025, gültig bis 03.12.2026 — <a href="https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">verifizierbar</a>.</p><div class="at-m"><span>eigen</span><span>Skillshop</span><span>12/2025</span></div><p class="at-g"><span>Grenze</span>Zertifizierung; eigene Kampagnen habe ich noch nicht betreut.</p></div>
+          </div>
         </div>
       </div></section>
 
@@ -989,14 +1051,14 @@
 
 <!-- COMMAND PALETTE -->
 <div class="cmd" id="cmd"><div class="cmdbox">
-  <input id="cmdInput" placeholder="Sprung zu… (Home, Projekte, Werdegang, Skills, Standort, Kontakt)" autocomplete="off">
+  <input id="cmdInput" placeholder="Sprung zu… (Home, Projekte, Werdegang, Kompetenzen, Standort, Kontakt)" autocomplete="off">
   <div class="cmdlist" id="cmdList"></div>
 </div></div>
 
 <script>
 (function(){
   var views = ['home','projekte','werdegang','skills','zuerich','nexus','chat','kontakt'];
-  var labels = {home:'Home',projekte:'Projekte',werdegang:'Werdegang',skills:'Skills',zuerich:'Standort',nexus:'Fluid',chat:'Fragen',kontakt:'Kontakt'};
+  var labels = {home:'Home',projekte:'Projekte',werdegang:'Werdegang',skills:'Kompetenzen',zuerich:'Standort',nexus:'Fluid',chat:'Fragen',kontakt:'Kontakt'};
   var navEls = [].slice.call(document.querySelectorAll('.nav'));
   var viewEls = [].slice.call(document.querySelectorAll('.view'));
   var ttl = document.querySelector('.chrome .ttl');
@@ -1009,6 +1071,17 @@
     var vEl = document.querySelector('.view[data-view="'+v+'"]'); if(vEl) vEl.scrollTop=0;
   }
   navEls.forEach(function(n){ n.addEventListener('click', function(){ show(n.getAttribute('data-view')); }); });
+  // Kompetenz-Atlas: Filter blendet Einträge aus; Gruppen ohne sichtbaren Eintrag verschwinden mit
+  var atf = document.querySelectorAll('.atf button');
+  atf.forEach(function(b){ b.addEventListener('click', function(){
+    var f = b.getAttribute('data-f');
+    atf.forEach(function(x){ x.setAttribute('aria-pressed', String(x===b)); });
+    document.querySelectorAll('.atg').forEach(function(g){
+      var n = 0;
+      g.querySelectorAll('.at').forEach(function(el){ var on = f==='alle' || el.getAttribute('data-f').split(' ').indexOf(f) > -1; el.hidden = !on; if(on) n++; });
+      g.hidden = n === 0;
+    });
+  }); });
 
   // ---- clock + tick ----
   function pad(n){return (n<10?'0':'')+n;}
@@ -1054,7 +1127,7 @@
   function closeCmd(){ cmd.classList.remove('on'); }
   function pick(v){ show(v); closeCmd(); }
   document.getElementById('openCmd').addEventListener('click',openCmd);
-  input.addEventListener('input',function(){ var q=input.value.toLowerCase(); filtered=views.filter(function(v){return labels[v].toLowerCase().indexOf(q)>=0;}); sel=0; renderList(); });
+  input.addEventListener('input',function(){ var q=input.value.toLowerCase(); filtered=views.filter(function(v){return (labels[v]+' '+v).toLowerCase().indexOf(q)>=0;}); sel=0; renderList(); });
   input.addEventListener('keydown',function(e){
     if(e.key==='ArrowDown'){e.preventDefault();sel=Math.min(filtered.length-1,sel+1);renderList();}
     else if(e.key==='ArrowUp'){e.preventDefault();sel=Math.max(0,sel-1);renderList();}
@@ -2816,7 +2889,7 @@
   makeNet(document.getElementById('hnet'), .62, function(){ return body.classList.contains('unlocked') && !body.classList.contains('app-open'); });
 
   // ---- apps ----
-  var titles={home:'Profil',projekte:'Projekte',werdegang:'Werdegang',skills:'Skills',zuerich:'Zürich',nexus:'Nexus',chat:'Chat',kontakt:'Kontakt'};
+  var titles={home:'Profil',projekte:'Projekte',werdegang:'Werdegang',skills:'Kompetenzen',zuerich:'Zürich',nexus:'Nexus',chat:'Chat',kontakt:'Kontakt'};
   var main=document.querySelector('.main'), title=document.getElementById('apptitle');
   function openApp(v,el){
     [].slice.call(document.querySelectorAll('.view')).forEach(function(s){
