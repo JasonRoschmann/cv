@@ -64,7 +64,7 @@ Websites und Shops für Kunden umgesetzt — von Gestaltung und Interaktion übe
 ### KI-Automation & Webentwicklung
 **2024 – heute | Eigene Projekte, Team- und Kundenprojekte | Hamburg / remote**
 
-- Python-Backends, Next.js-Frontends und Shopify-Themes entwickelt, getestet und auf Linux-Servern betrieben (Docker Compose, Cron, Deployment mit Rollback); im Team über Branches, Pull Requests und gemeinsame Test-Suites.
+- Python-Backends und Next.js-Frontends entwickelt, getestet und auf Linux-Servern betrieben (Docker Compose, Cron, Deployment mit Rollback); Shopify-Themes angepasst; im Team über Branches, Pull Requests und gemeinsame Test-Suites.
 
 ### B2B-Direktvertrieb (Door-to-Door)
 **2019 – 2023 | EWE TEL, Ranger Marketing | Außendienst bundesweit**
