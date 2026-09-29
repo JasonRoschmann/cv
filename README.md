@@ -1,33 +1,48 @@
-# Claude Code Pro Setup v3
+# Jason Roschmann – Lebenslauf
 
-This is a high-discipline Claude Code repository template designed for production delivery.
-It is intentionally opinionated around these principles:
+[![Prüfung](https://github.com/JasonRoschmann/cv/actions/workflows/pruefung.yml/badge.svg)](https://github.com/JasonRoschmann/cv/actions/workflows/pruefung.yml)
+[![gemergte Pull Requests](badge-prs.svg)](https://jasonroschmann.github.io/cv/#github)
 
-- Plan before risky edits.
-- Implement in small, reviewable increments.
-- Validate after every meaningful change.
-- Route risky domains through dedicated reviewers and auditors.
-- Never declare completion without explicit evidence.
-- Keep always-on context small; load specialized guidance only when relevant.
+Mein Lebenslauf als Web-App und in Druck- und ATS-Fassungen – aus denselben Quellen gebaut, bei jeder Änderung geprüft, die PR-Zahlen zählen sich täglich selbst.
 
-## Included layers
+**[Web-CV](https://jasonroschmann.github.io/cv/)** ·
+[Lebenslauf DE (PDF)](https://jasonroschmann.github.io/cv/Jason_Roschmann_CV.pdf) ·
+[CV EN (PDF)](https://jasonroschmann.github.io/cv/Jason_Roschmann_CV_EN.pdf) ·
+[Marketing-Fassung (PDF)](https://jasonroschmann.github.io/cv/Jason_Roschmann_CV_Marketing.pdf) ·
+[Belegmappe: drei Shop-Fälle (PDF)](https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf) ·
+[ATS DE](https://jasonroschmann.github.io/cv/ats-cv/Jason_Roschmann_CV_ATS.pdf) /
+[EN](https://jasonroschmann.github.io/cv/ats-cv/Jason_Roschmann_CV_ATS_EN.pdf)
 
-1. `CLAUDE.md` and imported core guidance
-2. `.claude/rules/` for unconditional and path-scoped rules
-3. `.claude/skills/` for reusable workflows
-4. `.claude/agents/` for isolated specialized agents
-5. `.claude/settings.json`, hooks, MCP and runtime scripts for enforcement
+## Ablauf
 
-## Expected adoption steps
+```mermaid
+flowchart LR
+  Z["Privater Zähler<br/>täglich 05:40 UTC"] -->|pr-stand.json| S["stand.py<br/>stempelt Web, Druck, ATS"]
+  Q["HTML, CSS, Markdown"] --> S
+  S --> B["Build<br/>Chrome headless + pandoc"]
+  B --> P["Prüfung<br/>2 Seiten, Pflichtangaben,<br/>PR-Zahlen, Links, Schriften"]
+  P -->|nur bei Grün| C["Bot-Commit auf main"] --> G["GitHub Pages"]
+```
 
-1. Replace stack placeholders in `docs/stack/stack-profile.md`.
-2. Adjust the commands in `docs/quality/validation-matrix.md`.
-3. Replace placeholder MCP servers in `.mcp.json`.
-4. Tune `scripts/claude/post-edit-validate.sh` to your package manager, test runner, and repository layout.
-5. Review permissions and deny risky tools you never want Claude to invoke.
+- **Bei jedem Pull Request und täglich** baut [`pruefung.yml`](.github/workflows/pruefung.yml) alle PDFs frisch unter Linux und prüft sie mit [`cv_pruefung.py`](scripts/cv_pruefung.py).
+- **Nach jedem Push auf `main`** stempelt [`stand.yml`](.github/workflows/stand.yml) die Zahlen, baut die PDFs nur bei geänderten Druckquellen neu (Prüfsumme in `pdf-quellen.sha256`) und committet nur, wenn die Prüfung grün ist.
+- **Täglich** aktualisiert [`proof.yml`](.github/workflows/proof.yml) Heatmap und Ship-Feed der Web-Seite (`proof.json`).
 
-## Notes
+## Wie die PR-Zahl entsteht
 
-- This template is deliberately stronger than a typical generic setup.
-- It is still a reference implementation: the last mile comes from tailoring it to your stack.
-- The shell scripts are POSIX-safe where practical, but should be adapted to your environment.
+- **Gezählt** werden Pull Requests, die ich verfasst habe und die gemergt wurden – über die GitHub-Suche `author:JasonRoschmann is:pr is:merged`, private Repositories eingeschlossen. Keine Reviews, keine Commits, keine Hochrechnung.
+- **Aufgeteilt** nach Flowki Studio (Teamprojekt), eigenen Repos und Kundenprojekten; `pr-stand.json` enthält nur diese Zahlen und den Verlauf je Tag.
+- **Nie veröffentlicht:** Namen privater Repositories, PR-Titel, Links und Kundennamen. Die Zählung läuft außerhalb dieses Repositorys; hier liegt kein Token.
+- **Sicherungen:** Der Zähler bricht ab, statt eine falsche Zahl zu veröffentlichen – bei unvollständigen Suchergebnissen, bei einem Rückgang und bei einem gemergten PR in einem nicht zugeordneten Repository.
+- **Datum:** Die Web-Seite nennt die letzte Zählung, Druck- und ATS-Fassungen die letzte Änderung der Zahlen.
+
+## Lokal bauen und prüfen
+
+```bash
+py -3 scripts/stand.py stempeln     # Zahlen aus pr-stand.json in alle Fassungen
+py -3 scripts/build_cv_pdf.py       # PDFs, txt, docx (Edge oder Chrome, pandoc)
+py -3 scripts/cv_pruefung.py        # alle PDFs prüfen (Poppler)
+for t in scripts/test_*.py; do py -3 "$t"; done   # Selbsttests
+```
+
+Nur Python-Standardbibliothek; der Browser ist per `CV_BROWSER` wählbar.

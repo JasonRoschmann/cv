@@ -47,7 +47,7 @@ Tools: Discord, Next.js, TypeScript, Plausible, Claude-API
 
 ### Flowki Studio — internes Social-Media-Studio, Teamprojekt (Aug. 2026 – heute)
 
-Zweck: Internes Studio für Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung und Plattformübergabe; 50 eigene Pull Requests gemergt.
+Zweck: Internes Studio für Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung und Plattformübergabe; <span data-pr="flowki">50</span> eigene Pull Requests gemergt.
 
 - Redaktionelle Zusammenarbeit: Ablehnungsgründe durch Oberfläche, API-Client und Freigabeprotokoll verbunden – Rückgaben zur Überarbeitung mit nachvollziehbarer Begründung.
 - Produktion & Freigaben: Produktions-, Freigabe- und Veröffentlichungsansichten weiterentwickelt – Bearbeitungsstände und nötige Nutzeraktionen sichtbar gemacht.

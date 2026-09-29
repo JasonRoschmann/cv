@@ -67,7 +67,7 @@ Jasons Entscheidungen vom 29.09.2026:
 - **Seite 2:**
   - Flowki Studio als Werkzeug für Content-Produktion im Team, mit 2–3 marketingrelevanten Beiträgen
   - Vertrieb
-  - AtopicV und nk247 kurz, mit sichtbarem Status
+  - AtopicV kurz, mit sichtbarem Status
   - Kenntnisse, Zertifikat, Weiterbildung, Sprachen
 - **Raus:** Bewerbungsverwaltung (bleibt im Kompetenz-Atlas).
 

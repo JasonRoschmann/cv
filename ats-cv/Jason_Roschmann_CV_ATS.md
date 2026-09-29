@@ -10,13 +10,13 @@ Wohnort: Hamburg, Deutschland | Gesucht: Hamburg oder remote; Umzug nach Zürich
 
 Ich entwickle Weboberflächen und Python-Abläufe für konkrete Arbeitsprozesse: Content-Produktion, E-Commerce und Community-Werkzeuge. Meine Schwerpunkte sind die Verbindung von Oberfläche und Backend, nachvollziehbare Zustände und gezielte Fehlerprüfungen – mit KI-Agenten als Werkzeug und eigener Verantwortung für Anforderungen und Abnahme. Aus vier Jahren Vertrieb bringe ich Erfahrung darin mit, Anforderungen im direkten Gespräch zu verstehen.
 
-Kennzahlen: 50 eigene Pull Requests gemergt (Flowki Studio) · 21 → 0 rote Tests (hermes-studio) · rund 66 Discord-Mitglieder FlowKI Club (Stand 29.09.2026) · 4 Jahre B2B-Vertrieb (2019–2023)
+Kennzahlen: <span data-pr="flowki">50</span> eigene Pull Requests gemergt (Flowki Studio) · 21 → 0 rote Tests (hermes-studio) · rund 66 Discord-Mitglieder FlowKI Club (Stand 29.09.2026) · 4 Jahre B2B-Vertrieb (2019–2023)
 
 ## Projekte
 
 ### Flowki Studio — internes Social-Media-Studio, Teamprojekt (Aug. 2026 – heute)
 
-Zweck: Internes Social-Media-Studio für Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung und Plattformübergabe; mein Beitrag im Team (50 eigene Pull Requests gemergt): Produktoberflächen, Workflow-Integration, Clip-Verarbeitung und Publishing.
+Zweck: Internes Social-Media-Studio für Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung und Plattformübergabe; mein Beitrag im Team (<span data-pr="flowki">50</span> eigene Pull Requests gemergt): Produktoberflächen, Workflow-Integration, Clip-Verarbeitung und Publishing.
 
 - Produktoberfläche: Produktions-, Freigabe- und Veröffentlichungsansichten weiterentwickelt – Bearbeitungsstände, Phasendauer und erforderliche Nutzeraktionen sichtbar gemacht.
 - Redaktionelle Zusammenarbeit: Ablehnungsgründe durch Oberfläche, API-Client und Freigabeprotokoll verbunden – Rückgaben zur Überarbeitung mit nachvollziehbarer Begründung ermöglicht.
@@ -86,7 +86,7 @@ Belege: Fallstudie Antwortzuordnung <https://jasonroschmann.github.io/cv/#fs-02>
 - Betrieb: Linux-Server, Docker Compose, Cron, flock, SMTP/IMAP, SPF/DKIM
 - Web & Commerce: Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL
 - Mit KI-Agenten: Fehler zuerst als roter Test · Agent setzt um · ein zweites Modell prüft zusätzlich als Reviewer · Rollout mit Prüfsummen und automatischem Rückbau bei abgefangenen Fehlern
-- GitHub: 58 meiner Pull Requests gemergt (Stand 29.09.2026): Flowki Studio 50, Web-CV 5, Kundenprojekte 3
+- GitHub: <span data-pr="gesamt">59</span> meiner Pull Requests gemergt (Stand <span data-pr="stand-de">29.09.2026</span>): Flowki Studio <span data-pr="flowki">50</span>, eigene Repos <span data-pr="eigen">6</span>, Kundenprojekte <span data-pr="kunden">3</span>
 - Öffentliche Codebeispiele: Web-CV <https://github.com/JasonRoschmann/cv> · MCP-Server für Club-Inhalte <https://github.com/Jokersystems-online/flowki-knowledge-mcp>
 
 ## Weiterbildung, Zertifikat & Sprachen

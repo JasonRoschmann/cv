@@ -1,5 +1,6 @@
 """Prüft die CV-PDFs: 2 Seiten, Pflichtinhalte, Reihenfolge der Projekte, verbotene Aussagen, saubere Textschicht."""
 import argparse
+import json
 import re
 import subprocess
 import sys
@@ -10,37 +11,45 @@ REPO = Path(__file__).resolve().parents[1]
 _SCOOP = Path(r"C:\Users\Jason Roschmann\scoop\shims\pdftotext.exe")
 PDFTOTEXT = str(_SCOOP) if _SCOOP.exists() else "pdftotext"
 PDFINFO = "pdfinfo"
+PDFFONTS = "pdffonts"
+PR_STAND = REPO / "pr-stand.json"   # Sollwerte der PR-Zahlen (täglich vom Zähler), nie von Hand
 KONTAKT = ["jason@roschmann-digital.de", "jasonroschmann.github.io/cv"]
 VERBOTEN = ["Commits", "commits", "aktive Mitglieder", "active members", "gewachsen", "grown to", "aufgebaut auf", "nk247"]
 REGELN = {
     # Belegmappe: 2 Seiten, drei Fälle in Reihenfolge, Schlussband mit Abstand zur Fußzeile
     "Jason_Roschmann_Belegmappe.pdf": {
         "pflicht": ["Fall 1", "Fall 2", "Fall 3", "Bereinigte Auszüge"],
-        "reihenfolge": ["Fall 1", "Fall 2", "Fall 3"], "links": ["https://jasonroschmann.github.io/cv/"]},
+        "reihenfolge": ["Fall 1", "Fall 2", "Fall 3"], "links": ["https://jasonroschmann.github.io/cv/"], "pr": None, "schriften": ["Fraunces", "JetBrainsMono"]},
     "Jason_Roschmann_CV_Marketing.pdf": {
         "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Junior E-Commerce & Technical SEO", "Begleit-Repositories zu Club-Artikeln",
                     "SEO: Technisches SEO", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
                     "Außendienst (Door-to-Door) 2019 – 2023"],
-        "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"], "links": ["https://duftkumpels.shop", "https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf"]},
+        "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"], "links": ["https://duftkumpels.shop", "https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf"],
+        "pr": "marketing", "schriften": ["Inter", "IBMPlexMono"]},
     "ats-cv/Jason_Roschmann_CV_Marketing_ATS.pdf": {
         "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Begleit-Repositories zu Club-Artikeln"],
-        "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"], "links": ["https://duftkumpels.shop", "https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf"]},
+        "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"], "links": ["https://duftkumpels.shop", "https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf"],
+        "pr": "marketing", "schriften": []},
     "Jason_Roschmann_CV.pdf": {
-        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Junior Softwareentwickler", "58 meiner Pull Requests gemergt", "Web-CV 5", "Kundenprojekte 3",
+        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Junior Softwareentwickler",
                     "Entwicklung: Python", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
                     "Außendienst (Door-to-Door) 2019 – 2023"],
-        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"]},
+        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
+        "pr": "de", "schriften": ["Inter", "IBMPlexMono"]},
     "ats-cv/Jason_Roschmann_CV_ATS.pdf": {
-        "pflicht": ["Mitgründer", "Stand 29.09.2026", "58 meiner Pull Requests gemergt", "Web-CV 5", "Kundenprojekte 3"],
-        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"]},
+        "pflicht": ["Mitgründer", "Stand 29.09.2026"],
+        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
+        "pr": "de", "schriften": []},
     "Jason_Roschmann_CV_EN.pdf": {
-        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Junior Software", "58 of my pull requests merged", "Web CV 5", "client projects 3",
+        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Junior Software",
                     "Development: Python", "Certificate: Google Ads", "Training: Web development",
                     "Field sales (door-to-door) 2019 – 2023"],
-        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"]},
+        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
+        "pr": "en", "schriften": ["Inter", "IBMPlexMono"]},
     "ats-cv/Jason_Roschmann_CV_ATS_EN.pdf": {
-        "pflicht": ["Co-founder", "as of 29 Sep 2026", "58 of my pull requests merged", "Web CV 5", "client projects 3"],
-        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"]},
+        "pflicht": ["Co-founder", "as of 29 Sep 2026"],
+        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
+        "pr": "en", "schriften": []},
 }
 
 
@@ -75,6 +84,28 @@ def links(pdf: Path) -> str:
     return subprocess.run([PDFINFO, "-url", str(pdf)], capture_output=True, check=True).stdout.decode("utf-8", "replace")
 
 
+def pr_pflicht(d: dict, art: str) -> list[str]:
+    # PR-Zahlen stehen in pr-stand.json; die Prüfung erwartet genau diese, damit Druck und Zähler nie auseinanderlaufen
+    g = d["gemergt"]
+    if art == "marketing":
+        return [f"{g['flowki']} eigene Pull Requests gemergt"]
+    if art == "en":
+        return [f"{g['gesamt']} of my pull requests merged", f"own repos {g['eigen']}", f"client projects {g['kunden']}"]
+    return [f"{g['gesamt']} meiner Pull Requests gemergt", f"eigene Repos {g['eigen']}", f"Kundenprojekte {g['kunden']}"]
+
+
+def schrift_fehler(ausgabe: str, erwartet: list[str]) -> list[str]:
+    # Fehlt eine Webfont beim Drucken, setzt Chrome still eine Ersatzschrift ein (z. B. DejaVu unter Linux)
+    zeilen = ausgabe.splitlines()
+    start = next((i + 1 for i, z in enumerate(zeilen) if z.startswith("-")), len(zeilen))
+    namen = [z.split()[0].split("+", 1)[-1].replace("-", "") for z in zeilen[start:] if z.strip()]
+    return [f"Schrift fehlt (Ersatzschrift?): {e}" for e in erwartet if not any(n.startswith(e) for n in namen)]
+
+
+def schriften(pdf: Path) -> str:
+    return subprocess.run([PDFFONTS, str(pdf)], capture_output=True, check=True).stdout.decode("utf-8", "replace")
+
+
 def seiten(pdf: Path) -> int:
     out = subprocess.run([PDFINFO, str(pdf)], capture_output=True, check=True).stdout.decode("utf-8", "replace")
     return int(next(z.split()[-1] for z in out.splitlines() if z.startswith("Pages:")))
@@ -85,10 +116,13 @@ def pruefe(pdf: Path, regel: dict) -> list[str]:
     if (n := seiten(pdf)) != 2:
         fehler.append(f"{n} Seiten statt 2")
     t = " ".join(text(pdf).split())
-    fehler += [f"fehlt: {p}" for p in regel["pflicht"] + KONTAKT if p not in t]
+    pr = pr_pflicht(json.loads(PR_STAND.read_text(encoding="utf-8")), regel["pr"]) if regel["pr"] else []
+    fehler += [f"fehlt: {p}" for p in regel["pflicht"] + pr + KONTAKT if p not in t]
     fehler += [f"verboten: {v}" for v in VERBOTEN if v in t]
     ziele = links(pdf)
     fehler += [f"Link fehlt: {u}" for u in regel["links"] if u not in ziele]
+    if regel["schriften"]:
+        fehler += schrift_fehler(schriften(pdf), regel["schriften"])
     if "_ATS" not in pdf.stem:  # nur Druck-PDFs haben die Fußzeile
         fehler += fusszeile_frei(pdf)
     if any(chr(c) in t for c in range(0xFB00, 0xFB07)) or "\ufffd" in t:
