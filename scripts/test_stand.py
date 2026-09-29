@@ -4,8 +4,7 @@ from stand import werte, stempel_text, diagramm, badge, veraltet
 D = {"version": 1, "stand": "2026-09-30T05:40:00Z", "zahlen_stand": "2026-09-29T18:00:00Z",
      "gemergt": {"gesamt": 59, "flowki": 50, "eigen": 6, "kunden": 3, "weitere": 0},
      "eroeffnet": {"flowki": 64}, "erster_merge": "2026-08-07",
-     "verlauf": [["2026-08-07", 1], ["2026-08-09", 4], ["2026-09-29", 59]],
-     "aktivitaet": {"wochen": [[0, 1, 0, 0, 2, 0, 0]], "summe": 194}}
+     "verlauf": [["2026-08-07", 1], ["2026-08-09", 4], ["2026-09-29", 59]]}
 
 
 def test_werte_web_nutzen_stand_druck_nutzen_zahlen_stand():
