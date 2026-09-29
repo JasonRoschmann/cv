@@ -13,7 +13,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: main-schreiben
+  group: stand
   cancel-in-progress: false
 
 jobs:
@@ -22,6 +22,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main                 # aktueller main inkl. voriger Bot-Commits, nicht der auslösende Commit
       - run: bash scripts/ci_setup.sh
       - run: python3 scripts/stand.py stempeln
       - run: python3 scripts/build_cv_pdf.py --wenn-noetig
@@ -35,4 +37,6 @@ jobs:
           git add -A index.html badge-prs.svg pdf-quellen.sha256 cv-print*.html ats-cv *.pdf
           if git diff --cached --quiet; then echo "nichts zu committen"; exit 0; fi
           git commit -m "chore: PR-Stand $(python3 -c 'import json;print(json.load(open("pr-stand.json"))["stand"][:10])') [skip ci]"
-          git pull --rebase -q && git push
+          # Abgewiesen = main hat sich bewegt. Ein Merge oder Zähler-Push löst ohnehin einen eigenen
+          # Folgelauf aus, der auf dem neuen main stempelt und prüft; proof.json berührt nichts Geprüftes.
+          git push -q || { echo "main hat sich bewegt – neu aufsetzen"; git pull --rebase -q && git push -q; }

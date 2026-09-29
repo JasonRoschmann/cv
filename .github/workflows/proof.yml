@@ -18,7 +18,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: main-schreiben        # gemeinsam mit stand.yml: nie zwei Bot-Pushes gleichzeitig
+  group: proof                 # eigene Warteschlange: ein wartender stand-Lauf wird nie verdrängt
   cancel-in-progress: false
 
 jobs:
