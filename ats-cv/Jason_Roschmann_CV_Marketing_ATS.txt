@@ -27,8 +27,8 @@ Fallstudie E-Commerce & SEO
 
 duftkumpels.shop — Shopify, DE/EN/FR (Kundenprojekt, Projektarbeit seit Juni 2026)
 
-Hamburger Nischen-Parfümerie. Mein Teil: Theme, SEO, Mehrsprachigkeit,
-Produktdaten, E-Mail-Flows und Messung.
+Hamburger Nischen-Parfümerie. Mein Teil: Theme, SEO, Sprachen,
+Produktdaten, E-Mail-Flows, Messung.
 
 Gefunden werden:
 
@@ -76,8 +76,8 @@ CSS-Preload-Patch nach ungünstigen Messläufen zurückgerollt; einen
 KI-Auditbefund zu angeblich fehlenden Grundpreisen anhand von
 Produktdaten und gerenderter Ausgabe widerlegt.
 
-Tools: Shopify (Liquid, Admin-API), Google Search Console, GA4, Klaviyo,
-Google Merchant Center, Judge.me, Lighthouse, Python
+Tools: Shopify, Google Search Console, GA4, Klaviyo, Google Merchant
+Center, Judge.me, Python
 
 Marketing-Automation & Content im Team
 
@@ -145,18 +145,18 @@ Zertifikat & Weiterbildung
 
 Kenntnisse & Tools (in Projekten eingesetzt)
 
-- SEO: Technisches SEO, OnPage-SEO, Suchanfragen-Analyse, Indexierung,
-  strukturierte Daten (Schema.org, JSON-LD), interne Verlinkung,
-  Canonicals, 301-Weiterleitungen, hreflang, Core Web Vitals, GEO/AEO
+- SEO: Technisches SEO, OnPage-SEO, Indexierung, strukturierte Daten
+  (JSON-LD), interne Verlinkung, Canonicals, 301-Weiterleitungen,
+  internationales SEO (hreflang-Prüfung), Core Web Vitals, GEO/AEO
 - Analyse & Tools: Google Search Console, Google Analytics 4, Bing
   Webmaster Tools (API), Lighthouse, Plausible, IndexNow, UTM-Tracking
 - E-Commerce: Shopify (Theme-Anpassung, Liquid, Metafelder, Admin-API),
   Google Merchant Center, Produktfeeds, Pinterest- und Microsoft-Kanal,
   Judge.me
-- E-Mail & CRM: Klaviyo (Flows, Vorlagen, Onsite-Tracking), Newsletter
-  mit Double-Opt-In, consent-gesteuertes Tracking
-- Web & Automation: HTML, CSS, JavaScript, Next.js, GSAP, Python, n8n,
-  GitHub Actions
+- E-Mail-Marketing & Automation: Klaviyo (Flows, Vorlagen,
+  consent-gesteuertes Onsite-Tracking), Double-Opt-In-Newsletter
+- Web & Automation: HTML, CSS, JavaScript, responsives Webdesign,
+  Next.js, Python, n8n, GitHub Actions
 - KI: Claude und Gemini (LLM-APIs), KI-Agenten (Claude Code), KI-Video
   (Veo, Kling)
 
