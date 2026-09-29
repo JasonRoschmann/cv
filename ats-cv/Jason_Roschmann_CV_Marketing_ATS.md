@@ -12,7 +12,7 @@ Schwerpunkte: Technisches SEO, OnPage-SEO, strukturierte Daten (JSON-LD), GEO/AE
 
 ## Profil
 
-Ich entwickle und verbessere Shopify-Shops mit Schwerpunkt auf technischem SEO, mehrsprachigen Inhalten und Marketing-Automation. KI nutze ich für Recherche, Umsetzung und Content-Workflows; Befunde prüfe ich anhand von Quelldaten, Tests und Gegenmessungen. Vier Jahre B2B-Direktvertrieb haben mir gezeigt, woran Kaufentscheidungen hängen.
+Ich entwickle und verbessere Shopify-Shops mit Schwerpunkt auf technischem SEO, mehrsprachigen Inhalten und Marketing-Automation. KI nutze ich für Recherche, Umsetzung und Content-Workflows; Befunde prüfe ich anhand von Quelldaten, Tests und Gegenmessungen. Vier Jahre B2B-Direktvertrieb mit täglichem Kundenkontakt haben mir gezeigt, woran Kaufentscheidungen hängen.
 
 ## Fallstudie E-Commerce & SEO
 
