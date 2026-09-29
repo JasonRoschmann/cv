@@ -8,7 +8,7 @@ E-Mail: jason@roschmann-digital.de | Telefon: +49 155 612 953 91\
 LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | GitHub: github.com/JasonRoschmann | Web-CV: jasonroschmann.github.io/cv\
 Wohnort: Hamburg, Deutschland | Gesucht: Hamburg oder remote; Umzug nach Zürich für eine passende Rolle möglich | Start nach Absprache
 
-Schwerpunkte: Technisches SEO, strukturierte Daten (JSON-LD), GEO/AEO, Google Search Console, GA4, Shopify (Liquid, Metafields), Klaviyo, Google Merchant Center, Python, n8n
+Schwerpunkte: Technisches SEO, OnPage-SEO, strukturierte Daten (JSON-LD), GEO/AEO, Google Search Console, Google Analytics 4, Shopify (Liquid), Klaviyo, Google Merchant Center, Python, n8n
 
 ## Profil
 
@@ -47,6 +47,8 @@ Kaufen und nachfassen:
 
 Gegenprüfung statt Annahme: SEO-Verfügbarkeitsaussagen automatisch mit kaufbaren Varianten abgeglichen — zwei falsche korrigiert; einen CSS-Preload-Patch nach ungünstigen Messläufen zurückgerollt; einen KI-Auditbefund zu angeblich fehlenden Grundpreisen anhand von Produktdaten und gerenderter Ausgabe widerlegt.
 
+Tools: Shopify (Liquid, Admin-API), Google Search Console, GA4, Klaviyo, Google Merchant Center, Judge.me, Lighthouse, Python
+
 ## Marketing-Automation & Content im Team
 
 ### FlowKI Club — Magazin & KI-Community (Teamprojekt, Juli–Aug 2026)
@@ -64,7 +66,6 @@ Gegenprüfung statt Annahme: SEO-Verfügbarkeitsaussagen automatisch mit kaufbar
 
 - AtopicV — Shopify-Theme auf Horizon-Basis gestaltet: Produktgeschichte in Kapiteln, bearbeitete Produktmotive, mobile Kaufleiste, besserer Tastaturfokus und Touch-Ziele. Unveröffentlichter Entwurf.
 - nk247store.de — Kundenprojekt im Team: interaktive Überarbeitung mit Next.js und GSAP; Tabakwerbung nach § 19 TabakerzG aus allen Motiven entfernt. Meine Überarbeitung ist noch nicht veröffentlicht.
-- GEO-Landingpage — WebGL-Hero, animierter Einstieg und leichte Mobil-/Reduced-Motion-Variante; Oberflächentests und Referenz-Screenshots angelegt. Nicht veröffentlicht.
 - Kreativ-KI — Redesign-Entwurf für ein Hamburger Izakaya mit KI-Website-Builder, selbst nachgearbeitet; Vergleichsworkflow für vier KI-Videomodelle mit gemeinsamem Ausgangsprompt.
 - SEO-Dashboard (Prototyp) — Python-Werkzeug, das Search-Console-, GA4- und Bing-Daten zusammenführt und regelbasierte Hinweise erzeugt.
 
@@ -87,12 +88,14 @@ Gegenprüfung statt Annahme: SEO-Verfügbarkeitsaussagen automatisch mit kaufbar
 - Google Ads Search Certification (Skillshop), Dezember 2025, gültig bis 03.12.2026 – verifizierbar: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
 - Weiterbildung Webentwicklung, 2024 (6 Monate): HTML, CSS, JavaScript, Web-Architektur
 
-## Kenntnisse (in Projekten eingesetzt)
+## Kenntnisse & Tools (in Projekten eingesetzt)
 
-- SEO & Auffindbarkeit: Google Search Console, Bing Webmaster Tools (API-Datenauswertung), strukturierte Daten (JSON-LD), Canonicals, Weiterleitungen, IndexNow, interne Verlinkung, Entitäten, llms.txt
-- Shop & Kunden: Shopify (Liquid, Metafields, Theme, GraphQL-Admin-API), Klaviyo, Google Merchant Center, Microsoft- und Pinterest-Kanal
-- Daten & Automation: GA4, Plausible, Lighthouse, Python, n8n, KI-Agenten (Claude Code), GitHub Actions
-- Gestaltung & Qualität: HTML, CSS, JavaScript, TypeScript, Next.js, GSAP, WebGL, Oberflächentests, KI-Bild/Video
+- SEO: Technisches SEO, OnPage-SEO, Suchanfragen-Analyse, Indexierung, strukturierte Daten (Schema.org, JSON-LD), interne Verlinkung, Canonicals, 301-Weiterleitungen, hreflang, Core Web Vitals, GEO/AEO
+- Analyse & Tools: Google Search Console, Google Analytics 4, Bing Webmaster Tools (API), Lighthouse, Plausible, IndexNow, UTM-Tracking
+- E-Commerce: Shopify (Theme-Anpassung, Liquid, Metafelder, Admin-API), Google Merchant Center, Produktfeeds, Pinterest- und Microsoft-Kanal, Judge.me
+- E-Mail & CRM: Klaviyo (Flows, Vorlagen, Onsite-Tracking), Newsletter mit Double-Opt-In, consent-gesteuertes Tracking
+- Web & Automation: HTML, CSS, JavaScript, Next.js, GSAP, Python, n8n, GitHub Actions
+- KI: Claude und Gemini (LLM-APIs), KI-Agenten (Claude Code), KI-Video (Veo, Kling)
 
 ## Sprachen
 
