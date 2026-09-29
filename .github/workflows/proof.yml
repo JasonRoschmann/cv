@@ -18,22 +18,20 @@ permissions:
   contents: write
 
 concurrency:
-  group: proof
+  group: main-schreiben        # gemeinsam mit stand.yml: nie zwei Bot-Pushes gleichzeitig
   cancel-in-progress: false
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Build proof.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USER: JasonRoschmann
-        run: python scripts/build_proof.py
+        run: python3 scripts/build_proof.py
       - name: Commit wenn geaendert
         run: |
           git config user.name "github-actions[bot]"
@@ -43,5 +41,5 @@ jobs:
             echo "proof.json unveraendert - kein Commit"
           else
             git commit -m "chore: refresh proof.json [skip ci]"
-            git push
+            git pull --rebase -q && git push
           fi

@@ -1,0 +1,38 @@
+name: Stand aktualisieren
+
+# Nach jedem Push auf main (Merge oder neue pr-stand.json vom privaten Zähler): Zahlen in alle
+# Fassungen stempeln, PDFs nur bei geänderten Druckquellen neu bauen, prüfen und nur bei Grün
+# committen. Der Bot-Commit mit GITHUB_TOKEN löst keinen weiteren Lauf aus.
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: main-schreiben
+  cancel-in-progress: false
+
+jobs:
+  stand:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: bash scripts/ci_setup.sh
+      - run: python3 scripts/stand.py stempeln
+      - run: python3 scripts/build_cv_pdf.py --wenn-noetig
+      - name: Selbsttests
+        run: for t in scripts/test_*.py; do python3 "$t"; done
+      - run: python3 scripts/cv_pruefung.py
+      - name: Commit nur bei Änderungen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A index.html badge-prs.svg pdf-quellen.sha256 cv-print*.html ats-cv *.pdf
+          if git diff --cached --quiet; then echo "nichts zu committen"; exit 0; fi
+          git commit -m "chore: PR-Stand $(python3 -c 'import json;print(json.load(open("pr-stand.json"))["stand"][:10])') [skip ci]"
+          git pull --rebase -q && git push
