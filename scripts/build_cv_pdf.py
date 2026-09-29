@@ -31,7 +31,7 @@ ATS_STIL = """<style>
 html, body { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; line-height: 1.3; max-width: none; padding: 0; margin: 0 }
 @media print { body { font-size: 10pt } }
 h1 { font-size: 19pt; margin: 0 0 3pt } h2 { font-size: 12.5pt; margin: 9pt 0 3pt; padding-bottom: 2pt; border-bottom: 1px solid #999; break-after: avoid }
-h2 + p { break-after: avoid }
+h2 + p { break-after: avoid } ul + p { break-before: avoid }
 h3 { font-size: 10.5pt; margin: 8pt 0 2pt; break-after: avoid } p, li { margin: 2pt 0; break-inside: avoid } ul { padding-left: 15pt; margin: 2pt 0 }
 </style>
 """

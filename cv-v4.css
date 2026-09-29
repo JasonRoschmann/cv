@@ -3,7 +3,7 @@
 :root{--acc:#17784a;--ink:#111418;--mut:#5b636e;--hell:#8a919b;--linie:#d6d9de}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:210mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-body{font-family:Inter,sans-serif;color:var(--ink);font-size:10.2px;line-height:1.45}
+body{font-family:Inter,sans-serif;color:var(--ink);font-size:11.2px;line-height:1.48}
 a{color:inherit;text-decoration:none}
 b{font-weight:600}
 .nw{white-space:nowrap}
@@ -12,11 +12,11 @@ b{font-weight:600}
 
 /* Kopf */
 .kopf{display:grid;grid-template-columns:1fr 30mm;gap:8mm}
-h1{font:800 36px/.95 'Inter Tight',sans-serif;letter-spacing:-.025em}
-.rolle{font:700 14px 'Inter Tight',sans-serif;color:var(--acc);margin-top:8px}
-.unter{font:500 9.5px 'IBM Plex Mono',monospace;color:var(--mut);margin-top:4px}
-.lead{font-size:10.8px;line-height:1.5;margin-top:9px;max-width:136mm}
-.kontakt{font:500 8.6px 'IBM Plex Mono',monospace;color:var(--mut);margin-top:8px;display:flex;flex-wrap:wrap;gap:3px 12px}
+h1{font:800 38px/.95 'Inter Tight',sans-serif;letter-spacing:-.025em}
+.rolle{font:700 15px 'Inter Tight',sans-serif;color:var(--acc);margin-top:8px}
+.unter{font:500 10px 'IBM Plex Mono',monospace;color:var(--mut);margin-top:4px}
+.lead{font-size:11.8px;line-height:1.5;margin-top:9px;max-width:136mm}
+.kontakt{font:500 9px 'IBM Plex Mono',monospace;color:var(--mut);margin-top:8px;display:flex;flex-wrap:wrap;gap:3px 12px}
 .foto{width:30mm;height:36mm;object-fit:cover;display:block}
 
 /* Kennzahlen */
@@ -24,28 +24,29 @@ h1{font:800 36px/.95 'Inter Tight',sans-serif;letter-spacing:-.025em}
 .kpi div{padding:7px 8px 7px 0}
 .kpi b{font:600 21px 'IBM Plex Mono',monospace;color:var(--acc);display:block;font-variant-numeric:tabular-nums;line-height:1.15}
 .kpi b small{font-size:11px;font-weight:500}
-.kpi span{font-size:8.5px;line-height:1.3;display:block;margin-top:2px}
-.kpi i{font:400 7.4px 'IBM Plex Mono',monospace;color:var(--hell);font-style:normal;display:block;margin-top:1px}
+.kpi span{font-size:9.2px;line-height:1.3;display:block;margin-top:2px}
+.kpi i{font:400 8px 'IBM Plex Mono',monospace;color:var(--hell);font-style:normal;display:block;margin-top:1px}
 
 /* Abschnitte und Einträge */
-.sek{font:600 8.5px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin:12px 0 5px;display:flex;gap:8px}
+.sek{font:600 9px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin:14px 0 6px;display:flex;gap:8px}
 .sek span{color:var(--acc)}
-.eintrag{border-top:1px solid var(--linie);padding:7px 0 8px;break-inside:avoid}
+.eintrag{border-top:1px solid var(--linie);padding:8px 0 10px;break-inside:avoid}
 .ekopf{display:flex;justify-content:space-between;align-items:baseline;gap:6mm}
-h3{font:700 13.5px 'Inter Tight',sans-serif}
-h3 .r{font:500 9.6px Inter,sans-serif;color:var(--mut);margin-left:6px}
-.zeit{font:500 8.6px 'IBM Plex Mono',monospace;color:var(--mut);white-space:nowrap}
+h3{font:700 14.5px 'Inter Tight',sans-serif}
+h3 .r{font:500 10.4px Inter,sans-serif;color:var(--mut);margin-left:6px}
+.zeit{font:500 9.2px 'IBM Plex Mono',monospace;color:var(--mut);white-space:nowrap}
 .zweck{color:var(--mut);margin-top:3px}
 .zweck b{color:var(--ink)}
 ul.b{list-style:none;margin-top:4px}
-ul.b li{margin:2.5px 0;padding-left:10px;position:relative}
+ul.b li{margin:3px 0;padding-left:10px;position:relative}
 ul.b li::before{content:'';font-size:inherit;position:absolute;left:0;top:.52em;width:4px;height:4px;background:var(--acc)}
-.tools{font:400 8.4px 'IBM Plex Mono',monospace;color:var(--mut);margin-top:4px}
+.tools{font:400 9px 'IBM Plex Mono',monospace;color:var(--mut);margin-top:4px}
 
 /* Seite 2: Kenntnisse, QR, Fußzeile */
 .end{display:grid;grid-template-columns:1fr 24mm;gap:6mm;align-items:start}
 .sk div{margin:3px 0}
-.sk .k{font:600 8.4px 'IBM Plex Mono',monospace;color:var(--acc);margin-right:6px}
+/* Beschriftung in Schrift und Größe des Inhalts: sonst extrahiert Poppler sie hinter dem Inhalt */
+.sk .k{font-weight:600;color:var(--acc);margin-right:3px}
 .qr{text-align:center;font:500 7.4px 'IBM Plex Mono',monospace;color:var(--mut)}
 .qr img{width:22mm;height:22mm;display:block;margin:0 auto 3px}
 .fuss{position:absolute;left:16mm;right:16mm;bottom:8mm;display:flex;justify-content:space-between;font:500 7.6px 'IBM Plex Mono',monospace;color:var(--hell);border-top:1px solid var(--linie);padding-top:4px}

@@ -11,19 +11,22 @@ KONTAKT = ["jason@roschmann-digital.de", "jasonroschmann.github.io/cv"]
 VERBOTEN = ["Commits", "commits", "aktive Mitglieder", "active members", "gewachsen", "grown to"]
 REGELN = {
     "Jason_Roschmann_CV_Marketing.pdf": {
-        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Junior E-Commerce & Technical SEO"],
+        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Junior E-Commerce & Technical SEO",
+                    "SEO: Technisches SEO", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung"],
         "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"]},
     "ats-cv/Jason_Roschmann_CV_Marketing_ATS.pdf": {
         "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026"],
         "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"]},
     "Jason_Roschmann_CV.pdf": {
-        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Junior Softwareentwickler"],
+        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Junior Softwareentwickler",
+                    "Entwicklung: Python", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"]},
     "ats-cv/Jason_Roschmann_CV_ATS.pdf": {
         "pflicht": ["Mitgründer", "Stand 29.09.2026"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"]},
     "Jason_Roschmann_CV_EN.pdf": {
-        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Junior Software"],
+        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Junior Software",
+                    "Development: Python", "Certificate: Google Ads", "Training: Web development"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"]},
     "ats-cv/Jason_Roschmann_CV_ATS_EN.pdf": {
         "pflicht": ["Co-founder", "as of 29 Sep 2026"],
@@ -31,8 +34,9 @@ REGELN = {
 }
 
 
-def text(pdf: Path) -> str:
-    return subprocess.run([PDFTOTEXT, "-enc", "UTF-8", str(pdf), "-"], capture_output=True, check=True).stdout.decode("utf-8")
+def text(pdf: Path, seite: int = 0) -> str:
+    bereich = ["-f", str(seite), "-l", str(seite)] if seite else []
+    return subprocess.run([PDFTOTEXT, "-enc", "UTF-8", *bereich, str(pdf), "-"], capture_output=True, check=True).stdout.decode("utf-8")
 
 
 def seiten(pdf: Path) -> int:
@@ -49,6 +53,9 @@ def pruefe(pdf: Path, regel: dict) -> list[str]:
     fehler += [f"verboten: {v}" for v in VERBOTEN if v in t]
     if any(chr(c) in t for c in range(0xFB00, 0xFB07)) or "\ufffd" in t:
         fehler.append("Ligatur oder Ersatzzeichen in der Textschicht")
+    # Eine Tools-Zeile gehört zu ihrem Eintrag; allein oben auf Seite 2 ist sie verwaist.
+    if " ".join(text(pdf, 2).split()).startswith("Tools:"):
+        fehler.append("Tools-Zeile verwaist oben auf Seite 2")
     pos = [t.find(m) for m in regel["reihenfolge"]]
     if -1 in pos or pos != sorted(pos):
         fehler.append(f"Reihenfolge falsch: {dict(zip(regel['reihenfolge'], pos))}")
