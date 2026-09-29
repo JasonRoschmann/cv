@@ -25,6 +25,7 @@ jobs:
           fail: true
 
   lighthouse:
+    if: github.event_name != 'pull_request'   # misst die Live-Seite, nicht den PR-Inhalt
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
