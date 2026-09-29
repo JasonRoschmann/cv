@@ -22,7 +22,8 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 DRUCK = [("cv-print.html", REPO / "Jason_Roschmann_CV.pdf"), ("cv-print-en.html", REPO / "Jason_Roschmann_CV_EN.pdf"),
-         ("cv-print-marketing.html", REPO / "Jason_Roschmann_CV_Marketing.pdf")]
+         ("cv-print-marketing.html", REPO / "Jason_Roschmann_CV_Marketing.pdf"),
+         ("cv-belegmappe.html", REPO / "Jason_Roschmann_Belegmappe.pdf")]
 ATS = [REPO / "ats-cv" / "Jason_Roschmann_CV_ATS.md", REPO / "ats-cv" / "Jason_Roschmann_CV_ATS_EN.md",
        REPO / "ats-cv" / "Jason_Roschmann_CV_Marketing_ATS.md"]
 ATS_STIL = """<style>
