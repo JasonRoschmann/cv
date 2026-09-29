@@ -1,0 +1,51 @@
+name: Qualität
+
+# Linkprüfung aller Quellen und Lighthouse-Messung der Live-Seite (mobil). Lighthouse ist ein
+# Wächter gegen Verschlechterung, keine Anzeige im Web-CV: Performance mobil liegt wegen der
+# bewussten Boot-/Lockscreen-Animation der Phone-UI bei rund 66 (gemessen 29.09.2026).
+
+on:
+  pull_request:
+  schedule:
+    - cron: '20 6 * * 1'        # montags 06:20 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --config lychee.toml --no-progress index.html cv-print.html cv-print-en.html cv-print-marketing.html cv-belegmappe.html README.md 'ats-cv/*.md'
+          fail: true
+
+  lighthouse:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22'
+      - name: Lighthouse mobil (Live-Seite)
+        run: >-
+          npx -y lighthouse@13.5.0 https://jasonroschmann.github.io/cv/
+          --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile
+          --output=json --output-path=lighthouse.json --quiet --chrome-flags="--headless"
+      - name: Mindestwerte
+        run: |
+          python3 - <<'EOF'
+          import json
+          # Performance-Untergrenze unter dem Messwert (66), damit Schwankungen des Runners nicht rot werden
+          MIN = {"performance": 50, "accessibility": 90, "best-practices": 90, "seo": 90}
+          cat = json.load(open("lighthouse.json"))["categories"]
+          werte = {k: round(cat[k]["score"] * 100) for k in MIN}
+          print("Lighthouse mobil:", werte)
+          zu_niedrig = {k: v for k, v in werte.items() if v < MIN[k]}
+          if zu_niedrig:
+              raise SystemExit(f"unter Mindestwert: {zu_niedrig}")
+          EOF
