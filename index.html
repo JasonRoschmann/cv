@@ -323,19 +323,21 @@
   .card:hover{transform:translateY(-3px);border-color:var(--line2)}
   .card .ct{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
   .card h4{font-family:var(--fd);font-weight:600;font-size:1.15rem}
-  /* GitHub-Karte: gemergte PRs je Woche, gestapelt nach Projekt; --u = Höhe eines PRs */
-  .ghw{--u:4.6px;display:grid;grid-template-columns:repeat(9,1fr);gap:10px;align-items:end;height:150px;margin:18px 0 6px}
-  .ghw .w{display:flex;flex-direction:column;justify-content:flex-end;gap:2px}
-  .ghw .w b{font:600 11px var(--fm);color:var(--ink2);text-align:center;margin-bottom:4px}
-  .ghw .w.null b{color:var(--dim)}
-  .ghw i,.ghl span::before{display:block;border-radius:3px;background:var(--grn)}
-  .ghw i.cv,.ghl .cv::before{background:rgba(63,220,132,.55)}
-  .ghw i.ku,.ghl .ku::before{background:rgba(63,220,132,.28)}
-  .ghw-x{display:grid;grid-template-columns:repeat(9,1fr);gap:10px;font:500 10px var(--fm);color:var(--mut);text-align:center}
-  .ghl{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 11px var(--fm);color:var(--mut);margin:12px 0 6px}
+  /* GitHub-Karte: gemergte PRs aufsummiert (SVG aus scripts/stand.py) + Aufschlüsselung nach Projekt */
+  .ghsum{margin:18px 0 0}
+  .ghsum svg{width:100%;height:auto;display:block;font:11px var(--fm);fill:var(--mut)}
+  .ghsum .gl{stroke:var(--line)}
+  .ghsum .fl-l{fill:none;stroke:var(--grn);stroke-width:2.2;stroke-linejoin:round}
+  .ghsum .fl-a{fill:rgba(63,220,132,.12)}
+  .ghsum .fl-p{fill:var(--grn)}
+  .ghsum .end{fill:var(--ink);font-weight:600;font-size:13px}
+  @media(max-width:640px){.ghsum svg{font-size:22px}.ghsum .end{font-size:26px}} /* SVG schrumpft auf ~45 % */
+  .ghbar{display:flex;gap:2px;height:8px;margin:12px 0 8px}
+  .ghbar i,.ghl span::before{display:block;border-radius:3px;background:var(--grn)}
+  .ghbar i.cv,.ghl .cv::before{background:rgba(63,220,132,.55)}
+  .ghbar i.ku,.ghl .ku::before{background:rgba(63,220,132,.28)}
+  .ghl{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 11px var(--fm);color:var(--mut);margin:0 0 6px}
   .ghl span::before{content:"";display:inline-block;width:9px;height:9px;margin-right:6px;vertical-align:-1px}
-  .ghl .muted::before{display:none}
-  @media(max-width:640px){.ghw,.ghw-x{gap:4px}.ghw-x{font-size:9px}}
   .card .tag{font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);border:1px solid var(--line2);border-radius:20px;padding:3px 9px;white-space:nowrap}
   .card .tag.live{color:var(--grn);border-color:rgba(63,220,132,.4)}
   .card p{color:var(--ink2);font-size:14px;margin-top:6px}
@@ -687,6 +689,7 @@
 
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.view{transform:none}.rv{opacity:1;transform:none}}
 </style>
+<script>var PR=/*pr-daten*/{"gesamt": 59, "flowki": 50, "eigen": 6, "kunden": 3, "flowkiEroeffnet": 70}/*pr-daten-ende*/;</script>
 </head>
 <body>
 <!-- ============ PHONE · JasonOS (nur ≤820px) ============ -->
@@ -826,7 +829,7 @@
             <h1 class="display h-hero rv">Ich baue <span style="white-space:nowrap">KI-Automation</span> —<br>und teste zuerst,<br><span class="g it">was schiefgehen kann.</span></h1>
             <p class="lead rv" style="margin-top:22px">Python und TypeScript, in eigenen Projekten und im Team: vom Social-Media-Studio Flowki Studio über die KI-Community FlowKI Club, die ich mitgegründet habe, bis zur Bewerbungsverwaltung mit kanalübergreifender Reservierung gegen doppelte Erstbewerbungen. KI-Agenten sind mein Werkzeug — Anforderungen, Architektur und Abnahme liegen bei mir.</p>
             <div class="proofrow rv">
-              <div class="pf"><b>50 PRs gemergt</b><span>eigene, im Teamprojekt Flowki Studio</span></div>
+              <div class="pf"><b><span data-pr="flowki">50</span> PRs gemergt</b><span>eigene, im Teamprojekt Flowki Studio</span></div>
               <div class="pf"><b>21 → 0 rote Tests</b><span>Ursachen gefunden, keine Tests abgeschaltet</span></div>
               <div class="pf"><b>Junior-Rolle gesucht</b><span>Hamburg · remote · Zürich möglich</span></div>
             </div>
@@ -907,7 +910,7 @@
         <p class="eyebrow rv">Was ich baue</p>
         <h2 class="display h-xl rv" style="margin-top:14px;max-width:22ch">Projekte mit <span class="g it">nachprüfbarem Beitrag.</span></h2>
         <div class="crown rv">
-          <div class="top"><p class="eyebrow" style="color:var(--grn)">◆ Teamprojekt · seit Aug. 2026</p><span class="badge">64 PRs · 50 gemergt</span></div>
+          <div class="top"><p class="eyebrow" style="color:var(--grn)">◆ Teamprojekt · seit Aug. 2026</p><span class="badge"><span data-pr="flowki-eroeffnet">70</span> PRs · <span data-pr="flowki">50</span> gemergt</span></div>
           <h3 class="display h-l" style="margin-top:12px">Flowki Studio — internes Social-Media-Studio</h3>
           <p class="body" style="margin-top:8px;max-width:64ch">Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung und Plattformübergabe. Mein Beitrag im Team: Produktoberflächen, Workflow-Integration, Clip-Verarbeitung und Publishing.</p>
           <div class="urow"><div class="k">Oberfläche</div><div class="v">Produktions-, Freigabe- und Veröffentlichungsansichten weiterentwickelt – Bearbeitungsstände, Phasendauer und erforderliche Nutzeraktionen sichtbar gemacht.</div></div>
@@ -986,13 +989,11 @@
           <div class="card"><div class="ct"><h4>Shinobi: Ember Accord</h4><span class="tag">Agenten-Experiment</span></div><p>Mobiles Idle-RPG mit React Native, Skia und Supabase. Agenten-orchestriert: Ein KI-Agent arbeitet im Lead-Modus 50 Rollen ab, die Produktentscheidungen treffe ich.</p><div class="stack"><span class="chip">React Native</span><span class="chip">Supabase · pgTAP</span><span class="chip">Deno Edge</span></div><p class="proof">Dokumentiert in einem Agenten-Ledger, mit getrennten App- und Datenbanktests.</p></div>
           <div class="card" style="grid-column:1 / -1;border-color:rgba(63,220,132,.35)"><div class="ct"><h4>◆ Dieses Web-CV</h4><span class="tag live">Du bist gerade drin</span></div><p>Am Handy ein eigenes Phone-UI — als App installierbar, mit Glas-Refraktion über SVG-Displacement-Filter, einem Canvas-Graphen, Federphysik und App-Gesten. HTML, CSS und JavaScript ohne Framework; die Fluid-Simulation ist von PavelDoGreat (MIT) adaptiert.</p><div class="stack"><span class="chip">PWA · installierbar</span><span class="chip">SVG-Displacement</span><span class="chip">Canvas</span><span class="chip">WebGL</span></div><p class="proof">Öffne es am Handy: Boot, Lockscreen, App-Zoom.</p></div>
         </div>
-        <p class="eyebrow rv" style="margin-top:34px;color:var(--mut)">GitHub · Stand 29.09.2026</p>
+        <p class="eyebrow rv" style="margin-top:34px;color:var(--mut)">GitHub · Stand <span data-pr="stand-de">29.09.2026</span></p>
         <div class="card rv" id="github" style="margin-top:14px">
-          <div class="ct"><h4>58 meiner Pull Requests gemergt</h4><span class="tag">Aug.–Sep. 2026</span></div>
-          <p>Gemergte Pull Requests je Woche (ab Montag), nach Projekt gestapelt. Private Repositories sind nur gezählt – ohne Titel und ohne Links.</p>
-          <div class="ghw" role="img" aria-label="Gemergte Pull Requests je Woche: 3. August 4, 10. August 0, 17. August 0, 24. August 1, 31. August 26, 7. September 6, 14. September 11, 21. September 8, 28. September 2 (Woche läuft noch)"><div class="w"><b>4</b><i class="cv" style="height:calc(var(--u)*1)"></i><i class="fl" style="height:calc(var(--u)*3)"></i></div><div class="w null"><b>0</b></div><div class="w null"><b>0</b></div><div class="w"><b>1</b><i class="fl" style="height:calc(var(--u)*1)"></i></div><div class="w"><b>26</b><i class="ku" style="height:calc(var(--u)*3)"></i><i class="fl" style="height:calc(var(--u)*23)"></i></div><div class="w"><b>6</b><i class="fl" style="height:calc(var(--u)*6)"></i></div><div class="w"><b>11</b><i class="fl" style="height:calc(var(--u)*11)"></i></div><div class="w"><b>8</b><i class="cv" style="height:calc(var(--u)*2)"></i><i class="fl" style="height:calc(var(--u)*6)"></i></div><div class="w"><b>2</b><i class="cv" style="height:calc(var(--u)*2)"></i></div></div>
-          <div class="ghw-x" aria-hidden="true"><span>3.8.</span><span>10.8.</span><span>17.8.</span><span>24.8.</span><span>31.8.</span><span>7.9.</span><span>14.9.</span><span>21.9.</span><span>28.9.*</span></div>
-          <div class="ghl"><span class="fl">Flowki Studio 50</span><span class="cv">Web-CV 5</span><span class="ku">Kundenprojekte 3</span><span class="muted">* Woche läuft noch</span></div>
+          <div class="ct"><h4><span data-pr="gesamt">59</span> meiner Pull Requests gemergt</h4><span class="tag">seit <span data-pr="seit-de">Aug. 2026</span></span></div>
+          <p>Gemergte Pull Requests seit dem ersten Merge, aufsummiert; täglich automatisch über die GitHub-Suche gezählt. Private Repositories sind nur gezählt – ohne Titel und ohne Links.</p>
+          <!-- pr-diagramm:start --><figure class="ghsum" role="img" aria-label="Gemergte Pull Requests, aufsummiert seit 7. Aug. 2026: 59 bis 29.09.2026 – Flowki Studio 50, eigene Repos 6, Kundenprojekte 3"><svg viewBox="0 0 640 170" aria-hidden="true"><line x1="36" x2="592" y1="144.0" y2="144.0" class="gl"/><text x="298.3" y="162" text-anchor="middle">1.9.</text><line x1="298.3" x2="298.3" y1="14" y2="144" class="gl"/><path d="M36.0,144.0 H36.0 V137.4 H57.0 V135.2 H256.3 V133.0 H308.8 V115.4 H319.2 V113.2 H329.7 V99.9 H350.7 V75.7 H361.2 V62.5 H476.6 V60.3 H487.1 V38.2 H508.1 V25.0 H550.0 V20.6 H592.0 V14.0 H592.0 V144.0 H36.0Z" class="fl-a"/><path d="M36.0,144.0 H36.0 V137.4 H57.0 V135.2 H256.3 V133.0 H308.8 V115.4 H319.2 V113.2 H329.7 V99.9 H350.7 V75.7 H361.2 V62.5 H476.6 V60.3 H487.1 V38.2 H508.1 V25.0 H550.0 V20.6 H592.0 V14.0 H592.0" class="fl-l"/><circle cx="592.0" cy="14.0" r="4" class="fl-p"/><text x="600.0" y="18.0" class="end">59</text><text x="36" y="162" text-anchor="start">7.8.</text></svg></figure><div class="ghbar" aria-hidden="true"><i class="fl" style="flex:50"></i><i class="cv" style="flex:6"></i><i class="ku" style="flex:3"></i></div><div class="ghl"><span class="fl">Flowki Studio 50</span><span class="cv">eigene Repos 6</span><span class="ku">Kundenprojekte 3</span></div><!-- pr-diagramm:end -->
           <div class="urow"><div class="k">Web-CV</div><div class="v">Dieser Lebenslauf als Web-App, ergänzt um Druck- und ATS-Fassungen mit gemeinsamem Build- und Prüfskript. <span class="muted">Prüfung:</span> Prüfskript für jede PDF-Fassung – zwei Seiten, Pflichtangaben, Link-Ziele, Abstand zur Fußzeile – mit Selbsttest. <span class="muted">Grenze:</span> statische Seite ohne Server. <a href="https://github.com/JasonRoschmann/cv" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">Quellcode ↗</a></div></div>
           <div class="urow"><div class="k">MCP-Server</div><div class="v">Club-Artikel als Wissensbasis für MCP-Clients wie Claude Desktop und Claude Code: Artikel listen, suchen und lesen, Themensäulen abrufen. <span class="muted">Prüfung:</span> Smoke-Test ruft die Werkzeuge auf und protokolliert die Ergebnisse. <span class="muted">Grenze:</span> liest live von der Club-Website und hängt an deren Erreichbarkeit. <a href="https://github.com/Jokersystems-online/flowki-knowledge-mcp" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">Quellcode ↗</a></div></div>
         </div>
@@ -1010,7 +1011,7 @@
             <div class="org">Eigene Projekte, Team- und Kundenprojekte · Hamburg / remote</div>
             <ul>
               <li><b>Python-Backends und Next.js-Frontends</b> entwickelt, getestet und auf Linux-Servern betrieben (Docker Compose, Cron, Deployment mit Rollback); Shopify-Themes angepasst.</li>
-              <li><b>Im Team</b> über Branches, Pull Requests und gemeinsame Test-Suites — 50 eigene PRs in Flowki Studio gemergt.</li>
+              <li><b>Im Team</b> über Branches, Pull Requests und gemeinsame Test-Suites — <span data-pr="flowki">50</span> eigene PRs in Flowki Studio gemergt.</li>
               <li><b>FlowKI Club, Mitgründer seit Apr. 2026:</b> KI-Community mit aufgebaut – Mitglieder beim Einstieg begleitet, Online-Calls organisiert und moderiert; der Club dient auch der Anbahnung potenzieller Kundenaufträge.</li>
               <li><b>KI-gestützte Entwicklung:</b> Agenten setzen um, Anforderungen, Architektur und Abnahme liegen bei mir.</li>
             </ul>
@@ -1086,7 +1087,7 @@
           <div class="at" id="at-pipeline" data-f="dev"><div class="at-h"><b>Pipeline mit Versandprüfungen</b><span class="st ok">eingesetzt</span></div><p>Python-Pipeline von der Stellensuche über Job-APIs bis zur Antwortzuordnung; kanalübergreifendes Hauptbuch für Erstbewerbungen mit Reservierung, separate Versandjournale für Antworten und Nachfassmails; blockierende Prüfungen vor dem Versand, Modell-Kaskade mit Sperrzeiten.</p><div class="at-m"><span>eigen</span><span>Bewerbungsverwaltung</span><span>seit Juli 2026</span><span><a href="#fs-02" data-sprung>Fallstudie 02 →</a></span><span><a href="#fs-03" data-sprung>Fallstudie 03 →</a></span></div><p class="at-g"><span>Rahmen</span>Bereits für eigene Bewerbungen genutzt; überarbeitete Antwortzuordnung und zusätzliche Queue-Sperren lokal und unter WSL geprüft, Rollout ausstehend.</p></div>
           <div class="at" data-f="dev"><div class="at-h"><b>Produkt-Workflows im Team</b><span class="st um">umgesetzt</span></div><p>Produktions-, Freigabe- und Veröffentlichungsansichten weiterentwickelt; Ablehnungsgründe durch Oberfläche, API-Client und Freigabeprotokoll verbunden; erfolgreiche Produktion von nachfolgenden Statusfehlern getrennt; TikTok-Entwurfsweg mit eigenem Status.</p><div class="at-m"><span>Team</span><span>Flowki Studio</span><span>seit Aug. 2026</span></div><p class="at-g"><span>Rahmen</span>Internes Werkzeug ohne öffentlichen Zugang.</p></div>
           <div class="at" data-f="dev"><div class="at-h"><b>Discord-Bot mit Wissensbasis</b><span class="st um">umgesetzt</span></div><p>Bot um /ask und Self-Service-Themenrollen erweitert; Artikelinhalte als Wissensgrundlage des FAQ-Bots angebunden, Relevanz-Prüfschritt ergänzt und das Verhalten bei unpassenden Treffern getestet.</p><div class="at-m"><span>Team</span><span>FlowKI Club</span><span>Juli–Aug. 2026</span></div><p class="at-g"><span>Rahmen</span>Belegt durch Umsetzung und Tests im Repository.</p></div>
-          <div class="at" id="at-video" data-f="dev"><div class="at-h"><b>Video-Pipeline im Team</b><span class="st um">umgesetzt</span></div><p>Speaker-Reframe: Der Ausschnitt folgt der sprechenden Person; deterministischer Neu-Render über Celery; bis zu drei Schnittvarianten je Clip, ein Datenbank-Constraint verhindert doppelte Varianten je Clip und Zielkonto.</p><div class="at-m"><span>Team</span><span>Flowki Studio</span><span>Aug.–Sep. 2026</span><span>50 eigene PRs in Flowki Studio gemergt</span></div><p class="at-g"><span>Rahmen</span>Ein Teil meines Beitrags zu Flowki Studio; internes Werkzeug ohne öffentlichen Zugang.</p></div>
+          <div class="at" id="at-video" data-f="dev"><div class="at-h"><b>Video-Pipeline im Team</b><span class="st um">umgesetzt</span></div><p>Speaker-Reframe: Der Ausschnitt folgt der sprechenden Person; deterministischer Neu-Render über Celery; bis zu drei Schnittvarianten je Clip, ein Datenbank-Constraint verhindert doppelte Varianten je Clip und Zielkonto.</p><div class="at-m"><span>Team</span><span>Flowki Studio</span><span>Aug.–Sep. 2026</span><span><span data-pr="flowki">50</span> eigene PRs in Flowki Studio gemergt</span></div><p class="at-g"><span>Rahmen</span>Ein Teil meines Beitrags zu Flowki Studio; internes Werkzeug ohne öffentlichen Zugang.</p></div>
           <div class="at" data-f="dev"><div class="at-h"><b>Agenten-Plugin mit Kosten-Gate</b><span class="st um">umgesetzt</span></div><p>Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt; ein Kosten-Gate verhindert versehentliche bezahlte Agentenläufe; Deploy mit Rollback.</p><div class="at-m"><span>eigen</span><span>hermes-brett</span><span>Sep. 2026</span></div><p class="at-g"><span>Rahmen</span>Selbsttest mit node:assert.</p></div>
           <div class="at" data-f="dev"><div class="at-h"><b>Agenten-orchestrierte App</b><span class="st um">umgesetzt</span></div><p>Mobiles Idle-RPG mit React Native, Skia und Supabase; ein KI-Agent arbeitet im Lead-Modus Rollen ab, die Produktentscheidungen treffe ich.</p><div class="at-m"><span>eigen</span><span>Shinobi: Ember Accord</span><span>Sep. 2026</span></div><p class="at-g"><span>Rahmen</span>Agenten-Experiment, nicht veröffentlicht.</p></div>
         </div>
@@ -1241,7 +1242,7 @@
   var clock=document.getElementById('clock');
   function tickClock(){ var d=new Date(); clock.textContent=pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds()); }
   tickClock(); setInterval(tickClock,1000);
-  var ticks=['python · typescript','flowki: 50 PRs gemergt','flowki club: mitgründer','21 → 0 rote tests','duftkumpels.shop: live','hamburg · remote'];
+  var ticks=['python · typescript','flowki: '+PR.flowki+' PRs gemergt','flowki club: mitgründer','21 → 0 rote tests','duftkumpels.shop: live','hamburg · remote'];
   var ti=0, te=document.getElementById('tick');
   setInterval(function(){ ti=(ti+1)%ticks.length; if(te){te.style.opacity=0; setTimeout(function(){te.textContent=ticks[ti];te.style.opacity=1;},260);} }, 3600);
   if(te) te.style.transition='opacity .25s';
@@ -1295,7 +1296,7 @@
   // ---- scripted chat (safe on static hosting, no API key) ----
   var QA=[
     {q:"Wie ist dieses CV gebaut?",feat:1,k:["dieses cv","diese seite","wie ist das","phone","app-style"," os ","installier"],a:"Du benutzt es gerade: ein Web-CV als installierbare PWA, gebaut mit HTML, CSS und JavaScript ohne Framework — Glas-Refraktion über SVG-Displacement-Filter, ein Canvas-Graph, Federphysik per CSS, App-Gesten. Die Fluid-Simulation ist von PavelDoGreats WebGL-Fluid-Simulation (MIT) adaptiert."},
-    {q:"Was hast du gebaut?",feat:1,k:["gebaut","projekte","systeme","portfolio","beeindruck","zeig"],a:"Im Team Flowki Studio, ein internes Social-Media-Studio (50 eigene Pull Requests gemergt): Produktoberflächen, Freigaben mit Ablehnungsgründen, Clip-Verarbeitung und Publishing. Als Mitgründer den FlowKI Club, eine KI-Community mit rund 66 Mitgliedern im Discord (Stand 29.09.2026), samt Website, Newsletter und Discord-Bot. Allein eine Python-Pipeline für Bewerbungen, bei der ein kanalübergreifendes Hauptbuch doppelte Erstbewerbungen verhindert; Rollout-Skripte bauen bei abgefangenen Fehlern zurück. Dazu Werkzeuge für KI-Agenten und den Shopify-Umbau von duftkumpels.shop. Details unter Projekte."},
+    {q:"Was hast du gebaut?",feat:1,k:["gebaut","projekte","systeme","portfolio","beeindruck","zeig"],a:"Im Team Flowki Studio, ein internes Social-Media-Studio ("+PR.flowki+" eigene Pull Requests gemergt): Produktoberflächen, Freigaben mit Ablehnungsgründen, Clip-Verarbeitung und Publishing. Als Mitgründer den FlowKI Club, eine KI-Community mit rund 66 Mitgliedern im Discord (Stand 29.09.2026), samt Website, Newsletter und Discord-Bot. Allein eine Python-Pipeline für Bewerbungen, bei der ein kanalübergreifendes Hauptbuch doppelte Erstbewerbungen verhindert; Rollout-Skripte bauen bei abgefangenen Fehlern zurück. Dazu Werkzeuge für KI-Agenten und den Shopify-Umbau von duftkumpels.shop. Details unter Projekte."},
     {q:"Was ist der FlowKI Club?",k:["flowki club","community","discord","mitgründer","mitgegründet"],a:"Eine deutschsprachige KI-Community, die ich im April 2026 mitgegründet habe: Discord mit rund 66 Mitgliedern (Stand 29.09.2026), Fachartikel, Online-Calls und gemeinsame Projekte. Ich gewinne Mitglieder und begleite sie beim Einstieg, organisiere und moderiere Calls und helfe bei Projekten; technisch habe ich an Website, Newsletter und Discord-Bot mitgebaut. Der Club dient auch der Anbahnung potenzieller Kundenaufträge."},
     {q:"Wie arbeitest du mit KI-Agenten?",feat:1,k:["agent","claude","wie arbeitest","ki-tool","codex"],a:"Agenten sind mein Entwicklungswerkzeug. Anforderungen, Architektur und Abnahme liegen bei mir. Meine Arbeitsweise: Fehler mit einem roten Test reproduzieren; größere Änderungen prüft zusätzlich ein zweites Modell. Bei Shinobi: Ember Accord habe ich ausprobiert, wie weit ein Agent im Lead-Modus kommt — die Produktentscheidungen blieben bei mir."},
     {q:"Warum von Vertrieb zu KI?",feat:1,k:["vertrieb","sales","wechsel","quereinst","warum ki","von sales","dna"],a:"Im Vertrieb habe ich vier Jahre direkt mit Inhabern gesprochen und gesehen, wo Betriebe Zeit verlieren. Seit 2024 baue ich Software und Automationen — in eigenen Projekten, im Team und für Kunden. Jetzt suche ich eine Junior-Rolle in einem Entwicklungsteam, um das professionell zu vertiefen."},
@@ -2952,7 +2953,7 @@
   }
 
   // ---- island ticker + Live Activity ----
-  var iticks=['python · typescript','flowki: 50 PRs gemergt','flowki club: mitgründer','21 → 0 rote tests','duftkumpels.shop: live','hamburg · remote'];
+  var iticks=['python · typescript','flowki: '+PR.flowki+' PRs gemergt','flowki club: mitgründer','21 → 0 rote tests','duftkumpels.shop: live','hamburg · remote'];
   var ii=0, iEl=document.getElementById('islandtxt'), island=document.querySelector('.island');
   iEl.style.transition='opacity .25s';
   function islandSet(txt){ iEl.style.opacity=0; island.classList.add('morph');
@@ -3112,7 +3113,7 @@
   var twb=document.getElementById('twbody');
   if(twb){
     var tlines=[
-      '<span class="p">$</span> flowki-studio … <span class="ok">50 PRs gemergt</span>',
+      '<span class="p">$</span> flowki-studio … <span class="ok">'+PR.flowki+' PRs gemergt</span>',
       '<span class="p">$</span> hermes-studio … <span class="ok">21 → 0 rote tests</span>',
       '<span class="p">$</span> rollout-skript … <span class="ok">18 locks</span>',
       '<span class="p">$</span> lighthouse-ci … <span class="ok">wöchentlich</span>',

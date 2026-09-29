@@ -10,13 +10,13 @@ Location: Hamburg, Germany | Looking for: Hamburg or remote; relocation to Zuric
 
 I build web interfaces and Python workflows for practical tasks in content production, e-commerce and community management. I focus on connecting frontend and backend, making workflow states traceable and testing failure cases. I use AI agents while taking responsibility for requirements and acceptance testing. Four years in sales taught me to understand customer needs through direct conversation.
 
-Key figures: 50 of my pull requests merged (Flowki Studio, team project) · 21 → 0 failing tests, two root causes fixed (hermes-studio) · about 66 Discord members, FlowKI Club (as of 29 Sep 2026) · 4 years of B2B sales with daily customer contact (2019–2023)
+Key figures: <span data-pr="flowki">50</span> of my pull requests merged (Flowki Studio, team project) · 21 → 0 failing tests, two root causes fixed (hermes-studio) · about 66 Discord members, FlowKI Club (as of 29 Sep 2026) · 4 years of B2B sales with daily customer contact (2019–2023)
 
 ## Projects
 
 ### Flowki Studio — internal social media studio, team project (Aug 2026 – present)
 
-Purpose: Internal social media studio for topic research, AI-assisted content production, editorial review and handover to platforms; my contribution in the team (50 of my pull requests merged): product interfaces, workflow integration, clip processing and publishing.
+Purpose: Internal social media studio for topic research, AI-assisted content production, editorial review and handover to platforms; my contribution in the team (<span data-pr="flowki">50</span> of my pull requests merged): product interfaces, workflow integration, clip processing and publishing.
 
 - Product interface: Further developed the production, approval and publishing views – made processing states, phase durations and required user actions visible.
 - Editorial collaboration: Connected rejection reasons across the interface, API client and approval log – returns for revision now carry a traceable reason.
@@ -86,7 +86,7 @@ Evidence (German): case study reply matching <https://jasonroschmann.github.io/c
 - Operations: Linux servers, Docker Compose, cron, flock, SMTP/IMAP, SPF/DKIM
 - Web & commerce: Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL
 - With AI agents: Reproduce bugs with failing tests · an agent implements the fix · a second model provides an additional review · rollout with checksums and automatic rollback on caught errors
-- GitHub: 58 of my pull requests merged (as of 29 Sep 2026): Flowki Studio 50, Web CV 5, client projects 3
+- GitHub: <span data-pr="gesamt">59</span> of my pull requests merged (as of <span data-pr="stand-en">29 Sep 2026</span>): Flowki Studio <span data-pr="flowki">50</span>, own repos <span data-pr="eigen">6</span>, client projects <span data-pr="kunden">3</span>
 - Public code samples: web CV <https://github.com/JasonRoschmann/cv> · MCP server for community articles <https://github.com/Jokersystems-online/flowki-knowledge-mcp>
 
 ## Training, certificate & languages
