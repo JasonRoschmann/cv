@@ -2,234 +2,190 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<title>Jason Roschmann — CV</title>
+<title>Jason Roschmann — Lebenslauf</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --desk:#080a0d; --panel:#0e1116; --elev:#141922;
-    --ink:#eceae3; --ink2:#c4c6cc; --mut:#8a909a; --dim:#5b616b;
-    --grn:#3fdc84; --grn2:#2fae66; --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.16);
-    --fd:'Fraunces',Georgia,serif; --fb:'Inter',system-ui,sans-serif; --fm:'JetBrains Mono',monospace;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  @page{ size:A4; margin:0 }
-  html,body{ background:var(--desk); color:var(--ink); font-family:var(--fb); font-size:9.6px; line-height:1.5;
-    -webkit-print-color-adjust:exact; print-color-adjust:exact; -webkit-font-smoothing:antialiased }
-  .page{ width:210mm; min-height:297mm; background:var(--desk); padding:15mm 15mm 13mm; position:relative; overflow:hidden }
-  .page + .page{ page-break-before:always }
-  a{ color:inherit; text-decoration:none }
-  .mono{ font-family:var(--fm) }
-  .g{ color:var(--grn) }
-  .it{ font-style:italic }
-
-  /* Kopf */
-  .top{ display:flex; justify-content:space-between; align-items:flex-end; gap:16px; padding-bottom:12px; border-bottom:1px solid var(--line2); position:relative }
-  .top::after{ content:""; position:absolute; left:0; bottom:-1px; width:96px; height:2px; background:var(--grn); box-shadow:0 0 10px -1px rgba(63,220,132,.5) }
-  h1{ font-family:var(--fd); font-weight:600; font-size:30px; line-height:1; letter-spacing:-.02em }
-  .role{ font-family:var(--fm); font-size:10px; color:var(--grn); letter-spacing:.06em; margin-top:8px }
-  .tagline{ color:var(--ink2); font-size:10px; margin-top:7px; max-width:105mm }
-  .contact{ text-align:right; font-family:var(--fm); font-size:9px; color:var(--ink2); line-height:1.85; white-space:nowrap }
-  .contact .lb{ color:var(--dim) }
-  .contact a.g{ color:var(--grn) }
-
-  /* Sektionen */
-  section{ margin-top:15px }
-  .h{ font-family:var(--fm); font-size:9px; letter-spacing:.2em; text-transform:uppercase; color:var(--grn); display:flex; align-items:center; gap:9px; margin-bottom:11px }
-  .h::before{ content:""; width:16px; height:1px; background:var(--grn2) }
-
-  .profil{ color:var(--ink2); font-size:10.5px; line-height:1.6; max-width:170mm }
-  .profil b{ color:var(--ink); font-weight:600 }
-
-  /* Systeme */
-  .sys{ display:grid; gap:9px }
-  .crown{ border:1px solid var(--line); border-left:2px solid var(--grn); border-radius:8px; background:linear-gradient(160deg,var(--elev),var(--panel)); padding:11px 13px }
-  .sysgrid{ display:grid; grid-template-columns:1fr 1fr; gap:9px }
-  .card{ border:1px solid var(--line); border-radius:8px; background:var(--panel); padding:10px 12px; position:relative }
-  .card::before{ content:""; position:absolute; inset:0 0 auto 0; height:1px; background:linear-gradient(90deg,transparent,rgba(63,220,132,.35),transparent) }
-  .ct{ display:flex; justify-content:space-between; align-items:baseline; gap:10px }
-  .ct h3{ font-family:var(--fd); font-weight:600; font-size:14px; letter-spacing:-.01em }
-  .crown .ct h3{ font-size:16px }
-  .tag{ font-family:var(--fm); font-size:7.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--grn); border:1px solid rgba(63,220,132,.3); border-radius:20px; padding:2px 7px; white-space:nowrap }
-  .card p, .crown p{ color:var(--ink2); font-size:9.4px; margin-top:5px; line-height:1.5 }
-  .proof{ margin-top:6px; padding-left:9px; border-left:2px solid var(--grn2); color:var(--ink2); font-size:9px }
-  .proof b{ color:var(--ink) }
-  .stackline{ font-family:var(--fm); font-size:8px; color:var(--mut); margin-top:6px; letter-spacing:.01em }
-
-  /* Erfahrung / Ausbildung */
-  .xp{ display:grid; grid-template-columns:28mm 1fr; gap:8px 14px; align-items:start }
-  .xp .yr{ font-family:var(--fm); font-size:8.5px; color:var(--grn); padding-top:2px }
-  .xp .yr.amb{ color:#e5a44e }
-  .xp h4{ font-family:var(--fd); font-weight:600; font-size:13px }
-  .xp .org{ color:var(--mut); font-size:8.6px; font-family:var(--fm); margin:2px 0 5px }
-  .xp ul{ list-style:none; display:grid; gap:3px }
-  .xp li{ position:relative; padding-left:12px; color:var(--ink2); font-size:9.4px; line-height:1.45 }
-  .xp li::before{ content:"▸"; position:absolute; left:0; color:var(--grn2); font-size:8px }
-  .xp li b{ color:var(--ink) }
-  .xp .blk{ margin-bottom:11px }
-
-  /* Skills + Fakten in zwei Spalten */
-  .cols{ display:grid; grid-template-columns:1.35fr 1fr; gap:16px; align-items:start }
-  .skgrp{ margin-bottom:9px }
-  .skgrp .k{ font-family:var(--fm); font-size:8px; letter-spacing:.06em; text-transform:uppercase; color:var(--mut); margin-bottom:5px }
-  .chips{ display:flex; flex-wrap:wrap; gap:4px }
-  .chip{ font-family:var(--fm); font-size:8px; color:var(--ink2); border:1px solid var(--line); border-radius:20px; padding:2px 8px }
-  .facts{ border:1px solid var(--line); border-radius:8px; background:var(--panel); padding:12px 14px }
-  .frow{ display:flex; justify-content:space-between; gap:10px; padding:5px 0; border-top:1px solid var(--line); font-size:9.4px }
-  .frow:first-child{ border-top:0 }
-  .frow span{ color:var(--mut) } .frow b{ color:var(--ink); font-weight:600; text-align:right }
-  .frow b .g{ color:var(--grn) }
-
-  .foot{ position:absolute; left:15mm; right:15mm; bottom:8mm; display:flex; justify-content:space-between; align-items:center;
-    font-family:var(--fm); font-size:8px; color:var(--dim); border-top:1px solid var(--line); padding-top:7px }
-  .foot .g{ color:var(--grn2) }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cv-print.css">
 </head>
 <body>
 
 <!-- ============ SEITE 1 ============ -->
 <div class="page">
-  <div class="top">
+  <header class="hero">
     <div>
+      <div class="kicker">Lebenslauf · Stand September 2026</div>
       <h1>Jason Roschmann</h1>
-      <div class="role">KI-Automation-Builder · Web &amp; E-Commerce</div>
-      <div class="tagline">Zusammenhängende KI-/Automations-Systeme, allein gebaut und im Betrieb — vom SaaS-Backend bis zur eigenen Server-Infrastruktur. Ziel: Hamburg oder remote.</div>
+      <div class="title">Junior Softwareentwickler <span>/</span> Software Engineer <span>·</span> KI-Automation</div>
+      <div class="lead">Ich entwickle KI-Automationen – und mache ihr Verhalten überprüfbar.</div>
+      <div class="contact">
+        <span><span class="d">✉</span> <a href="mailto:jason@roschmann-digital.de">jason@roschmann-digital.de</a></span>
+        <span><span class="d">☎</span> +49 155 612 953 91</span>
+        <span><span class="d">⌂</span> Hamburg · remote · Zürich möglich</span>
+        <span><span class="d">in</span> <a href="https://www.linkedin.com/in/jason-roschmann-1091512b2">linkedin.com/in/jason-roschmann-1091512b2</a></span>
+        <span><span class="d">gh</span> <a href="https://github.com/JasonRoschmann">github.com/JasonRoschmann</a></span>
+        <span><span class="d">▸</span> <a href="https://jasonroschmann.github.io/cv/">jasonroschmann.github.io/cv</a></span>
+      </div>
     </div>
-    <div class="contact">
-      <div><span class="lb">✉</span> jason@roschmann-digital.de</div>
-      <div><span class="lb">☎</span> +49 155 612 953 91</div>
-      <div><span class="lb">⌂</span> Hamburg · remote</div>
-      <div><a class="g" href="https://github.com/JasonRoschmann">github.com/JasonRoschmann</a></div>
-      <div><a href="https://www.linkedin.com/in/jason-roschmann-1091512b2">linkedin.com/in/jason-roschmann</a></div>
-      <div><a class="g" href="https://jasonroschmann.github.io/cv">jasonroschmann.github.io/cv</a></div>
+    <div class="photo"><img src="foto.jpg" alt="Porträt Jason Roschmann"></div>
+  </header>
+
+  <div class="snap">
+    <div class="core">
+      <div class="row"><span class="lbl">Kernstack</span><b>Python · FastAPI · TypeScript · React/Next.js · PostgreSQL · Docker</b></div>
+      <div class="row"><span class="lbl">KI &amp; Agenten</span><span>Claude Code · LLM-APIs · MCP · Agenten-Orchestrierung · n8n</span></div>
+      <div class="row"><span class="lbl">Qualität</span><span>pytest · Vitest · Playwright · GitHub Actions · Docker Compose</span></div>
+    </div>
+    <div class="proofs">
+      <div class="pf"><span class="n">50<i>✓</i></span><span class="t">gemergte PRs in Flowki Studio, Teamprojekt</span></div>
+      <div class="pf"><span class="n">21 → <i>0</i></span><span class="t">rote Tests in hermes-studio, zwei Ursachen</span></div>
     </div>
   </div>
 
-  <section>
-    <div class="h">Profil</div>
-    <p class="profil">Ich baue <b>vollständige KI- und Automations-Systeme, die im Betrieb laufen</b> — nicht im Prototyp-Stadium stecken bleiben. Von der Architektur über die Implementierung bis zum Deployment orchestriere ich KI wie ein kleines Team und <b>prüfe jedes Ergebnis selbst gegen echte Endpunkte</b>. Dazu betreibe ich eigene Shopify-Stores mit selbst gebauten Themes. Meine vier Jahre B2B-Direktvertrieb haben mir das Wichtigste beigebracht, das kein Kurs kann: <b>Dinge zu Ende bringen, bis sie live und verifiziert sind.</b></p>
-  </section>
+  <div class="inner">
+    <section>
+      <div class="h">Profil</div>
+      <p class="profil">Ich entwickle <b>KI-Automationen und Webanwendungen mit Python und TypeScript</b>, eigenständig und im Team. Meine Praxis umfasst API-Integration, Hintergrundjobs und <b>gezielte Tests gegen doppelte Aktionen und Datenverlust</b>. KI-Agenten nutze ich für die Umsetzung; Anforderungen und Abnahme meiner Beiträge verantworte ich selbst. Ich suche eine <b>Junior-Rolle in KI-Automation oder Backend-/Fullstack-Entwicklung</b>.</p>
+    </section>
 
-  <section>
-    <div class="h">Ausgewählte Systeme — live oder im Betrieb</div>
-    <div class="sys">
-      <div class="crown">
-        <div class="ct"><h3>Ultra Nexus OS</h3><span class="tag">Meta-System · Kronjuwel</span></div>
-        <p>Die Schicht über allem: ein Kommandozentrum, das meine Arbeit über alle Projekte hinweg orchestriert und automatisiert — bi-temporaler Wissens-Graph als geteiltes Gedächtnis, harte Freigabe-Gates („gate-everything", nichts sendet oder deployt ohne Prüfung). Deshalb liefere ich als Einzelner das Tempo eines kleinen Teams.</p>
-        <div class="stackline">Multi-Agenten-Orchestrierung · Graphiti/FalkorDB · eigene Server-Infrastruktur</div>
+    <section>
+      <div class="h">Ausgewählte Projekte</div>
+
+      <div class="proj">
+        <div class="pt"><h3>Flowki Studio — Clip-Studio</h3><span class="tag">Teamprojekt · Aug.–Sep. 2026</span></div>
+        <div class="what"><em>Zweck</em>Internes Social-Media-Studio: Trends, Plattform-Playbooks, KI-Content-Pipeline. Das Clip-Studio macht aus Langvideos Shorts — mein Schwerpunkt.</div>
+        <ul class="b">
+          <li><b>Speaker-Reframe:</b> Gesichtsposition an mehreren Zeitpunkten gemessen statt einmal, geglättet zu stückweise konstanten 9:16-Keyframes — der Ausschnitt folgt der sprechenden Person.</li>
+          <li><b>Deterministischer Neu-Render</b> nach Korrekturen: append-only Planversionen, jede Planänderung entwertet eine erteilte Freigabe; Render asynchron über Celery, ohne Modellkosten.</li>
+          <li><b>Bis zu drei Schnittvarianten je Clip,</b> höchstens eine je Zielkonto (Datenbank-Constraint); Publikationsrechte unmittelbar vor dem Versand erneut geprüft.</li>
+        </ul>
+        <div class="proof"><span class="ok">✓ 64 PRs in Flowki Studio, 50 gemergt</span><span>Python · FastAPI · Celery · SQLAlchemy · PostgreSQL · Redis · MinIO</span></div>
       </div>
-      <div class="sysgrid">
-        <div class="card">
-          <div class="ct"><h3>flowki-club.de</h3><span class="tag">Live</span></div>
-          <p>Deutschsprachiges KI-Security-Magazin mit Discord-Community und Pro-Tier. Next.js, auf eigener Infrastruktur gehostet, Newsroom-Design. Teamprojekt mit einem Partner.</p>
-          <div class="proof"><b>Live</b>, mit echter Marktanalyse und psychologisch gebautem Funnel.</div>
+
+      <div class="case">
+        <div class="pt"><h3>Fallbeispiel Fehlersuche — hermes-studio</h3><span class="tag">Beitrag zu fremdem Projekt · Sep. 2026</span></div>
+        <div class="steps">
+          <div><span>1 · Ursache</span>21 rote Tests, zwei Ursachen: 20× ein nie geschlossenes SQLite-Handle, das unter Windows das Aufräumen sperrt; 1× ein veralteter Test gegen eine Sicherheitsregel.</div>
+          <div><span>2 · Korrektur</span>Handle geschlossen, Sicherheitsregel behalten, Test korrigiert. Zusätzlich, als eigener Beitrag: stillen Datenverlust im Task-Store behoben, mit fünf neuen Tests.</div>
+          <div><span>3 · Nachweis</span>Mutationsprobe: Eine gezielte Abschwächung der Sicherheitsregel ließ den korrigierten Test scheitern. Suite 177 → 199 grün.</div>
         </div>
-        <div class="card">
-          <div class="ct"><h3>Self-Serve Website-Fabrik</h3><span class="tag">Autonom · WaaS</span></div>
-          <p>Die Maschine baut aus echten Firmendaten eine fertige Vorschau und schaltet per Stripe live — kein Mensch dazwischen.</p>
-          <div class="proof">Ende zu Ende <b>live bewiesen</b>: Abo aktiv, Rechnung bezahlt, Seite automatisch bereitgestellt.</div>
-        </div>
-        <div class="card">
-          <div class="ct"><h3>Bewerbungs-Fabrik</h3><span class="tag">Multi-Agent</span></div>
-          <p>Sourct über Job-Board-APIs (Greenhouse, Lever, Ashby, Bundesagentur für Arbeit), bewertet jede Stelle gegen das Profil, schreibt die Bewerbung, prüft jede Faktenzeile fail-closed gegen die Anzeige und versendet nach Freigabe selbstständig — mit Antwort-Erkennung per IMAP und terminierter Nachfassung.</p>
-          <div class="proof">Seit Juli im Dauerbetrieb auf eigenem Server: <b>1.201 Stellen gesichtet, 31 Bewerbungen und 24 Follow-ups versendet</b>. Die Freigabe bleibt menschlich — raus geht nur, was ich freigebe <i>und</i> was die Live-Verifikation der Anzeige besteht.</div>
-        </div>
-        <div class="card">
-          <div class="ct"><h3>DK · Attar</h3><span class="tag">Luxus-E-Comm</span></div>
-          <p>Shopify-Store für Nischen-Parfum mit kinoreifer Web-Experience, eigenem Theme und reference-locked Produkt-Renderings.</p>
-          <div class="proof">Eigener Store, eigenes Theme, <b>live</b> — Design bis Deployment aus einer Hand.</div>
-        </div>
-        <div class="card">
-          <div class="ct"><h3>PIM Engine</h3><span class="tag">SaaS · Shopify</span></div>
-          <p>Produktdaten-Verwaltung für Shopify-Händler im Mittelstand: Agenten analysieren den Katalog und schlagen Korrekturen vor, der Händler gibt frei, die Engine schreibt <b>atomar mit Rollback-Garantie</b> zurück. FastAPI-Backend, React-Oberfläche, in Deutschland gehostet (Hetzner), DSGVO-konform ohne Tracking.</p>
-          <div class="proof"><b>66 automatisierte Tests, grün in 0,9&nbsp;s.</b> Kein Schreibvorgang ohne menschliche Freigabe — dieselbe Gate-Architektur wie in allen meinen Systemen.</div>
-        </div>
+        <div class="how"><b>So arbeite ich mit KI-Agenten:</b> Fehler zuerst als roter Test · Agent setzt um · ein zweites Modell prüft zusätzlich als Reviewer · Rollout mit Prüfsummen und automatischem Rückbau.</div>
       </div>
-    </div>
-  </section>
+
+      <div class="proj">
+        <div class="pt"><h3>KI-gestützte Bewerbungsverwaltung</h3><span class="tag">Eigenprojekt · seit Juli 2026</span></div>
+        <div class="what"><em>Zweck</em>Python-Pipeline für Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Anschreiben, Prüfungen, Versand und Antwortzuordnung. Schwerpunkt: nachvollziehbare Aktionen.</div>
+        <ul class="b">
+          <li><b>Kanalübergreifendes Hauptbuch für Erstbewerbungen</b> mit Reservierung: keine Doppelbewerbung über Mail und Portal, höchstens eine Bewerbung je Firma in 14 Tagen.</li>
+          <li><b>Blockierende Prüfungen vor dem Versand:</b> unbrauchbare Modellantworten stoppen den Lauf; Modell-Kaskade (Claude, Gemini, Groq) mit Sperrzeiten.</li>
+          <li><b>LLM-Bewertungen gegen blinde Referenzurteile geprüft;</b> eine überarbeitete Analyse nach unvollständiger Messung ohne belegte Verbesserung nicht ausgerollt.</li>
+        </ul>
+        <div class="proof"><span class="ok">✓ 94 Python-Dateien, davon 56 Testdateien</span><span>Rollouts mit Prüfsummen, Tests vor/nach Tausch, automatischer Rückbau</span></div>
+      </div>
+    </section>
+
+  </div>
 
   <div class="foot">
-    <span>Jason Roschmann · KI-Automation-Builder</span>
-    <span><span class="g">▸</span> interaktives CV &amp; Live-Beweise: jasonroschmann.github.io/cv</span>
+    <span>Jason Roschmann · Lebenslauf · Seite 1 von 2</span>
+    <span>Interaktive Fassung: <a href="https://jasonroschmann.github.io/cv/">jasonroschmann.github.io/cv</a></span>
   </div>
 </div>
 
 <!-- ============ SEITE 2 ============ -->
 <div class="page">
-  <section style="margin-top:0">
-    <div class="h">Erfahrung</div>
-    <div class="xp">
-      <div class="yr">2024 — heute</div>
-      <div class="blk">
-        <h4>Automation-Builder · selbstständig</h4>
-        <div class="org">Remote · Kunden und Projekte im DACH-Raum</div>
-        <ul>
-          <li><b>Mehrere Systeme eigenständig entworfen, gebaut und in den Dauerbetrieb überführt</b> — vom FastAPI-Backend über Next.js-Frontends und Shopify-Themes bis zur eigenen Server-Infrastruktur auf Hetzner. Kein Team, kein Agentur-Budget.</li>
-          <li><b>Betrieb statt Prototyp:</b> Dienste laufen per Cron und systemd rund um die Uhr auf eigenen Servern, mit Sperrdateien gegen Überlappung, Logrotation, Zustandsdateien und einem täglichen Statusbericht, der Stillstand meldet, bevor er auffällt.</li>
-          <li><b>Integrationen gegen echte Fremd-APIs:</b> Greenhouse, Lever, Ashby, Bundesagentur für Arbeit, Stripe, SMTP/IMAP, Groq und Google Vertex AI — inklusive Wiederholungslogik mit Backoff, Ratenbegrenzung und Abbruch nach Fehlerserie, damit ein fremder Ausfall nicht die Kette reißt.</li>
-          <li><b>Qualität messbar, nicht behauptet:</b> Testsuiten mit Regressionstests für jeden gefundenen Fehler (u.&nbsp;a. 66 Tests in 0,6&nbsp;s auf dem Produktdaten-Dienst), GitHub-Actions-CI und ein Abnahmeskript mit zwölf Prüfblöcken, das die ausgelieferte Fassung gegen die Live-Quelle prüft.</li>
-          <li><b>Sicherheit als Voreinstellung:</b> Zugangsdaten ausschließlich in Umgebungsdateien außerhalb des Repositories, Freigabe-Gates vor jedem nach außen wirkenden Schritt, nachvollziehbare Protokolle ohne personenbezogene Daten.</li>
-          <li>Kunden-Deliveries für Gründer im DACH-Raum, von der ersten Anforderung bis zum Go-live.</li>
-        </ul>
+  <div class="inner" style="padding-top:10mm">
+    <section style="margin-top:0">
+      <div class="h">Web- &amp; Shop-Entwicklung für Kunden</div>
+      <p class="profil" style="margin-bottom:7px">Websites und Shops für Kunden — Gestaltung, Mehrsprachigkeit, rechtliche Vorgaben, CI und Auslieferung.</p>
+      <div class="sk cap">
+        <div><span class="k">Frontend &amp; Interaktion</span> Next.js, React, TypeScript, GSAP: Hero als Frame-Sequenz, die sich mit dem Mauszeiger dreht (auf dem Handy per Geräteneigung); Vollbild-Kapitel mit eigener Mobile-Bedienung. <i>nk247store.de</i></div>
+        <div><span class="k">Shop &amp; Inhalte</span> Gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, Produktdaten über Metafields. <i>duftkumpels.shop</i></div>
+        <div><span class="k">SEO &amp; E-Mail</span> Search-Console-Auswertung automatisiert, Titel und Metadaten angepasst; Indexierungsstatus von 700 URLs geprüft; Klaviyo-Abbruchmail auf wiederherstellbaren Checkout-Link korrigiert. <i>duftkumpels.shop</i></div>
+        <div><span class="k">Qualität &amp; Auslieferung</span> CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright <i>nk247store.de</i>; wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions <i>duftkumpels.shop</i></div>
+        <div><span class="k">Mehrsprachigkeit</span> Übersetzungs-Pipeline für DE/EN/FR mit HTML-Extraktion, Strukturprüfung und Import per CSV bzw. GraphQL; Produktnamen und Kollektionstexte lokalisiert. <i>duftkumpels.shop</i></div>
+        <div><span class="k">Recht &amp; Inhalte</span> Tabakwerbung nach §&nbsp;19&nbsp;TabakerzG aus allen Motiven entfernt. <i>nk247store.de</i></div>
+        <div><span class="k">KI-Werkzeuge</span> Design-Brief geschrieben, KI-Website-Builder gesteuert und selbst nachgearbeitet: Kamerafahrten aus echten Fotos, Farbkorrektur, Übergänge. <i>Redesign-Entwurf für ein Hamburger Izakaya</i></div>
       </div>
-      <div class="yr amb">2019 — 2023</div>
-      <div class="blk">
-        <h4>B2B-Direktvertrieb (Door-to-Door)</h4>
-        <div class="org">EWE TEL und Ranger Marketing (Vertrieb für Deutsche Telekom) · Außendienst bundesweit</div>
-        <ul>
-          <li><b>Tägliche Kaltakquise mit Entscheidern</b>, Monat für Monat vorn bei den Abschlüssen, Absagen im Minutentakt. Resilienz, die kein Kurs lehrt.</li>
-          <li>Gespräche direkt mit Inhabern und Geschäftsführern — erst das echte Problem verstehen, dann bauen: der Grund, warum meine Software im Betrieb wirklich genutzt wird.</li>
-        </ul>
-      </div>
-      <div class="yr">seit 2024</div>
-      <div class="blk">
-        <h4>Weiterbildung &amp; Autodidaktik</h4>
-        <div class="org">Weiterbildung Web-Entwicklung (2024) · seitdem durchgehend autodidaktisch</div>
-        <ul>
-          <li>Kein Studium, keine abgeschlossene Berufsausbildung. Was ich kann, steht als <b>lauffähiger Code</b> — Repository und Deployment zeige ich im Gespräch.</li>
-          <li><b>Qualität ist Gewohnheit, nicht Anspruch:</b> automatisierte Testsuiten, CI-Gates und ein Abnahmeskript, das jede Auslieferung gegen den Live-Endpunkt prüft und bei Abweichung rot wird.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+      <div class="refs"><span><b>duftkumpels.shop</b> — Projektarbeit seit Juni 2026; Anpassungen im Live-Theme</span><span><b>nk247store.de</b> — Kundenprojekt im Team, meine Überarbeitung noch nicht veröffentlicht</span></div>
+    </section>
 
-  <section>
-    <div class="h">Stack &amp; Verfügbarkeit</div>
-    <div class="cols">
-      <div>
-        <div class="skgrp">
-          <div class="k">KI-Orchestrierung, der Kern</div>
-          <div class="chips"><span class="chip">Claude Code</span><span class="chip">Claude SDK · Opus/Sonnet/Haiku</span><span class="chip">MCP</span><span class="chip">Multi-Agenten-Systeme</span><span class="chip">Prompt-Design</span><span class="chip">spec-driven build &amp; test</span></div>
+    <section>
+      <div class="h">Weitere Projekte</div>
+      <div class="more">
+        <div><b>hermes-brett</b> — Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt; ein Kosten-Gate verhindert, dass das Brett versehentlich einen bezahlten Agentenlauf startet; Deploy mit Rollback; Selbsttest nur mit node:assert.</div>
+        <div><b>Shinobi: Ember Accord</b> — mobiles Idle-RPG (React Native, Skia, Supabase, pgTAP). Agenten-orchestriert: Ein KI-Agent arbeitet im Lead-Modus 50 Rollen ab, die Produktentscheidungen treffe ich.</div>
+        <div><b>Interaktives Web-CV</b> — installierbare PWA ohne Framework: SVG-Displacement, Canvas-Graph, WebGL-Fluidsimulation (adaptiert von PavelDoGreat, MIT).</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="h">Berufserfahrung</div>
+      <div class="xp">
+        <div class="yr">2024 — heute</div>
+        <div>
+          <h4>KI-Automation &amp; Webentwicklung</h4>
+          <div class="org">Eigene Projekte, Team- und Kundenprojekte · Hamburg / remote</div>
+          <ul>
+            <li>Python-Backends und Next.js-Frontends entwickelt, getestet und auf Linux-Servern betrieben (Docker Compose, Cron, Deployment mit Rollback); Shopify-Themes angepasst; im Team über Branches, Pull Requests und gemeinsame Test-Suites.</li>
+          </ul>
         </div>
-        <div class="skgrp">
-          <div class="k">Automation &amp; Daten</div>
-          <div class="chips"><span class="chip">n8n</span><span class="chip">Graphiti + FalkorDB</span><span class="chip">PostgreSQL</span><span class="chip">Firecrawl</span><span class="chip">Playwright</span></div>
-        </div>
-        <div class="skgrp">
-          <div class="k">Web, Code &amp; Infra</div>
-          <div class="chips"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Next.js</span><span class="chip">Shopify Liquid</span><span class="chip">Hetzner · Server/DevOps</span><span class="chip">GitHub</span></div>
-        </div>
-        <div class="skgrp">
-          <div class="k">Creative AI &amp; Media</div>
-          <div class="chips"><span class="chip">Higgsfield · Image/Video</span><span class="chip">Google Vertex AI</span><span class="chip">ElevenLabs · Voice</span><span class="chip">Figma</span></div>
+        <div class="yr amb">2019 — 2023</div>
+        <div>
+          <h4>B2B-Direktvertrieb (Door-to-Door)</h4>
+          <div class="org">EWE TEL · Ranger Marketing · Außendienst bundesweit</div>
+          <ul>
+            <li>Kaltakquise und Bedarfsgespräche direkt mit Inhabern und Geschäftsführern, Verhandlung und Abschluss vor Ort.</li>
+            <li>Täglicher Umgang mit Absagen — und der Blick dafür, welche Probleme ein Betrieb wirklich hat.</li>
+          </ul>
         </div>
       </div>
+    </section>
+
+    <section>
+      <div class="h">Weiterbildung und Projektpraxis</div>
+      <div class="xp">
+        <div class="yr">seit 2024</div>
+        <div>
+          <ul>
+            <li>Weiterbildung Webentwicklung (2024, 6 Monate): HTML, CSS, JavaScript, Web-Architektur</li>
+            <li><a href="https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e" style="border-bottom:1px solid rgba(22,137,79,.4)">Google Ads Search Certification</a> (Skillshop), Dezember 2025 · gültig bis 03.12.2026 · verifizierbar</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="h">Kenntnisse — in Projekten eingesetzt</div>
+      <div class="end">
+        <div class="sk">
+          <div><span class="k">Entwicklung</span> Python, FastAPI · TypeScript, React, Next.js · React Native</div>
+          <div><span class="k">KI &amp; Agenten</span> Claude Code, LLM-APIs (Claude, Gemini, Groq), MCP, Agenten-Orchestrierung, n8n</div>
+          <div><span class="k">Daten &amp; Jobs</span> PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase</div>
+          <div><span class="k">Qualität</span> pytest, Vitest, Playwright, GitHub Actions, Lighthouse-CI</div>
+          <div><span class="k">Betrieb</span> Linux-Server, Docker Compose, Cron, flock, SMTP/IMAP, SPF/DKIM</div>
+          <div><span class="k">Web &amp; Commerce</span> Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL</div>
+        </div>
+        <div class="qr"><img src="qr-cv.svg" alt="QR-Code zum interaktiven Lebenslauf"><b>Interaktive Fassung</b></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="h">Rahmen</div>
       <div class="facts">
-        <div class="frow"><span>Standort</span><b>Hamburg · <span class="g">remote</span></b></div>
-        <div class="frow"><span>Umzug</span><b>für die richtige Rolle, flexibel</b></div>
-        <div class="frow"><span>Start</span><b>sofort</b></div>
-        <div class="frow"><span>Einstellung</span><b>EU-Bürger · keine Formalitäten</b></div>
-        <div class="frow"><span>Deutsch</span><b>Muttersprache</b></div>
-        <div class="frow"><span>Englisch</span><b>B1, wachsend</b></div>
-        <div class="frow"><span>Arbeitsweise</span><b>Beweis statt Behauptung</b></div>
+        <div><span>Standort</span><b>Hamburg · remote</b></div>
+        <div><span>Umzug</span><b>Zürich möglich</b></div>
+        <div><span>Start</span><b>nach Absprache</b></div>
+        <div><span>Deutsch</span><b>Muttersprache</b></div>
+        <div><span>Englisch</span><b>B1, Richtung B2</b></div>
+        <div><span>Polnisch</span><b>mündlich</b></div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <div class="foot">
     <span>Jason Roschmann · jason@roschmann-digital.de · +49 155 612 953 91</span>
-    <span><span class="g">⚙</span> Live-GitHub-Beweis im interaktiven CV</span>
+    <span>Code-Einblick gern im Gespräch</span>
   </div>
 </div>
 

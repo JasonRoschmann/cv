@@ -1,0 +1,119 @@
+:root{
+  --night:#0b0e12; --night2:#121820; --glow:#3fdc84;
+  --paper:#fbfaf6; --card:#ffffff; --ink:#15181d; --ink2:#3a3f48; --mut:#6c717b; --line:#e4e1d8;
+  --acc:#16894f; --acc2:#1fae66; --tint:#eef6f0; --amb:#b86a12;
+  --fd:'Fraunces',Georgia,serif; --fb:'Inter',system-ui,sans-serif; --fm:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+@page{ size:A4; margin:0 }
+html,body{ background:var(--paper); color:var(--ink); font-family:var(--fb); font-size:12px; line-height:1.48;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact; -webkit-font-smoothing:antialiased }
+.page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden }
+.page + .page{ page-break-before:always }
+.inner{ padding:0 15mm }
+a{ color:inherit; text-decoration:none }
+b{ font-weight:600; color:var(--ink) }
+
+/* Kopf: dunkles Band, kompakt */
+.hero{ background:
+    radial-gradient(ellipse 520px 300px at 88% 0%, rgba(63,220,132,.20), transparent 62%),
+    radial-gradient(ellipse 420px 260px at 0% 110%, rgba(63,220,132,.08), transparent 60%),
+    linear-gradient(160deg,var(--night2),var(--night));
+  color:#eceae3; padding:9mm 15mm 8mm; display:grid; grid-template-columns:1fr 29mm; gap:8mm; align-items:center }
+.kicker{ font-family:var(--fm); font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--glow) }
+h1{ font-family:var(--fd); font-weight:700; font-size:40px; line-height:1; letter-spacing:-.025em; margin-top:5px }
+.title{ font-family:var(--fb); font-weight:600; font-size:13.5px; margin-top:7px; color:#fff; letter-spacing:.01em }
+.title span{ color:var(--glow) }
+.lead{ font-family:var(--fd); font-style:italic; font-weight:500; font-size:15.5px; margin-top:5px; color:#dfe9e2; white-space:nowrap }
+.contact{ margin-top:9px; display:flex; flex-wrap:wrap; gap:3px 14px; font-family:var(--fm); font-size:9.9px; color:#c9ccd2 }
+.contact a{ color:#eceae3; border-bottom:1px solid rgba(63,220,132,.45) }
+.contact .d{ color:#6f7682 }
+.photo{ width:29mm; height:36mm; border-radius:9px; overflow:hidden; border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 0 0 3px rgba(63,220,132,.35), 0 12px 30px rgba(0,0,0,.45) }
+.photo img{ width:100%; height:100%; object-fit:cover; object-position:50% 18% }
+
+/* Kernstack + zwei Belege */
+.snap{ display:grid; grid-template-columns:1fr 62mm; background:var(--card); border-bottom:1px solid var(--line) }
+.core{ padding:7px 10px 7px 15mm; display:grid; gap:2px }
+.row{ display:grid; grid-template-columns:25mm 1fr; gap:8px; font-size:11.2px; color:var(--ink2) }
+.row b{ font-weight:600 }
+.lbl{ font-family:var(--fm); font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--mut); padding-top:2px }
+.proofs{ border-left:1px solid var(--line); padding:6px 15mm 6px 11px; display:grid; gap:3px; align-content:center }
+.pf{ display:flex; align-items:baseline; gap:8px }
+.pf .n{ font-family:var(--fd); font-weight:700; font-size:19px; line-height:1.1; min-width:17mm; white-space:nowrap }
+.pf .n i{ font-style:normal; color:var(--acc) }
+.pf .t{ font-size:10px; color:var(--mut); line-height:1.25 }
+
+/* Abschnitte */
+section{ margin-top:10px }
+.h{ font-family:var(--fm); font-size:10px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--acc);
+  display:flex; align-items:center; gap:10px; margin-bottom:7px }
+.h::after{ content:""; flex:1; height:1px; background:var(--line) }
+.profil{ font-size:12.3px; color:var(--ink2); line-height:1.58 }
+
+/* Projekte: Haarlinien statt Karten */
+.proj{ padding:0 0 8px; margin-bottom:8px; border-bottom:1px solid var(--line) }
+.proj:last-child{ border-bottom:0; margin-bottom:0 }
+.pt{ display:flex; justify-content:space-between; align-items:baseline; gap:12px }
+.pt h3{ font-family:var(--fd); font-weight:600; font-size:16px; letter-spacing:-.01em }
+.pt h3 a{ border-bottom:1px solid rgba(22,137,79,.4) }
+.tag{ font-family:var(--fm); font-size:9.3px; letter-spacing:.06em; text-transform:uppercase; color:var(--mut); white-space:nowrap }
+.what{ color:var(--ink2); margin-top:2px; font-size:11.7px }
+.what em{ font-style:normal; font-family:var(--fm); font-size:9.4px; letter-spacing:.08em; text-transform:uppercase; color:var(--acc); margin-right:5px }
+ul.b{ list-style:none; margin-top:4px; display:grid; gap:2px }
+ul.b li{ position:relative; padding-left:13px; color:var(--ink2); font-size:11.4px; line-height:1.42 }
+ul.b li::before{ content:"▸"; position:absolute; left:0; top:0; color:var(--acc2); font-size:10px }
+.proof{ margin-top:5px; display:flex; flex-wrap:wrap; gap:3px 14px; font-family:var(--fm); font-size:9.9px; color:var(--mut) }
+.proof .ok{ color:var(--acc); font-weight:600 }
+
+/* Fallbeispiel: das eine hervorgehobene Element */
+.case{ background:var(--tint); border-left:3px solid var(--acc2); border-radius:0 8px 8px 0; padding:7px 12px 8px; margin-bottom:8px }
+.steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:6px }
+.steps div{ font-size:11px; color:var(--ink2); line-height:1.42 }
+.steps > div > span:first-child{ display:block; font-family:var(--fm); font-size:9.2px; letter-spacing:.12em; text-transform:uppercase; color:var(--acc); margin-bottom:2px }
+.how{ margin-top:7px; padding-top:6px; border-top:1px dashed #cfe3d5; font-size:10.8px; color:var(--ink2) }
+.how b{ color:var(--acc) }
+/* Listen in den Fallstudien-Spalten (Marketing-Fassung) */
+.steps ul.b{ margin-top:1px; gap:3px }
+.steps ul.b li{ font-size:10.7px; line-height:1.4 }
+/* Marker in Textgröße: sonst liegt er auf eigener Grundlinie und Poppler reiht die ersten Zeilen hinter die Spalten */
+.steps ul.b li::before{ font-size:inherit }
+
+/* Kenntnisse / Fähigkeiten: Beschriftung läuft in den Inhalt ein (ein Textabsatz -> ATS-Reihenfolge stimmt) */
+.sk{ display:grid; gap:3px; font-size:11.4px; color:var(--ink2) }
+/* gleiche Schrift und Größe wie der Inhalt: sonst stellt Poppler-pdftotext die erste Beschriftung hinter den Block */
+.sk .k{ font-weight:600; color:var(--acc); margin-right:4px }
+.sk i{ font-style:normal; color:var(--mut) }
+.cap{ gap:4px }
+.refs{ margin-top:7px; font-family:var(--fm); font-size:9.8px; color:var(--mut); display:flex; flex-wrap:wrap; gap:3px 16px }
+.refs b{ color:var(--acc); font-weight:600 }
+
+/* Seite 2 */
+.more{ display:grid; gap:5px }
+.more div{ color:var(--ink2); font-size:11.4px; padding-left:13px; position:relative }
+.more div::before{ content:"◆"; position:absolute; left:0; top:1px; color:var(--acc2); font-size:8px }
+.xp{ display:grid; grid-template-columns:27mm 1fr; gap:6px 12px }
+.yr{ font-family:var(--fm); font-size:10.4px; color:var(--acc); padding-top:3px }
+.yr.amb{ color:var(--amb) }
+.xp h4{ font-family:var(--fd); font-weight:600; font-size:14.5px }
+.org{ font-family:var(--fm); font-size:10px; color:var(--mut); margin:1px 0 3px }
+.xp ul{ list-style:none; display:grid; gap:1px; margin-bottom:4px }
+.xp li{ position:relative; padding-left:13px; color:var(--ink2); font-size:11.4px }
+.xp li::before{ content:"▸"; position:absolute; left:0; color:var(--acc2); font-size:10px }
+.end{ display:grid; grid-template-columns:1fr 30mm; gap:8mm; align-items:center }
+.facts{ display:grid; grid-template-columns:repeat(6,1fr); background:var(--card); border:1px solid var(--line); border-radius:8px }
+.facts div{ padding:6px 8px; border-left:1px solid var(--line); font-size:10.8px; line-height:1.3; white-space:nowrap }
+.facts div:first-child{ border-left:0 }
+.facts span{ display:block; font-family:var(--fm); font-size:9px; letter-spacing:.05em; text-transform:uppercase; color:var(--mut); margin-bottom:2px }
+.qr{ text-align:center; font-family:var(--fm); font-size:9px; color:var(--mut); line-height:1.35 }
+.qr img{ width:24mm; height:24mm; display:block; margin:0 auto 4px }
+.qr b{ color:var(--acc); font-weight:600 }
+
+.foot{ position:absolute; left:15mm; right:15mm; bottom:7mm; display:flex; justify-content:space-between;
+  font-family:var(--fm); font-size:9.4px; color:var(--mut); border-top:1px solid var(--line); padding-top:6px }
+.foot a{ color:var(--acc) }
+/* Bindestrich-Komposita nicht am Zeilenende trennen: Poppler zieht sie sonst zusammen (E-MailFlows) */
+.nw{ white-space:nowrap }
+/* Belegmappe: Code-Ausschnitt als Beleg */
+.code{ font-family:var(--fm); font-size:9px; color:var(--ink2); background:var(--card); border:1px solid #cfe3d5; border-radius:6px; padding:5px 8px; margin-top:6px; overflow-wrap:anywhere }
+.steps code{ font-family:var(--fm); font-size:.92em; color:var(--acc) }

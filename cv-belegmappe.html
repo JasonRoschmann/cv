@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Jason Roschmann — Belegmappe E-Commerce &amp; Technical SEO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cv-print.css">
+</head>
+<body>
+
+<!-- ============ SEITE 1 ============ -->
+<div class="page">
+  <header class="hero">
+    <div>
+      <div class="kicker">Belegmappe · Anlage zum Lebenslauf · September 2026</div>
+      <h1>Jason Roschmann</h1>
+      <div class="title">Drei Fälle aus dem Shop-Alltag<br><span style="color:#c9ccd2;font-weight:500">E-Commerce &amp; Technical SEO · duftkumpels.shop</span></div>
+      <div class="lead" style="white-space:normal">Befund am echten System prüfen, gezielt ändern, das Ergebnis zurücklesen oder messen.</div>
+      <div class="contact">
+        <span><span class="d">✉</span> <a href="mailto:jason@roschmann-digital.de">jason@roschmann-digital.de</a></span>
+        <span><span class="d">☎</span> +49 155 612 953 91</span>
+        <span><span class="d">▸</span> <a href="https://jasonroschmann.github.io/cv/">jasonroschmann.github.io/cv</a></span>
+      </div>
+    </div>
+    <div class="photo"><img src="foto.jpg" alt="Porträt Jason Roschmann"></div>
+  </header>
+
+  <div class="inner">
+    <section>
+      <div class="h">Worum es geht</div>
+      <p class="profil">duftkumpels.shop ist der Shopify-Shop einer Hamburger Nischen-Parfümerie in drei Sprachen; ich arbeite dort seit Juni 2026 an Theme, SEO, Mehrsprachigkeit, Produktdaten, E-Mail-Flows und Messung. Die drei Fälle zeigen, wie ich vorgehe — und was jeweils offen bleibt. <b>Umsatz- und Kundenzahlen des Shops gebe ich nicht weiter.</b></p>
+    </section>
+
+    <section>
+      <div class="case">
+        <div class="pt"><h3>Fall 1 · Verfügbarkeitsaussagen passten nicht zum Bestand</h3><span class="tag">SEO-Daten · Aug. 2026</span></div>
+        <div class="steps">
+          <div><span>Befund</span>Zwei Produktbeschreibungen für die Suche versprachen Ware „auf Lager“: Ein Produkt war ausverkauft, beim anderen war eine der genannten Größen nicht kaufbar. Solche Sätze veralten still bei jedem Bestandswechsel — und führen zu enttäuschten Klicks.</div>
+          <div><span>Mein Beitrag</span>Ein Python-Werkzeug, das über die Shopify-Admin-GraphQL-API jede aktive Beschreibung mit den kaufbaren Varianten abgleicht: Lagerbehauptung ohne kaufbare Variante oder genannte Größen, die nicht alle kaufbar sind. Korrigiert wird nur der Verfügbarkeitsteil; der übrige Text bleibt beim Kunden.</div>
+          <div><span>Geprüft</span>Zwei Beschreibungen korrigiert. Vorher werden die alten Werte gesichert; nach dem Schreiben liest das Werkzeug zurück und bricht bei Abweichung ab. Folgeschritt: nicht lieferbare Produkte auf Wissensseiten gekennzeichnet, verfügbare Alternativen eingeblendet.</div>
+        </div>
+        <div class="how"><b>Entscheidung:</b> Bei ausverkauften Produkten entfernt das Werkzeug die Aussage, statt „ausverkauft“ zu schreiben — der Bestand wechselt wieder, und die Verfügbarkeit meldet ohnehin das Produkt-Schema. <b>Rahmen:</b> erkennt nur ausdrückliche Lager-Formulierungen; die Wirkung auf die Klickrate habe ich nicht gemessen.</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="case">
+        <div class="pt"><h3>Fall 2 · Die Abbruchmail stellte den Checkout nicht wieder her</h3><span class="tag">E-Mail-Automation · Sep. 2026</span></div>
+        <div class="steps">
+          <div><span>Befund</span>Der einzige Knopf der <span class="nw">Klaviyo-Abbruchmail</span> zeigte fest auf <code>/cart</code> — den Warenkorb des Browsers, in dem die Mail geöffnet wird. Beim Gerätewechsel wird der abgebrochene Checkout dadurch nicht wiederhergestellt; ein leerer Warenkorb ist möglich.</div>
+          <div><span>Mein Beitrag</span>Der Flow startet mit Shopifys Ereignis „Checkout Started“, und dieses liefert den wiederherstellbaren Kassenlink mit. Den Knopf darauf umgestellt, <code>/cart</code> bleibt als Rückfall; Text und Gestaltung unverändert.</div>
+          <div><span>Geprüft</span>Das direkte Aktualisieren der flowgebundenen Vorlage scheiterte am verwendeten API-Endpunkt: Vorlage geklont, geändert, dem Flow zugewiesen, die live hängende Fassung danach mit dem neuen Link geprüft; der alte Stand ist gesichert.</div>
+        </div>
+        <div class="code">{% if event.extra.checkout_url %}{{ event.extra.checkout_url }}{% else %}https://duftkumpels.shop/cart{% endif %}</div>
+        <div class="how"><b>Im selben Durchgang:</b> Beim Browse-Abandonment-Flow die automatische Ergänzung von Tracking-Parametern aktiviert, damit Zugriffe dem E-Mail-Kanal zugeordnet werden können. <b>Rahmen:</b> Wiederhergestellte Bestellungen habe ich nicht gemessen; selten ausgelöste Flows waren in diesem Durchgang nicht vollständig geprüft.</div>
+      </div>
+    </section>
+  </div>
+
+  <div class="foot">
+    <span>Jason Roschmann · Belegmappe · Seite 1 von 2</span>
+    <span>Lebenslauf und Kompetenz-Atlas: <a href="https://jasonroschmann.github.io/cv/">jasonroschmann.github.io/cv</a></span>
+  </div>
+</div>
+
+<!-- ============ SEITE 2 ============ -->
+<div class="page">
+  <div class="inner" style="padding-top:10mm">
+    <section style="margin-top:0">
+      <div class="case">
+        <div class="pt"><h3>Fall 3 · Gegenprobe — auch gegen die eigene Erklärung</h3><span class="tag">Gegenprobe · Aug. 2026</span></div>
+        <div class="steps" style="grid-template-columns:1fr;gap:7px">
+          <div><span>a · KI-Audit meldete fehlende Grundpreise</span>Ein KI-Agent meldete im Shop-Audit fehlende Grundpreisangaben. Statt nachzubessern, habe ich das Grundpreis-Maß aller aktiven Varianten per Admin-GraphQL abgefragt: <b>102 von 103 Varianten</b> hatten eines — die eine ohne ist ein Platzhalter für 0&nbsp;€ ohne Verkaufsangebot. Zusätzlich auf einer Produktseite geprüft, dass der Grundpreis tatsächlich angezeigt wird. <b>Befund widerlegt, nichts geändert.</b></div>
+          <div><span>b · Ein Preload sollte das Laden beschleunigen</span>Eine eigene Stylesheet-Datei blockierte laut Lighthouse das Rendern der Produktseite; ich stellte sie per Skript mit Sicherung auf Preload um. <b>Nach der Umstellung lagen die Lighthouse-Werte in fünf von sechs dokumentierten Läufen schlechter</b> als bei der Ausgangsmessung. Ich nahm die Änderung zurück und stellte die Theme-Datei byte-identisch wieder her. Eine spätere Gegenprüfung korrigierte meine erste Erklärung: Der weiterhin vorhandene Preload-Header stammte aus Shopifys automatischer Ausgabe, nicht aus einem Cache-Rest. Ein belastbarer Kausalnachweis für die Verschlechterung blieb offen.</div>
+        </div>
+        <div class="how"><b>Rahmen:</b> Die Performance-Werte sind Labormessungen (Lighthouse, mobil, simuliert) auf einer Produktseite, keine Felddaten.</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="h">Was die Fälle über meine Arbeitsweise zeigen</div>
+      <ul class="b">
+        <li><b>Befunde prüfe ich an der Quelle</b> — an Produktdaten, gerenderter Ausgabe und Vorlagen, auch wenn der Befund von einem KI-Agenten stammt.</li>
+        <li><b>Änderungen am Live-System nur mit Sicherung, Rücklesen und Weg zurück.</b> Korrigiert wird der fehlerhafte Teil, nicht der ganze Text des Kunden.</li>
+        <li><b>Ich messe vorher und nachher</b> — und nehme eine Änderung zurück, wenn die Messung gegen sie spricht.</li>
+        <li><b>Auch eigene Erklärungen prüfe ich nach</b> und korrigiere sie, wenn die Belege dagegen sprechen.</li>
+        <li><b>Ich trenne Umsetzung von Wirkung:</b> Was ich nicht gemessen habe, behaupte ich nicht.</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="h">Eingesetzt in diesen Fällen</div>
+      <div class="sk">
+        <div><span class="k">Shop &amp; Daten</span> Shopify Admin GraphQL API, Liquid, Produktvarianten und Metafelder, Produkt-Schema</div>
+        <div><span class="k">E-Mail &amp; Messung</span> Klaviyo-Flows und -Vorlagen, Tracking-Parameter, GA4, Lighthouse</div>
+        <div><span class="k">Werkzeuge</span> Python-Skripte mit Vorschau, Sicherung und Rücklesen; Git für jeden Schritt</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="h">Weiter im Gespräch</div>
+      <p class="profil">Die Arbeit liegt in einem privaten Repository mit Kundendaten. Bereinigte Auszüge — Skripte, Vorher-nachher-Stände und Messprotokolle — zeige ich gern im Gespräch. Weitere Fälle, auch aus der Softwareentwicklung, stehen im Kompetenz-Atlas des Web-Lebenslaufs.</p>
+    </section>
+  </div>
+
+  <div class="foot">
+    <span>Jason Roschmann · jason@roschmann-digital.de · +49 155 612 953 91</span>
+    <span>Seite 2 von 2</span>
+  </div>
+</div>
+
+</body>
+</html>

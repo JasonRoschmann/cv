@@ -1,57 +1,92 @@
 # Jason Roschmann
 
-KI-Automation-Engineer · Junior / Quereinstieg
+Junior Softwareentwickler / Software Engineer · KI-Automation
+
+Ich entwickle KI-Automationen – und mache ihr Verhalten überprüfbar.
 
 E-Mail: jason@roschmann-digital.de | Telefon: +49 155 612 953 91\
-LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | Web-CV: jasonroschmann.github.io/cv\
-Wohnort: Hamburg, Deutschland | Gesucht: remote oder Hamburg; für die richtige Rolle Umzug möglich (auch Zürich)\
-EU-Bürger — für eine Anstellung in der Schweiz ist die Aufenthaltsbewilligung B eine 14-Tage-Anmeldung, ohne Kontingent und ohne Verfahren für den Arbeitgeber
+LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | GitHub: github.com/JasonRoschmann | Web-CV: jasonroschmann.github.io/cv\
+Wohnort: Hamburg, Deutschland | Gesucht: Hamburg oder remote; Umzug nach Zürich für eine passende Rolle möglich | Start nach Absprache
+
+Kernstack: Python, FastAPI, TypeScript, React/Next.js, PostgreSQL, Docker
 
 ## Profil
 
-Seit 2024 konzipiere und baue ich eigenständig KI-gestützte Automatisierungs- und Softwaresysteme — vom FastAPI-Backend mit eigener Testabdeckung bis zur Server-Infrastruktur auf Hetzner. Ich verantworte Spezifikation, Architektur, Tests und Deployment selbst; die Implementierung orchestriere ich über Claude Code. Das Urteil bleibt bei mir. Vier Jahre B2B-Direktvertrieb davor sind der Grund, warum ich zuerst das echte Problem verstehe und dann baue. Ich suche eine technische Einstiegs- oder Junior-Rolle, in der ich Automatisierungs- und KI-Systeme baue und mich fachlich weiterentwickle — die Junior-Stufe ist bewusst gewählt.
+Ich entwickle KI-Automationen und Webanwendungen mit Python und TypeScript, eigenständig und im Team. Meine Praxis umfasst API-Integration, Hintergrundjobs und gezielte Tests gegen doppelte Aktionen und Datenverlust. KI-Agenten nutze ich für die Umsetzung; Anforderungen und Abnahme meiner Beiträge verantworte ich selbst. Ich suche eine Junior-Rolle in KI-Automation oder Backend-/Fullstack-Entwicklung.
 
-## Eigenständig gebaute Systeme
+## Projekte
 
-### KI-Automation-Builder, selbstständig
-**2024 – heute | Hamburg, remote**
+### Flowki Studio — Clip-Studio (Teamprojekt, Aug.–Sep. 2026)
 
-- **pim-engine** — Produktdaten-Service für Shopify (Python, FastAPI, Shopify Admin API): 21 von 21 Commits von mir, 66 Tests laufen in unter einer Sekunde grün, CI eingerichtet. Leitidee der Architektur: ein LLM darf niemals ein LLM benoten — bewertet wird gegen hinterlegte Fakten, nicht gegen eine zweite Modellmeinung.
-- **NarutoIdle** — Spiel-Engine als TypeScript-Monorepo: 378 von 378 Commits von mir, 858 Tests grün in 157 Sekunden, CI läuft ohne ein einziges Secret. Entstanden mit Claude Code als Pair-Programmer, bei durchgehend eigener Architektur- und QA-Verantwortung.
-- **hermes-brett** — Werkzeug zur Arbeitsorganisation: 39 von 39 Commits von mir, Selbsttest mit 383 Zusicherungen, läuft ohne npm install und ohne Build-Schritt.
-- **Multi-Agenten-Anlagen** auf eigener Linux-Infrastruktur (Hetzner): mehrere spezialisierte Agenten-Rollen für Recherche, Faktenprüfung und Inhalte, mit Freigabe-Gates vor jeder Außenwirkung, Heartbeats, Fehler-Alarmen und Kill-Switch. Die eigene Prüf-Schicht hat ein reales Secret-Leck und fehlerhafte Deployments abgefangen, bevor sie live gingen. Agentische Systeme scheitern selten am Happy Path, sondern an der Kontrolle.
-- **Web- und Commerce-Arbeit:** duftkumpels.shop ist live — Theme-Anpassung, Automatisierung und Optimierung auf gekaufter Theme-Basis (Prestige), zweisprachig DE/EN, Custom-Metafields, Conversion- und SEO-Arbeit. Search Console über 28 Tage: 545 statt 505 Klicks, 16.768 statt 14.193 Impressionen — das ist Sichtbarkeit, kein Umsatzbeleg.
-- **nk247store.de** — bezahltes Kundenprojekt, live, Startseite antwortet in rund 0,2 Sekunden. Das Repository bleibt privat, es ist Eigentum des Kunden.
-- **Interaktives Web-CV** als installierbare Progressive Web App, eine einzige HTML-Datei ohne Framework: SVG-Displacement-Filter, interaktiver Canvas-Graph und eine WebGL-Fluidsimulation, portiert aus PavelDoGreat/WebGL-Fluid-Simulation (MIT) und auf eigene Brand-Logik umgebaut.
+Zweck: Internes Social-Media-Studio mit Trends, Plattform-Playbooks und KI-Content-Pipeline. Das Clip-Studio macht aus Langvideos Shorts — mein Schwerpunkt. 64 Pull Requests in Flowki Studio, davon 50 gemergt.
 
-Code-Einblick zu den privaten Repositories gerne auf Anfrage oder direkt im Gespräch am Bildschirm.
+- Speaker-Reframe: Gesichtsposition an mehreren Zeitpunkten gemessen statt einmal, geglättet zu stückweise konstanten 9:16-Keyframes — der Ausschnitt folgt der sprechenden Person.
+- Deterministischer Neu-Render nach Korrekturen: append-only Planversionen, jede Planänderung entwertet eine erteilte Freigabe; Render asynchron über Celery, ohne Modellkosten.
+- Bis zu drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint); Publikationsrechte unmittelbar vor dem Versand erneut geprüft.
+- Stack: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, MinIO, Next.js
+
+### Fallbeispiel Fehlersuche — hermes-studio (Beitrag zu fremdem Projekt, Sep. 2026)
+
+- Ursache: 21 rote Tests, zwei Ursachen — 20× ein nie geschlossenes SQLite-Handle, das unter Windows das Aufräumen sperrt; 1× ein veralteter Test gegen eine Sicherheitsregel.
+- Korrektur: Handle geschlossen, Sicherheitsregel behalten, Test korrigiert. Zusätzlich, als eigener Beitrag: stillen Datenverlust im Task-Store behoben, mit fünf neuen Tests.
+- Nachweis: Mutationsprobe — eine gezielte Abschwächung der Sicherheitsregel ließ den korrigierten Test scheitern. Test-Suite von 177 auf 199 grüne Tests.
+- So arbeite ich mit KI-Agenten: Fehler zuerst als roter Test, Agent setzt um, ein zweites Modell prüft zusätzlich als Reviewer, Rollout mit Prüfsummen und automatischem Rückbau.
+
+### KI-gestützte Bewerbungsverwaltung (Eigenprojekt, seit Juli 2026)
+
+Zweck: Python-Pipeline für Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Anschreiben, Prüfungen, Versand und Antwortzuordnung. Schwerpunkt: nachvollziehbare Aktionen. 94 Python-Dateien, davon 56 Testdateien.
+
+- Kanalübergreifendes Hauptbuch für Erstbewerbungen mit Reservierung: keine Doppelbewerbung über Mail und Portal, höchstens eine Bewerbung je Firma in 14 Tagen.
+- Blockierende Prüfungen vor dem Versand: unbrauchbare Modellantworten stoppen den Lauf; Modell-Kaskade (Claude, Gemini, Groq) mit Sperrzeiten.
+- LLM-Bewertungen gegen blinde Referenzurteile geprüft; eine überarbeitete Analyse nach unvollständiger Messung ohne belegte Verbesserung nicht ausgerollt.
+- Rollouts mit Prüfsummen, Tests vor und nach dem Tausch und automatischem Rückbau.
+
+## Web- & Shop-Entwicklung für Kunden
+
+Websites und Shops für Kunden — Gestaltung, Mehrsprachigkeit, rechtliche Vorgaben, CI und Auslieferung.
+
+- Frontend & Interaktion: Next.js, React, TypeScript, GSAP — Hero als Frame-Sequenz, die sich mit dem Mauszeiger dreht (mobil per Geräteneigung); Vollbild-Kapitel mit Mobile-Bedienung (nk247store.de).
+- Shop & Inhalte: gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, Produktdaten über Metafields (duftkumpels.shop).
+- SEO & E-Mail: Search-Console-Auswertung automatisiert, Titel und Metadaten angepasst; 700 URLs auf Indexierung geprüft; Klaviyo-Abbruchmail auf wiederherstellbaren Checkout-Link korrigiert (duftkumpels.shop).
+- Qualität & Auslieferung: CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright (nk247store.de); wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions (duftkumpels.shop).
+- Mehrsprachigkeit: Übersetzungs-Pipeline für DE/EN/FR mit HTML-Extraktion, Strukturprüfung und Import per CSV bzw. GraphQL; Produktnamen und Kollektionstexte lokalisiert (duftkumpels.shop).
+- Recht & Inhalte: Tabakwerbung nach § 19 TabakerzG aus allen Motiven entfernt (nk247store.de).
+- KI-Werkzeuge: Design-Brief geschrieben, KI-Website-Builder gesteuert und selbst nachgearbeitet — Kamerafahrten aus echten Fotos, Farbkorrektur, Übergänge (Redesign-Entwurf für ein Hamburger Izakaya).
+- Referenzen: duftkumpels.shop — Projektarbeit seit Juni 2026, Anpassungen im Live-Theme; nk247store.de — Kundenprojekt im Team, meine Überarbeitung noch nicht veröffentlicht.
+
+## Weitere Projekte
+
+- hermes-brett: Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt; ein Kosten-Gate verhindert, dass das Brett versehentlich einen bezahlten Agentenlauf startet; Deploy mit Rollback; Selbsttest nur mit node:assert.
+- Shinobi: Ember Accord — mobiles Idle-RPG (React Native, Skia, Supabase, pgTAP). Agenten-orchestriert: Ein KI-Agent arbeitet im Lead-Modus 50 Rollen ab, die Produktentscheidungen treffe ich.
+- Interaktives Web-CV — installierbare PWA ohne Framework: SVG-Displacement, Canvas, WebGL-Fluidsimulation (adaptiert, MIT-Lizenz).
+
+## Berufserfahrung
+
+### KI-Automation & Webentwicklung
+**2024 – heute | Eigene Projekte, Team- und Kundenprojekte | Hamburg / remote**
+
+- Python-Backends und Next.js-Frontends entwickelt, getestet und auf Linux-Servern betrieben (Docker Compose, Cron, Deployment mit Rollback); Shopify-Themes angepasst; im Team über Branches, Pull Requests und gemeinsame Test-Suites.
 
 ### B2B-Direktvertrieb (Door-to-Door)
-**2019 – 2023 | EWE TEL und Ranger Marketing (Vertriebspartner), bundesweiter Außendienst**
+**2019 – 2023 | EWE TEL, Ranger Marketing | Außendienst bundesweit**
 
-- Tägliche Kaltakquise bei Entscheidern, über 200 Vertragsabschlüsse pro Monat.
-- Verhandlungen direkt mit Inhabern und Geschäftsführern.
-- Absagen im Minutentakt — daher ein realistischer Umgang mit Widerstand und ein Gespür dafür, welche Probleme im Betrieb wirklich gelöst werden müssen.
+- Kaltakquise und Bedarfsgespräche mit Inhabern und Geschäftsführern, Verhandlung und Abschluss vor Ort.
+- Täglicher Umgang mit Absagen — und der Blick dafür, welche Probleme ein Betrieb wirklich hat.
 
-## Kompetenzen
+## Weiterbildung und Projektpraxis
 
-**KI & Automatisierung:** Claude Code / Claude SDK, MCP, Multi-Agenten-Architekturen, Freigabe-Gates und Verifikations-Schichten, spezifikationsgetriebene Entwicklung, Prompt-Design, n8n
-
-**Technischer Stack:** Python, FastAPI, TypeScript, Next.js, PostgreSQL, Playwright, Docker, Linux-Server (Hetzner), Git/CI
-
-**E-Commerce:** Shopify Liquid und Theme-Anpassung, Custom-Metafields, technisches SEO, Conversion-Optimierung, Google Ads (Search, Performance Max)
-
-**Aus dem Vertrieb:** Kundengespräche auf Entscheiderebene, Bedarfsanalyse, Einwandbehandlung — hier als Kommunikationsstärke, nicht als Zielrolle
-
-## Ausbildung & Weiterbildung
-
-- Kein Hochschulabschluss und keine abgeschlossene Berufsausbildung. Der Nachweis meiner Arbeit sind die oben genannten Systeme.
 - Weiterbildung Webentwicklung, 2024 (6 Monate): HTML, CSS, JavaScript, Web-Architektur
-- Google Ads Skillshop, Januar 2026: Search, Performance Max
-- Autodidaktische Weiterbildung, laufend seit 2024: Python, KI-Systeme, Softwarearchitektur
+- Google Ads Search Certification (Skillshop), Dezember 2025, gültig bis 03.12.2026 – verifizierbar: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
+
+## Kenntnisse (in Projekten eingesetzt)
+
+- Entwicklung: Python, FastAPI, TypeScript, React, Next.js, React Native
+- KI & Agenten: Claude Code, LLM-APIs (Claude, Gemini, Groq), MCP, Agenten-Orchestrierung, n8n
+- Daten & Jobs: PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase
+- Qualität: pytest, Vitest, Playwright, GitHub Actions, Lighthouse-CI
+- Betrieb: Linux-Server, Docker Compose, Cron, flock, SMTP/IMAP, SPF/DKIM
+- Web & Commerce: Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL
 
 ## Sprachen
 
-- Deutsch: Muttersprache
-- Englisch: B1, im Ausbau Richtung B2 — im technischen Alltag arbeite ich auf Englisch
-- Polnisch: Alltagssicher (mündlich)
+- Deutsch: Muttersprache · Englisch: B1, Richtung B2 · Polnisch: mündlich
