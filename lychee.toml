@@ -1,0 +1,14 @@
+# Linkprüfung (qualitaet.yml): Web-CV, Druck- und ATS-Quellen, README
+max_retries = 3
+retry_wait_time = 5
+timeout = 20
+accept = ["200..=299", "429"]
+exclude = [
+  '^https://www\.linkedin\.com/',                     # sperrt automatisierte Abrufe (Status 999)
+  '^https://www\.credential\.net/',                   # sperrt automatisierte Abrufe
+  '^https://fonts\.(googleapis|gstatic)\.com/?$',     # nur Preconnect-Hosts, keine Links
+  '^http://www\.w3\.org/2000/svg$',                   # XML-Namensraum
+  '^https://schema\.org/?$',                          # JSON-LD-Kontext
+  '\{%',                                              # Liquid-Codebeispiel in der Belegmappe
+  '^https://github\.com/JasonRoschmann/cv/actions/',  # Workflow-Badge, erst nach dem Merge vorhanden
+]
