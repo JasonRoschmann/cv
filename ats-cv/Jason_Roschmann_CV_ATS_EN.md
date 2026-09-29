@@ -1,92 +1,92 @@
 # Jason Roschmann
 
-Junior Software Engineer · AI Automation
-
-I build AI automations – and make their behaviour verifiable.
+Junior Software Engineer · Python · TypeScript · AI automation
 
 Email: jason@roschmann-digital.de | Phone: +49 155 612 953 91\
 LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | GitHub: github.com/JasonRoschmann | Web CV: jasonroschmann.github.io/cv\
 Location: Hamburg, Germany | Looking for: Hamburg or remote; relocation to Zurich possible for the right role | Start date by arrangement
 
-Core stack: Python, FastAPI, TypeScript, React/Next.js, PostgreSQL, Docker
-
 ## Profile
 
-I build AI automations and web applications with Python and TypeScript, on my own and in a team. My experience includes API integration, background jobs and targeted tests against duplicate actions and data loss. I use AI agents for implementation; I define the requirements for my contributions and verify that they are met. I am looking for a junior role in AI automation or backend/full-stack development.
+I build web interfaces and Python workflows for practical tasks in content production, e-commerce and community management. I focus on connecting frontend and backend, making workflow states traceable and testing failure cases. I use AI agents while taking responsibility for requirements and acceptance testing. Four years in sales taught me to understand customer needs through direct conversation.
+
+Key figures: 50 of my pull requests merged (Flowki Studio, team project) · 21 → 0 failing tests, two root causes fixed (hermes-studio) · about 66 Discord members, FlowKI Club (as of 29 Sep 2026) · 4 years of B2B sales with daily customer contact (2019–2023)
 
 ## Projects
 
-### Flowki Studio — Clip Studio (team project, Aug–Sep 2026)
+### Flowki Studio — internal social media studio, team project (Aug 2026 – present)
 
-Purpose: internal social media studio with trends, platform playbooks and an AI content pipeline. The clip studio turns long videos into shorts — my focus. 64 pull requests in Flowki Studio, 50 of them merged.
+Purpose: Internal social media studio for topic research, AI-assisted content production, editorial review and handover to platforms; my contribution in the team: product interfaces, workflow integration, clip processing and publishing.
 
-- Speaker reframe: face position measured at several points in time instead of once, smoothed into piecewise-constant 9:16 keyframes — the crop follows the person speaking.
-- Deterministic re-render after corrections: append-only plan versions, every plan change invalidates a previously granted approval; rendering runs asynchronously on Celery, without model costs.
-- Up to three cut variants per clip, at most one per target account (database constraint); publishing rights re-checked immediately before sending.
-- Stack: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, MinIO, Next.js
+- Product interface: Further developed the production, approval and publishing views – made processing states, phase durations and required user actions visible.
+- Editorial collaboration: Connected rejection reasons across the interface, API client and approval log – returns for revision now carry a traceable reason.
+- Error handling: Separated successful production or licensing from subsequent status and assignment errors – removed misleading error messages and incentives for repeated, cost-incurring calls.
+- Video processing: Implemented speaker-focused reframing, alternative edits and reproducible re-rendering after corrections – long videos become editable vertical clips.
+- Publishing: Integrated the TikTok draft path with its own status and user notice – uploaded drafts are clearly distinguished from published posts.
+- Quality assurance: Reproduced failure cases first and validated fixes with targeted tests.
 
-### Debugging case study — hermes-studio (contribution to a third-party project, Sep 2026)
+Tools: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, Next.js, TypeScript
 
-- Cause: 21 failing tests, two root causes — 20× an SQLite handle that was never closed and blocks cleanup on Windows; 1× an outdated test against a security rule.
-- Fix: handle closed, security rule kept, test corrected. In a separate contribution, I fixed silent data loss in the task store and added five tests.
-- Evidence: mutation test — deliberately weakening the security rule made the corrected test fail. Test suite from 177 to 199 passing tests.
-- How I work with AI agents: every bug first as a failing test, the agent implements, a second model provides an additional review, rollout with checksums and automatic rollback.
+### FlowKI Club — Co-founder, website, Discord bot, newsletter (Apr 2026 – present)
 
-### AI-assisted job application management (personal project, since July 2026)
+Purpose: German-speaking AI community – about 66 members (Discord, as of 29 Sep 2026) – with articles, online calls and joint project work; I combine community work with technical product development.
 
-Purpose: Python pipeline for job search via job board APIs (including the German Federal Employment Agency, Greenhouse, Lever), cover letters, checks, sending and reply matching. Focus: traceable actions. 94 Python files, 56 of them test files.
+- Community tools: Extended the Discord bot with /ask and self-service topic roles; updated discord.js and test tooling.
+- AI answer quality: Connected article content as the knowledge base of the FAQ bot and added a relevance check – tested how the bot handles irrelevant matches.
+- Website & newsletter: Newsletter with double opt-in and referral links, Plausible events for sign-ups and clicks on Discord invite links; author, FAQ and HowTo markup in the article output.
+- Community: Helped new members get started, organised and moderated online calls, supported members with their projects.
 
-- Cross-channel ledger for first applications with reservations: no duplicate application across email and portal, at most one application per company within 14 days.
-- Blocking checks before sending: unusable model output stops the run; model cascade (Claude, Gemini, Groq) with cool-down periods.
-- Checked LLM ratings against blind reference judgements; did not roll out a revised analysis after an incomplete measurement showed no proven improvement.
-- Rollouts with checksums, tests before and after the swap, and automatic rollback.
+Tools: TypeScript, discord.js, Claude API, PostgreSQL, Vitest, Next.js
 
-## Web & shop development for clients
+### hermes-studio — contribution to a third-party project, debugging (Sep 2026)
 
-Websites and shops for clients — design, multilingual content, legal requirements, CI and delivery.
+- Cause: 21 failing tests with two root causes – 20× an SQLite handle that was never closed and blocks cleanup on Windows, 1× an outdated test against a security rule; handle closed, rule kept, test corrected.
+- Evidence: Mutation test – with the security rule weakened, the corrected test fails; passing tests: 177/198 → 199/199.
+- Own contribution: Fixed silent data loss in the task store, with five new tests.
 
-- Frontend & interaction: Next.js, React, TypeScript, GSAP — hero as a frame sequence that turns with the mouse pointer (on phones via device tilt); full-screen chapters with dedicated mobile controls (nk247store.de).
-- Shop & content: reworked a purchased Shopify theme in Liquid, CSS and JavaScript; own design layer in the live theme, product data via metafields (duftkumpels.shop).
-- SEO & email: Automated a Search Console analysis of search queries and adjusted titles and metadata accordingly; checked the indexing status of 700 URLs; fixed a Klaviyo abandonment email to link to a recoverable checkout (duftkumpels.shop).
-- Quality & delivery: CI with TypeScript check, ESLint, Vitest, build and Playwright (nk247store.de); weekly Lighthouse checks against the live shop via GitHub Actions (duftkumpels.shop).
-- Multilingual: built a DE/EN/FR translation pipeline with HTML extraction, structure checks and import via CSV or GraphQL; localised product names and collection copy (duftkumpels.shop).
-- Legal & content: tobacco advertising removed from all visuals per German law, § 19 TabakerzG (nk247store.de).
-- AI tools: wrote the design brief, steered an AI website builder and refined the result myself — camera moves from real photos, colour grading, transitions (redesign draft for a Hamburg izakaya).
-- References: duftkumpels.shop — project work since June 2026, changes in the live theme; nk247store.de — client project in a team, my redesign not yet published.
+### duftkumpels.shop — client project, Shopify, API & translation automation (Jun 2026 – present)
 
-## Further projects
+- Automation: DE/EN/FR translation pipeline with HTML extraction, structure checks and import via CSV or GraphQL; availability checks via the Admin GraphQL API, with backups and read-back verification.
+- SEO engineering: Automated a Search Console analysis, checked 700 URLs for indexing; added JSON-LD and checked it automatically.
+- Theme & quality: Reworked a purchased theme in Liquid, CSS and JavaScript; weekly Lighthouse checks against the live shop via GitHub Actions.
+- Email: Fixed a Klaviyo abandonment email to link to a recoverable checkout.
 
-- hermes-brett: task board plugin for Hermes Agent without a build step; a cost gate prevents the board from accidentally starting a paid agent run; deploy with rollback; self-test using only node:assert.
-- Shinobi: Ember Accord — mobile idle RPG (React Native, Skia, Supabase, pgTAP). Agent-orchestrated: an AI agent works through 50 roles in lead mode; I make the product decisions.
-- Interactive web CV — installable PWA without a framework: SVG displacement, canvas graph, WebGL fluid simulation (adapted from PavelDoGreat, MIT).
+Tools: Shopify Liquid, Admin GraphQL API, Python, GitHub Actions, Klaviyo
+
+### AI-assisted job application management — personal project, Python (Jul 2026 – present)
+
+Purpose: Python pipeline for job search via job board APIs (including the German Federal Employment Agency, Greenhouse, Lever), cover letters, checks, sending and reply matching.
+
+- Traceability: Cross-channel ledger for first applications with reservations – no duplicate application across email and portal, at most one application per company within 14 days.
+- Checks before sending: Unusable model output stops the run; model cascade (Claude, Gemini, Groq) with cool-down periods.
+- Rating quality: Checked LLM ratings against blind reference judgements; did not roll out a revised analysis after an incomplete measurement showed no proven improvement.
+- Operations: Rollouts with checksums, tests before and after the swap and automatic rollback on caught errors.
 
 ## Experience
 
-### AI Automation & Web Development
-**2024 – present | Own projects, team and client projects | Hamburg / remote**
+### AI Automation & Web Development — own projects, team and client projects (2024 – present)
 
 - Developed and tested Python backends and Next.js frontends and ran them on Linux servers (Docker Compose, cron, deployment with rollback); customised Shopify themes; teamwork via branches, pull requests and shared test suites.
+- nk247store.de (client project in a team): interactive redesign with Next.js and GSAP; CI with TypeScript check, ESLint, Vitest, build and Playwright. My redesign is not yet published.
 
-### B2B Direct Sales (door-to-door)
-**2019 – 2023 | EWE TEL, Ranger Marketing | Field sales across Germany**
+### B2B Direct Sales — Field sales (door-to-door) across Germany, EWE TEL and Ranger Marketing (2019 – 2023)
 
-- Cold outreach and needs assessment directly with owners and managing directors, negotiation and closing on site.
-- Handling rejection every day — and an eye for the problems a business really has.
+- Cold outreach and needs assessment with owners and managing directors, negotiation and closing on site.
+- Handling rejection every day – and an eye for the problems a business really has.
 
-## Training and project practice
+## Skills & way of working
 
-- Web development course, 2024 (6 months): HTML, CSS, JavaScript, web architecture
-- Google Ads Search Certification (Skillshop), December 2025, valid until 3 December 2026 – verifiable: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
-
-## Skills (used in projects)
-
-- Development: Python, FastAPI, TypeScript, React, Next.js, React Native
+- Development: Python, FastAPI · TypeScript, React, Next.js, discord.js · React Native (project experience: Shinobi)
 - AI & agents: Claude Code, LLM APIs (Claude, Gemini, Groq), MCP, agent orchestration, n8n
 - Data & jobs: PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase
 - Quality: pytest, Vitest, Playwright, GitHub Actions, Lighthouse CI
 - Operations: Linux servers, Docker Compose, cron, flock, SMTP/IMAP, SPF/DKIM
 - Web & commerce: Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL
+- With AI agents: Reproduce bugs with failing tests · an agent implements the fix · a second model provides an additional review · rollout with checksums and automatic rollback on caught errors
 
-## Languages
+## Training, certificate & languages
 
-- German: native · English: B1, working towards B2 · Polish: spoken
+- Training: Web development (2024, 6 months): HTML, CSS, JavaScript, web architecture
+- Certificate: Google Ads Search Certification (Skillshop), December 2025, valid until 3 Dec 2026 – verifiable: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
+- Languages: German (native) · English (B1, working towards B2) · Polish (spoken)
+- Remote work: Distributed teamwork via GitHub (branches, pull requests), Discord and online calls
