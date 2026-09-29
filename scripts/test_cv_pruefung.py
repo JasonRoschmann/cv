@@ -1,5 +1,5 @@
 """Selbsttest der Fußzeilenprüfung mit synthetischer pdftotext-bbox-Ausgabe: py -3 scripts/test_cv_pruefung.py"""
-from cv_pruefung import fusszeilen_fehler
+from cv_pruefung import fusszeilen_fehler, pr_pflicht, schrift_fehler
 
 
 def wort(y_min: float, y_max: float, text: str) -> str:
@@ -24,6 +24,20 @@ def test_inhalt_knapp_ueber_fusszeile_wird_gemeldet():
 def test_inhalt_auf_hoehe_der_fusszeile_wird_gemeldet():
     # Inhaltszeile kollidiert genau mit der Fußzeile, darüber viel Luft (z. B. nach einem Abschnittsabstand)
     assert len(fusszeilen_fehler(seite(wort(700.0, 710.0, "Inhalt"), wort(800.5, 810.5, "Kollision"), *FUSS))) == 1
+
+
+def test_pr_pflicht_aus_daten():
+    d = {"gemergt": {"gesamt": 59, "flowki": 50, "eigen": 6, "kunden": 3}}
+    assert "59 meiner Pull Requests gemergt" in pr_pflicht(d, "de") and "eigene Repos 6" in pr_pflicht(d, "de")
+    assert "59 of my pull requests merged" in pr_pflicht(d, "en") and "own repos 6" in pr_pflicht(d, "en")
+    assert pr_pflicht(d, "marketing") == ["50 eigene Pull Requests gemergt"]
+
+
+def test_ersatzschrift_wird_gemeldet():
+    pdffonts = "name type\n---- ----\nABCDEF+DejaVuSans CID TrueType\n"
+    assert schrift_fehler(pdffonts, ["Inter", "IBMPlexMono"])
+    assert not schrift_fehler("x\n-\nAB+Inter-Regular\nCD+IBMPlexMono-Medium\n", ["Inter", "IBMPlexMono"])
+    assert not schrift_fehler("x\n-\nAAAAAA+JetBrains-Mono Type 3\nBA+Fraunces-9pt-Bold-NonWonky Type 3\n", ["Fraunces", "JetBrainsMono"])
 
 
 if __name__ == "__main__":
