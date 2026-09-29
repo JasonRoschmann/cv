@@ -27,7 +27,7 @@ Zweck: Shopify-Shop einer Hamburger Nischen-Parfümerie; mein Teil: Theme, SEO, 
 - GEO/AEO: Marke als Entität ausgezeichnet (Organisation, Gründerperson, sameAs-Profile) und extern gegengeprüft, Lücke Wikidata dokumentiert; Seiten an zehn Käuferfragen auf direkt auffindbare Antworten geprüft; llms.txt um Kataloginformationen erweitert.
 - Mehrsprachigkeit: Übersetzungs-Pipeline mit HTML-Extraktion, Strukturprüfung und Shopify-Import; EN/FR-Artikel nach vorhandenen Suchimpressionen priorisiert; Ursache gefunden, warum EN/FR-Produktseiten Besucher auf Deutsch umleiteten (allein 153 Suchklicks auf englische Produktseiten in 90 Tagen) – für den Shopify-Support dokumentiert.
 - Shop & Theme: Gekauftes Theme in Liquid, CSS und JavaScript umgebaut; Bildladeprioritäten korrigiert; wöchentliche Lighthouse-Prüfung per GitHub Actions.
-- Kaufen & nachfassen: Klaviyo-Onsite-Tracking war nie aktiv, der Nachfass-Flow für Produktansichten konnte nie auslösen – aktiviert; Abbruchmail auf wiederherstellbaren Checkout-Link umgestellt; Merchant-Center-Probleme analysiert und Kategorien korrigiert; Microsoft- und Pinterest-Kanal angebunden.
+- Kaufen & nachfassen: Klaviyo-Onsite-Tracking war nie aktiv, der Nachfass-Flow für Produktansichten hatte deshalb nie gesendet – App-Embed aktiviert; Abbruchmail auf wiederherstellbaren Checkout-Link umgestellt; Merchant-Center-Probleme analysiert und Kategorien korrigiert; Microsoft- und Pinterest-Kanal angebunden.
 - Messung & Gegenprüfung: GA4-Kaufzahlen mit Shopify-Bestellungen abgeglichen; Verfügbarkeitsaussagen automatisch mit kaufbaren Varianten abgeglichen – zwei falsche korrigiert; einen Preload-Patch nach ungünstigen Messläufen zurückgerollt.
 
 Tools: Shopify (Liquid, Admin-API), Google Search Console, GA4, Klaviyo, Merchant Center, Judge.me, Python
@@ -59,7 +59,7 @@ Tools: Python, FastAPI, Next.js, PostgreSQL
 
 - AtopicV — Shopify-Theme auf Horizon-Basis gestaltet: Produktgeschichte in Kapiteln, mobile Kaufleiste, besserer Tastaturfokus. Unveröffentlichter Entwurf.
 - Kunden-Websites — im Team mehrere Websites für Kunden gebaut und abgeschlossen, u. a. mit Next.js und GSAP.
-- SEO-Cockpit (Prototyp) — Python-Werkzeug, das Search Console, GA4, Bing, PageSpeed und CrUX je Shop zusammenführt und regelbasierte Hinweise erzeugt.
+- SEO-Dashboard (Prototyp) — Python-Werkzeug, das Search-Console-, GA4- und Bing-Daten zusammenführt und regelbasierte Hinweise erzeugt.
 
 Davor: Vertrieb.
 
