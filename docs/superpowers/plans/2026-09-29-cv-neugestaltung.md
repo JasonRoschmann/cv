@@ -214,7 +214,7 @@ git commit -m "test(cv): Pruefskript fuer v4 (2 Seiten, Pflicht, Reihenfolge, Ve
 - [ ] **Step 2: Seite 2 aufbauen**
   - `Flowki Studio — Social-Media-Studio · Teamprojekt` (Aug. 2026 – heute) mit 3 marketingrelevanten Stichpunkten
   - `02 Berufserfahrung`: E-Commerce, Webentwicklung & KI-Automation (2024 – heute); `B2B-Direktvertrieb — Außendienst` (2019–2023)
-  - `03 Weitere Web- & Shop-Projekte`: AtopicV, nk247 mit Status
+  - `03 Weitere Web- & Shop-Projekte`: AtopicV mit Status
   - `04 Kenntnisse & Tools` (6 Gruppen aus v3), Zertifikat, Weiterbildung, Sprachen, QR-Code, Fußzeile
 - [ ] **Step 3: ATS-Markdown im gleichen Wortlaut und in gleicher Reihenfolge**, Überschriften `### Name — Rolle (Zeitraum)`
 - [ ] **Step 4: Bauen** (mit Ersatzpfad, falls das PDF gesperrt ist), dann `PYTHONIOENCODING=utf-8 py -3 scripts/cv_pruefung.py --pdf-dir <scratchpad>`. Expected: GRÜN für beide Marketing-Einträge. Die Entwickler-Einträge sind noch ROT, das ist erwartet.
