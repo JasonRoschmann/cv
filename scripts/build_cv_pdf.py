@@ -94,7 +94,7 @@ def ats(md: Path) -> None:
 
 
 def main() -> int:
-    for pfad in [REPO / q for q, _ in DRUCK] + [REPO / "cv-print.css"] + ATS:
+    for pfad in [REPO / q for q, _ in DRUCK] + [REPO / "cv-print.css", REPO / "cv-v4.css"] + ATS:
         if not pfad.exists():
             print("FEHLER:", pfad.name, "fehlt"); return 1
     try:
