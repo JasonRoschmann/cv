@@ -9,9 +9,14 @@ Portale und E-Mail ein". Wer auf "CV herunterladen" klickte, bekam genau das.
 Ohne Build-Schritt passiert das wieder - auch bei den ATS-Dateien, die bis
 28.09.2026 von Hand erzeugt wurden und der Markdown-Quelle hinterherhingen.
 
-Aufruf:  py -3 scripts/build_cv_pdf.py      (braucht Edge und pandoc)
+Aufruf:  py -3 scripts/build_cv_pdf.py [--wenn-noetig]   (braucht Edge/Chrome und pandoc)
+         Browser per CV_BROWSER waehlbar; --wenn-noetig baut nur, wenn sich die Druckquellen geaendert haben.
 """
+import argparse
+import hashlib
 import http.server
+import os
+import shutil
 import socketserver
 import subprocess
 import sys
@@ -37,16 +42,36 @@ h3 { font-size: 10.5pt; margin: 8pt 0 2pt; break-after: avoid } p, li { margin: 
 """
 PORT = 8913
 EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+HASH_DATEI = REPO / "pdf-quellen.sha256"
+# Alles, was in die PDFs eingeht; index.html (taeglicher Web-Stand) bewusst nicht
+QUELLEN = sorted([q for q, _ in DRUCK] + ["cv-print.css", "cv-v4.css", "foto.jpg", "qr-cv.svg", "scripts/build_cv_pdf.py"]
+                 + [m.relative_to(REPO).as_posix() for m in ATS])
+
+
+def browser() -> str:
+    return os.environ.get("CV_BROWSER") or (EDGE if Path(EDGE).exists() else "") \
+        or shutil.which("google-chrome") or shutil.which("chromium") or ""
+
+
+def quellen_hash(basis: Path = REPO) -> str:
+    """sha256 ueber Pfad + Inhalt der Druckquellen; CRLF wie LF, damit Windows und CI denselben Wert haben."""
+    h = hashlib.sha256()
+    for name in QUELLEN:
+        # ponytail: auch foto.jpg wird CRLF-normalisiert - fuer die Aenderungserkennung unschaedlich
+        h.update(name.encode() + b"\0" + (basis / name).read_bytes().replace(b"\r\n", b"\n") + b"\0")
+    return h.hexdigest()
 
 
 def drucke(url: str, ziel: Path, mindestgroesse: int) -> None:
-    """Druckt url per Edge nach ziel; wirft, wenn kein frisches, plausibles PDF entsteht."""
+    """Druckt url per Edge/Chrome nach ziel; wirft, wenn kein frisches, plausibles PDF entsteht."""
     # Altes PDF weg: Am 28.09.2026 meldete ein Lauf Erfolg, obwohl Edge den Druck an eine noch
     # laufende Instanz abgegeben und nichts geschrieben hatte - geprueft wurde das alte PDF.
     ziel.unlink(missing_ok=True)
     # Eigenes Profil, damit Edge den Auftrag nicht an ein schon laufendes Fenster weiterreicht.
     subprocess.run(
-        [EDGE, "--headless", "--disable-gpu", "--no-pdf-header-footer",
+        # virtual-time-budget: Webfonts laden, bevor gedruckt wird (sonst still Ersatzschrift, gesehen 29.09.2026)
+        [browser(), "--headless", "--disable-gpu", "--no-pdf-header-footer",
+         "--virtual-time-budget=10000", "--run-all-compositor-stages-before-draw",
          "--user-data-dir=" + tempfile.mkdtemp(prefix="cvpdf_edge_"),
          "--print-to-pdf=" + str(ziel), url],
         check=True, timeout=120)
@@ -94,15 +119,24 @@ def ats(md: Path) -> None:
 
 
 def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--wenn-noetig", action="store_true", help="nur bauen, wenn sich die Druckquellen geaendert haben")
+    args = ap.parse_args()
+    if not browser():
+        print("FEHLER: kein Browser (Edge, google-chrome, chromium oder CV_BROWSER)"); return 1
     for pfad in [REPO / q for q, _ in DRUCK] + [REPO / "cv-print.css", REPO / "cv-v4.css"] + ATS:
         if not pfad.exists():
             print("FEHLER:", pfad.name, "fehlt"); return 1
+    h = quellen_hash()
+    if args.wenn_noetig and HASH_DATEI.exists() and HASH_DATEI.read_text(encoding="utf-8").strip() == h:
+        print("Druckquellen unveraendert - kein Build"); return 0
     try:
         druck_cv()
         for md in ATS:
             ats(md)
     except (RuntimeError, subprocess.SubprocessError) as ex:
         print("FEHLER:", ex); return 1
+    HASH_DATEI.write_text(h + "\n", encoding="utf-8")
     return 0
 
 
