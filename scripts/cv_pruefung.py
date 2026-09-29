@@ -21,33 +21,33 @@ REGELN = {
         "pflicht": ["Fall 1", "Fall 2", "Fall 3", "Bereinigte Auszüge"],
         "reihenfolge": ["Fall 1", "Fall 2", "Fall 3"], "links": ["https://jasonroschmann.github.io/cv/"], "pr": None, "schriften": ["Fraunces", "JetBrainsMono"]},
     "Jason_Roschmann_CV_Marketing.pdf": {
-        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Junior E-Commerce & Technical SEO", "Begleit-Repositories zu Club-Artikeln",
+        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Seit 2024", "Junior E-Commerce & Technical SEO", "Begleit-Repositories zu Club-Artikeln",
                     "SEO: Technisches SEO", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
                     "Außendienst (Door-to-Door) 2019 – 2023"],
         "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"], "links": ["https://duftkumpels.shop", "https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf"],
         "pr": "marketing", "schriften": ["Inter", "IBMPlexMono"]},
     "ats-cv/Jason_Roschmann_CV_Marketing_ATS.pdf": {
-        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Begleit-Repositories zu Club-Artikeln"],
+        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Seit 2024", "Begleit-Repositories zu Club-Artikeln"],
         "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"], "links": ["https://duftkumpels.shop", "https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf"],
         "pr": "marketing", "schriften": []},
     "Jason_Roschmann_CV.pdf": {
         "pflicht": ["Mitgründer", "Stand 29.09.2026", "Junior Softwareentwickler",
-                    "Entwicklung: Python", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
+                    "Backend & APIs: Python", "Seit 2024", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
                     "Außendienst (Door-to-Door) 2019 – 2023"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
         "pr": "de", "schriften": ["Inter", "IBMPlexMono"]},
     "ats-cv/Jason_Roschmann_CV_ATS.pdf": {
-        "pflicht": ["Mitgründer", "Stand 29.09.2026"],
+        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Kompetenzen", "Seit 2024"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
         "pr": "de", "schriften": []},
     "Jason_Roschmann_CV_EN.pdf": {
         "pflicht": ["Co-founder", "as of 29 Sep 2026", "Junior Software",
-                    "Development: Python", "Certificate: Google Ads", "Training: Web development",
+                    "Backend & APIs: Python", "Since 2024", "Certificate: Google Ads", "Training: Web development",
                     "Field sales (door-to-door) 2019 – 2023"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
         "pr": "en", "schriften": ["Inter", "IBMPlexMono"]},
     "ats-cv/Jason_Roschmann_CV_ATS_EN.pdf": {
-        "pflicht": ["Co-founder", "as of 29 Sep 2026"],
+        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Core skills", "Since 2024"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
         "pr": "en", "schriften": []},
 }
