@@ -12,7 +12,7 @@ Schwerpunkte: Technisches SEO, OnPage-SEO, strukturierte Daten (JSON-LD), GEO/AE
 
 Seit Juni 2026 betreue ich einen dreisprachigen Shopify-Shop technisch und im Marketing – Suchdaten, strukturierte Daten, Übersetzungen, Klaviyo und Merchant Center. Als Mitgründer baue ich seit April 2026 die KI-Community FlowKI Club mit auf: Mitglieder, Calls, Newsletter und Themen. Aus vier Jahren B2B-Direktvertrieb bringe ich den Blick dafür mit, was Kunden wirklich brauchen.
 
-Kennzahlen: 700 URLs auf Indexierung geprüft (duftkumpels) · 3 Shop-Sprachen über meine Übersetzungs-Pipeline (DE, EN, FR) · rund 66 Discord-Mitglieder FlowKI Club (Stand 29.09.2026) · 4 Jahre B2B-Vertrieb (2019–2023)
+Kennzahlen: 700 URLs auf Indexierung geprüft (duftkumpels) · 3 Shop-Sprachen betreut (DE, EN, FR; EN/FR-Inhalte über meine Übersetzungs-Pipeline ergänzt) · rund 66 Discord-Mitglieder FlowKI Club (Stand 29.09.2026) · 4 Jahre B2B-Vertrieb (2019–2023)
 
 ## Berufserfahrung
 
@@ -24,10 +24,10 @@ Zweck: Shopify-Shop einer Hamburger Nischen-Parfümerie; mein Teil: Theme, SEO, 
 
 - Gefunden werden: Search-Console-Auswertung der Suchfragen in DE/EN/FR automatisiert, Titel und Metadaten danach angepasst; Indexierungsstatus von 700 URLs geprüft und die Bearbeitung priorisiert.
 - Struktur & Daten: Themenindex für 128 Artikel aufgebaut und mit 60 Produkten über Metafelder verknüpft; Canonical-Ziele für 19 überlappende Blogartikel gesetzt; strukturierte Daten in JSON-LD ergänzt und automatisiert geprüft.
-- GEO/AEO: Marke als Entität ausgezeichnet (Organisation, Gründerperson, sameAs-Profile) und extern gegengeprüft, Lücke Wikidata dokumentiert; Seiten an zehn Käuferfragen auf direkt auffindbare Antworten geprüft; llms.txt um Kataloginformationen erweitert.
-- Mehrsprachigkeit: Übersetzungs-Pipeline mit HTML-Extraktion, Strukturprüfung und Shopify-Import; EN/FR-Artikel nach vorhandenen Suchimpressionen priorisiert; Ursache gefunden, warum EN/FR-Produktseiten Besucher auf Deutsch umleiteten (allein 153 Suchklicks auf englische Produktseiten in 90 Tagen) – für den Shopify-Support dokumentiert.
+- GEO/AEO: Entitäts-Markup der Marke ausgebaut (Gründerperson ergänzt, sameAs-Profile erweitert) und extern gegengeprüft, fehlenden Wikidata-Eintrag dokumentiert; Seiten an zehn Käuferfragen auf direkt auffindbare Antworten geprüft; llms.txt um Kataloginformationen erweitert.
+- Mehrsprachigkeit: Übersetzungs-Pipeline mit HTML-Extraktion, Strukturprüfung und Shopify-Import; EN/FR-Artikel nach vorhandenen Suchimpressionen priorisiert; Ursache eingegrenzt, warum EN/FR-Produktseiten Besucher auf die deutsche Seite umleiten (allein 153 Suchklicks auf englische Produktseiten in 90 Tagen): Shopify-Weiterleitung vor dem Theme, reproduziert und für den Shopify-Support dokumentiert.
 - Shop & Theme: Gekauftes Theme in Liquid, CSS und JavaScript umgebaut; Bildladeprioritäten korrigiert; wöchentliche Lighthouse-Prüfung per GitHub Actions.
-- Kaufen & nachfassen: Klaviyo-Onsite-Tracking war nie aktiv, der Nachfass-Flow für Produktansichten hatte deshalb nie gesendet – App-Embed aktiviert; Abbruchmail auf wiederherstellbaren Checkout-Link umgestellt; Merchant-Center-Probleme analysiert und Kategorien korrigiert; Microsoft- und Pinterest-Kanal angebunden.
+- Kaufen & nachfassen: Klaviyo-Onsite-Tracking war nicht aktiv (seit Juli 0 Produktansichten), der Nachfass-Flow für Produktansichten konnte deshalb nie senden – Onsite-Embed im Theme aktiviert; Abbruchmail auf wiederherstellbaren Checkout-Link umgestellt; Merchant-Center-Probleme analysiert und Kategorien korrigiert; Microsoft- und Pinterest-Kanal angebunden.
 - Messung & Gegenprüfung: GA4-Kaufzahlen mit Shopify-Bestellungen abgeglichen; Verfügbarkeitsaussagen automatisch mit kaufbaren Varianten abgeglichen – zwei falsche korrigiert; einen Preload-Patch nach ungünstigen Messläufen zurückgerollt.
 
 Tools: Shopify (Liquid, Admin-API), Google Search Console, GA4, Klaviyo, Merchant Center, Judge.me, Python
@@ -77,7 +77,7 @@ Davor: Vertrieb.
 - Content & Community: Discord-Community, Double-Opt-In-Newsletter, Social-Media-Pakete aus Artikeln, UTM-Tracking
 - Web & Automation: HTML, CSS, JavaScript, responsives Webdesign, Next.js, Python, n8n, GitHub Actions
 - KI: Claude und Gemini (LLM-APIs), KI-Agenten (Claude Code), Discord-Bots, KI-Video (Veo, Kling)
-- Arbeitsweise: Erst messen, dann ändern – Suchdaten, GA4 und Shopify-Bestellungen gegengeprüft; was keine belegte Verbesserung bringt, wird zurückgerollt; KI-Agenten als Werkzeug, die Abnahme mache ich selbst.
+- Arbeitsweise: Erst messen, dann ändern – Suchdaten, GA4 und Shopify-Bestellungen gegengeprüft; einen Patch ohne belegte Verbesserung nach Messläufen zurückgerollt; KI-Agenten als Werkzeug, die Abnahme mache ich selbst.
 
 ## Zertifikat, Weiterbildung & Sprachen
 

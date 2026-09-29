@@ -32,7 +32,7 @@
 
   <div class="kpi">
     <div><b>700</b><span>URLs auf Indexierung geprüft</span><i>Kundenshop duftkumpels</i></div>
-    <div><b>3</b><span>Shop-Sprachen über meine Übersetzungs-Pipeline</span><i>DE · EN · FR</i></div>
+    <div><b>3</b><span>Shop-Sprachen betreut</span><i>EN/FR per eigener Pipeline</i></div>
     <div><b><small>rund </small>66</b><span>Discord-Mitglieder FlowKI Club</span><i>Stand 29.09.2026</i></div>
     <div><b>4 J.</b><span>B2B-Vertrieb mit täglichem Kundenkontakt</span><i>2019–2023</i></div>
   </div>
@@ -46,10 +46,10 @@
     <ul class="b">
       <li><b>Gefunden werden:</b> Search-Console-Auswertung der Suchfragen in DE/EN/FR automatisiert, Titel und Metadaten danach angepasst; Indexierungsstatus von 700 URLs geprüft und die Bearbeitung priorisiert.</li>
       <li><b>Struktur &amp; Daten:</b> Themenindex für 128 Artikel aufgebaut und mit 60 Produkten über Metafelder verknüpft; Canonical-Ziele für 19 überlappende Blogartikel gesetzt; strukturierte Daten in <span class="nw">JSON-LD</span> ergänzt und automatisiert geprüft.</li>
-      <li><b>GEO/AEO:</b> Marke als Entität ausgezeichnet (Organisation, Gründerperson, sameAs-Profile) und extern gegengeprüft, Lücke Wikidata dokumentiert; Seiten an zehn Käuferfragen auf direkt auffindbare Antworten geprüft.</li>
-      <li><b>Mehrsprachigkeit:</b> Übersetzungs-Pipeline mit HTML-Extraktion, Strukturprüfung und Shopify-Import; Ursache gefunden, warum EN/FR-Produktseiten Besucher auf Deutsch umleiteten (allein 153 Suchklicks auf englische Produktseiten in 90 Tagen) – für den Shopify-Support dokumentiert.</li>
+      <li><b>GEO/AEO:</b> Entitäts-Markup der Marke ausgebaut (Gründerperson ergänzt, sameAs-Profile erweitert) und extern gegengeprüft, fehlenden Wikidata-Eintrag dokumentiert; Seiten an zehn Käuferfragen auf direkt auffindbare Antworten geprüft.</li>
+      <li><b>Mehrsprachigkeit:</b> Übersetzungs-Pipeline mit HTML-Extraktion, Strukturprüfung und Shopify-Import; Ursache eingegrenzt, warum EN/FR-Produktseiten Besucher auf die deutsche Seite umleiten (allein 153 Suchklicks auf englische Produktseiten in 90 Tagen): Shopify-Weiterleitung vor dem Theme, reproduziert und für den Shopify-Support dokumentiert.</li>
       <li><b>Shop &amp; Theme:</b> Gekauftes Theme in Liquid, CSS und JavaScript umgebaut; Bildladeprioritäten korrigiert; wöchentliche Lighthouse-Prüfung per GitHub Actions.</li>
-      <li><b>Kaufen &amp; nachfassen:</b> Klaviyo-Onsite-Tracking war nie aktiv, der Nachfass-Flow für Produktansichten hatte deshalb nie gesendet – App-Embed aktiviert; Abbruchmail auf wiederherstellbaren Checkout-Link umgestellt; Merchant Center korrigiert, Microsoft- und <span class="nw">Pinterest-Kanal</span> angebunden.</li>
+      <li><b>Kaufen &amp; nachfassen:</b> Klaviyo-Onsite-Tracking war nicht aktiv (seit Juli 0 Produktansichten), der Nachfass-Flow für Produktansichten konnte deshalb nie senden – Onsite-Embed im Theme aktiviert; Abbruchmail auf wiederherstellbaren Checkout-Link umgestellt; Merchant-Center-Kategorien korrigiert, Microsoft- und <span class="nw">Pinterest-Kanal</span> angebunden.</li>
       <li><b>Messung &amp; Gegenprüfung:</b> GA4-Kaufzahlen mit <span class="nw">Shopify-Bestellungen</span> abgeglichen; Verfügbarkeitsaussagen automatisch mit kaufbaren Varianten abgeglichen – zwei falsche korrigiert; einen Preload-Patch nach ungünstigen Messläufen zurückgerollt.</li>
     </ul>
     <div class="tools">Tools: Shopify (Liquid, Admin-API) · Google Search Console · GA4 · Klaviyo · Merchant Center · Judge.me · Python</div>
@@ -113,7 +113,7 @@
       <div><span class="k">Content &amp; Community:</span>Discord-Community, Double-Opt-In-Newsletter, Social-Media-Pakete aus Artikeln, UTM-Tracking</div>
       <div><span class="k">Web &amp; Automation:</span>HTML, CSS, JavaScript, responsives Webdesign, Next.js, Python, n8n, GitHub Actions</div>
       <div><span class="k">KI:</span>Claude und Gemini (LLM-APIs), KI-Agenten (Claude Code), Discord-Bots, KI-Video (Veo, Kling)</div>
-      <div><span class="k">Arbeitsweise:</span>Erst messen, dann ändern – Suchdaten, GA4 und Shopify-Bestellungen gegengeprüft; was keine belegte Verbesserung bringt, wird zurückgerollt; KI-Agenten als Werkzeug, die Abnahme mache ich selbst.</div>
+      <div><span class="k">Arbeitsweise:</span>Erst messen, dann ändern – Suchdaten, GA4 und Shopify-Bestellungen gegengeprüft; einen Patch ohne belegte Verbesserung nach Messläufen zurückgerollt; KI-Agenten als Werkzeug, die Abnahme mache ich selbst.</div>
     </div>
     <div class="qr"><img src="qr-cv.svg" alt="QR-Code zum interaktiven Lebenslauf">Interaktive Fassung</div>
   </div>

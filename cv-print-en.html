@@ -17,7 +17,7 @@
       <h1>Jason Roschmann</h1>
       <div class="rolle">Junior Software Engineer</div>
       <div class="unter">Python · FastAPI · TypeScript · Next.js · PostgreSQL · Docker Compose</div>
-      <p class="lead">Career changer from B2B sales, working in web development and AI automation since 2024. I develop Flowki Studio in a team, a social media studio from research to publishing, and co-founded FlowKI Club, an AI community with its own Discord bot and newsletter. AI agents are my tools – I own requirements, tests and acceptance.</p>
+      <p class="lead">Career changer from B2B sales, working in web development and AI automation since 2024. As part of a team, I develop Flowki Studio, a social media studio covering everything from research to publishing, and I co-founded FlowKI Club, an AI community with its own Discord bot and newsletter. AI agents are my tools – I own requirements, tests and sign-off.</p>
       <div class="kontakt">
         <a href="mailto:jason@roschmann-digital.de"><i>✉</i>jason@roschmann-digital.de</a>
         <span><i>☎</i>+49 155 612 953 91</span>
@@ -32,7 +32,7 @@
 
   <div class="kpi">
     <div><b><span data-pr="flowki">50</span></b><span>of my pull requests merged</span><i>Flowki Studio, team project</i></div>
-    <div><b>3</b><span>store languages via my translation pipeline</span><i>DE · EN · FR, client project</i></div>
+    <div><b>3</b><span>store languages maintained, client project</span><i>EN/FR via own pipeline</i></div>
     <div><b><small>about </small>66</b><span>Discord members, FlowKI Club</span><i>as of 29 Sep 2026</i></div>
     <div><b>4 yrs</b><span>B2B sales with daily customer contact</span><i>2019–2023</i></div>
   </div>
@@ -41,11 +41,11 @@
   <div class="sk">
     <div><span class="k">Backend &amp; APIs:</span>Python, FastAPI, SQLAlchemy/Alembic, PostgreSQL, Celery, Redis <span class="wo">– APIs and background jobs</span></div>
     <div><span class="k">Frontend:</span>TypeScript, React, Next.js, Tailwind <span class="wo">– production, approval and publishing views, community website</span></div>
-    <div><span class="k">Testing &amp; CI:</span>Git, pytest, Vitest, Playwright, GitHub Actions <span class="wo">– every bug starts as a failing test</span></div>
+    <div><span class="k">Testing &amp; CI:</span>Git, pytest, Vitest, Playwright, GitHub Actions <span class="wo">– bugs reproduced as a failing test first</span></div>
     <div><span class="k">AI integration:</span>Claude, Gemini and Groq APIs, MCP <span class="wo">– FAQ bot, MCP server, model ratings checked against reference judgements</span></div>
-    <div><span class="k">Operations:</span>Linux servers, Docker Compose, cron <span class="wo">– rollouts with checksums and automatic rollback</span></div>
+    <div><span class="k">Operations:</span>Linux servers, Docker Compose, cron <span class="wo">– checksummed rollouts, rollback on caught errors</span></div>
     <div><span class="k">Shopify:</span>Liquid, Admin GraphQL API, Search Console <span class="wo">– translation pipeline, theme rework, SEO checks</span></div>
-    <div><span class="k">With AI agents:</span>Claude Code implements, I review and accept; hooks I set up block secrets in code and weakened tests, and a second model reviews.</div>
+    <div><span class="k">With AI agents:</span>Claude Code implements, I review and accept; hooks I set up block private keys in code as well as deleted or disabled tests, and a second model reviews.</div>
   </div>
 
   <div class="sek"><span>02</span>Experience</div>
@@ -55,10 +55,10 @@
     <div class="ekopf"><h3>Flowki Studio — <span class="r">internal social media studio · developer in a team</span></h3><span class="zeit">Aug 2026 – present</span></div>
     <p class="zweck"><b>Purpose:</b> Topic research, AI-assisted content production, editorial review and publishing to social media platforms; my part: product interfaces, campaign and approval workflows, error handling, video and publishing.</p>
     <ul class="b">
-      <li><b>Rights before sending:</b> Usage rights and consents were only checked at planning time, up to 14 days before the post; the studio now re-checks them right before sending and holds the post otherwise (five tests).</li>
+      <li><b>Rights before sending:</b> Usage rights and consents were only checked at planning time, up to 14 days before the post; the studio now re-checks them right before sending and otherwise holds the post (five tests).</li>
       <li><b>Working views:</b> Production, approval and publishing views show processing state, phase duration and required actions; checklists and open blind reviews per campaign in the daily overview.</li>
       <li><b>Team approvals:</b> Rejection reasons flow from the interface into the approval log – posts go back for revision with a traceable reason.</li>
-      <li><b>Clear error messages:</b> When only a later status step failed after a successful production, it looked like a failure and invited a paid restart – success and follow-up errors are now reported separately.</li>
+      <li><b>Error handling:</b> When only a later status step failed after a successful production, it looked like a failure and invited a second, cost-incurring run – success and follow-up errors are now handled separately.</li>
       <li><b>Video &amp; publishing:</b> Long videos become editable vertical clips with speaker-following framing; TikTok drafts have their own status and are clearly separated from published posts.</li>
     </ul>
     <div class="tools">Tools: Python · FastAPI · Celery · SQLAlchemy/Alembic · PostgreSQL · Redis · Next.js · TypeScript</div>
@@ -70,7 +70,7 @@
     <ul class="b">
       <li><b>Community:</b> Helped new members get started, organised and moderated online calls, supported members with their own AI projects.</li>
       <li><b>Discord bot:</b> Added /ask and self-service topic roles; connected club articles as the FAQ bot's knowledge base, with a relevance check that catches unsuitable matches – covered by targeted tests.</li>
-      <li><b>Website &amp; newsletter:</b> Newsletter with double opt-in and referral links; sign-ups and clicks on Discord invites measurable (Plausible); author, FAQ and HowTo markup for search engines.</li>
+      <li><b>Website &amp; newsletter:</b> Newsletter with double opt-in and referral links; sign-ups and clicks on Discord invites made measurable (Plausible); author, FAQ and HowTo markup for search engines.</li>
       <li><b>MCP server:</b> Made club articles searchable and readable for AI assistants such as Claude Code; public on GitHub.</li>
     </ul>
     <div class="tools">Tools: TypeScript · discord.js · Claude API · MCP · PostgreSQL · Vitest · Next.js</div>
@@ -86,7 +86,7 @@
     <ul class="b">
       <li><b>Translation:</b> Pipeline for three languages – extract HTML texts, check their structure, import back into Shopify via CSV or GraphQL; availability checks via the Admin API with backups and read-back verification.</li>
       <li><b>SEO engineering:</b> Automated a Search Console analysis, checked 700 URLs for indexing, added <span class="nw">JSON-LD</span> and checked it automatically.</li>
-      <li><b>Root cause:</b> Why English and French product pages redirected visitors to German (153 search clicks on English product pages in 90 days alone): a Shopify redirect before the theme, reproduced and documented for Shopify support.</li>
+      <li><b>Root-cause analysis:</b> Why English and French product pages redirect visitors to the German page (153 search clicks on English product pages in 90 days alone): narrowed down to a Shopify-side redirect that fires before the theme, reproduced and documented for Shopify support.</li>
       <li><b>Theme &amp; email:</b> Reworked a purchased theme in Liquid, CSS and JavaScript; weekly Lighthouse checks via GitHub Actions; fixed a Klaviyo abandonment email to link to a recoverable checkout.</li>
     </ul>
     <div class="tools">Tools: Shopify Liquid · Admin GraphQL API · Python · GitHub Actions · Klaviyo</div>
@@ -98,7 +98,7 @@
     <ul class="b">
       <li><b>No duplicate applications:</b> Cross-channel ledger with reservations – at most one application per company within 14 days, whether by email or portal.</li>
       <li><b>Measure, don't assume:</b> Checked LLM ratings against blind reference judgements; did not roll out a revised analysis without a proven improvement.</li>
-      <li><b>Operations:</b> Unusable model output stops the run and another model takes over on failure; rollouts with checksums and automatic rollback.</li>
+      <li><b>Operations:</b> Unusable model output stops the run and another model takes over on failure; rollouts with checksums and automatic rollback on caught errors.</li>
     </ul>
     <div class="belege">Evidence (German): <a href="https://jasonroschmann.github.io/cv/#fs-02">case study reply matching ↗</a> · <a href="https://jasonroschmann.github.io/cv/#fs-03">case study LLM rating ↗</a></div>
   </div>
@@ -106,7 +106,7 @@
   <div class="eintrag">
     <div class="ekopf"><h3>hermes-studio — <span class="r">contribution to a third-party project · debugging</span></h3><span class="zeit">Sep 2026</span></div>
     <ul class="b">
-      <li><b>Cause, not symptom:</b> 21 failing tests, two root causes – 20× an SQLite handle that was never closed, 1× an outdated test against a security rule; rule kept, test corrected and proven with a mutation test. Passing tests: <span class="nw">177 → 199</span>.</li>
+      <li><b>Cause, not symptom:</b> 21 failing tests, two root causes – 20× an SQLite handle that was never closed, 1× an outdated test against a security rule; rule kept, test corrected and verified with a mutation test. Passing tests: <span class="nw">177 → 199</span>.</li>
       <li><b>Own contribution:</b> Fixed silent data loss in the task store, with five new tests.</li>
     </ul>
     <div class="belege">Evidence: <a href="https://jasonroschmann.github.io/cv/#fs-01">case study on the web CV (German) ↗</a></div>
@@ -115,7 +115,7 @@
   <div class="eintrag">
     <div class="ekopf"><h3>Client websites — <span class="r">built in a team</span></h3></div>
     <ul class="b">
-      <li>Next.js and GSAP, secured by CI with TypeScript check, ESLint, Vitest and Playwright.</li>
+      <li>Next.js and GSAP, backed by CI running TypeScript checks, ESLint, Vitest and Playwright.</li>
     </ul>
   </div>
 
