@@ -86,7 +86,7 @@ Evidence (German): case study reply matching <https://jasonroschmann.github.io/c
 - Operations: Linux servers, Docker Compose, cron, flock, SMTP/IMAP, SPF/DKIM
 - Web & commerce: Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL
 - With AI agents: Reproduce bugs with failing tests · an agent implements the fix · a second model provides an additional review · rollout with checksums and automatic rollback on caught errors
-- GitHub: <span data-pr="gesamt">59</span> of my pull requests merged (as of <span data-pr="stand-en">29 Sep 2026</span>): Flowki Studio <span data-pr="flowki">50</span>, own repos <span data-pr="eigen">6</span>, client projects <span data-pr="kunden">3</span>
+- GitHub: <span data-pr="gesamt">61</span> of my pull requests merged (as of <span data-pr="stand-en">29 Sep 2026</span>): Flowki Studio <span data-pr="flowki">50</span>, own repos <span data-pr="eigen">8</span>, client projects <span data-pr="kunden">3</span>
 - Public code samples: web CV <https://github.com/JasonRoschmann/cv> · MCP server for community articles <https://github.com/Jokersystems-online/flowki-knowledge-mcp>
 
 ## Training, certificate & languages

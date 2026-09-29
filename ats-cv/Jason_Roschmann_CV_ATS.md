@@ -86,7 +86,7 @@ Belege: Fallstudie Antwortzuordnung <https://jasonroschmann.github.io/cv/#fs-02>
 - Betrieb: Linux-Server, Docker Compose, Cron, flock, SMTP/IMAP, SPF/DKIM
 - Web & Commerce: Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL
 - Mit KI-Agenten: Fehler zuerst als roter Test · Agent setzt um · ein zweites Modell prüft zusätzlich als Reviewer · Rollout mit Prüfsummen und automatischem Rückbau bei abgefangenen Fehlern
-- GitHub: <span data-pr="gesamt">59</span> meiner Pull Requests gemergt (Stand <span data-pr="stand-de">29.09.2026</span>): Flowki Studio <span data-pr="flowki">50</span>, eigene Repos <span data-pr="eigen">6</span>, Kundenprojekte <span data-pr="kunden">3</span>
+- GitHub: <span data-pr="gesamt">61</span> meiner Pull Requests gemergt (Stand <span data-pr="stand-de">29.09.2026</span>): Flowki Studio <span data-pr="flowki">50</span>, eigene Repos <span data-pr="eigen">8</span>, Kundenprojekte <span data-pr="kunden">3</span>
 - Öffentliche Codebeispiele: Web-CV <https://github.com/JasonRoschmann/cv> · MCP-Server für Club-Inhalte <https://github.com/Jokersystems-online/flowki-knowledge-mcp>
 
 ## Weiterbildung, Zertifikat & Sprachen
