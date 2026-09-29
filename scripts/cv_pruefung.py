@@ -13,6 +13,10 @@ PDFINFO = "pdfinfo"
 KONTAKT = ["jason@roschmann-digital.de", "jasonroschmann.github.io/cv"]
 VERBOTEN = ["Commits", "commits", "aktive Mitglieder", "active members", "gewachsen", "grown to", "aufgebaut auf", "nk247"]
 REGELN = {
+    # Belegmappe: 2 Seiten, drei Fälle in Reihenfolge, Schlussband mit Abstand zur Fußzeile
+    "Jason_Roschmann_Belegmappe.pdf": {
+        "pflicht": ["Fall 1", "Fall 2", "Fall 3", "Bereinigte Auszüge"],
+        "reihenfolge": ["Fall 1", "Fall 2", "Fall 3"], "links": ["https://jasonroschmann.github.io/cv/"]},
     "Jason_Roschmann_CV_Marketing.pdf": {
         "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Junior E-Commerce & Technical SEO", "Begleit-Repositories zu Club-Artikeln",
                     "SEO: Technisches SEO", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
