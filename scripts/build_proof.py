@@ -87,13 +87,15 @@ def build_ships(events):
         if not repo or not allowed(repo):
             continue
         t = ev.get("type")
+        p = ev.get("payload") or {}
         day = ev.get("created_at", "")[:10]
         if t == "PushEvent":
-            kind, n = "push", int((ev.get("payload") or {}).get("size", 1) or 1)
-        elif t == "CreateEvent":
-            kind, n = "create", 1
-        elif t == "PullRequestEvent":
-            kind, n = "pr", 1
+            kind, n = "push", int(p.get("size", 1) or 1)
+        elif t == "CreateEvent" and p.get("ref_type") == "repository":
+            kind, n = "init", 1   # Branch-Anlagen sind keine Repo-Neuanlage
+        elif t == "PullRequestEvent" and (p.get("action") == "merged" or (
+                p.get("action") == "closed" and (p.get("pull_request") or {}).get("merged"))):
+            kind, n = "merge", 1  # je PR genau einmal, nicht opened + merged
         else:
             continue
         key = (repo, day, kind)

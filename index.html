@@ -258,7 +258,8 @@
   .ships .dot{color:var(--grn)} .ships .repo{color:var(--ink);font-weight:600} .ships .when{margin-left:auto;color:var(--dim);font-size:11px;white-space:nowrap}
   .pow-foot{font-family:var(--fm);margin-top:16px;font-size:10.5px;color:var(--dim);border-top:1px solid var(--line);padding-top:12px}
   .insight .k{font-family:var(--fm);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--grn);margin-bottom:8px}
-  .proofrow{display:flex;flex-wrap:wrap;gap:30px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+  .proofrow{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:22px 30px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+  @media(max-width:560px){.proofrow{grid-template-columns:1fr 1fr}}
   .pf{display:flex;flex-direction:column;gap:3px}
   .pf b{font-family:var(--fd);font-weight:600;font-size:1.2rem;color:var(--ink);line-height:1.1}
   .pf span{font-size:12.5px;color:var(--mut);max-width:24ch}
@@ -658,6 +659,7 @@
     .view{padding:calc(env(safe-area-inset-top) + 108px) 20px calc(env(safe-area-inset-bottom) + 58px)}
     /* Direktlinks (#fs-01 …): der Browser scrollt selbst zum Anker – Ziel unter der App-Kopfleiste ablegen */
     .view [id]{scroll-margin-top:calc(env(safe-area-inset-top) + 96px)}
+    .view #github{scroll-margin-top:calc(env(safe-area-inset-top) + 136px)} /* Zeile „GitHub · Stand“ steht über der Karte */
     .appbar{position:fixed;top:0;left:0;right:0;z-index:45;display:flex;align-items:center;
       padding:calc(env(safe-area-inset-top) + 46px) 14px 0;
       opacity:0;visibility:hidden;transition:opacity .4s .12s,visibility .4s;pointer-events:none}
@@ -837,7 +839,7 @@
           <div class="lw-cards">
             <a class="lw" href="https://duftkumpels.shop" target="_blank" rel="noopener">
               <div class="lw-url"><span class="dot"></span>duftkumpels.shop &#8599;</div>
-              <h4>DK &middot; Attar</h4>
+              <h4>Shopify-Shop</h4>
               <p>Shop einer Hamburger Nischen-Parfümerie: gekauftes Prestige-Theme, in Liquid, CSS und JavaScript umgebaut, dreisprachig, mit wöchentlicher Lighthouse-Prüfung.</p>
               <div class="lw-tags"><span>Shopify Liquid</span><span>DE/EN/FR</span><span>Lighthouse-CI</span></div>
               <div class="lw-cta">&#9654; Shop live ansehen</div>
@@ -888,9 +890,9 @@
             });});
             heat.innerHTML=html;
             document.getElementById('powTotal').innerHTML='<b>'+(d.total||0)+'</b> Contributions';
-            var sh=''; var verb={push:'push',create:'init',pr:'PR'};
+            var sh='';
             (d.ships||[]).forEach(function(s){
-              sh+='<li><span class="dot">&#9656;</span><span>'+(verb[s.kind]||s.kind)+(s.n>1?' &times;'+s.n:'')+' &rarr; </span><span class="repo">'+s.label+'</span><span class="when">'+s.when+'</span></li>';
+              sh+='<li><span class="dot">&#9656;</span><span>'+s.kind+(s.n>1?' &times;'+s.n:'')+' &rarr; </span><span class="repo">'+s.label+'</span><span class="when">'+s.when+'</span></li>';
             });
             document.getElementById('ships').innerHTML=sh;
             document.getElementById('powFoot').textContent='GitHub-Aktivität, Stand '+(d.updated||'?')+' · Quelle: GitHub '+(d.source==='graphql'?'GraphQL':'Events')+' · viele Projekte liegen in privaten oder Team-Repositories';
@@ -980,17 +982,17 @@
             
             <div class="urow"><div class="k">KI-Werkzeuge</div><div class="v">Design-Brief geschrieben, KI-Website-Builder gesteuert und selbst nachgearbeitet: Kamerafahrten aus echten Fotos, Farbkorrektur, Übergänge. <span class="muted">Redesign-Entwurf für ein Hamburger Izakaya</span></div></div>
             <p class="proof"><a href="https://duftkumpels.shop" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">duftkumpels.shop</a> — Projektarbeit seit Juni 2026, Anpassungen im Live-Theme.</p></div>
-          <div class="card"><div class="ct"><h4>Werkzeuge für KI-Agenten</h4><span class="tag">Plugin · Fork-Beitrag</span></div><p><b>hermes-brett:</b> Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt, mit Kosten-Gate gegen versehentliche bezahlte Agentenläufe. <b>hermes-studio:</b> Beitrag zu einem fremden Projekt — siehe Fallstudie 01.</p><div class="stack"><span class="chip">TypeScript</span><span class="chip">Vitest</span><span class="chip">node:assert</span></div><p class="proof">hermes-brett: Deploy mit Rollback, Selbsttest nur mit node:assert.</p></div>
+          <div class="card"><div class="ct"><h4>Werkzeuge für <span style="white-space:nowrap">KI-Agenten</span></h4><span class="tag">Plugin · Fork-Beitrag</span></div><p><b>hermes-brett:</b> Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt, mit Kosten-Gate gegen versehentliche bezahlte Agentenläufe. <b>hermes-studio:</b> Beitrag zu einem fremden Projekt — siehe Fallstudie 01.</p><div class="stack"><span class="chip">TypeScript</span><span class="chip">Vitest</span><span class="chip">node:assert</span></div><p class="proof">hermes-brett: Deploy mit Rollback, Selbsttest nur mit node:assert.</p></div>
           <div class="card"><div class="ct"><h4>Shinobi: Ember Accord</h4><span class="tag">Agenten-Experiment</span></div><p>Mobiles Idle-RPG mit React Native, Skia und Supabase. Agenten-orchestriert: Ein KI-Agent arbeitet im Lead-Modus 50 Rollen ab, die Produktentscheidungen treffe ich.</p><div class="stack"><span class="chip">React Native</span><span class="chip">Supabase · pgTAP</span><span class="chip">Deno Edge</span></div><p class="proof">Dokumentiert in einem Agenten-Ledger, mit getrennten App- und Datenbanktests.</p></div>
           <div class="card" style="grid-column:1 / -1;border-color:rgba(63,220,132,.35)"><div class="ct"><h4>◆ Dieses Web-CV</h4><span class="tag live">Du bist gerade drin</span></div><p>Am Handy ein eigenes Phone-UI — als App installierbar, mit Glas-Refraktion über SVG-Displacement-Filter, einem Canvas-Graphen, Federphysik und App-Gesten. HTML, CSS und JavaScript ohne Framework; die Fluid-Simulation ist von PavelDoGreat (MIT) adaptiert.</p><div class="stack"><span class="chip">PWA · installierbar</span><span class="chip">SVG-Displacement</span><span class="chip">Canvas</span><span class="chip">WebGL</span></div><p class="proof">Öffne es am Handy: Boot, Lockscreen, App-Zoom.</p></div>
         </div>
         <p class="eyebrow rv" style="margin-top:34px;color:var(--mut)">GitHub · Stand 29.09.2026</p>
         <div class="card rv" id="github" style="margin-top:14px">
-          <div class="ct"><h4>57 meiner Pull Requests gemergt</h4><span class="tag">Aug.–Sep. 2026</span></div>
+          <div class="ct"><h4>58 meiner Pull Requests gemergt</h4><span class="tag">Aug.–Sep. 2026</span></div>
           <p>Gemergte Pull Requests je Woche (ab Montag), nach Projekt gestapelt. Private Repositories sind nur gezählt – ohne Titel und ohne Links.</p>
-          <div class="ghw" role="img" aria-label="Gemergte Pull Requests je Woche: 3. August 4, 10. August 0, 17. August 0, 24. August 1, 31. August 26, 7. September 6, 14. September 11, 21. September 8, 28. September 1 (Woche läuft noch)"><div class="w"><b>4</b><i class="cv" style="height:calc(var(--u)*1)"></i><i class="fl" style="height:calc(var(--u)*3)"></i></div><div class="w null"><b>0</b></div><div class="w null"><b>0</b></div><div class="w"><b>1</b><i class="fl" style="height:calc(var(--u)*1)"></i></div><div class="w"><b>26</b><i class="ku" style="height:calc(var(--u)*3)"></i><i class="fl" style="height:calc(var(--u)*23)"></i></div><div class="w"><b>6</b><i class="fl" style="height:calc(var(--u)*6)"></i></div><div class="w"><b>11</b><i class="fl" style="height:calc(var(--u)*11)"></i></div><div class="w"><b>8</b><i class="cv" style="height:calc(var(--u)*2)"></i><i class="fl" style="height:calc(var(--u)*6)"></i></div><div class="w"><b>1</b><i class="cv" style="height:calc(var(--u)*1)"></i></div></div>
+          <div class="ghw" role="img" aria-label="Gemergte Pull Requests je Woche: 3. August 4, 10. August 0, 17. August 0, 24. August 1, 31. August 26, 7. September 6, 14. September 11, 21. September 8, 28. September 2 (Woche läuft noch)"><div class="w"><b>4</b><i class="cv" style="height:calc(var(--u)*1)"></i><i class="fl" style="height:calc(var(--u)*3)"></i></div><div class="w null"><b>0</b></div><div class="w null"><b>0</b></div><div class="w"><b>1</b><i class="fl" style="height:calc(var(--u)*1)"></i></div><div class="w"><b>26</b><i class="ku" style="height:calc(var(--u)*3)"></i><i class="fl" style="height:calc(var(--u)*23)"></i></div><div class="w"><b>6</b><i class="fl" style="height:calc(var(--u)*6)"></i></div><div class="w"><b>11</b><i class="fl" style="height:calc(var(--u)*11)"></i></div><div class="w"><b>8</b><i class="cv" style="height:calc(var(--u)*2)"></i><i class="fl" style="height:calc(var(--u)*6)"></i></div><div class="w"><b>2</b><i class="cv" style="height:calc(var(--u)*2)"></i></div></div>
           <div class="ghw-x" aria-hidden="true"><span>3.8.</span><span>10.8.</span><span>17.8.</span><span>24.8.</span><span>31.8.</span><span>7.9.</span><span>14.9.</span><span>21.9.</span><span>28.9.*</span></div>
-          <div class="ghl"><span class="fl">Flowki Studio 50</span><span class="cv">Web-CV 4</span><span class="ku">Kundenprojekte 3</span><span class="muted">* Woche läuft noch</span></div>
+          <div class="ghl"><span class="fl">Flowki Studio 50</span><span class="cv">Web-CV 5</span><span class="ku">Kundenprojekte 3</span><span class="muted">* Woche läuft noch</span></div>
           <div class="urow"><div class="k">Web-CV</div><div class="v">Dieser Lebenslauf als Web-App, ergänzt um Druck- und ATS-Fassungen mit gemeinsamem Build- und Prüfskript. <span class="muted">Prüfung:</span> Prüfskript für jede PDF-Fassung – zwei Seiten, Pflichtangaben, Link-Ziele, Abstand zur Fußzeile – mit Selbsttest. <span class="muted">Grenze:</span> statische Seite ohne Server. <a href="https://github.com/JasonRoschmann/cv" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">Quellcode ↗</a></div></div>
           <div class="urow"><div class="k">MCP-Server</div><div class="v">Club-Artikel als Wissensbasis für MCP-Clients wie Claude Desktop und Claude Code: Artikel listen, suchen und lesen, Themensäulen abrufen. <span class="muted">Prüfung:</span> Smoke-Test ruft die Werkzeuge auf und protokolliert die Ergebnisse. <span class="muted">Grenze:</span> liest live von der Club-Website und hängt an deren Erreichbarkeit. <a href="https://github.com/Jokersystems-online/flowki-knowledge-mcp" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">Quellcode ↗</a></div></div>
         </div>
@@ -1027,7 +1029,7 @@
             <div class="yr">Ausbildung &amp; Weiterbildung</div>
             <div class="acth">Lernen <em class="g it">durchs Bauen.</em></div>
             <h4>Weiterbildung &amp; Autodidaktik</h4>
-            <div class="org"><a href="https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">Google Ads Search Certification</a> (Skillshop, 12/2025, verifizierbar) · Web-Entwicklung (2024, 6 Mte) · autodidaktisch, laufend seit 2024</div>
+            <div class="org"><a href="https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">Google Ads Search Certification</a> (Skillshop, 12/2025, verifizierbar) · Web-Entwicklung (2024, 6 Monate) · autodidaktisch, laufend seit 2024</div>
             <ul><li>Laufende autodidaktische Weiterbildung anhand eigener und gemeinsamer Softwareprojekte. Im Gespräch zeige ich den Code und erkläre meine Entscheidungen.</li></ul>
           </div>
         </div>
@@ -1102,7 +1104,7 @@
           <div class="at" data-f="dev"><div class="at-h"><b>Dieses Web-CV</b><span class="st ok">eingesetzt</span></div><p>Installierbare PWA ohne Framework: SVG-Displacement, Canvas-Graph, WebGL-Fluidsimulation.</p><div class="at-m"><span>eigen</span><span>seit Juni 2026</span><span>live</span></div><p class="at-g"><span>Rahmen</span>Die Fluidsimulation ist adaptiert (PavelDoGreat, MIT).</p></div>
         </div>
           <div class="atg amb" style="grid-column:1 / -1"><h4><span class="d">▸</span> Aus dem Vertrieb</h4>
-          <div class="at" data-f="ecom dev"><div class="at-h"><b>B2B-Direktvertrieb</b><span class="st ok">eingesetzt</span></div><p>Kaltakquise und Bedarfsgespräche mit Inhabern und Geschäftsführern, Verhandlung und Abschluss vor Ort.</p><div class="at-m"><span>eigen</span><span>EWE TEL · Ranger Marketing</span><span>2019–2023</span></div><p class="at-g"><span>Rahmen</span>Schwerpunkt: Neukundengewinnung und Abschluss im B2B-Außendienst.</p></div>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>B2B-Direktvertrieb</b><span class="st ok">eingesetzt</span></div><p>Kaltakquise und Bedarfsgespräche mit Inhabern und Geschäftsführern, Verhandlung und Abschluss vor Ort.</p><div class="at-m"><span>Außendienst</span><span>EWE TEL · Ranger Marketing</span><span>2019–2023</span></div><p class="at-g"><span>Rahmen</span>Schwerpunkt: Neukundengewinnung und Abschluss im B2B-Außendienst.</p></div>
           <div class="at" data-f="ecom"><div class="at-h"><b>Google Ads Search</b><span class="st ok">zertifiziert</span></div><p>Google Ads Search Certification (Skillshop), Dezember 2025, gültig bis 03.12.2026 — <a href="https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">verifizierbar</a>.</p><div class="at-m"><span>eigen</span><span>Skillshop</span><span>12/2025</span></div><p class="at-g"><span>Rahmen</span>Search-Zertifizierung; kein Nachweis praktischer Kampagnenbetreuung.</p></div>
           </div>
         </div>

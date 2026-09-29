@@ -22,20 +22,20 @@ REGELN = {
         "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Begleit-Repositories zu Club-Artikeln"],
         "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"], "links": ["https://duftkumpels.shop", "https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf"]},
     "Jason_Roschmann_CV.pdf": {
-        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Junior Softwareentwickler", "57 meiner Pull Requests gemergt", "Kundenprojekte 3",
+        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Junior Softwareentwickler", "58 meiner Pull Requests gemergt", "Web-CV 5", "Kundenprojekte 3",
                     "Entwicklung: Python", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
                     "Außendienst (Door-to-Door) 2019 – 2023"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"]},
     "ats-cv/Jason_Roschmann_CV_ATS.pdf": {
-        "pflicht": ["Mitgründer", "Stand 29.09.2026", "57 meiner Pull Requests gemergt", "Kundenprojekte 3"],
+        "pflicht": ["Mitgründer", "Stand 29.09.2026", "58 meiner Pull Requests gemergt", "Web-CV 5", "Kundenprojekte 3"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"]},
     "Jason_Roschmann_CV_EN.pdf": {
-        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Junior Software", "57 of my pull requests merged", "client projects 3",
+        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Junior Software", "58 of my pull requests merged", "Web CV 5", "client projects 3",
                     "Development: Python", "Certificate: Google Ads", "Training: Web development",
                     "Field sales (door-to-door) 2019 – 2023"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"]},
     "ats-cv/Jason_Roschmann_CV_ATS_EN.pdf": {
-        "pflicht": ["Co-founder", "as of 29 Sep 2026", "57 of my pull requests merged", "client projects 3"],
+        "pflicht": ["Co-founder", "as of 29 Sep 2026", "58 of my pull requests merged", "Web CV 5", "client projects 3"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"]},
 }
 
