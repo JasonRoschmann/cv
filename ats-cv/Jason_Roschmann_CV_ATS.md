@@ -15,8 +15,8 @@ Kennzahlen: <span data-pr="flowki">50</span> eigene Pull Requests gemergt (Flowk
 ## Kompetenzen
 
 - Backend & APIs: Python, FastAPI, SQLAlchemy/Alembic, PostgreSQL, Celery, Redis – APIs und Hintergrundjobs im Produktteam
-- Frontend: TypeScript, React, Next.js, Tailwind – Produktions-, Freigabe- und Veröffentlichungsansichten, Club-Website
-- Testen & CI: Git, pytest, Vitest, Playwright, GitHub Actions – Fehler zuerst als fehlschlagender Test; die CI baut und prüft auch diesen Lebenslauf
+- Frontend: TypeScript, React, Next.js, Tailwind, GSAP – Produktions-, Freigabe- und Veröffentlichungsansichten, Club-Website; Kunden-Websites im Team (CI mit TypeScript-Check, ESLint, Vitest, Playwright)
+- Testen & CI: Git, pytest, Vitest, Playwright, ESLint, GitHub Actions – Fehler zuerst als fehlschlagender Test; die CI baut und prüft auch diesen Lebenslauf
 - KI-Integration: LLM-APIs (Claude, Gemini, Groq), MCP, Claude Code – FAQ-Bot mit Relevanzprüfung, MCP-Server, Modellbewertung gegen blinde Referenzurteile
 - Betrieb: Linux-Server, Docker Compose, Cron – Rollouts mit Prüfsummen, Tests vor und nach dem Tausch und automatischem Rückbau bei abgefangenen Fehlern
 - Shopify: Liquid, Admin-GraphQL-API, Search Console – Übersetzungs-Pipeline, Theme-Umbau, SEO-Prüfungen
@@ -25,9 +25,9 @@ Kennzahlen: <span data-pr="flowki">50</span> eigene Pull Requests gemergt (Flowk
 
 ## Berufserfahrung
 
-Seit 2024: Webentwicklung & KI-Automation in Team-, Kunden- und Eigenprojekten.
+### Webentwicklung & KI-Automation — Team-, Kunden- und Eigenprojekte (2024 – heute)
 
-### Flowki Studio — internes Social-Media-Studio, Entwicklung im Team (Aug. 2026 – heute)
+#### Flowki Studio — internes Social-Media-Studio, Entwicklung im Team (Aug. 2026 – heute)
 
 Zweck: Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung und Veröffentlichung auf Social-Media-Plattformen; mein Anteil: Produktoberflächen, Kampagnen- und Freigabeabläufe, Fehlerbehandlung, Video und Publishing.
 
@@ -39,7 +39,7 @@ Zweck: Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung
 
 Tools: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, Next.js, TypeScript
 
-### FlowKI Club — Mitgründer, Community, Discord-Bot, Website, Newsletter (Apr. 2026 – heute)
+#### FlowKI Club — Mitgründer, Community, Discord-Bot, Website, Newsletter (Apr. 2026 – heute)
 
 Zweck: Deutschsprachige KI-Community – rund 66 Mitglieder im Discord (Stand 29.09.2026) – mit Fachartikeln, Online-Calls und gemeinsamer Projektarbeit; ich verbinde Community-Arbeit mit technischer Produktentwicklung.
 
@@ -50,7 +50,7 @@ Zweck: Deutschsprachige KI-Community – rund 66 Mitglieder im Discord (Stand 29
 
 Tools: TypeScript, discord.js, Claude-API, MCP, PostgreSQL, Vitest, Next.js
 
-### duftkumpels.shop — Kundenprojekt, Shopify DE/EN/FR, Automatisierung & SEO (Juni 2026 – heute)
+#### duftkumpels.shop — Kundenprojekt, Shopify DE/EN/FR, Automatisierung & SEO (Juni 2026 – heute)
 
 - Übersetzung: Pipeline für drei Sprachen – HTML-Texte extrahieren, Struktur prüfen, per CSV bzw. GraphQL zurück in Shopify; Verfügbarkeitsabgleich über die Admin-API mit Sicherung und Rücklesen.
 - SEO-Technik: Search-Console-Auswertung automatisiert, 700 URLs auf Indexierung geprüft, JSON-LD ergänzt und automatisch geprüft.
@@ -59,7 +59,7 @@ Tools: TypeScript, discord.js, Claude-API, MCP, PostgreSQL, Vitest, Next.js
 
 Tools: Shopify Liquid, Admin-GraphQL-API, Python, GitHub Actions, Klaviyo
 
-### KI-gestützte Bewerbungsverwaltung — Eigenprojekt, Python (Juli 2026 – heute)
+#### KI-gestützte Bewerbungsverwaltung — Eigenprojekt, Python (Juli 2026 – heute)
 
 Zweck: Python-Pipeline, die Stellen über Job-APIs findet (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), bewertet, Unterlagen prüft, versendet und Antworten zuordnet.
 
@@ -69,25 +69,19 @@ Zweck: Python-Pipeline, die Stellen über Job-APIs findet (u. a. Bundesagentur f
 
 Belege: Fallstudie Antwortzuordnung <https://jasonroschmann.github.io/cv/#fs-02> · Fallstudie LLM-Bewertung <https://jasonroschmann.github.io/cv/#fs-03>
 
-### hermes-studio — Beitrag zu fremdem Projekt, Fehleranalyse (Sep. 2026)
+#### hermes-studio — Beitrag zu fremdem Projekt, Fehleranalyse (Sep. 2026)
 
 - Ursache statt Symptom: 21 fehlschlagende Tests, zwei Ursachen – 20× ein nie geschlossenes SQLite-Handle, 1× ein veralteter Test gegen eine Sicherheitsregel; Regel behalten, Test korrigiert und per Mutationsprobe nachgewiesen. Grüne Tests: 177 → 199.
 - Eigener Beitrag: Stillen Datenverlust im Task-Store behoben, mit fünf neuen Tests.
 
 Beleg: Fallstudie im Web-CV <https://jasonroschmann.github.io/cv/#fs-01>
 
-### Kunden-Websites — im Team gebaut
-
-- Next.js und GSAP, abgesichert per CI mit TypeScript-Check, ESLint, Vitest und Playwright.
-
-Davor: Vertrieb.
-
 ### B2B-Direktvertrieb — Außendienst bundesweit, EWE TEL und Ranger Marketing (2019 – 2023)
 
 - Kaltakquise und Bedarfsgespräche mit Inhabern und Geschäftsführern, Verhandlung und Abschluss vor Ort.
 - Täglicher Umgang mit Absagen – und der Blick dafür, welche Probleme ein Betrieb wirklich hat.
 
-## Weiterbildung, Zertifikat & Sprachen
+## Weiterbildung, Sprachen & Nachweise
 
 - Weiterbildung: Webentwicklung (2024, 6 Monate): HTML, CSS, JavaScript, Web-Architektur
 - Zertifikat: Google Ads Search Certification (Skillshop), Dezember 2025, gültig bis 03.12.2026 – verifizierbar: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>

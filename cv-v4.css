@@ -35,7 +35,8 @@ h1{font:800 38px/.95 'Inter Tight',sans-serif;letter-spacing:-.025em}
 /* Kompetenzen: Werkzeuge in Textfarbe, wo eingesetzt gedämpft – eine Zeile je Kompetenz */
 .sk .wo{color:var(--mut)}
 /* Zeitleisten-Kopf über den Projekten seit 2024 */
-.phase{font:500 9.4px 'IBM Plex Mono',monospace;color:var(--mut);border-top:2px solid var(--ink);padding:5px 0 1px}
+.phase{font:500 9.4px 'IBM Plex Mono',monospace;color:var(--mut);border-top:2px solid var(--ink);padding:5px 0 1px;display:flex;justify-content:space-between;gap:6mm}
+.phase i{font-style:normal;white-space:nowrap}
 .phase b{color:var(--acc);font-weight:600;margin-right:4px}
 .phase+.eintrag{border-top:0}
 .eintrag{border-top:1px solid var(--linie);padding:8px 0 10px;break-inside:avoid}

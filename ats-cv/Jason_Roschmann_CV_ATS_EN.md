@@ -15,8 +15,8 @@ Key figures: <span data-pr="flowki">50</span> of my pull requests merged (Flowki
 ## Core skills
 
 - Backend & APIs: Python, FastAPI, SQLAlchemy/Alembic, PostgreSQL, Celery, Redis – APIs and background jobs in a product team
-- Frontend: TypeScript, React, Next.js, Tailwind – production, approval and publishing views, community website
-- Testing & CI: Git, pytest, Vitest, Playwright, GitHub Actions – bugs reproduced as a failing test first; CI also builds and checks this CV
+- Frontend: TypeScript, React, Next.js, Tailwind, GSAP – production, approval and publishing views, community website; client websites in a team (CI with TypeScript checks, ESLint, Vitest, Playwright)
+- Testing & CI: Git, pytest, Vitest, Playwright, ESLint, GitHub Actions – bugs reproduced as a failing test first; CI also builds and checks this CV
 - AI integration: LLM APIs (Claude, Gemini, Groq), MCP, Claude Code – FAQ bot with relevance check, MCP server, model ratings checked against blind reference judgements
 - Operations: Linux servers, Docker Compose, cron – rollouts with checksums, tests before and after the swap and automatic rollback on caught errors
 - Shopify: Liquid, Admin GraphQL API, Search Console – translation pipeline, theme rework, SEO checks
@@ -25,9 +25,9 @@ Key figures: <span data-pr="flowki">50</span> of my pull requests merged (Flowki
 
 ## Experience
 
-Since 2024: web development & AI automation in team, client and personal projects.
+### Web development & AI automation — team, client and personal projects (2024 – present)
 
-### Flowki Studio — internal social media studio, developer in a team (Aug 2026 – present)
+#### Flowki Studio — internal social media studio, developer in a team (Aug 2026 – present)
 
 Purpose: Topic research, AI-assisted content production, editorial review and publishing to social media platforms; my part: product interfaces, campaign and approval workflows, error handling, video and publishing.
 
@@ -39,7 +39,7 @@ Purpose: Topic research, AI-assisted content production, editorial review and pu
 
 Tools: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, Next.js, TypeScript
 
-### FlowKI Club — Co-founder, community, Discord bot, website, newsletter (Apr 2026 – present)
+#### FlowKI Club — Co-founder, community, Discord bot, website, newsletter (Apr 2026 – present)
 
 Purpose: German-speaking AI community – about 66 members (Discord, as of 29 Sep 2026) – with articles, online calls and joint project work; I combine community work with technical product development.
 
@@ -50,7 +50,7 @@ Purpose: German-speaking AI community – about 66 members (Discord, as of 29 Se
 
 Tools: TypeScript, discord.js, Claude API, MCP, PostgreSQL, Vitest, Next.js
 
-### duftkumpels.shop — client project, Shopify DE/EN/FR, automation & SEO (Jun 2026 – present)
+#### duftkumpels.shop — client project, Shopify DE/EN/FR, automation & SEO (Jun 2026 – present)
 
 - Translation: Pipeline for three languages – extract HTML texts, check their structure, import back into Shopify via CSV or GraphQL; availability checks via the Admin API with backups and read-back verification.
 - SEO engineering: Automated a Search Console analysis, checked 700 URLs for indexing, added JSON-LD and checked it automatically.
@@ -59,7 +59,7 @@ Tools: TypeScript, discord.js, Claude API, MCP, PostgreSQL, Vitest, Next.js
 
 Tools: Shopify Liquid, Admin GraphQL API, Python, GitHub Actions, Klaviyo
 
-### AI-assisted job application management — personal project, Python (Jul 2026 – present)
+#### AI-assisted job application management — personal project, Python (Jul 2026 – present)
 
 Purpose: Python pipeline that finds jobs via job board APIs (including the German Federal Employment Agency, Greenhouse, Lever), rates them, checks documents, sends applications and matches replies.
 
@@ -69,25 +69,19 @@ Purpose: Python pipeline that finds jobs via job board APIs (including the Germa
 
 Evidence (German): case study reply matching <https://jasonroschmann.github.io/cv/#fs-02> · case study LLM rating <https://jasonroschmann.github.io/cv/#fs-03>
 
-### hermes-studio — contribution to a third-party project, debugging (Sep 2026)
+#### hermes-studio — contribution to a third-party project, debugging (Sep 2026)
 
 - Cause, not symptom: 21 failing tests, two root causes – 20× an SQLite handle that was never closed, 1× an outdated test against a security rule; rule kept, test corrected and verified with a mutation test. Passing tests: 177 → 199.
 - Own contribution: Fixed silent data loss in the task store, with five new tests.
 
 Evidence: case study on the web CV (German) <https://jasonroschmann.github.io/cv/#fs-01>
 
-### Client websites — built in a team
-
-- Next.js and GSAP, backed by CI running TypeScript checks, ESLint, Vitest and Playwright.
-
-Before: sales.
-
 ### B2B Direct Sales — Field sales (door-to-door) across Germany, EWE TEL and Ranger Marketing (2019 – 2023)
 
 - Cold outreach and needs assessment with owners and managing directors, negotiation and closing on site.
 - Handling rejection every day – and an eye for the problems a business really has.
 
-## Training, certificate & languages
+## Training, languages & proof of work
 
 - Training: Web development (2024, 6 months): HTML, CSS, JavaScript, web architecture
 - Certificate: Google Ads Search Certification (Skillshop), December 2025, valid until 3 Dec 2026 – verifiable: <https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e>
