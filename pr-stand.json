@@ -1,14 +1,13 @@
 {
  "version": 1,
- "stand": "2026-09-29T16:40:25Z",
- "zahlen_stand": "2026-09-29T16:23:30Z",
+ "stand": "2026-09-29T17:51:15Z",
+ "zahlen_stand": "2026-09-29T17:51:15Z",
  "methodik": "GitHub-Suche author:JasonRoschmann is:pr is:merged; private Repos nur gezählt",
  "gemergt": {
-  "gesamt": 59,
+  "gesamt": 61,
   "flowki": 50,
-  "eigen": 6,
-  "kunden": 3,
-  "weitere": 0
+  "eigen": 8,
+  "kunden": 3
  },
  "eroeffnet": {
   "flowki": 70
@@ -65,7 +64,7 @@
   ],
   [
    "2026-09-29",
-   59
+   61
   ]
  ]
 }
