@@ -12,21 +12,24 @@ VERBOTEN = ["Commits", "commits", "aktive Mitglieder", "active members", "gewach
 REGELN = {
     "Jason_Roschmann_CV_Marketing.pdf": {
         "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Junior E-Commerce & Technical SEO",
-                    "SEO: Technisches SEO", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung"],
+                    "SEO: Technisches SEO", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
+                    "Außendienst (Door-to-Door) 2019 – 2023"],
         "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"]},
     "ats-cv/Jason_Roschmann_CV_Marketing_ATS.pdf": {
         "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026"],
         "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"]},
     "Jason_Roschmann_CV.pdf": {
         "pflicht": ["Mitgründer", "Stand 29.09.2026", "Junior Softwareentwickler",
-                    "Entwicklung: Python", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung"],
+                    "Entwicklung: Python", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
+                    "Außendienst (Door-to-Door) 2019 – 2023"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"]},
     "ats-cv/Jason_Roschmann_CV_ATS.pdf": {
         "pflicht": ["Mitgründer", "Stand 29.09.2026"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"]},
     "Jason_Roschmann_CV_EN.pdf": {
         "pflicht": ["Co-founder", "as of 29 Sep 2026", "Junior Software",
-                    "Development: Python", "Certificate: Google Ads", "Training: Web development"],
+                    "Development: Python", "Certificate: Google Ads", "Training: Web development",
+                    "Field sales (door-to-door) 2019 – 2023"],
         "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"]},
     "ats-cv/Jason_Roschmann_CV_ATS_EN.pdf": {
         "pflicht": ["Co-founder", "as of 29 Sep 2026"],
@@ -35,8 +38,9 @@ REGELN = {
 
 
 def text(pdf: Path, seite: int = 0) -> str:
+    # -layout wie in der Spezifikation (OpenCATS-Methode); der Rohmodus ordnet rechtsbündige Zeiträume unzuverlässig ein.
     bereich = ["-f", str(seite), "-l", str(seite)] if seite else []
-    return subprocess.run([PDFTOTEXT, "-enc", "UTF-8", *bereich, str(pdf), "-"], capture_output=True, check=True).stdout.decode("utf-8")
+    return subprocess.run([PDFTOTEXT, "-layout", "-enc", "UTF-8", *bereich, str(pdf), "-"], capture_output=True, check=True).stdout.decode("utf-8")
 
 
 def seiten(pdf: Path) -> int:
