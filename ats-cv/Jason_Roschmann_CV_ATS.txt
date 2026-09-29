@@ -11,129 +11,149 @@ Zürich für eine passende Rolle möglich | Start nach Absprache
 
 Profil
 
-Ich entwickle Weboberflächen und Python-Abläufe für konkrete
-Arbeitsprozesse: Content-Produktion, E-Commerce und Community-Werkzeuge.
-Meine Schwerpunkte sind die Verbindung von Oberfläche und Backend,
-nachvollziehbare Zustände und gezielte Fehlerprüfungen – mit KI-Agenten
-als Werkzeug und eigener Verantwortung für Anforderungen und Abnahme.
-Aus vier Jahren Vertrieb bringe ich Erfahrung darin mit, Anforderungen
-im direkten Gespräch zu verstehen.
+Quereinsteiger aus dem B2B-Vertrieb, seit 2024 in Webentwicklung und
+KI-Automation. Ich entwickle im Team das Social-Media-Studio Flowki
+Studio mit – von der Recherche bis zur Veröffentlichung – und bin
+Mitgründer des FlowKI Clubs, einer KI-Community mit eigenem Discord-Bot
+und Newsletter. Für einen Hamburger Shopify-Shop habe ich eine
+Übersetzungs-Pipeline und automatisierte SEO-Prüfungen gebaut.
+KI-Agenten sind mein Werkzeug – Anforderungen, Tests und Abnahme
+verantworte ich selbst.
 
-Kennzahlen: 50 eigene Pull Requests gemergt (Flowki Studio) · 21 → 0
-rote Tests (hermes-studio) · rund 66 Discord-Mitglieder FlowKI Club
+Kennzahlen: 50 eigene Pull Requests gemergt (Flowki Studio) · 3
+Shop-Sprachen betreut (DE, EN, FR; EN/FR-Inhalte über meine
+Übersetzungs-Pipeline ergänzt) · rund 66 Discord-Mitglieder FlowKI Club
 (Stand 29.09.2026) · 4 Jahre B2B-Vertrieb (2019–2023)
 
-Projekte
+Kompetenzen
 
-Flowki Studio — internes Social-Media-Studio, Teamprojekt (Aug. 2026 – heute)
+- Backend & APIs: Python, FastAPI, SQLAlchemy/Alembic, PostgreSQL,
+  Celery, Redis – APIs und Hintergrundjobs im Produktteam
+- Frontend: TypeScript, React, Next.js, Tailwind, GSAP – Produktions-,
+  Freigabe- und Veröffentlichungsansichten, Club-Website;
+  Kunden-Websites im Team (CI mit TypeScript-Check, ESLint, Vitest,
+  Playwright)
+- Testen & CI: Git, pytest, Vitest, Playwright, ESLint, GitHub Actions –
+  Fehler zuerst als fehlschlagender Test; die CI baut und prüft auch
+  diesen Lebenslauf
+- KI-Integration: LLM-APIs (Claude, Gemini, Groq), MCP, Claude Code –
+  FAQ-Bot mit Relevanzprüfung, MCP-Server, Modellbewertung gegen blinde
+  Referenzurteile
+- Betrieb: Linux-Server, Docker Compose, Cron – Rollouts mit Prüfsummen,
+  Tests vor und nach dem Tausch und automatischem Rückbau bei
+  abgefangenen Fehlern
+- Shopify: Liquid, Admin-GraphQL-API, Search Console –
+  Übersetzungs-Pipeline, Theme-Umbau, SEO-Prüfungen
+- Mit KI-Agenten: Claude Code setzt um, ich prüfe und nehme ab; von mir
+  eingerichtete Hooks blocken private Schlüssel im Code sowie gelöschte
+  oder deaktivierte Tests, ein zweites Modell reviewt
+- Weitere Werkzeuge: discord.js, React Native (Eigenprojekt), Supabase,
+  n8n, Agenten-Orchestrierung, Lighthouse-CI, flock, SMTP/IMAP,
+  SPF/DKIM, GSAP, PWA, Canvas/WebGL
 
-Zweck: Internes Social-Media-Studio für Themenrecherche, KI-gestützte
-Content-Produktion, redaktionelle Prüfung und Plattformübergabe; mein
-Beitrag im Team (50 eigene Pull Requests gemergt): Produktoberflächen,
-Workflow-Integration, Clip-Verarbeitung und Publishing.
+Berufserfahrung
 
-- Produktoberfläche: Produktions-, Freigabe- und
-  Veröffentlichungsansichten weiterentwickelt – Bearbeitungsstände,
-  Phasendauer und erforderliche Nutzeraktionen sichtbar gemacht.
-- Redaktionelle Zusammenarbeit: Ablehnungsgründe durch Oberfläche,
-  API-Client und Freigabeprotokoll verbunden – Rückgaben zur
-  Überarbeitung mit nachvollziehbarer Begründung ermöglicht.
-- Fehlerbehandlung: Erfolgreiche Produktion bzw. Lizenzierung von
-  nachfolgenden Status- und Zuordnungsfehlern getrennt – irreführende
-  Fehlermeldungen und Anreize für erneute, kostenwirksame Aufrufe
-  beseitigt.
-- Videoverarbeitung: Speaker-Reframe, Schnittvarianten und
-  reproduzierbaren Neu-Render nach Korrekturen umgesetzt – Langvideos in
-  bearbeitbare Hochformat-Clips überführt.
-- Publishing: TikTok-Entwurfsweg mit eigenem Status und Nutzerhinweis
-  integriert – hochgeladene Entwürfe eindeutig von veröffentlichten
-  Posts unterschieden.
+Webentwicklung & KI-Automation — Team-, Kunden- und Eigenprojekte (2024 – heute)
+
+Flowki Studio — internes Social-Media-Studio, Entwicklung im Team (Aug. 2026 – heute)
+
+Zweck: Themenrecherche, KI-gestützte Content-Produktion, redaktionelle
+Prüfung und Veröffentlichung auf Social-Media-Plattformen; mein Anteil:
+Produktoberflächen, Kampagnen- und Freigabeabläufe, Fehlerbehandlung,
+Video und Publishing.
+
+- Rechte vor dem Versand: Nutzungsrechte und Einwilligungen wurden nur
+  bei der Planung geprüft, bis zu 14 Tage vor dem Post; jetzt prüft das
+  Studio sie direkt vor dem Senden erneut und hält den Post sonst an
+  (fünf Tests).
+- Arbeitsansichten: Produktions-, Freigabe- und
+  Veröffentlichungsansichten zeigen Bearbeitungsstand, Phasendauer und
+  nötige Aktionen; Prüflisten und offene Blind-Reviews je Kampagne im
+  Tagesüberblick.
+- Freigaben im Team: Ablehnungsgründe von der Oberfläche bis ins
+  Freigabeprotokoll durchgereicht – Beiträge gehen mit nachvollziehbarer
+  Begründung zur Überarbeitung zurück.
+- Fehlerbehandlung: Scheiterte nach gelungener Produktion nur ein
+  späterer Statusschritt, wirkte das wie ein Fehlschlag und lud zu einer
+  zweiten, kostenwirksamen Produktion ein – Erfolg und Folgefehler
+  werden jetzt getrennt behandelt.
+- Video & Veröffentlichung: Langvideos werden zu bearbeitbaren
+  Hochformat-Clips mit sprecherfolgendem Zuschnitt; TikTok-Entwürfe sind
+  mit eigenem Status klar von veröffentlichten Posts getrennt.
 
 Tools: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis,
 Next.js, TypeScript
 
-FlowKI Club — Mitgründer, Website, Discord-Bot, Newsletter (Apr. 2026 – heute)
+FlowKI Club — Mitgründer, Community, Discord-Bot, Website, Newsletter (Apr. 2026 – heute)
 
 Zweck: Deutschsprachige KI-Community – rund 66 Mitglieder im Discord
 (Stand 29.09.2026) – mit Fachartikeln, Online-Calls und gemeinsamer
 Projektarbeit; ich verbinde Community-Arbeit mit technischer
 Produktentwicklung.
 
-- Community-Werkzeuge: Discord-Bot um /ask und Self-Service-Themenrollen
-  erweitert; discord.js und Testwerkzeuge aktualisiert.
-- KI-Antwortqualität: Artikelinhalte als Wissensgrundlage des FAQ-Bots
-  angebunden und einen Relevanz-Prüfschritt ergänzt – Verhalten bei
-  unpassenden Treffern mit gezielten Tests abgesichert.
+- Community: Mitglieder beim Einstieg begleitet und bei ihren eigenen
+  KI-Projekten unterstützt, Online-Calls organisiert und moderiert.
+- Discord-Bot: /ask und Self-Service-Themenrollen ergänzt; Club-Artikel
+  als Wissensgrundlage des FAQ-Bots angebunden, ein Relevanz-Prüfschritt
+  fängt unpassende Treffer ab – mit gezielten Tests abgesichert.
 - Website & Newsletter: Newsletter mit Double-Opt-In und
-  Empfehlungslinks, Plausible-Ereignisse für Anmeldung und Klicks auf
-  Discord-Beitrittslinks; Autoren-, FAQ- und HowTo-Markup in der
-  Artikelausgabe.
-- Community: Mitglieder beim Einstieg begleitet, Online-Calls
-  organisiert und moderiert, bei Projekten unterstützt.
+  Empfehlungslinks; Anmeldungen und Klicks auf Discord-Einladungen
+  messbar gemacht (Plausible); Autoren-, FAQ- und HowTo-Markup für
+  Suchmaschinen.
+- MCP-Server: Club-Artikel für KI-Assistenten wie Claude Code
+  durchsuchbar und lesbar gemacht, öffentlich auf GitHub.
 
-Tools: TypeScript, discord.js, Claude-API, PostgreSQL, Vitest, Next.js
+Tools: TypeScript, discord.js, Claude-API, MCP, PostgreSQL, Vitest,
+Next.js
 
-hermes-studio — Beitrag zu fremdem Projekt, Fehleranalyse (Sep. 2026)
+duftkumpels.shop — Kundenprojekt, Shopify DE/EN/FR, Automatisierung & SEO (Juni 2026 – heute)
 
-- Ursache: 21 rote Tests mit zwei Ursachen – 20× ein nie geschlossenes
-  SQLite-Handle, das unter Windows das Aufräumen sperrt, 1× ein
-  veralteter Test gegen eine Sicherheitsregel; Handle geschlossen, Regel
-  behalten, Test korrigiert.
-- Nachweis: Mutationsprobe – mit abgeschwächter Sicherheitsregel
-  scheitert der korrigierte Test; grüne Tests: 177 → 199.
-- Eigener Beitrag: Stillen Datenverlust im Task-Store behoben, mit fünf
-  neuen Tests.
-
-Beleg: Fallstudie im Web-CV https://jasonroschmann.github.io/cv/#fs-01
-
-duftkumpels.shop — Kundenprojekt, Shopify, API- & Übersetzungsautomatisierung (Juni 2026 – heute)
-
-- Automatisierung: Übersetzungs-Pipeline DE/EN/FR mit HTML-Extraktion,
-  Strukturprüfung und Import per CSV bzw. GraphQL;
-  Verfügbarkeitsabgleich über die Admin-GraphQL-API mit Sicherung und
-  Rücklesen.
+- Übersetzung: Pipeline für drei Sprachen – HTML-Texte extrahieren,
+  Struktur prüfen, per CSV bzw. GraphQL zurück in Shopify;
+  Verfügbarkeitsabgleich über die Admin-API mit Sicherung und Rücklesen.
 - SEO-Technik: Search-Console-Auswertung automatisiert, 700 URLs auf
-  Indexierung geprüft; JSON-LD ergänzt und automatisiert geprüft.
-- Theme & Qualität: Gekauftes Theme in Liquid, CSS und JavaScript
-  umgebaut; wöchentliche Lighthouse-Prüfung gegen den Live-Shop per
-  GitHub Actions.
-- E-Mail: Klaviyo-Abbruchmail auf wiederherstellbaren Checkout-Link
-  korrigiert.
+  Indexierung geprüft, JSON-LD ergänzt und automatisch geprüft.
+- Ursachensuche: Warum EN/FR-Produktseiten Besucher auf die deutsche
+  Seite umleiten (allein 153 Suchklicks auf englische Produktseiten in
+  90 Tagen): eingegrenzt auf eine Shopify-Weiterleitung vor dem Theme,
+  reproduziert und für den Shopify-Support dokumentiert.
+- Theme & E-Mail: Gekauftes Theme in Liquid, CSS und JavaScript
+  umgebaut; wöchentliche Lighthouse-Prüfung per GitHub Actions;
+  Klaviyo-Abbruchmail auf wiederherstellbaren Checkout-Link korrigiert.
 
 Tools: Shopify Liquid, Admin-GraphQL-API, Python, GitHub Actions,
 Klaviyo
 
 KI-gestützte Bewerbungsverwaltung — Eigenprojekt, Python (Juli 2026 – heute)
 
-Zweck: Python-Pipeline für Stellensuche über Job-APIs (u. a.
-Bundesagentur für Arbeit, Greenhouse, Lever), Anschreiben, Prüfungen,
-Versand und Antwortzuordnung.
+Zweck: Python-Pipeline, die Stellen über Job-APIs findet (u. a.
+Bundesagentur für Arbeit, Greenhouse, Lever), bewertet, Unterlagen
+prüft, versendet und Antworten zuordnet.
 
-- Nachvollziehbarkeit: Kanalübergreifendes Hauptbuch für Erstbewerbungen
-  mit Reservierung – keine Doppelbewerbung über Mail und Portal,
-  höchstens eine Bewerbung je Firma in 14 Tagen.
-- Prüfungen vor dem Versand: Unbrauchbare Modellantworten stoppen den
-  Lauf; Modell-Kaskade (Claude, Gemini, Groq) mit Sperrzeiten.
-- Bewertungsqualität: LLM-Bewertungen gegen blinde Referenzurteile
-  geprüft; eine überarbeitete Analyse nach unvollständiger Messung ohne
-  belegte Verbesserung nicht ausgerollt.
-- Betrieb: Rollouts mit Prüfsummen, Tests vor und nach dem Tausch und
+- Keine Doppelbewerbung: Kanalübergreifendes Hauptbuch mit Reservierung
+  – höchstens eine Bewerbung je Firma in 14 Tagen, egal ob per Mail oder
+  Portal.
+- Messen statt glauben: LLM-Bewertungen gegen blinde Referenzurteile
+  geprüft; eine überarbeitete Analyse ohne belegte Verbesserung nicht
+  ausgerollt.
+- Betrieb: Unbrauchbare Modellantworten stoppen den Lauf, bei Ausfall
+  übernimmt ein anderes Modell; Rollouts mit Prüfsummen und
   automatischem Rückbau bei abgefangenen Fehlern.
 
 Belege: Fallstudie Antwortzuordnung
 https://jasonroschmann.github.io/cv/#fs-02 · Fallstudie LLM-Bewertung
 https://jasonroschmann.github.io/cv/#fs-03
 
-Berufserfahrung
+hermes-studio — Beitrag zu fremdem Projekt, Fehleranalyse (Sep. 2026)
 
-KI-Automation & Webentwicklung — Eigene Projekte, Team- und Kundenprojekte (2024 – heute)
+- Ursache statt Symptom: 21 fehlschlagende Tests, zwei Ursachen – 20×
+  ein nie geschlossenes SQLite-Handle, 1× ein veralteter Test gegen eine
+  Sicherheitsregel; Regel behalten, Test korrigiert und per
+  Mutationsprobe nachgewiesen. Grüne Tests: 177 → 199.
+- Eigener Beitrag: Stillen Datenverlust im Task-Store behoben, mit fünf
+  neuen Tests.
 
-- Python-Backends und Next.js-Frontends entwickelt, getestet und auf
-  Linux-Servern betrieben (Docker Compose, Cron, Deployment mit
-  Rollback); Shopify-Themes angepasst; im Team über Branches, Pull
-  Requests und gemeinsame Test-Suites.
-- Kunden-Websites im Team gebaut: Next.js, GSAP, CI mit
-  TypeScript-Check, ESLint, Vitest und Playwright.
+Beleg: Fallstudie im Web-CV https://jasonroschmann.github.io/cv/#fs-01
 
 B2B-Direktvertrieb — Außendienst bundesweit, EWE TEL und Ranger Marketing (2019 – 2023)
 
@@ -142,29 +162,7 @@ B2B-Direktvertrieb — Außendienst bundesweit, EWE TEL und Ranger Marketing (20
 - Täglicher Umgang mit Absagen – und der Blick dafür, welche Probleme
   ein Betrieb wirklich hat.
 
-Kenntnisse & Arbeitsweise
-
-- Entwicklung: Python, REST-APIs mit FastAPI · TypeScript, React,
-  Next.js, discord.js · React Native (Eigenprojekt)
-- KI & Agenten: Claude Code, LLM-APIs (Claude, Gemini, Groq), MCP,
-  Agenten-Orchestrierung, n8n
-- Daten & Jobs: SQL/PostgreSQL, SQLAlchemy/Alembic, Celery, Redis,
-  Supabase
-- Qualität: Git, CI/CD mit GitHub Actions, pytest, Vitest, Playwright,
-  Lighthouse-CI
-- Betrieb: Linux-Server, Docker Compose, Cron, flock, SMTP/IMAP,
-  SPF/DKIM
-- Web & Commerce: Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL
-- Mit KI-Agenten: Fehler zuerst als roter Test · Agent setzt um · ein
-  zweites Modell prüft zusätzlich als Reviewer · Rollout mit Prüfsummen
-  und automatischem Rückbau bei abgefangenen Fehlern
-- GitHub: 61 meiner Pull Requests gemergt (Stand 29.09.2026): Flowki
-  Studio 50, eigene Repos 8, Kundenprojekte 3
-- Öffentliche Codebeispiele: Web-CV https://github.com/JasonRoschmann/cv
-  · MCP-Server für Club-Inhalte
-  https://github.com/Jokersystems-online/flowki-knowledge-mcp
-
-Weiterbildung, Zertifikat & Sprachen
+Weiterbildung, Sprachen & Nachweise
 
 - Weiterbildung: Webentwicklung (2024, 6 Monate): HTML, CSS, JavaScript,
   Web-Architektur
@@ -175,3 +173,8 @@ Weiterbildung, Zertifikat & Sprachen
   Polnisch (mündlich)
 - Remote-Arbeit: Verteilte Teamarbeit über GitHub (Branches, Pull
   Requests), Discord und Online-Calls
+- GitHub: 61 meiner Pull Requests gemergt (Stand 29.09.2026): Flowki
+  Studio 50, eigene Repos 8, Kundenprojekte 3
+- Öffentlicher Code: Web-CV mit Build und Prüfung
+  https://github.com/JasonRoschmann/cv · MCP-Server für Club-Artikel
+  https://github.com/Jokersystems-online/flowki-knowledge-mcp
