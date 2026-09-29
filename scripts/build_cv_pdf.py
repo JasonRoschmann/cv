@@ -28,10 +28,10 @@ ATS = [REPO / "ats-cv" / "Jason_Roschmann_CV_ATS.md", REPO / "ats-cv" / "Jason_R
        REPO / "ats-cv" / "Jason_Roschmann_CV_Marketing_ATS.md"]
 ATS_STIL = """<style>
 @page { size: A4; margin: 12mm 15mm }
-html, body { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; line-height: 1.3; max-width: none; padding: 0; margin: 0 }
+html, body { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; line-height: 1.25; max-width: none; padding: 0; margin: 0 }
 @media print { body { font-size: 10pt } }
 h1 { font-size: 19pt; margin: 0 0 3pt } h2 { font-size: 12.5pt; margin: 9pt 0 3pt; padding-bottom: 2pt; border-bottom: 1px solid #999; break-after: avoid }
-h2 + p { break-after: avoid }
+h2 + p { break-after: avoid } ul + p { break-before: avoid }
 h3 { font-size: 10.5pt; margin: 8pt 0 2pt; break-after: avoid } p, li { margin: 2pt 0; break-inside: avoid } ul { padding-left: 15pt; margin: 2pt 0 }
 </style>
 """
@@ -94,7 +94,7 @@ def ats(md: Path) -> None:
 
 
 def main() -> int:
-    for pfad in [REPO / q for q, _ in DRUCK] + [REPO / "cv-print.css"] + ATS:
+    for pfad in [REPO / q for q, _ in DRUCK] + [REPO / "cv-print.css", REPO / "cv-v4.css"] + ATS:
         if not pfad.exists():
             print("FEHLER:", pfad.name, "fehlt"); return 1
     try:

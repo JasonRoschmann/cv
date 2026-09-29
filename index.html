@@ -7,7 +7,7 @@
 <meta name="description" content="Jason Roschmann – KI-Automation & Softwareentwicklung mit Python und TypeScript, in eigenen Projekten und im Team. Junior / Quereinstieg, Hamburg oder remote.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jason Roschmann – KI-Automation, E-Commerce & Technical SEO">
-<meta property="og:description" content="Interaktives Web-CV: Clip-Studio im Team, Python-Automation mit Sperren und Rückbau, Shopify-Umbau live. Junior / Quereinstieg, Hamburg oder remote.">
+<meta property="og:description" content="Interaktives Web-CV: Flowki Studio im Team, Mitgründer der KI-Community FlowKI Club, Python-Automation mit Sperren und Rückbau, Shopify-Umbau live. Junior / Quereinstieg, Hamburg oder remote.">
 <meta property="og:image" content="https://jasonroschmann.github.io/cv/og.png">
 <meta property="og:url" content="https://jasonroschmann.github.io/cv/">
 <link rel="canonical" href="https://jasonroschmann.github.io/cv/">
@@ -43,7 +43,8 @@
    "Google Analytics 4",
    "Python",
    "n8n",
-   "KI-Automation"
+   "KI-Automation",
+   "Community-Aufbau"
   ],
   "knowsLanguage": [
    "de",
@@ -222,7 +223,7 @@
   .insight{margin-top:26px;padding:18px 20px;border-radius:14px;background:rgba(63,220,132,.05);border:1px solid rgba(63,220,132,.16);border-left:2.5px solid var(--grn)}
   /* --- Live gebaut: klickbare Live-Beweise --- */
   .livework{margin-top:clamp(22px,4.5vh,48px)}
-  .lw-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  .lw-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:16px}
   @media(max-width:760px){.lw-cards{grid-template-columns:1fr}}
   .lw{position:relative;display:block;border:1px solid var(--line);border-radius:14px;padding:20px;background:linear-gradient(160deg,var(--elev),var(--panel));text-decoration:none;color:inherit;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,.03) inset,0 18px 40px -30px rgba(0,0,0,.9);transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .35s,box-shadow .35s}
   .lw::before{content:"";position:absolute;inset:0 0 auto 0;height:1px;background:linear-gradient(90deg,transparent,rgba(63,220,132,.4),transparent);opacity:.5;transition:opacity .35s}
@@ -321,6 +322,19 @@
   .card:hover{transform:translateY(-3px);border-color:var(--line2)}
   .card .ct{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
   .card h4{font-family:var(--fd);font-weight:600;font-size:1.15rem}
+  /* GitHub-Karte: gemergte PRs je Woche, gestapelt nach Projekt; --u = Höhe eines PRs */
+  .ghw{--u:4.6px;display:grid;grid-template-columns:repeat(9,1fr);gap:10px;align-items:end;height:150px;margin:18px 0 6px}
+  .ghw .w{display:flex;flex-direction:column;justify-content:flex-end;gap:2px}
+  .ghw .w b{font:600 11px var(--fm);color:var(--ink2);text-align:center;margin-bottom:4px}
+  .ghw .w.null b{color:var(--dim)}
+  .ghw i,.ghl span::before{display:block;border-radius:3px;background:var(--grn)}
+  .ghw i.cv,.ghl .cv::before{background:rgba(63,220,132,.55)}
+  .ghw i.ku,.ghl .ku::before{background:rgba(63,220,132,.28)}
+  .ghw-x{display:grid;grid-template-columns:repeat(9,1fr);gap:10px;font:500 10px var(--fm);color:var(--mut);text-align:center}
+  .ghl{display:flex;flex-wrap:wrap;gap:6px 16px;font:500 11px var(--fm);color:var(--mut);margin:12px 0 6px}
+  .ghl span::before{content:"";display:inline-block;width:9px;height:9px;margin-right:6px;vertical-align:-1px}
+  .ghl .muted::before{display:none}
+  @media(max-width:640px){.ghw,.ghw-x{gap:4px}.ghw-x{font-size:9px}}
   .card .tag{font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);border:1px solid var(--line2);border-radius:20px;padding:3px 9px;white-space:nowrap}
   .card .tag.live{color:var(--grn);border-color:rgba(63,220,132,.4)}
   .card p{color:var(--ink2);font-size:14px;margin-top:6px}
@@ -642,6 +656,8 @@
     body.app-open .main{opacity:1;visibility:visible;pointer-events:auto;transform:none;border-radius:0;
       transition:transform .65s var(--spg2),opacity .3s,visibility .65s,border-radius .65s}
     .view{padding:calc(env(safe-area-inset-top) + 108px) 20px calc(env(safe-area-inset-bottom) + 58px)}
+    /* Direktlinks (#fs-01 …): der Browser scrollt selbst zum Anker – Ziel unter der App-Kopfleiste ablegen */
+    .view [id]{scroll-margin-top:calc(env(safe-area-inset-top) + 96px)}
     .appbar{position:fixed;top:0;left:0;right:0;z-index:45;display:flex;align-items:center;
       padding:calc(env(safe-area-inset-top) + 46px) 14px 0;
       opacity:0;visibility:hidden;transition:opacity .4s .12s,visibility .4s;pointer-events:none}
@@ -785,10 +801,10 @@
       <div class="telem">
         <h5>Projekte · Stand 09/2026</h5>
         <div class="trow"><span class="d on"></span>Flowki Studio <span class="v g">team</span></div>
+        <div class="trow"><span class="d"></span>FlowKI Club <span class="v">mitgründer</span></div>
         <div class="trow"><span class="d on"></span>duftkumpels.shop <span class="v g">live</span></div>
         <div class="trow"><span class="d"></span>Bewerbungsverwaltung <span class="v">eigen</span></div>
         <div class="trow"><span class="d"></span>hermes-brett <span class="v">plugin</span></div>
-        <div class="trow"><span class="d"></span>nk247 · Überarbeitung <span class="v">branch</span></div>
         <svg class="spark" id="spark" viewBox="0 0 220 34" preserveAspectRatio="none"><polyline points=""></polyline></svg>
       </div>
       <div class="sfoot">
@@ -806,9 +822,9 @@
           <div class="hero-copy">
             <div class="term rv">$ whoami<span class="caret"></span></div>
             <h1 class="display h-hero rv">Ich baue <span style="white-space:nowrap">KI-Automation</span> —<br>und teste zuerst,<br><span class="g it">was schiefgehen kann.</span></h1>
-            <p class="lead rv" style="margin-top:22px">Python und TypeScript, in eigenen Projekten und im Team: vom Clip-Studio, das Langvideos zu Shorts schneidet, bis zur Pipeline, die keine Aktion doppelt ausführt. KI-Agenten sind mein Werkzeug — Anforderungen, Architektur und Abnahme liegen bei mir.</p>
+            <p class="lead rv" style="margin-top:22px">Python und TypeScript, in eigenen Projekten und im Team: vom Social-Media-Studio Flowki Studio über die KI-Community FlowKI Club, die ich mitgegründet habe, bis zur Bewerbungsverwaltung mit kanalübergreifender Reservierung gegen doppelte Erstbewerbungen. KI-Agenten sind mein Werkzeug — Anforderungen, Architektur und Abnahme liegen bei mir.</p>
             <div class="proofrow rv">
-              <div class="pf"><b>50 PRs gemergt</b><span>in Flowki Studio (Team), Schwerpunkt Clip-Studio</span></div>
+              <div class="pf"><b>50 PRs gemergt</b><span>eigene, im Teamprojekt Flowki Studio</span></div>
               <div class="pf"><b>21 → 0 rote Tests</b><span>Ursachen gefunden, keine Tests abgeschaltet</span></div>
               <div class="pf"><b>Junior-Rolle gesucht</b><span>Hamburg · remote · Zürich möglich</span></div>
             </div>
@@ -828,11 +844,18 @@
             </a>
             <div class="lw">
               <div class="lw-url"><span class="dot"></span>Flowki Studio · Teamprojekt</div>
-              <h4>Clip-Studio</h4>
-              <p>Aus Langvideos werden Shorts: Speaker-Reframe mit geglätteten 9:16-Keyframes, deterministischer Neu-Render, bis zu drei Varianten je Clip.</p>
-              <div class="lw-tags"><span>Python</span><span>Celery</span><span>FastAPI</span></div>
+              <h4>Social-Media-Studio</h4>
+              <p>Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung und Plattformübergabe. Mein Teil: Oberflächen, Freigaben, Clip-Verarbeitung und Publishing.</p>
+              <div class="lw-tags"><span>Python</span><span>FastAPI</span><span>Next.js</span></div>
               <div class="lw-cta">&#9654; Demo im Gespräch</div>
             </div>
+            <a class="lw" href="#club" data-sprung>
+              <div class="lw-url"><span class="dot"></span>FlowKI Club · Mitgründer</div>
+              <h4>FlowKI Club</h4>
+              <p>KI-Community, die ich mitgegründet habe: Discord mit rund 66 Mitgliedern (Stand 29.09.2026), Online-Calls und gemeinsame Projekte – dazu Website, Newsletter und Discord-Bot.</p>
+              <div class="lw-tags"><span>Mitgründer</span><span>Community</span><span>Discord-Bot</span></div>
+              <div class="lw-cta">&#9654; Projektbeschreibung ansehen</div>
+            </a>
           </div>
         </div>
               <div class="pow rv" id="pow" style="margin-top:clamp(22px,4.5vh,48px)">
@@ -882,13 +905,25 @@
         <p class="eyebrow rv">Was ich baue</p>
         <h2 class="display h-xl rv" style="margin-top:14px;max-width:22ch">Projekte mit <span class="g it">nachprüfbarem Beitrag.</span></h2>
         <div class="crown rv">
-          <div class="top"><p class="eyebrow" style="color:var(--grn)">◆ Teamprojekt · Aug.–Sep. 2026</p><span class="badge">64 PRs · 50 gemergt</span></div>
-          <h3 class="display h-l" style="margin-top:12px">Flowki Studio — Clip-Studio</h3>
-          <p class="body" style="margin-top:8px;max-width:64ch">Internes Social-Media-Studio für Trends, Plattform-Playbooks und eine KI-Content-Pipeline. Mein Schwerpunkt ist die Clip-Verarbeitung: Aus Langvideos werden Shorts.</p>
-          <div class="urow"><div class="k">Reframe</div><div class="v">Der Planer misst das Gesicht an mehreren Zeitpunkten statt einmal, glättet die Reihe und liefert stückweise konstante 9:16-Keyframes — der Ausschnitt folgt der sprechenden Person.</div></div>
-          <div class="urow"><div class="k">Neu-Render</div><div class="v">Korrekturen erzeugen append-only Planversionen; jede Änderung entwertet eine erteilte Freigabe. Der Render läuft deterministisch und asynchron über Celery, ohne Modellkosten.</div></div>
-          <div class="urow"><div class="k">Varianten</div><div class="v">Bis zu drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint) — keine Variante ohne Empfänger.</div></div>
+          <div class="top"><p class="eyebrow" style="color:var(--grn)">◆ Teamprojekt · seit Aug. 2026</p><span class="badge">64 PRs · 50 gemergt</span></div>
+          <h3 class="display h-l" style="margin-top:12px">Flowki Studio — internes Social-Media-Studio</h3>
+          <p class="body" style="margin-top:8px;max-width:64ch">Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung und Plattformübergabe. Mein Beitrag im Team: Produktoberflächen, Workflow-Integration, Clip-Verarbeitung und Publishing.</p>
+          <div class="urow"><div class="k">Oberfläche</div><div class="v">Produktions-, Freigabe- und Veröffentlichungsansichten weiterentwickelt – Bearbeitungsstände, Phasendauer und erforderliche Nutzeraktionen sichtbar gemacht.</div></div>
+          <div class="urow"><div class="k">Redaktion</div><div class="v">Ablehnungsgründe durch Oberfläche, API-Client und Freigabeprotokoll verbunden – Rückgaben zur Überarbeitung mit nachvollziehbarer Begründung.</div></div>
+          <div class="urow"><div class="k">Statusfehler</div><div class="v">Erfolgreiche Produktion bzw. Lizenzierung von nachfolgenden Status- und Zuordnungsfehlern getrennt – keine irreführenden Fehlermeldungen, keine Anreize für erneute, kostenwirksame Aufrufe.</div></div>
+          <div class="urow"><div class="k">Publishing</div><div class="v">TikTok-Entwurfsweg mit eigenem Status und Nutzerhinweis – hochgeladene Entwürfe eindeutig von veröffentlichten Posts unterschieden.</div></div>
+          <div class="urow"><div class="k">Clip-Studio</div><div class="v">Langvideos werden bearbeitbare Hochformat-Clips: Speaker-Reframe, bis zu drei Schnittvarianten je Clip, deterministischer Neu-Render nach Korrekturen – Details im <a href="#at-video" data-sprung style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">Kompetenz-Atlas</a>.</div></div>
           <div class="urow j"><div class="k">Fehlerfälle</div><div class="v">Fixes für Jobs, die nach verschwundenem Worker für immer „läuft“ zeigten, und für eine Produktion, die ein Statusfehler doppelt auslöste.</div></div>
+        </div>
+        <div class="crown rv" id="club" style="margin-top:18px">
+          <div class="top"><p class="eyebrow" style="color:var(--grn)">◆ Mitgründer · seit Apr. 2026</p><span class="badge">rund 66 Mitglieder · Stand 29.09.2026</span></div>
+          <h3 class="display h-l" style="margin-top:12px">FlowKI Club — KI-Community &amp; Magazin</h3>
+          <p class="body" style="margin-top:8px;max-width:64ch">Deutschsprachige KI-Community mit Discord, Fachartikeln, Online-Calls und gemeinsamer Projektarbeit. Ich verbinde Community-Arbeit mit technischer Produktentwicklung; der Club dient auch der Anbahnung potenzieller Kundenaufträge.</p>
+          <div class="urow"><div class="k">Community</div><div class="v">Mitglieder gewonnen und beim Einstieg begleitet, Online-Calls organisiert und moderiert, Themen geplant; Mitglieder bei ihren eigenen KI-Projekten unterstützt.</div></div>
+          <div class="urow"><div class="k">Zugang</div><div class="v">Newsletter mit Double-Opt-In und Empfehlungslinks; Plausible-Ereignisse für Anmeldung, Bestätigung und Klicks auf Discord-Beitrittslinks.</div></div>
+          <div class="urow"><div class="k">Verteilung</div><div class="v">Artikel in plattformgerechte Social-Pakete überführt und an die Veröffentlichungsplanung angebunden – Prüfungen auf Textqualität, Länge und Markenregeln vor dem Einplanen.</div></div>
+          <div class="urow"><div class="k">Discord-Bot</div><div class="v">/ask und Self-Service-Themenrollen; Artikelinhalte als Wissensgrundlage des FAQ-Bots mit Relevanz-Prüfschritt, Verhalten bei unpassenden Treffern getestet.</div></div>
+          <div class="urow"><div class="k">Website</div><div class="v">Autoren-, FAQ- und HowTo-Markup in der Artikelausgabe.</div></div>
         </div>
         <p class="eyebrow rv" style="margin-top:34px">Fallstudien</p>
         <h3 class="display h-l rv" style="margin-top:12px;max-width:24ch">Drei Fälle, in denen der erste Eindruck <span class="g it">täuschte.</span></h3>
@@ -937,17 +972,27 @@
         <div class="sysgrid rv" style="margin-top:14px">
           <div class="card" style="grid-column:1 / -1;border-color:rgba(63,220,132,.3)"><div class="ct"><h4>KI-gestützte Bewerbungsverwaltung</h4><span class="tag">Eigenprojekt · seit Juli 2026</span></div><p>Python-Pipeline für Stellensuche über Job-APIs (u. a. Bundesagentur für Arbeit, Greenhouse, Lever), Anschreiben, Prüfungen, Versand und Antwortzuordnung. Schwerpunkt: nachvollziehbare Aktionen. Ein kanalübergreifendes Hauptbuch für Erstbewerbungen mit Reservierung verhindert Doppelbewerbungen über Mail und Portal — höchstens eine Bewerbung je Firma in 14 Tagen. Blockierende Prüfungen vor dem Versand: unbrauchbare Modellantworten stoppen den Lauf; Modell-Kaskade mit Sperrzeiten. Rollouts mit Prüfsummen, Tests vor und nach dem Tausch und automatischem Rückbau.</p><div class="stack"><span class="chip">Python</span><span class="chip">Cron · flock</span><span class="chip">SMTP/IMAP</span><span class="chip">Claude · Gemini · Groq</span></div><p class="proof">94 Python-Dateien, davon 56 Testdateien — Fallstudien 02 und 03 stammen aus diesem Projekt.</p></div>
           <div class="card" style="grid-column:1 / -1"><div class="ct"><h4>Web- &amp; Shop-Entwicklung für Kunden</h4><span class="tag live">Kunden- und Teamprojekte</span></div><p>Websites und Shops für Kunden umgesetzt — von Gestaltung und Interaktion über Mehrsprachigkeit und rechtliche Vorgaben bis zu CI und Auslieferung.</p>
-            <div class="urow"><div class="k">Interaktion</div><div class="v">Next.js, React, TypeScript, GSAP: Hero als Frame-Sequenz — der Kopf des Kuriers dreht sich mit dem Mauszeiger, auf dem Handy per Geräteneigung; Vollbild-Kapitel mit eigener Mobile-Bedienung. <span class="muted">nk247store.de</span></div></div>
+            <div class="urow"><div class="k">Interaktion</div><div class="v">Next.js, React, TypeScript, GSAP: Hero als Frame-Sequenz — der Kopf des Kuriers dreht sich mit dem Mauszeiger, auf dem Handy per Geräteneigung; Vollbild-Kapitel mit eigener Mobile-Bedienung.</div></div>
             <div class="urow"><div class="k">Shop &amp; Inhalte</div><div class="v">Gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut; eigene Design-Schicht im Live-Theme, dreisprachig (DE/EN/FR), Produktdaten über Metafields. <span class="muted">duftkumpels.shop</span></div></div>
             <div class="urow"><div class="k">SEO &amp; E-Mail</div><div class="v">Search-Console-Auswertung der Suchfragen in DE/EN/FR automatisiert, Titel und Metadaten danach angepasst; Klaviyo-Abbruchmail auf einen wiederherstellbaren Checkout-Link korrigiert. <span class="muted">duftkumpels.shop</span></div></div>
-            <div class="urow"><div class="k">Qualität</div><div class="v">CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright <span class="muted">nk247store.de</span>; wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions <span class="muted">duftkumpels.shop</span></div></div>
-            <div class="urow"><div class="k">Performance</div><div class="v">Versionierte Assets, Lade-Fallback, Performance-Runden gegen Ruckeln. <span class="muted">nk247store.de</span></div></div>
-            <div class="urow"><div class="k">Recht</div><div class="v">Tabakwerbung nach § 19 TabakerzG aus allen Motiven entfernt. <span class="muted">nk247store.de</span></div></div>
+            <div class="urow"><div class="k">Qualität</div><div class="v">CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright; wöchentliche Lighthouse-Prüfung gegen den Live-Shop per GitHub Actions <span class="muted">duftkumpels.shop</span></div></div>
+            <div class="urow"><div class="k">Performance</div><div class="v">Versionierte Assets, Lade-Fallback, Performance-Runden gegen Ruckeln.</div></div>
+            
             <div class="urow"><div class="k">KI-Werkzeuge</div><div class="v">Design-Brief geschrieben, KI-Website-Builder gesteuert und selbst nachgearbeitet: Kamerafahrten aus echten Fotos, Farbkorrektur, Übergänge. <span class="muted">Redesign-Entwurf für ein Hamburger Izakaya</span></div></div>
-            <p class="proof"><a href="https://duftkumpels.shop" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">duftkumpels.shop</a> — Projektarbeit seit Juni 2026, Anpassungen im Live-Theme · nk247store.de — Kundenprojekt im Team; meine Überarbeitung liegt auf eigenem Branch, live ist die erste Fassung des Teams.</p></div>
+            <p class="proof"><a href="https://duftkumpels.shop" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">duftkumpels.shop</a> — Projektarbeit seit Juni 2026, Anpassungen im Live-Theme.</p></div>
           <div class="card"><div class="ct"><h4>Werkzeuge für KI-Agenten</h4><span class="tag">Plugin · Fork-Beitrag</span></div><p><b>hermes-brett:</b> Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt, mit Kosten-Gate gegen versehentliche bezahlte Agentenläufe. <b>hermes-studio:</b> Beitrag zu einem fremden Projekt — siehe Fallstudie 01.</p><div class="stack"><span class="chip">TypeScript</span><span class="chip">Vitest</span><span class="chip">node:assert</span></div><p class="proof">hermes-brett: Deploy mit Rollback, Selbsttest nur mit node:assert.</p></div>
           <div class="card"><div class="ct"><h4>Shinobi: Ember Accord</h4><span class="tag">Agenten-Experiment</span></div><p>Mobiles Idle-RPG mit React Native, Skia und Supabase. Agenten-orchestriert: Ein KI-Agent arbeitet im Lead-Modus 50 Rollen ab, die Produktentscheidungen treffe ich.</p><div class="stack"><span class="chip">React Native</span><span class="chip">Supabase · pgTAP</span><span class="chip">Deno Edge</span></div><p class="proof">Dokumentiert in einem Agenten-Ledger, mit getrennten App- und Datenbanktests.</p></div>
           <div class="card" style="grid-column:1 / -1;border-color:rgba(63,220,132,.35)"><div class="ct"><h4>◆ Dieses Web-CV</h4><span class="tag live">Du bist gerade drin</span></div><p>Am Handy ein eigenes Phone-UI — als App installierbar, mit Glas-Refraktion über SVG-Displacement-Filter, einem Canvas-Graphen, Federphysik und App-Gesten. HTML, CSS und JavaScript ohne Framework; die Fluid-Simulation ist von PavelDoGreat (MIT) adaptiert.</p><div class="stack"><span class="chip">PWA · installierbar</span><span class="chip">SVG-Displacement</span><span class="chip">Canvas</span><span class="chip">WebGL</span></div><p class="proof">Öffne es am Handy: Boot, Lockscreen, App-Zoom.</p></div>
+        </div>
+        <p class="eyebrow rv" style="margin-top:34px;color:var(--mut)">GitHub · Stand 29.09.2026</p>
+        <div class="card rv" id="github" style="margin-top:14px">
+          <div class="ct"><h4>57 meiner Pull Requests gemergt</h4><span class="tag">Aug.–Sep. 2026</span></div>
+          <p>Gemergte Pull Requests je Woche (ab Montag), nach Projekt gestapelt. Private Repositories sind nur gezählt – ohne Titel und ohne Links.</p>
+          <div class="ghw" role="img" aria-label="Gemergte Pull Requests je Woche: 3. August 4, 10. August 0, 17. August 0, 24. August 1, 31. August 26, 7. September 6, 14. September 11, 21. September 8, 28. September 1 (Woche läuft noch)"><div class="w"><b>4</b><i class="cv" style="height:calc(var(--u)*1)"></i><i class="fl" style="height:calc(var(--u)*3)"></i></div><div class="w null"><b>0</b></div><div class="w null"><b>0</b></div><div class="w"><b>1</b><i class="fl" style="height:calc(var(--u)*1)"></i></div><div class="w"><b>26</b><i class="ku" style="height:calc(var(--u)*3)"></i><i class="fl" style="height:calc(var(--u)*23)"></i></div><div class="w"><b>6</b><i class="fl" style="height:calc(var(--u)*6)"></i></div><div class="w"><b>11</b><i class="fl" style="height:calc(var(--u)*11)"></i></div><div class="w"><b>8</b><i class="cv" style="height:calc(var(--u)*2)"></i><i class="fl" style="height:calc(var(--u)*6)"></i></div><div class="w"><b>1</b><i class="cv" style="height:calc(var(--u)*1)"></i></div></div>
+          <div class="ghw-x" aria-hidden="true"><span>3.8.</span><span>10.8.</span><span>17.8.</span><span>24.8.</span><span>31.8.</span><span>7.9.</span><span>14.9.</span><span>21.9.</span><span>28.9.*</span></div>
+          <div class="ghl"><span class="fl">Flowki Studio 50</span><span class="cv">Web-CV 4</span><span class="ku">Kundenprojekte 3</span><span class="muted">* Woche läuft noch</span></div>
+          <div class="urow"><div class="k">Web-CV</div><div class="v">Dieser Lebenslauf als Web-App, ergänzt um Druck- und ATS-Fassungen mit gemeinsamem Build- und Prüfskript. <span class="muted">Prüfung:</span> Prüfskript für jede PDF-Fassung – zwei Seiten, Pflichtangaben, Link-Ziele, Abstand zur Fußzeile – mit Selbsttest. <span class="muted">Grenze:</span> statische Seite ohne Server. <a href="https://github.com/JasonRoschmann/cv" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">Quellcode ↗</a></div></div>
+          <div class="urow"><div class="k">MCP-Server</div><div class="v">Club-Artikel als Wissensbasis für MCP-Clients wie Claude Desktop und Claude Code: Artikel listen, suchen und lesen, Themensäulen abrufen. <span class="muted">Prüfung:</span> Smoke-Test ruft die Werkzeuge auf und protokolliert die Ergebnisse. <span class="muted">Grenze:</span> liest live von der Club-Website und hängt an deren Erreichbarkeit. <a href="https://github.com/Jokersystems-online/flowki-knowledge-mcp" target="_blank" rel="noopener" style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">Quellcode ↗</a></div></div>
         </div>
       </div></section>
 
@@ -963,7 +1008,8 @@
             <div class="org">Eigene Projekte, Team- und Kundenprojekte · Hamburg / remote</div>
             <ul>
               <li><b>Python-Backends und Next.js-Frontends</b> entwickelt, getestet und auf Linux-Servern betrieben (Docker Compose, Cron, Deployment mit Rollback); Shopify-Themes angepasst.</li>
-              <li><b>Im Team</b> über Branches, Pull Requests und gemeinsame Test-Suites — 50 gemergte PRs in Flowki Studio, Schwerpunkt Clip-Studio.</li>
+              <li><b>Im Team</b> über Branches, Pull Requests und gemeinsame Test-Suites — 50 eigene PRs in Flowki Studio gemergt.</li>
+              <li><b>FlowKI Club, Mitgründer seit Apr. 2026:</b> KI-Community mit aufgebaut – Mitglieder beim Einstieg begleitet, Online-Calls organisiert und moderiert; der Club dient auch der Anbahnung potenzieller Kundenaufträge.</li>
               <li><b>KI-gestützte Entwicklung:</b> Agenten setzen um, Anforderungen, Architektur und Abnahme liegen bei mir.</li>
             </ul>
           </div>
@@ -1026,8 +1072,9 @@
           <div class="at" data-f="ecom dev"><div class="at-h"><b>Verfügbarkeit ehrlich halten</b><span class="st ok">eingesetzt</span></div><p>SEO-Verfügbarkeitsaussagen automatisch mit kaufbaren Varianten abgeglichen, zwei falsche korrigiert; nicht lieferbare Produkte auf Wissensseiten gekennzeichnet und Alternativen eingeblendet.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug.–Sep. 2026</span></div></div>
           <div class="at" data-f="ecom"><div class="at-h"><b>Messung &amp; Gegenprobe</b><span class="st ok">eingesetzt</span></div><p>GA4-Kaufzahlen mit Shopify-Bestellungen abgeglichen; wöchentliche Lighthouse-Prüfung per GitHub Actions; einen CSS-Preload-Patch nach ungünstigen Messläufen zurückgerollt; einen KI-Auditbefund zu Grundpreisen anhand der Produktdaten widerlegt.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug.–Sep. 2026</span></div><p class="at-g"><span>Rahmen</span>Aggregierte Kaufzahlen verglichen; keine Zuordnung einzelner Transaktionen.</p></div>
         </div>
-        <div class="atg"><h4><span class="d">▸</span> Marketing-Automation &amp; Content</h4>
+        <div class="atg"><h4><span class="d">▸</span> Community, Marketing-Automation &amp; Content</h4>
           <p class="atn">Teamprojekte: genannt ist jeweils mein Anteil; Reichweite und Anmeldungen habe ich nicht ausgewertet.</p>
+          <div class="at" data-f="ecom"><div class="at-h"><b>Community-Aufbau &amp; Outreach</b><span class="st ok">eingesetzt</span></div><p>Als Mitgründer Mitglieder gewonnen und beim Einstieg begleitet, Online-Calls organisiert und moderiert, Themen geplant und Mitglieder bei ihren KI-Projekten unterstützt; der Club dient auch der Anbahnung potenzieller Kundenaufträge.</p><div class="at-m"><span>Mitgründer</span><span>FlowKI Club</span><span>seit Apr. 2026</span></div><p class="at-g"><span>Rahmen</span>Rund 66 Mitglieder im Discord, Stand 29.09.2026.</p></div>
           <div class="at" data-f="ecom"><div class="at-h"><b>Newsletter &amp; Tracking</b><span class="st um">umgesetzt</span></div><p>Newsletter mit Double-Opt-In und Plausible-Events für Anmeldung, Bestätigung und zentrale CTAs implementiert.</p><div class="at-m"><span>Team</span><span>FlowKI Club</span><span>Juli–Aug. 2026</span></div></div>
           <div class="at" data-f="ecom"><div class="at-h"><b>Social-Distribution</b><span class="st um">umgesetzt</span></div><p>Social-Post-Pakete aus Artikeln erzeugt; Übergabe an das Veröffentlichungssystem mit Qualitätsprüfung und Markenregeln; UTM-Konvention und Link-in-Bio-Seite.</p><div class="at-m"><span>Team</span><span>FlowKI Club</span><span>Juli–Aug. 2026</span></div></div>
           <div class="at" data-f="ecom"><div class="at-h"><b>Autorenprofile &amp; Artikeldaten</b><span class="st um">umgesetzt</span></div><p>Autorenprofile sowie optionale FAQ- und HowTo-Daten in die Artikelausgabe integriert; Referral-Programm mit Codes und Stufen.</p><div class="at-m"><span>Team</span><span>FlowKI Club</span><span>Juli–Aug. 2026</span></div></div>
@@ -1035,19 +1082,21 @@
         </div>
         <div class="atg"><h4><span class="d">▸</span> Backend &amp; KI-Automation</h4>
           <div class="at" id="at-pipeline" data-f="dev"><div class="at-h"><b>Pipeline mit Versandprüfungen</b><span class="st ok">eingesetzt</span></div><p>Python-Pipeline von der Stellensuche über Job-APIs bis zur Antwortzuordnung; kanalübergreifendes Hauptbuch für Erstbewerbungen mit Reservierung, separate Versandjournale für Antworten und Nachfassmails; blockierende Prüfungen vor dem Versand, Modell-Kaskade mit Sperrzeiten.</p><div class="at-m"><span>eigen</span><span>Bewerbungsverwaltung</span><span>seit Juli 2026</span><span><a href="#fs-02" data-sprung>Fallstudie 02 →</a></span><span><a href="#fs-03" data-sprung>Fallstudie 03 →</a></span></div><p class="at-g"><span>Rahmen</span>Bereits für eigene Bewerbungen genutzt; überarbeitete Antwortzuordnung und zusätzliche Queue-Sperren lokal und unter WSL geprüft, Rollout ausstehend.</p></div>
-          <div class="at" id="at-video" data-f="dev"><div class="at-h"><b>Video-Pipeline im Team</b><span class="st um">umgesetzt</span></div><p>Speaker-Reframe: Der Ausschnitt folgt der sprechenden Person; deterministischer Neu-Render über Celery; bis zu drei Schnittvarianten je Clip, ein Datenbank-Constraint verhindert doppelte Varianten je Clip und Zielkonto.</p><div class="at-m"><span>Team</span><span>Flowki Studio</span><span>Aug.–Sep. 2026</span><span>50 eigene PRs in Flowki Studio gemergt</span></div><p class="at-g"><span>Rahmen</span>Mein Schwerpunkt ist das Clip-Studio, nicht das gesamte Studio.</p></div>
+          <div class="at" data-f="dev"><div class="at-h"><b>Produkt-Workflows im Team</b><span class="st um">umgesetzt</span></div><p>Produktions-, Freigabe- und Veröffentlichungsansichten weiterentwickelt; Ablehnungsgründe durch Oberfläche, API-Client und Freigabeprotokoll verbunden; erfolgreiche Produktion von nachfolgenden Statusfehlern getrennt; TikTok-Entwurfsweg mit eigenem Status.</p><div class="at-m"><span>Team</span><span>Flowki Studio</span><span>seit Aug. 2026</span></div><p class="at-g"><span>Rahmen</span>Internes Werkzeug ohne öffentlichen Zugang.</p></div>
+          <div class="at" data-f="dev"><div class="at-h"><b>Discord-Bot mit Wissensbasis</b><span class="st um">umgesetzt</span></div><p>Bot um /ask und Self-Service-Themenrollen erweitert; Artikelinhalte als Wissensgrundlage des FAQ-Bots angebunden, Relevanz-Prüfschritt ergänzt und das Verhalten bei unpassenden Treffern getestet.</p><div class="at-m"><span>Team</span><span>FlowKI Club</span><span>Juli–Aug. 2026</span></div><p class="at-g"><span>Rahmen</span>Belegt durch Umsetzung und Tests im Repository.</p></div>
+          <div class="at" id="at-video" data-f="dev"><div class="at-h"><b>Video-Pipeline im Team</b><span class="st um">umgesetzt</span></div><p>Speaker-Reframe: Der Ausschnitt folgt der sprechenden Person; deterministischer Neu-Render über Celery; bis zu drei Schnittvarianten je Clip, ein Datenbank-Constraint verhindert doppelte Varianten je Clip und Zielkonto.</p><div class="at-m"><span>Team</span><span>Flowki Studio</span><span>Aug.–Sep. 2026</span><span>50 eigene PRs in Flowki Studio gemergt</span></div><p class="at-g"><span>Rahmen</span>Ein Teil meines Beitrags zu Flowki Studio; internes Werkzeug ohne öffentlichen Zugang.</p></div>
           <div class="at" data-f="dev"><div class="at-h"><b>Agenten-Plugin mit Kosten-Gate</b><span class="st um">umgesetzt</span></div><p>Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt; ein Kosten-Gate verhindert versehentliche bezahlte Agentenläufe; Deploy mit Rollback.</p><div class="at-m"><span>eigen</span><span>hermes-brett</span><span>Sep. 2026</span></div><p class="at-g"><span>Rahmen</span>Selbsttest mit node:assert.</p></div>
           <div class="at" data-f="dev"><div class="at-h"><b>Agenten-orchestrierte App</b><span class="st um">umgesetzt</span></div><p>Mobiles Idle-RPG mit React Native, Skia und Supabase; ein KI-Agent arbeitet im Lead-Modus Rollen ab, die Produktentscheidungen treffe ich.</p><div class="at-m"><span>eigen</span><span>Shinobi: Ember Accord</span><span>Sep. 2026</span></div><p class="at-g"><span>Rahmen</span>Agenten-Experiment, nicht veröffentlicht.</p></div>
         </div>
         <div class="atg"><h4><span class="d">▸</span> Qualität &amp; Betrieb</h4>
           <div class="at" id="at-fehler" data-f="dev"><div class="at-h"><b>Fehlersuche mit Nachweis</b><span class="st um">umgesetzt</span></div><p>Erster Reparaturschritt: 21 rote Tests auf zwei Ursachen zurückgeführt, Suite 177 → 199 grün. Separater Beitrag: stillen Datenverlust im Task-Store behoben, fünf neue Tests.</p><div class="at-m"><span>Beitrag</span><span>hermes-studio</span><span>Sep. 2026</span><span><a href="#fs-01" data-sprung>Fallstudie 01 →</a></span></div><p class="at-g"><span>Rahmen</span>Beitrag zu einem fremden Projekt; die Übernahme entscheidet der Maintainer.</p></div>
           <div class="at" data-f="dev"><div class="at-h"><b>Betrieb auf Linux-Servern</b><span class="st ok">eingesetzt</span></div><p>Bewerbungsverwaltung: Cron mit flock und Rollout-Skripte mit Prüfsummen, Tests und Rückbau bei abgefangenen Fehlern; Mailversand mit SPF/DKIM. Flowki Studio: Docker Compose.</p><div class="at-m"><span>eigen / Team</span><span>Bewerbungsverwaltung · Flowki Studio</span><span>seit Juli 2026</span></div><p class="at-g"><span>Rahmen</span>Betriebsbeleg: Einzelserver.</p></div>
-          <div class="at" data-f="ecom dev"><div class="at-h"><b>Oberflächen testen</b><span class="st ok">eingesetzt</span></div><p>CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright; wöchentliche Lighthouse-Prüfung gegen einen Live-Shop.</p><div class="at-m"><span>Team / eigen</span><span>nk247store.de · duftkumpels.shop</span><span>Aug.–Sep. 2026</span></div><p class="at-g"><span>Rahmen</span>Belegt sind funktionale Oberflächenprüfungen und Lighthouse-Messungen.</p></div>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>Oberflächen testen</b><span class="st ok">eingesetzt</span></div><p>CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright; wöchentliche Lighthouse-Prüfung gegen einen Live-Shop.</p><div class="at-m"><span>Team / eigen</span><span>Kunden-Website · duftkumpels.shop</span><span>Aug.–Sep. 2026</span></div><p class="at-g"><span>Rahmen</span>Belegt sind funktionale Oberflächenprüfungen und Lighthouse-Messungen.</p></div>
           <div class="at" data-f="dev"><div class="at-h"><b>Arbeiten mit KI-Agenten</b><span class="st ok">eingesetzt</span></div><p>Fehler zuerst als roter Test, der Agent setzt um, ein zweites Modell prüft zusätzlich als Reviewer; KI-Befunde prüfe ich am tatsächlichen Aufrufpfad nach.</p><div class="at-m"><span>eigen</span><span>Bewerbungsverwaltung · hermes-studio · weitere Projekte</span><span>Agentengestützte Entwicklung seit Juni 2026</span><span>gezeigte Review-Praxis: September 2026</span></div><p class="at-g"><span>Rahmen</span>Code entsteht agentengestützt; Anforderungen, Prüfung und Abnahme verantworte ich.</p></div>
         </div>
         <div class="atg"><h4><span class="d">▸</span> Gestaltung &amp; Kreativ-KI</h4>
           <div class="at" data-f="ecom dev"><div class="at-h"><b>Shopify-Theme gestalten</b><span class="st en">Entwurf</span></div><p>Shopify-Theme auf Horizon-Basis: Produktgeschichte in Kapiteln, bearbeitete Produktmotive, mobile Kaufleiste sowie Verbesserungen an Tastaturfokus und Touch-Zielen.</p><div class="at-m"><span>eigen</span><span>AtopicV</span><span>Juni–Sep. 2026</span></div></div>
-          <div class="at" data-f="ecom dev"><div class="at-h"><b>Interaktion mit GSAP</b><span class="st en">Entwurf</span></div><p>Hero als Frame-Sequenz, die sich mit dem Mauszeiger dreht (auf dem Handy per Geräteneigung); Tabakwerbung nach §&nbsp;19&nbsp;TabakerzG aus allen Motiven entfernt.</p><div class="at-m"><span>Team</span><span>nk247store.de</span><span>Aug.–Sep. 2026</span></div><p class="at-g"><span>Rahmen</span>Meine Überarbeitung ist noch nicht veröffentlicht.</p></div>
+          <div class="at" data-f="ecom dev"><div class="at-h"><b>Interaktion mit GSAP</b><span class="st ok">eingesetzt</span></div><p>Hero als Frame-Sequenz, die sich mit dem Mauszeiger dreht (auf dem Handy per Geräteneigung).</p><div class="at-m"><span>Team</span><span>Kunden-Website</span><span>Aug.–Sep. 2026</span></div><p class="at-g"><span>Rahmen</span>Im Team gebaut und abgeschlossen.</p></div>
           <div class="at" data-f="ecom dev"><div class="at-h"><b>WebGL-Landingpage</b><span class="st en">Entwurf</span></div><p>GEO-Landingpage mit WebGL-Hero, animiertem Einstieg und leichter Mobil- bzw. Reduced-Motion-Variante; Oberflächentests und Referenz-Screenshots angelegt.</p><div class="at-m"><span>eigen</span><span>Juni 2026</span></div><p class="at-g"><span>Rahmen</span>Nicht veröffentlicht; erfolgreichen Formularablauf mit simulierter Backend-Antwort geprüft.</p></div>
           <div class="at" data-f="ecom"><div class="at-h"><b>Kreativ-KI</b><span class="st um">umgesetzt</span></div><p>Redesign-Entwurf für ein Hamburger Izakaya mit KI-Website-Builder, selbst nachgearbeitet; Vergleichsworkflow für vier KI-Videomodelle mit gemeinsamem Ausgangsprompt.</p><div class="at-m"><span>eigen</span><span>Video-Workflow: Juni 2026</span><span>Izakaya-Entwurf: August 2026</span></div><p class="at-g"><span>Rahmen</span>Dokumentiert sind zwei Best-of-4-Läufe mit Veo Fast und Standard; keine belastbare Rangfolge aller vier Modelle.</p></div>
           <div class="at" data-f="dev"><div class="at-h"><b>Dieses Web-CV</b><span class="st ok">eingesetzt</span></div><p>Installierbare PWA ohne Framework: SVG-Displacement, Canvas-Graph, WebGL-Fluidsimulation.</p><div class="at-m"><span>eigen</span><span>seit Juni 2026</span><span>live</span></div><p class="at-g"><span>Rahmen</span>Die Fluidsimulation ist adaptiert (PavelDoGreat, MIT).</p></div>
@@ -1148,6 +1197,15 @@
     var vEl = document.querySelector('.view[data-view="'+v+'"]'); if(vEl) vEl.scrollTop=0;
   }
   navEls.forEach(function(n){ n.addEventListener('click', function(){ show(n.getAttribute('data-view')); }); });
+  // Direktlink aus dem PDF (#fs-01, #club …): passende Ansicht öffnen und das Ziel in den sichtbaren Bereich holen
+  var anker = location.hash && document.getElementById(location.hash.slice(1)), ankerView = anker && anker.closest('.view');
+  // Handy (≤820px) übernimmt der JasonOS-Controller
+  // Der Browser springt beim Laden selbst zum Anker und verschiebt dabei auch .win/.main (overflow:hidden) –
+  // deshalb nach load die Vorfahren zurücksetzen und nur die Ansicht scrollen.
+  if(ankerView && !window.matchMedia('(max-width:820px)').matches){ show(ankerView.getAttribute('data-view'));
+    window.addEventListener('load', function(){ setTimeout(function(){
+      for(var e=ankerView.parentElement; e; e=e.parentElement) e.scrollTop=0;
+      ankerView.scrollTop += anker.getBoundingClientRect().top - ankerView.getBoundingClientRect().top - 16; }, 0); }); }
   // Kompetenz-Atlas: Filter blendet Einträge aus; Gruppen ohne sichtbaren Eintrag verschwinden mit
   var atf = document.querySelectorAll('.atf button');
   atf.forEach(function(b){ b.addEventListener('click', function(){
@@ -1165,7 +1223,9 @@
     var ziel = document.getElementById(a.getAttribute('href').slice(1));
     if(!ziel) return;
     ev.preventDefault();
-    if(ziel.id.indexOf('fs-') === 0){ show('projekte'); var t = document.getElementById('apptitle'); if(t) t.textContent = 'Projekte'; }
+    // Ziel vom Atlas-Filter ausgeblendet? Filter auf "Alle" zurücksetzen (derselbe Handler setzt Gruppen und aria-pressed)
+    var alle = document.querySelector('.atf button[data-f="alle"]'); if(ziel.closest('[hidden]') && alle) alle.click();
+    var zv = ziel.closest('.view'); if(zv && !zv.classList.contains('on')){ var vn = zv.getAttribute('data-view'); show(vn); var t = document.getElementById('apptitle'); if(t) t.textContent = labels[vn] || vn; }
     setTimeout(function(){
       // nur den View-Container scrollen; scrollIntoView verschöbe auch das äußere Dokument
       var v = ziel.closest('.view');
@@ -1179,7 +1239,7 @@
   var clock=document.getElementById('clock');
   function tickClock(){ var d=new Date(); clock.textContent=pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds()); }
   tickClock(); setInterval(tickClock,1000);
-  var ticks=['python · typescript','flowki: 50 PRs gemergt','21 → 0 rote tests','duftkumpels.shop: live','hamburg · remote'];
+  var ticks=['python · typescript','flowki: 50 PRs gemergt','flowki club: mitgründer','21 → 0 rote tests','duftkumpels.shop: live','hamburg · remote'];
   var ti=0, te=document.getElementById('tick');
   setInterval(function(){ ti=(ti+1)%ticks.length; if(te){te.style.opacity=0; setTimeout(function(){te.textContent=ticks[ti];te.style.opacity=1;},260);} }, 3600);
   if(te) te.style.transition='opacity .25s';
@@ -1233,12 +1293,13 @@
   // ---- scripted chat (safe on static hosting, no API key) ----
   var QA=[
     {q:"Wie ist dieses CV gebaut?",feat:1,k:["dieses cv","diese seite","wie ist das","phone","app-style"," os ","installier"],a:"Du benutzt es gerade: ein Web-CV als installierbare PWA, gebaut mit HTML, CSS und JavaScript ohne Framework — Glas-Refraktion über SVG-Displacement-Filter, ein Canvas-Graph, Federphysik per CSS, App-Gesten. Die Fluid-Simulation ist von PavelDoGreats WebGL-Fluid-Simulation (MIT) adaptiert."},
-    {q:"Was hast du gebaut?",feat:1,k:["gebaut","projekte","systeme","portfolio","beeindruck","zeig"],a:"Im Team Flowki Studio (50 gemergte Pull Requests), mein Schwerpunkt ist das Clip-Studio: Aus Langvideos werden Shorts, mit Speaker-Reframe und deterministischem Neu-Render. Allein eine Python-Pipeline für Bewerbungen, bei der ein kanalübergreifendes Hauptbuch doppelte Erstbewerbungen verhindert; Rollout-Skripte bauen bei abgefangenen Fehlern zurück. Dazu Werkzeuge für KI-Agenten und den Shopify-Umbau von duftkumpels.shop. Details unter Projekte."},
-    {q:"Wie arbeitest du mit KI-Agenten?",feat:1,k:["agent","claude","wie arbeitest","ki-tool","codex"],a:"Agenten sind mein Entwicklungswerkzeug. Anforderungen, Architektur und Abnahme liegen bei mir: Jeder Fehler wird zuerst als roter Test festgehalten, größere Änderungen prüft ein zweites Modell. Bei Shinobi: Ember Accord habe ich ausprobiert, wie weit ein Agent im Lead-Modus kommt — die Produktentscheidungen blieben bei mir."},
+    {q:"Was hast du gebaut?",feat:1,k:["gebaut","projekte","systeme","portfolio","beeindruck","zeig"],a:"Im Team Flowki Studio, ein internes Social-Media-Studio (50 eigene Pull Requests gemergt): Produktoberflächen, Freigaben mit Ablehnungsgründen, Clip-Verarbeitung und Publishing. Als Mitgründer den FlowKI Club, eine KI-Community mit rund 66 Mitgliedern im Discord (Stand 29.09.2026), samt Website, Newsletter und Discord-Bot. Allein eine Python-Pipeline für Bewerbungen, bei der ein kanalübergreifendes Hauptbuch doppelte Erstbewerbungen verhindert; Rollout-Skripte bauen bei abgefangenen Fehlern zurück. Dazu Werkzeuge für KI-Agenten und den Shopify-Umbau von duftkumpels.shop. Details unter Projekte."},
+    {q:"Was ist der FlowKI Club?",k:["flowki club","community","discord","mitgründer","mitgegründet"],a:"Eine deutschsprachige KI-Community, die ich im April 2026 mitgegründet habe: Discord mit rund 66 Mitgliedern (Stand 29.09.2026), Fachartikel, Online-Calls und gemeinsame Projekte. Ich gewinne Mitglieder und begleite sie beim Einstieg, organisiere und moderiere Calls und helfe bei Projekten; technisch habe ich an Website, Newsletter und Discord-Bot mitgebaut. Der Club dient auch der Anbahnung potenzieller Kundenaufträge."},
+    {q:"Wie arbeitest du mit KI-Agenten?",feat:1,k:["agent","claude","wie arbeitest","ki-tool","codex"],a:"Agenten sind mein Entwicklungswerkzeug. Anforderungen, Architektur und Abnahme liegen bei mir. Meine Arbeitsweise: Fehler mit einem roten Test reproduzieren; größere Änderungen prüft zusätzlich ein zweites Modell. Bei Shinobi: Ember Accord habe ich ausprobiert, wie weit ein Agent im Lead-Modus kommt — die Produktentscheidungen blieben bei mir."},
     {q:"Warum von Vertrieb zu KI?",feat:1,k:["vertrieb","sales","wechsel","quereinst","warum ki","von sales","dna"],a:"Im Vertrieb habe ich vier Jahre direkt mit Inhabern gesprochen und gesehen, wo Betriebe Zeit verlieren. Seit 2024 baue ich Software und Automationen — in eigenen Projekten, im Team und für Kunden. Jetzt suche ich eine Junior-Rolle in einem Entwicklungsteam, um das professionell zu vertiefen."},
     {q:"Was könntest du bei uns bauen?",feat:1,k:["bei uns","30 tage","erste","was könntest","für uns","anfangen"],a:"Zum Einstieg würde ich mit dem Team einen geeigneten Prozess eingrenzen und einen testbaren Prototyp entwickeln — mit den Fehlerfällen zuerst: doppelte Ausführung, abgebrochene Jobs, halbe Rollouts."},
     {q:"Wo willst du arbeiten?",feat:1,k:["zürich","zurich","umzug","ziel","hamburg","remote","standort"],a:"In Hamburg, wo ich wohne, oder remote. Für eine passende Rolle ziehe ich auch nach Zürich — das Timing stimmen wir gemeinsam ab."},
-    {q:"Baust du auch Shops?",feat:1,k:["shop","store","commerce","duftkumpels","liquid","theme","verkauf"],a:"Ja, Websites und Shops für Kunden: duftkumpels.shop — gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut, dreisprachig, mit wöchentlicher Lighthouse-Prüfung per GitHub Actions. Im Team die Überarbeitung von nk247store.de mit Next.js, GSAP und CI bis Playwright. Details unter Projekte."},
+    {q:"Baust du auch Shops?",feat:1,k:["shop","store","commerce","duftkumpels","liquid","theme","verkauf"],a:"Ja, Websites und Shops für Kunden: duftkumpels.shop — gekauftes Shopify-Theme in Liquid, CSS und JavaScript umgebaut, dreisprachig, mit wöchentlicher Lighthouse-Prüfung per GitHub Actions. Im Team außerdem Kunden-Websites mit Next.js, GSAP und CI bis Playwright. Details unter Projekte."},
     {q:"Wie stellst du Qualität sicher?",k:["qualität","gates","sicher","fehler","test","prüf","kontrolle","verantwort"],a:"Ich teste zuerst die Fehlerfälle. In hermes-studio habe ich 21 rote Tests bis zur Ursache verfolgt: 20 davon ein nie geschlossenes Datenbank-Handle, einer ein veralteter Test gegen eine Sicherheitsregel. Die Sicherheitsregel habe ich behalten und den Test korrigiert; eine gezielte Abschwächung der Regel lässt ihn jetzt scheitern. Mehr in den Fallstudien unter Projekte."},
     {q:"Wie aufwändig ist es, dich einzustellen?",k:["kosten","bewilligung","permit","visum","einstellen","aufwand","aufwändig"],a:"Ich bin EU-Bürger und wohne in Hamburg. Für eine Stelle in der Schweiz melde ich mich nach Vertragsschluss selbst an."},
     {q:"Kein Studium?",k:["studium","ausbildung","degree","abschluss","informatik"],a:"Richtig: kein Studium, keine abgeschlossene Berufsausbildung. Ich bin Quereinsteiger und lerne über Projekte — im Gespräch zeige ich den Code und erkläre meine Entscheidungen."},
@@ -2889,7 +2950,7 @@
   }
 
   // ---- island ticker + Live Activity ----
-  var iticks=['python · typescript','flowki: 50 PRs gemergt','21 → 0 rote tests','duftkumpels.shop: live','hamburg · remote'];
+  var iticks=['python · typescript','flowki: 50 PRs gemergt','flowki club: mitgründer','21 → 0 rote tests','duftkumpels.shop: live','hamburg · remote'];
   var ii=0, iEl=document.getElementById('islandtxt'), island=document.querySelector('.island');
   iEl.style.transition='opacity .25s';
   function islandSet(txt){ iEl.style.opacity=0; island.classList.add('morph');
@@ -2898,7 +2959,8 @@
     ii=(ii+1)%iticks.length; islandSet(iticks[ii]); },3800);
 
   // ---- Haptik ----
-  function buzz(ms){ if(navigator.vibrate) try{navigator.vibrate(ms);}catch(e){} }
+  // nur nach einer Nutzeraktion vibrieren (Direktlink öffnet die App ohne Tipp → Browser blockiert und loggt Fehler)
+  function buzz(ms){ if(navigator.vibrate && (!navigator.userActivation || navigator.userActivation.hasBeenActive)) try{navigator.vibrate(ms);}catch(e){} }
 
   // ---- boot ----
   if(reduce || sessionStorage.getItem('jrBoot')){ body.classList.add('booted'); }
@@ -3004,6 +3066,15 @@
     el.addEventListener('click',function(){ openApp(el.getAttribute('data-app'),el); });
   });
   document.getElementById('backbtn').addEventListener('click',closeApp);
+  // Direktlink aus dem PDF: Sperrbildschirm überspringen, App öffnen. Der Browser scrollt selbst zum Anker
+  // (scroll-margin-top), verschiebt dabei aber auch .main, und das Layout ändert sich noch während des Zooms –
+  // deshalb nach Zoom-Ende (bzw. load ohne Animation) einmal endgültig ausrichten; Maßstab s rechnet den Zoom heraus.
+  var anker=location.hash && document.getElementById(location.hash.slice(1)), ankerView=anker && anker.closest('.view');
+  if(ankerView){ body.classList.add('booted','unlocked'); openApp(ankerView.getAttribute('data-view'));
+    var zumAnker=function(){ main.scrollTop=0; var r=ankerView.getBoundingClientRect(), s=r.height/ankerView.offsetHeight||1;
+      ankerView.scrollTop += (anker.getBoundingClientRect().top - r.top)/s - parseFloat(getComputedStyle(anker).scrollMarginTop); };
+    var nachZoom=function(e){ if(e.target===main && e.propertyName==='transform'){ main.removeEventListener('transitionend',nachZoom); zumAnker(); } };
+    main.addEventListener('transitionend',nachZoom); window.addEventListener('load',zumAnker); }
   document.getElementById('hindic').addEventListener('click',closeApp);
 
   // Lockscreen-Notifications öffnen ihre App bzw. ihren Link (Unlock läuft via Bubble mit)
