@@ -17,7 +17,7 @@
       <h1>Jason Roschmann</h1>
       <div class="rolle">Junior Software Engineer</div>
       <div class="unter">Python · FastAPI · TypeScript · Next.js · PostgreSQL · Docker Compose</div>
-      <p class="lead">I build web interfaces and Python workflows for practical tasks in content production, e-commerce and community management. I focus on connecting frontend and backend, making workflow states traceable and testing failure cases. I use AI agents while taking responsibility for requirements and acceptance testing. Four years in sales taught me to understand customer needs through direct conversation.</p>
+      <p class="lead">Career changer from B2B sales, working in web development and AI automation since 2024. As part of a team, I develop Flowki Studio, a social media studio covering everything from research to publishing, and I co-founded FlowKI Club, an AI community with its own Discord bot and newsletter. AI agents are my tools – I own requirements, tests and sign-off.</p>
       <div class="kontakt">
         <a href="mailto:jason@roschmann-digital.de"><i>✉</i>jason@roschmann-digital.de</a>
         <span><i>☎</i>+49 155 612 953 91</span>
@@ -32,46 +32,48 @@
 
   <div class="kpi">
     <div><b><span data-pr="flowki">50</span></b><span>of my pull requests merged</span><i>Flowki Studio, team project</i></div>
-    <div><b>21 → 0</b><span>failing tests, two root causes fixed</span><i>hermes-studio</i></div>
+    <div><b>3</b><span>store languages maintained, client project</span><i>EN/FR via own pipeline</i></div>
     <div><b><small>about </small>66</b><span>Discord members, FlowKI Club</span><i>as of 29 Sep 2026</i></div>
     <div><b>4 yrs</b><span>B2B sales with daily customer contact</span><i>2019–2023</i></div>
   </div>
 
-  <div class="sek"><span>01</span>Projects</div>
+  <div class="sek"><span>01</span>Core skills</div>
+  <div class="sk">
+    <div><span class="k">Backend &amp; APIs:</span>Python, FastAPI, SQLAlchemy/Alembic, PostgreSQL, Celery, Redis <span class="wo">– APIs and background jobs</span></div>
+    <div><span class="k">Frontend:</span>TypeScript, React, Next.js, Tailwind, GSAP <span class="wo">– studio views, community website, client websites in a team</span></div>
+    <div><span class="k">Testing &amp; CI:</span>Git, pytest, Vitest, Playwright, ESLint, GitHub Actions <span class="wo">– bugs reproduced as a failing test first</span></div>
+    <div><span class="k">AI integration:</span>Claude, Gemini and Groq APIs, MCP <span class="wo">– FAQ bot, MCP server, model ratings checked against reference judgements</span></div>
+    <div><span class="k">Operations:</span>Linux servers, Docker Compose, cron <span class="wo">– checksummed rollouts, rollback on caught errors</span></div>
+    <div><span class="k">Shopify:</span>Liquid, Admin GraphQL API, Search Console <span class="wo">– translation pipeline, theme rework, SEO checks</span></div>
+    <div><span class="k">With AI agents:</span>Claude Code implements, I review and accept; hooks I set up block private keys in code as well as deleted or disabled tests, and a second model reviews.</div>
+  </div>
+
+  <div class="sek"><span>02</span>Experience</div>
+  <div class="phase"><span><b>Web development &amp; AI automation</b>· team, client and personal projects</span><i>2024 – present</i></div>
 
   <div class="eintrag">
-    <div class="ekopf"><h3>Flowki Studio — <span class="r">internal social media studio · team project</span></h3><span class="zeit">Aug 2026 – present</span></div>
-    <p class="zweck"><b>Purpose:</b> Internal social media studio for topic research, AI-assisted content production, editorial review and handover to platforms; my contribution in the team (<span data-pr="flowki">50</span> of my pull requests merged): product interfaces, workflow integration, clip processing and publishing.</p>
+    <div class="ekopf"><h3>Flowki Studio — <span class="r">internal social media studio · developer in a team</span></h3><span class="zeit">Aug 2026 – present</span></div>
+    <p class="zweck"><b>Purpose:</b> Topic research, AI-assisted content production, editorial review and publishing to social media platforms; my part: product interfaces, campaign and approval workflows, error handling, video and publishing.</p>
     <ul class="b">
-      <li><b>Product interface:</b> Further developed the production, approval and publishing views – made processing states, phase durations and required user actions visible.</li>
-      <li><b>Editorial collaboration:</b> Connected rejection reasons across the interface, API client and approval log – returns for revision now carry a traceable reason.</li>
-      <li><b>Error handling:</b> Separated successful production or licensing from subsequent status and assignment errors – removed misleading error messages and incentives for repeated, cost-incurring calls.</li>
-      <li><b>Video processing:</b> Implemented speaker-focused reframing, alternative edits and reproducible re-rendering after corrections – long videos become editable vertical clips.</li>
-      <li><b>Publishing:</b> Integrated the TikTok draft path with its own status and user notice – uploaded drafts are clearly distinguished from published posts.</li>
+      <li><b>Rights before sending:</b> Usage rights and consents were only checked at planning time, up to 14 days before the post; the studio now re-checks them right before sending and otherwise holds the post (five tests).</li>
+      <li><b>Working views:</b> Production, approval and publishing views show processing state, phase duration and required actions; checklists and open blind reviews per campaign in the daily overview.</li>
+      <li><b>Team approvals:</b> Rejection reasons flow from the interface into the approval log – posts go back for revision with a traceable reason.</li>
+      <li><b>Error handling:</b> When only a later status step failed after a successful production, it looked like a failure and invited a second, cost-incurring run – success and follow-up errors are now handled separately.</li>
+      <li><b>Video &amp; publishing:</b> Long videos become editable vertical clips with speaker-following framing; TikTok drafts have their own status and are clearly separated from published posts.</li>
     </ul>
     <div class="tools">Tools: Python · FastAPI · Celery · SQLAlchemy/Alembic · PostgreSQL · Redis · Next.js · TypeScript</div>
   </div>
 
   <div class="eintrag">
-    <div class="ekopf"><h3>FlowKI Club — <span class="r">Co-founder · website, Discord bot, newsletter</span></h3><span class="zeit">Apr 2026 – present</span></div>
+    <div class="ekopf"><h3>FlowKI Club — <span class="r">Co-founder · community, Discord bot, website, newsletter</span></h3><span class="zeit">Apr 2026 – present</span></div>
     <p class="zweck"><b>Purpose:</b> German-speaking AI community – about 66 members (Discord, as of 29 Sep 2026) – with articles, online calls and joint project work; I combine community work with technical product development.</p>
     <ul class="b">
-      <li><b>Community tools:</b> Extended the Discord bot with /ask and self-service topic roles; updated discord.js and test tooling.</li>
-      <li><b>AI answer quality:</b> Connected article content as the knowledge base of the FAQ bot and added a relevance check – tested how the bot handles irrelevant matches.</li>
-      <li><b>Website &amp; newsletter:</b> Newsletter with double opt-in and referral links, Plausible events for sign-ups and clicks on Discord invite links; author, FAQ and HowTo markup in the article output.</li>
-      <li><b>Community:</b> Helped new members get started, organised and moderated online calls, supported members with their projects.</li>
+      <li><b>Community:</b> Helped new members get started, organised and moderated online calls, supported members with their own AI projects.</li>
+      <li><b>Discord bot:</b> Added /ask and self-service topic roles; connected club articles as the FAQ bot's knowledge base, with a relevance check that catches unsuitable matches – covered by targeted tests.</li>
+      <li><b>Website &amp; newsletter:</b> Newsletter with double opt-in and referral links; sign-ups and clicks on Discord invites made measurable (Plausible); author, FAQ and HowTo markup for search engines.</li>
+      <li><b>MCP server:</b> Made club articles searchable and readable for AI assistants such as Claude Code; public on GitHub.</li>
     </ul>
-    <div class="tools">Tools: TypeScript · discord.js · Claude API · PostgreSQL · Vitest · Next.js</div>
-  </div>
-
-  <div class="eintrag">
-    <div class="ekopf"><h3>hermes-studio — <span class="r">contribution to a third-party project · debugging</span></h3><span class="zeit">Sep 2026</span></div>
-    <ul class="b">
-      <li><b>Cause:</b> 21 failing tests with two root causes – 20× an SQLite handle that was never closed and blocks cleanup on Windows, 1× an outdated test against a security rule; handle closed, rule kept, test corrected.</li>
-      <li><b>Evidence:</b> Mutation test – with the security rule weakened, the corrected test fails; passing tests: <span class="nw">177 → 199</span>.</li>
-      <li><b>Own contribution:</b> Fixed silent data loss in the task store, with five new tests.</li>
-    </ul>
-    <div class="belege">Evidence: <a href="https://jasonroschmann.github.io/cv/#fs-01">case study on the web CV (German) ↗</a></div>
+    <div class="tools">Tools: TypeScript · discord.js · Claude API · MCP · PostgreSQL · Vitest · Next.js</div>
   </div>
 
   <div class="fuss"><span>Jason Roschmann · CV · Page 1/2</span><span>jasonroschmann.github.io/cv</span></div>
@@ -80,38 +82,37 @@
 <!-- ============ PAGE 2 ============ -->
 <div class="page">
   <div class="eintrag" style="border-top:0;padding-top:0">
-    <div class="ekopf"><h3>duftkumpels.shop — <span class="r">client project · Shopify, API &amp; translation automation</span></h3><span class="zeit">Jun 2026 – present</span></div>
+    <div class="ekopf"><h3>duftkumpels.shop — <span class="r">client project · Shopify DE/EN/FR, automation &amp; SEO</span></h3><span class="zeit">Jun 2026 – present</span></div>
     <ul class="b">
-      <li><b>Automation:</b> DE/EN/FR translation pipeline with HTML extraction, structure checks and import via CSV or GraphQL; availability checks via the Admin GraphQL API, with backups and read-back verification.</li>
-      <li><b>SEO engineering:</b> Automated a Search Console analysis, checked 700 URLs for indexing; added <span class="nw">JSON-LD</span> and checked it automatically.</li>
-      <li><b>Theme &amp; quality:</b> Reworked a purchased theme in Liquid, CSS and JavaScript; weekly Lighthouse checks against the live shop via GitHub Actions.</li>
-      <li><b>Email:</b> Fixed a Klaviyo abandonment email to link to a recoverable checkout.</li>
+      <li><b>Translation:</b> Pipeline for three languages – extract HTML texts, check their structure, import back into Shopify via CSV or GraphQL; availability checks via the Admin API with backups and read-back verification.</li>
+      <li><b>SEO engineering:</b> Automated a Search Console analysis, checked 700 URLs for indexing, added <span class="nw">JSON-LD</span> and checked it automatically.</li>
+      <li><b>Root-cause analysis:</b> Why English and French product pages redirect visitors to the German page (153 search clicks on English product pages in 90 days alone): narrowed down to a Shopify-side redirect that fires before the theme, reproduced and documented for Shopify support.</li>
+      <li><b>Theme &amp; email:</b> Reworked a purchased theme in Liquid, CSS and JavaScript; weekly Lighthouse checks via GitHub Actions; fixed a Klaviyo abandonment email to link to a recoverable checkout.</li>
     </ul>
     <div class="tools">Tools: Shopify Liquid · Admin GraphQL API · Python · GitHub Actions · Klaviyo</div>
   </div>
 
   <div class="eintrag">
     <div class="ekopf"><h3>AI-assisted job application management — <span class="r">personal project · Python</span></h3><span class="zeit">Jul 2026 – present</span></div>
-    <p class="zweck"><b>Purpose:</b> Python pipeline for job search via job board APIs (including the German Federal Employment Agency, Greenhouse, Lever), cover letters, checks, sending and reply matching.</p>
+    <p class="zweck"><b>Purpose:</b> Python pipeline that finds jobs via job board APIs (including the German Federal Employment Agency, Greenhouse, Lever), rates them, checks documents, sends applications and matches replies.</p>
     <ul class="b">
-      <li><b>Traceability:</b> Cross-channel ledger for first applications with reservations – no duplicate application across email and portal, at most one application per company within 14 days.</li>
-      <li><b>Checks before sending:</b> Unusable model output stops the run; model cascade (Claude, Gemini, Groq) with cool-down periods.</li>
-      <li><b>Rating quality:</b> Checked LLM ratings against blind reference judgements; did not roll out a revised analysis after an incomplete measurement showed no proven improvement.</li>
-      <li><b>Operations:</b> Rollouts with checksums, tests before and after the swap and automatic rollback on caught errors.</li>
+      <li><b>No duplicate applications:</b> Cross-channel ledger with reservations – at most one application per company within 14 days, whether by email or portal.</li>
+      <li><b>Measure, don't assume:</b> Checked LLM ratings against blind reference judgements; did not roll out a revised analysis without a proven improvement.</li>
+      <li><b>Operations:</b> Unusable model output stops the run and another model takes over on failure; rollouts with checksums and automatic rollback on caught errors.</li>
     </ul>
     <div class="belege">Evidence (German): <a href="https://jasonroschmann.github.io/cv/#fs-02">case study reply matching ↗</a> · <a href="https://jasonroschmann.github.io/cv/#fs-03">case study LLM rating ↗</a></div>
   </div>
 
-  <div class="sek"><span>02</span>Experience</div>
-
   <div class="eintrag">
-    <div class="ekopf"><h3>AI Automation &amp; Web Development — <span class="r">own projects, team and client projects</span></h3><span class="zeit">2024 – present</span></div>
+    <div class="ekopf"><h3>hermes-studio — <span class="r">contribution to a third-party project · debugging</span></h3><span class="zeit">Sep 2026</span></div>
     <ul class="b">
-      <li>Developed and tested Python backends and Next.js frontends and ran them on Linux servers (Docker Compose, cron, deployment with rollback); customised Shopify themes; teamwork via branches, pull requests and shared test suites.</li>
-      <li><b>Client websites</b> built as part of a team: Next.js, GSAP, CI with TypeScript check, ESLint, Vitest and Playwright.</li>
+      <li><b>Cause, not symptom:</b> 21 failing tests, two root causes – 20× an SQLite handle that was never closed, 1× an outdated test against a security rule; rule kept, test corrected and verified with a mutation test. Passing tests: <span class="nw">177 → 199</span>.</li>
+      <li><b>Own contribution:</b> Fixed silent data loss in the task store, with five new tests.</li>
     </ul>
+    <div class="belege">Evidence: <a href="https://jasonroschmann.github.io/cv/#fs-01">case study on the web CV (German) ↗</a></div>
   </div>
 
+  <div class="phase"><span><b>Before</b>· sales</span></div>
   <div class="eintrag">
     <div class="ekopf"><h3>B2B Direct Sales — <span class="r">Field sales (door-to-door)</span></h3><span class="zeit">2019 – 2023</span></div>
     <p class="zweck">EWE TEL · Ranger Marketing · across Germany</p>
@@ -121,31 +122,20 @@
     </ul>
   </div>
 
-  <div class="sek"><span>03</span>Skills &amp; way of working</div>
+  <div class="sek"><span>03</span>Training, languages &amp; proof of work</div>
   <div class="end">
     <div class="sk">
-      <div><span class="k">Development:</span>Python, REST APIs with FastAPI · TypeScript, React, Next.js, discord.js · React Native (personal project)</div>
-      <div><span class="k">AI &amp; agents:</span>Claude Code, LLM APIs (Claude, Gemini, Groq), MCP, agent orchestration, n8n</div>
-      <div><span class="k">Data &amp; jobs:</span>SQL/PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase</div>
-      <div><span class="k">Quality:</span>Git, CI/CD with GitHub Actions, pytest, Vitest, Playwright, Lighthouse CI</div>
-      <div><span class="k">Operations:</span>Linux servers, Docker Compose, cron, flock, SMTP/IMAP, SPF/DKIM</div>
-      <div><span class="k">Web &amp; commerce:</span>Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL</div>
-      <div><span class="k">With AI agents:</span>Reproduce bugs with failing tests · an agent implements the fix · a second model provides an additional review · rollout with checksums and automatic rollback on caught errors</div>
+      <div><span class="k">Training:</span>Web development (2024, 6 months): HTML, CSS, JavaScript, web architecture</div>
+      <div><span class="k">Certificate:</span><a href="https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e"><b>Google Ads Search Certification</b></a> (Skillshop), December 2025 · valid until 3 Dec 2026 · verifiable</div>
+      <div><span class="k">Languages:</span>German (native) · English (B1, working towards B2) · Polish (spoken)</div>
+      <div><span class="k">Remote work:</span>Distributed teamwork via GitHub (branches, pull requests), Discord and online calls</div>
+      <div><span class="k">Availability:</span>relocation to Zurich possible · start by arrangement</div>
       <div class="gh"><span class="k">GitHub:</span><span data-pr="gesamt">61</span> of my pull requests merged · as of <span data-pr="stand-en">29 Sep 2026</span>
         <span class="gh-leiste" aria-hidden="true"><i data-pr-flex="flowki" style="flex:50"></i><i data-pr-flex="eigen" style="flex:8"></i><i data-pr-flex="kunden" style="flex:3"></i></span>
         <span class="gh-legende"><span>Flowki Studio <span data-pr="flowki">50</span></span><span>own repos <span data-pr="eigen">8</span> · client projects <span data-pr="kunden">3</span></span></span></div>
-      <div><span class="k">Public code samples:</span><a href="https://github.com/JasonRoschmann/cv">web CV ↗</a> · <a href="https://github.com/Jokersystems-online/flowki-knowledge-mcp">MCP server for community articles ↗</a></div>
+      <div><span class="k">Public code:</span><a href="https://github.com/JasonRoschmann/cv">web CV with build and checks ↗</a> · <a href="https://github.com/Jokersystems-online/flowki-knowledge-mcp">MCP server for club articles ↗</a></div>
     </div>
     <div class="qr"><img src="qr-cv.svg" alt="QR code to the interactive CV">Interactive version</div>
-  </div>
-
-  <div class="sek"><span>04</span>Training, certificate &amp; languages</div>
-  <div class="sk">
-    <div><span class="k">Training:</span>Web development (2024, 6 months): HTML, CSS, JavaScript, web architecture</div>
-    <div><span class="k">Certificate:</span><a href="https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e"><b>Google Ads Search Certification</b></a> (Skillshop), December 2025 · valid until 3 Dec 2026 · verifiable</div>
-    <div><span class="k">Languages:</span>German (native) · English (B1, working towards B2) · Polish (spoken)</div>
-    <div><span class="k">Remote work:</span>Distributed teamwork via GitHub (branches, pull requests), Discord and online calls</div>
-    <div><span class="k">Availability:</span>Hamburg · remote · relocation to Zurich possible · start by arrangement</div>
   </div>
 
   <div class="fuss"><span>Jason Roschmann · CV · Page 2/2</span><span>jason@roschmann-digital.de · +49 155 612 953 91</span></div>
