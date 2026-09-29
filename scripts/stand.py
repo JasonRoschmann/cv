@@ -49,7 +49,7 @@ def stempel_text(text: str, w: dict, d: dict) -> str:
 
 def diagramm(d: dict) -> str:
     """Summenlinie (Treppe) seit dem ersten Merge + Aufschlüsselung; statisches SVG, ohne JavaScript."""
-    W, H, L, R, O, U = 640, 170, 36, 48, 14, 26
+    W, H, L, R, O, U = 640, 170, 36, 64, 14, 26   # R: Platz für eine dreistellige Endzahl (mobil 26er Schrift)
     start, ende, g = _tag(d["erster_merge"]), _tag(d["stand"]), d["gemergt"]
     tage, hoch = max(1, (ende - start).days), max(1, g["gesamt"])
     x = lambda t: L + (t - start).days / tage * (W - L - R)
@@ -92,7 +92,16 @@ def badge(d: dict) -> str:
 
 def veraltet(d: dict, tage: int, heute: str | None = None) -> bool:
     h = _tag(heute) if heute else datetime.datetime.now(datetime.timezone.utc).date()
-    return (h - _tag(d["stand"])).days > tage
+    return not 0 <= (h - _tag(d["stand"])).days <= tage   # auch ein Stand in der Zukunft ist unplausibel
+
+
+def fehlende_marker(name: str, text: str) -> list[str]:
+    """Zerstörte Marker (z. B. beim Bearbeiten) ließen die Zahl still stehen – deshalb Mindestbestand je Datei."""
+    if name != WEB.name:
+        return [] if SPAN.search(text) else ["data-pr-Marker"]
+    da = {m.group(2) for m in SPAN.finditer(text)}
+    fehlt = [f"data-pr=\"{k}\"" for k in ("gesamt", "flowki", "flowki-eroeffnet", "stand-de", "seit-de") if k not in da]
+    return fehlt + [n for n, rx in (("/*pr-daten*/", JS), ("<!-- pr-diagramm -->", DIA)) if not rx.search(text)]
 
 
 def _ziele() -> list[tuple[Path, bool]]:
@@ -104,16 +113,19 @@ def main(argv: list[str]) -> int:
     befehl = argv[1] if len(argv) > 1 else ""
     if befehl == "frische":
         if veraltet(d, int(argv[2])):
-            print(f"PR-Stand veraltet: letzte Zählung {d['stand']}"); return 1
+            print(f"PR-Stand veraltet oder in der Zukunft: letzte Zählung {d['stand']}"); return 1
         print("PR-Stand frisch:", d["stand"]); return 0
-    abweichend = []
+    abweichend, kaputt = [], []
     for pfad, druck in _ziele():
         alt = pfad.read_bytes().decode("utf-8")
+        kaputt += [f"{pfad.name}: {m}" for m in fehlende_marker(pfad.name, alt)]
         neu = stempel_text(alt, werte(d, druck), d)
         if neu != alt:
             abweichend.append(pfad.name)
             if befehl == "stempeln":
                 pfad.write_bytes(neu.encode("utf-8"))
+    if kaputt:
+        print("Marker fehlen:", "; ".join(kaputt)); return 1
     b = badge(d)
     if not BADGE.exists() or BADGE.read_text(encoding="utf-8") != b:
         abweichend.append(BADGE.name)

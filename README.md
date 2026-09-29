@@ -21,7 +21,7 @@ flowchart LR
   Q["HTML, CSS, Markdown"] --> S
   S --> B["Build<br/>Chrome headless + pandoc"]
   B --> P["Prüfung<br/>2 Seiten, Pflichtangaben,<br/>PR-Zahlen, Links, Schriften"]
-  P -->|nur bei Grün| G["GitHub Pages"]
+  P -->|nur bei Grün| C["Bot-Commit auf main"] --> G["GitHub Pages"]
 ```
 
 - **Bei jedem Pull Request und täglich** baut [`pruefung.yml`](.github/workflows/pruefung.yml) alle PDFs frisch unter Linux und prüft sie mit [`cv_pruefung.py`](scripts/cv_pruefung.py).
