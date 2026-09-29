@@ -7,7 +7,7 @@
 <meta name="description" content="Jason Roschmann – KI-Automation & Softwareentwicklung mit Python und TypeScript, in eigenen Projekten und im Team. Junior / Quereinstieg, Hamburg oder remote.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jason Roschmann – KI-Automation, E-Commerce & Technical SEO">
-<meta property="og:description" content="Interaktives Web-CV: Clip-Studio im Team, Python-Automation mit Sperren und Rückbau, Shopify-Umbau live. Junior / Quereinstieg, Hamburg oder remote.">
+<meta property="og:description" content="Interaktives Web-CV: Flowki Studio im Team, Mitgründer der KI-Community FlowKI Club, Python-Automation mit Sperren und Rückbau, Shopify-Umbau live. Junior / Quereinstieg, Hamburg oder remote.">
 <meta property="og:image" content="https://jasonroschmann.github.io/cv/og.png">
 <meta property="og:url" content="https://jasonroschmann.github.io/cv/">
 <link rel="canonical" href="https://jasonroschmann.github.io/cv/">
@@ -43,7 +43,8 @@
    "Google Analytics 4",
    "Python",
    "n8n",
-   "KI-Automation"
+   "KI-Automation",
+   "Community-Aufbau"
   ],
   "knowsLanguage": [
    "de",
@@ -222,7 +223,7 @@
   .insight{margin-top:26px;padding:18px 20px;border-radius:14px;background:rgba(63,220,132,.05);border:1px solid rgba(63,220,132,.16);border-left:2.5px solid var(--grn)}
   /* --- Live gebaut: klickbare Live-Beweise --- */
   .livework{margin-top:clamp(22px,4.5vh,48px)}
-  .lw-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  .lw-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:16px}
   @media(max-width:760px){.lw-cards{grid-template-columns:1fr}}
   .lw{position:relative;display:block;border:1px solid var(--line);border-radius:14px;padding:20px;background:linear-gradient(160deg,var(--elev),var(--panel));text-decoration:none;color:inherit;overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,.03) inset,0 18px 40px -30px rgba(0,0,0,.9);transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .35s,box-shadow .35s}
   .lw::before{content:"";position:absolute;inset:0 0 auto 0;height:1px;background:linear-gradient(90deg,transparent,rgba(63,220,132,.4),transparent);opacity:.5;transition:opacity .35s}
@@ -785,6 +786,7 @@
       <div class="telem">
         <h5>Projekte · Stand 09/2026</h5>
         <div class="trow"><span class="d on"></span>Flowki Studio <span class="v g">team</span></div>
+        <div class="trow"><span class="d"></span>FlowKI Club <span class="v">mitgründer</span></div>
         <div class="trow"><span class="d on"></span>duftkumpels.shop <span class="v g">live</span></div>
         <div class="trow"><span class="d"></span>Bewerbungsverwaltung <span class="v">eigen</span></div>
         <div class="trow"><span class="d"></span>hermes-brett <span class="v">plugin</span></div>
@@ -806,9 +808,9 @@
           <div class="hero-copy">
             <div class="term rv">$ whoami<span class="caret"></span></div>
             <h1 class="display h-hero rv">Ich baue <span style="white-space:nowrap">KI-Automation</span> —<br>und teste zuerst,<br><span class="g it">was schiefgehen kann.</span></h1>
-            <p class="lead rv" style="margin-top:22px">Python und TypeScript, in eigenen Projekten und im Team: vom Clip-Studio, das Langvideos zu Shorts schneidet, bis zur Pipeline, die keine Aktion doppelt ausführt. KI-Agenten sind mein Werkzeug — Anforderungen, Architektur und Abnahme liegen bei mir.</p>
+            <p class="lead rv" style="margin-top:22px">Python und TypeScript, in eigenen Projekten und im Team: vom Social-Media-Studio Flowki Studio über die KI-Community FlowKI Club, die ich mitgegründet habe, bis zur Bewerbungsverwaltung mit kanalübergreifender Reservierung gegen doppelte Erstbewerbungen. KI-Agenten sind mein Werkzeug — Anforderungen, Architektur und Abnahme liegen bei mir.</p>
             <div class="proofrow rv">
-              <div class="pf"><b>50 PRs gemergt</b><span>in Flowki Studio (Team), Schwerpunkt Clip-Studio</span></div>
+              <div class="pf"><b>50 PRs gemergt</b><span>eigene, im Teamprojekt Flowki Studio</span></div>
               <div class="pf"><b>21 → 0 rote Tests</b><span>Ursachen gefunden, keine Tests abgeschaltet</span></div>
               <div class="pf"><b>Junior-Rolle gesucht</b><span>Hamburg · remote · Zürich möglich</span></div>
             </div>
@@ -828,11 +830,18 @@
             </a>
             <div class="lw">
               <div class="lw-url"><span class="dot"></span>Flowki Studio · Teamprojekt</div>
-              <h4>Clip-Studio</h4>
-              <p>Aus Langvideos werden Shorts: Speaker-Reframe mit geglätteten 9:16-Keyframes, deterministischer Neu-Render, bis zu drei Varianten je Clip.</p>
-              <div class="lw-tags"><span>Python</span><span>Celery</span><span>FastAPI</span></div>
+              <h4>Social-Media-Studio</h4>
+              <p>Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung und Plattformübergabe. Mein Teil: Oberflächen, Freigaben, Clip-Verarbeitung und Publishing.</p>
+              <div class="lw-tags"><span>Python</span><span>FastAPI</span><span>Next.js</span></div>
               <div class="lw-cta">&#9654; Demo im Gespräch</div>
             </div>
+            <a class="lw" href="#club" data-sprung>
+              <div class="lw-url"><span class="dot"></span>FlowKI Club · Mitgründer</div>
+              <h4>FlowKI Club</h4>
+              <p>KI-Community, die ich mitgegründet habe: Discord mit rund 66 Mitgliedern (Stand 29.09.2026), Online-Calls und gemeinsame Projekte – dazu Website, Newsletter und Discord-Bot.</p>
+              <div class="lw-tags"><span>Mitgründer</span><span>Community</span><span>Discord-Bot</span></div>
+              <div class="lw-cta">&#9654; Projektbeschreibung ansehen</div>
+            </a>
           </div>
         </div>
               <div class="pow rv" id="pow" style="margin-top:clamp(22px,4.5vh,48px)">
@@ -882,13 +891,28 @@
         <p class="eyebrow rv">Was ich baue</p>
         <h2 class="display h-xl rv" style="margin-top:14px;max-width:22ch">Projekte mit <span class="g it">nachprüfbarem Beitrag.</span></h2>
         <div class="crown rv">
-          <div class="top"><p class="eyebrow" style="color:var(--grn)">◆ Teamprojekt · Aug.–Sep. 2026</p><span class="badge">64 PRs · 50 gemergt</span></div>
-          <h3 class="display h-l" style="margin-top:12px">Flowki Studio — Clip-Studio</h3>
-          <p class="body" style="margin-top:8px;max-width:64ch">Internes Social-Media-Studio für Trends, Plattform-Playbooks und eine KI-Content-Pipeline. Mein Schwerpunkt ist die Clip-Verarbeitung: Aus Langvideos werden Shorts.</p>
+          <div class="top"><p class="eyebrow" style="color:var(--grn)">◆ Teamprojekt · seit Aug. 2026</p><span class="badge">64 PRs · 50 gemergt</span></div>
+          <h3 class="display h-l" style="margin-top:12px">Flowki Studio — internes Social-Media-Studio</h3>
+          <p class="body" style="margin-top:8px;max-width:64ch">Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung und Plattformübergabe. Mein Beitrag im Team: Produktoberflächen, Workflow-Integration, Clip-Verarbeitung und Publishing.</p>
+          <div class="urow"><div class="k">Oberfläche</div><div class="v">Produktions-, Freigabe- und Veröffentlichungsansichten weiterentwickelt – Bearbeitungsstände, Phasendauer und erforderliche Nutzeraktionen sichtbar gemacht.</div></div>
+          <div class="urow"><div class="k">Redaktion</div><div class="v">Ablehnungsgründe durch Oberfläche, API-Client und Freigabeprotokoll verbunden – Rückgaben zur Überarbeitung mit nachvollziehbarer Begründung.</div></div>
+          <div class="urow"><div class="k">Statusfehler</div><div class="v">Erfolgreiche Produktion bzw. Lizenzierung von nachfolgenden Status- und Zuordnungsfehlern getrennt – keine irreführenden Fehlermeldungen, keine Anreize für erneute, kostenwirksame Aufrufe.</div></div>
+          <div class="urow"><div class="k">Publishing</div><div class="v">TikTok-Entwurfsweg mit eigenem Status und Nutzerhinweis – hochgeladene Entwürfe eindeutig von veröffentlichten Posts unterschieden.</div></div>
+          <div class="urow"><div class="k">Clip-Studio</div><div class="v">Aus Langvideos werden bearbeitbare Hochformat-Clips:</div></div>
           <div class="urow"><div class="k">Reframe</div><div class="v">Der Planer misst das Gesicht an mehreren Zeitpunkten statt einmal, glättet die Reihe und liefert stückweise konstante 9:16-Keyframes — der Ausschnitt folgt der sprechenden Person.</div></div>
           <div class="urow"><div class="k">Neu-Render</div><div class="v">Korrekturen erzeugen append-only Planversionen; jede Änderung entwertet eine erteilte Freigabe. Der Render läuft deterministisch und asynchron über Celery, ohne Modellkosten.</div></div>
           <div class="urow"><div class="k">Varianten</div><div class="v">Bis zu drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint) — keine Variante ohne Empfänger.</div></div>
           <div class="urow j"><div class="k">Fehlerfälle</div><div class="v">Fixes für Jobs, die nach verschwundenem Worker für immer „läuft“ zeigten, und für eine Produktion, die ein Statusfehler doppelt auslöste.</div></div>
+        </div>
+        <div class="crown rv" id="club" style="margin-top:18px">
+          <div class="top"><p class="eyebrow" style="color:var(--grn)">◆ Mitgründer · seit Apr. 2026</p><span class="badge">rund 66 Mitglieder · Stand 29.09.2026</span></div>
+          <h3 class="display h-l" style="margin-top:12px">FlowKI Club — KI-Community &amp; Magazin</h3>
+          <p class="body" style="margin-top:8px;max-width:64ch">Deutschsprachige KI-Community mit Discord, Fachartikeln, Online-Calls und gemeinsamer Projektarbeit. Ich verbinde Community-Arbeit mit technischer Produktentwicklung; der Club dient auch der Anbahnung potenzieller Kundenaufträge.</p>
+          <div class="urow"><div class="k">Community</div><div class="v">Mitglieder gewonnen und beim Einstieg begleitet, Online-Calls organisiert und moderiert, Themen geplant; Mitglieder bei ihren eigenen KI-Projekten unterstützt.</div></div>
+          <div class="urow"><div class="k">Zugang</div><div class="v">Newsletter mit Double-Opt-In und Empfehlungslinks; Plausible-Ereignisse für Anmeldung, Bestätigung und Klicks auf Discord-Beitrittslinks.</div></div>
+          <div class="urow"><div class="k">Verteilung</div><div class="v">Artikel in plattformgerechte Social-Pakete überführt und an die Veröffentlichungsplanung angebunden – Prüfungen auf Textqualität, Länge und Markenregeln vor dem Einplanen.</div></div>
+          <div class="urow"><div class="k">Discord-Bot</div><div class="v">/ask und Self-Service-Themenrollen; Artikelinhalte als Wissensgrundlage des FAQ-Bots mit Relevanz-Prüfschritt, Verhalten bei unpassenden Treffern getestet.</div></div>
+          <div class="urow"><div class="k">Website</div><div class="v">flowki-club.de · Autoren-, FAQ- und HowTo-Markup in der Artikelausgabe.</div></div>
         </div>
         <p class="eyebrow rv" style="margin-top:34px">Fallstudien</p>
         <h3 class="display h-l rv" style="margin-top:12px;max-width:24ch">Drei Fälle, in denen der erste Eindruck <span class="g it">täuschte.</span></h3>
@@ -963,7 +987,8 @@
             <div class="org">Eigene Projekte, Team- und Kundenprojekte · Hamburg / remote</div>
             <ul>
               <li><b>Python-Backends und Next.js-Frontends</b> entwickelt, getestet und auf Linux-Servern betrieben (Docker Compose, Cron, Deployment mit Rollback); Shopify-Themes angepasst.</li>
-              <li><b>Im Team</b> über Branches, Pull Requests und gemeinsame Test-Suites — 50 gemergte PRs in Flowki Studio, Schwerpunkt Clip-Studio.</li>
+              <li><b>Im Team</b> über Branches, Pull Requests und gemeinsame Test-Suites — 50 eigene PRs in Flowki Studio gemergt.</li>
+              <li><b>FlowKI Club, Mitgründer seit Apr. 2026:</b> KI-Community mit aufgebaut – Mitglieder beim Einstieg begleitet, Online-Calls organisiert und moderiert; der Club dient auch der Anbahnung potenzieller Kundenaufträge.</li>
               <li><b>KI-gestützte Entwicklung:</b> Agenten setzen um, Anforderungen, Architektur und Abnahme liegen bei mir.</li>
             </ul>
           </div>
@@ -1026,8 +1051,9 @@
           <div class="at" data-f="ecom dev"><div class="at-h"><b>Verfügbarkeit ehrlich halten</b><span class="st ok">eingesetzt</span></div><p>SEO-Verfügbarkeitsaussagen automatisch mit kaufbaren Varianten abgeglichen, zwei falsche korrigiert; nicht lieferbare Produkte auf Wissensseiten gekennzeichnet und Alternativen eingeblendet.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug.–Sep. 2026</span></div></div>
           <div class="at" data-f="ecom"><div class="at-h"><b>Messung &amp; Gegenprobe</b><span class="st ok">eingesetzt</span></div><p>GA4-Kaufzahlen mit Shopify-Bestellungen abgeglichen; wöchentliche Lighthouse-Prüfung per GitHub Actions; einen CSS-Preload-Patch nach ungünstigen Messläufen zurückgerollt; einen KI-Auditbefund zu Grundpreisen anhand der Produktdaten widerlegt.</p><div class="at-m"><span>eigen</span><span>duftkumpels.shop</span><span>Aug.–Sep. 2026</span></div><p class="at-g"><span>Rahmen</span>Aggregierte Kaufzahlen verglichen; keine Zuordnung einzelner Transaktionen.</p></div>
         </div>
-        <div class="atg"><h4><span class="d">▸</span> Marketing-Automation &amp; Content</h4>
+        <div class="atg"><h4><span class="d">▸</span> Community, Marketing-Automation &amp; Content</h4>
           <p class="atn">Teamprojekte: genannt ist jeweils mein Anteil; Reichweite und Anmeldungen habe ich nicht ausgewertet.</p>
+          <div class="at" data-f="ecom"><div class="at-h"><b>Community-Aufbau &amp; Outreach</b><span class="st ok">eingesetzt</span></div><p>Als Mitgründer Mitglieder gewonnen und beim Einstieg begleitet, Online-Calls organisiert und moderiert, Themen geplant und Mitglieder bei ihren KI-Projekten unterstützt; der Club dient auch der Anbahnung potenzieller Kundenaufträge.</p><div class="at-m"><span>Mitgründer</span><span>FlowKI Club</span><span>seit Apr. 2026</span></div><p class="at-g"><span>Rahmen</span>Rund 66 Mitglieder im Discord, Stand 29.09.2026.</p></div>
           <div class="at" data-f="ecom"><div class="at-h"><b>Newsletter &amp; Tracking</b><span class="st um">umgesetzt</span></div><p>Newsletter mit Double-Opt-In und Plausible-Events für Anmeldung, Bestätigung und zentrale CTAs implementiert.</p><div class="at-m"><span>Team</span><span>FlowKI Club</span><span>Juli–Aug. 2026</span></div></div>
           <div class="at" data-f="ecom"><div class="at-h"><b>Social-Distribution</b><span class="st um">umgesetzt</span></div><p>Social-Post-Pakete aus Artikeln erzeugt; Übergabe an das Veröffentlichungssystem mit Qualitätsprüfung und Markenregeln; UTM-Konvention und Link-in-Bio-Seite.</p><div class="at-m"><span>Team</span><span>FlowKI Club</span><span>Juli–Aug. 2026</span></div></div>
           <div class="at" data-f="ecom"><div class="at-h"><b>Autorenprofile &amp; Artikeldaten</b><span class="st um">umgesetzt</span></div><p>Autorenprofile sowie optionale FAQ- und HowTo-Daten in die Artikelausgabe integriert; Referral-Programm mit Codes und Stufen.</p><div class="at-m"><span>Team</span><span>FlowKI Club</span><span>Juli–Aug. 2026</span></div></div>
@@ -1035,7 +1061,9 @@
         </div>
         <div class="atg"><h4><span class="d">▸</span> Backend &amp; KI-Automation</h4>
           <div class="at" id="at-pipeline" data-f="dev"><div class="at-h"><b>Pipeline mit Versandprüfungen</b><span class="st ok">eingesetzt</span></div><p>Python-Pipeline von der Stellensuche über Job-APIs bis zur Antwortzuordnung; kanalübergreifendes Hauptbuch für Erstbewerbungen mit Reservierung, separate Versandjournale für Antworten und Nachfassmails; blockierende Prüfungen vor dem Versand, Modell-Kaskade mit Sperrzeiten.</p><div class="at-m"><span>eigen</span><span>Bewerbungsverwaltung</span><span>seit Juli 2026</span><span><a href="#fs-02" data-sprung>Fallstudie 02 →</a></span><span><a href="#fs-03" data-sprung>Fallstudie 03 →</a></span></div><p class="at-g"><span>Rahmen</span>Bereits für eigene Bewerbungen genutzt; überarbeitete Antwortzuordnung und zusätzliche Queue-Sperren lokal und unter WSL geprüft, Rollout ausstehend.</p></div>
-          <div class="at" id="at-video" data-f="dev"><div class="at-h"><b>Video-Pipeline im Team</b><span class="st um">umgesetzt</span></div><p>Speaker-Reframe: Der Ausschnitt folgt der sprechenden Person; deterministischer Neu-Render über Celery; bis zu drei Schnittvarianten je Clip, ein Datenbank-Constraint verhindert doppelte Varianten je Clip und Zielkonto.</p><div class="at-m"><span>Team</span><span>Flowki Studio</span><span>Aug.–Sep. 2026</span><span>50 eigene PRs in Flowki Studio gemergt</span></div><p class="at-g"><span>Rahmen</span>Mein Schwerpunkt ist das Clip-Studio, nicht das gesamte Studio.</p></div>
+          <div class="at" data-f="dev"><div class="at-h"><b>Produkt-Workflows im Team</b><span class="st um">umgesetzt</span></div><p>Produktions-, Freigabe- und Veröffentlichungsansichten weiterentwickelt; Ablehnungsgründe durch Oberfläche, API-Client und Freigabeprotokoll verbunden; erfolgreiche Produktion von nachfolgenden Statusfehlern getrennt; TikTok-Entwurfsweg mit eigenem Status.</p><div class="at-m"><span>Team</span><span>Flowki Studio</span><span>seit Aug. 2026</span></div><p class="at-g"><span>Rahmen</span>Internes Werkzeug ohne öffentlichen Zugang.</p></div>
+          <div class="at" data-f="dev"><div class="at-h"><b>Discord-Bot mit Wissensbasis</b><span class="st um">umgesetzt</span></div><p>Bot um /ask und Self-Service-Themenrollen erweitert; Artikelinhalte als Wissensgrundlage des FAQ-Bots angebunden, Relevanz-Prüfschritt ergänzt und das Verhalten bei unpassenden Treffern getestet.</p><div class="at-m"><span>Team</span><span>FlowKI Club</span><span>Juli–Aug. 2026</span></div><p class="at-g"><span>Rahmen</span>Belegt durch Umsetzung und Tests im Repository.</p></div>
+          <div class="at" id="at-video" data-f="dev"><div class="at-h"><b>Video-Pipeline im Team</b><span class="st um">umgesetzt</span></div><p>Speaker-Reframe: Der Ausschnitt folgt der sprechenden Person; deterministischer Neu-Render über Celery; bis zu drei Schnittvarianten je Clip, ein Datenbank-Constraint verhindert doppelte Varianten je Clip und Zielkonto.</p><div class="at-m"><span>Team</span><span>Flowki Studio</span><span>Aug.–Sep. 2026</span><span>50 eigene PRs in Flowki Studio gemergt</span></div><p class="at-g"><span>Rahmen</span>Ein Teil meines Beitrags zu Flowki Studio; internes Werkzeug ohne öffentlichen Zugang.</p></div>
           <div class="at" data-f="dev"><div class="at-h"><b>Agenten-Plugin mit Kosten-Gate</b><span class="st um">umgesetzt</span></div><p>Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt; ein Kosten-Gate verhindert versehentliche bezahlte Agentenläufe; Deploy mit Rollback.</p><div class="at-m"><span>eigen</span><span>hermes-brett</span><span>Sep. 2026</span></div><p class="at-g"><span>Rahmen</span>Selbsttest mit node:assert.</p></div>
           <div class="at" data-f="dev"><div class="at-h"><b>Agenten-orchestrierte App</b><span class="st um">umgesetzt</span></div><p>Mobiles Idle-RPG mit React Native, Skia und Supabase; ein KI-Agent arbeitet im Lead-Modus Rollen ab, die Produktentscheidungen treffe ich.</p><div class="at-m"><span>eigen</span><span>Shinobi: Ember Accord</span><span>Sep. 2026</span></div><p class="at-g"><span>Rahmen</span>Agenten-Experiment, nicht veröffentlicht.</p></div>
         </div>
@@ -1165,7 +1193,7 @@
     var ziel = document.getElementById(a.getAttribute('href').slice(1));
     if(!ziel) return;
     ev.preventDefault();
-    if(ziel.id.indexOf('fs-') === 0){ show('projekte'); var t = document.getElementById('apptitle'); if(t) t.textContent = 'Projekte'; }
+    if(ziel.closest('[data-view="projekte"]')){ show('projekte'); var t = document.getElementById('apptitle'); if(t) t.textContent = 'Projekte'; }
     setTimeout(function(){
       // nur den View-Container scrollen; scrollIntoView verschöbe auch das äußere Dokument
       var v = ziel.closest('.view');
@@ -1179,7 +1207,7 @@
   var clock=document.getElementById('clock');
   function tickClock(){ var d=new Date(); clock.textContent=pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds()); }
   tickClock(); setInterval(tickClock,1000);
-  var ticks=['python · typescript','flowki: 50 PRs gemergt','21 → 0 rote tests','duftkumpels.shop: live','hamburg · remote'];
+  var ticks=['python · typescript','flowki: 50 PRs gemergt','flowki club: mitgründer','21 → 0 rote tests','duftkumpels.shop: live','hamburg · remote'];
   var ti=0, te=document.getElementById('tick');
   setInterval(function(){ ti=(ti+1)%ticks.length; if(te){te.style.opacity=0; setTimeout(function(){te.textContent=ticks[ti];te.style.opacity=1;},260);} }, 3600);
   if(te) te.style.transition='opacity .25s';
@@ -1233,8 +1261,9 @@
   // ---- scripted chat (safe on static hosting, no API key) ----
   var QA=[
     {q:"Wie ist dieses CV gebaut?",feat:1,k:["dieses cv","diese seite","wie ist das","phone","app-style"," os ","installier"],a:"Du benutzt es gerade: ein Web-CV als installierbare PWA, gebaut mit HTML, CSS und JavaScript ohne Framework — Glas-Refraktion über SVG-Displacement-Filter, ein Canvas-Graph, Federphysik per CSS, App-Gesten. Die Fluid-Simulation ist von PavelDoGreats WebGL-Fluid-Simulation (MIT) adaptiert."},
-    {q:"Was hast du gebaut?",feat:1,k:["gebaut","projekte","systeme","portfolio","beeindruck","zeig"],a:"Im Team Flowki Studio (50 gemergte Pull Requests), mein Schwerpunkt ist das Clip-Studio: Aus Langvideos werden Shorts, mit Speaker-Reframe und deterministischem Neu-Render. Allein eine Python-Pipeline für Bewerbungen, bei der ein kanalübergreifendes Hauptbuch doppelte Erstbewerbungen verhindert; Rollout-Skripte bauen bei abgefangenen Fehlern zurück. Dazu Werkzeuge für KI-Agenten und den Shopify-Umbau von duftkumpels.shop. Details unter Projekte."},
-    {q:"Wie arbeitest du mit KI-Agenten?",feat:1,k:["agent","claude","wie arbeitest","ki-tool","codex"],a:"Agenten sind mein Entwicklungswerkzeug. Anforderungen, Architektur und Abnahme liegen bei mir: Jeder Fehler wird zuerst als roter Test festgehalten, größere Änderungen prüft ein zweites Modell. Bei Shinobi: Ember Accord habe ich ausprobiert, wie weit ein Agent im Lead-Modus kommt — die Produktentscheidungen blieben bei mir."},
+    {q:"Was hast du gebaut?",feat:1,k:["gebaut","projekte","systeme","portfolio","beeindruck","zeig"],a:"Im Team Flowki Studio, ein internes Social-Media-Studio (50 eigene Pull Requests gemergt): Produktoberflächen, Freigaben mit Ablehnungsgründen, Clip-Verarbeitung und Publishing. Als Mitgründer den FlowKI Club, eine KI-Community mit rund 66 Mitgliedern im Discord (Stand 29.09.2026), samt Website, Newsletter und Discord-Bot. Allein eine Python-Pipeline für Bewerbungen, bei der ein kanalübergreifendes Hauptbuch doppelte Erstbewerbungen verhindert; Rollout-Skripte bauen bei abgefangenen Fehlern zurück. Dazu Werkzeuge für KI-Agenten und den Shopify-Umbau von duftkumpels.shop. Details unter Projekte."},
+    {q:"Was ist der FlowKI Club?",k:["flowki club","community","discord","mitgründer","mitgegründet"],a:"Eine deutschsprachige KI-Community, die ich im April 2026 mitgegründet habe: Discord mit rund 66 Mitgliedern (Stand 29.09.2026), Fachartikel, Online-Calls und gemeinsame Projekte. Ich gewinne Mitglieder und begleite sie beim Einstieg, organisiere und moderiere Calls und helfe bei Projekten; technisch habe ich an Website, Newsletter und Discord-Bot mitgebaut. Der Club dient auch der Anbahnung potenzieller Kundenaufträge."},
+    {q:"Wie arbeitest du mit KI-Agenten?",feat:1,k:["agent","claude","wie arbeitest","ki-tool","codex"],a:"Agenten sind mein Entwicklungswerkzeug. Anforderungen, Architektur und Abnahme liegen bei mir. Meine Arbeitsweise: Fehler mit einem roten Test reproduzieren; größere Änderungen prüft zusätzlich ein zweites Modell. Bei Shinobi: Ember Accord habe ich ausprobiert, wie weit ein Agent im Lead-Modus kommt — die Produktentscheidungen blieben bei mir."},
     {q:"Warum von Vertrieb zu KI?",feat:1,k:["vertrieb","sales","wechsel","quereinst","warum ki","von sales","dna"],a:"Im Vertrieb habe ich vier Jahre direkt mit Inhabern gesprochen und gesehen, wo Betriebe Zeit verlieren. Seit 2024 baue ich Software und Automationen — in eigenen Projekten, im Team und für Kunden. Jetzt suche ich eine Junior-Rolle in einem Entwicklungsteam, um das professionell zu vertiefen."},
     {q:"Was könntest du bei uns bauen?",feat:1,k:["bei uns","30 tage","erste","was könntest","für uns","anfangen"],a:"Zum Einstieg würde ich mit dem Team einen geeigneten Prozess eingrenzen und einen testbaren Prototyp entwickeln — mit den Fehlerfällen zuerst: doppelte Ausführung, abgebrochene Jobs, halbe Rollouts."},
     {q:"Wo willst du arbeiten?",feat:1,k:["zürich","zurich","umzug","ziel","hamburg","remote","standort"],a:"In Hamburg, wo ich wohne, oder remote. Für eine passende Rolle ziehe ich auch nach Zürich — das Timing stimmen wir gemeinsam ab."},
@@ -2889,7 +2918,7 @@
   }
 
   // ---- island ticker + Live Activity ----
-  var iticks=['python · typescript','flowki: 50 PRs gemergt','21 → 0 rote tests','duftkumpels.shop: live','hamburg · remote'];
+  var iticks=['python · typescript','flowki: 50 PRs gemergt','flowki club: mitgründer','21 → 0 rote tests','duftkumpels.shop: live','hamburg · remote'];
   var ii=0, iEl=document.getElementById('islandtxt'), island=document.querySelector('.island');
   iEl.style.transition='opacity .25s';
   function islandSet(txt){ iEl.style.opacity=0; island.classList.add('morph');
