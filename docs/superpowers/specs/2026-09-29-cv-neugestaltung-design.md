@@ -46,7 +46,7 @@ Jasons Entscheidungen vom 29.09.2026:
   - Foto rechts
 - **Kennzahlen-Leiste:** vier belegte Fakten mit Stichtag bzw. Quelle.
   - Marketing: 700 URLs geprüft · rund 66 Discord-Mitglieder (Stand 29.09.2026) · 4 Jahre B2B-Vertrieb · Google Ads Search zertifiziert
-  - Entwicklung: eigene, passende Kennzahlen
+  - Entwicklung: 50 gemergte Pull Requests in Flowki Studio · Test-Suite von 177 auf 199 grüne Tests (hermes-studio) · rund 66 Discord-Mitglieder (Stand 29.09.2026) · 4 Jahre B2B-Vertrieb. Astra prüft vor dem Merge, ob diese Auswahl trägt.
   - Keine Commit-Zahlen als Blickfang.
 - **Hauptfluss:**
   - eine Lesespalte mit nummerierten Abschnitten (01, 02 …)
