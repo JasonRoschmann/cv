@@ -16,7 +16,7 @@ Ich entwickle KI-Automationen und Webanwendungen mit Python und TypeScript, eige
 
 ## Projekte
 
-### Flowki Studio — Clip-Studio (Teamprojekt, Aug–Sep 2026)
+### Flowki Studio — Clip-Studio (Teamprojekt, Aug.–Sep. 2026)
 
 Zweck: Internes Social-Media-Studio mit Trends, Plattform-Playbooks und KI-Content-Pipeline. Das Clip-Studio macht aus Langvideos Shorts — mein Schwerpunkt. 64 Pull Requests in Flowki Studio, davon 50 gemergt.
 
@@ -25,7 +25,7 @@ Zweck: Internes Social-Media-Studio mit Trends, Plattform-Playbooks und KI-Conte
 - Bis zu drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint); Publikationsrechte unmittelbar vor dem Versand erneut geprüft.
 - Stack: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, MinIO, Next.js
 
-### Fallbeispiel Fehlersuche — hermes-studio (Beitrag zu fremdem Projekt, Sep 2026)
+### Fallbeispiel Fehlersuche — hermes-studio (Beitrag zu fremdem Projekt, Sep. 2026)
 
 - Ursache: 21 rote Tests, zwei Ursachen — 20× ein nie geschlossenes SQLite-Handle, das unter Windows das Aufräumen sperrt; 1× ein veralteter Test gegen eine Sicherheitsregel.
 - Korrektur: Handle geschlossen, Sicherheitsregel behalten, Test korrigiert. Zusätzlich, als eigener Beitrag: stillen Datenverlust im Task-Store behoben, mit fünf neuen Tests.
@@ -57,7 +57,7 @@ Websites und Shops für Kunden — Gestaltung, Mehrsprachigkeit, rechtliche Vorg
 ## Weitere Projekte
 
 - hermes-brett: Aufgabenbrett-Plugin für Hermes Agent ohne Build-Schritt; ein Kosten-Gate verhindert, dass das Brett versehentlich einen bezahlten Agentenlauf startet; Deploy mit Rollback; Selbsttest nur mit node:assert.
-- Shinobi: Ember Accord — mobiles Idle-RPG (React Native, Skia, Supabase, pgTAP). Agenten-orchestriert: ein KI-Agent arbeitet im Lead-Modus 50 Rollen ab, die Produktentscheidungen treffe ich.
+- Shinobi: Ember Accord — mobiles Idle-RPG (React Native, Skia, Supabase, pgTAP). Agenten-orchestriert: Ein KI-Agent arbeitet im Lead-Modus 50 Rollen ab, die Produktentscheidungen treffe ich.
 - Interaktives Web-CV — installierbare PWA ohne Framework: SVG-Displacement, Canvas, WebGL-Fluidsimulation (adaptiert, MIT-Lizenz).
 
 ## Berufserfahrung

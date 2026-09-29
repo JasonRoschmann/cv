@@ -82,7 +82,7 @@ Center, Judge.me, Python
 
 Marketing-Automation & Content im Team
 
-FlowKI Club — Magazin & KI-Community (Teamprojekt, Juli–Aug 2026)
+FlowKI Club — Magazin & KI-Community (Teamprojekt, Juli–Aug. 2026)
 
 - Newsletter mit Double-Opt-In und Plausible-Events für Anmeldung,
   Bestätigung und CTAs implementiert.

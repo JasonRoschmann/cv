@@ -51,7 +51,7 @@ Tools: Shopify, Google Search Console, GA4, Klaviyo, Google Merchant Center, Jud
 
 ## Marketing-Automation & Content im Team
 
-### FlowKI Club — Magazin & KI-Community (Teamprojekt, Juli–Aug 2026)
+### FlowKI Club — Magazin & KI-Community (Teamprojekt, Juli–Aug. 2026)
 
 - Newsletter mit Double-Opt-In und Plausible-Events für Anmeldung, Bestätigung und CTAs implementiert.
 - Social-Distribution: Social-Post-Pakete aus Artikeln erzeugt; Übergabe an das Veröffentlichungssystem mit Qualitätsprüfung und Markenregeln; UTM-Konvention und Link-in-Bio-Seite.

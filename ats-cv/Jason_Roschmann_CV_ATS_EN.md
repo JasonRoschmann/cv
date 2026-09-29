@@ -57,7 +57,7 @@ Websites and shops for clients — design, multilingual content, legal requireme
 ## Further projects
 
 - hermes-brett: task board plugin for Hermes Agent without a build step; a cost gate prevents the board from accidentally starting a paid agent run; deploy with rollback; self-test using only node:assert.
-- Shinobi: Ember Accord — mobile idle RPG (React Native, Skia, Supabase, pgTAP). Agent-orchestrated: an AI agent works through 50 roles in lead mode, I make the product decisions.
+- Shinobi: Ember Accord — mobile idle RPG (React Native, Skia, Supabase, pgTAP). Agent-orchestrated: an AI agent works through 50 roles in lead mode; I make the product decisions.
 - Interactive web CV — installable PWA without a framework: SVG displacement, canvas graph, WebGL fluid simulation (adapted from PavelDoGreat, MIT).
 
 ## Experience
@@ -65,7 +65,7 @@ Websites and shops for clients — design, multilingual content, legal requireme
 ### AI Automation & Web Development
 **2024 – present | Own projects, team and client projects | Hamburg / remote**
 
-- Developed and tested Python backends and Next.js frontends and ran them on Linux servers (Docker Compose, cron, deployment with rollback); customised Shopify themes; team work via branches, pull requests and shared test suites.
+- Developed and tested Python backends and Next.js frontends and ran them on Linux servers (Docker Compose, cron, deployment with rollback); customised Shopify themes; teamwork via branches, pull requests and shared test suites.
 
 ### B2B Direct Sales (door-to-door)
 **2019 – 2023 | EWE TEL, Ranger Marketing | Field sales across Germany**

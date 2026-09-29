@@ -35,10 +35,10 @@
 
     <section>
       <div class="case">
-        <div class="pt"><h3>Fall 1 · Verfügbarkeitsaussagen passten nicht zum Bestand</h3><span class="tag">SEO-Daten · Aug 2026</span></div>
+        <div class="pt"><h3>Fall 1 · Verfügbarkeitsaussagen passten nicht zum Bestand</h3><span class="tag">SEO-Daten · Aug. 2026</span></div>
         <div class="steps">
           <div><span>Befund</span>Zwei Produktbeschreibungen für die Suche versprachen Ware „auf Lager“: Ein Produkt war ausverkauft, beim anderen war eine der genannten Größen nicht kaufbar. Solche Sätze veralten still bei jedem Bestandswechsel — und führen zu enttäuschten Klicks.</div>
-          <div><span>Mein Beitrag</span>Ein Python-Werkzeug, das über die Shopify-Admin-GraphQL-API jede aktive Beschreibung mit den kaufbaren Varianten abgleicht: Lagerbehauptung ohne kaufbare Variante, oder genannte Größen, die nicht alle kaufbar sind. Korrigiert wird nur der Verfügbarkeitsteil; der übrige Text bleibt beim Kunden.</div>
+          <div><span>Mein Beitrag</span>Ein Python-Werkzeug, das über die Shopify-Admin-GraphQL-API jede aktive Beschreibung mit den kaufbaren Varianten abgleicht: Lagerbehauptung ohne kaufbare Variante oder genannte Größen, die nicht alle kaufbar sind. Korrigiert wird nur der Verfügbarkeitsteil; der übrige Text bleibt beim Kunden.</div>
           <div><span>Geprüft</span>Zwei Beschreibungen korrigiert. Vorher werden die alten Werte gesichert; nach dem Schreiben liest das Werkzeug zurück und bricht bei Abweichung ab. Folgeschritt: nicht lieferbare Produkte auf Wissensseiten gekennzeichnet, verfügbare Alternativen eingeblendet.</div>
         </div>
         <div class="how"><b>Entscheidung:</b> Bei ausverkauften Produkten entfernt das Werkzeug die Aussage, statt „ausverkauft“ zu schreiben — der Bestand wechselt wieder, und die Verfügbarkeit meldet ohnehin das Produkt-Schema. <b>Rahmen:</b> erkennt nur ausdrückliche Lager-Formulierungen; die Wirkung auf die Klickrate habe ich nicht gemessen.</div>
@@ -47,7 +47,7 @@
 
     <section>
       <div class="case">
-        <div class="pt"><h3>Fall 2 · Die Abbruchmail stellte den Checkout nicht wieder her</h3><span class="tag">E-Mail-Automation · Sep 2026</span></div>
+        <div class="pt"><h3>Fall 2 · Die Abbruchmail stellte den Checkout nicht wieder her</h3><span class="tag">E-Mail-Automation · Sep. 2026</span></div>
         <div class="steps">
           <div><span>Befund</span>Der einzige Knopf der <span class="nw">Klaviyo-Abbruchmail</span> zeigte fest auf <code>/cart</code> — den Warenkorb des Browsers, in dem die Mail geöffnet wird. Beim Gerätewechsel wird der abgebrochene Checkout dadurch nicht wiederhergestellt; ein leerer Warenkorb ist möglich.</div>
           <div><span>Mein Beitrag</span>Der Flow startet mit Shopifys Ereignis „Checkout Started“, und dieses liefert den wiederherstellbaren Kassenlink mit. Den Knopf darauf umgestellt, <code>/cart</code> bleibt als Rückfall; Text und Gestaltung unverändert.</div>
@@ -70,7 +70,7 @@
   <div class="inner" style="padding-top:10mm">
     <section style="margin-top:0">
       <div class="case">
-        <div class="pt"><h3>Fall 3 · Gegenprobe — auch gegen die eigene Erklärung</h3><span class="tag">Gegenprobe · Aug 2026</span></div>
+        <div class="pt"><h3>Fall 3 · Gegenprobe — auch gegen die eigene Erklärung</h3><span class="tag">Gegenprobe · Aug. 2026</span></div>
         <div class="steps" style="grid-template-columns:1fr;gap:7px">
           <div><span>a · KI-Audit meldete fehlende Grundpreise</span>Ein KI-Agent meldete im Shop-Audit fehlende Grundpreisangaben. Statt nachzubessern, habe ich das Grundpreis-Maß aller aktiven Varianten per Admin-GraphQL abgefragt: <b>102 von 103 Varianten</b> hatten eines — die eine ohne ist ein Platzhalter für 0&nbsp;€ ohne Verkaufsangebot. Zusätzlich auf einer Produktseite geprüft, dass der Grundpreis tatsächlich angezeigt wird. <b>Befund widerlegt, nichts geändert.</b></div>
           <div><span>b · Ein Preload sollte das Laden beschleunigen</span>Eine eigene Stylesheet-Datei blockierte laut Lighthouse das Rendern der Produktseite; ich stellte sie per Skript mit Sicherung auf Preload um. <b>Nach der Umstellung lagen die Lighthouse-Werte in fünf von sechs dokumentierten Läufen schlechter</b> als bei der Ausgangsmessung. Ich nahm die Änderung zurück und stellte die Theme-Datei byte-identisch wieder her. Eine spätere Gegenprüfung korrigierte meine erste Erklärung: Der weiterhin vorhandene Preload-Header stammte aus Shopifys automatischer Ausgabe, nicht aus einem Cache-Rest. Ein belastbarer Kausalnachweis für die Verschlechterung blieb offen.</div>
