@@ -643,6 +643,8 @@
     body.app-open .main{opacity:1;visibility:visible;pointer-events:auto;transform:none;border-radius:0;
       transition:transform .65s var(--spg2),opacity .3s,visibility .65s,border-radius .65s}
     .view{padding:calc(env(safe-area-inset-top) + 108px) 20px calc(env(safe-area-inset-bottom) + 58px)}
+    /* Direktlinks (#fs-01 …): der Browser scrollt selbst zum Anker – Ziel unter der App-Kopfleiste ablegen */
+    .view [id]{scroll-margin-top:calc(env(safe-area-inset-top) + 96px)}
     .appbar{position:fixed;top:0;left:0;right:0;z-index:45;display:flex;align-items:center;
       padding:calc(env(safe-area-inset-top) + 46px) 14px 0;
       opacity:0;visibility:hidden;transition:opacity .4s .12s,visibility .4s;pointer-events:none}
@@ -898,10 +900,7 @@
           <div class="urow"><div class="k">Redaktion</div><div class="v">Ablehnungsgründe durch Oberfläche, API-Client und Freigabeprotokoll verbunden – Rückgaben zur Überarbeitung mit nachvollziehbarer Begründung.</div></div>
           <div class="urow"><div class="k">Statusfehler</div><div class="v">Erfolgreiche Produktion bzw. Lizenzierung von nachfolgenden Status- und Zuordnungsfehlern getrennt – keine irreführenden Fehlermeldungen, keine Anreize für erneute, kostenwirksame Aufrufe.</div></div>
           <div class="urow"><div class="k">Publishing</div><div class="v">TikTok-Entwurfsweg mit eigenem Status und Nutzerhinweis – hochgeladene Entwürfe eindeutig von veröffentlichten Posts unterschieden.</div></div>
-          <div class="urow"><div class="k">Clip-Studio</div><div class="v">Aus Langvideos werden bearbeitbare Hochformat-Clips:</div></div>
-          <div class="urow"><div class="k">Reframe</div><div class="v">Der Planer misst das Gesicht an mehreren Zeitpunkten statt einmal, glättet die Reihe und liefert stückweise konstante 9:16-Keyframes — der Ausschnitt folgt der sprechenden Person.</div></div>
-          <div class="urow"><div class="k">Neu-Render</div><div class="v">Korrekturen erzeugen append-only Planversionen; jede Änderung entwertet eine erteilte Freigabe. Der Render läuft deterministisch und asynchron über Celery, ohne Modellkosten.</div></div>
-          <div class="urow"><div class="k">Varianten</div><div class="v">Bis zu drei Schnittvarianten je Clip, höchstens eine je Zielkonto (Datenbank-Constraint) — keine Variante ohne Empfänger.</div></div>
+          <div class="urow"><div class="k">Clip-Studio</div><div class="v">Langvideos werden bearbeitbare Hochformat-Clips: Speaker-Reframe, bis zu drei Schnittvarianten je Clip, deterministischer Neu-Render nach Korrekturen – Details im <a href="#at-video" data-sprung style="color:var(--grn);border-bottom:1px solid rgba(63,220,132,.5)">Kompetenz-Atlas</a>.</div></div>
           <div class="urow j"><div class="k">Fehlerfälle</div><div class="v">Fixes für Jobs, die nach verschwundenem Worker für immer „läuft“ zeigten, und für eine Produktion, die ein Statusfehler doppelt auslöste.</div></div>
         </div>
         <div class="crown rv" id="club" style="margin-top:18px">
@@ -912,7 +911,7 @@
           <div class="urow"><div class="k">Zugang</div><div class="v">Newsletter mit Double-Opt-In und Empfehlungslinks; Plausible-Ereignisse für Anmeldung, Bestätigung und Klicks auf Discord-Beitrittslinks.</div></div>
           <div class="urow"><div class="k">Verteilung</div><div class="v">Artikel in plattformgerechte Social-Pakete überführt und an die Veröffentlichungsplanung angebunden – Prüfungen auf Textqualität, Länge und Markenregeln vor dem Einplanen.</div></div>
           <div class="urow"><div class="k">Discord-Bot</div><div class="v">/ask und Self-Service-Themenrollen; Artikelinhalte als Wissensgrundlage des FAQ-Bots mit Relevanz-Prüfschritt, Verhalten bei unpassenden Treffern getestet.</div></div>
-          <div class="urow"><div class="k">Website</div><div class="v">flowki-club.de · Autoren-, FAQ- und HowTo-Markup in der Artikelausgabe.</div></div>
+          <div class="urow"><div class="k">Website</div><div class="v">Autoren-, FAQ- und HowTo-Markup in der Artikelausgabe.</div></div>
         </div>
         <p class="eyebrow rv" style="margin-top:34px">Fallstudien</p>
         <h3 class="display h-l rv" style="margin-top:12px;max-width:24ch">Drei Fälle, in denen der erste Eindruck <span class="g it">täuschte.</span></h3>
@@ -1176,6 +1175,11 @@
     var vEl = document.querySelector('.view[data-view="'+v+'"]'); if(vEl) vEl.scrollTop=0;
   }
   navEls.forEach(function(n){ n.addEventListener('click', function(){ show(n.getAttribute('data-view')); }); });
+  // Direktlink aus dem PDF (#fs-01, #club …): passende Ansicht öffnen und das Ziel in den sichtbaren Bereich holen
+  var anker = location.hash && document.getElementById(location.hash.slice(1)), ankerView = anker && anker.closest('.view');
+  // Handy (≤820px) übernimmt der JasonOS-Controller
+  if(ankerView && !window.matchMedia('(max-width:820px)').matches){ show(ankerView.getAttribute('data-view'));
+    setTimeout(function(){ ankerView.scrollTop += anker.getBoundingClientRect().top - ankerView.getBoundingClientRect().top - 16; }, 300); }
   // Kompetenz-Atlas: Filter blendet Einträge aus; Gruppen ohne sichtbaren Eintrag verschwinden mit
   var atf = document.querySelectorAll('.atf button');
   atf.forEach(function(b){ b.addEventListener('click', function(){
@@ -1193,7 +1197,9 @@
     var ziel = document.getElementById(a.getAttribute('href').slice(1));
     if(!ziel) return;
     ev.preventDefault();
-    if(ziel.closest('[data-view="projekte"]')){ show('projekte'); var t = document.getElementById('apptitle'); if(t) t.textContent = 'Projekte'; }
+    // Ziel vom Atlas-Filter ausgeblendet? Filter auf "Alle" zurücksetzen (derselbe Handler setzt Gruppen und aria-pressed)
+    var alle = document.querySelector('.atf button[data-f="alle"]'); if(ziel.closest('[hidden]') && alle) alle.click();
+    var zv = ziel.closest('.view'); if(zv && !zv.classList.contains('on')){ var vn = zv.getAttribute('data-view'); show(vn); var t = document.getElementById('apptitle'); if(t) t.textContent = labels[vn] || vn; }
     setTimeout(function(){
       // nur den View-Container scrollen; scrollIntoView verschöbe auch das äußere Dokument
       var v = ziel.closest('.view');
@@ -2927,7 +2933,8 @@
     ii=(ii+1)%iticks.length; islandSet(iticks[ii]); },3800);
 
   // ---- Haptik ----
-  function buzz(ms){ if(navigator.vibrate) try{navigator.vibrate(ms);}catch(e){} }
+  // nur nach einer Nutzeraktion vibrieren (Direktlink öffnet die App ohne Tipp → Browser blockiert und loggt Fehler)
+  function buzz(ms){ if(navigator.vibrate && (!navigator.userActivation || navigator.userActivation.hasBeenActive)) try{navigator.vibrate(ms);}catch(e){} }
 
   // ---- boot ----
   if(reduce || sessionStorage.getItem('jrBoot')){ body.classList.add('booted'); }
@@ -3033,6 +3040,15 @@
     el.addEventListener('click',function(){ openApp(el.getAttribute('data-app'),el); });
   });
   document.getElementById('backbtn').addEventListener('click',closeApp);
+  // Direktlink aus dem PDF: Sperrbildschirm überspringen, App öffnen. Der Browser scrollt selbst zum Anker
+  // (scroll-margin-top), verschiebt dabei aber auch .main, und das Layout ändert sich noch während des Zooms –
+  // deshalb nach Zoom-Ende (bzw. load ohne Animation) einmal endgültig ausrichten; Maßstab s rechnet den Zoom heraus.
+  var anker=location.hash && document.getElementById(location.hash.slice(1)), ankerView=anker && anker.closest('.view');
+  if(ankerView){ body.classList.add('booted','unlocked'); openApp(ankerView.getAttribute('data-view'));
+    var zumAnker=function(){ main.scrollTop=0; var r=ankerView.getBoundingClientRect(), s=r.height/ankerView.offsetHeight||1;
+      ankerView.scrollTop += (anker.getBoundingClientRect().top - r.top)/s - parseFloat(getComputedStyle(anker).scrollMarginTop); };
+    var nachZoom=function(e){ if(e.target===main && e.propertyName==='transform'){ main.removeEventListener('transitionend',nachZoom); zumAnker(); } };
+    main.addEventListener('transitionend',nachZoom); window.addEventListener('load',zumAnker); }
   document.getElementById('hindic').addEventListener('click',closeApp);
 
   // Lockscreen-Notifications öffnen ihre App bzw. ihren Link (Unlock läuft via Bubble mit)

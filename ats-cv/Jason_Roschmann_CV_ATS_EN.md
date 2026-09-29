@@ -1,6 +1,6 @@
 # Jason Roschmann
 
-Junior Software Engineer · Python · TypeScript · AI automation
+Junior Software Engineer · Python · FastAPI · TypeScript · Next.js · PostgreSQL · Docker Compose
 
 Email: jason@roschmann-digital.de | Phone: +49 155 612 953 91\
 LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | GitHub: github.com/JasonRoschmann | Web CV: jasonroschmann.github.io/cv\
@@ -16,14 +16,13 @@ Key figures: 50 of my pull requests merged (Flowki Studio, team project) · 21 �
 
 ### Flowki Studio — internal social media studio, team project (Aug 2026 – present)
 
-Purpose: Internal social media studio for topic research, AI-assisted content production, editorial review and handover to platforms; my contribution in the team: product interfaces, workflow integration, clip processing and publishing.
+Purpose: Internal social media studio for topic research, AI-assisted content production, editorial review and handover to platforms; my contribution in the team (50 of my pull requests merged): product interfaces, workflow integration, clip processing and publishing.
 
 - Product interface: Further developed the production, approval and publishing views – made processing states, phase durations and required user actions visible.
 - Editorial collaboration: Connected rejection reasons across the interface, API client and approval log – returns for revision now carry a traceable reason.
 - Error handling: Separated successful production or licensing from subsequent status and assignment errors – removed misleading error messages and incentives for repeated, cost-incurring calls.
 - Video processing: Implemented speaker-focused reframing, alternative edits and reproducible re-rendering after corrections – long videos become editable vertical clips.
 - Publishing: Integrated the TikTok draft path with its own status and user notice – uploaded drafts are clearly distinguished from published posts.
-- Quality assurance: Reproduced failure cases first and validated fixes with targeted tests.
 
 Tools: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, Next.js, TypeScript
 
@@ -41,8 +40,10 @@ Tools: TypeScript, discord.js, Claude API, PostgreSQL, Vitest, Next.js
 ### hermes-studio — contribution to a third-party project, debugging (Sep 2026)
 
 - Cause: 21 failing tests with two root causes – 20× an SQLite handle that was never closed and blocks cleanup on Windows, 1× an outdated test against a security rule; handle closed, rule kept, test corrected.
-- Evidence: Mutation test – with the security rule weakened, the corrected test fails; passing tests: 177/198 → 199/199.
+- Evidence: Mutation test – with the security rule weakened, the corrected test fails; passing tests: 177 → 199.
 - Own contribution: Fixed silent data loss in the task store, with five new tests.
+
+Evidence: case study on the web CV (German) <https://jasonroschmann.github.io/cv/#fs-01>
 
 ### duftkumpels.shop — client project, Shopify, API & translation automation (Jun 2026 – present)
 
@@ -62,6 +63,8 @@ Purpose: Python pipeline for job search via job board APIs (including the German
 - Rating quality: Checked LLM ratings against blind reference judgements; did not roll out a revised analysis after an incomplete measurement showed no proven improvement.
 - Operations: Rollouts with checksums, tests before and after the swap and automatic rollback on caught errors.
 
+Evidence (German): case study reply matching <https://jasonroschmann.github.io/cv/#fs-02> · case study LLM rating <https://jasonroschmann.github.io/cv/#fs-03>
+
 ## Experience
 
 ### AI Automation & Web Development — own projects, team and client projects (2024 – present)
@@ -76,10 +79,10 @@ Purpose: Python pipeline for job search via job board APIs (including the German
 
 ## Skills & way of working
 
-- Development: Python, FastAPI · TypeScript, React, Next.js, discord.js · React Native (project experience: Shinobi)
+- Development: Python, REST APIs with FastAPI · TypeScript, React, Next.js, discord.js · React Native (personal project)
 - AI & agents: Claude Code, LLM APIs (Claude, Gemini, Groq), MCP, agent orchestration, n8n
-- Data & jobs: PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase
-- Quality: pytest, Vitest, Playwright, GitHub Actions, Lighthouse CI
+- Data & jobs: SQL/PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase
+- Quality: Git, CI/CD with GitHub Actions, pytest, Vitest, Playwright, Lighthouse CI
 - Operations: Linux servers, Docker Compose, cron, flock, SMTP/IMAP, SPF/DKIM
 - Web & commerce: Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL
 - With AI agents: Reproduce bugs with failing tests · an agent implements the fix · a second model provides an additional review · rollout with checksums and automatic rollback on caught errors

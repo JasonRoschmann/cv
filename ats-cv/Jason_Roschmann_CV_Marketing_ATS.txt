@@ -22,10 +22,9 @@ Produktinformationen, E-Mail-Flows und Messung; als Mitgründer des
 FlowKI Clubs baue ich eine KI-Community mit auf und verbinde sie mit
 Website, Outreach und Automatisierung.
 
-Kennzahlen: 700 URLs auf Indexierung geprüft (Kundenshop duftkumpels) ·
-rund 66 Discord-Mitglieder FlowKI Club (Stand 29.09.2026) · 4 Jahre
-B2B-Vertrieb mit täglichem Kundenkontakt (2019–2023) · Google Ads Search
-zertifiziert (verifizierbar)
+Kennzahlen: 700 URLs auf Indexierung geprüft (duftkumpels) · rund 66
+Discord-Mitglieder FlowKI Club (Stand 29.09.2026) · 4 Jahre B2B-Vertrieb
+(2019–2023) · Google Ads Search zertifiziert
 
 Projekte & Praxis
 
@@ -61,6 +60,10 @@ Theme, SEO, Sprachen, Produktdaten, E-Mail-Flows und Messung.
 
 Tools: Shopify (Liquid, Admin-API), Google Search Console, GA4, Klaviyo,
 Merchant Center, Judge.me, Python
+
+Belege: Kundenshop https://duftkumpels.shop · Drei technische
+Fallstudien:
+https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf
 
 FlowKI Club — Mitgründer, KI-Community & Magazin (Apr. 2026 – heute)
 
@@ -105,7 +108,7 @@ Tools: Python, FastAPI, Next.js, PostgreSQL
 
 Berufserfahrung
 
-E-Commerce, Webentwicklung & KI-Automation — Eigene Projekte, Team- und Kundenprojekte, Hamburg / remote (2024 – heute)
+E-Commerce, Webentwicklung & KI-Automation — Eigene, Team- und Kundenprojekte (2024 – heute)
 
 - Shopify-Shop technisch und im Marketing betreut: Theme, SEO, Sprachen,
   Produktdaten, E-Mail-Flows, Messung.
@@ -128,9 +131,6 @@ Weitere Web- & Shop-Projekte
 - nk247store.de — Kundenprojekt im Team: interaktive Überarbeitung mit
   Next.js und GSAP; Tabakwerbung nach § 19 TabakerzG aus allen Motiven
   entfernt. Meine Überarbeitung ist noch nicht veröffentlicht.
-- Kreativ-KI — Redesign-Entwurf für ein Hamburger Izakaya mit
-  KI-Website-Builder, selbst nachgearbeitet; Vergleichsworkflow für vier
-  KI-Videomodelle mit gemeinsamem Ausgangsprompt.
 - SEO-Dashboard (Prototyp) — Python-Werkzeug, das Search-Console-, GA4-
   und Bing-Daten zusammenführt und regelbasierte Hinweise erzeugt.
 
@@ -140,16 +140,18 @@ Kenntnisse & Tools
   (JSON-LD), interne Verlinkung, Canonicals, 301-Weiterleitungen,
   internationales SEO (hreflang-Prüfung), Core Web Vitals, GEO/AEO
 - Analyse: Google Search Console, Google Analytics 4, Bing Webmaster
-  Tools (API), Lighthouse, Plausible, IndexNow, UTM-Tracking
+  Tools (API), Lighthouse, Plausible, IndexNow
 - E-Commerce: Shopify (Theme-Anpassung, Liquid, Metafelder, Admin-API),
   Google Merchant Center, Produktfeeds, Pinterest- und Microsoft-Kanal,
   Judge.me
 - E-Mail & CRM: Klaviyo (Flows, Vorlagen, consent-gesteuertes
-  Onsite-Tracking), Double-Opt-In-Newsletter
+  Onsite-Tracking)
+- Content & Community: Discord-Community, Double-Opt-In-Newsletter,
+  Social-Media-Pakete aus Artikeln, UTM-Tracking
 - Web & Automation: HTML, CSS, JavaScript, responsives Webdesign,
   Next.js, Python, n8n, GitHub Actions
-- KI & Community: Claude und Gemini (LLM-APIs), KI-Agenten (Claude
-  Code), KI-Video (Veo, Kling), Discord-Community und Discord-Bots
+- KI: Claude und Gemini (LLM-APIs), KI-Agenten (Claude Code),
+  Discord-Bots, KI-Video (Veo, Kling)
 
 Zertifikat, Weiterbildung & Sprachen
 

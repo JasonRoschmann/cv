@@ -1,6 +1,6 @@
 # Jason Roschmann
 
-Junior Softwareentwickler / Software Engineer · Python · TypeScript · KI-Automation
+Junior Softwareentwickler / Software Engineer · Python · FastAPI · TypeScript · Next.js · PostgreSQL · Docker
 
 E-Mail: jason@roschmann-digital.de | Telefon: +49 155 612 953 91\
 LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | GitHub: github.com/JasonRoschmann | Web-CV: jasonroschmann.github.io/cv\
@@ -10,20 +10,19 @@ Wohnort: Hamburg, Deutschland | Gesucht: Hamburg oder remote; Umzug nach Zürich
 
 Ich entwickle Weboberflächen und Python-Abläufe für konkrete Arbeitsprozesse: Content-Produktion, E-Commerce und Community-Werkzeuge. Meine Schwerpunkte sind die Verbindung von Oberfläche und Backend, nachvollziehbare Zustände und gezielte Fehlerprüfungen – mit KI-Agenten als Werkzeug und eigener Verantwortung für Anforderungen und Abnahme. Aus vier Jahren Vertrieb bringe ich Erfahrung darin mit, Anforderungen im direkten Gespräch zu verstehen.
 
-Kennzahlen: 50 eigene Pull Requests gemergt (Flowki Studio, Teamprojekt) · 21 → 0 rote Tests, zwei Ursachen behoben (hermes-studio) · rund 66 Discord-Mitglieder FlowKI Club (Stand 29.09.2026) · 4 Jahre B2B-Vertrieb mit täglichem Kundenkontakt (2019–2023)
+Kennzahlen: 50 eigene Pull Requests gemergt (Flowki Studio) · 21 → 0 rote Tests (hermes-studio) · rund 66 Discord-Mitglieder FlowKI Club (Stand 29.09.2026) · 4 Jahre B2B-Vertrieb (2019–2023)
 
 ## Projekte
 
 ### Flowki Studio — internes Social-Media-Studio, Teamprojekt (Aug. 2026 – heute)
 
-Zweck: Internes Social-Media-Studio für Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung und Plattformübergabe; mein Beitrag im Team: Produktoberflächen, Workflow-Integration, Clip-Verarbeitung und Publishing.
+Zweck: Internes Social-Media-Studio für Themenrecherche, KI-gestützte Content-Produktion, redaktionelle Prüfung und Plattformübergabe; mein Beitrag im Team (50 eigene Pull Requests gemergt): Produktoberflächen, Workflow-Integration, Clip-Verarbeitung und Publishing.
 
 - Produktoberfläche: Produktions-, Freigabe- und Veröffentlichungsansichten weiterentwickelt – Bearbeitungsstände, Phasendauer und erforderliche Nutzeraktionen sichtbar gemacht.
 - Redaktionelle Zusammenarbeit: Ablehnungsgründe durch Oberfläche, API-Client und Freigabeprotokoll verbunden – Rückgaben zur Überarbeitung mit nachvollziehbarer Begründung ermöglicht.
 - Fehlerbehandlung: Erfolgreiche Produktion bzw. Lizenzierung von nachfolgenden Status- und Zuordnungsfehlern getrennt – irreführende Fehlermeldungen und Anreize für erneute, kostenwirksame Aufrufe beseitigt.
 - Videoverarbeitung: Speaker-Reframe, Schnittvarianten und reproduzierbaren Neu-Render nach Korrekturen umgesetzt – Langvideos in bearbeitbare Hochformat-Clips überführt.
 - Publishing: TikTok-Entwurfsweg mit eigenem Status und Nutzerhinweis integriert – hochgeladene Entwürfe eindeutig von veröffentlichten Posts unterschieden.
-- Qualitätssicherung: Fehlerfälle zuerst reproduziert und durch gezielte Gegenproben abgesichert.
 
 Tools: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, Next.js, TypeScript
 
@@ -31,18 +30,20 @@ Tools: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis, Next.js, 
 
 Zweck: Deutschsprachige KI-Community – rund 66 Mitglieder im Discord (Stand 29.09.2026) – mit Fachartikeln, Online-Calls und gemeinsamer Projektarbeit; ich verbinde Community-Arbeit mit technischer Produktentwicklung.
 
-- Community-Werkzeuge: Discord-Bot um /ask und Self-Service-Themenrollen erweitert; Discord.js und Testwerkzeuge aktualisiert.
+- Community-Werkzeuge: Discord-Bot um /ask und Self-Service-Themenrollen erweitert; discord.js und Testwerkzeuge aktualisiert.
 - KI-Antwortqualität: Artikelinhalte als Wissensgrundlage des FAQ-Bots angebunden und einen Relevanz-Prüfschritt ergänzt – Verhalten bei unpassenden Treffern mit gezielten Tests abgesichert.
 - Website & Newsletter: Newsletter mit Double-Opt-In und Empfehlungslinks, Plausible-Ereignisse für Anmeldung und Klicks auf Discord-Beitrittslinks; Autoren-, FAQ- und HowTo-Markup in der Artikelausgabe.
-- Community: Mitglieder beim Einstieg begleitet, Online-Calls organisiert und moderiert, bei ihren Projekten unterstützt.
+- Community: Mitglieder beim Einstieg begleitet, Online-Calls organisiert und moderiert, bei Projekten unterstützt.
 
 Tools: TypeScript, discord.js, Claude-API, PostgreSQL, Vitest, Next.js
 
 ### hermes-studio — Beitrag zu fremdem Projekt, Fehleranalyse (Sep. 2026)
 
 - Ursache: 21 rote Tests mit zwei Ursachen – 20× ein nie geschlossenes SQLite-Handle, das unter Windows das Aufräumen sperrt, 1× ein veralteter Test gegen eine Sicherheitsregel; Handle geschlossen, Regel behalten, Test korrigiert.
-- Nachweis: Mutationsprobe – mit abgeschwächter Sicherheitsregel scheitert der korrigierte Test; bestandene Tests: 177/198 → 199/199.
+- Nachweis: Mutationsprobe – mit abgeschwächter Sicherheitsregel scheitert der korrigierte Test; grüne Tests: 177 → 199.
 - Eigener Beitrag: Stillen Datenverlust im Task-Store behoben, mit fünf neuen Tests.
+
+Beleg: Fallstudie im Web-CV <https://jasonroschmann.github.io/cv/#fs-01>
 
 ### duftkumpels.shop — Kundenprojekt, Shopify, API- & Übersetzungsautomatisierung (Juni 2026 – heute)
 
@@ -62,6 +63,8 @@ Zweck: Python-Pipeline für Stellensuche über Job-APIs (u. a. Bundesagentur fü
 - Bewertungsqualität: LLM-Bewertungen gegen blinde Referenzurteile geprüft; eine überarbeitete Analyse nach unvollständiger Messung ohne belegte Verbesserung nicht ausgerollt.
 - Betrieb: Rollouts mit Prüfsummen, Tests vor und nach dem Tausch und automatischem Rückbau bei abgefangenen Fehlern.
 
+Belege: Fallstudie Antwortzuordnung <https://jasonroschmann.github.io/cv/#fs-02> · Fallstudie LLM-Bewertung <https://jasonroschmann.github.io/cv/#fs-03>
+
 ## Berufserfahrung
 
 ### KI-Automation & Webentwicklung — Eigene Projekte, Team- und Kundenprojekte (2024 – heute)
@@ -76,10 +79,10 @@ Zweck: Python-Pipeline für Stellensuche über Job-APIs (u. a. Bundesagentur fü
 
 ## Kenntnisse & Arbeitsweise
 
-- Entwicklung: Python, FastAPI · TypeScript, React, Next.js, discord.js · React Native (Projektpraxis: Shinobi)
+- Entwicklung: Python, REST-APIs mit FastAPI · TypeScript, React, Next.js, discord.js · React Native (Eigenprojekt)
 - KI & Agenten: Claude Code, LLM-APIs (Claude, Gemini, Groq), MCP, Agenten-Orchestrierung, n8n
-- Daten & Jobs: PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase
-- Qualität: pytest, Vitest, Playwright, GitHub Actions, Lighthouse-CI
+- Daten & Jobs: SQL/PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase
+- Qualität: Git, CI/CD mit GitHub Actions, pytest, Vitest, Playwright, Lighthouse-CI
 - Betrieb: Linux-Server, Docker Compose, Cron, flock, SMTP/IMAP, SPF/DKIM
 - Web & Commerce: Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL
 - Mit KI-Agenten: Fehler zuerst als roter Test · Agent setzt um · ein zweites Modell prüft zusätzlich als Reviewer · Rollout mit Prüfsummen und automatischem Rückbau bei abgefangenen Fehlern

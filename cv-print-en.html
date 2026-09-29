@@ -16,14 +16,15 @@
     <div class="kopf-text">
       <h1>Jason Roschmann</h1>
       <div class="rolle">Junior Software Engineer</div>
-      <div class="unter">Python · TypeScript · AI automation · Hamburg / remote</div>
+      <div class="unter">Python · FastAPI · TypeScript · Next.js · PostgreSQL · Docker Compose</div>
       <p class="lead">I build web interfaces and Python workflows for practical tasks in content production, e-commerce and community management. I focus on connecting frontend and backend, making workflow states traceable and testing failure cases. I use AI agents while taking responsibility for requirements and acceptance testing. Four years in sales taught me to understand customer needs through direct conversation.</p>
       <div class="kontakt">
-        <a href="mailto:jason@roschmann-digital.de">jason@roschmann-digital.de</a>
-        <span>+49 155 612 953 91</span>
-        <a href="https://www.linkedin.com/in/jason-roschmann-1091512b2">linkedin.com/in/jason-roschmann-1091512b2</a>
-        <a href="https://github.com/JasonRoschmann">github.com/JasonRoschmann</a>
-        <a href="https://jasonroschmann.github.io/cv/">jasonroschmann.github.io/cv</a>
+        <a href="mailto:jason@roschmann-digital.de"><i>✉</i>jason@roschmann-digital.de</a>
+        <span><i>☎</i>+49 155 612 953 91</span>
+        <span><i>⌂</i>Hamburg · remote</span>
+        <a href="https://www.linkedin.com/in/jason-roschmann-1091512b2"><i>in</i>LinkedIn</a>
+        <a href="https://github.com/JasonRoschmann"><i>gh</i>GitHub</a>
+        <a href="https://jasonroschmann.github.io/cv/"><i>↗</i>jasonroschmann.github.io/cv</a>
       </div>
     </div>
     <img class="foto" src="foto.jpg" alt="Portrait of Jason Roschmann">
@@ -40,14 +41,13 @@
 
   <div class="eintrag">
     <div class="ekopf"><h3>Flowki Studio — <span class="r">internal social media studio · team project</span></h3><span class="zeit">Aug 2026 – present</span></div>
-    <p class="zweck"><b>Purpose:</b> Internal social media studio for topic research, AI-assisted content production, editorial review and handover to platforms; my contribution in the team: product interfaces, workflow integration, clip processing and publishing.</p>
+    <p class="zweck"><b>Purpose:</b> Internal social media studio for topic research, AI-assisted content production, editorial review and handover to platforms; my contribution in the team (50 of my pull requests merged): product interfaces, workflow integration, clip processing and publishing.</p>
     <ul class="b">
       <li><b>Product interface:</b> Further developed the production, approval and publishing views – made processing states, phase durations and required user actions visible.</li>
       <li><b>Editorial collaboration:</b> Connected rejection reasons across the interface, API client and approval log – returns for revision now carry a traceable reason.</li>
       <li><b>Error handling:</b> Separated successful production or licensing from subsequent status and assignment errors – removed misleading error messages and incentives for repeated, cost-incurring calls.</li>
       <li><b>Video processing:</b> Implemented speaker-focused reframing, alternative edits and reproducible re-rendering after corrections – long videos become editable vertical clips.</li>
       <li><b>Publishing:</b> Integrated the TikTok draft path with its own status and user notice – uploaded drafts are clearly distinguished from published posts.</li>
-      <li><b>Quality assurance:</b> Reproduced failure cases first and validated fixes with targeted tests.</li>
     </ul>
     <div class="tools">Tools: Python · FastAPI · Celery · SQLAlchemy/Alembic · PostgreSQL · Redis · Next.js · TypeScript</div>
   </div>
@@ -68,9 +68,10 @@
     <div class="ekopf"><h3>hermes-studio — <span class="r">contribution to a third-party project · debugging</span></h3><span class="zeit">Sep 2026</span></div>
     <ul class="b">
       <li><b>Cause:</b> 21 failing tests with two root causes – 20× an SQLite handle that was never closed and blocks cleanup on Windows, 1× an outdated test against a security rule; handle closed, rule kept, test corrected.</li>
-      <li><b>Evidence:</b> Mutation test – with the security rule weakened, the corrected test fails; passing tests: <span class="nw">177/198 → 199/199</span>.</li>
+      <li><b>Evidence:</b> Mutation test – with the security rule weakened, the corrected test fails; passing tests: <span class="nw">177 → 199</span>.</li>
       <li><b>Own contribution:</b> Fixed silent data loss in the task store, with five new tests.</li>
     </ul>
+    <div class="belege">Evidence: <a href="https://jasonroschmann.github.io/cv/#fs-01">case study on the web CV (German) ↗</a></div>
   </div>
 
   <div class="fuss"><span>Jason Roschmann · CV · Page 1/2</span><span>jasonroschmann.github.io/cv</span></div>
@@ -98,6 +99,7 @@
       <li><b>Rating quality:</b> Checked LLM ratings against blind reference judgements; did not roll out a revised analysis after an incomplete measurement showed no proven improvement.</li>
       <li><b>Operations:</b> Rollouts with checksums, tests before and after the swap and automatic rollback on caught errors.</li>
     </ul>
+    <div class="belege">Evidence (German): <a href="https://jasonroschmann.github.io/cv/#fs-02">case study reply matching ↗</a> · <a href="https://jasonroschmann.github.io/cv/#fs-03">case study LLM rating ↗</a></div>
   </div>
 
   <div class="sek"><span>02</span>Experience</div>
@@ -122,10 +124,10 @@
   <div class="sek"><span>03</span>Skills &amp; way of working</div>
   <div class="end">
     <div class="sk">
-      <div><span class="k">Development:</span>Python, FastAPI · TypeScript, React, Next.js, discord.js · React Native (project experience: Shinobi)</div>
+      <div><span class="k">Development:</span>Python, REST APIs with FastAPI · TypeScript, React, Next.js, discord.js · React Native (personal project)</div>
       <div><span class="k">AI &amp; agents:</span>Claude Code, LLM APIs (Claude, Gemini, Groq), MCP, agent orchestration, n8n</div>
-      <div><span class="k">Data &amp; jobs:</span>PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase</div>
-      <div><span class="k">Quality:</span>pytest, Vitest, Playwright, GitHub Actions, Lighthouse CI</div>
+      <div><span class="k">Data &amp; jobs:</span>SQL/PostgreSQL, SQLAlchemy/Alembic, Celery, Redis, Supabase</div>
+      <div><span class="k">Quality:</span>Git, CI/CD with GitHub Actions, pytest, Vitest, Playwright, Lighthouse CI</div>
       <div><span class="k">Operations:</span>Linux servers, Docker Compose, cron, flock, SMTP/IMAP, SPF/DKIM</div>
       <div><span class="k">Web &amp; commerce:</span>Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL</div>
       <div><span class="k">With AI agents:</span>Reproduce bugs with failing tests · an agent implements the fix · a second model provides an additional review · rollout with checksums and automatic rollback on caught errors</div>
