@@ -83,6 +83,8 @@ gemeinsamem Projektlernen – rund 66 Mitglieder (Discord, Stand
 - Content-Verteilung: Artikel in plattformgerechte Social-Pakete
   überführt und an die Veröffentlichungsplanung angebunden – Prüfungen
   auf Textqualität, Länge und Markenregeln vor dem Einplanen.
+- GitHub: Begleit-Repositories zu Club-Artikeln veröffentlicht (MIT),
+  Rückverweise mit UTM-Parametern.
 - Community-Werkzeuge: Discord-Bot um /ask und Self-Service-Themenrollen
   erweitert; Artikelinhalte als Wissensgrundlage des FAQ-Bots
   angebunden.
@@ -128,9 +130,8 @@ Weitere Web- & Shop-Projekte
 - AtopicV — Shopify-Theme auf Horizon-Basis gestaltet: Produktgeschichte
   in Kapiteln, mobile Kaufleiste, besserer Tastaturfokus.
   Unveröffentlichter Entwurf.
-- nk247store.de — Kundenprojekt im Team: interaktive Überarbeitung mit
-  Next.js und GSAP; Tabakwerbung nach § 19 TabakerzG aus allen Motiven
-  entfernt. Meine Überarbeitung ist noch nicht veröffentlicht.
+- Kunden-Websites — im Team mehrere Websites für Kunden gebaut und
+  abgeschlossen, u. a. mit Next.js und GSAP.
 - SEO-Dashboard (Prototyp) — Python-Werkzeug, das Search-Console-, GA4-
   und Bing-Daten zusammenführt und regelbasierte Hinweise erzeugt.
 

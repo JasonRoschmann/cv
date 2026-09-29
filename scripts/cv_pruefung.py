@@ -11,32 +11,32 @@ _SCOOP = Path(r"C:\Users\Jason Roschmann\scoop\shims\pdftotext.exe")
 PDFTOTEXT = str(_SCOOP) if _SCOOP.exists() else "pdftotext"
 PDFINFO = "pdfinfo"
 KONTAKT = ["jason@roschmann-digital.de", "jasonroschmann.github.io/cv"]
-VERBOTEN = ["Commits", "commits", "aktive Mitglieder", "active members", "gewachsen", "grown to", "aufgebaut auf"]
+VERBOTEN = ["Commits", "commits", "aktive Mitglieder", "active members", "gewachsen", "grown to", "aufgebaut auf", "nk247"]
 REGELN = {
     "Jason_Roschmann_CV_Marketing.pdf": {
-        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Junior E-Commerce & Technical SEO",
+        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Junior E-Commerce & Technical SEO", "Begleit-Repositories zu Club-Artikeln",
                     "SEO: Technisches SEO", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
                     "Außendienst (Door-to-Door) 2019 – 2023"],
         "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"], "links": ["https://duftkumpels.shop", "https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf"]},
     "ats-cv/Jason_Roschmann_CV_Marketing_ATS.pdf": {
-        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026"],
+        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "Begleit-Repositories zu Club-Artikeln"],
         "reihenfolge": ["duftkumpels.shop —", "FlowKI Club —", "Flowki Studio —"], "links": ["https://duftkumpels.shop", "https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf"]},
     "Jason_Roschmann_CV.pdf": {
-        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Junior Softwareentwickler",
+        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Junior Softwareentwickler", "57 meiner Pull Requests gemergt", "Kundenprojekte 3",
                     "Entwicklung: Python", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
                     "Außendienst (Door-to-Door) 2019 – 2023"],
-        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03"]},
+        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"]},
     "ats-cv/Jason_Roschmann_CV_ATS.pdf": {
-        "pflicht": ["Mitgründer", "Stand 29.09.2026"],
-        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03"]},
+        "pflicht": ["Mitgründer", "Stand 29.09.2026", "57 meiner Pull Requests gemergt", "Kundenprojekte 3"],
+        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"]},
     "Jason_Roschmann_CV_EN.pdf": {
-        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Junior Software",
+        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Junior Software", "57 of my pull requests merged", "client projects 3",
                     "Development: Python", "Certificate: Google Ads", "Training: Web development",
                     "Field sales (door-to-door) 2019 – 2023"],
-        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03"]},
+        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"]},
     "ats-cv/Jason_Roschmann_CV_ATS_EN.pdf": {
-        "pflicht": ["Co-founder", "as of 29 Sep 2026"],
-        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03"]},
+        "pflicht": ["Co-founder", "as of 29 Sep 2026", "57 of my pull requests merged", "client projects 3"],
+        "reihenfolge": ["Flowki Studio —", "FlowKI Club —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-02", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"]},
 }
 
 

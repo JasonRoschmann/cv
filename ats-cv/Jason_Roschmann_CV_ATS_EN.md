@@ -70,7 +70,7 @@ Evidence (German): case study reply matching <https://jasonroschmann.github.io/c
 ### AI Automation & Web Development — own projects, team and client projects (2024 – present)
 
 - Developed and tested Python backends and Next.js frontends and ran them on Linux servers (Docker Compose, cron, deployment with rollback); customised Shopify themes; teamwork via branches, pull requests and shared test suites.
-- nk247store.de (client project in a team): interactive redesign with Next.js and GSAP; CI with TypeScript check, ESLint, Vitest, build and Playwright. My redesign is not yet published.
+- Client websites built as part of a team: Next.js, GSAP, CI with TypeScript check, ESLint, Vitest and Playwright.
 
 ### B2B Direct Sales — Field sales (door-to-door) across Germany, EWE TEL and Ranger Marketing (2019 – 2023)
 
@@ -86,6 +86,8 @@ Evidence (German): case study reply matching <https://jasonroschmann.github.io/c
 - Operations: Linux servers, Docker Compose, cron, flock, SMTP/IMAP, SPF/DKIM
 - Web & commerce: Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL
 - With AI agents: Reproduce bugs with failing tests · an agent implements the fix · a second model provides an additional review · rollout with checksums and automatic rollback on caught errors
+- GitHub: 57 of my pull requests merged (as of 29 Sep 2026): Flowki Studio 50, Web CV 4, client projects 3
+- Public code samples: web CV <https://github.com/JasonRoschmann/cv> · MCP server for community articles <https://github.com/Jokersystems-online/flowki-knowledge-mcp>
 
 ## Training, certificate & languages
 

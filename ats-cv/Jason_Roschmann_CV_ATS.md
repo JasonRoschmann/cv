@@ -70,7 +70,7 @@ Belege: Fallstudie Antwortzuordnung <https://jasonroschmann.github.io/cv/#fs-02>
 ### KI-Automation & Webentwicklung — Eigene Projekte, Team- und Kundenprojekte (2024 – heute)
 
 - Python-Backends und Next.js-Frontends entwickelt, getestet und auf Linux-Servern betrieben (Docker Compose, Cron, Deployment mit Rollback); Shopify-Themes angepasst; im Team über Branches, Pull Requests und gemeinsame Test-Suites.
-- nk247store.de (Kundenprojekt im Team): interaktive Überarbeitung mit Next.js und GSAP; CI mit TypeScript-Check, ESLint, Vitest, Build und Playwright. Meine Überarbeitung ist noch nicht veröffentlicht.
+- Kunden-Websites im Team gebaut: Next.js, GSAP, CI mit TypeScript-Check, ESLint, Vitest und Playwright.
 
 ### B2B-Direktvertrieb — Außendienst bundesweit, EWE TEL und Ranger Marketing (2019 – 2023)
 
@@ -86,6 +86,8 @@ Belege: Fallstudie Antwortzuordnung <https://jasonroschmann.github.io/cv/#fs-02>
 - Betrieb: Linux-Server, Docker Compose, Cron, flock, SMTP/IMAP, SPF/DKIM
 - Web & Commerce: Shopify Liquid, Tailwind, GSAP, PWA, Canvas/WebGL
 - Mit KI-Agenten: Fehler zuerst als roter Test · Agent setzt um · ein zweites Modell prüft zusätzlich als Reviewer · Rollout mit Prüfsummen und automatischem Rückbau bei abgefangenen Fehlern
+- GitHub: 57 meiner Pull Requests gemergt (Stand 29.09.2026): Flowki Studio 50, Web-CV 4, Kundenprojekte 3
+- Öffentliche Codebeispiele: Web-CV <https://github.com/JasonRoschmann/cv> · MCP-Server für Club-Inhalte <https://github.com/Jokersystems-online/flowki-knowledge-mcp>
 
 ## Weiterbildung, Zertifikat & Sprachen
 

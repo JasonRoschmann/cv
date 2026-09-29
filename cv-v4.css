@@ -51,6 +51,13 @@ ul.b li::before{content:'';font-size:inherit;position:absolute;left:0;top:.52em;
 .sk div{margin:3px 0}
 /* Beschriftung in Schrift und Größe des Inhalts: sonst extrahiert Poppler sie hinter dem Inhalt */
 .sk .k{font-weight:600;color:var(--acc);margin-right:3px}
+/* GitHub-Leiste: Anteile der gemergten PRs je Projekt, direkt beschriftet (keine Legende zum Entschlüsseln) */
+.gh-leiste{display:flex;gap:2px;height:6px;margin:4px 0 2px}
+.gh-leiste i{background:var(--acc);border-radius:1px}
+.gh-leiste i:nth-child(2){background:#6aa88a}
+.gh-leiste i:nth-child(3){background:#aacfbd}
+.gh-legende{display:flex;justify-content:space-between;font:500 9px 'IBM Plex Mono',monospace;color:var(--mut)}
+.sk a{color:var(--acc);border-bottom:1px solid rgba(23,120,74,.4)}
 .qr{text-align:center;font:500 7.4px 'IBM Plex Mono',monospace;color:var(--mut)}
 .qr img{width:22mm;height:22mm;display:block;margin:0 auto 3px}
 .fuss{position:absolute;left:16mm;right:16mm;bottom:8mm;display:flex;justify-content:space-between;font:500 7.6px 'IBM Plex Mono',monospace;color:var(--hell);border-top:1px solid var(--linie);padding-top:4px}
