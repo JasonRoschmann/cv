@@ -20,14 +20,14 @@ Key figures: <span data-pr="flowki">50</span> of my pull requests merged in the 
 
 ## Core skills
 
-- Backend & APIs: Python, FastAPI, SQLAlchemy/Alembic, PostgreSQL, Celery, Redis – APIs and background jobs
-- Frontend: TypeScript, React, Next.js, Tailwind, GSAP – production, approval and publishing views, community website; client websites in a team (CI with TypeScript checks, ESLint, Vitest, Playwright)
-- Testing & CI: Git, pytest, Vitest, Playwright, ESLint, GitHub Actions – bugs reproduced as a failing test first; CI also builds and checks this CV
-- AI integration: LLM APIs (Claude, Gemini, Groq), MCP, Claude Code – FAQ bot with relevance check, MCP server, model ratings checked against blind reference judgements
-- Operations: Linux servers, Docker Compose, cron – rollouts with checksums, tests before and after the swap and automatic rollback on caught errors
-- Shopify & SEO: Liquid, Admin GraphQL API, Search Console, JSON-LD – translation pipeline, theme rework, SEO checks
+- Backend & APIs: Python, FastAPI, Node.js, REST and GraphQL, SQL/PostgreSQL, SQLAlchemy/Alembic, Celery, Redis – APIs and background jobs, store and job board APIs
+- Frontend & mobile: TypeScript, JavaScript, React, Next.js, React Native, Tailwind, GSAP – own app project with React Native and Supabase; production, approval and publishing views, community website; client websites in a team (CI with TypeScript checks, ESLint, Vitest, Playwright)
+- Testing & CI/CD: Git with branches and pull requests, pytest, Vitest, Playwright, ESLint, GitHub Actions – test-driven: bugs reproduced as a failing test first; CI also builds and checks this CV
+- AI & LLM: LLM APIs (Claude, Gemini, Groq), MCP, RAG pattern, LLM evaluation, Claude Code – FAQ bot with article knowledge base and relevance check, MCP server, model ratings checked against blind reference judgements
+- Operations & data: Linux servers, Docker Compose, Bash, cron, Supabase, SMTP/IMAP with SPF/DKIM – rollouts with checksums, tests before and after the swap and automatic rollback on caught errors
+- Shopify & SEO: Liquid, Admin GraphQL API, Klaviyo, GA4, Search Console, JSON-LD – translation pipeline, theme rework, SEO checks
 - With AI agents: Claude Code implements, I review and sign off; hooks I set up block private keys in code as well as deleted or disabled tests, and a second model reviews
-- Further tools: discord.js, React Native (personal project), Supabase, n8n, agent orchestration, Lighthouse CI, flock, SMTP/IMAP, SPF/DKIM, PWA, Canvas/WebGL
+- Further tools: discord.js, Alpine.js, n8n, agent orchestration, Lighthouse CI, flock, PWA, Canvas/WebGL
 
 ## Experience
 

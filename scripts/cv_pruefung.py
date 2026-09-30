@@ -34,7 +34,7 @@ REGELN = {
         "reihenfolge": ["Mitgründer —", "duftkumpels.shop —", "Flowki Studio —"], "links": ["https://duftkumpels.shop", "https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf"],
         "pr": "marketing", "schriften": []},
     "Jason_Roschmann_CV.pdf": {
-        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Softwareentwickler · KI-Automation & E-Commerce", "Freiberuflicher Softwareentwickler", "Remote · Zürich",
+        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Softwareentwickler · KI-Automation & E-Commerce", "Freiberuflicher Softwareentwickler", "Remote · Zürich", "Node.js", "React Native", "RAG-Muster",
                     "Backend & APIs: Python", "2024 – heute", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
                     "Außendienst B2B-Direktvertrieb", "2019 – 2023", "Nächster Schritt"],
         "reihenfolge": ["Mitgründer —", "Flowki Studio —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
@@ -44,7 +44,7 @@ REGELN = {
         "reihenfolge": ["Mitgründer —", "Flowki Studio —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
         "pr": "de", "schriften": []},
     "Jason_Roschmann_CV_EN.pdf": {
-        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Software Engineer · AI Automation & E-Commerce", "Freelance Software Engineer", "Remote · Zürich",
+        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Software Engineer · AI Automation & E-Commerce", "Freelance Software Engineer", "Remote · Zürich", "Node.js", "React Native", "RAG pattern",
                     "Backend & APIs: Python", "2024 – present", "Certificate: Google Ads", "Training: Web development",
                     "Field Sales, B2B Direct Sales", "2019 – 2023", "Next step"],
         "reihenfolge": ["Co-founder —", "Flowki Studio —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
