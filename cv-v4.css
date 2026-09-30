@@ -69,3 +69,48 @@ ul.b li::before{content:'';font-size:inherit;position:absolute;left:0;top:.52em;
 .qr{text-align:center;font:500 7.4px 'IBM Plex Mono',monospace;color:var(--mut)}
 .qr img{width:22mm;height:22mm;display:block;margin:0 auto 3px}
 .fuss{position:absolute;left:16mm;right:16mm;bottom:8mm;display:flex;justify-content:space-between;font:500 7.6px 'IBM Plex Mono',monospace;color:var(--hell);border-top:1px solid var(--linie);padding-top:4px}
+
+/* v6: Claim als Blickfang im oberen Drittel (dort liegt der erste Blick), Leistungsfelder aus Unternehmersicht,
+   Stationen mit eingerückten Mandaten statt gleichrangiger Einzelprojekte */
+.claim{font:700 17px/1.24 'Inter Tight',sans-serif;letter-spacing:-.012em;margin-top:11px;max-width:132mm}
+.claim em{font-style:normal;color:var(--acc)}
+.claim+.lead{margin-top:6px;color:var(--mut);font-size:11.2px}
+.v6 .kpi b{font-size:24px}
+.v6 .sek{margin:15px 0 7px;align-items:center}
+.v6 .sek::after{content:'';flex:1;height:1px;background:var(--linie)}
+.felder{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink)}
+.felder>div{padding:8px 11px 2px 0}
+.felder>div+div{padding-left:11px;border-left:1px solid var(--linie)}
+.felder small{font:600 8.6px 'IBM Plex Mono',monospace;letter-spacing:.12em;color:var(--acc);display:block}
+.felder b{display:block;font:700 12.6px/1.25 'Inter Tight',sans-serif;margin:3px 0 4px}
+.felder p{font-size:10.3px;line-height:1.44;color:var(--mut)}
+.station{border-top:2px solid var(--ink);padding:7px 0 4px;break-inside:auto}
+.station+.station{margin-top:12px}
+.station h3{font-size:15.5px}
+.station>.zweck{margin-top:2px}
+.mandat{margin-top:12px;padding:0 0 1px 11px;border-left:2px solid var(--acc);break-inside:avoid}
+.mandat .ekopf h4{font:700 13px 'Inter Tight',sans-serif}
+.mandat h4 .r{font:500 10.2px Inter,sans-serif;color:var(--mut);margin-left:5px}
+.mandat ul.b{margin-top:3px}
+.weitere{margin-top:9px;padding-left:11px;border-left:2px solid var(--linie);color:var(--mut)}
+.weitere b{color:var(--ink)}
+/* Seite 1 hat Luft übrig: gleichmäßig zwischen die Abschnitte statt als Loch am Seitenende */
+.v6 .page:first-of-type .sek{margin:19px 0 8px}
+.v6 .page:first-of-type .felder>div{padding-bottom:6px}
+.v6 .page:first-of-type .station+.station{margin-top:17px}
+.fortk{font:500 8.6px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--hell)}
+/* Stack-Zeile mit monochromen Logos: in einer Sekunde erkennbar, Text bleibt für ATS lesbar */
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.unter.stack{display:flex;flex-wrap:wrap;gap:3px 11px;margin-top:6px}
+.stack .st{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.stack svg{width:10px;height:10px;fill:var(--ink);opacity:.72}
+/* Seite 2 endet mit dem nächsten Schritt statt mit Leerraum: Abschlussband sitzt per margin-top:auto unten */
+.page.p2{display:flex;flex-direction:column}
+.cta{margin-top:auto;margin-bottom:5mm;background:var(--ink);color:#fff;display:grid;grid-template-columns:1fr auto;gap:8mm;align-items:center;padding:11px 12px 11px 15px}
+.cta b{font:700 16px/1.2 'Inter Tight',sans-serif;display:block}
+.cta b em{font-style:normal;color:#7fd3a6}
+.cta p{font-size:10.2px;color:#c3c9d1;margin-top:3px;max-width:118mm}
+.cta .kanal{font:500 9.2px 'IBM Plex Mono',monospace;margin-top:7px;display:flex;flex-wrap:wrap;gap:3px 14px}
+.cta .kanal i{font-style:normal;color:#7fd3a6;margin-right:4px}
+.cta .qrk{background:#fff;padding:4px 4px 2px;text-align:center;font:500 6.8px 'IBM Plex Mono',monospace;color:var(--mut)}
+.cta .qrk img{width:19mm;height:19mm;display:block;margin-bottom:1px}
