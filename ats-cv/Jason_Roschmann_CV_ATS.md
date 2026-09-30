@@ -4,7 +4,7 @@ Softwareentwickler · KI-Automation & E-Commerce · Python · FastAPI · TypeScr
 
 E-Mail: jason@roschmann-digital.de | Telefon: +49 155 612 953 91\
 LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | GitHub: github.com/JasonRoschmann | Web-CV: jasonroschmann.github.io/cv\
-Wohnort: Hamburg, Deutschland | Gesucht: Hamburg oder remote; Umzug nach Zürich für eine passende Rolle möglich | Start nach Absprache
+Wohnort: Hamburg, Deutschland | Gesucht: remote oder vor Ort in Zürich (Umzug nach Zürich möglich) | Start nach Absprache
 
 ## Profil
 
