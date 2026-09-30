@@ -1,6 +1,6 @@
 Jason Roschmann
 
-Junior E-Commerce & Technical SEO · Shopify · Marketing-Automation ·
+E-Commerce & Technical SEO · Marketing-Automation · Shopify ·
 KI-Community
 
 E-Mail: jason@roschmann-digital.de | Telefon: +49 155 612 953 91
@@ -16,28 +16,62 @@ Community-Aufbau, Python, n8n
 
 Profil
 
-Seit Juni 2026 betreue ich einen dreisprachigen Shopify-Shop technisch
-und im Marketing – Suchdaten, strukturierte Daten, Übersetzungen,
-Klaviyo und Merchant Center. Als Mitgründer baue ich seit April 2026 die
-KI-Community FlowKI Club mit auf: Mitglieder, Calls, Newsletter und
-Themen. Aus vier Jahren B2B-Direktvertrieb bringe ich den Blick dafür
-mit, was Kunden wirklich brauchen.
+Ich mache Shopify-Shops fit für Suche, Mehrsprachigkeit und Nachfassen –
+sauber umgesetzt, ehrlich gemessen. Freiberuflich seit 2024, davor vier
+Jahre B2B-Vertrieb. Seit Juni 2026 betreue ich einen dreisprachigen
+Shopify-Shop technisch und im Marketing; als Mitgründer baue ich die
+KI-Community FlowKI Club mit auf.
 
-Kennzahlen: 700 URLs auf Indexierung geprüft (duftkumpels) · 3
-Shop-Sprachen betreut (DE, EN, FR; EN/FR-Inhalte über meine
-Übersetzungs-Pipeline ergänzt) · rund 66 Discord-Mitglieder FlowKI Club
-(Stand 29.09.2026) · 4 Jahre B2B-Vertrieb (2019–2023)
+Kennzahlen: 700 URLs auf Indexierung geprüft (Kundenshop, 3 Sprachen) ·
+128 Blogartikel in einen Themenindex gebracht und mit 60 Produkten
+verknüpft · rund 66 Mitglieder der mitgegründeten KI-Community (Stand
+29.09.2026) · 4 Jahre B2B-Vertrieb (2019–2023)
+
+Was ich einbringe
+
+- Technisches SEO & KI-Suche: Strukturierte Daten und Entitäten für
+  klassische und KI-Suche – Indexierung und Suchdaten automatisiert im
+  Blick.
+- Drei Sprachen, ein Shop: Übersetzungs-Pipeline für DE/EN/FR,
+  Fehlleitung eingegrenzt, Merchant-Center-Kategorien korrigiert, zwei
+  falsche Verfügbarkeitsaussagen berichtigt.
+- Nachfassen & gegenprüfen: Abbruchmail-Link korrigiert, fehlendes
+  Klaviyo-Tracking aktiviert, GA4 mit Shopify-Bestellungen abgeglichen.
 
 Berufserfahrung
 
-E-Commerce, Webentwicklung & KI-Automation — Kunden-, Team- und Eigenprojekte (2024 – heute)
+Mitgründer — FlowKI Club, KI-Community & Magazin (Apr. 2026 – heute)
 
-duftkumpels.shop — Kundenprojekt, Shopify DE/EN/FR (Juni 2026 – heute)
+Deutschsprachige KI-Community mit Discord, Fachartikeln und gemeinsamem
+Projektlernen – rund 66 Mitglieder (Discord, Stand 29.09.2026); der Club
+dient auch dem Outreach für Kundenaufträge.
 
-Zweck: Shopify-Shop einer Hamburger Nischen-Parfümerie; mein Teil:
-Theme, SEO, Sprachen, Produktdaten, E-Mail-Flows und Messung.
+- Community-Aufbau: Mitglieder gewonnen und beim Einstieg begleitet,
+  Online-Calls organisiert und moderiert, Themen geplant; Mitglieder bei
+  ihren eigenen KI-Projekten unterstützt.
+- Zugang & Messung: Newsletter mit Double-Opt-In und Empfehlungslinks;
+  Plausible-Ereignisse für Anmeldung, Bestätigung und Klicks auf
+  Discord-Beitrittslinks – Übergänge von Inhalten zur Community
+  auswertbar.
+- Content-Verteilung: Artikel in plattformgerechte Social-Pakete
+  überführt, vor dem Einplanen auf Textqualität, Länge und Markenregeln
+  geprüft; Begleit-Repositories zu Club-Artikeln veröffentlicht (MIT),
+  Rückverweise mit UTM-Parametern.
+- Community-Werkzeuge: Discord-Bot um /ask und Self-Service-Themenrollen
+  erweitert; Artikelinhalte als Wissensgrundlage des FAQ-Bots
+  angebunden.
 
-- Gefunden werden: Search-Console-Auswertung der Suchfragen in DE/EN/FR
+Tools: Discord, Next.js, TypeScript, Plausible, Claude-API
+
+Freiberuflich: Web, E-Commerce & Technical SEO — Shopify, SEO, Marketing-Automation, remote (2024 – heute)
+
+Technische und Marketing-Betreuung eines Onlineshop-Kunden; dazu
+Entwicklung im internen Teamprojekt Flowki Studio und Kunden-Websites im
+Team.
+
+duftkumpels.shop — Nischen-Parfümerie aus Hamburg, Kundenmandat DE/EN/FR (Juni 2026 – heute)
+
+- SEO-Technik: Search-Console-Auswertung der Suchfragen in DE/EN/FR
   automatisiert, Titel und Metadaten danach angepasst;
   Indexierungsstatus von 700 URLs geprüft und die Bearbeitung
   priorisiert.
@@ -53,23 +87,20 @@ Theme, SEO, Sprachen, Produktdaten, E-Mail-Flows und Messung.
 - Mehrsprachigkeit: Übersetzungs-Pipeline mit HTML-Extraktion,
   Strukturprüfung und Shopify-Import; EN/FR-Artikel nach vorhandenen
   Suchimpressionen priorisiert.
-- Ursachensuche: Warum EN/FR-Produktseiten Besucher auf die deutsche
-  Seite umleiten (allein 153 Suchklicks auf englische Produktseiten in
-  90 Tagen): eingegrenzt auf eine Shopify-Weiterleitung vor dem Theme,
-  reproduziert und für den Shopify-Support dokumentiert.
-- Shop & Theme: Gekauftes Theme in Liquid, CSS und JavaScript umgebaut;
-  Bildladeprioritäten korrigiert; wöchentliche Lighthouse-Prüfung per
-  GitHub Actions.
+- Fehlleitung eingegrenzt: EN/FR-Produktseiten leiten Besucher auf
+  Deutsch um (allein 153 Suchklicks auf englische Produktseiten in 90
+  Tagen) – Ursache im Shopify-Routing vor dem Theme, reproduziert und
+  für den Support dokumentiert.
 - Kaufen & nachfassen: Klaviyo-Onsite-Tracking war nicht aktiv (seit
   Juli 0 Produktansichten), der Nachfass-Flow für Produktansichten
   konnte deshalb nie senden – Onsite-Embed im Theme aktiviert;
   Abbruchmail auf wiederherstellbaren Checkout-Link umgestellt;
-  Merchant-Center-Probleme analysiert und Kategorien korrigiert;
-  Microsoft- und Pinterest-Kanal angebunden.
+  Merchant-Center-Kategorien korrigiert; Microsoft- und Pinterest-Kanal
+  angebunden.
 - Messung & Gegenprüfung: GA4-Kaufzahlen mit Shopify-Bestellungen
   abgeglichen; Verfügbarkeitsaussagen automatisch mit kaufbaren
-  Varianten abgeglichen – zwei falsche korrigiert; einen Preload-Patch
-  nach ungünstigen Messläufen zurückgerollt.
+  Varianten abgeglichen – zwei falsche korrigiert; Theme in Liquid, CSS
+  und JavaScript umgebaut, wöchentliche Lighthouse-Prüfung.
 
 Tools: Shopify (Liquid, Admin-API), Google Search Console, GA4, Klaviyo,
 Merchant Center, Judge.me, Python
@@ -78,64 +109,35 @@ Belege: Kundenshop https://duftkumpels.shop · Drei technische
 Fallstudien:
 https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf
 
-FlowKI Club — Mitgründer, KI-Community & Magazin (Apr. 2026 – heute)
-
-Zweck: Deutschsprachige KI-Community mit Discord, Fachartikeln und
-gemeinsamem Projektlernen – rund 66 Mitglieder (Discord, Stand
-29.09.2026); der Club dient auch dem Outreach für Kundenaufträge.
-
-- Community-Aufbau: Mitglieder gewonnen und beim Einstieg begleitet,
-  Online-Calls organisiert und moderiert, Themen geplant; Mitglieder bei
-  ihren eigenen KI-Projekten unterstützt.
-- Community-Zugang & Messung: Newsletter mit Double-Opt-In und
-  Empfehlungslinks; Plausible-Ereignisse für Anmeldung, Bestätigung und
-  Klicks auf Discord-Beitrittslinks – Übergänge von Inhalten zur
-  Community auswertbar.
-- Content-Verteilung: Artikel in plattformgerechte Social-Pakete
-  überführt, vor dem Einplanen auf Textqualität, Länge und Markenregeln
-  geprüft; Begleit-Repositories zu Club-Artikeln veröffentlicht (MIT),
-  Rückverweise mit UTM-Parametern.
-- Community-Werkzeuge: Discord-Bot um /ask und Self-Service-Themenrollen
-  erweitert; Artikelinhalte als Wissensgrundlage des FAQ-Bots
-  angebunden.
-
-Tools: Discord, Next.js, TypeScript, Plausible, Claude-API
-
-Flowki Studio — internes Social-Media-Studio, Teamprojekt (Aug. 2026 – heute)
-
-Zweck: Internes Studio für Themenrecherche, KI-gestützte
-Content-Produktion, redaktionelle Prüfung und Veröffentlichung; 50
-eigene Pull Requests gemergt.
+Flowki Studio — internes KI-Content-Studio, Teamprojekt, Content-Operations-Funktionen (Aug. 2026 – heute)
 
 - Rechte vor dem Versand: Nutzungsrechte, Einwilligungen und
   Werbekennzeichnung wurden nur bei der Planung geprüft, bis zu 14 Tage
-  vor dem Post – jetzt erneut direkt vor dem Senden; fehlt etwas, wartet
-  der Post.
+  vorher – jetzt direkt vor dem Senden erneut; fehlt etwas, wartet der
+  Post.
 - Kampagnen & Freigaben: Prüflisten und offene Blind-Reviews je Kampagne
-  im Tagesüberblick; Ablehnungsgründe bis ins Freigabeprotokoll –
-  Rückgaben mit nachvollziehbarer Begründung.
+  im Tagesüberblick; Ablehnungsgründe bis ins Freigabeprotokoll; 50
+  eigene Pull Requests gemergt.
 - Publishing & Video: TikTok-Entwürfe mit eigenem Status klar von
   veröffentlichten Posts getrennt; Langvideos in bearbeitbare
   Hochformat-Clips überführt.
 
 Tools: Python, FastAPI, Next.js, PostgreSQL
 
-B2B-Direktvertrieb — Außendienst bundesweit, EWE TEL und Ranger Marketing (2019 – 2023)
+Weitere Projekte
 
-- Kaltakquise und Bedarfsgespräche mit Inhabern und Geschäftsführern,
-  Verhandlung und Abschluss vor Ort.
-- Täglicher Umgang mit Absagen – und der Blick dafür, welche Probleme
-  ein Betrieb wirklich hat.
-
-Weitere Web- & Shop-Projekte
-
-- AtopicV — Shopify-Theme auf Horizon-Basis gestaltet: Produktgeschichte
-  in Kapiteln, mobile Kaufleiste, besserer Tastaturfokus.
-  Unveröffentlichter Entwurf.
-- Kunden-Websites — im Team mehrere Websites für Kunden gebaut und
-  abgeschlossen, u. a. mit Next.js und GSAP.
-- SEO-Dashboard (Prototyp) — Python-Werkzeug, das Search-Console-, GA4-
+- AtopicV: Shopify-Theme auf Horizon-Basis gestaltet – Produktgeschichte
+  in Kapiteln, mobile Kaufleiste, besserer Tastaturfokus;
+  unveröffentlichter Entwurf.
+- SEO-Dashboard (Prototyp): Python-Werkzeug, das Search-Console-, GA4-
   und Bing-Daten zusammenführt und regelbasierte Hinweise erzeugt.
+
+Außendienst B2B-Direktvertrieb — EWE TEL, Ranger Marketing, bundesweit (2019 – 2023)
+
+- Direktvertrieb: Kaltakquise und Bedarfsgespräche mit Inhabern und
+  Geschäftsführern, Verhandlung und Abschluss vor Ort.
+- Kundensicht: Täglicher Umgang mit Absagen – und der Blick dafür,
+  welche Probleme ein Betrieb wirklich hat.
 
 Kenntnisse & Tools
 
@@ -145,11 +147,10 @@ Kenntnisse & Tools
 - Analyse: Google Search Console, Google Analytics 4, Bing Webmaster
   Tools (API), Lighthouse, Plausible, IndexNow
 - E-Commerce: Shopify (Theme-Anpassung, Liquid, Metafelder, Admin-API),
-  Google Merchant Center, Produktfeeds, Pinterest- und Microsoft-Kanal,
+  Google Merchant Center, Produktfeeds (Google, Microsoft, Pinterest),
   Judge.me
-- E-Mail & CRM: Klaviyo (Flows, Vorlagen, consent-gesteuertes
-  Onsite-Tracking)
-- Content & Community: Discord-Community, Double-Opt-In-Newsletter,
+- E-Mail & Community: Klaviyo (Flows, Vorlagen, consent-gesteuertes
+  Onsite-Tracking), Double-Opt-In-Newsletter, Discord,
   Social-Media-Pakete aus Artikeln, UTM-Tracking
 - Web & Automation: HTML, CSS, JavaScript, responsives Webdesign,
   Next.js, Python, n8n, GitHub Actions
@@ -169,5 +170,5 @@ Zertifikat, Weiterbildung & Sprachen
   Web-Architektur
 - Sprachen: Deutsch (Muttersprache) · Englisch (B1, Richtung B2) ·
   Polnisch (mündlich)
-- Remote-Arbeit: Verteilte Teamarbeit über GitHub (Branches, Pull
-  Requests), Discord und Online-Calls
+- Arbeitsweise: Remote über GitHub (Branches, Pull Requests), Discord
+  und Online-Calls

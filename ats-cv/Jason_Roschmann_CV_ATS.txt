@@ -1,7 +1,7 @@
 Jason Roschmann
 
-Junior Softwareentwickler / Software Engineer · Python · FastAPI ·
-TypeScript · Next.js · PostgreSQL · Docker
+Softwareentwickler · KI-Automation & E-Commerce · Python · FastAPI ·
+TypeScript · Next.js · PostgreSQL · Shopify
 
 E-Mail: jason@roschmann-digital.de | Telefon: +49 155 612 953 91
 LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | GitHub:
@@ -11,24 +11,35 @@ Zürich für eine passende Rolle möglich | Start nach Absprache
 
 Profil
 
-Quereinsteiger aus dem B2B-Vertrieb, seit 2024 in Webentwicklung und
-KI-Automation. Ich entwickle im Team das Social-Media-Studio Flowki
-Studio mit – von der Recherche bis zur Veröffentlichung – und bin
-Mitgründer des FlowKI Clubs, einer KI-Community mit eigenem Discord-Bot
-und Newsletter. Für einen Hamburger Shopify-Shop habe ich eine
-Übersetzungs-Pipeline und automatisierte SEO-Prüfungen gebaut.
+Ich baue KI-Automation und Shop-Technik für den Tagesbetrieb – mit
+Tests, Freigaben und sauberer Messung. Freiberuflich seit 2024, davor
+vier Jahre B2B-Vertrieb. Ich entwickle im Team das interne
+KI-Content-Studio Flowki Studio, betreue einen dreisprachigen
+Shopify-Shop und habe die KI-Community FlowKI Club mitgegründet.
 KI-Agenten sind mein Werkzeug – Anforderungen, Tests und Abnahme
 verantworte ich selbst.
 
-Kennzahlen: 50 eigene Pull Requests gemergt (Flowki Studio) · 3
-Shop-Sprachen betreut (DE, EN, FR; EN/FR-Inhalte über meine
-Übersetzungs-Pipeline ergänzt) · rund 66 Discord-Mitglieder FlowKI Club
-(Stand 29.09.2026) · 4 Jahre B2B-Vertrieb (2019–2023)
+Kennzahlen: 50 eigene Pull Requests im Team gemergt (Flowki Studio,
+Teamprojekt) · 700 URLs auf Indexierung geprüft (Kundenshop, 3 Sprachen)
+· rund 66 Mitglieder der mitgegründeten KI-Community (Stand 29.09.2026)
+· 4 Jahre B2B-Vertrieb (2019–2023)
+
+Was ich einbringe
+
+- KI-Automation mit Kontrolle: Abläufe, in denen KI produziert und
+  Menschen freigeben – mit Rechteprüfung vor dem Versand und klarer
+  Trennung von Erfolg und Folgefehler.
+- Shop-Technik mit SEO-Fokus: Shopify für drei Sprachen –
+  Übersetzungs-Pipeline, Indexierung, strukturierte Daten und eine
+  Abbruch-Mail, die wieder zum Checkout führt.
+- Tests und sichere Rollouts: Fehler zuerst als roter Test, Rollouts mit
+  Prüfsumme und Weg zurück; KI-Agenten setzen um, Anforderungen und
+  Abnahme liegen bei mir.
 
 Kompetenzen
 
 - Backend & APIs: Python, FastAPI, SQLAlchemy/Alembic, PostgreSQL,
-  Celery, Redis – APIs und Hintergrundjobs im Produktteam
+  Celery, Redis – APIs und Hintergrundjobs
 - Frontend: TypeScript, React, Next.js, Tailwind, GSAP – Produktions-,
   Freigabe- und Veröffentlichungsansichten, Club-Website;
   Kunden-Websites im Team (CI mit TypeScript-Check, ESLint, Vitest,
@@ -42,125 +53,101 @@ Kompetenzen
 - Betrieb: Linux-Server, Docker Compose, Cron – Rollouts mit Prüfsummen,
   Tests vor und nach dem Tausch und automatischem Rückbau bei
   abgefangenen Fehlern
-- Shopify: Liquid, Admin-GraphQL-API, Search Console –
+- Shopify & SEO: Liquid, Admin-GraphQL-API, Search Console, JSON-LD –
   Übersetzungs-Pipeline, Theme-Umbau, SEO-Prüfungen
 - Mit KI-Agenten: Claude Code setzt um, ich prüfe und nehme ab; von mir
   eingerichtete Hooks blocken private Schlüssel im Code sowie gelöschte
   oder deaktivierte Tests, ein zweites Modell reviewt
 - Weitere Werkzeuge: discord.js, React Native (Eigenprojekt), Supabase,
   n8n, Agenten-Orchestrierung, Lighthouse-CI, flock, SMTP/IMAP,
-  SPF/DKIM, GSAP, PWA, Canvas/WebGL
+  SPF/DKIM, PWA, Canvas/WebGL
 
 Berufserfahrung
 
-Webentwicklung & KI-Automation — Team-, Kunden- und Eigenprojekte (2024 – heute)
+Mitgründer — FlowKI Club, deutschsprachige KI-Community (Apr. 2026 – heute)
 
-Flowki Studio — internes Social-Media-Studio, Entwicklung im Team (Aug. 2026 – heute)
+Rund 66 Mitglieder im Discord (Stand 29.09.2026), Fachartikel,
+Online-Calls und gemeinsame Projektarbeit – ich verbinde
+Community-Arbeit mit Produktentwicklung.
 
-Zweck: Themenrecherche, KI-gestützte Content-Produktion, redaktionelle
-Prüfung und Veröffentlichung auf Social-Media-Plattformen; mein Anteil:
-Produktoberflächen, Kampagnen- und Freigabeabläufe, Fehlerbehandlung,
-Video und Publishing.
-
-- Rechte vor dem Versand: Nutzungsrechte und Einwilligungen wurden nur
-  bei der Planung geprüft, bis zu 14 Tage vor dem Post; jetzt prüft das
-  Studio sie direkt vor dem Senden erneut und hält den Post sonst an
-  (fünf Tests).
-- Arbeitsansichten: Produktions-, Freigabe- und
-  Veröffentlichungsansichten zeigen Bearbeitungsstand, Phasendauer und
-  nötige Aktionen; Prüflisten und offene Blind-Reviews je Kampagne im
-  Tagesüberblick.
-- Freigaben im Team: Ablehnungsgründe von der Oberfläche bis ins
-  Freigabeprotokoll durchgereicht – Beiträge gehen mit nachvollziehbarer
-  Begründung zur Überarbeitung zurück.
-- Fehlerbehandlung: Scheiterte nach gelungener Produktion nur ein
-  späterer Statusschritt, wirkte das wie ein Fehlschlag und lud zu einer
-  zweiten, kostenwirksamen Produktion ein – Erfolg und Folgefehler
-  werden jetzt getrennt behandelt.
-- Video & Veröffentlichung: Langvideos werden zu bearbeitbaren
-  Hochformat-Clips mit sprecherfolgendem Zuschnitt; TikTok-Entwürfe sind
-  mit eigenem Status klar von veröffentlichten Posts getrennt.
-
-Tools: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis,
-Next.js, TypeScript
-
-FlowKI Club — Mitgründer, Community, Discord-Bot, Website, Newsletter (Apr. 2026 – heute)
-
-Zweck: Deutschsprachige KI-Community – rund 66 Mitglieder im Discord
-(Stand 29.09.2026) – mit Fachartikeln, Online-Calls und gemeinsamer
-Projektarbeit; ich verbinde Community-Arbeit mit technischer
-Produktentwicklung.
-
-- Community: Mitglieder beim Einstieg begleitet und bei ihren eigenen
-  KI-Projekten unterstützt, Online-Calls organisiert und moderiert.
-- Discord-Bot: /ask und Self-Service-Themenrollen ergänzt; Club-Artikel
-  als Wissensgrundlage des FAQ-Bots angebunden, ein Relevanz-Prüfschritt
-  fängt unpassende Treffer ab – mit gezielten Tests abgesichert.
-- Website & Newsletter: Newsletter mit Double-Opt-In und
-  Empfehlungslinks; Anmeldungen und Klicks auf Discord-Einladungen
-  messbar gemacht (Plausible); Autoren-, FAQ- und HowTo-Markup für
-  Suchmaschinen.
-- MCP-Server: Club-Artikel für KI-Assistenten wie Claude Code
-  durchsuchbar und lesbar gemacht, öffentlich auf GitHub.
+- Community: Mitglieder beim Einstieg und bei ihren KI-Projekten
+  begleitet, Online-Calls organisiert und moderiert.
+- Messbar gemacht: Newsletter mit Double-Opt-In und Empfehlungslinks;
+  Anmeldungen und Klicks auf Discord-Einladungen per Plausible erfasst;
+  Autoren-, FAQ- und HowTo-Markup.
+- Discord-Bot & MCP-Server: /ask und Self-Service-Themenrollen ergänzt;
+  Club-Artikel als Wissensgrundlage des FAQ-Bots angebunden, ein
+  Relevanz-Prüfschritt fängt unpassende Treffer ab; der MCP-Server macht
+  die Artikel für KI-Assistenten nutzbar – öffentlich auf GitHub.
 
 Tools: TypeScript, discord.js, Claude-API, MCP, PostgreSQL, Vitest,
 Next.js
 
-duftkumpels.shop — Kundenprojekt, Shopify DE/EN/FR, Automatisierung & SEO (Juni 2026 – heute)
+Freiberuflicher Softwareentwickler — KI-Automation, Webentwicklung & E-Commerce, remote (2024 – heute)
 
-- Übersetzung: Pipeline für drei Sprachen – HTML-Texte extrahieren,
-  Struktur prüfen, per CSV bzw. GraphQL zurück in Shopify;
-  Verfügbarkeitsabgleich über die Admin-API mit Sicherung und Rücklesen.
+Technische Betreuung eines Onlineshop-Kunden, Entwicklung im internen
+Teamprojekt Flowki Studio und Kunden-Websites im Team mit Next.js und
+GSAP.
+
+Flowki Studio — internes KI-Content-Studio, Teamprojekt (Aug. 2026 – heute)
+
+- Rechte vor dem Versand: Nutzungsrechte, Einwilligungen und
+  Werbekennzeichnung wurden nur bei der Planung geprüft, bis zu 14 Tage
+  vorher – jetzt direkt vor dem Senden erneut, sonst wartet der Post.
+- Kostenrisiko entschärft: Scheiterte nach gelungener Produktion nur ein
+  Statusschritt, wirkte das wie ein Fehlschlag und lud zu einem zweiten,
+  kostenwirksamen Lauf ein – Erfolg und Folgefehler sind jetzt getrennt.
+- Freigaben & Überblick: Ablehnungsgründe bis ins Freigabeprotokoll;
+  Produktions-, Freigabe- und Veröffentlichungsansichten zeigen Stand,
+  Phasendauer und nötige Aktionen; Prüflisten und offene Blind-Reviews
+  je Kampagne im Tagesüberblick.
+- Video & Publishing: Langvideos werden zu Hochformat-Clips mit
+  sprecherfolgendem Zuschnitt; TikTok-Entwürfe klar getrennt von
+  veröffentlichten Posts.
+
+Tools: Python, FastAPI, Celery, SQLAlchemy/Alembic, PostgreSQL, Redis,
+Next.js, TypeScript
+
+duftkumpels.shop — Shopify-Shop DE/EN/FR, Kundenmandat (Juni 2026 – heute)
+
+- Drei Sprachen: Übersetzungs-Pipeline – Texte extrahieren, Struktur
+  prüfen, per CSV oder GraphQL zurück in Shopify; Verfügbarkeitsabgleich
+  über die Admin-API mit Sicherung und Rücklesen.
 - SEO-Technik: Search-Console-Auswertung automatisiert, 700 URLs auf
   Indexierung geprüft, JSON-LD ergänzt und automatisch geprüft.
-- Ursachensuche: Warum EN/FR-Produktseiten Besucher auf die deutsche
-  Seite umleiten (allein 153 Suchklicks auf englische Produktseiten in
-  90 Tagen): eingegrenzt auf eine Shopify-Weiterleitung vor dem Theme,
-  reproduziert und für den Shopify-Support dokumentiert.
-- Theme & E-Mail: Gekauftes Theme in Liquid, CSS und JavaScript
-  umgebaut; wöchentliche Lighthouse-Prüfung per GitHub Actions;
-  Klaviyo-Abbruchmail auf wiederherstellbaren Checkout-Link korrigiert.
+- Fehlleitung eingegrenzt: EN/FR-Produktseiten leiten Besucher auf
+  Deutsch um (153 Suchklicks auf englische Produktseiten in 90 Tagen) –
+  Ursache: Shopify-Weiterleitung vor dem Theme, für den Support
+  dokumentiert.
+- Kaufabbrüche: Klaviyo-Abbruchmail führt wieder zu einem
+  wiederherstellbaren Checkout; Theme in Liquid, CSS und JavaScript
+  umgebaut, wöchentliche Lighthouse-Prüfung.
 
 Tools: Shopify Liquid, Admin-GraphQL-API, Python, GitHub Actions,
 Klaviyo
 
-KI-gestützte Bewerbungsverwaltung — Eigenprojekt, Python (Juli 2026 – heute)
+Eigene Produkte & Beiträge — Python, Automatisierung, Qualität (2026)
 
-Zweck: Python-Pipeline, die Stellen über Job-APIs findet (u. a.
-Bundesagentur für Arbeit, Greenhouse, Lever), bewertet, Unterlagen
-prüft, versendet und Antworten zuordnet.
+- Job-Matching- und Dokumenten-Pipeline: Stellen aus Job-APIs (u. a.
+  Bundesagentur für Arbeit, Greenhouse, Lever) bewerten, Unterlagen
+  prüfen; LLM-Bewertungen gegen blinde Referenzurteile geprüft, Rollouts
+  mit Prüfsumme und automatischem Rückbau bei abgefangenen Fehlern.
+- hermes-studio (fremdes Projekt): 21 rote Tests auf zwei Ursachen
+  zurückgeführt, eine Sicherheitsregel bewusst behalten, stillen
+  Datenverlust im Task-Store behoben – grüne Tests 177 → 199.
+- Dieser Lebenslauf: zählt seine PR-Zahlen täglich selbst und prüft jede
+  Fassung automatisch, bevor sie online geht.
 
-- Keine Doppelbewerbung: Kanalübergreifendes Hauptbuch mit Reservierung
-  – höchstens eine Bewerbung je Firma in 14 Tagen, egal ob per Mail oder
-  Portal.
-- Messen statt glauben: LLM-Bewertungen gegen blinde Referenzurteile
-  geprüft; eine überarbeitete Analyse ohne belegte Verbesserung nicht
-  ausgerollt.
-- Betrieb: Unbrauchbare Modellantworten stoppen den Lauf, bei Ausfall
-  übernimmt ein anderes Modell; Rollouts mit Prüfsummen und
-  automatischem Rückbau bei abgefangenen Fehlern.
+Belege: Fallstudie LLM-Bewertung
+https://jasonroschmann.github.io/cv/#fs-03 · Fallstudie Fehleranalyse
+https://jasonroschmann.github.io/cv/#fs-01
 
-Belege: Fallstudie Antwortzuordnung
-https://jasonroschmann.github.io/cv/#fs-02 · Fallstudie LLM-Bewertung
-https://jasonroschmann.github.io/cv/#fs-03
+Außendienst B2B-Direktvertrieb — EWE TEL, Ranger Marketing, bundesweit (2019 – 2023)
 
-hermes-studio — Beitrag zu fremdem Projekt, Fehleranalyse (Sep. 2026)
-
-- Ursache statt Symptom: 21 fehlschlagende Tests, zwei Ursachen – 20×
-  ein nie geschlossenes SQLite-Handle, 1× ein veralteter Test gegen eine
-  Sicherheitsregel; Regel behalten, Test korrigiert und per
-  Mutationsprobe nachgewiesen. Grüne Tests: 177 → 199.
-- Eigener Beitrag: Stillen Datenverlust im Task-Store behoben, mit fünf
-  neuen Tests.
-
-Beleg: Fallstudie im Web-CV https://jasonroschmann.github.io/cv/#fs-01
-
-B2B-Direktvertrieb — Außendienst bundesweit, EWE TEL und Ranger Marketing (2019 – 2023)
-
-- Kaltakquise und Bedarfsgespräche mit Inhabern und Geschäftsführern,
-  Verhandlung und Abschluss vor Ort.
-- Täglicher Umgang mit Absagen – und der Blick dafür, welche Probleme
-  ein Betrieb wirklich hat.
+- Direktvertrieb: Kaltakquise und Bedarfsgespräche mit Inhabern und
+  Geschäftsführern, Verhandlung und Abschluss vor Ort.
+- Kundensicht: Täglicher Umgang mit Absagen – und der Blick dafür,
+  welche Probleme ein Betrieb wirklich hat.
 
 Weiterbildung, Sprachen & Nachweise
 
@@ -171,8 +158,8 @@ Weiterbildung, Sprachen & Nachweise
   https://www.credential.net/cd05c77a-a7ef-48e0-809e-5147135f810e
 - Sprachen: Deutsch (Muttersprache) · Englisch (B1, Richtung B2) ·
   Polnisch (mündlich)
-- Remote-Arbeit: Verteilte Teamarbeit über GitHub (Branches, Pull
-  Requests), Discord und Online-Calls
+- Arbeitsweise: Remote über GitHub (Branches, Pull Requests), Discord
+  und Online-Calls
 - GitHub: 61 meiner Pull Requests gemergt (Stand 29.09.2026): Flowki
   Studio 50, eigene Repos 8, Kundenprojekte 3
 - Öffentlicher Code: Web-CV mit Build und Prüfung
