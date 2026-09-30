@@ -38,29 +38,31 @@ Was ich einbringe
 
 Kompetenzen
 
-- Backend & APIs: Python, FastAPI, SQLAlchemy/Alembic, PostgreSQL,
-  Celery, Redis – APIs und Hintergrundjobs
-- Frontend: TypeScript, React, Next.js, Tailwind, GSAP – Produktions-,
-  Freigabe- und Veröffentlichungsansichten, Club-Website;
-  Kunden-Websites im Team (CI mit TypeScript-Check, ESLint, Vitest,
-  Playwright)
-- Testen & CI: Git, pytest, Vitest, Playwright, ESLint, GitHub Actions –
-  Fehler zuerst als fehlschlagender Test; die CI baut und prüft auch
-  diesen Lebenslauf
-- KI-Integration: LLM-APIs (Claude, Gemini, Groq), MCP, Claude Code –
-  FAQ-Bot mit Relevanzprüfung, MCP-Server, Modellbewertung gegen blinde
+- Backend & APIs: Python, FastAPI, Node.js, REST und GraphQL,
+  SQL/PostgreSQL, SQLAlchemy/Alembic, Celery, Redis – APIs und
+  Hintergrundjobs, Shop- und Job-Schnittstellen
+- Frontend & Mobile: TypeScript, JavaScript, React, Next.js, React
+  Native, Tailwind, GSAP – App-Eigenprojekt mit React Native und
+  Supabase; Produktions-, Freigabe- und Veröffentlichungsansichten,
+  Club-Website; Kunden-Websites im Team (CI mit TypeScript-Check,
+  ESLint, Vitest, Playwright)
+- Testen & CI/CD: Git mit Branches und Pull Requests, pytest, Vitest,
+  Playwright, ESLint, GitHub Actions – testgetrieben: Fehler zuerst als
+  fehlschlagender Test; die CI baut und prüft auch diesen Lebenslauf
+- KI & LLM: LLM-APIs (Claude, Gemini, Groq), MCP, RAG-Muster,
+  LLM-Evaluation, Claude Code – FAQ-Bot mit Artikel-Wissensbasis und
+  Relevanzprüfung, MCP-Server, Modellbewertung gegen blinde
   Referenzurteile
-- Betrieb: Linux-Server, Docker Compose, Cron – Rollouts mit Prüfsummen,
-  Tests vor und nach dem Tausch und automatischem Rückbau bei
-  abgefangenen Fehlern
-- Shopify & SEO: Liquid, Admin-GraphQL-API, Search Console, JSON-LD –
-  Übersetzungs-Pipeline, Theme-Umbau, SEO-Prüfungen
+- Betrieb & Daten: Linux-Server, Docker Compose, Bash, Cron, Supabase,
+  SMTP/IMAP mit SPF/DKIM – Rollouts mit Prüfsummen, Tests vor und nach
+  dem Tausch und automatischem Rückbau bei abgefangenen Fehlern
+- Shopify & SEO: Liquid, Admin-GraphQL-API, Klaviyo, GA4, Search
+  Console, JSON-LD – Übersetzungs-Pipeline, Theme-Umbau, SEO-Prüfungen
 - Mit KI-Agenten: Claude Code setzt um, ich prüfe und nehme ab; von mir
   eingerichtete Hooks blocken private Schlüssel im Code sowie gelöschte
   oder deaktivierte Tests, ein zweites Modell reviewt
-- Weitere Werkzeuge: discord.js, React Native (Eigenprojekt), Supabase,
-  n8n, Agenten-Orchestrierung, Lighthouse-CI, flock, SMTP/IMAP,
-  SPF/DKIM, PWA, Canvas/WebGL
+- Weitere Werkzeuge: discord.js, Alpine.js, n8n, Agenten-Orchestrierung,
+  Lighthouse-CI, flock, PWA, Canvas/WebGL
 
 Berufserfahrung
 
