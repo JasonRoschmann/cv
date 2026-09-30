@@ -4,7 +4,7 @@ Software Engineer · AI Automation & E-Commerce · Python · FastAPI · TypeScri
 
 Email: jason@roschmann-digital.de | Phone: +49 155 612 953 91\
 LinkedIn: linkedin.com/in/jason-roschmann-1091512b2 | GitHub: github.com/JasonRoschmann | Web CV: jasonroschmann.github.io/cv\
-Location: Hamburg, Germany | Looking for: Hamburg or remote; relocation to Zurich possible for the right role | Start date by arrangement
+Location: Hamburg, Germany | Looking for: remote or on site in Zurich (relocation to Zurich possible) | Start date by arrangement
 
 ## Profile
 

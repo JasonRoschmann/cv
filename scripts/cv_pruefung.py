@@ -14,7 +14,7 @@ PDFINFO = "pdfinfo"
 PDFFONTS = "pdffonts"
 PR_STAND = REPO / "pr-stand.json"   # Sollwerte der PR-Zahlen (täglich vom Zähler), nie von Hand
 KONTAKT = ["jason@roschmann-digital.de", "jasonroschmann.github.io/cv"]
-VERBOTEN = ["Commits", "commits", "aktive Mitglieder", "active members", "gewachsen", "grown to", "aufgebaut auf", "nk247", "Produktteam", "product team"]
+VERBOTEN = ["Commits", "commits", "aktive Mitglieder", "active members", "gewachsen", "grown to", "aufgebaut auf", "nk247", "Produktteam", "product team", "Hamburg oder remote", "Hamburg or remote", "Hamburg · remote"]
 REGELN = {
     # Belegmappe: 2 Seiten, drei Fälle in Reihenfolge, Schlussband mit Abstand zur Fußzeile
     "Jason_Roschmann_Belegmappe.pdf": {
@@ -23,34 +23,34 @@ REGELN = {
     # v6: Stationen statt Einzelprojekte – Mitgründer zuerst (jüngste Station, Hauptprojekt), dann die freiberufliche
     # Station mit ihren Mandaten; Pflichttexte sichern Rollentitel, Station, Zeitraum und Vertrieb
     "Jason_Roschmann_CV_Marketing.pdf": {
-        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "2024 – heute", "E-Commerce & Technical SEO · Marketing-Automation",
+        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "2024 – heute", "E-Commerce & Technical SEO · Marketing-Automation", "Remote · Zürich",
                     "Freiberuflich: Web, E-Commerce & Technical SEO", "Begleit-Repositories zu Club-Artikeln",
                     "SEO: Technisches SEO", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
                     "Außendienst B2B-Direktvertrieb", "2019 – 2023", "Nächster Schritt"],
         "reihenfolge": ["Mitgründer —", "duftkumpels.shop —", "Flowki Studio —"], "links": ["https://duftkumpels.shop", "https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf"],
         "pr": "marketing", "schriften": ["Inter", "IBMPlexMono"]},
     "ats-cv/Jason_Roschmann_CV_Marketing_ATS.pdf": {
-        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "2024 – heute", "Freiberuflich: Web, E-Commerce & Technical SEO", "Begleit-Repositories zu Club-Artikeln"],
+        "pflicht": ["Mitgründer", "Outreach", "Stand 29.09.2026", "2024 – heute", "Freiberuflich: Web, E-Commerce & Technical SEO", "Begleit-Repositories zu Club-Artikeln", "vor Ort in Zürich"],
         "reihenfolge": ["Mitgründer —", "duftkumpels.shop —", "Flowki Studio —"], "links": ["https://duftkumpels.shop", "https://jasonroschmann.github.io/cv/Jason_Roschmann_Belegmappe.pdf"],
         "pr": "marketing", "schriften": []},
     "Jason_Roschmann_CV.pdf": {
-        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Softwareentwickler · KI-Automation & E-Commerce", "Freiberuflicher Softwareentwickler",
+        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Softwareentwickler · KI-Automation & E-Commerce", "Freiberuflicher Softwareentwickler", "Remote · Zürich",
                     "Backend & APIs: Python", "2024 – heute", "Zertifikat: Google Ads", "Weiterbildung: Webentwicklung",
                     "Außendienst B2B-Direktvertrieb", "2019 – 2023", "Nächster Schritt"],
         "reihenfolge": ["Mitgründer —", "Flowki Studio —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
         "pr": "de", "schriften": ["Inter", "IBMPlexMono"]},
     "ats-cv/Jason_Roschmann_CV_ATS.pdf": {
-        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Kompetenzen", "2024 – heute", "Freiberuflicher Softwareentwickler"],
+        "pflicht": ["Mitgründer", "Stand 29.09.2026", "Kompetenzen", "2024 – heute", "Freiberuflicher Softwareentwickler", "vor Ort in Zürich"],
         "reihenfolge": ["Mitgründer —", "Flowki Studio —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
         "pr": "de", "schriften": []},
     "Jason_Roschmann_CV_EN.pdf": {
-        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Software Engineer · AI Automation & E-Commerce", "Freelance Software Engineer",
+        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Software Engineer · AI Automation & E-Commerce", "Freelance Software Engineer", "Remote · Zürich",
                     "Backend & APIs: Python", "2024 – present", "Certificate: Google Ads", "Training: Web development",
                     "Field Sales, B2B Direct Sales", "2019 – 2023", "Next step"],
         "reihenfolge": ["Co-founder —", "Flowki Studio —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
         "pr": "en", "schriften": ["Inter", "IBMPlexMono"]},
     "ats-cv/Jason_Roschmann_CV_ATS_EN.pdf": {
-        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Core skills", "2024 – present", "Freelance Software Engineer"],
+        "pflicht": ["Co-founder", "as of 29 Sep 2026", "Core skills", "2024 – present", "Freelance Software Engineer", "on site in Zurich"],
         "reihenfolge": ["Co-founder —", "Flowki Studio —", "duftkumpels.shop —"], "links": ["https://jasonroschmann.github.io/cv/#fs-01", "https://jasonroschmann.github.io/cv/#fs-03", "https://github.com/JasonRoschmann/cv", "https://github.com/Jokersystems-online/flowki-knowledge-mcp"],
         "pr": "en", "schriften": []},
 }
