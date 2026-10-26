@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T09:47Z",
+  "updated": "2026-10-26T11:03Z",
   "user": "JasonRoschmann",
   "weeks": [
     [
@@ -102,6 +102,7 @@
       0
     ],
     [
+      0,
       0
     ]
   ],
@@ -133,20 +134,6 @@
       "when": "2026-09-29",
       "kind": "merge",
       "n": 7,
-      "label": "cv"
-    },
-    {
-      "repo": "JasonRoschmann/cv",
-      "when": "2026-09-25",
-      "kind": "push",
-      "n": 2,
-      "label": "cv"
-    },
-    {
-      "repo": "JasonRoschmann/cv",
-      "when": "2026-09-25",
-      "kind": "merge",
-      "n": 2,
       "label": "cv"
     }
   ],
