@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T11:22Z",
+  "updated": "2026-10-31T10:54Z",
   "user": "JasonRoschmann",
   "weeks": [
     [
@@ -107,32 +107,11 @@
       0,
       0,
       0,
+      0,
       0
     ]
   ],
   "total": 235,
-  "ships": [
-    {
-      "repo": "JasonRoschmann/cv",
-      "when": "2026-09-29",
-      "kind": "push",
-      "n": 2,
-      "label": "cv"
-    },
-    {
-      "repo": "JasonRoschmann/cv",
-      "when": "2026-09-30",
-      "kind": "merge",
-      "n": 3,
-      "label": "cv"
-    },
-    {
-      "repo": "JasonRoschmann/cv",
-      "when": "2026-09-30",
-      "kind": "push",
-      "n": 4,
-      "label": "cv"
-    }
-  ],
+  "ships": [],
   "source": "graphql"
 }
